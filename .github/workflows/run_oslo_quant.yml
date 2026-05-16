@@ -1,0 +1,58 @@
+name: Run Oslo Quant
+
+on:
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "Tickers to run (space-separated, e.g. TEL.OL MOWI.OL). Leave blank for all 14."
+        required: false
+        default: ""
+      frameworks:
+        description: "Frameworks to run (dupont piotroski sloan ohlson altman). Leave blank for all 5."
+        required: false
+        default: ""
+      force_refresh:
+        description: "Force re-fetch data even if cached"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install oslo-quant
+        run: pip install -e .
+
+      - name: Run oslo-quant
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.tickers }}" ]; then
+            ARGS="$ARGS --tickers ${{ github.event.inputs.tickers }}"
+          fi
+          if [ -n "${{ github.event.inputs.frameworks }}" ]; then
+            ARGS="$ARGS --frameworks ${{ github.event.inputs.frameworks }}"
+          fi
+          if [ "${{ github.event.inputs.force_refresh }}" = "true" ]; then
+            ARGS="$ARGS --force-refresh"
+          fi
+          oslo-quant $ARGS
+
+      - name: Commit results back to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/results/
+          git diff --staged --quiet || git commit -m "Update quantitative results [$(date -u +%Y-%m-%d)]"
+          git push

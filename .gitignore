@@ -7,5 +7,5 @@ build/
 .pytest_cache/
 .ruff_cache/
 data/raw/
-data/results/
 *.parquet
+# data/results/ is intentionally tracked — JSON outputs belong in the repo
