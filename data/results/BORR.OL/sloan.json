@@ -1,0 +1,57 @@
+{
+  "ticker": "BORR.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:26.314232Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -206900000.0,
+      "cfo_accrual_ratio": -0.0587,
+      "bs_accruals": -176200000.0,
+      "bs_accrual_ratio": -0.05,
+      "earnings_quality": "High",
+      "net_income": 45000000.0,
+      "operating_cash_flow": 251900000.0,
+      "avg_total_assets": 3522600000.0
+    },
+    "2024": {
+      "cfo_accruals": 4800000.0,
+      "cfo_accrual_ratio": 0.0015,
+      "bs_accruals": -274300000.0,
+      "bs_accrual_ratio": -0.0844,
+      "earnings_quality": "Moderate",
+      "net_income": 82100000.0,
+      "operating_cash_flow": 77300000.0,
+      "avg_total_assets": 3249850000.0
+    },
+    "2023": {
+      "cfo_accruals": 72800000.0,
+      "cfo_accrual_ratio": 0.0239,
+      "bs_accruals": -721200000.0,
+      "bs_accrual_ratio": -0.2372,
+      "earnings_quality": "Moderate",
+      "net_income": 22100000.0,
+      "operating_cash_flow": -50700000.0,
+      "avg_total_assets": 3040900000.0
+    },
+    "2022": {
+      "cfo_accruals": -355300000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": -292800000.0,
+      "operating_cash_flow": 62500000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "ticker": "KOG.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:24.385119Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -8559000000.0,
+      "cfo_accrual_ratio": -0.1127,
+      "bs_accruals": 9183000000.0,
+      "bs_accrual_ratio": 0.1209,
+      "earnings_quality": "High",
+      "net_income": 4173000000.0,
+      "operating_cash_flow": 12732000000.0,
+      "avg_total_assets": 75970500000.0
+    },
+    "2024": {
+      "cfo_accruals": -11120000000.0,
+      "cfo_accrual_ratio": -0.1813,
+      "bs_accruals": 7189000000.0,
+      "bs_accrual_ratio": 0.1172,
+      "earnings_quality": "High",
+      "net_income": 2624000000.0,
+      "operating_cash_flow": 13744000000.0,
+      "avg_total_assets": 61318000000.0
+    },
+    "2023": {
+      "cfo_accruals": -2115000000.0,
+      "cfo_accrual_ratio": -0.0439,
+      "bs_accruals": 6842000000.0,
+      "bs_accrual_ratio": 0.1419,
+      "earnings_quality": "Moderate",
+      "net_income": 3712000000.0,
+      "operating_cash_flow": 5827000000.0,
+      "avg_total_assets": 48223500000.0
+    },
+    "2022": {
+      "cfo_accruals": 1667000000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 2773000000.0,
+      "operating_cash_flow": 1106000000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

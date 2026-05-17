@@ -1,0 +1,87 @@
+{
+  "ticker": "BRG.OL",
+  "framework": "piotroski",
+  "computed_at": "2026-05-17T08:10:15.700518Z",
+  "periods": {
+    "2025": {
+      "f_score": 7,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": 0.0644,
+      "cfo_to_assets": 0.1402,
+      "current_ratio": 3.099,
+      "gross_margin": 0.6492,
+      "asset_turnover": 0.7839
+    },
+    "2024": {
+      "f_score": 7,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": 0.088,
+      "cfo_to_assets": 0.1114,
+      "current_ratio": 2.5002,
+      "gross_margin": 0.6358,
+      "asset_turnover": 0.7828
+    },
+    "2023": {
+      "f_score": 5,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Moderate",
+      "roa": 0.101,
+      "cfo_to_assets": 0.1715,
+      "current_ratio": 2.4816,
+      "gross_margin": 0.6377,
+      "asset_turnover": 0.7706
+    },
+    "2022": {
+      "f_score": 1,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": null,
+      "cfo_to_assets": 0.0906,
+      "current_ratio": 3.1195,
+      "gross_margin": 0.6122,
+      "asset_turnover": 0.8351
+    }
+  }
+}

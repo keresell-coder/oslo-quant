@@ -1,0 +1,47 @@
+{
+  "ticker": "BRG.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:15.704145Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -736000000.0,
+      "cfo_accrual_ratio": -0.0765,
+      "bs_accruals": 909000000.0,
+      "bs_accrual_ratio": 0.0944,
+      "earnings_quality": "High",
+      "net_income": 620000000.0,
+      "operating_cash_flow": 1356000000.0,
+      "avg_total_assets": 9627000000.0
+    },
+    "2024": {
+      "cfo_accruals": -245000000.0,
+      "cfo_accrual_ratio": -0.0262,
+      "bs_accruals": 629000000.0,
+      "bs_accrual_ratio": 0.0673,
+      "earnings_quality": "Moderate",
+      "net_income": 823000000.0,
+      "operating_cash_flow": 1068000000.0,
+      "avg_total_assets": 9349500000.0
+    },
+    "2023": {
+      "cfo_accruals": -693000000.0,
+      "cfo_accrual_ratio": -0.0804,
+      "bs_accruals": -632000000.0,
+      "bs_accrual_ratio": -0.0734,
+      "earnings_quality": "High",
+      "net_income": 870000000.0,
+      "operating_cash_flow": 1563000000.0,
+      "avg_total_assets": 8614500000.0
+    },
+    "2022": {
+      "cfo_accruals": 157000000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 892000000.0,
+      "operating_cash_flow": 735000000.0,
+      "avg_total_assets": null
+    }
+  }
+}

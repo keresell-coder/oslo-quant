@@ -1,0 +1,67 @@
+{
+  "ticker": "KMAR.OL",
+  "framework": "piotroski",
+  "computed_at": "2026-05-17T08:10:25.366893Z",
+  "periods": {
+    "2025": {
+      "f_score": 7,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 1,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": 0.1503,
+      "cfo_to_assets": 0.1864,
+      "current_ratio": 1.647,
+      "gross_margin": 0.6106,
+      "asset_turnover": 1.0581
+    },
+    "2024": {
+      "f_score": 9,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 1,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Strong",
+      "roa": 0.1078,
+      "cfo_to_assets": 0.1553,
+      "current_ratio": 1.2066,
+      "gross_margin": 0.6252,
+      "asset_turnover": 1.0196
+    },
+    "2023": {
+      "f_score": 4,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": 0.06,
+      "cfo_to_assets": 0.0294,
+      "current_ratio": 1.1355,
+      "gross_margin": 0.6171,
+      "asset_turnover": 0.9654
+    }
+  }
+}

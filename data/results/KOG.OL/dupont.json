@@ -1,0 +1,77 @@
+{
+  "ticker": "KOG.OL",
+  "framework": "dupont",
+  "computed_at": "2026-05-17T08:10:24.374209Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.1322,
+      "asset_turnover": 0.4155,
+      "equity_multiplier": 3.6829,
+      "roe_3factor": 0.2023,
+      "tax_burden": 0.7825,
+      "interest_burden": 0.6823,
+      "ebit_margin": 0.2476,
+      "roe_5factor": 0.2023,
+      "net_income": 4173000000.0,
+      "revenue": 31562000000.0,
+      "avg_total_assets": 75970500000.0,
+      "avg_equity": 20628000000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.1065,
+      "asset_turnover": 0.402,
+      "equity_multiplier": 3.5398,
+      "roe_3factor": 0.1515,
+      "tax_burden": 0.7768,
+      "interest_burden": 0.6267,
+      "ebit_margin": 0.2187,
+      "roe_5factor": 0.1515,
+      "net_income": 2624000000.0,
+      "revenue": 24648000000.0,
+      "avg_total_assets": 61318000000.0,
+      "avg_equity": 17322500000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.0914,
+      "asset_turnover": 0.8423,
+      "equity_multiplier": 3.2691,
+      "roe_3factor": 0.2516,
+      "tax_burden": 0.794,
+      "interest_burden": 0.7199,
+      "ebit_margin": 0.1599,
+      "roe_5factor": 0.2516,
+      "net_income": 3712000000.0,
+      "revenue": 40617000000.0,
+      "avg_total_assets": 48223500000.0,
+      "avg_equity": 14751500000.0
+    },
+    "2022": {
+      "net_profit_margin": 0.0872,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 0.793,
+      "interest_burden": 0.6841,
+      "ebit_margin": 0.1607,
+      "roe_5factor": null,
+      "net_income": 2773000000.0,
+      "revenue": 31803000000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    },
+    "2021": {
+      "net_profit_margin": null,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": null,
+      "interest_burden": null,
+      "ebit_margin": null,
+      "roe_5factor": null,
+      "net_income": null,
+      "revenue": null,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  }
+}

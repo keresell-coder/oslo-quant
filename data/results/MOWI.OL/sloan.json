@@ -1,0 +1,57 @@
+{
+  "ticker": "MOWI.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:21.887644Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -153000000.0,
+      "cfo_accrual_ratio": -0.0163,
+      "bs_accruals": -220700000.0,
+      "bs_accrual_ratio": -0.0235,
+      "earnings_quality": "Moderate",
+      "net_income": 717900000.0,
+      "operating_cash_flow": 870900000.0,
+      "avg_total_assets": 9391600000.0
+    },
+    "2024": {
+      "cfo_accruals": -448100000.0,
+      "cfo_accrual_ratio": -0.0534,
+      "bs_accruals": 506100000.0,
+      "bs_accrual_ratio": 0.0603,
+      "earnings_quality": "High",
+      "net_income": 468500000.0,
+      "operating_cash_flow": 916600000.0,
+      "avg_total_assets": 8396850000.0
+    },
+    "2023": {
+      "cfo_accruals": -547800000.0,
+      "cfo_accrual_ratio": -0.0695,
+      "bs_accruals": -650700000.0,
+      "bs_accrual_ratio": -0.0825,
+      "earnings_quality": "High",
+      "net_income": 444400000.0,
+      "operating_cash_flow": 992200000.0,
+      "avg_total_assets": 7885150000.0
+    },
+    "2022": {
+      "cfo_accruals": 137600000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 782400000.0,
+      "operating_cash_flow": 644800000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

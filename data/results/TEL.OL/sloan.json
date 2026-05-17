@@ -1,0 +1,57 @@
+{
+  "ticker": "TEL.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:23.164602Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -20261000000.0,
+      "cfo_accrual_ratio": -0.09,
+      "bs_accruals": -11965000000.0,
+      "bs_accrual_ratio": -0.0531,
+      "earnings_quality": "High",
+      "net_income": 10961000000.0,
+      "operating_cash_flow": 31222000000.0,
+      "avg_total_assets": 225229500000.0
+    },
+    "2024": {
+      "cfo_accruals": -13478000000.0,
+      "cfo_accrual_ratio": -0.0603,
+      "bs_accruals": 22201000000.0,
+      "bs_accrual_ratio": 0.0993,
+      "earnings_quality": "High",
+      "net_income": 18003000000.0,
+      "operating_cash_flow": 31481000000.0,
+      "avg_total_assets": 223592500000.0
+    },
+    "2023": {
+      "cfo_accruals": -34001000000.0,
+      "cfo_accrual_ratio": -0.1486,
+      "bs_accruals": 5954000000.0,
+      "bs_accrual_ratio": 0.026,
+      "earnings_quality": "High",
+      "net_income": -4881000000.0,
+      "operating_cash_flow": 29120000000.0,
+      "avg_total_assets": 228813000000.0
+    },
+    "2022": {
+      "cfo_accruals": -29539000000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 9683000000.0,
+      "operating_cash_flow": 39222000000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "ticker": "TEL.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-05-17T08:10:23.167884Z",
+  "periods": {
+    "2025": {
+      "o_score": -0.468,
+      "bankruptcy_probability": 0.3851,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.6588,
+        "wc_ta": 0.4059,
+        "cl_ca": 0.5257,
+        "oeneg": 0,
+        "ni_ta": 0.0495,
+        "cfo_tl": 0.2138,
+        "intwo": 0,
+        "chin": -0.2431
+      }
+    },
+    "2024": {
+      "o_score": -1.3468,
+      "bankruptcy_probability": 0.2064,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.6426,
+        "wc_ta": 0.4401,
+        "cl_ca": 0.4999,
+        "oeneg": 0,
+        "ni_ta": 0.0787,
+        "cfo_tl": 0.2141,
+        "intwo": 0,
+        "chin": 1.0
+      }
+    },
+    "2023": {
+      "o_score": 0.3281,
+      "bankruptcy_probability": 0.5813,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.6775,
+        "wc_ta": 0.3511,
+        "cl_ca": 0.5708,
+        "oeneg": 0,
+        "ni_ta": -0.0224,
+        "cfo_tl": 0.1968,
+        "intwo": 0,
+        "chin": -1.0
+      }
+    },
+    "2022": {
+      "o_score": -0.1177,
+      "bankruptcy_probability": 0.4706,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.7309,
+        "wc_ta": 0.3593,
+        "cl_ca": 0.5848,
+        "oeneg": 0,
+        "ni_ta": 0.0405,
+        "cfo_tl": 0.2243,
+        "intwo": 0,
+        "chin": null
+      }
+    },
+    "2021": {
+      "o_score": -1.32,
+      "bankruptcy_probability": 0.2108,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": null,
+        "cl_ca": null,
+        "oeneg": 0,
+        "ni_ta": null,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    }
+  }
+}

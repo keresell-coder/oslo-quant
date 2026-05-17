@@ -1,0 +1,107 @@
+{
+  "ticker": "KOG.OL",
+  "framework": "piotroski",
+  "computed_at": "2026-05-17T08:10:24.380969Z",
+  "periods": {
+    "2025": {
+      "f_score": 7,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 1,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": 0.0549,
+      "cfo_to_assets": 0.1543,
+      "current_ratio": 3.4441,
+      "gross_margin": 0.5921,
+      "asset_turnover": 0.3824
+    },
+    "2024": {
+      "f_score": 6,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Moderate",
+      "roa": 0.0428,
+      "cfo_to_assets": 0.198,
+      "current_ratio": 3.139,
+      "gross_margin": 0.6296,
+      "asset_turnover": 0.3551
+    },
+    "2023": {
+      "f_score": 6,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": 0.077,
+      "cfo_to_assets": 0.1095,
+      "current_ratio": 3.0221,
+      "gross_margin": 0.6225,
+      "asset_turnover": 0.7632
+    },
+    "2022": {
+      "f_score": 1,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": null,
+      "cfo_to_assets": 0.0256,
+      "current_ratio": 3.0312,
+      "gross_margin": 0.6475,
+      "asset_turnover": 0.7358
+    },
+    "2021": {
+      "f_score": 0,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 0,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": null,
+      "cfo_to_assets": null,
+      "current_ratio": null,
+      "gross_margin": null,
+      "asset_turnover": null
+    }
+  }
+}

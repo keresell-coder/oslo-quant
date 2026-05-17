@@ -1,0 +1,62 @@
+{
+  "ticker": "HAFNI.OL",
+  "framework": "altman",
+  "computed_at": "2026-05-17T08:10:28.755754Z",
+  "periods": {
+    "2025": {
+      "z_score": 12.8649,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.5398,
+      "x2_retained_earnings_to_assets": 0.123,
+      "x3_ebit_to_assets": 0.1534,
+      "x4_equity_to_liabilities": 18.2339,
+      "x5_revenue_to_assets": 0.5986,
+      "market_cap_used": true,
+      "market_cap": 27028289796.0
+    },
+    "2024": {
+      "z_score": 15.1484,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.5446,
+      "x2_retained_earnings_to_assets": 0.1398,
+      "x3_ebit_to_assets": 0.2754,
+      "x4_equity_to_liabilities": 21.0259,
+      "x5_revenue_to_assets": 0.7748,
+      "market_cap_used": true,
+      "market_cap": 30272742500.0
+    },
+    "2023": {
+      "z_score": 14.4247,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.4998,
+      "x2_retained_earnings_to_assets": 0.0071,
+      "x3_ebit_to_assets": 0.2651,
+      "x4_equity_to_liabilities": 20.4292,
+      "x5_revenue_to_assets": 0.6826,
+      "market_cap_used": true,
+      "market_cap": 34447993580.0
+    },
+    "2022": {
+      "z_score": 9.3405,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.4094,
+      "x2_retained_earnings_to_assets": 0.0172,
+      "x3_ebit_to_assets": 0.2625,
+      "x4_equity_to_liabilities": 12.451,
+      "x5_revenue_to_assets": 0.4883,
+      "market_cap_used": true,
+      "market_cap": 24109346129.0
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null,
+      "market_cap_used": false,
+      "market_cap": null
+    }
+  }
+}

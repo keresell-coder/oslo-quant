@@ -1,0 +1,57 @@
+{
+  "ticker": "NOD.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:18.707108Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -99311000.0,
+      "cfo_accrual_ratio": -0.111,
+      "bs_accruals": 116959000.0,
+      "bs_accrual_ratio": 0.1307,
+      "earnings_quality": "High",
+      "net_income": 16385000.0,
+      "operating_cash_flow": 115696000.0,
+      "avg_total_assets": 895033500.0
+    },
+    "2024": {
+      "cfo_accruals": -98855000.0,
+      "cfo_accrual_ratio": -0.1185,
+      "bs_accruals": -28179000.0,
+      "bs_accrual_ratio": -0.0338,
+      "earnings_quality": "High",
+      "net_income": -38504000.0,
+      "operating_cash_flow": 60351000.0,
+      "avg_total_assets": 834475500.0
+    },
+    "2023": {
+      "cfo_accruals": 126623000.0,
+      "cfo_accrual_ratio": 0.1546,
+      "bs_accruals": -86929000.0,
+      "bs_accrual_ratio": -0.1061,
+      "earnings_quality": "Low",
+      "net_income": 7650000.0,
+      "operating_cash_flow": -118973000.0,
+      "avg_total_assets": 819243000.0
+    },
+    "2022": {
+      "cfo_accruals": -20372000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 122339000.0,
+      "operating_cash_flow": 142711000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

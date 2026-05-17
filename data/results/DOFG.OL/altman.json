@@ -1,0 +1,62 @@
+{
+  "ticker": "DOFG.OL",
+  "framework": "altman",
+  "computed_at": "2026-05-17T08:10:14.563276Z",
+  "periods": {
+    "2025": {
+      "z_score": 8.3099,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.3766,
+      "x2_retained_earnings_to_assets": 0.1892,
+      "x3_ebit_to_assets": 0.194,
+      "x4_equity_to_liabilities": 10.8369,
+      "x5_revenue_to_assets": 0.4508,
+      "market_cap_used": true,
+      "market_cap": 22833371353.0
+    },
+    "2024": {
+      "z_score": 6.7501,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.3391,
+      "x2_retained_earnings_to_assets": 0.1454,
+      "x3_ebit_to_assets": 0.0923,
+      "x4_equity_to_liabilities": 9.1151,
+      "x5_revenue_to_assets": 0.3661,
+      "market_cap_used": true,
+      "market_cap": 18321313477.0
+    },
+    "2023": {
+      "z_score": 4.6506,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.2656,
+      "x2_retained_earnings_to_assets": 0.138,
+      "x3_ebit_to_assets": 0.1529,
+      "x4_equity_to_liabilities": 5.3549,
+      "x5_revenue_to_assets": 0.4211,
+      "market_cap_used": true,
+      "market_cap": 8819510595.0
+    },
+    "2022": {
+      "z_score": 1.7182,
+      "zone": "Distress",
+      "x1_working_capital_to_assets": 0.7432,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.1208,
+      "x4_equity_to_liabilities": 0.0252,
+      "x5_revenue_to_assets": 0.4125,
+      "market_cap_used": false,
+      "market_cap": null
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null,
+      "market_cap_used": false,
+      "market_cap": null
+    }
+  }
+}

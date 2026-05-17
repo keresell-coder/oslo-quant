@@ -1,0 +1,37 @@
+{
+  "ticker": "KMAR.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:25.369522Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -964000000.0,
+      "cfo_accrual_ratio": -0.0383,
+      "bs_accruals": 947000000.0,
+      "bs_accrual_ratio": 0.0377,
+      "earnings_quality": "Moderate",
+      "net_income": 3780000000.0,
+      "operating_cash_flow": 4744000000.0,
+      "avg_total_assets": 25142000000.0
+    },
+    "2024": {
+      "cfo_accruals": -1365000000.0,
+      "cfo_accrual_ratio": -0.059,
+      "bs_accruals": 3379000000.0,
+      "bs_accrual_ratio": 0.1461,
+      "earnings_quality": "High",
+      "net_income": 2493000000.0,
+      "operating_cash_flow": 3858000000.0,
+      "avg_total_assets": 23135000000.0
+    },
+    "2023": {
+      "cfo_accruals": 559000000.0,
+      "cfo_accrual_ratio": 0.0282,
+      "bs_accruals": 2407000000.0,
+      "bs_accrual_ratio": 0.1216,
+      "earnings_quality": "Moderate",
+      "net_income": 1188000000.0,
+      "operating_cash_flow": 629000000.0,
+      "avg_total_assets": 19791500000.0
+    }
+  }
+}

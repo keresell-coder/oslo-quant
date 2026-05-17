@@ -1,0 +1,107 @@
+{
+  "ticker": "NOD.OL",
+  "framework": "piotroski",
+  "computed_at": "2026-05-17T08:10:18.702881Z",
+  "periods": {
+    "2025": {
+      "f_score": 8,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 1,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Strong",
+      "roa": 0.0183,
+      "cfo_to_assets": 0.1177,
+      "current_ratio": 2.5293,
+      "gross_margin": 0.5183,
+      "asset_turnover": 0.6789
+    },
+    "2024": {
+      "f_score": 6,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": -0.0461,
+      "cfo_to_assets": 0.0748,
+      "current_ratio": 1.8935,
+      "gross_margin": 0.4731,
+      "asset_turnover": 0.634
+    },
+    "2023": {
+      "f_score": 1,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 0,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": 0.0093,
+      "cfo_to_assets": -0.138,
+      "current_ratio": 1.7327,
+      "gross_margin": 0.5226,
+      "asset_turnover": 0.6296
+    },
+    "2022": {
+      "f_score": 1,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": null,
+      "cfo_to_assets": 0.1838,
+      "current_ratio": 6.5723,
+      "gross_margin": 0.5623,
+      "asset_turnover": 1.0006
+    },
+    "2021": {
+      "f_score": 0,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 0,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": 0,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Weak",
+      "roa": null,
+      "cfo_to_assets": null,
+      "current_ratio": null,
+      "gross_margin": null,
+      "asset_turnover": null
+    }
+  }
+}

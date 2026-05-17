@@ -1,0 +1,47 @@
+{
+  "ticker": "ELK.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:17.682331Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -875000000.0,
+      "cfo_accrual_ratio": -0.0173,
+      "bs_accruals": 323000000.0,
+      "bs_accrual_ratio": 0.0064,
+      "earnings_quality": "Moderate",
+      "net_income": 301000000.0,
+      "operating_cash_flow": 1176000000.0,
+      "avg_total_assets": 50456500000.0
+    },
+    "2024": {
+      "cfo_accruals": -4000000.0,
+      "cfo_accrual_ratio": -0.0001,
+      "bs_accruals": 9013000000.0,
+      "bs_accrual_ratio": 0.1734,
+      "earnings_quality": "Moderate",
+      "net_income": 2026000000.0,
+      "operating_cash_flow": 2030000000.0,
+      "avg_total_assets": 51966000000.0
+    },
+    "2023": {
+      "cfo_accruals": -770000000.0,
+      "cfo_accrual_ratio": -0.0149,
+      "bs_accruals": -5859000000.0,
+      "bs_accrual_ratio": -0.1135,
+      "earnings_quality": "Moderate",
+      "net_income": 1999000000.0,
+      "operating_cash_flow": 2769000000.0,
+      "avg_total_assets": 51640500000.0
+    },
+    "2022": {
+      "cfo_accruals": 247000000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 9561000000.0,
+      "operating_cash_flow": 9314000000.0,
+      "avg_total_assets": null
+    }
+  }
+}

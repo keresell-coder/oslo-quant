@@ -1,0 +1,49 @@
+{
+  "ticker": "KMAR.OL",
+  "framework": "dupont",
+  "computed_at": "2026-05-17T08:10:25.362790Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.1404,
+      "asset_turnover": 1.0708,
+      "equity_multiplier": 4.6141,
+      "roe_3factor": 0.6937,
+      "tax_burden": 0.8355,
+      "interest_burden": 1.0582,
+      "ebit_margin": 0.1588,
+      "roe_5factor": 0.6937,
+      "net_income": 3780000000.0,
+      "revenue": 26922000000.0,
+      "avg_total_assets": 25142000000.0,
+      "avg_equity": 5449000000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.0984,
+      "asset_turnover": 1.0947,
+      "equity_multiplier": 4.6381,
+      "roe_3factor": 0.4998,
+      "tax_burden": 0.7795,
+      "interest_burden": 0.7751,
+      "ebit_margin": 0.1629,
+      "roe_5factor": 0.4998,
+      "net_income": 2493000000.0,
+      "revenue": 25326000000.0,
+      "avg_total_assets": 23135000000.0,
+      "avg_equity": 4988000000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.0574,
+      "asset_turnover": 1.0453,
+      "equity_multiplier": 4.905,
+      "roe_3factor": 0.2944,
+      "tax_burden": 0.711,
+      "interest_burden": 0.6294,
+      "ebit_margin": 0.1283,
+      "roe_5factor": 0.2944,
+      "net_income": 1188000000.0,
+      "revenue": 20688000000.0,
+      "avg_total_assets": 19791500000.0,
+      "avg_equity": 4035000000.0
+    }
+  }
+}

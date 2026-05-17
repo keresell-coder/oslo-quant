@@ -1,0 +1,51 @@
+{
+  "ticker": "VEND.OL",
+  "framework": "altman",
+  "computed_at": "2026-05-17T08:10:19.797235Z",
+  "periods": {
+    "2025": {
+      "z_score": 7.526,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.7206,
+      "x2_retained_earnings_to_assets": 0.3749,
+      "x3_ebit_to_assets": 0.0786,
+      "x4_equity_to_liabilities": 9.4537,
+      "x5_revenue_to_assets": 0.2047,
+      "market_cap_used": true,
+      "market_cap": 59955414602.0
+    },
+    "2024": {
+      "z_score": 7.9036,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.6725,
+      "x2_retained_earnings_to_assets": 0.4904,
+      "x3_ebit_to_assets": 0.0921,
+      "x4_equity_to_liabilities": 9.9116,
+      "x5_revenue_to_assets": 0.1592,
+      "market_cap_used": true,
+      "market_cap": 75258835090.0
+    },
+    "2023": {
+      "z_score": 3.8501,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.7812,
+      "x2_retained_earnings_to_assets": 0.5925,
+      "x3_ebit_to_assets": 0.0291,
+      "x4_equity_to_liabilities": 3.0859,
+      "x5_revenue_to_assets": 0.1354,
+      "market_cap_used": true,
+      "market_cap": 42619209983.0
+    },
+    "2022": {
+      "z_score": 4.8284,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.6668,
+      "x2_retained_earnings_to_assets": 0.4883,
+      "x3_ebit_to_assets": 0.5674,
+      "x4_equity_to_liabilities": 1.8732,
+      "x5_revenue_to_assets": 0.3481,
+      "market_cap_used": true,
+      "market_cap": 28177423319.0
+    }
+  }
+}

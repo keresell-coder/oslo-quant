@@ -1,0 +1,57 @@
+{
+  "ticker": "HAFNI.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:28.747246Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -263207000.0,
+      "cfo_accrual_ratio": -0.0701,
+      "bs_accruals": -47628000.0,
+      "bs_accrual_ratio": -0.0127,
+      "earnings_quality": "High",
+      "net_income": 339682000.0,
+      "operating_cash_flow": 602889000.0,
+      "avg_total_assets": 3757093000.0
+    },
+    "2024": {
+      "cfo_accruals": -256329000.0,
+      "cfo_accrual_ratio": -0.0673,
+      "bs_accruals": 212838000.0,
+      "bs_accrual_ratio": 0.0559,
+      "earnings_quality": "High",
+      "net_income": 774035000.0,
+      "operating_cash_flow": 1030364000.0,
+      "avg_total_assets": 3808115000.0
+    },
+    "2023": {
+      "cfo_accruals": -267531000.0,
+      "cfo_accrual_ratio": -0.0681,
+      "bs_accruals": 861716000.0,
+      "bs_accrual_ratio": 0.2193,
+      "earnings_quality": "High",
+      "net_income": 793275000.0,
+      "operating_cash_flow": 1060806000.0,
+      "avg_total_assets": 3929639500.0
+    },
+    "2022": {
+      "cfo_accruals": -19298000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 751589000.0,
+      "operating_cash_flow": 770887000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "ticker": "ODL.OL",
+  "framework": "altman",
+  "computed_at": "2026-05-17T08:10:16.717644Z",
+  "periods": {
+    "2025": {
+      "z_score": 11.854,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.533,
+      "x2_retained_earnings_to_assets": 0.4228,
+      "x3_ebit_to_assets": 0.161,
+      "x4_equity_to_liabilities": 16.4975,
+      "x5_revenue_to_assets": 0.1926,
+      "market_cap_used": true,
+      "market_cap": 20545965154.0
+    },
+    "2024": {
+      "z_score": 10.309,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.638,
+      "x2_retained_earnings_to_assets": 0.5059,
+      "x3_ebit_to_assets": 0.1581,
+      "x4_equity_to_liabilities": 13.494,
+      "x5_revenue_to_assets": 0.217,
+      "market_cap_used": true,
+      "market_cap": 10954446400.0
+    },
+    "2023": {
+      "z_score": 7.255,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.6291,
+      "x2_retained_earnings_to_assets": 0.4821,
+      "x3_ebit_to_assets": 0.1367,
+      "x4_equity_to_liabilities": 8.6325,
+      "x5_revenue_to_assets": 0.1945,
+      "market_cap_used": true,
+      "market_cap": 7897036468.0
+    },
+    "2022": {
+      "z_score": 5.0655,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.6196,
+      "x2_retained_earnings_to_assets": 0.4145,
+      "x3_ebit_to_assets": 0.135,
+      "x4_equity_to_liabilities": 5.1976,
+      "x5_revenue_to_assets": 0.1777,
+      "market_cap_used": true,
+      "market_cap": 5253762331.0
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null,
+      "market_cap_used": false,
+      "market_cap": null
+    }
+  }
+}

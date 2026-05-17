@@ -1,0 +1,62 @@
+{
+  "ticker": "MOWI.OL",
+  "framework": "altman",
+  "computed_at": "2026-05-17T08:10:21.895626Z",
+  "periods": {
+    "2025": {
+      "z_score": 14.7321,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.1688,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.1444,
+      "x4_equity_to_liabilities": 22.4948,
+      "x5_revenue_to_assets": 0.5562,
+      "market_cap_used": true,
+      "market_cap": 127399284658.0
+    },
+    "2024": {
+      "z_score": 14.1182,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.1526,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.1535,
+      "x4_equity_to_liabilities": 21.2966,
+      "x5_revenue_to_assets": 0.6507,
+      "market_cap_used": true,
+      "market_cap": 96880466216.0
+    },
+    "2023": {
+      "z_score": 13.0975,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.1262,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.174,
+      "x4_equity_to_liabilities": 19.5118,
+      "x5_revenue_to_assets": 0.6649,
+      "market_cap_used": true,
+      "market_cap": 87496638979.0
+    },
+    "2022": {
+      "z_score": 13.6498,
+      "zone": "Safe",
+      "x1_working_capital_to_assets": 0.224,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.2023,
+      "x4_equity_to_liabilities": 20.1028,
+      "x5_revenue_to_assets": 0.6516,
+      "market_cap_used": true,
+      "market_cap": 77277043249.0
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null,
+      "market_cap_used": false,
+      "market_cap": null
+    }
+  }
+}

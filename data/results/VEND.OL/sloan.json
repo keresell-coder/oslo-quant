@@ -1,0 +1,47 @@
+{
+  "ticker": "VEND.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:19.790374Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -2484000000.0,
+      "cfo_accrual_ratio": -0.07,
+      "bs_accruals": -3341000000.0,
+      "bs_accrual_ratio": -0.0942,
+      "earnings_quality": "High",
+      "net_income": -668000000.0,
+      "operating_cash_flow": 1816000000.0,
+      "avg_total_assets": 35479000000.0
+    },
+    "2024": {
+      "cfo_accruals": 3231000000.0,
+      "cfo_accrual_ratio": 0.0671,
+      "bs_accruals": -13723000000.0,
+      "bs_accrual_ratio": -0.2849,
+      "earnings_quality": "Low",
+      "net_income": 4671000000.0,
+      "operating_cash_flow": 1440000000.0,
+      "avg_total_assets": 48167000000.0
+    },
+    "2023": {
+      "cfo_accruals": -145000000.0,
+      "cfo_accrual_ratio": -0.0029,
+      "bs_accruals": 14694000000.0,
+      "bs_accrual_ratio": 0.294,
+      "earnings_quality": "Moderate",
+      "net_income": 1564000000.0,
+      "operating_cash_flow": 1709000000.0,
+      "avg_total_assets": 49972500000.0
+    },
+    "2022": {
+      "cfo_accruals": -24242000000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": -22558000000.0,
+      "operating_cash_flow": 1684000000.0,
+      "avg_total_assets": null
+    }
+  }
+}

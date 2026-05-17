@@ -1,0 +1,63 @@
+{
+  "ticker": "ELK.OL",
+  "framework": "dupont",
+  "computed_at": "2026-05-17T08:10:17.672089Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.0182,
+      "asset_turnover": 0.3277,
+      "equity_multiplier": 2.025,
+      "roe_3factor": 0.0121,
+      "tax_burden": 0.5637,
+      "interest_burden": 0.1531,
+      "ebit_margin": 0.2109,
+      "roe_5factor": 0.0121,
+      "net_income": 301000000.0,
+      "revenue": 16536000000.0,
+      "avg_total_assets": 50456500000.0,
+      "avg_equity": 24916500000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.1138,
+      "asset_turnover": 0.3427,
+      "equity_multiplier": 2.0688,
+      "roe_3factor": 0.0807,
+      "tax_burden": 1.3277,
+      "interest_burden": 0.3208,
+      "ebit_margin": 0.2671,
+      "roe_5factor": 0.0807,
+      "net_income": 2026000000.0,
+      "revenue": 17809000000.0,
+      "avg_total_assets": 51966000000.0,
+      "avg_equity": 25118500000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.0946,
+      "asset_turnover": 0.4092,
+      "equity_multiplier": 1.95,
+      "roe_3factor": 0.0755,
+      "tax_burden": 0.6943,
+      "interest_burden": 0.5091,
+      "ebit_margin": 0.2676,
+      "roe_5factor": 0.0755,
+      "net_income": 1999000000.0,
+      "revenue": 21133000000.0,
+      "avg_total_assets": 51640500000.0,
+      "avg_equity": 26482000000.0
+    },
+    "2022": {
+      "net_profit_margin": 0.2124,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 0.7814,
+      "interest_burden": 0.9648,
+      "ebit_margin": 0.2817,
+      "roe_5factor": null,
+      "net_income": 9561000000.0,
+      "revenue": 45018000000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  }
+}

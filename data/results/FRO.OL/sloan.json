@@ -1,0 +1,57 @@
+{
+  "ticker": "FRO.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:27.579495Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -303379000.0,
+      "cfo_accrual_ratio": -0.0507,
+      "bs_accruals": 769231000.0,
+      "bs_accrual_ratio": 0.1285,
+      "earnings_quality": "High",
+      "net_income": 379081000.0,
+      "operating_cash_flow": 682460000.0,
+      "avg_total_assets": 5987217000.0
+    },
+    "2024": {
+      "cfo_accruals": -240829000.0,
+      "cfo_accrual_ratio": -0.0398,
+      "bs_accruals": 55597000.0,
+      "bs_accrual_ratio": 0.0092,
+      "earnings_quality": "Moderate",
+      "net_income": 495583000.0,
+      "operating_cash_flow": 736412000.0,
+      "avg_total_assets": 6051786500.0
+    },
+    "2023": {
+      "cfo_accruals": -199767000.0,
+      "cfo_accrual_ratio": -0.0375,
+      "bs_accruals": -1100017000.0,
+      "bs_accrual_ratio": -0.2066,
+      "earnings_quality": "Moderate",
+      "net_income": 656414000.0,
+      "operating_cash_flow": 856181000.0,
+      "avg_total_assets": 5325604500.0
+    },
+    "2022": {
+      "cfo_accruals": 90207000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 475537000.0,
+      "operating_cash_flow": 385330000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

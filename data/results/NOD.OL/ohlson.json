@@ -1,0 +1,82 @@
+{
+  "ticker": "NOD.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-05-17T08:10:18.710420Z",
+  "periods": {
+    "2025": {
+      "o_score": -1.0301,
+      "bankruptcy_probability": 0.2631,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.3089,
+        "wc_ta": 0.2463,
+        "cl_ca": 0.3954,
+        "oeneg": 0,
+        "ni_ta": 0.0167,
+        "cfo_tl": 0.3809,
+        "intwo": 0,
+        "chin": 1.0
+      }
+    },
+    "2024": {
+      "o_score": 0.5345,
+      "bankruptcy_probability": 0.6305,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.2937,
+        "wc_ta": 0.1482,
+        "cl_ca": 0.5281,
+        "oeneg": 0,
+        "ni_ta": -0.0477,
+        "cfo_tl": 0.2547,
+        "intwo": 0,
+        "chin": -1.0
+      }
+    },
+    "2023": {
+      "o_score": 1.7015,
+      "bankruptcy_probability": 0.8457,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.3017,
+        "wc_ta": 0.1241,
+        "cl_ca": 0.5771,
+        "oeneg": 0,
+        "ni_ta": 0.0089,
+        "cfo_tl": -0.4573,
+        "intwo": 0,
+        "chin": -0.8823
+      }
+    },
+    "2022": {
+      "o_score": -1.5968,
+      "bankruptcy_probability": 0.1684,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.2482,
+        "wc_ta": 0.1115,
+        "cl_ca": 0.1522,
+        "oeneg": 0,
+        "ni_ta": 0.1576,
+        "cfo_tl": 0.7406,
+        "intwo": 0,
+        "chin": null
+      }
+    },
+    "2021": {
+      "o_score": -1.32,
+      "bankruptcy_probability": 0.2108,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": null,
+        "cl_ca": null,
+        "oeneg": 0,
+        "ni_ta": null,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    }
+  }
+}

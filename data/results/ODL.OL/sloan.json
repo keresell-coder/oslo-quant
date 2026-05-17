@@ -1,0 +1,57 @@
+{
+  "ticker": "ODL.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-17T08:10:16.709489Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -234500000.0,
+      "cfo_accrual_ratio": -0.0961,
+      "bs_accruals": -371900000.0,
+      "bs_accrual_ratio": -0.1523,
+      "earnings_quality": "High",
+      "net_income": 167000000.0,
+      "operating_cash_flow": 401500000.0,
+      "avg_total_assets": 2441300000.0
+    },
+    "2024": {
+      "cfo_accruals": -223000000.0,
+      "cfo_accrual_ratio": -0.0986,
+      "bs_accruals": 9300000.0,
+      "bs_accrual_ratio": 0.0041,
+      "earnings_quality": "High",
+      "net_income": 64700000.0,
+      "operating_cash_flow": 287700000.0,
+      "avg_total_assets": 2261850000.0
+    },
+    "2023": {
+      "cfo_accruals": -42600000.0,
+      "cfo_accrual_ratio": -0.0188,
+      "bs_accruals": 61400000.0,
+      "bs_accrual_ratio": 0.0271,
+      "earnings_quality": "Moderate",
+      "net_income": 222100000.0,
+      "operating_cash_flow": 264700000.0,
+      "avg_total_assets": 2264050000.0
+    },
+    "2022": {
+      "cfo_accruals": -192300000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 82900000.0,
+      "operating_cash_flow": 275200000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  }
+}

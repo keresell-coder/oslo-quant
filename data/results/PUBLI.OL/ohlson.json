@@ -1,0 +1,82 @@
+{
+  "ticker": "PUBLI.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-05-17T08:10:20.882883Z",
+  "periods": {
+    "2025": {
+      "o_score": -0.2922,
+      "bankruptcy_probability": 0.4275,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.622,
+        "wc_ta": 0.3901,
+        "cl_ca": 0.5994,
+        "oeneg": 0,
+        "ni_ta": 0.009,
+        "cfo_tl": 0.0248,
+        "intwo": 0,
+        "chin": 0.9617
+      }
+    },
+    "2024": {
+      "o_score": -0.4066,
+      "bankruptcy_probability": 0.3997,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.521,
+        "wc_ta": 0.4194,
+        "cl_ca": 0.5421,
+        "oeneg": 0,
+        "ni_ta": 0.0008,
+        "cfo_tl": 0.0751,
+        "intwo": 0,
+        "chin": 1.0
+      }
+    },
+    "2023": {
+      "o_score": 1.5189,
+      "bankruptcy_probability": 0.8204,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.6656,
+        "wc_ta": 0.5755,
+        "cl_ca": 0.4148,
+        "oeneg": 0,
+        "ni_ta": -0.1056,
+        "cfo_tl": 0.077,
+        "intwo": 1,
+        "chin": -0.1819
+      }
+    },
+    "2022": {
+      "o_score": 0.8988,
+      "bankruptcy_probability": 0.7107,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.613,
+        "wc_ta": 0.4527,
+        "cl_ca": 0.5373,
+        "oeneg": 0,
+        "ni_ta": -0.0643,
+        "cfo_tl": 0.0542,
+        "intwo": 0,
+        "chin": null
+      }
+    },
+    "2021": {
+      "o_score": -1.32,
+      "bankruptcy_probability": 0.2108,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": null,
+        "cl_ca": null,
+        "oeneg": 0,
+        "ni_ta": null,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    }
+  }
+}

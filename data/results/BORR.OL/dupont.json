@@ -1,0 +1,77 @@
+{
+  "ticker": "BORR.OL",
+  "framework": "dupont",
+  "computed_at": "2026-05-17T08:10:26.303296Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.0441,
+      "asset_turnover": 0.2898,
+      "equity_multiplier": 3.1794,
+      "roe_3factor": 0.0406,
+      "tax_burden": 0.5239,
+      "interest_burden": 0.1901,
+      "ebit_margin": 0.4426,
+      "roe_5factor": 0.0406,
+      "net_income": 45000000.0,
+      "revenue": 1020800000.0,
+      "avg_total_assets": 3522600000.0,
+      "avg_equity": 1107950000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.0812,
+      "asset_turnover": 0.311,
+      "equity_multiplier": 3.2872,
+      "roe_3factor": 0.083,
+      "tax_burden": 0.5852,
+      "interest_burden": 0.2946,
+      "ebit_margin": 0.4713,
+      "roe_5factor": 0.083,
+      "net_income": 82100000.0,
+      "revenue": 1010600000.0,
+      "avg_total_assets": 3249850000.0,
+      "avg_equity": 988650000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.0286,
+      "asset_turnover": 0.2537,
+      "equity_multiplier": 3.2319,
+      "roe_3factor": 0.0235,
+      "tax_burden": 0.3939,
+      "interest_burden": 0.1637,
+      "ebit_margin": 0.444,
+      "roe_5factor": 0.0235,
+      "net_income": 22100000.0,
+      "revenue": 771600000.0,
+      "avg_total_assets": 3040900000.0,
+      "avg_equity": 940900000.0
+    },
+    "2022": {
+      "net_profit_margin": -0.6598,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 1.0671,
+      "interest_burden": -2.6955,
+      "ebit_margin": 0.2294,
+      "roe_5factor": null,
+      "net_income": -292800000.0,
+      "revenue": 443800000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    },
+    "2021": {
+      "net_profit_margin": null,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": null,
+      "interest_burden": null,
+      "ebit_margin": null,
+      "roe_5factor": null,
+      "net_income": null,
+      "revenue": null,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  }
+}

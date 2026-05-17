@@ -1,0 +1,82 @@
+{
+  "ticker": "KOG.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-05-17T08:10:24.388387Z",
+  "periods": {
+    "2025": {
+      "o_score": -3.5605,
+      "bankruptcy_probability": 0.0276,
+      "interpretation": "Low distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": 0.1593,
+        "cl_ca": 0.2903,
+        "oeneg": 0,
+        "ni_ta": 0.0506,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": 0.2279
+      }
+    },
+    "2024": {
+      "o_score": -3.3059,
+      "bankruptcy_probability": 0.0354,
+      "interpretation": "Low distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": 0.1987,
+        "cl_ca": 0.3186,
+        "oeneg": 0,
+        "ni_ta": 0.0378,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": -0.1717
+      }
+    },
+    "2023": {
+      "o_score": -3.483,
+      "bankruptcy_probability": 0.0298,
+      "interpretation": "Low distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": 0.2305,
+        "cl_ca": 0.3309,
+        "oeneg": 0,
+        "ni_ta": 0.0697,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": 0.1448
+      }
+    },
+    "2022": {
+      "o_score": -3.3418,
+      "bankruptcy_probability": 0.0342,
+      "interpretation": "Low distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": 0.253,
+        "cl_ca": 0.3299,
+        "oeneg": 0,
+        "ni_ta": 0.0642,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    },
+    "2021": {
+      "o_score": -1.32,
+      "bankruptcy_probability": 0.2108,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": null,
+        "cl_ca": null,
+        "oeneg": 0,
+        "ni_ta": null,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    }
+  }
+}

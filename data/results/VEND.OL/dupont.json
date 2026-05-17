@@ -1,0 +1,63 @@
+{
+  "ticker": "VEND.OL",
+  "framework": "dupont",
+  "computed_at": "2026-05-17T08:10:19.780485Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": -0.1057,
+      "asset_turnover": 0.1781,
+      "equity_multiplier": 1.2451,
+      "roe_3factor": -0.0234,
+      "tax_burden": 1.6869,
+      "interest_burden": -0.1632,
+      "ebit_margin": 0.3841,
+      "roe_5factor": -0.0234,
+      "net_income": -668000000.0,
+      "revenue": 6318000000.0,
+      "avg_total_assets": 35479000000.0,
+      "avg_equity": 28494000000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.7316,
+      "asset_turnover": 0.1326,
+      "equity_multiplier": 1.2884,
+      "roe_3factor": 0.1249,
+      "tax_burden": 0.9617,
+      "interest_burden": 1.3155,
+      "ebit_margin": 0.5782,
+      "roe_5factor": 0.1249,
+      "net_income": 4671000000.0,
+      "revenue": 6385000000.0,
+      "avg_total_assets": 48167000000.0,
+      "avg_equity": 37384500000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.2054,
+      "asset_turnover": 0.1524,
+      "equity_multiplier": 1.4119,
+      "roe_3factor": 0.0442,
+      "tax_burden": 0.8514,
+      "interest_burden": 1.1215,
+      "ebit_margin": 0.2151,
+      "roe_5factor": 0.0442,
+      "net_income": 1564000000.0,
+      "revenue": 7616000000.0,
+      "avg_total_assets": 49972500000.0,
+      "avg_equity": 35394500000.0
+    },
+    "2022": {
+      "net_profit_margin": -1.4828,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 1.0141,
+      "interest_burden": -0.8969,
+      "ebit_margin": 1.6303,
+      "roe_5factor": null,
+      "net_income": -22558000000.0,
+      "revenue": 15213000000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  }
+}
