@@ -48,6 +48,7 @@ def run(
     fmp_fetcher = _init_fmp()
 
     summary: dict[str, Any] = {}
+    _fx_cache: dict[str, float | None] = {}   # "NOKUSD" → rate, shared across tickers
 
     for ticker in target_tickers:
         log.info("=== Processing %s ===", ticker)
@@ -71,6 +72,11 @@ def run(
 
         # --- Resolve and cross-check currency ---
         currency_info = _resolve_currency(yf_fetcher, ticker, company, force_refresh)
+
+        # --- Convert prices from NOK to the reporting currency ---
+        price_ccy = currency_info["price_currency"]
+        fin_ccy   = currency_info["financial_currency"]
+        stmts = _convert_prices(stmts, price_ccy, fin_ccy, yf_fetcher, _fx_cache)
 
         # --- Compute frameworks ---
         ticker_results: dict[str, Any] = {}
@@ -198,6 +204,53 @@ def _merge_statements(primary: Statements, supplemental: Statements) -> Statemen
         if extra_cols:
             merged[key] = pd.concat([p, s[extra_cols]], axis=1)  # type: ignore[assignment]
     return merged
+
+
+def _convert_prices(
+    stmts: Statements,
+    price_ccy: str,
+    reporting_ccy: str,
+    yf_fetcher: YFinanceFetcher,
+    fx_cache: dict,
+) -> Statements:
+    """Return *stmts* with the prices DataFrame converted from *price_ccy* to *reporting_ccy*.
+
+    The raw Oslo Børs prices are always in NOK. For companies that report financial
+    statements in USD or EUR we convert so that any price-based metric (P/E, P/B, …)
+    divides values in the same currency.
+    """
+    import pandas as pd
+
+    if price_ccy == reporting_ccy:
+        return stmts
+
+    prices: pd.DataFrame = stmts.get("prices")  # type: ignore[assignment]
+    if prices is None or prices.empty:
+        return stmts
+
+    fx_key = f"{price_ccy}{reporting_ccy}"
+    if fx_key not in fx_cache:
+        fx_cache[fx_key] = yf_fetcher.fetch_fx_rate(price_ccy, reporting_ccy)
+
+    rate = fx_cache[fx_key]
+    if rate is None:
+        log.warning(
+            "FX rate %s→%s unavailable; prices remain in %s",
+            price_ccy, reporting_ccy, price_ccy,
+        )
+        return stmts
+
+    converted = prices.copy()
+    for col in ("Open", "High", "Low", "Close"):
+        if col in converted.columns:
+            converted[col] = converted[col] * rate
+
+    log.info(
+        "Converted prices %s→%s (rate=%.6f)", price_ccy, reporting_ccy, rate
+    )
+    merged = dict(stmts)  # type: ignore[assignment]
+    merged["prices"] = converted  # type: ignore[assignment]
+    return merged  # type: ignore[return-value]
 
 
 def _persist(ticker: str, name: str, result: dict) -> None:

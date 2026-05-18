@@ -42,6 +42,23 @@ class YFinanceFetcher(BaseFetcher):
         self._save_cache(cache_dir, stmts)
         return stmts
 
+    def fetch_fx_rate(self, from_ccy: str, to_ccy: str) -> float | None:
+        """Return most-recent closing rate: 1 *from_ccy* = ? *to_ccy*.
+
+        Uses yfinance FX pairs (e.g. NOKUSD=X for NOK→USD).
+        Returns None if the rate cannot be fetched.
+        """
+        if from_ccy == to_ccy:
+            return 1.0
+        fx_symbol = f"{from_ccy}{to_ccy}=X"
+        try:
+            hist = yf.Ticker(fx_symbol).history(period="5d", auto_adjust=True)
+            if hist is not None and not hist.empty:
+                return float(hist["Close"].iloc[-1])
+        except Exception as exc:
+            log.warning("FX rate fetch failed (%s→%s): %s", from_ccy, to_ccy, exc)
+        return None
+
     def fetch_currency_info(self, ticker: str, force_refresh: bool = False) -> dict:
         """Return currency metadata for *ticker*.
 
