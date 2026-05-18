@@ -1,18 +1,16 @@
 {
   "ticker": "BORR.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T21:07:53.886883Z",
+  "computed_at": "2026-05-18T22:06:50.808644Z",
   "periods": {
     "2025": {
-      "z_score": 3.6466,
-      "zone": "Safe",
+      "z_score": 0.7888,
+      "zone": "Distress",
       "x1_working_capital_to_assets": 0.222,
       "x2_retained_earnings_to_assets": -0.3398,
       "x3_ebit_to_assets": 0.1246,
-      "x4_equity_to_liabilities": 5.2718,
-      "x5_revenue_to_assets": 0.2816,
-      "market_cap_used": true,
-      "market_cap": 12668027990.0
+      "x4_book_equity_to_liabilities": 0.5088,
+      "x5_revenue_to_assets": 0.2816
     },
     "2024": {
       "z_score": 0.7891,
@@ -20,10 +18,8 @@
       "x1_working_capital_to_assets": 0.2592,
       "x2_retained_earnings_to_assets": -0.3734,
       "x3_ebit_to_assets": 0.1393,
-      "x4_equity_to_liabilities": 0.4094,
-      "x5_revenue_to_assets": 0.2955,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": 0.4094,
+      "x5_revenue_to_assets": 0.2955
     },
     "2023": {
       "z_score": 0.6457,
@@ -31,10 +27,8 @@
       "x1_working_capital_to_assets": 0.3034,
       "x2_retained_earnings_to_assets": -0.4412,
       "x3_ebit_to_assets": 0.1112,
-      "x4_equity_to_liabilities": 0.4694,
-      "x5_revenue_to_assets": 0.2505,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": 0.4694,
+      "x5_revenue_to_assets": 0.2505
     },
     "2022": {
       "z_score": 0.3888,
@@ -42,10 +36,8 @@
       "x1_working_capital_to_assets": 0.4309,
       "x2_retained_earnings_to_assets": -0.4601,
       "x3_ebit_to_assets": 0.0339,
-      "x4_equity_to_liabilities": 0.4267,
-      "x5_revenue_to_assets": 0.1478,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": 0.4267,
+      "x5_revenue_to_assets": 0.1478
     },
     "2021": {
       "z_score": 0.0,
@@ -53,10 +45,10 @@
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,
-      "x4_equity_to_liabilities": null,
-      "x5_revenue_to_assets": null,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

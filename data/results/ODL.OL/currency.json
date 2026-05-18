@@ -1,0 +1,10 @@
+{
+  "ticker": "ODL.OL",
+  "full_name": "Odfjell SE",
+  "price_currency": "NOK",
+  "financial_currency": "USD",
+  "config_currency": "USD",
+  "yfinance_currency": "USD",
+  "detection_source": "yfinance",
+  "verification_status": "verified"
+}

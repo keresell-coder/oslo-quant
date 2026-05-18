@@ -1,51 +1,43 @@
 {
   "ticker": "ODL.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T21:07:46.166556Z",
+  "computed_at": "2026-05-18T22:06:37.151864Z",
   "periods": {
     "2025": {
-      "z_score": 11.854,
-      "zone": "Safe",
+      "z_score": 2.6408,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.533,
       "x2_retained_earnings_to_assets": 0.4228,
       "x3_ebit_to_assets": 0.161,
-      "x4_equity_to_liabilities": 16.4975,
-      "x5_revenue_to_assets": 0.1926,
-      "market_cap_used": true,
-      "market_cap": 20545965154.0
+      "x4_book_equity_to_liabilities": 1.142,
+      "x5_revenue_to_assets": 0.1926
     },
     "2024": {
-      "z_score": 10.309,
+      "z_score": 3.2496,
       "zone": "Safe",
       "x1_working_capital_to_assets": 0.638,
       "x2_retained_earnings_to_assets": 0.5059,
       "x3_ebit_to_assets": 0.1581,
-      "x4_equity_to_liabilities": 13.494,
-      "x5_revenue_to_assets": 0.217,
-      "market_cap_used": true,
-      "market_cap": 10954445485.0
+      "x4_book_equity_to_liabilities": 1.7284,
+      "x5_revenue_to_assets": 0.217
     },
     "2023": {
-      "z_score": 7.255,
-      "zone": "Safe",
+      "z_score": 2.9897,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.6291,
       "x2_retained_earnings_to_assets": 0.4821,
       "x3_ebit_to_assets": 0.1367,
-      "x4_equity_to_liabilities": 8.6325,
-      "x5_revenue_to_assets": 0.1945,
-      "market_cap_used": true,
-      "market_cap": 7897036468.0
+      "x4_book_equity_to_liabilities": 1.5238,
+      "x5_revenue_to_assets": 0.1945
     },
     "2022": {
-      "z_score": 5.0655,
-      "zone": "Safe",
+      "z_score": 2.6643,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.6196,
       "x2_retained_earnings_to_assets": 0.4145,
       "x3_ebit_to_assets": 0.135,
-      "x4_equity_to_liabilities": 5.1976,
-      "x5_revenue_to_assets": 0.1777,
-      "market_cap_used": true,
-      "market_cap": 5253763234.0
+      "x4_book_equity_to_liabilities": 1.1956,
+      "x5_revenue_to_assets": 0.1777
     },
     "2021": {
       "z_score": 0.0,
@@ -53,10 +45,10 @@
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,
-      "x4_equity_to_liabilities": null,
-      "x5_revenue_to_assets": null,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

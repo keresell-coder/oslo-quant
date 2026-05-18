@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-18T21:07:46.156632Z",
+  "computed_at": "2026-05-18T22:06:37.142761Z",
   "periods": {
     "2025": {
       "cfo_accruals": -234500000.0,
@@ -53,5 +53,7 @@
       "operating_cash_flow": null,
       "avg_total_assets": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

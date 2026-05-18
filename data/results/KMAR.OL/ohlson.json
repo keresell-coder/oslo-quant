@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:53.096196Z",
+  "computed_at": "2026-05-18T22:06:49.437829Z",
   "periods": {
     "2025": {
       "o_score": 0.9379,
@@ -48,5 +48,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

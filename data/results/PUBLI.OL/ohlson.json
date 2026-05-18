@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:49.823635Z",
+  "computed_at": "2026-05-18T22:06:43.022993Z",
   "periods": {
     "2025": {
       "o_score": -0.2922,
@@ -78,5 +78,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

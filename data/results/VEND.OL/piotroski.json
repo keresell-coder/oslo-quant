@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:48.949149Z",
+  "computed_at": "2026-05-18T22:06:41.537022Z",
   "periods": {
     "2025": {
       "f_score": 7,
@@ -83,5 +83,7 @@
       "gross_margin": 0.9639,
       "asset_turnover": 0.3481
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

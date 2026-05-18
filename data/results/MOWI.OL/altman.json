@@ -1,51 +1,43 @@
 {
   "ticker": "MOWI.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T21:07:50.649206Z",
+  "computed_at": "2026-05-18T22:06:44.964805Z",
   "periods": {
     "2025": {
-      "z_score": 14.7321,
-      "zone": "Safe",
+      "z_score": 1.6983,
+      "zone": "Distress",
       "x1_working_capital_to_assets": 0.1688,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1444,
-      "x4_equity_to_liabilities": 22.4948,
-      "x5_revenue_to_assets": 0.5562,
-      "market_cap_used": true,
-      "market_cap": 127399284658.0
+      "x4_book_equity_to_liabilities": 0.7718,
+      "x5_revenue_to_assets": 0.5562
     },
     "2024": {
-      "z_score": 14.1182,
-      "zone": "Safe",
+      "z_score": 1.8466,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.1526,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1535,
-      "x4_equity_to_liabilities": 21.2966,
-      "x5_revenue_to_assets": 0.6507,
-      "market_cap_used": true,
-      "market_cap": 96880458326.0
+      "x4_book_equity_to_liabilities": 0.8439,
+      "x5_revenue_to_assets": 0.6507
     },
     "2023": {
-      "z_score": 13.0975,
-      "zone": "Safe",
+      "z_score": 1.8713,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.1262,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.174,
-      "x4_equity_to_liabilities": 19.5118,
-      "x5_revenue_to_assets": 0.6649,
-      "market_cap_used": true,
-      "market_cap": 87496646869.0
+      "x4_book_equity_to_liabilities": 0.8013,
+      "x5_revenue_to_assets": 0.6649
     },
     "2022": {
-      "z_score": 13.6498,
-      "zone": "Safe",
+      "z_score": 2.1356,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.224,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.2023,
-      "x4_equity_to_liabilities": 20.1028,
-      "x5_revenue_to_assets": 0.6516,
-      "market_cap_used": true,
-      "market_cap": 77277035359.0
+      "x4_book_equity_to_liabilities": 0.9124,
+      "x5_revenue_to_assets": 0.6516
     },
     "2021": {
       "z_score": 0.0,
@@ -53,10 +45,10 @@
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,
-      "x4_equity_to_liabilities": null,
-      "x5_revenue_to_assets": null,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
     }
-  }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
 }

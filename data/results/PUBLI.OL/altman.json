@@ -1,29 +1,25 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T21:07:49.829240Z",
+  "computed_at": "2026-05-18T22:06:43.027451Z",
   "periods": {
     "2025": {
-      "z_score": 0.9193,
+      "z_score": 0.9134,
       "zone": "Distress",
       "x1_working_capital_to_assets": 0.3901,
       "x2_retained_earnings_to_assets": -0.0101,
       "x3_ebit_to_assets": 0.0229,
-      "x4_equity_to_liabilities": 0.6169,
-      "x5_revenue_to_assets": 0.0195,
-      "market_cap_used": true,
-      "market_cap": 21717663383.0
+      "x4_book_equity_to_liabilities": 0.6072,
+      "x5_revenue_to_assets": 0.0195
     },
     "2024": {
-      "z_score": 0.9593,
+      "z_score": 1.1474,
       "zone": "Distress",
       "x1_working_capital_to_assets": 0.4194,
       "x2_retained_earnings_to_assets": -0.0615,
       "x3_ebit_to_assets": 0.0375,
-      "x4_equity_to_liabilities": 0.603,
-      "x5_revenue_to_assets": 0.0567,
-      "market_cap_used": true,
-      "market_cap": 3748069109.0
+      "x4_book_equity_to_liabilities": 0.9163,
+      "x5_revenue_to_assets": 0.0567
     },
     "2023": {
       "z_score": 0.6866,
@@ -31,10 +27,8 @@
       "x1_working_capital_to_assets": 0.5755,
       "x2_retained_earnings_to_assets": -0.0874,
       "x3_ebit_to_assets": -0.0759,
-      "x4_equity_to_liabilities": 0.5025,
-      "x5_revenue_to_assets": 0.0675,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": 0.5025,
+      "x5_revenue_to_assets": 0.0675
     },
     "2022": {
       "z_score": 0.8244,
@@ -42,10 +36,8 @@
       "x1_working_capital_to_assets": 0.4527,
       "x2_retained_earnings_to_assets": 0.016,
       "x3_ebit_to_assets": -0.0521,
-      "x4_equity_to_liabilities": 0.6312,
-      "x5_revenue_to_assets": 0.052,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": 0.6312,
+      "x5_revenue_to_assets": 0.052
     },
     "2021": {
       "z_score": 0.0,
@@ -53,10 +45,10 @@
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,
-      "x4_equity_to_liabilities": null,
-      "x5_revenue_to_assets": null,
-      "market_cap_used": false,
-      "market_cap": null
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

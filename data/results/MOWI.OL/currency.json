@@ -1,0 +1,10 @@
+{
+  "ticker": "MOWI.OL",
+  "full_name": "Mowi ASA",
+  "price_currency": "NOK",
+  "financial_currency": "EUR",
+  "config_currency": "EUR",
+  "yfinance_currency": "EUR",
+  "detection_source": "yfinance",
+  "verification_status": "verified"
+}

@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:46.151276Z",
+  "computed_at": "2026-05-18T22:06:37.137162Z",
   "periods": {
     "2025": {
       "f_score": 6,
@@ -103,5 +103,7 @@
       "gross_margin": null,
       "asset_turnover": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:45.211885Z",
+  "computed_at": "2026-05-18T22:06:35.753053Z",
   "periods": {
     "2025": {
       "o_score": -1.2428,
@@ -63,5 +63,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:45.204478Z",
+  "computed_at": "2026-05-18T22:06:35.745432Z",
   "periods": {
     "2025": {
       "f_score": 7,
@@ -83,5 +83,7 @@
       "gross_margin": 0.6122,
       "asset_turnover": 0.8351
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

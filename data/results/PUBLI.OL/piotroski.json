@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:49.814800Z",
+  "computed_at": "2026-05-18T22:06:43.013815Z",
   "periods": {
     "2025": {
       "f_score": 4,
@@ -103,5 +103,7 @@
       "gross_margin": null,
       "asset_turnover": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

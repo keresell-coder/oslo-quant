@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:46.160614Z",
+  "computed_at": "2026-05-18T22:06:37.147149Z",
   "periods": {
     "2025": {
       "o_score": -0.6036,
@@ -78,5 +78,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

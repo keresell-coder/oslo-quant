@@ -1,0 +1,10 @@
+{
+  "ticker": "KOG.OL",
+  "full_name": "Kongsberg Gruppen ASA",
+  "price_currency": "NOK",
+  "financial_currency": "NOK",
+  "config_currency": "NOK",
+  "yfinance_currency": "NOK",
+  "detection_source": "yfinance",
+  "verification_status": "verified"
+}

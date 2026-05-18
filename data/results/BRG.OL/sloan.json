@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-18T21:07:45.208913Z",
+  "computed_at": "2026-05-18T22:06:35.749904Z",
   "periods": {
     "2025": {
       "cfo_accruals": -736000000.0,
@@ -43,5 +43,7 @@
       "operating_cash_flow": 735000000.0,
       "avg_total_assets": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

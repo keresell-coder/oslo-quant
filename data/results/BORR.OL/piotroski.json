@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:53.871783Z",
+  "computed_at": "2026-05-18T22:06:50.795118Z",
   "periods": {
     "2025": {
       "f_score": 4,
@@ -103,5 +103,7 @@
       "gross_margin": null,
       "asset_turnover": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:55.713470Z",
+  "computed_at": "2026-05-18T22:06:53.904182Z",
   "periods": {
     "2025": {
       "f_score": 4,
@@ -103,5 +103,7 @@
       "gross_margin": null,
       "asset_turnover": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

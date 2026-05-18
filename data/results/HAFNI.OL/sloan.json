@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-18T21:07:55.719171Z",
+  "computed_at": "2026-05-18T22:06:53.910110Z",
   "periods": {
     "2025": {
       "cfo_accruals": -263207000.0,
@@ -53,5 +53,7 @@
       "operating_cash_flow": null,
       "avg_total_assets": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

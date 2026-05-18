@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:47.124647Z",
+  "computed_at": "2026-05-18T22:06:38.750289Z",
   "periods": {
     "2025": {
       "f_score": 7,
@@ -83,5 +83,7 @@
       "gross_margin": 0.482,
       "asset_turnover": 0.8529
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

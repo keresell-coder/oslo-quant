@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:47.132907Z",
+  "computed_at": "2026-05-18T22:06:38.758596Z",
   "periods": {
     "2025": {
       "o_score": 0.3728,
@@ -63,5 +63,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:48.956973Z",
+  "computed_at": "2026-05-18T22:06:41.545146Z",
   "periods": {
     "2025": {
       "o_score": -2.4486,
@@ -63,5 +63,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

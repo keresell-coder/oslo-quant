@@ -1,51 +1,45 @@
 {
   "ticker": "BRG.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T21:07:45.216829Z",
+  "computed_at": "2026-05-18T22:06:35.756952Z",
   "periods": {
     "2025": {
-      "z_score": 5.3951,
+      "z_score": 3.2605,
       "zone": "Safe",
       "x1_working_capital_to_assets": 0.4582,
       "x2_retained_earnings_to_assets": 0.3206,
       "x3_ebit_to_assets": 0.1672,
-      "x4_equity_to_liabilities": 5.1012,
-      "x5_revenue_to_assets": 0.7839,
-      "market_cap_used": true,
-      "market_cap": 19343880767.0
+      "x4_book_equity_to_liabilities": 1.5435,
+      "x5_revenue_to_assets": 0.7839
     },
     "2024": {
-      "z_score": 4.6353,
+      "z_score": 3.0086,
       "zone": "Safe",
       "x1_working_capital_to_assets": 0.4109,
       "x2_retained_earnings_to_assets": 0.3061,
       "x3_ebit_to_assets": 0.1913,
-      "x4_equity_to_liabilities": 3.8329,
-      "x5_revenue_to_assets": 0.7828,
-      "market_cap_used": true,
-      "market_cap": 17225045361.0
+      "x4_book_equity_to_liabilities": 1.1217,
+      "x5_revenue_to_assets": 0.7828
     },
     "2023": {
-      "z_score": 4.5409,
-      "zone": "Safe",
+      "z_score": 2.9751,
+      "zone": "Grey",
       "x1_working_capital_to_assets": 0.3929,
       "x2_retained_earnings_to_assets": 0.2834,
       "x3_ebit_to_assets": 0.1958,
-      "x4_equity_to_liabilities": 3.7598,
-      "x5_revenue_to_assets": 0.7706,
-      "market_cap_used": true,
-      "market_cap": 15870029681.0
+      "x4_book_equity_to_liabilities": 1.1502,
+      "x5_revenue_to_assets": 0.7706
     },
     "2022": {
-      "z_score": 4.6556,
+      "z_score": 3.116,
       "zone": "Safe",
       "x1_working_capital_to_assets": 0.4349,
       "x2_retained_earnings_to_assets": 0.2624,
       "x3_ebit_to_assets": 0.204,
-      "x4_equity_to_liabilities": 3.7636,
-      "x5_revenue_to_assets": 0.8351,
-      "market_cap_used": true,
-      "market_cap": 13808779323.0
+      "x4_book_equity_to_liabilities": 1.1976,
+      "x5_revenue_to_assets": 0.8351
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

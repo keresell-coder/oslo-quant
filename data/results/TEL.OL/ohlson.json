@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:51.517978Z",
+  "computed_at": "2026-05-18T22:06:46.392414Z",
   "periods": {
     "2025": {
       "o_score": -0.468,
@@ -78,5 +78,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

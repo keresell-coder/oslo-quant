@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:51.508525Z",
+  "computed_at": "2026-05-18T22:06:46.382539Z",
   "periods": {
     "2025": {
       "f_score": 5,
@@ -103,5 +103,7 @@
       "gross_margin": null,
       "asset_turnover": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

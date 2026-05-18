@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:50.642947Z",
+  "computed_at": "2026-05-18T22:06:44.959789Z",
   "periods": {
     "2025": {
       "o_score": 0.3275,
@@ -78,5 +78,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
 }

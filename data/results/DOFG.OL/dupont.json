@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "dupont",
-  "computed_at": "2026-05-18T21:07:44.438076Z",
+  "computed_at": "2026-05-18T22:06:34.196516Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.2496,
@@ -73,5 +73,7 @@
       "avg_total_assets": null,
       "avg_equity": null
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

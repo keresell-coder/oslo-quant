@@ -1,0 +1,10 @@
+{
+  "ticker": "HAFNI.OL",
+  "full_name": "Hafnia Ltd",
+  "price_currency": "NOK",
+  "financial_currency": "USD",
+  "config_currency": "USD",
+  "yfinance_currency": "USD",
+  "detection_source": "yfinance",
+  "verification_status": "verified"
+}

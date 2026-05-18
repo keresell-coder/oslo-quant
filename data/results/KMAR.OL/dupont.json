@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "dupont",
-  "computed_at": "2026-05-18T21:07:53.085526Z",
+  "computed_at": "2026-05-18T22:06:49.426817Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.1404,
@@ -45,5 +45,7 @@
       "avg_total_assets": 19791500000.0,
       "avg_equity": 4035000000.0
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

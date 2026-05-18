@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T21:07:55.723350Z",
+  "computed_at": "2026-05-18T22:06:53.914455Z",
   "periods": {
     "2025": {
       "o_score": -1.0207,
@@ -78,5 +78,7 @@
         "chin": null
       }
     }
-  }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK"
 }

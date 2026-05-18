@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-18T21:07:47.129592Z",
+  "computed_at": "2026-05-18T22:06:38.755201Z",
   "periods": {
     "2025": {
       "cfo_accruals": -875000000.0,
@@ -43,5 +43,7 @@
       "operating_cash_flow": 9314000000.0,
       "avg_total_assets": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

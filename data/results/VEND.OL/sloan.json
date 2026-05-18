@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-18T21:07:48.953808Z",
+  "computed_at": "2026-05-18T22:06:41.541825Z",
   "periods": {
     "2025": {
       "cfo_accruals": -2484000000.0,
@@ -43,5 +43,7 @@
       "operating_cash_flow": 1684000000.0,
       "avg_total_assets": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

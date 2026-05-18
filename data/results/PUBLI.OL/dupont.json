@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "dupont",
-  "computed_at": "2026-05-18T21:07:49.806494Z",
+  "computed_at": "2026-05-18T22:06:43.005288Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.4638,
@@ -73,5 +73,7 @@
       "avg_total_assets": null,
       "avg_equity": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

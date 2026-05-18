@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-18T21:07:51.513925Z",
+  "computed_at": "2026-05-18T22:06:46.388143Z",
   "periods": {
     "2025": {
       "cfo_accruals": -20261000000.0,
@@ -53,5 +53,7 @@
       "operating_cash_flow": null,
       "avg_total_assets": null
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }

@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T21:07:53.090666Z",
+  "computed_at": "2026-05-18T22:06:49.432044Z",
   "periods": {
     "2025": {
       "f_score": 7,
@@ -63,5 +63,7 @@
       "gross_margin": 0.6171,
       "asset_turnover": 0.9654
     }
-  }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
 }
