@@ -69,9 +69,8 @@ def _fake_results():
                         "x1_working_capital_to_assets": 0.14,
                         "x2_retained_earnings_to_assets": 0.22,
                         "x3_ebit_to_assets": 0.08,
-                        "x4_equity_to_liabilities": 0.6,
+                        "x4_book_equity_to_liabilities": 0.6,
                         "x5_revenue_to_assets": 0.45,
-                        "market_cap_used": True, "market_cap": 50_000_000,
                     }
                 },
             },
@@ -93,7 +92,7 @@ class TestReportGeneration:
             out = generate(output_path=tmp_path / "index.html")
         html = out.read_text()
         assert "TEL.OL" in html
-        assert "Oslo Quant Dashboard" in html
+        assert "Oslo Quant" in html
         assert "Piotroski" in html
         assert "Altman" in html
         assert "DuPont" in html

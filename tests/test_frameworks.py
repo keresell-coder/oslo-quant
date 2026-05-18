@@ -164,9 +164,11 @@ class TestAltman:
         zone = result["periods"]["2023"]["zone"]
         assert zone in ("Safe", "Grey"), f"Expected Safe/Grey, got {zone}"
 
-    def test_market_cap_used_with_prices(self):
+    def test_x4_uses_book_equity_key(self):
         result = self.fw.compute(self.stmts, TICKER)
-        assert result["periods"]["2023"]["market_cap_used"] is True
+        # Key renamed when we switched from market cap to book equity for X4
+        assert "x4_book_equity_to_liabilities" in result["periods"]["2023"]
+        assert "market_cap_used" not in result["periods"]["2023"]
 
 
 # ---------------------------------------------------------------------------

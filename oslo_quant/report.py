@@ -1,9 +1,10 @@
-"""HTML dashboard generator — reads data/results/ and writes report.html."""
+"""HTML dashboard generator — reads data/results/ and writes index.html."""
 
 from __future__ import annotations
 
 import datetime
 import json
+import math
 import sys
 from pathlib import Path
 from typing import Any
@@ -16,10 +17,9 @@ from oslo_quant.config import COMPANIES, DATA_RESULTS, ROOT
 # ---------------------------------------------------------------------------
 
 def generate(output_path: Path | None = None) -> Path:
-    """Build report.html from all computed JSON results."""
+    """Build index.html from all computed JSON results."""
     if output_path is None:
         output_path = ROOT / "index.html"
-
     data = _load_results()
     output_path.write_text(_build_html(data), encoding="utf-8")
     return output_path
@@ -56,14 +56,20 @@ def _load_results() -> dict[str, dict[str, Any]]:
 
 def _pct(v: Any, decimals: int = 1) -> str:
     try:
-        return f"{float(v) * 100:.{decimals}f}%"
+        f = float(v)
+        if math.isnan(f) or math.isinf(f):
+            return "—"
+        return f"{f * 100:.{decimals}f}%"
     except (TypeError, ValueError):
         return "—"
 
 
 def _num(v: Any, decimals: int = 2) -> str:
     try:
-        return f"{float(v):.{decimals}f}"
+        f = float(v)
+        if math.isnan(f) or math.isinf(f):
+            return "—"
+        return f"{f:.{decimals}f}"
     except (TypeError, ValueError):
         return "—"
 
@@ -71,6 +77,8 @@ def _num(v: Any, decimals: int = 2) -> str:
 def _large(v: Any) -> str:
     try:
         n = float(v)
+        if math.isnan(n) or math.isinf(n):
+            return "—"
         if abs(n) >= 1_000_000_000:
             return f"{n / 1_000_000_000:.1f}B"
         if abs(n) >= 1_000_000:
@@ -82,16 +90,17 @@ def _large(v: Any) -> str:
 
 def _badge(text: str, color: str) -> str:
     palette = {
-        "green":  "#16a34a",
-        "yellow": "#d97706",
-        "red":    "#dc2626",
-        "blue":   "#2563eb",
-        "gray":   "#6b7280",
+        "green":  ("#166534", "#dcfce7"),
+        "yellow": ("#92400e", "#fef3c7"),
+        "red":    ("#991b1b", "#fee2e2"),
+        "blue":   ("#1e40af", "#dbeafe"),
+        "gray":   ("#374151", "#f3f4f6"),
     }
-    bg = palette.get(color, palette["gray"])
+    fg, bg = palette.get(color, palette["gray"])
     return (
-        f'<span style="display:inline-block;padding:2px 8px;border-radius:12px;'
-        f'font-size:0.78rem;font-weight:600;color:#fff;background:{bg}">{text}</span>'
+        f'<span style="display:inline-block;padding:2px 10px;border-radius:99px;'
+        f'font-size:0.73rem;font-weight:600;color:{fg};background:{bg};'
+        f'border:1px solid {fg}22;white-space:nowrap">{text}</span>'
     )
 
 
@@ -104,37 +113,36 @@ def _latest(fw: dict) -> tuple[str, dict] | tuple[None, None]:
 
 
 # ---------------------------------------------------------------------------
-# Summary table row
+# Summary table
 # ---------------------------------------------------------------------------
 
 def _summary_row(ticker: str, fws: dict) -> str:
-    # DuPont
+    period_cell = "—"
+
     roe = npm = "—"
     if "dupont" in fws:
-        _, p = _latest(fws["dupont"])
+        yr, p = _latest(fws["dupont"])
         if p:
+            period_cell = yr or "—"
             roe = _pct(p.get("roe_3factor"))
             npm = _pct(p.get("net_profit_margin"))
 
-    # Piotroski
     piotroski = "—"
     if "piotroski" in fws:
         _, p = _latest(fws["piotroski"])
         if p:
             s = p.get("f_score", 0)
             c = "green" if s >= 8 else ("yellow" if s >= 5 else "red")
-            piotroski = _badge(f"F{s} · {p.get('interpretation', '')}", c)
+            piotroski = _badge(f"F{s} &nbsp;{p.get('interpretation','')}", c)
 
-    # Sloan
     sloan = "—"
     if "sloan" in fws:
         _, p = _latest(fws["sloan"])
         if p:
             q = p.get("earnings_quality", "Unknown")
-            c = "green" if q == "High" else ("yellow" if q == "Moderate" else "red")
-            sloan = _badge(f"{q} ({_pct(p.get('cfo_accrual_ratio'))})", c)
+            c = "green" if q == "High" else ("yellow" if q == "Moderate" else ("red" if q == "Low" else "gray"))
+            sloan = _badge(f"{q} &nbsp;({_pct(p.get('cfo_accrual_ratio'))})", c)
 
-    # Ohlson
     ohlson = "—"
     if "ohlson" in fws:
         _, p = _latest(fws["ohlson"])
@@ -143,32 +151,31 @@ def _summary_row(ticker: str, fws: dict) -> str:
             if prob is not None:
                 c = "green" if prob < 0.10 else ("yellow" if prob < 0.30 else "red")
                 label = p.get("interpretation", "").replace(" distress risk", "")
-                ohlson = _badge(f"{_pct(prob)} · {label}", c)
+                ohlson = _badge(f"{_pct(prob)} &nbsp;{label}", c)
 
-    # Altman
     altman = "—"
     if "altman" in fws:
         _, p = _latest(fws["altman"])
         if p:
             z = _num(p.get("z_score"))
             zone = p.get("zone", "Unknown")
-            c = "green" if zone == "Safe" else ("yellow" if zone == "Grey" else "red")
-            altman = _badge(f"Z={z} · {zone}", c)
+            c = "green" if zone == "Safe" else ("yellow" if zone == "Grey" else ("red" if zone == "Distress" else "gray"))
+            altman = _badge(f"Z={z} &nbsp;{zone}", c)
 
     return (
-        f"<tr>"
-        f"<td class='tk'>{ticker}</td>"
-        f"<td>{roe}</td><td>{npm}</td>"
-        f"<td>{piotroski}</td>"
-        f"<td>{sloan}</td>"
-        f"<td>{ohlson}</td>"
-        f"<td>{altman}</td>"
-        f"</tr>"
+        f'<tr onclick="toggleCard(\'{ticker}\')" style="cursor:pointer">'
+        f'<td class="tk">{ticker}<div class="period-lbl">{period_cell}</div></td>'
+        f'<td>{roe}</td><td>{npm}</td>'
+        f'<td>{piotroski}</td>'
+        f'<td>{sloan}</td>'
+        f'<td>{ohlson}</td>'
+        f'<td>{altman}</td>'
+        f'</tr>'
     )
 
 
 # ---------------------------------------------------------------------------
-# Detail accordion per company
+# Detail cards
 # ---------------------------------------------------------------------------
 
 def _detail_card(ticker: str, fws: dict) -> str:
@@ -177,39 +184,46 @@ def _detail_card(ticker: str, fws: dict) -> str:
         for name in ["dupont", "piotroski", "sloan", "ohlson", "altman"]
         if name in fws and fws[name].get("periods")
     )
+    if not sections:
+        return ""
     return (
-        f"<details class='card'>"
-        f"<summary>{ticker}</summary>"
-        f"<div class='card-body'>{sections}</div>"
-        f"</details>"
+        f'<div id="card-{ticker}" class="detail-card" style="display:none">'
+        f'<div class="card-header">'
+        f'<span class="card-ticker">{ticker}</span>'
+        f'<button class="card-close" onclick="toggleCard(\'{ticker}\')" '
+        f'aria-label="Close">✕</button>'
+        f'</div>'
+        f'<div class="card-body">{sections}</div>'
+        f'</div>'
     )
 
 
 def _fw_section(name: str, fw: dict) -> str:
     titles = {
-        "dupont": "DuPont Decomposition",
+        "dupont":    "DuPont Decomposition",
         "piotroski": "Piotroski F-Score",
-        "sloan": "Sloan Accruals",
-        "ohlson": "Ohlson O-Score",
-        "altman": "Altman Z-Score",
+        "sloan":     "Sloan Accruals",
+        "ohlson":    "Ohlson O-Score",
+        "altman":    "Altman Z-Score",
     }
     periods = fw.get("periods", {})
     cols = sorted(periods.keys(), reverse=True)
     th = "".join(f"<th>{c}</th>" for c in cols)
     builders = {
-        "dupont": _dupont_rows,
+        "dupont":    _dupont_rows,
         "piotroski": _piotroski_rows,
-        "sloan": _sloan_rows,
-        "ohlson": _ohlson_rows,
-        "altman": _altman_rows,
+        "sloan":     _sloan_rows,
+        "ohlson":    _ohlson_rows,
+        "altman":    _altman_rows,
     }
     rows = builders[name](periods, cols)
     return (
-        f"<div class='fw'><h4>{titles[name]}</h4>"
-        f"<div class='tscroll'><table>"
-        f"<thead><tr><th>Metric</th>{th}</tr></thead>"
-        f"<tbody>{rows}</tbody>"
-        f"</table></div></div>"
+        f'<div class="fw-block">'
+        f'<h4 class="fw-title">{titles[name]}</h4>'
+        f'<div class="tscroll"><table class="fw-table">'
+        f'<thead><tr><th>Metric</th>{th}</tr></thead>'
+        f'<tbody>{rows}</tbody>'
+        f'</table></div></div>'
     )
 
 
@@ -217,11 +231,10 @@ def _fw_section(name: str, fw: dict) -> str:
 # Per-framework row builders
 # ---------------------------------------------------------------------------
 
-def _row(label: str, cols: list[str], data: dict, key: str, fmt=_num) -> str:
-    cells = "".join(
-        f"<td>{fmt(data.get(c, {}).get(key))}</td>" for c in cols
-    )
-    return f"<tr><td class='ml'>{label}</td>{cells}</tr>"
+def _row(label: str, cols: list[str], src: dict, key: str, fmt=_num, indent: bool = False) -> str:
+    cells = "".join(f"<td>{fmt(src.get(c, {}).get(key))}</td>" for c in cols)
+    cls = ' class="indent"' if indent else ""
+    return f"<tr><td{cls}>{label}</td>{cells}</tr>"
 
 
 def _dupont_rows(periods: dict, cols: list[str]) -> str:
@@ -233,12 +246,11 @@ def _dupont_rows(periods: dict, cols: list[str]) -> str:
     r += _row("EBIT Margin", cols, periods, "ebit_margin", _pct)
     r += _row("Tax Burden", cols, periods, "tax_burden")
     r += _row("Interest Burden", cols, periods, "interest_burden")
-    r += _row("ROE (5-factor)", cols, periods, "roe_5factor", _pct)
+    r += _row("ROE (5-factor check)", cols, periods, "roe_5factor", _pct)
     return r
 
 
 def _piotroski_rows(periods: dict, cols: list[str]) -> str:
-    # Total score with badge
     cells = ""
     for c in cols:
         s = periods.get(c, {}).get("f_score")
@@ -247,49 +259,53 @@ def _piotroski_rows(periods: dict, cols: list[str]) -> str:
             cells += f"<td>{_badge(str(s), color)}</td>"
         else:
             cells += "<td>—</td>"
-    r = f"<tr><td class='ml'>F-Score (0–9)</td>{cells}</tr>"
+    r = f"<tr><td><strong>F-Score (0–9)</strong></td>{cells}</tr>"
 
     signals = [
-        ("F1_positive_roa", "F1 Positive ROA"),
-        ("F2_positive_cfo", "F2 Positive CFO"),
-        ("F3_roa_increasing", "F3 ROA Increasing"),
-        ("F4_accruals_quality", "F4 Accruals Quality"),
-        ("F5_leverage_decreasing", "F5 Leverage ↓"),
-        ("F6_liquidity_improving", "F6 Liquidity ↑"),
-        ("F7_no_dilution", "F7 No Dilution"),
-        ("F8_gross_margin_improving", "F8 Gross Margin ↑"),
-        ("F9_asset_turnover_improving", "F9 Asset Turnover ↑"),
+        ("F1_positive_roa",            "F1 · Positive ROA"),
+        ("F2_positive_cfo",            "F2 · Positive operating cash flow"),
+        ("F3_roa_increasing",          "F3 · ROA improving year-on-year"),
+        ("F4_accruals_quality",        "F4 · Cash flow exceeds net income"),
+        ("F5_leverage_decreasing",     "F5 · Long-term debt ratio falling"),
+        ("F6_liquidity_improving",     "F6 · Current ratio improving"),
+        ("F7_no_dilution",             "F7 · No share issuance (no dilution)"),
+        ("F8_gross_margin_improving",  "F8 · Gross margin improving"),
+        ("F9_asset_turnover_improving","F9 · Asset turnover improving"),
     ]
     for key, label in signals:
         cells = ""
         for c in cols:
             v = periods.get(c, {}).get("signals", {}).get(key)
-            cells += f"<td>{'✓' if v == 1 else ('✗' if v == 0 else '—')}</td>"
-        r += f"<tr><td class='ml sig'>{label}</td>{cells}</tr>"
+            if v == 1:
+                cells += '<td style="color:#166534;font-weight:600">✓</td>'
+            elif v == 0:
+                cells += '<td style="color:#9ca3af">✗</td>'
+            else:
+                cells += "<td>—</td>"
+        r += f'<tr><td class="indent">{label}</td>{cells}</tr>'
 
     r += _row("Current Ratio", cols, periods, "current_ratio")
     r += _row("Gross Margin", cols, periods, "gross_margin", _pct)
+    r += _row("Asset Turnover", cols, periods, "asset_turnover")
     return r
 
 
 def _sloan_rows(periods: dict, cols: list[str]) -> str:
-    # Quality badge
     cells = ""
     for c in cols:
         q = periods.get(c, {}).get("earnings_quality", "Unknown")
         color = "green" if q == "High" else ("yellow" if q == "Moderate" else ("red" if q == "Low" else "gray"))
         cells += f"<td>{_badge(q, color)}</td>"
-    r = f"<tr><td class='ml'>Earnings Quality</td>{cells}</tr>"
+    r = f"<tr><td><strong>Earnings Quality</strong></td>{cells}</tr>"
     r += _row("CFO Accrual Ratio", cols, periods, "cfo_accrual_ratio", _pct)
-    r += _row("BS Accrual Ratio", cols, periods, "bs_accrual_ratio", _pct)
+    r += _row("BS Accrual Ratio",  cols, periods, "bs_accrual_ratio",  _pct)
     r += _row("Operating Cash Flow", cols, periods, "operating_cash_flow", _large)
-    r += _row("Net Income", cols, periods, "net_income", _large)
+    r += _row("Net Income",          cols, periods, "net_income",          _large)
     return r
 
 
 def _ohlson_rows(periods: dict, cols: list[str]) -> str:
     r = _row("O-Score", cols, periods, "o_score")
-    # Probability badge
     cells = ""
     for c in cols:
         prob = periods.get(c, {}).get("bankruptcy_probability")
@@ -298,35 +314,33 @@ def _ohlson_rows(periods: dict, cols: list[str]) -> str:
             cells += f"<td>{_badge(_pct(prob), color)}</td>"
         else:
             cells += "<td>—</td>"
-    r += f"<tr><td class='ml'>Bankruptcy Probability</td>{cells}</tr>"
-
-    inp_cols = {c: periods.get(c, {}).get("inputs", {}) for c in cols}
-    r += _row("TL / TA (Leverage)", cols, inp_cols, "tl_ta")
-    r += _row("WC / TA", cols, inp_cols, "wc_ta")
-    r += _row("NI / TA (ROA)", cols, inp_cols, "ni_ta", _pct)
-    r += _row("CFO / TL", cols, inp_cols, "cfo_tl")
+    r += f"<tr><td><strong>Bankruptcy Probability</strong></td>{cells}</tr>"
+    inp = {c: periods.get(c, {}).get("inputs", {}) for c in cols}
+    r += _row("Total Liabilities / Total Assets", cols, inp, "tl_ta")
+    r += _row("Working Capital / Total Assets",   cols, inp, "wc_ta")
+    r += _row("Net Income / Total Assets (ROA)",  cols, inp, "ni_ta", _pct)
+    r += _row("CFO / Total Liabilities",          cols, inp, "cfo_tl")
     return r
 
 
 def _altman_rows(periods: dict, cols: list[str]) -> str:
-    # Zone badge
     cells = ""
     for c in cols:
         z = periods.get(c, {}).get("z_score")
         zone = periods.get(c, {}).get("zone", "Unknown")
-        color = "green" if zone == "Safe" else ("yellow" if zone == "Grey" else "red")
+        color = "green" if zone == "Safe" else ("yellow" if zone == "Grey" else ("red" if zone == "Distress" else "gray"))
         cells += f"<td>{_badge(f'Z={_num(z)} · {zone}', color)}</td>"
-    r = f"<tr><td class='ml'>Z-Score &amp; Zone</td>{cells}</tr>"
-    r += _row("X1  WC / Assets", cols, periods, "x1_working_capital_to_assets")
-    r += _row("X2  RE / Assets", cols, periods, "x2_retained_earnings_to_assets")
-    r += _row("X3  EBIT / Assets", cols, periods, "x3_ebit_to_assets", _pct)
-    r += _row("X4  Equity / Liab", cols, periods, "x4_equity_to_liabilities")
-    r += _row("X5  Revenue / Assets", cols, periods, "x5_revenue_to_assets")
+    r = f"<tr><td><strong>Z-Score &amp; Zone</strong></td>{cells}</tr>"
+    r += _row("X1  Working Capital / Assets",    cols, periods, "x1_working_capital_to_assets")
+    r += _row("X2  Retained Earnings / Assets",  cols, periods, "x2_retained_earnings_to_assets")
+    r += _row("X3  EBIT / Assets",               cols, periods, "x3_ebit_to_assets", _pct)
+    r += _row("X4  Book Equity / Liabilities",   cols, periods, "x4_book_equity_to_liabilities")
+    r += _row("X5  Revenue / Assets",            cols, periods, "x5_revenue_to_assets")
     return r
 
 
 # ---------------------------------------------------------------------------
-# Full HTML template
+# Full HTML
 # ---------------------------------------------------------------------------
 
 def _build_html(data: dict) -> str:
@@ -341,74 +355,227 @@ def _build_html(data: dict) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oslo Quant Dashboard</title>
+<title>Oslo Quant — Financial Dashboard</title>
 <style>
+/* ── Reset & base ─────────────────────────────────────────── */
 *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
-body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  background:#f1f5f9;color:#1e293b;font-size:14px;line-height:1.5}}
-a{{color:inherit}}
+:root{{
+  --navy:#0f172a; --navy2:#1e293b; --navy3:#334155;
+  --slate:#64748b; --muted:#94a3b8; --border:#e2e8f0;
+  --bg:#f8fafc; --white:#ffffff;
+  --green-fg:#166534; --green-bg:#dcfce7;
+  --yellow-fg:#92400e; --yellow-bg:#fef3c7;
+  --red-fg:#991b1b; --red-bg:#fee2e2;
+  --accent:#2563eb;
+}}
+html{{scroll-behavior:smooth}}
+body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  background:var(--bg);color:var(--navy2);font-size:14px;line-height:1.6}}
 
-/* Header */
-header{{background:#0f172a;color:#f8fafc;padding:24px 32px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}}
-header h1{{font-size:1.4rem;font-weight:700;letter-spacing:-0.3px}}
-header h1 span{{color:#38bdf8}}
-.meta{{font-size:0.8rem;color:#94a3b8}}
+/* ── Header ───────────────────────────────────────────────── */
+header{{
+  background:var(--navy);
+  border-bottom:3px solid var(--accent);
+  padding:20px 32px;
+  display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px
+}}
+.logo{{display:flex;align-items:baseline;gap:10px}}
+.logo h1{{font-size:1.5rem;font-weight:800;color:#f8fafc;letter-spacing:-0.5px}}
+.logo h1 span{{color:#60a5fa}}
+.logo .tagline{{font-size:0.78rem;color:var(--muted);font-style:italic}}
+.meta-pill{{
+  background:var(--navy2);border:1px solid var(--navy3);border-radius:8px;
+  padding:6px 14px;font-size:0.75rem;color:var(--muted);text-align:right;line-height:1.8
+}}
+.meta-pill strong{{color:#f8fafc}}
 
-/* Layout */
-main{{max-width:1400px;margin:0 auto;padding:24px 16px}}
+/* ── Layout ───────────────────────────────────────────────── */
+main{{max-width:1440px;margin:0 auto;padding:28px 20px 60px}}
 
-/* Section headings */
-h2{{font-size:1.05rem;font-weight:700;color:#0f172a;margin:32px 0 12px;
-  padding-bottom:6px;border-bottom:2px solid #e2e8f0}}
-h4{{font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
-  color:#475569;margin:16px 0 6px}}
+/* ── Section headings ─────────────────────────────────────── */
+.section-title{{
+  font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--slate);margin:32px 0 10px;
+  display:flex;align-items:center;gap:10px
+}}
+.section-title::after{{content:"";flex:1;height:1px;background:var(--border)}}
 
-/* Summary table */
-.tscroll{{overflow-x:auto;-webkit-overflow-scrolling:touch}}
-table{{border-collapse:collapse;width:100%;white-space:nowrap}}
-thead th{{background:#1e293b;color:#f1f5f9;padding:8px 12px;text-align:left;
-  font-size:0.75rem;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}}
-tbody tr:nth-child(even){{background:#f8fafc}}
-tbody tr:hover{{background:#e0f2fe}}
-td{{padding:7px 12px;border-bottom:1px solid #e2e8f0;vertical-align:middle}}
-td.tk{{font-weight:700;font-size:0.85rem;color:#0f172a;white-space:nowrap}}
+/* ── Legend panel ─────────────────────────────────────────── */
+.legend-panel{{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  margin-bottom:24px;overflow:hidden
+}}
+.legend-toggle{{
+  width:100%;border:none;background:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;font-weight:700;font-size:0.88rem;color:var(--navy2);
+  text-align:left
+}}
+.legend-toggle .arrow{{transition:transform .25s;font-size:0.75rem;color:var(--slate)}}
+.legend-toggle[aria-expanded="true"] .arrow{{transform:rotate(180deg)}}
+.legend-body{{display:none;padding:0 20px 20px;border-top:1px solid var(--border)}}
+.legend-body.open{{display:block}}
 
-/* Accordion cards */
-.card{{background:#fff;border:1px solid #e2e8f0;border-radius:10px;
-  margin-bottom:10px;overflow:hidden}}
-.card summary{{padding:14px 18px;font-weight:700;font-size:0.95rem;cursor:pointer;
-  user-select:none;list-style:none;display:flex;align-items:center;gap:8px;
-  background:#f8fafc}}
-.card summary::before{{content:"▶";font-size:0.6rem;color:#94a3b8;
-  transition:transform .2s;display:inline-block}}
-.card[open] summary::before{{transform:rotate(90deg)}}
-.card-body{{padding:16px 18px;border-top:1px solid #e2e8f0}}
+.color-guide{{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}}
+.cg-item{{display:flex;align-items:center;gap:6px;font-size:0.78rem}}
 
-/* Framework sections */
-.fw{{margin-bottom:20px}}
-.fw table thead th{{background:#334155}}
-.fw table td,.fw table th{{padding:5px 10px}}
-td.ml{{font-size:0.8rem;color:#334155;min-width:160px}}
-td.ml.sig{{padding-left:20px;color:#64748b}}
+.fw-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:4px}}
+.fw-card{{
+  background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px
+}}
+.fw-card h5{{font-size:0.8rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.6px;color:var(--accent);margin-bottom:6px}}
+.fw-card p{{font-size:0.79rem;color:var(--navy3);line-height:1.6;margin-bottom:6px}}
+.fw-card .reading{{font-size:0.75rem;color:var(--slate);border-top:1px solid var(--border);
+  padding-top:6px;margin-top:6px}}
 
-/* Footer */
-footer{{text-align:center;padding:24px;color:#94a3b8;font-size:0.75rem}}
+.disclaimer{{
+  margin-top:16px;padding:10px 14px;border-radius:6px;
+  background:#fef9c3;border:1px solid #fde047;
+  font-size:0.76rem;color:#713f12;line-height:1.6
+}}
+.disclaimer strong{{display:block;margin-bottom:2px}}
+
+/* ── Summary table ────────────────────────────────────────── */
+.tscroll{{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;
+  border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)}}
+table{{border-collapse:collapse;width:100%;min-width:800px}}
+thead th{{
+  background:var(--navy2);color:#f1f5f9;padding:11px 14px;text-align:left;
+  font-size:0.7rem;text-transform:uppercase;letter-spacing:.7px;
+  position:sticky;top:0;white-space:nowrap
+}}
+thead th:first-child{{min-width:120px}}
+tbody tr{{background:var(--white);transition:background .12s}}
+tbody tr:nth-child(even){{background:#fafbfc}}
+tbody tr:hover{{background:#eff6ff}}
+td{{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:middle}}
+td.tk{{font-weight:700;font-size:0.88rem;color:var(--navy);white-space:nowrap}}
+.period-lbl{{font-size:0.68rem;font-weight:400;color:var(--muted)}}
+
+/* ── Detail cards ─────────────────────────────────────────── */
+#detail-area{{margin-top:20px}}
+.detail-card{{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  margin-bottom:16px;overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.08)
+}}
+.card-header{{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;background:var(--navy2);
+}}
+.card-ticker{{font-weight:800;font-size:1.05rem;color:#f8fafc;letter-spacing:-.3px}}
+.card-close{{
+  border:none;background:transparent;color:var(--muted);font-size:1rem;
+  cursor:pointer;padding:2px 6px;border-radius:4px;transition:color .15s
+}}
+.card-close:hover{{color:#f87171}}
+.card-body{{padding:20px}}
+
+/* ── Framework blocks inside cards ────────────────────────── */
+.fw-block{{margin-bottom:24px}}
+.fw-block:last-child{{margin-bottom:0}}
+.fw-title{{
+  font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--accent);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border)
+}}
+.fw-table{{min-width:480px;font-size:0.8rem}}
+.fw-table thead th{{background:var(--navy3);font-size:0.68rem;padding:7px 10px}}
+.fw-table td{{padding:6px 10px;border-bottom:1px solid var(--border)}}
+.fw-table td:first-child{{color:var(--navy3);min-width:200px}}
+.fw-table td.indent{{padding-left:22px;color:var(--slate);font-size:0.75rem}}
+.fw-table tbody tr:hover td{{background:#f0f9ff}}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer{{
+  text-align:center;padding:28px;color:var(--muted);font-size:0.72rem;
+  border-top:1px solid var(--border);margin-top:40px
+}}
+footer a{{color:var(--accent);text-decoration:none}}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Oslo <span>Quant</span> Dashboard</h1>
-  <div class="meta">
-    {n_ok} of {len(COMPANIES)} companies computed &nbsp;·&nbsp;
-    Last updated: {now}
+  <div class="logo">
+    <h1>Oslo <span>Quant</span></h1>
+    <span class="tagline">Pre-computation financial analysis · Oslo Børs</span>
+  </div>
+  <div class="meta-pill">
+    <strong>{n_ok} of {len(COMPANIES)} companies</strong><br>
+    Updated {now}
   </div>
 </header>
 
 <main>
 
-<h2>Summary — Most Recent Annual Period</h2>
+<!-- ── Legend ─────────────────────────────────────────────── -->
+<p class="section-title">Framework Guide &amp; Legends</p>
+<div class="legend-panel">
+  <button class="legend-toggle" aria-expanded="false" onclick="toggleLegend(this)">
+    What do these frameworks measure? Click to expand
+    <span class="arrow">▼</span>
+  </button>
+  <div class="legend-body">
+
+    <div class="color-guide">
+      <strong style="font-size:.78rem;color:var(--navy3);align-self:center">Colour coding:</strong>
+      <span class="cg-item">{_badge("Green · Favourable","green")} Healthy / strong result</span>
+      <span class="cg-item">{_badge("Amber · Moderate","yellow")} Neutral or watch zone</span>
+      <span class="cg-item">{_badge("Red · Concern","red")} Weak or elevated risk</span>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card">
+        <h5>DuPont Decomposition</h5>
+        <p>Breaks Return on Equity (ROE) into three drivers: profit margin, asset efficiency, and financial leverage. A 5-factor version further splits profitability into tax and interest burden components.</p>
+        <div class="reading">
+          <strong>How to read:</strong> ROE &gt; 15% is generally strong. An equity multiplier above 3 signals significant use of debt. A high ROE driven by leverage alone is less sustainable than one driven by margins.
+        </div>
+      </div>
+      <div class="fw-card">
+        <h5>Piotroski F-Score</h5>
+        <p>A checklist of 9 binary signals (each scores 0 or 1) across three dimensions: profitability, capital structure, and operating efficiency. Higher scores indicate improving financial health.</p>
+        <div class="reading">
+          <strong>How to read:</strong> 8–9 = Strong. 5–7 = Moderate. 0–4 = Weak. A rising F-Score over time is more meaningful than a single year's reading.
+        </div>
+      </div>
+      <div class="fw-card">
+        <h5>Sloan Accruals</h5>
+        <p>Measures earnings quality. Companies where cash flow from operations consistently exceeds reported net income tend to have higher-quality earnings that are more likely to persist.</p>
+        <div class="reading">
+          <strong>How to read:</strong> A negative accrual ratio (High quality) means cash earnings exceed accounting profits — a good sign. A positive ratio (Low quality) suggests profits are largely non-cash accruals that may not repeat.
+        </div>
+      </div>
+      <div class="fw-card">
+        <h5>Ohlson O-Score</h5>
+        <p>A logistic regression model (Ohlson, 1980) that estimates the statistical probability of bankruptcy within one year. It uses nine financial ratios covering size, leverage, liquidity, and profitability.</p>
+        <div class="reading">
+          <strong>How to read:</strong> &lt;10% = Low risk. 10–30% = Moderate. &gt;30% = Elevated. The model was calibrated on US firms in the 1970s — treat probabilities as directional, not precise.
+        </div>
+      </div>
+      <div class="fw-card">
+        <h5>Altman Z-Score</h5>
+        <p>A weighted combination of five balance-sheet ratios used to classify a company as financially safe, in a grey zone, or in distress. X4 uses book equity throughout to avoid currency-mismatch errors on dual-listed companies.</p>
+        <div class="reading">
+          <strong>How to read:</strong> Z &gt; 2.99 = Safe. Z 1.81–2.99 = Grey zone. Z &lt; 1.81 = Distress. Note: the model was designed for US manufacturing firms and is known to be less reliable for shipping, offshore, and capital-intensive sectors.
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>⚠ Data quality &amp; model limitations</strong>
+      Financial data is sourced from Yahoo Finance via yfinance. Some companies in this portfolio (e.g. Frontline, Borr Drilling, Hafnia) report financial statements in USD while their Oslo Børs shares are priced in NOK. Previous versions of this dashboard used market capitalisation (NOK) for the Altman X4 ratio, producing inflated Z-Scores due to the currency mismatch. This has been corrected — book equity (in the reporting currency) is now used throughout. All models were originally calibrated on US companies and should be treated as relative indicators, not precise predictions. Always verify key figures against official annual reports before making decisions.
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Summary ─────────────────────────────────────────────── -->
+<p class="section-title">Summary — Most Recent Annual Period</p>
+<p style="font-size:0.76rem;color:var(--slate);margin-bottom:10px">
+  Click any row to open full historical details below.
+</p>
 <div class="tscroll">
 <table>
   <thead>
@@ -428,10 +595,36 @@ footer{{text-align:center;padding:24px;color:#94a3b8;font-size:0.75rem}}
 </table>
 </div>
 
-<h2>Company Details — All Periods</h2>
+<!-- ── Detail cards ─────────────────────────────────────────── -->
+<div id="detail-area">
 {detail_cards}
+</div>
 
 </main>
-<footer>Generated by oslo-quant &nbsp;·&nbsp; Data sourced from Yahoo Finance</footer>
+
+<footer>
+  Oslo Quant · Data from <a href="https://finance.yahoo.com" target="_blank">Yahoo Finance</a> via yfinance ·
+  Frameworks: DuPont, Piotroski (1980), Sloan (1996), Ohlson (1980), Altman (1968) ·
+  Results are for informational purposes only and do not constitute investment advice.
+</footer>
+
+<script>
+function toggleLegend(btn) {{
+  const body = btn.nextElementSibling;
+  const open = body.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}}
+
+function toggleCard(ticker) {{
+  const card = document.getElementById('card-' + ticker);
+  if (!card) return;
+  const visible = card.style.display !== 'none';
+  card.style.display = visible ? 'none' : 'block';
+  if (!visible) {{
+    card.scrollIntoView({{ behavior: 'smooth', block: 'nearest' }});
+  }}
+}}
+</script>
+
 </body>
 </html>"""

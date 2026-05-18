@@ -69,22 +69,16 @@ class AltmanFramework(BaseFramework):
         # X3: EBIT / Total Assets
         x3 = self._safe_div(ebit, total_assets)
 
-        # X4: Market Value of Equity / Total Liabilities
-        # Approximate market cap from price data if available
-        shares = self._get(
-            bs, "Ordinary Shares Number", "Share Issued",
-            "Common Stock Shares Outstanding", col=period
-        )
-        market_cap = self._estimate_market_cap(prices, period, shares)
+        # X4: Book Equity / Total Liabilities
+        # We use book equity rather than market cap to avoid currency-mismatch
+        # errors on Oslo-listed companies that report financial statements in USD
+        # (e.g. Frontline, Borr Drilling, Hafnia). Market cap is in NOK but
+        # balance-sheet liabilities are in USD, which would inflate X4 ~10x.
         book_equity = self._get(
             bs, "Stockholders Equity", "Total Stockholders Equity",
             "Common Stock Equity", col=period
         )
-        equity_value = (
-            market_cap if (market_cap is not None and not math.isnan(market_cap))
-            else (book_equity if not math.isnan(book_equity) else float("nan"))
-        )
-        x4 = self._safe_div(equity_value, total_liab)
+        x4 = self._safe_div(book_equity, total_liab)
 
         # X5: Revenue / Total Assets (asset turnover)
         x5 = self._safe_div(revenue, total_assets)
@@ -99,7 +93,6 @@ class AltmanFramework(BaseFramework):
         )
 
         zone = self._zone(z)
-        used_market_cap = market_cap is not None and not math.isnan(market_cap)
 
         return {
             "z_score": self._fmt(z),
@@ -107,32 +100,9 @@ class AltmanFramework(BaseFramework):
             "x1_working_capital_to_assets": self._fmt(x1),
             "x2_retained_earnings_to_assets": self._fmt(x2),
             "x3_ebit_to_assets": self._fmt(x3),
-            "x4_equity_to_liabilities": self._fmt(x4),
+            "x4_book_equity_to_liabilities": self._fmt(x4),
             "x5_revenue_to_assets": self._fmt(x5),
-            "market_cap_used": used_market_cap,
-            "market_cap": self._fmt(market_cap, 0) if market_cap is not None else None,
         }
-
-    def _estimate_market_cap(
-        self, prices: Any, period: str, shares: float
-    ) -> float | None:
-        import pandas as pd
-        if prices is None or (hasattr(prices, "empty") and prices.empty):
-            return None
-        if math.isnan(shares):
-            return None
-        # Use year-end price closest to fiscal period end
-        try:
-            year = int(period)
-            target = pd.Timestamp(f"{year}-12-31")
-            price_data = prices["Close"]
-            available = price_data.index[price_data.index <= target]
-            if available.empty:
-                return None
-            price = float(price_data.loc[available[-1]])
-            return price * shares
-        except Exception:
-            return None
 
     def _zone(self, z: float) -> str:
         if math.isnan(z):
