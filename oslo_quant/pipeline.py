@@ -53,7 +53,7 @@ def run(
         log.info("=== Processing %s ===", ticker)
         company = TICKER_MAP[ticker]
 
-        # --- Fetch ---
+        # --- Fetch statements ---
         try:
             stmts = yf_fetcher.fetch(ticker, force_refresh=force_refresh)
         except Exception as exc:
@@ -69,25 +69,93 @@ def run(
             except Exception as exc:
                 log.warning("[%s] FMP supplemental fetch failed (skipped): %s", ticker, exc)
 
-        # --- Compute ---
+        # --- Resolve and cross-check currency ---
+        currency_info = _resolve_currency(yf_fetcher, ticker, company, force_refresh)
+
+        # --- Compute frameworks ---
         ticker_results: dict[str, Any] = {}
         for fw_name in target_frameworks:
             framework_cls = FRAMEWORK_REGISTRY[fw_name]
             framework = framework_cls()
             try:
                 result = framework.compute(stmts, ticker)
+                # Embed currency context in every result file
+                result["financial_currency"] = currency_info["financial_currency"]
+                result["price_currency"]     = currency_info["price_currency"]
                 ticker_results[fw_name] = result
                 _persist(ticker, fw_name, result)
-                log.info("[%s] %s — OK (%d periods)", ticker, fw_name, len(result.get("periods", {})))
+                log.info(
+                    "[%s] %s — OK (%d periods, statements in %s)",
+                    ticker, fw_name,
+                    len(result.get("periods", {})),
+                    currency_info["financial_currency"],
+                )
             except Exception as exc:
                 log.error("[%s] %s failed: %s", ticker, fw_name, exc)
                 ticker_results[fw_name] = {"error": str(exc)}
 
+        # Save a dedicated currency verification file per company
+        _persist(ticker, "currency", currency_info)
         summary[ticker] = ticker_results
 
     return summary
 
 
+# ---------------------------------------------------------------------------
+# Currency resolution
+# ---------------------------------------------------------------------------
+
+def _resolve_currency(yf_fetcher: YFinanceFetcher, ticker: str, company, force_refresh: bool) -> dict:
+    """Fetch currency from yfinance, cross-check with config, return verified dict."""
+    config_ccy = company.reporting_currency  # researched value in config.py
+
+    try:
+        detected = yf_fetcher.fetch_currency_info(ticker, force_refresh=force_refresh)
+        yf_ccy    = detected.get("financial_currency", "Unknown")
+        price_ccy = detected.get("price_currency", "NOK")
+        source    = detected.get("source", "fallback")
+    except Exception as exc:
+        log.warning("[%s] Currency fetch failed: %s", ticker, exc)
+        yf_ccy = "Unknown"
+        price_ccy = "NOK"
+        source = "fallback"
+
+    # Determine final currency: prefer yfinance if available, else config
+    if yf_ccy and yf_ccy not in ("Unknown", ""):
+        final_ccy = yf_ccy
+    else:
+        final_ccy = config_ccy
+        source = "config_fallback"
+
+    match_status = _match_status(yf_ccy, config_ccy)
+    if match_status == "mismatch":
+        log.warning(
+            "[%s] Currency mismatch — config says %s, yfinance says %s. Using yfinance.",
+            ticker, config_ccy, yf_ccy,
+        )
+
+    return {
+        "ticker":              ticker,
+        "full_name":           company.full_name,
+        "price_currency":      price_ccy,
+        "financial_currency":  final_ccy,
+        "config_currency":     config_ccy,
+        "yfinance_currency":   yf_ccy,
+        "detection_source":    source,
+        "verification_status": match_status,
+    }
+
+
+def _match_status(yf_ccy: str, config_ccy: str) -> str:
+    if yf_ccy in ("Unknown", ""):
+        return "unverified"
+    if yf_ccy == config_ccy:
+        return "verified"
+    return "mismatch"
+
+
+# ---------------------------------------------------------------------------
+# Helpers
 # ---------------------------------------------------------------------------
 
 def _validate_tickers(tickers: list[str]) -> None:
@@ -126,16 +194,14 @@ def _merge_statements(primary: Statements, supplemental: Statements) -> Statemen
         if p is None or p.empty:
             merged[key] = s  # type: ignore[assignment]
             continue
-        # Add columns from supplemental that are missing in primary
         extra_cols = [c for c in s.columns if c not in p.columns]
         if extra_cols:
             merged[key] = pd.concat([p, s[extra_cols]], axis=1)  # type: ignore[assignment]
     return merged
 
 
-def _persist(ticker: str, framework: str, result: dict) -> None:
+def _persist(ticker: str, name: str, result: dict) -> None:
     out_dir: Path = DATA_RESULTS / ticker
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_file = out_dir / f"{framework}.json"
-    with out_file.open("w", encoding="utf-8") as fh:
+    with (out_dir / f"{name}.json").open("w", encoding="utf-8") as fh:
         json.dump(result, fh, indent=2, default=str)

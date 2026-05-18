@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from oslo_quant.config import COMPANIES, DATA_RESULTS, ROOT
+from oslo_quant.config import COMPANIES, DATA_RESULTS, ROOT, TICKER_MAP
 
 
 # ---------------------------------------------------------------------------
@@ -88,6 +88,21 @@ def _large(v: Any) -> str:
         return "—"
 
 
+def _large_ccy(ccy: str):
+    """Return a _large formatter that appends the currency label."""
+    def fmt(v: Any) -> str:
+        s = _large(v)
+        if s == "—" or not ccy:
+            return s
+        return f'{s}&thinsp;<span style="font-size:0.65rem;color:var(--slate)">{ccy}</span>'
+    return fmt
+
+
+def _ccy_badge(ccy: str) -> str:
+    color = {"NOK": "blue", "USD": "green", "EUR": "yellow"}.get(ccy, "gray")
+    return _badge(ccy or "?", color)
+
+
 def _badge(text: str, color: str) -> str:
     palette = {
         "green":  ("#166534", "#dcfce7"),
@@ -118,6 +133,12 @@ def _latest(fw: dict) -> tuple[str, dict] | tuple[None, None]:
 
 def _summary_row(ticker: str, fws: dict) -> str:
     period_cell = "—"
+
+    # --- currency ---
+    ccy_info = fws.get("currency", {})
+    company = TICKER_MAP.get(ticker)
+    fin_ccy = ccy_info.get("financial_currency") or (company.reporting_currency if company else "?")
+    ccy_cell = _ccy_badge(fin_ccy)
 
     roe = npm = "—"
     if "dupont" in fws:
@@ -165,6 +186,7 @@ def _summary_row(ticker: str, fws: dict) -> str:
     return (
         f'<tr onclick="toggleCard(\'{ticker}\')" style="cursor:pointer">'
         f'<td class="tk">{ticker}<div class="period-lbl">{period_cell}</div></td>'
+        f'<td style="white-space:nowrap">{ccy_cell}</td>'
         f'<td>{roe}</td><td>{npm}</td>'
         f'<td>{piotroski}</td>'
         f'<td>{sloan}</td>'
@@ -179,17 +201,29 @@ def _summary_row(ticker: str, fws: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _detail_card(ticker: str, fws: dict) -> str:
+    company = TICKER_MAP.get(ticker)
+    ccy_info = fws.get("currency", {})
+    fin_ccy  = ccy_info.get("financial_currency") or (company.reporting_currency if company else "?")
+    full_name = company.full_name if company else ""
+
     sections = "".join(
-        _fw_section(name, fws[name])
+        _fw_section(name, fws[name], fin_ccy)
         for name in ["dupont", "piotroski", "sloan", "ohlson", "altman"]
         if name in fws and fws[name].get("periods")
     )
     if not sections:
         return ""
+    name_html = (
+        f'<span class="card-company">{full_name}</span>' if full_name else ""
+    )
     return (
         f'<div id="card-{ticker}" class="detail-card" style="display:none">'
         f'<div class="card-header">'
+        f'<div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">'
         f'<span class="card-ticker">{ticker}</span>'
+        f'{name_html}'
+        f'<span>{_ccy_badge(fin_ccy)}</span>'
+        f'</div>'
         f'<button class="card-close" onclick="toggleCard(\'{ticker}\')" '
         f'aria-label="Close">✕</button>'
         f'</div>'
@@ -198,7 +232,7 @@ def _detail_card(ticker: str, fws: dict) -> str:
     )
 
 
-def _fw_section(name: str, fw: dict) -> str:
+def _fw_section(name: str, fw: dict, ccy: str = "") -> str:
     titles = {
         "dupont":    "DuPont Decomposition",
         "piotroski": "Piotroski F-Score",
@@ -209,14 +243,16 @@ def _fw_section(name: str, fw: dict) -> str:
     periods = fw.get("periods", {})
     cols = sorted(periods.keys(), reverse=True)
     th = "".join(f"<th>{c}</th>" for c in cols)
-    builders = {
-        "dupont":    _dupont_rows,
-        "piotroski": _piotroski_rows,
-        "sloan":     _sloan_rows,
-        "ohlson":    _ohlson_rows,
-        "altman":    _altman_rows,
-    }
-    rows = builders[name](periods, cols)
+    if name == "sloan":
+        rows = _sloan_rows(periods, cols, ccy)
+    else:
+        builders = {
+            "dupont":    _dupont_rows,
+            "piotroski": _piotroski_rows,
+            "ohlson":    _ohlson_rows,
+            "altman":    _altman_rows,
+        }
+        rows = builders[name](periods, cols)
     return (
         f'<div class="fw-block">'
         f'<h4 class="fw-title">{titles[name]}</h4>'
@@ -290,7 +326,7 @@ def _piotroski_rows(periods: dict, cols: list[str]) -> str:
     return r
 
 
-def _sloan_rows(periods: dict, cols: list[str]) -> str:
+def _sloan_rows(periods: dict, cols: list[str], ccy: str = "") -> str:
     cells = ""
     for c in cols:
         q = periods.get(c, {}).get("earnings_quality", "Unknown")
@@ -299,8 +335,9 @@ def _sloan_rows(periods: dict, cols: list[str]) -> str:
     r = f"<tr><td><strong>Earnings Quality</strong></td>{cells}</tr>"
     r += _row("CFO Accrual Ratio", cols, periods, "cfo_accrual_ratio", _pct)
     r += _row("BS Accrual Ratio",  cols, periods, "bs_accrual_ratio",  _pct)
-    r += _row("Operating Cash Flow", cols, periods, "operating_cash_flow", _large)
-    r += _row("Net Income",          cols, periods, "net_income",          _large)
+    fmt_abs = _large_ccy(ccy) if ccy else _large
+    r += _row("Operating Cash Flow", cols, periods, "operating_cash_flow", fmt_abs)
+    r += _row("Net Income",          cols, periods, "net_income",          fmt_abs)
     return r
 
 
@@ -340,6 +377,59 @@ def _altman_rows(periods: dict, cols: list[str]) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Currency verification table
+# ---------------------------------------------------------------------------
+
+def _currency_table(data: dict) -> str:
+    rows = ""
+    for company in COMPANIES:
+        ticker = company.ticker
+        ccy_info = data.get(ticker, {}).get("currency", {})
+
+        fin_ccy   = ccy_info.get("financial_currency") or company.reporting_currency
+        price_ccy = ccy_info.get("price_currency", "NOK")
+        config_ccy = ccy_info.get("config_currency") or company.reporting_currency
+        yf_ccy    = ccy_info.get("yfinance_currency") or "—"
+        status    = ccy_info.get("verification_status", "pending")
+
+        status_badge = {
+            "verified":   _badge("✓ Verified", "green"),
+            "mismatch":   _badge("⚠ Mismatch", "red"),
+            "unverified": _badge("? Unverified", "yellow"),
+            "pending":    _badge("— Pending", "gray"),
+        }.get(status, _badge(status, "gray"))
+
+        yf_cell = _ccy_badge(yf_ccy) if yf_ccy not in ("—", "", "Unknown") else "—"
+
+        rows += (
+            f"<tr>"
+            f'<td class="tk">{ticker}</td>'
+            f"<td>{company.full_name}</td>"
+            f"<td style='white-space:nowrap'>{_ccy_badge(price_ccy)}</td>"
+            f"<td style='white-space:nowrap'>{_ccy_badge(fin_ccy)}</td>"
+            f"<td style='white-space:nowrap'>{_ccy_badge(config_ccy)}</td>"
+            f"<td style='white-space:nowrap'>{yf_cell}</td>"
+            f"<td>{status_badge}</td>"
+            f"</tr>"
+        )
+
+    return (
+        f'<div class="tscroll">'
+        f"<table>"
+        f"<thead><tr>"
+        f"<th>Ticker</th><th>Company</th>"
+        f"<th>Price&nbsp;Currency</th>"
+        f"<th>Stmt&nbsp;Currency&nbsp;(used)</th>"
+        f"<th>Config&nbsp;(hardcoded)</th>"
+        f"<th>yfinance&nbsp;detected</th>"
+        f"<th>Verification</th>"
+        f"</tr></thead>"
+        f"<tbody>{rows}</tbody>"
+        f"</table></div>"
+    )
+
+
+# ---------------------------------------------------------------------------
 # Full HTML
 # ---------------------------------------------------------------------------
 
@@ -347,8 +437,9 @@ def _build_html(data: dict) -> str:
     now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     n_ok = sum(1 for fws in data.values() if fws)
 
-    summary_rows = "\n".join(_summary_row(t, fws) for t, fws in data.items())
-    detail_cards = "\n".join(_detail_card(t, fws) for t, fws in data.items() if fws)
+    summary_rows  = "\n".join(_summary_row(t, fws) for t, fws in data.items())
+    detail_cards  = "\n".join(_detail_card(t, fws) for t, fws in data.items() if fws)
+    currency_html = _currency_table(data)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -465,6 +556,7 @@ td.tk{{font-weight:700;font-size:0.88rem;color:var(--navy);white-space:nowrap}}
   padding:14px 20px;background:var(--navy2);
 }}
 .card-ticker{{font-weight:800;font-size:1.05rem;color:#f8fafc;letter-spacing:-.3px}}
+.card-company{{font-size:0.82rem;font-weight:400;color:var(--muted)}}
 .card-close{{
   border:none;background:transparent;color:var(--muted);font-size:1rem;
   cursor:pointer;padding:2px 6px;border-radius:4px;transition:color .15s
@@ -571,6 +663,16 @@ footer a{{color:var(--accent);text-decoration:none}}
   </div>
 </div>
 
+<!-- ── Currency Verification ──────────────────────────────── -->
+<p class="section-title">Currency Verification</p>
+<p style="font-size:0.76rem;color:var(--slate);margin-bottom:10px">
+  Stock prices are always quoted in <strong>NOK</strong> on Oslo Børs.
+  Financial statements may be reported in USD, EUR, or NOK.
+  All framework ratios divide statement values in the same currency, so they are currency-neutral.
+  The table below confirms the detected reporting currency per company.
+</p>
+{currency_html}
+
 <!-- ── Summary ─────────────────────────────────────────────── -->
 <p class="section-title">Summary — Most Recent Annual Period</p>
 <p style="font-size:0.76rem;color:var(--slate);margin-bottom:10px">
@@ -581,6 +683,7 @@ footer a{{color:var(--accent);text-decoration:none}}
   <thead>
     <tr>
       <th>Company</th>
+      <th>Stmts&nbsp;Ccy</th>
       <th>ROE</th>
       <th>Net Margin</th>
       <th>Piotroski F-Score</th>
