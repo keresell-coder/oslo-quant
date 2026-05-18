@@ -26,26 +26,44 @@ class CompanyConfig:
     alt_ticker: str | None = None        # ticker without exchange suffix for FMP
     reporting_currency: str = "NOK"      # currency used in financial statements
     full_name: str = ""                  # human-readable company name
+    sector: str = ""                     # sector label for context and model caveats
+    notes: str = ""                      # free-text notes surfaced in the dashboard
 
 
-# Reporting currencies verified against official 2024 annual reports.
+# Reporting currencies verified against official annual reports.
 # Price currency for all .OL tickers is NOK (Oslo Børs).
 COMPANIES: list[CompanyConfig] = [
-    CompanyConfig("DOFG.OL",  reporting_currency="USD", full_name="DOF Group ASA"),
-    CompanyConfig("BRG.OL",   reporting_currency="NOK", full_name="Borregaard ASA"),
-    CompanyConfig("ODL.OL",   reporting_currency="USD", full_name="Odfjell SE"),
-    CompanyConfig("ELK.OL",   reporting_currency="NOK", full_name="Elkem ASA"),
-    CompanyConfig("NOD.OL",   reporting_currency="USD", full_name="Nordic Semiconductor ASA"),
-    CompanyConfig("VEND.OL",  reporting_currency="NOK", full_name="Vend Marketplaces ASA"),
-    CompanyConfig("PUBLI.OL", reporting_currency="NOK", full_name="Public Property Invest ASA"),
-    CompanyConfig("MOWI.OL",  reporting_currency="EUR", full_name="Mowi ASA"),
-    CompanyConfig("TEL.OL",   reporting_currency="NOK", full_name="Telenor ASA"),
-    CompanyConfig("KOG.OL",   reporting_currency="NOK", full_name="Kongsberg Gruppen ASA"),
-    CompanyConfig("KMAR.OL",  reporting_currency="NOK", full_name="Kongsberg Maritime ASA"),
+    CompanyConfig("DOFG.OL",  reporting_currency="USD", full_name="DOF Group ASA",
+                  sector="Offshore / Marine Services"),
+    CompanyConfig("BRG.OL",   reporting_currency="NOK", full_name="Borregaard ASA",
+                  sector="Specialty Chemicals / Biorefinery"),
+    CompanyConfig("ODL.OL",   reporting_currency="USD", full_name="Odfjell SE",
+                  sector="Chemical Tankers"),
+    CompanyConfig("ELK.OL",   reporting_currency="NOK", full_name="Elkem ASA",
+                  sector="Silicon & Specialty Chemicals"),
+    CompanyConfig("NOD.OL",   reporting_currency="USD", full_name="Nordic Semiconductor ASA",
+                  sector="Semiconductors"),
+    CompanyConfig("VEND.OL",  reporting_currency="NOK", full_name="Vend Marketplaces ASA",
+                  sector="Technology / Marketplaces"),
+    CompanyConfig("PUBLI.OL", reporting_currency="NOK", full_name="Public Property Invest ASA",
+                  sector="Real Estate",
+                  notes="Redomiciling to Sweden; primary listing on Nasdaq Stockholm from May 2026, secondary listing on Oslo Børs continues."),
+    CompanyConfig("MOWI.OL",  reporting_currency="EUR", full_name="Mowi ASA",
+                  sector="Aquaculture / Salmon Farming",
+                  notes="Biological assets carried at IAS 41 fair value — unrealised fair-value movements flow through EBIT, creating non-cash earnings volatility that inflates Altman/Ohlson distress signals."),
+    CompanyConfig("TEL.OL",   reporting_currency="NOK", full_name="Telenor ASA",
+                  sector="Telecommunications"),
+    CompanyConfig("KOG.OL",   reporting_currency="NOK", full_name="Kongsberg Gruppen ASA",
+                  sector="Defence / Technology"),
+    CompanyConfig("KMAR.OL",  reporting_currency="NOK", full_name="Kongsberg Maritime ASA",
+                  sector="Maritime Technology",
+                  notes="Carved out from Kongsberg Gruppen (KOG.OL) and listed separately on 23 April 2026. All framework scores are based on limited standalone history; multi-year comparisons and year-on-year signals are not yet meaningful."),
     CompanyConfig("BORR.OL",  reporting_currency="USD", full_name="Borr Drilling Ltd",
-                  alt_ticker="BORR"),
-    CompanyConfig("FRO.OL",   reporting_currency="USD", full_name="Frontline plc"),
-    CompanyConfig("HAFNI.OL", reporting_currency="USD", full_name="Hafnia Ltd"),
+                  sector="Offshore Drilling", alt_ticker="BORR"),
+    CompanyConfig("FRO.OL",   reporting_currency="USD", full_name="Frontline plc",
+                  sector="Crude Oil Tankers"),
+    CompanyConfig("HAFNI.OL", reporting_currency="USD", full_name="Hafnia Ltd",
+                  sector="Product Tankers"),
 ]
 
 TICKER_MAP: dict[str, CompanyConfig] = {c.ticker: c for c in COMPANIES}

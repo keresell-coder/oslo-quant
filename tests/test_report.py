@@ -66,6 +66,7 @@ def _fake_results():
                 "periods": {
                     "2023": {
                         "z_score": 2.5, "zone": "Grey",
+                        "z_score_prime": 3.1, "zone_prime": "Safe",
                         "x1_working_capital_to_assets": 0.14,
                         "x2_retained_earnings_to_assets": 0.22,
                         "x3_ebit_to_assets": 0.08,

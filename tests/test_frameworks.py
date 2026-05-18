@@ -153,20 +153,26 @@ class TestAltman:
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
             assert "z_score" in data
+            assert "z_score_prime" in data
 
     def test_zone_values(self):
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
             assert data["zone"] in ("Safe", "Grey", "Distress", "Unknown")
+            assert data["zone_prime"] in ("Safe", "Grey", "Distress", "Unknown")
 
     def test_healthy_firm_safe_or_grey(self):
         result = self.fw.compute(self.stmts, TICKER)
         zone = result["periods"]["2023"]["zone"]
         assert zone in ("Safe", "Grey"), f"Expected Safe/Grey, got {zone}"
 
+    def test_zprime_present(self):
+        result = self.fw.compute(self.stmts, TICKER)
+        assert "z_score_prime" in result["periods"]["2023"]
+        assert "zone_prime" in result["periods"]["2023"]
+
     def test_x4_uses_book_equity_key(self):
         result = self.fw.compute(self.stmts, TICKER)
-        # Key renamed when we switched from market cap to book equity for X4
         assert "x4_book_equity_to_liabilities" in result["periods"]["2023"]
         assert "market_cap_used" not in result["periods"]["2023"]
 
