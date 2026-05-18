@@ -18,7 +18,7 @@ from oslo_quant.config import COMPANIES, DATA_RESULTS, ROOT
 def generate(output_path: Path | None = None) -> Path:
     """Build report.html from all computed JSON results."""
     if output_path is None:
-        output_path = ROOT / "report.html"
+        output_path = ROOT / "index.html"
 
     data = _load_results()
     output_path.write_text(_build_html(data), encoding="utf-8")
@@ -27,7 +27,7 @@ def generate(output_path: Path | None = None) -> Path:
 
 def main() -> None:
     path = generate()
-    print(f"Report written to {path}")
+    print(f"Dashboard written to {path}")
 
 
 # ---------------------------------------------------------------------------

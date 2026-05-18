@@ -83,14 +83,14 @@ class TestReportGeneration:
     def test_generate_creates_file(self, tmp_path):
         fake = _fake_results()
         with patch("oslo_quant.report._load_results", return_value=fake):
-            out = generate(output_path=tmp_path / "report.html")
+            out = generate(output_path=tmp_path / "index.html")
         assert out.exists()
         assert out.stat().st_size > 0
 
     def test_html_has_expected_content(self, tmp_path):
         fake = _fake_results()
         with patch("oslo_quant.report._load_results", return_value=fake):
-            out = generate(output_path=tmp_path / "report.html")
+            out = generate(output_path=tmp_path / "index.html")
         html = out.read_text()
         assert "TEL.OL" in html
         assert "Oslo Quant Dashboard" in html
@@ -101,7 +101,7 @@ class TestReportGeneration:
     def test_badges_rendered(self, tmp_path):
         fake = _fake_results()
         with patch("oslo_quant.report._load_results", return_value=fake):
-            out = generate(output_path=tmp_path / "report.html")
+            out = generate(output_path=tmp_path / "index.html")
         html = out.read_text()
         assert "F7" in html       # piotroski score badge
         assert "Grey" in html     # altman zone
@@ -109,5 +109,5 @@ class TestReportGeneration:
 
     def test_empty_results_no_crash(self, tmp_path):
         with patch("oslo_quant.report._load_results", return_value={}):
-            out = generate(output_path=tmp_path / "report.html")
+            out = generate(output_path=tmp_path / "index.html")
         assert out.exists()
