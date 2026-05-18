@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-17T08:10:20.875846Z",
+  "computed_at": "2026-05-18T21:07:49.814800Z",
   "periods": {
     "2025": {
       "f_score": 4,

@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-17T08:10:27.575091Z",
+  "computed_at": "2026-05-18T21:07:54.760761Z",
   "periods": {
     "2025": {
       "f_score": 7,

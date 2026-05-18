@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "altman",
-  "computed_at": "2026-05-17T08:10:28.755754Z",
+  "computed_at": "2026-05-18T21:07:55.729827Z",
   "periods": {
     "2025": {
       "z_score": 12.8649,
@@ -23,7 +23,7 @@
       "x4_equity_to_liabilities": 21.0259,
       "x5_revenue_to_assets": 0.7748,
       "market_cap_used": true,
-      "market_cap": 30272742500.0
+      "market_cap": 30272740581.0
     },
     "2023": {
       "z_score": 14.4247,
@@ -45,7 +45,7 @@
       "x4_equity_to_liabilities": 12.451,
       "x5_revenue_to_assets": 0.4883,
       "market_cap_used": true,
-      "market_cap": 24109346129.0
+      "market_cap": 24109348038.0
     },
     "2021": {
       "z_score": 0.0,

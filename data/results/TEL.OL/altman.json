@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "altman",
-  "computed_at": "2026-05-17T08:10:23.173066Z",
+  "computed_at": "2026-05-18T21:07:51.524086Z",
   "periods": {
     "2025": {
       "z_score": 2.7454,
@@ -23,7 +23,7 @@
       "x4_equity_to_liabilities": 1.1123,
       "x5_revenue_to_assets": 0.3299,
       "market_cap_used": true,
-      "market_cap": 163548109565.0
+      "market_cap": 163548120000.0
     },
     "2023": {
       "z_score": 2.387,
@@ -45,7 +45,7 @@
       "x4_equity_to_liabilities": 0.592,
       "x5_revenue_to_assets": 0.3213,
       "market_cap_used": true,
-      "market_cap": 103535508134.0
+      "market_cap": 103535518811.0
     },
     "2021": {
       "z_score": 0.0,

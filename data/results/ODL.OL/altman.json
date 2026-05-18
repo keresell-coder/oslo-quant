@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "altman",
-  "computed_at": "2026-05-17T08:10:16.717644Z",
+  "computed_at": "2026-05-18T21:07:46.166556Z",
   "periods": {
     "2025": {
       "z_score": 11.854,
@@ -23,7 +23,7 @@
       "x4_equity_to_liabilities": 13.494,
       "x5_revenue_to_assets": 0.217,
       "market_cap_used": true,
-      "market_cap": 10954446400.0
+      "market_cap": 10954445485.0
     },
     "2023": {
       "z_score": 7.255,
@@ -45,7 +45,7 @@
       "x4_equity_to_liabilities": 5.1976,
       "x5_revenue_to_assets": 0.1777,
       "market_cap_used": true,
-      "market_cap": 5253762331.0
+      "market_cap": 5253763234.0
     },
     "2021": {
       "z_score": 0.0,

@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "altman",
-  "computed_at": "2026-05-17T08:10:19.797235Z",
+  "computed_at": "2026-05-18T21:07:48.962048Z",
   "periods": {
     "2025": {
       "z_score": 7.526,
@@ -34,7 +34,7 @@
       "x4_equity_to_liabilities": 3.0859,
       "x5_revenue_to_assets": 0.1354,
       "market_cap_used": true,
-      "market_cap": 42619209983.0
+      "market_cap": 42619216856.0
     },
     "2022": {
       "z_score": 4.8284,
@@ -45,7 +45,7 @@
       "x4_equity_to_liabilities": 1.8732,
       "x5_revenue_to_assets": 0.3481,
       "market_cap_used": true,
-      "market_cap": 28177423319.0
+      "market_cap": 28177425094.0
     }
   }
 }

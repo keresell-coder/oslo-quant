@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "altman",
-  "computed_at": "2026-05-17T08:10:27.587683Z",
+  "computed_at": "2026-05-18T21:07:54.776105Z",
   "periods": {
     "2025": {
       "z_score": 10.4922,
@@ -23,7 +23,7 @@
       "x4_equity_to_liabilities": 8.9127,
       "x5_revenue_to_assets": 0.3296,
       "market_cap_used": true,
-      "market_cap": 34586868813.0
+      "market_cap": 34586872210.0
     },
     "2023": {
       "z_score": 8.6498,
@@ -45,7 +45,7 @@
       "x4_equity_to_liabilities": 10.1012,
       "x5_revenue_to_assets": 0.2999,
       "market_cap_used": true,
-      "market_cap": 25339336300.0
+      "market_cap": 25339334602.0
     },
     "2021": {
       "z_score": 0.0,

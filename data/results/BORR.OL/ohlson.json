@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-17T08:10:26.317343Z",
+  "computed_at": "2026-05-18T21:07:53.881153Z",
   "periods": {
     "2025": {
       "o_score": 1.8201,
