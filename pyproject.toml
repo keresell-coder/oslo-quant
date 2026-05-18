@@ -21,6 +21,7 @@ dev = ["pytest>=8.0", "pytest-cov", "ruff"]
 
 [project.scripts]
 oslo-quant = "oslo_quant.cli:main"
+oslo-quant-report = "oslo_quant.report:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
