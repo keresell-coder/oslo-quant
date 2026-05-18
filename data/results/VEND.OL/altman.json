@@ -1,11 +1,13 @@
 {
   "ticker": "VEND.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:41.548923Z",
+  "computed_at": "2026-05-18T22:46:35.762855Z",
   "periods": {
     "2025": {
       "z_score": 4.1719,
       "zone": "Safe",
+      "z_score_prime": 10.5343,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.7206,
       "x2_retained_earnings_to_assets": 0.3749,
       "x3_ebit_to_assets": 0.0786,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 4.5236,
       "zone": "Safe",
+      "z_score_prime": 11.1213,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.6725,
       "x2_retained_earnings_to_assets": 0.4904,
       "x3_ebit_to_assets": 0.0921,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 3.8355,
       "zone": "Safe",
+      "z_score_prime": 10.4669,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.7812,
       "x2_retained_earnings_to_assets": 0.5925,
       "x3_ebit_to_assets": 0.0291,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 4.8415,
       "zone": "Safe",
+      "z_score_prime": 11.7691,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.6668,
       "x2_retained_earnings_to_assets": 0.4883,
       "x3_ebit_to_assets": 0.5674,

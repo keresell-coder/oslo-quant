@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:40.120522Z",
+  "computed_at": "2026-05-18T22:46:34.572968Z",
   "periods": {
     "2025": {
       "o_score": -1.0301,

@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-18T22:06:53.904182Z",
+  "computed_at": "2026-05-18T22:46:46.008424Z",
   "periods": {
     "2025": {
       "f_score": 4,

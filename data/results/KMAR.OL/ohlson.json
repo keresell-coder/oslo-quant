@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:49.437829Z",
+  "computed_at": "2026-05-18T22:46:42.258511Z",
   "periods": {
     "2025": {
       "o_score": 0.9379,

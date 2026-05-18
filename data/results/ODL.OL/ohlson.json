@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:37.147149Z",
+  "computed_at": "2026-05-18T22:46:32.205622Z",
   "periods": {
     "2025": {
       "o_score": -0.6036,

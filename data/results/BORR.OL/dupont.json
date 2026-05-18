@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "dupont",
-  "computed_at": "2026-05-18T22:06:50.786746Z",
+  "computed_at": "2026-05-18T22:46:43.447708Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.0441,

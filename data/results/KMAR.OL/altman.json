@@ -1,11 +1,13 @@
 {
   "ticker": "KMAR.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:49.440592Z",
+  "computed_at": "2026-05-18T22:46:42.261185Z",
   "periods": {
     "2025": {
       "z_score": 1.9215,
       "zone": "Grey",
+      "z_score_prime": 2.1115,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.099,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.168,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 1.7635,
       "zone": "Distress",
+      "z_score_prime": 1.6554,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.0441,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1661,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 1.6063,
       "zone": "Distress",
+      "z_score_prime": 1.3864,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.0331,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1239,

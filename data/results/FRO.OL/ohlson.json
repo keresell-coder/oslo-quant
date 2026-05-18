@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:52.399464Z",
+  "computed_at": "2026-05-18T22:46:44.834616Z",
   "periods": {
     "2025": {
       "o_score": 0.3644,

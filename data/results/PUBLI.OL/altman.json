@@ -1,11 +1,13 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:43.027451Z",
+  "computed_at": "2026-05-18T22:46:36.958561Z",
   "periods": {
     "2025": {
       "z_score": 0.9134,
       "zone": "Distress",
+      "z_score_prime": 3.3178,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3901,
       "x2_retained_earnings_to_assets": -0.0101,
       "x3_ebit_to_assets": 0.0229,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 1.1474,
       "zone": "Distress",
+      "z_score_prime": 3.7647,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4194,
       "x2_retained_earnings_to_assets": -0.0615,
       "x3_ebit_to_assets": 0.0375,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 0.6866,
       "zone": "Distress",
+      "z_score_prime": 3.5074,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.5755,
       "x2_retained_earnings_to_assets": -0.0874,
       "x3_ebit_to_assets": -0.0759,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 0.8244,
       "zone": "Distress",
+      "z_score_prime": 3.3344,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4527,
       "x2_retained_earnings_to_assets": 0.016,
       "x3_ebit_to_assets": -0.0521,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,
