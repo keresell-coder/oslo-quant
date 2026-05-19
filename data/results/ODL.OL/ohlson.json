@@ -4,8 +4,8 @@
   "computed_at": "2026-05-19T07:35:50.182116Z",
   "periods": {
     "2025": {
-      "o_score": -3.415,
-      "bankruptcy_probability": 0.0318,
+      "o_score": -6.2265,
+      "bankruptcy_probability": 0.002,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4668,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -3.5678,
-      "bankruptcy_probability": 0.0274,
+      "o_score": -6.3793,
+      "bankruptcy_probability": 0.0017,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3665,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -3.9554,
-      "bankruptcy_probability": 0.0188,
+      "o_score": -6.7669,
+      "bankruptcy_probability": 0.0011,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3962,
@@ -49,8 +49,8 @@
       }
     },
     "2022": {
-      "o_score": -3.16,
-      "bankruptcy_probability": 0.0407,
+      "o_score": -5.9715,
+      "bankruptcy_probability": 0.0025,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4555,
