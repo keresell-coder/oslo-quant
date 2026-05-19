@@ -7,6 +7,7 @@ import json
 import math
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from oslo_quant.config import COMPANIES, DATA_RESULTS, ROOT, TICKER_MAP
 
@@ -97,6 +98,8 @@ def _badge(text: str, color: str) -> str:
         "yellow": ("#ffffff", "#d97706"),
         "red":    ("#ffffff", "#dc2626"),
         "blue":   ("#ffffff", "#2563eb"),
+        "teal":   ("#ffffff", "#0891b2"),
+        "purple": ("#ffffff", "#7c3aed"),
         "gray":   ("#374151", "#e5e7eb"),
         "indigo": ("#ffffff", "#4f46e5"),
     }
@@ -109,7 +112,9 @@ def _badge(text: str, color: str) -> str:
 
 
 def _ccy_badge(ccy: str) -> str:
-    color = {"NOK": "blue", "USD": "indigo", "EUR": "yellow"}.get(ccy, "gray")
+    # Distinct colors: NOK=teal, USD=blue, EUR=purple — intentionally different
+    # from the green/yellow/red traffic-light palette used for risk signals.
+    color = {"NOK": "teal", "USD": "blue", "EUR": "purple"}.get(ccy, "gray")
     return _badge(ccy or "?", color)
 
 
@@ -550,14 +555,18 @@ def _ohlson_rows(periods: dict, cols: list[str]) -> str:
 
 
 def _altman_rows(periods: dict, cols: list[str]) -> str:
-    # Original Z-Score row
+    # Original Z-Score row — shown in gray because it is not the active model
+    # for any of the 14 companies (none qualify as US manufacturing).
     cells = ""
     for c in cols:
         z    = _safe_float(periods.get(c, {}).get("z_score"))
         zone = periods.get(c, {}).get("zone", "Unknown")
-        color = "green" if zone == "Safe" else ("yellow" if zone == "Grey" else ("red" if zone == "Distress" else "gray"))
-        cells += f"<td>{_badge(f'Z={_num(z)} · {zone}', color)}</td>"
-    r  = f"<tr><td><strong>Z-Score (manufacturing model)</strong></td>{cells}</tr>"
+        cells += f"<td>{_badge(f'Z={_num(z)} · {zone}', 'gray')}</td>"
+    r  = (
+        f'<tr><td style="color:var(--slate);font-size:0.75rem">'
+        f'Z-Score (original manufacturing model · reference only)'
+        f'</td>{cells}</tr>'
+    )
 
     # Z'' non-manufacturing row
     cells2 = ""
@@ -568,8 +577,9 @@ def _altman_rows(periods: dict, cols: list[str]) -> str:
         zpp_label = f"Z''={_num(zpp)} · {zonep}"
         cells2 += f"<td>{_badge(zpp_label, color)}</td>"
     r += (
-        f'<tr><td style="font-size:0.75rem;color:var(--slate)">'
-        f'Z&#8243;-Score (non-manufacturing · <strong>primary model for all 14 companies</strong>)'
+        f'<tr><td><strong>Z&#8243;-Score</strong>'
+        f'<span style="font-size:0.72rem;color:var(--slate);margin-left:6px">'
+        f'non-manufacturing · primary model</span>'
         f'</td>{cells2}</tr>'
     )
 
@@ -640,7 +650,10 @@ def _currency_table(data: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _build_html(data: dict) -> str:
-    now  = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+    _oslo = ZoneInfo("Europe/Oslo")
+    _dt   = datetime.datetime.now(tz=_oslo)
+    _tzn  = "CEST" if _dt.dst() and _dt.dst().seconds > 0 else "CET"
+    now   = _dt.strftime(f"%Y-%m-%d %H:%M {_tzn}")
     n_ok = sum(1 for fws in data.values() if fws)
 
     summary_rows  = "\n".join(_summary_row(t, fws) for t, fws in data.items())

@@ -1,12 +1,12 @@
 {
   "ticker": "ODL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:46:32.205622Z",
+  "computed_at": "2026-05-19T07:35:50.182116Z",
   "periods": {
     "2025": {
-      "o_score": -0.6036,
-      "bankruptcy_probability": 0.3535,
-      "interpretation": "High distress risk",
+      "o_score": -6.2265,
+      "bankruptcy_probability": 0.002,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4668,
         "wc_ta": 0.533,
@@ -19,9 +19,9 @@
       }
     },
     "2024": {
-      "o_score": -0.7564,
-      "bankruptcy_probability": 0.3194,
-      "interpretation": "High distress risk",
+      "o_score": -6.3793,
+      "bankruptcy_probability": 0.0017,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3665,
         "wc_ta": 0.638,
@@ -34,9 +34,9 @@
       }
     },
     "2023": {
-      "o_score": -1.144,
-      "bankruptcy_probability": 0.2416,
-      "interpretation": "Moderate distress risk",
+      "o_score": -6.7669,
+      "bankruptcy_probability": 0.0011,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3962,
         "wc_ta": 0.6291,
@@ -49,9 +49,9 @@
       }
     },
     "2022": {
-      "o_score": -0.3486,
-      "bankruptcy_probability": 0.4137,
-      "interpretation": "High distress risk",
+      "o_score": -5.9715,
+      "bankruptcy_probability": 0.0025,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4555,
         "wc_ta": 0.6196,
@@ -66,7 +66,7 @@
     "2021": {
       "o_score": -1.32,
       "bankruptcy_probability": 0.2108,
-      "interpretation": "Moderate distress risk",
+      "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": null,
         "wc_ta": null,

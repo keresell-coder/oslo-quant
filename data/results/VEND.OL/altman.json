@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:46:35.762855Z",
+  "computed_at": "2026-05-19T07:35:53.540030Z",
   "periods": {
     "2025": {
       "z_score": 4.1719,
