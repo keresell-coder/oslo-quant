@@ -39,12 +39,31 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}
+          restore-keys: pip-${{ runner.os }}-
+
+      - name: Cache raw financial data
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          # Refresh cache weekly (keyed on the ISO week number)
+          key: raw-data-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: raw-data-${{ runner.os }}-
+
       - name: Install oslo-quant
         run: pip install -e .
 
       - name: Run oslo-quant
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        # Continue even if some tickers fail — partial results are better than
+        # no report. The report step will use whatever data was successfully
+        # fetched plus any results already committed from the previous run.
+        continue-on-error: true
         run: |
           ARGS=""
           if [ -n "${{ github.event.inputs.tickers }}" ]; then
