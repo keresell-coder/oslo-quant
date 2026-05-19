@@ -1,12 +1,12 @@
 {
   "ticker": "KMAR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:49.437829Z",
+  "computed_at": "2026-05-19T07:35:59.722626Z",
   "periods": {
     "2025": {
-      "o_score": 0.9379,
-      "bankruptcy_probability": 0.7187,
-      "interpretation": "High distress risk",
+      "o_score": -1.8735,
+      "bankruptcy_probability": 0.1331,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.7594,
         "wc_ta": 0.099,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": 1.4671,
-      "bankruptcy_probability": 0.8126,
+      "o_score": -1.3444,
+      "bankruptcy_probability": 0.2068,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.8075,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": 1.8153,
-      "bankruptcy_probability": 0.86,
+      "o_score": -0.9962,
+      "bankruptcy_probability": 0.2697,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.7572,

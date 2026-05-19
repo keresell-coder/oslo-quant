@@ -1,11 +1,11 @@
 {
   "ticker": "BORR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:50.804198Z",
+  "computed_at": "2026-05-19T07:36:01.052582Z",
   "periods": {
     "2025": {
-      "o_score": 1.8201,
-      "bankruptcy_probability": 0.8606,
+      "o_score": -0.9913,
+      "bankruptcy_probability": 0.2706,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6628,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": 1.7248,
-      "bankruptcy_probability": 0.8487,
+      "o_score": -1.0867,
+      "bankruptcy_probability": 0.2522,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.7095,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": 1.4473,
-      "bankruptcy_probability": 0.8096,
+      "o_score": -1.3641,
+      "bankruptcy_probability": 0.2036,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6805,
@@ -49,8 +49,8 @@
       }
     },
     "2022": {
-      "o_score": 2.0585,
-      "bankruptcy_probability": 0.8868,
+      "o_score": -0.753,
+      "bankruptcy_probability": 0.3202,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.7009,
@@ -66,7 +66,7 @@
     "2021": {
       "o_score": -1.32,
       "bankruptcy_probability": 0.2108,
-      "interpretation": "Moderate distress risk",
+      "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": null,
         "wc_ta": null,

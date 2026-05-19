@@ -1,11 +1,13 @@
 {
   "ticker": "BORR.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:50.808644Z",
+  "computed_at": "2026-05-19T07:36:01.056832Z",
   "periods": {
     "2025": {
       "z_score": 0.7888,
       "zone": "Distress",
+      "z_score_prime": 1.7204,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.222,
       "x2_retained_earnings_to_assets": -0.3398,
       "x3_ebit_to_assets": 0.1246,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 0.7891,
       "zone": "Distress",
+      "z_score_prime": 1.8489,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.2592,
       "x2_retained_earnings_to_assets": -0.3734,
       "x3_ebit_to_assets": 0.1393,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 0.6457,
       "zone": "Distress",
+      "z_score_prime": 1.7924,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.3034,
       "x2_retained_earnings_to_assets": -0.4412,
       "x3_ebit_to_assets": 0.1112,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 0.3888,
       "zone": "Distress",
+      "z_score_prime": 2.003,
+      "zone_prime": "Grey",
       "x1_working_capital_to_assets": 0.4309,
       "x2_retained_earnings_to_assets": -0.4601,
       "x3_ebit_to_assets": 0.0339,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

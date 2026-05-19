@@ -1,11 +1,13 @@
 {
   "ticker": "DOFG.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:34.218984Z",
+  "computed_at": "2026-05-19T07:35:47.623502Z",
   "periods": {
     "2025": {
       "z_score": 2.3895,
       "zone": "Grey",
+      "z_score_prime": 5.4089,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3766,
       "x2_retained_earnings_to_assets": 0.1892,
       "x3_ebit_to_assets": 0.194,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 1.8103,
       "zone": "Grey",
+      "z_score_prime": 4.2449,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3391,
       "x2_retained_earnings_to_assets": 0.1454,
       "x3_ebit_to_assets": 0.0923,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 1.8111,
       "zone": "Grey",
+      "z_score_prime": 3.8732,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.2656,
       "x2_retained_earnings_to_assets": 0.138,
       "x3_ebit_to_assets": 0.1529,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 1.7182,
       "zone": "Distress",
+      "z_score_prime": 5.714,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.7432,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1208,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

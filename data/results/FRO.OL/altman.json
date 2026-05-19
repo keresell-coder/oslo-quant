@@ -1,11 +1,13 @@
 {
   "ticker": "FRO.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:52.404138Z",
+  "computed_at": "2026-05-19T07:36:02.435383Z",
   "periods": {
     "2025": {
       "z_score": 1.823,
       "zone": "Grey",
+      "z_score_prime": 4.5281,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3995,
       "x2_retained_earnings_to_assets": 0.0001,
       "x3_ebit_to_assets": 0.1628,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 1.642,
       "zone": "Distress",
+      "z_score_prime": 3.9652,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3392,
       "x2_retained_earnings_to_assets": 0.0003,
       "x3_ebit_to_assets": 0.1646,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 1.6317,
       "zone": "Distress",
+      "z_score_prime": 3.9608,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3329,
       "x2_retained_earnings_to_assets": 0.0001,
       "x3_ebit_to_assets": 0.1657,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 1.714,
       "zone": "Distress",
+      "z_score_prime": 4.2532,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3713,
       "x2_retained_earnings_to_assets": 0.0001,
       "x3_ebit_to_assets": 0.1296,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

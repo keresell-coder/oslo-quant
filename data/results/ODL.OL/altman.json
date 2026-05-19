@@ -1,11 +1,13 @@
 {
   "ticker": "ODL.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:37.151864Z",
+  "computed_at": "2026-05-19T07:35:50.186483Z",
   "periods": {
     "2025": {
       "z_score": 2.6408,
       "zone": "Grey",
+      "z_score_prime": 7.156,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.533,
       "x2_retained_earnings_to_assets": 0.4228,
       "x3_ebit_to_assets": 0.161,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 3.2496,
       "zone": "Safe",
+      "z_score_prime": 8.7116,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.638,
       "x2_retained_earnings_to_assets": 0.5059,
       "x3_ebit_to_assets": 0.1581,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 2.9897,
       "zone": "Grey",
+      "z_score_prime": 8.217,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.6291,
       "x2_retained_earnings_to_assets": 0.4821,
       "x3_ebit_to_assets": 0.1367,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 2.6643,
       "zone": "Grey",
+      "z_score_prime": 7.5783,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.6196,
       "x2_retained_earnings_to_assets": 0.4145,
       "x3_ebit_to_assets": 0.135,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

@@ -1,11 +1,13 @@
 {
   "ticker": "TEL.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:46.397195Z",
+  "computed_at": "2026-05-19T07:35:57.512090Z",
   "periods": {
     "2025": {
       "z_score": 2.2102,
       "zone": "Grey",
+      "z_score_prime": 5.5393,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4059,
       "x2_retained_earnings_to_assets": 0.3759,
       "x3_ebit_to_assets": 0.1703,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 2.2127,
       "zone": "Grey",
+      "z_score_prime": 5.7169,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4401,
       "x2_retained_earnings_to_assets": 0.3908,
       "x3_ebit_to_assets": 0.1509,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 2.0756,
       "zone": "Grey",
+      "z_score_prime": 5.0044,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3511,
       "x2_retained_earnings_to_assets": 0.3854,
       "x3_ebit_to_assets": 0.1469,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 1.9632,
       "zone": "Grey",
+      "z_score_prime": 4.8932,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3593,
       "x2_retained_earnings_to_assets": 0.317,
       "x3_ebit_to_assets": 0.1699,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

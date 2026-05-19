@@ -1,11 +1,13 @@
 {
   "ticker": "NOD.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:40.125287Z",
+  "computed_at": "2026-05-19T07:35:52.257734Z",
   "periods": {
     "2025": {
       "z_score": 2.9637,
       "zone": "Grey",
+      "z_score_prime": 5.4047,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.2463,
       "x2_retained_earnings_to_assets": 0.3002,
       "x3_ebit_to_assets": 0.0687,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 2.8243,
       "zone": "Grey",
+      "z_score_prime": 4.8141,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.1482,
       "x2_retained_earnings_to_assets": 0.3831,
       "x3_ebit_to_assets": 0.0101,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 2.9624,
       "zone": "Grey",
+      "z_score_prime": 5.0303,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.1241,
       "x2_retained_earnings_to_assets": 0.4076,
       "x3_ebit_to_assets": 0.0681,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 4.4722,
       "zone": "Safe",
+      "z_score_prime": 7.1893,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.1115,
       "x2_retained_earnings_to_assets": 0.4429,
       "x3_ebit_to_assets": 0.2729,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

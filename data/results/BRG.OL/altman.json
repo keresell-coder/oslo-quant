@@ -1,11 +1,13 @@
 {
   "ticker": "BRG.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:35.756952Z",
+  "computed_at": "2026-05-19T07:35:48.935835Z",
   "periods": {
     "2025": {
       "z_score": 3.2605,
       "zone": "Safe",
+      "z_score_prime": 6.7954,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4582,
       "x2_retained_earnings_to_assets": 0.3206,
       "x3_ebit_to_assets": 0.1672,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 3.0086,
       "zone": "Safe",
+      "z_score_prime": 6.1565,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4109,
       "x2_retained_earnings_to_assets": 0.3061,
       "x3_ebit_to_assets": 0.1913,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 2.9751,
       "zone": "Grey",
+      "z_score_prime": 6.0247,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3929,
       "x2_retained_earnings_to_assets": 0.2834,
       "x3_ebit_to_assets": 0.1958,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 3.116,
       "zone": "Safe",
+      "z_score_prime": 6.3367,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4349,
       "x2_retained_earnings_to_assets": 0.2624,
       "x3_ebit_to_assets": 0.204,

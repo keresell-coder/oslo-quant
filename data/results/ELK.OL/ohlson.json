@@ -1,12 +1,12 @@
 {
   "ticker": "ELK.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:38.758596Z",
+  "computed_at": "2026-05-19T07:35:51.271477Z",
   "periods": {
     "2025": {
-      "o_score": 0.3728,
-      "bankruptcy_probability": 0.5921,
-      "interpretation": "High distress risk",
+      "o_score": -2.4387,
+      "bankruptcy_probability": 0.0803,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.494,
         "wc_ta": 0.0409,
@@ -19,9 +19,9 @@
       }
     },
     "2024": {
-      "o_score": 0.0249,
-      "bankruptcy_probability": 0.5062,
-      "interpretation": "High distress risk",
+      "o_score": -2.7866,
+      "bankruptcy_probability": 0.0581,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.513,
         "wc_ta": -0.0136,
@@ -34,9 +34,9 @@
       }
     },
     "2023": {
-      "o_score": -0.0985,
-      "bankruptcy_probability": 0.4754,
-      "interpretation": "High distress risk",
+      "o_score": -2.91,
+      "bankruptcy_probability": 0.0517,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5157,
         "wc_ta": 0.2689,
@@ -49,9 +49,9 @@
       }
     },
     "2022": {
-      "o_score": -1.6736,
-      "bankruptcy_probability": 0.1579,
-      "interpretation": "Moderate distress risk",
+      "o_score": -4.4851,
+      "bankruptcy_probability": 0.0112,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4549,
         "wc_ta": 0.2645,

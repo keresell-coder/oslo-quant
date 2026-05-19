@@ -1,11 +1,13 @@
 {
   "ticker": "MOWI.OL",
   "framework": "altman",
-  "computed_at": "2026-05-18T22:06:44.964805Z",
+  "computed_at": "2026-05-19T07:35:56.081945Z",
   "periods": {
     "2025": {
       "z_score": 1.6983,
       "zone": "Distress",
+      "z_score_prime": 2.8878,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.1688,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1444,
@@ -15,6 +17,8 @@
     "2024": {
       "z_score": 1.8466,
       "zone": "Grey",
+      "z_score_prime": 2.9183,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.1526,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.1535,
@@ -24,6 +28,8 @@
     "2023": {
       "z_score": 1.8713,
       "zone": "Grey",
+      "z_score_prime": 2.8385,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.1262,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.174,
@@ -33,6 +39,8 @@
     "2022": {
       "z_score": 2.1356,
       "zone": "Grey",
+      "z_score_prime": 3.7871,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.224,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": 0.2023,
@@ -42,6 +50,8 @@
     "2021": {
       "z_score": 0.0,
       "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
       "x1_working_capital_to_assets": null,
       "x2_retained_earnings_to_assets": null,
       "x3_ebit_to_assets": null,

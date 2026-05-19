@@ -1,12 +1,12 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-18T22:06:53.914455Z",
+  "computed_at": "2026-05-19T07:36:03.570376Z",
   "periods": {
     "2025": {
-      "o_score": -1.0207,
-      "bankruptcy_probability": 0.2649,
-      "interpretation": "Moderate distress risk",
+      "o_score": -3.8322,
+      "bankruptcy_probability": 0.0212,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3889,
         "wc_ta": 0.5398,
@@ -19,9 +19,9 @@
       }
     },
     "2024": {
-      "o_score": -2.064,
-      "bankruptcy_probability": 0.1126,
-      "interpretation": "Moderate distress risk",
+      "o_score": -4.8755,
+      "bankruptcy_probability": 0.0076,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3889,
         "wc_ta": 0.5446,
@@ -34,9 +34,9 @@
       }
     },
     "2023": {
-      "o_score": -1.6118,
-      "bankruptcy_probability": 0.1663,
-      "interpretation": "Moderate distress risk",
+      "o_score": -4.4233,
+      "bankruptcy_probability": 0.0119,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4308,
         "wc_ta": 0.4998,
@@ -49,9 +49,9 @@
       }
     },
     "2022": {
-      "o_score": -0.6488,
-      "bankruptcy_probability": 0.3433,
-      "interpretation": "High distress risk",
+      "o_score": -3.4603,
+      "bankruptcy_probability": 0.0305,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4908,
         "wc_ta": 0.4094,
@@ -66,7 +66,7 @@
     "2021": {
       "o_score": -1.32,
       "bankruptcy_probability": 0.2108,
-      "interpretation": "Moderate distress risk",
+      "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": null,
         "wc_ta": null,
