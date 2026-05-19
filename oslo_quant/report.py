@@ -99,6 +99,7 @@ def _badge(text: str, color: str) -> str:
         "red":    ("#ffffff", "#dc2626"),
         "blue":   ("#ffffff", "#2563eb"),
         "teal":   ("#ffffff", "#0891b2"),
+        "orange": ("#ffffff", "#c2410c"),
         "purple": ("#ffffff", "#7c3aed"),
         "gray":   ("#374151", "#e5e7eb"),
         "indigo": ("#ffffff", "#4f46e5"),
@@ -112,9 +113,9 @@ def _badge(text: str, color: str) -> str:
 
 
 def _ccy_badge(ccy: str) -> str:
-    # Distinct colors: NOK=teal, USD=blue, EUR=purple — intentionally different
-    # from the green/yellow/red traffic-light palette used for risk signals.
-    color = {"NOK": "teal", "USD": "blue", "EUR": "purple"}.get(ccy, "gray")
+    # Three clearly distinct hues: teal (cool), orange (warm), purple (cool-violet).
+    # All intentionally different from the green/yellow/red risk signal palette.
+    color = {"NOK": "teal", "USD": "orange", "EUR": "purple"}.get(ccy, "gray")
     return _badge(ccy or "?", color)
 
 
@@ -858,7 +859,7 @@ footer a{{color:var(--accent);text-decoration:none}}
       </div>
       <div class="fw-card">
         <h5>Sloan Accruals</h5>
-        <p>Measures earnings quality. A negative accrual ratio means cash flow exceeds reported income — a hallmark of durable, high-quality earnings. A positive ratio suggests profit is largely non-cash accruals that may not repeat.</p>
+        <p>Measures earnings quality. A negative accrual ratio means cash flow exceeds reported income — a hallmark of durable, high-quality earnings. A positive ratio suggests profit is largely non-cash accruals that may not repeat. <strong>Implementation note:</strong> the accrual ratio here is (Net Income − Operating Cash Flow) / Average Assets, which omits investing cash flows. This is a deliberate simplification: including investing cash flows would systematically flag capital-intensive companies (shipping, drilling, aquaculture) as low quality every time they acquire a vessel or farm, creating false signals.</p>
         <div class="reading">
           <strong>How to read:</strong> High = cash earnings exceed accounting profits (good). Low = accruals exceed cash (caution). Absolute cash flows are shown in the company's reporting currency.
         </div>
