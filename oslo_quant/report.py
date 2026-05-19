@@ -175,26 +175,24 @@ def _company_summary(ticker: str, fws: dict) -> str:
         if prob is not None:
             if prob < 0.05:
                 positives.append("very low distress risk (Ohlson)")
-            elif prob > 0.25:
-                concerns.append(f"elevated bankruptcy risk ({_pct(prob)}, Ohlson)")
+            elif prob > 0.20:
+                concerns.append(f"elevated distress signal ({_pct(prob)}, Ohlson)")
 
     _, al = _latest(fws.get("altman", {}))
     if al:
-        caution = ticker in _ALTMAN_CAUTION
-        # For capital-intensive sectors prefer Z'' (non-manufacturing variant)
-        if caution:
-            zone = al.get("zone_prime", "Unknown")
-            z    = _safe_float(al.get("z_score_prime"))
+        # Use Z'' for all companies — none of the 14 qualify as US manufacturing
+        if al.get("z_score_prime") is not None:
+            zone  = al.get("zone_prime", "Unknown")
+            z     = _safe_float(al.get("z_score_prime"))
             label = "Z''="
         else:
-            zone = al.get("zone", "Unknown")
-            z    = _safe_float(al.get("z_score"))
+            zone  = al.get("zone", "Unknown")
+            z     = _safe_float(al.get("z_score"))
             label = "Z="
         if zone == "Safe":
             positives.append(f"Altman {label}{_num(z)} in safe zone")
         elif zone == "Distress":
-            sfx = " (sector-adjusted model)" if caution else ""
-            concerns.append(f"Altman flags distress ({label}{_num(z)}{sfx})")
+            concerns.append(f"Altman flags distress ({label}{_num(z)})")
 
     if not positives and not concerns:
         return ""
@@ -249,7 +247,7 @@ def _summary_row(ticker: str, fws: dict) -> str:
         if p:
             prob = _safe_float(p.get("bankruptcy_probability"))
             if prob is not None:
-                c = "green" if prob < 0.10 else ("yellow" if prob < 0.30 else "red")
+                c = "green" if prob < 0.05 else ("yellow" if prob < 0.20 else "red")
                 label = p.get("interpretation", "").replace(" distress risk", "")
                 ohlson = _badge(f"{_pct(prob)} {label}", c)
 
@@ -257,11 +255,13 @@ def _summary_row(ticker: str, fws: dict) -> str:
     if "altman" in fws:
         _, p = _latest(fws["altman"])
         if p:
-            caution = ticker in _ALTMAN_CAUTION
-            if caution and p.get("z_score_prime") is not None:
+            # Z'' (non-manufacturing) is appropriate for all 14 Norwegian companies;
+            # none qualify as US manufacturing. Show Z'' as primary throughout.
+            if p.get("z_score_prime") is not None:
                 z    = _num(p.get("z_score_prime"))
                 zone = p.get("zone_prime", "Unknown")
-                label, tip = "Z''=", ' title="Z\'\' non-manufacturing model (more appropriate for this sector)"'
+                label = "Z''="
+                tip   = ' title="Z\'\' non-manufacturing model — preferred for all non-US companies"'
             else:
                 z    = _num(p.get("z_score"))
                 zone = p.get("zone", "Unknown")
@@ -534,7 +534,7 @@ def _ohlson_rows(periods: dict, cols: list[str]) -> str:
     for c in cols:
         prob = _safe_float(periods.get(c, {}).get("bankruptcy_probability"))
         if prob is not None:
-            color = "green" if prob < 0.10 else ("yellow" if prob < 0.30 else "red")
+            color = "green" if prob < 0.05 else ("yellow" if prob < 0.20 else "red")
             cells += f"<td>{_badge(_pct(prob), color)}</td>"
         else:
             cells += "<td>—</td>"
@@ -569,7 +569,7 @@ def _altman_rows(periods: dict, cols: list[str]) -> str:
         cells2 += f"<td>{_badge(zpp_label, color)}</td>"
     r += (
         f'<tr><td style="font-size:0.75rem;color:var(--slate)">'
-        f'Z&#8243;-Score (non-manufacturing · preferred for shipping, offshore, aquaculture, real estate)'
+        f'Z&#8243;-Score (non-manufacturing · <strong>primary model for all 14 companies</strong>)'
         f'</td>{cells2}</tr>'
     )
 
@@ -852,23 +852,23 @@ footer a{{color:var(--accent);text-decoration:none}}
       </div>
       <div class="fw-card">
         <h5>Ohlson O-Score</h5>
-        <p>A logistic regression model estimating the probability of bankruptcy within one year using nine financial ratios covering size, leverage, liquidity, and profitability. Generally more sector-neutral than Altman.</p>
+        <p>A logistic regression model estimating the probability of bankruptcy within one year using nine financial ratios covering size, leverage, liquidity, and profitability. <strong>Key calibration limitations:</strong> (1) calibrated on US industrial firms in the 1970s with a ~7% annual bankruptcy rate — far above the &lt;1% rate for large listed Norwegian companies, so raw probabilities are structurally overstated; (2) the leverage term (+6.03 × TL/TA) systematically inflates risk for capital-intensive sectors (shipping, offshore, aquaculture, real estate) where high debt is backed by physical assets; (3) SIZE variable is expressed in millions, consistent with Begley et al. (1996) to avoid a common implementation error that inflates O-Scores by ~2.8 points. Use probabilities as <em>relative, directional signals</em> within a peer group — not as absolute bankruptcy forecasts.</p>
         <div class="reading">
-          <strong>How to read:</strong> &lt;10% = Low risk. 10–30% = Moderate. &gt;30% = Elevated. Calibrated on US firms in the 1970s — treat as directional, not precise.
+          <strong>How to read:</strong> &lt;5% = Low risk. 5–20% = Moderate. &gt;20% = Elevated. Thresholds are set conservatively to account for the lower Norwegian base rate. Cross-check with Altman Z&#8243; and company fundamentals before drawing conclusions.
         </div>
       </div>
       <div class="fw-card">
         <h5>Altman Z-Score</h5>
-        <p>Five balance-sheet ratios weighted to classify companies as safe, grey-zone, or distress. <strong>Important limitation:</strong> the original model was calibrated on US manufacturing firms (1968) and is known to produce false distress signals for capital-intensive sectors such as shipping, offshore drilling, salmon farming, and defense. Companies in these sectors are marked with a tooltip warning.</p>
+        <p>Five balance-sheet ratios weighted to classify companies as safe, grey-zone, or distress. Two variants are shown: the original Z (1968, US manufacturing) and the Z&#8243; non-manufacturing model (1995). <strong>Z&#8243; is displayed as primary for all companies</strong> — none of the 14 covered firms qualify as US manufacturing, and Z&#8243; removes the asset-turnover term (X5) that artificially penalises capital-intensive businesses.</p>
         <div class="reading">
-          <strong>How to read:</strong> Z &gt;2.99 = Safe. Z 1.81–2.99 = Grey. Z &lt;1.81 = Distress. For shipping/offshore companies the relevant benchmark is much lower — many healthy operators naturally score below 1.81 due to high asset bases and leverage.
+          <strong>How to read Z&#8243;:</strong> &gt;2.6 = Safe. 1.1–2.6 = Grey. &lt;1.1 = Distress. Thresholds: Safe &gt;2.6 | Grey 1.1–2.6 | Distress &lt;1.1. Original Z thresholds (Safe &gt;2.99, Grey 1.81–2.99, Distress &lt;1.81) are still shown for reference in the detail card.
         </div>
       </div>
     </div>
 
     <div class="disclaimer">
       <strong>⚠ Data quality &amp; model limitations</strong>
-      Financial data is sourced from Yahoo Finance. Stock prices on Oslo Børs are always in NOK; companies that report in USD or EUR have their price data converted to the reporting currency before any price-based metric is computed. All five models were originally calibrated on US companies — treat scores as relative indicators and cross-check with official annual reports before drawing conclusions. Altman Z-Score results for shipping, offshore, aquaculture, real estate, and defence companies should be interpreted with extra caution (sector tooltip shown).
+      Financial data is sourced from Yahoo Finance. Stock prices on Oslo Børs are always in NOK; companies that report in USD or EUR have their price data converted to the reporting currency before any price-based metric is computed. All five models were originally calibrated on US companies — treat scores as relative indicators and cross-check with official annual reports before drawing conclusions. Ohlson O-Score probabilities are structurally overstated for large listed Norwegian firms and capital-intensive sectors; use as a relative signal within a peer group. Altman Z&#8243; (non-manufacturing) is shown as primary — the original Z is retained for reference only.
     </div>
 
   </div>
