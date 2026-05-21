@@ -66,7 +66,7 @@ COMPANIES: list[CompanyConfig] = [
                   sector="Crude Oil Tankers"),
     CompanyConfig("HAFNI.OL", reporting_currency="USD", full_name="Hafnia Ltd",
                   sector="Product Tankers"),
-    CompanyConfig("NRBIT.OL", reporting_currency="NOK", full_name="Norbit ASA",
+    CompanyConfig("NORBT.OL", reporting_currency="NOK", full_name="Norbit ASA",
                   alt_ticker="NORBT",
                   sector="Technology / Sensing & Connectivity",
                   notes="Develops multibeam sonar, underwater imaging, and telematics/IoT products. Operates three segments: Oceans (sonar/sensors), Connectivity (cable/telematics), and Product Innovation. Listed June 2019, headquartered in Trondheim."),
