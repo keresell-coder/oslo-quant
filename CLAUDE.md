@@ -1,6 +1,6 @@
 # Oslo Quant — Developer Reference
 
-A weekly quantitative dashboard for 14 Oslo Børs companies. A GitHub Actions workflow
+A weekly quantitative dashboard for 15 Oslo Børs companies. A GitHub Actions workflow
 fetches financial data every Monday, runs five valuation/distress frameworks, and
 commits an updated `index.html` back to the repository (served via GitHub Pages).
 
@@ -166,6 +166,7 @@ for supplementary data; the main pipeline uses yfinance and runs without it.
 | BORR.OL   | Borr Drilling Ltd          | USD | Offshore Drilling             | Jack-up rigs, shallow water. alt_ticker="BORR" for FMP. |
 | FRO.OL    | Frontline plc              | USD | Crude Oil Tankers             | Cyprus-registered (redomiciled from Bermuda 2022). |
 | HAFNI.OL  | Hafnia Ltd                 | USD | Product Tankers               | |
+| NRBIT.OL  | Norbit ASA                 | NOK | Technology / Sensing & Connectivity | Multibeam sonar, underwater sensors, telematics/IoT. alt_ticker="NORBT" for FMP. Listed June 2019. |
 
 ---
 
