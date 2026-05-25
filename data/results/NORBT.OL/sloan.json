@@ -1,0 +1,59 @@
+{
+  "ticker": "NORBT.OL",
+  "framework": "sloan",
+  "computed_at": "2026-05-25T10:22:31.770653Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -96300000.0,
+      "cfo_accrual_ratio": -0.0401,
+      "bs_accruals": 313400000.0,
+      "bs_accrual_ratio": 0.1304,
+      "earnings_quality": "Moderate",
+      "net_income": 404300000.0,
+      "operating_cash_flow": 500600000.0,
+      "avg_total_assets": 2403500000.0
+    },
+    "2024": {
+      "cfo_accruals": -187600000.0,
+      "cfo_accrual_ratio": -0.1019,
+      "bs_accruals": -185800000.0,
+      "bs_accrual_ratio": -0.101,
+      "earnings_quality": "High",
+      "net_income": 243300000.0,
+      "operating_cash_flow": 430900000.0,
+      "avg_total_assets": 1840300000.0
+    },
+    "2023": {
+      "cfo_accruals": -160400000.0,
+      "cfo_accrual_ratio": -0.1181,
+      "bs_accruals": 293800000.0,
+      "bs_accrual_ratio": 0.2163,
+      "earnings_quality": "High",
+      "net_income": 185300000.0,
+      "operating_cash_flow": 345700000.0,
+      "avg_total_assets": 1358600000.0
+    },
+    "2022": {
+      "cfo_accruals": 21000000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 106700000.0,
+      "operating_cash_flow": 85700000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
+}

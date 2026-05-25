@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-19T07:35:50.173150Z",
+  "computed_at": "2026-05-25T10:22:20.799265Z",
   "periods": {
     "2025": {
       "f_score": 6,

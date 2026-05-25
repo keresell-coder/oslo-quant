@@ -1,11 +1,11 @@
 {
   "ticker": "KOG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-19T07:35:58.651537Z",
+  "computed_at": "2026-05-25T10:22:27.298399Z",
   "periods": {
     "2025": {
-      "o_score": -9.1835,
-      "bankruptcy_probability": 0.0001,
+      "o_score": -6.372,
+      "bankruptcy_probability": 0.0017,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": null,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -8.9288,
-      "bankruptcy_probability": 0.0001,
+      "o_score": -6.1173,
+      "bankruptcy_probability": 0.0022,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": null,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -9.1059,
-      "bankruptcy_probability": 0.0001,
+      "o_score": -6.2944,
+      "bankruptcy_probability": 0.0018,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": null,
@@ -49,8 +49,8 @@
       }
     },
     "2022": {
-      "o_score": -8.9647,
-      "bankruptcy_probability": 0.0001,
+      "o_score": -6.1532,
+      "bankruptcy_probability": 0.0021,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": null,

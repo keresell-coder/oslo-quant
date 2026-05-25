@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-19T07:35:59.720434Z",
+  "computed_at": "2026-05-25T10:22:28.130714Z",
   "periods": {
     "2025": {
       "cfo_accruals": -964000000.0,

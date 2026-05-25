@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-19T07:35:56.068575Z",
+  "computed_at": "2026-05-25T10:22:25.393097Z",
   "periods": {
     "2025": {
       "f_score": 4,

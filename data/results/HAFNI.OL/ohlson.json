@@ -1,11 +1,11 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-19T07:36:03.570376Z",
+  "computed_at": "2026-05-25T10:22:30.863084Z",
   "periods": {
     "2025": {
-      "o_score": -6.6437,
-      "bankruptcy_probability": 0.0013,
+      "o_score": -3.8322,
+      "bankruptcy_probability": 0.0212,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3889,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -7.687,
-      "bankruptcy_probability": 0.0005,
+      "o_score": -4.8755,
+      "bankruptcy_probability": 0.0076,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3889,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -7.2348,
-      "bankruptcy_probability": 0.0007,
+      "o_score": -4.4233,
+      "bankruptcy_probability": 0.0119,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4308,
@@ -49,8 +49,8 @@
       }
     },
     "2022": {
-      "o_score": -6.2718,
-      "bankruptcy_probability": 0.0019,
+      "o_score": -3.4603,
+      "bankruptcy_probability": 0.0305,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4908,

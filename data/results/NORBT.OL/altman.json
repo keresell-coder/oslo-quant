@@ -1,0 +1,64 @@
+{
+  "ticker": "NORBT.OL",
+  "framework": "altman",
+  "computed_at": "2026-05-25T10:22:31.777595Z",
+  "periods": {
+    "2025": {
+      "z_score": 3.0574,
+      "zone": "Safe",
+      "z_score_prime": 5.4327,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.2945,
+      "x2_retained_earnings_to_assets": 0.2074,
+      "x3_ebit_to_assets": 0.2862,
+      "x4_book_equity_to_liabilities": 0.8584,
+      "x5_revenue_to_assets": 0.9541
+    },
+    "2024": {
+      "z_score": 2.9437,
+      "zone": "Grey",
+      "z_score_prime": 5.5156,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.3044,
+      "x2_retained_earnings_to_assets": 0.2314,
+      "x3_ebit_to_assets": 0.2352,
+      "x4_book_equity_to_liabilities": 1.1271,
+      "x5_revenue_to_assets": 0.8018
+    },
+    "2023": {
+      "z_score": 3.3179,
+      "zone": "Safe",
+      "z_score_prime": 5.9398,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.323,
+      "x2_retained_earnings_to_assets": 0.2805,
+      "x3_ebit_to_assets": 0.2562,
+      "x4_book_equity_to_liabilities": 1.1286,
+      "x5_revenue_to_assets": 1.015
+    },
+    "2022": {
+      "z_score": 2.8067,
+      "zone": "Grey",
+      "z_score_prime": 4.9081,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.295,
+      "x2_retained_earnings_to_assets": 0.224,
+      "x3_ebit_to_assets": 0.1831,
+      "x4_book_equity_to_liabilities": 0.9643,
+      "x5_revenue_to_assets": 0.9563
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
+}

@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "sloan",
-  "computed_at": "2026-05-19T07:35:54.625737Z",
+  "computed_at": "2026-05-25T10:22:24.394680Z",
   "periods": {
     "2025": {
       "cfo_accruals": -362000000.0,
