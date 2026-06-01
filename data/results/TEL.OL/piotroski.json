@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-25T10:22:26.343999Z",
+  "computed_at": "2026-06-01T11:48:59.221883Z",
   "periods": {
     "2025": {
       "f_score": 5,

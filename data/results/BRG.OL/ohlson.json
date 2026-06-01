@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-05-25T10:22:19.934864Z",
+  "computed_at": "2026-06-01T11:48:58.686213Z",
   "periods": {
     "2025": {
       "o_score": -4.0542,
