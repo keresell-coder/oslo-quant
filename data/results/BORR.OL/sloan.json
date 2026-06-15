@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "sloan",
-  "computed_at": "2026-06-08T11:09:48.328004Z",
+  "computed_at": "2026-06-15T12:31:10.387792Z",
   "periods": {
     "2025": {
       "cfo_accruals": -206900000.0,

@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "sloan",
-  "computed_at": "2026-06-08T11:09:47.901351Z",
+  "computed_at": "2026-06-15T12:31:10.013586Z",
   "periods": {
     "2025": {
       "cfo_accruals": -736000000.0,

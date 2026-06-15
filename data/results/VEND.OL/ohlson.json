@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "ohlson",
-  "computed_at": "2026-06-08T11:09:48.036788Z",
+  "computed_at": "2026-06-15T12:31:10.135863Z",
   "periods": {
     "2025": {
       "o_score": -5.2601,
