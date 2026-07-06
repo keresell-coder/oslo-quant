@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "sloan",
-  "computed_at": "2026-06-29T11:12:42.706980Z",
+  "computed_at": "2026-07-06T10:51:03.725092Z",
   "periods": {
     "2025": {
       "cfo_accruals": -153000000.0,
