@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "altman",
-  "computed_at": "2026-07-06T10:51:03.864089Z",
+  "computed_at": "2026-07-13T09:39:08.629682Z",
   "periods": {
     "2025": {
       "z_score": 0.7888,

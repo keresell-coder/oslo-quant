@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-06T10:51:03.729067Z",
+  "computed_at": "2026-07-13T09:39:08.495168Z",
   "periods": {
     "2025": {
       "o_score": -2.484,

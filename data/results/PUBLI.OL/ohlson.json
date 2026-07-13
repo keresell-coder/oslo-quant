@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-06T10:51:03.616652Z",
+  "computed_at": "2026-07-13T09:39:08.395736Z",
   "periods": {
     "2025": {
       "o_score": -3.1037,

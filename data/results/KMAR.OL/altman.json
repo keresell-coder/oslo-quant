@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "altman",
-  "computed_at": "2026-07-06T10:51:03.828561Z",
+  "computed_at": "2026-07-13T09:39:08.594844Z",
   "periods": {
     "2025": {
       "z_score": 1.9215,

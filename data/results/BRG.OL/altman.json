@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "altman",
-  "computed_at": "2026-07-06T10:51:03.451705Z",
+  "computed_at": "2026-07-13T09:39:08.231317Z",
   "periods": {
     "2025": {
       "z_score": 3.2605,
