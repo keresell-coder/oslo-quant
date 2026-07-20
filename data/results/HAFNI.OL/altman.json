@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "altman",
-  "computed_at": "2026-07-13T09:39:08.702647Z",
+  "computed_at": "2026-07-20T09:26:49.282150Z",
   "periods": {
     "2025": {
       "z_score": 2.8675,
