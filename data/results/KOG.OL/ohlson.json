@@ -1,64 +1,64 @@
 {
   "ticker": "KOG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-20T09:26:49.137303Z",
+  "computed_at": "2026-07-27T10:02:32.957483Z",
   "periods": {
     "2025": {
-      "o_score": -6.372,
-      "bankruptcy_probability": 0.0017,
-      "interpretation": "Low distress risk",
+      "o_score": -2.4308,
+      "bankruptcy_probability": 0.0809,
+      "interpretation": "Moderate distress risk",
       "inputs": {
-        "tl_ta": null,
+        "tl_ta": 0.7187,
         "wc_ta": 0.1593,
         "cl_ca": 0.2903,
         "oeneg": 0,
         "ni_ta": 0.0506,
-        "cfo_tl": null,
+        "cfo_tl": 0.2147,
         "intwo": 0,
         "chin": 0.2279
       }
     },
     "2024": {
-      "o_score": -6.1173,
-      "bankruptcy_probability": 0.0022,
-      "interpretation": "Low distress risk",
+      "o_score": -2.2629,
+      "bankruptcy_probability": 0.0942,
+      "interpretation": "Moderate distress risk",
       "inputs": {
-        "tl_ta": null,
+        "tl_ta": 0.7224,
         "wc_ta": 0.1987,
         "cl_ca": 0.3186,
         "oeneg": 0,
         "ni_ta": 0.0378,
-        "cfo_tl": null,
+        "cfo_tl": 0.2741,
         "intwo": 0,
         "chin": -0.1717
       }
     },
     "2023": {
-      "o_score": -6.2944,
-      "bankruptcy_probability": 0.0018,
-      "interpretation": "Low distress risk",
+      "o_score": -2.42,
+      "bankruptcy_probability": 0.0817,
+      "interpretation": "Moderate distress risk",
       "inputs": {
-        "tl_ta": null,
+        "tl_ta": 0.6906,
         "wc_ta": 0.2305,
         "cl_ca": 0.3309,
         "oeneg": 0,
         "ni_ta": 0.0697,
-        "cfo_tl": null,
+        "cfo_tl": 0.1585,
         "intwo": 0,
         "chin": 0.1448
       }
     },
     "2022": {
-      "o_score": -6.1532,
-      "bankruptcy_probability": 0.0021,
-      "interpretation": "Low distress risk",
+      "o_score": -2.1092,
+      "bankruptcy_probability": 0.1082,
+      "interpretation": "Moderate distress risk",
       "inputs": {
-        "tl_ta": null,
+        "tl_ta": 0.682,
         "wc_ta": 0.253,
         "cl_ca": 0.3299,
         "oeneg": 0,
         "ni_ta": 0.0642,
-        "cfo_tl": null,
+        "cfo_tl": 0.0375,
         "intwo": 0,
         "chin": null
       }

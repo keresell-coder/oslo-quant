@@ -1,49 +1,49 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "dupont",
-  "computed_at": "2026-07-20T09:26:48.677571Z",
+  "computed_at": "2026-07-27T10:02:29.439874Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.4638,
-      "asset_turnover": 0.0322,
-      "equity_multiplier": 2.5314,
-      "roe_3factor": 0.0378,
+      "asset_turnover": 0.0319,
+      "equity_multiplier": 2.5256,
+      "roe_3factor": 0.0373,
       "tax_burden": 0.7901,
       "interest_burden": 0.4992,
       "ebit_margin": 1.1757,
-      "roe_5factor": 0.0378,
-      "net_income": 512000000.0,
-      "revenue": 1104000000.0,
-      "avg_total_assets": 34263500000.0,
-      "avg_equity": 13535500000.0
+      "roe_5factor": 0.0373,
+      "net_income": 468504838.0,
+      "revenue": 1010213558.0,
+      "avg_total_assets": 31699529518.0,
+      "avg_equity": 12551188748.0
     },
     "2024": {
       "net_profit_margin": 0.0148,
-      "asset_turnover": 0.0662,
-      "equity_multiplier": 2.3933,
+      "asset_turnover": 0.0659,
+      "equity_multiplier": 2.3952,
       "roe_3factor": 0.0023,
       "tax_burden": 0.137,
       "interest_burden": 0.1633,
       "ebit_margin": 0.6603,
       "roe_5factor": 0.0023,
-      "net_income": 10000000.0,
-      "revenue": 677000000.0,
-      "avg_total_assets": 10226500000.0,
-      "avg_equity": 4273000000.0
+      "net_income": 9731769.0,
+      "revenue": 658840752.0,
+      "avg_total_assets": 9992556875.0,
+      "avg_equity": 4171883524.0
     },
     "2023": {
       "net_profit_margin": -1.5652,
-      "asset_turnover": 0.0631,
-      "equity_multiplier": 2.7595,
-      "roe_3factor": -0.2727,
+      "asset_turnover": 0.0605,
+      "equity_multiplier": 2.7516,
+      "roe_3factor": -0.2604,
       "tax_burden": 0.9288,
       "interest_burden": 1.4977,
       "ebit_margin": -1.1252,
-      "roe_5factor": -0.2727,
-      "net_income": -900000000.0,
-      "revenue": 575000000.0,
-      "avg_total_assets": 9106500000.0,
-      "avg_equity": 3300000000.0
+      "roe_5factor": -0.2604,
+      "net_income": -884384685.0,
+      "revenue": 565023549.0,
+      "avg_total_assets": 9344535559.0,
+      "avg_equity": 3395992938.0
     },
     "2022": {
       "net_profit_margin": -1.2361,
@@ -54,8 +54,8 @@
       "interest_burden": 1.3941,
       "ebit_margin": -1.002,
       "roe_5factor": null,
-      "net_income": -623000000.0,
-      "revenue": 504000000.0,
+      "net_income": -663110297.0,
+      "revenue": 536448780.0,
       "avg_total_assets": null,
       "avg_equity": null
     },
@@ -74,6 +74,6 @@
       "avg_equity": null
     }
   },
-  "financial_currency": "NOK",
+  "financial_currency": "SEK",
   "price_currency": "NOK"
 }

@@ -1,11 +1,11 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-20T09:26:48.695672Z",
+  "computed_at": "2026-07-27T10:02:29.451224Z",
   "periods": {
     "2025": {
-      "o_score": -3.1037,
-      "bankruptcy_probability": 0.043,
+      "o_score": -3.0663,
+      "bankruptcy_probability": 0.0445,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.622,
@@ -15,12 +15,12 @@
         "ni_ta": 0.009,
         "cfo_tl": 0.0248,
         "intwo": 0,
-        "chin": 0.9617
+        "chin": 0.9593
       }
     },
     "2024": {
-      "o_score": -3.2181,
-      "bankruptcy_probability": 0.0385,
+      "o_score": -3.207,
+      "bankruptcy_probability": 0.0389,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.521,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -1.2926,
-      "bankruptcy_probability": 0.2154,
+      "o_score": -1.3057,
+      "bankruptcy_probability": 0.2132,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6656,
@@ -45,12 +45,12 @@
         "ni_ta": -0.1056,
         "cfo_tl": 0.077,
         "intwo": 1,
-        "chin": -0.1819
+        "chin": -0.143
       }
     },
     "2022": {
-      "o_score": -1.9127,
-      "bankruptcy_probability": 0.1287,
+      "o_score": -1.9381,
+      "bankruptcy_probability": 0.1259,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.613,
@@ -79,6 +79,6 @@
       }
     }
   },
-  "financial_currency": "NOK",
+  "financial_currency": "SEK",
   "price_currency": "NOK"
 }
