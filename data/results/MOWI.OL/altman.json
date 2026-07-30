@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "altman",
-  "computed_at": "2026-07-27T10:02:30.402660Z",
+  "computed_at": "2026-07-30T18:29:00.962079Z",
   "periods": {
     "2025": {
       "z_score": 1.6983,
