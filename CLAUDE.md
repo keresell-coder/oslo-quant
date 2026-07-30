@@ -15,6 +15,7 @@ oslo_quant/
   cli.py             — Entry point: oslo-quant CLI (fetch + compute)
   pipeline.py        — Orchestrates fetchers → frameworks → writes JSON to data/results/
   report.py          — Reads JSON results, generates index.html
+  healthcheck.py     — Post-run freshness assertion (see "Failure visibility")
   fetchers/
     base.py          — Statements TypedDict; shared logic
     yfinance_fetcher.py  — Primary data source (Yahoo Finance)
@@ -27,7 +28,7 @@ oslo_quant/
     ohlson.py        — Ohlson O-Score (bankruptcy probability)
     altman.py        — Altman Z-Score (Z, Z', Z'')
 .github/workflows/
-  run_oslo_quant.yml — Weekly Friday 17:00 UTC (after close); also manual dispatch
+  run_oslo_quant.yml — Weekly Friday 17:17 UTC (after close); also manual dispatch
 data/
   raw/               — Parquet cache (gitignored); recreated each workflow run
   results/           — Computed JSON per ticker per framework (committed)
@@ -48,7 +49,13 @@ oslo-quant --frameworks dupont piotroski  # subset of frameworks
 oslo-quant --force-refresh              # ignore cached parquet, re-fetch from Yahoo
 
 oslo-quant-report                       # regenerate index.html from data/results/
+oslo-quant-check                        # assert the last run actually refreshed data
 ```
+
+`oslo-quant-check` exits 1 unless at least 80% of configured companies (12 of 15)
+were recomputed within the last 6 hours. Tune with `--min-fresh` / `--within-hours`.
+Run locally straight after `oslo-quant` and it passes; run it on a stale checkout
+and it fails — that is the intended behaviour, not a bug.
 
 Results land in `data/results/<TICKER>/<framework>.json`.
 The HTML is always regenerated from those JSON files — re-run `oslo-quant-report`
@@ -132,11 +139,20 @@ single-file `index.html` with:
 ## GitHub Actions workflow
 
 File: `.github/workflows/run_oslo_quant.yml`  
-Schedule: every Friday at 17:00 UTC — 19:00 CEST (summer) / 18:00 CET (winter).
+Schedule: every Friday at 17:17 UTC — 19:17 CEST (summer) / 18:17 CET (winter).
 GitHub cron is fixed UTC and does not follow DST, hence the one-hour seasonal drift.
 Oslo Børs continuous trading ends 16:20 local and the closing auction ~16:25, so the
 day's closing prices are always settled before the run.  
 Manual dispatch: Actions tab → "Run Oslo Quant" → optional ticker/framework subset.
+
+**Expect the run to start late.** GitHub deprioritises scheduled jobs under load; the
+previous 06:00 cron consistently fired 3–6 hours behind schedule. The cron is set to
+`:17` rather than `:00` to avoid the most contended slot, but never assume a scheduled
+run starts on time. Friday evening is chosen partly because hours of slip are harmless
+there — a Monday-morning slot was drifting into the trading day.
+
+Steps run in this order, and the order matters:
+`fetch/compute → generate report → commit & push → verify freshness`.
 
 Key design choices:
 - `continue-on-error: true` on the `oslo-quant` step — partial results are committed
@@ -146,6 +162,34 @@ Key design choices:
   the last successful run even if the current run is incomplete.
 - Pip packages are cached keyed on `pyproject.toml` hash.
 - Push target: `HEAD:${{ github.ref_name }}` (not hardcoded `main`).
+
+### Failure visibility
+
+`continue-on-error: true` is correct for partial failures but it has a sharp edge: a
+run in which *every* ticker fails still reports success and still commits. Combined
+with committed `data/results/`, that produces the worst failure mode this project has
+— a green checkmark over a dashboard that silently stops moving.
+
+The `Verify results are fresh` step closes that gap. It runs `oslo-quant-check`, which
+counts companies whose `computed_at` stamp is recent rather than counting files (the
+files are always there), and fails the job below the floor. It runs *after* the push
+on purpose: whatever data was obtained still gets published, and the failure is a
+notification rather than a blocker.
+
+**Recency alone is not sufficient**, because of a sharp edge in the pipeline: if a
+fetch returns empty statements, the frameworks still compute "successfully" with zero
+periods, and `_persist()` writes that result — overwriting good committed data with an
+empty file carrying a brand-new `computed_at`. A timestamp-only check would wave this
+through. `oslo-quant-check` therefore requires both a recent stamp **and** at least one
+framework with ≥1 period, and reports zero-period companies separately as `empty`.
+
+Practical consequence when working locally: **do not run `oslo-quant` without working
+network access.** A blocked or offline fetch will silently replace good `data/results/`
+with empty files. If it happens, `git checkout -- data/results/` restores them.
+
+**A failed job is the only alerting channel.** GitHub emails the repository owner on
+scheduled-workflow failure by default; nothing else here will ever tell you something
+broke. Do not add `continue-on-error` to this step.
 
 **FMP_API_KEY**: stored as a GitHub Actions secret. Used only in `fmp_fetcher.py`
 for supplementary data; the main pipeline uses yfinance and runs without it.
@@ -176,22 +220,42 @@ for supplementary data; the main pipeline uses yfinance and runs without it.
 
 ## Branches and GitHub Pages deployment
 
-Active branch: `claude/build-oslo-quant-system-lzUvb` — this is where the workflow
-commits, because it pushes to `HEAD:${{ github.ref_name }}` and the schedule runs on
-this branch.
+**Target: one branch, `main`, for everything.** Four separate things must agree, and
+the only reliable way to keep them agreeing is to have nothing to choose between:
 
-**GitHub Pages must be pointed at that same branch** (Settings → Pages → Source →
-Deploy from a branch → `claude/build-oslo-quant-system-lzUvb` / root).
+| Thing | Must be | Where it is set |
+|---|---|---|
+| Repository default branch | `main` | Settings → General → Default branch |
+| Scheduled-run branch | `main` | *Not configurable* — GitHub only fires `schedule` on the default branch |
+| Workflow push target | `main` | Follows automatically via `HEAD:${{ github.ref_name }}` |
+| GitHub Pages source | `main` / root | Settings → Pages → Deploy from a branch |
 
-This coupling has bitten once already: between 2026-05-19 and 2026-07-27 the workflow
-ran green every week and committed fresh results, but Pages was still serving `main`,
-which had been frozen at the last PR merge. The dashboard showed 10-week-old data
-while every Actions run reported success — nothing failed, the page was simply built
-from a branch nothing was writing to.
+The third and fourth rows are the trap. The push target is derived from whichever
+branch the run started on, so it silently follows the default branch — but the Pages
+source does **not**. Change the default branch without changing Pages and the workflow
+happily commits to a branch nobody is serving.
 
-If the live page's "Updated …" timestamp ever lags the newest `Update results and
-report [date]` commit, check the Pages source branch first; the pipeline is rarely the
-problem.
+### Why this matters — the 2026 incident
 
-`main` is kept as a mirror of the active branch. It is not what Pages serves, so it
-can be re-synced by fast-forward merge at any time without a PR.
+Between 2026-05-19 and 2026-07-27 the workflow ran green every single week and
+committed fresh results. Pages was still serving `main`, frozen at the last PR merge.
+The dashboard showed 10-week-old data while every Actions run reported success.
+Nothing failed; the page was simply built from a branch nothing was writing to.
+
+Diagnostic: **if the live page's "Updated …" timestamp lags the newest `Update results
+and report [date]` commit, check the Pages source branch first.** The pipeline is
+rarely the problem.
+
+### Migration status
+
+The repository previously ran with `claude/build-oslo-quant-system-lzUvb` as default
+branch and Pages source. `main` has been resynced to an identical tree. Two settings
+changes complete the move to single-branch, and **must be done in this order**:
+
+1. Settings → General → change default branch to `main`
+2. Settings → Pages → change source to `main` / root
+3. Manually dispatch once; confirm it commits to `main` and the page updates
+4. Only then delete `claude/build-oslo-quant-system-lzUvb`
+
+Doing 4 before 1 breaks the schedule. Doing 1 before 2 leaves Pages briefly serving
+the old branch — harmless, since both trees are identical, but do not linger there.
