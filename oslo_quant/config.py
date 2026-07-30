@@ -32,45 +32,69 @@ class CompanyConfig:
 
 # Reporting currencies verified against official annual reports.
 # Price currency for all .OL tickers is NOK (Oslo Børs).
-COMPANIES: list[CompanyConfig] = [
+#
+# Grouped by sector below for readability. The dashboard renders companies in
+# COMPANIES order, and that list is sorted by (sector, ticker) further down, so
+# ordering cannot drift if an entry is added in the wrong place.
+_COMPANIES_RAW: list[CompanyConfig] = [
+    # ---- Aquaculture ----
+    CompanyConfig("MOWI.OL",  reporting_currency="EUR", full_name="Mowi ASA",
+                  sector="Aquaculture / Salmon Farming",
+                  notes="Biological assets carried at IAS 41 fair value — unrealised fair-value movements flow through EBIT, creating non-cash earnings volatility that inflates Altman/Ohlson distress signals."),
+
+    # ---- Shipping / tankers ----
+    CompanyConfig("FRO.OL",   reporting_currency="USD", full_name="Frontline plc",
+                  sector="Crude Oil Tankers"),
+    CompanyConfig("HAFNI.OL", reporting_currency="USD", full_name="Hafnia Ltd",
+                  sector="Product Tankers"),
+
+    # ---- Offshore ----
     CompanyConfig("DOFG.OL",  reporting_currency="USD", full_name="DOF Group ASA",
                   sector="Offshore / Marine Services"),
-    CompanyConfig("BRG.OL",   reporting_currency="NOK", full_name="Borregaard ASA",
-                  sector="Specialty Chemicals / Biorefinery"),
+    CompanyConfig("BORR.OL",  reporting_currency="USD", full_name="Borr Drilling Ltd",
+                  sector="Offshore Drilling", alt_ticker="BORR"),
     CompanyConfig("ODL.OL",   reporting_currency="USD", full_name="Odfjell Drilling Ltd",
                   sector="Offshore Drilling",
                   notes="Operates harsh-environment semi-submersibles and drillships in the North Sea and internationally. Not a jack-up driller (jack-ups = BORR.OL)."),
+    CompanyConfig("CADLR.OL", reporting_currency="EUR", full_name="Cadeler A/S",
+                  alt_ticker="CDLR",
+                  sector="Offshore Wind / Installation",
+                  notes="Danish-domiciled operator of wind turbine installation vessels; transports, installs and services offshore wind turbines and foundations. Reports in EUR while trading in NOK on Oslo Børs. Also listed on NYSE as CDLR."),
+
+    # ---- Industrials / materials ----
     CompanyConfig("ELK.OL",   reporting_currency="NOK", full_name="Elkem ASA",
                   sector="Silicon & Specialty Chemicals"),
+    CompanyConfig("BRG.OL",   reporting_currency="NOK", full_name="Borregaard ASA",
+                  sector="Specialty Chemicals / Biorefinery"),
+
+    # ---- Technology / defence ----
+    CompanyConfig("KOG.OL",   reporting_currency="NOK", full_name="Kongsberg Gruppen ASA",
+                  sector="Defence / Technology"),
     CompanyConfig("NOD.OL",   reporting_currency="USD", full_name="Nordic Semiconductor ASA",
                   sector="Semiconductors"),
+    CompanyConfig("KIT.OL",   reporting_currency="NOK", full_name="Kitron ASA",
+                  sector="Technology / Electronics Manufacturing",
+                  notes="Electronics manufacturing services (EMS) for the medical devices, industrial, and defence/aerospace sectors. Plants across Norway, Sweden, Denmark, Lithuania, Poland, Czechia, China and the US."),
+    CompanyConfig("NORBT.OL", reporting_currency="NOK", full_name="Norbit ASA",
+                  alt_ticker="NORBT",
+                  sector="Technology / Sensing & Connectivity",
+                  notes="Develops multibeam sonar, underwater imaging, and telematics/IoT products. Operates three segments: Oceans (sonar/sensors), Connectivity (cable/telematics), and Product Innovation. Listed June 2019, headquartered in Trondheim."),
+
+    # ---- Other ----
     CompanyConfig("VEND.OL",  reporting_currency="NOK", full_name="Vend Marketplaces ASA",
                   sector="Media / Online Classifieds",
                   notes="Online classifieds and marketplaces business carved out from Schibsted ASA and separately listed on Oslo Børs in May 2025. Operates major Nordic classified platforms."),
     CompanyConfig("PUBLI.OL", reporting_currency="NOK", full_name="Public Property Invest ASA",
                   sector="Real Estate",
                   notes="Redomiciling to Sweden; primary listing on Nasdaq Stockholm from May 2026, secondary listing on Oslo Børs continues."),
-    CompanyConfig("MOWI.OL",  reporting_currency="EUR", full_name="Mowi ASA",
-                  sector="Aquaculture / Salmon Farming",
-                  notes="Biological assets carried at IAS 41 fair value — unrealised fair-value movements flow through EBIT, creating non-cash earnings volatility that inflates Altman/Ohlson distress signals."),
     CompanyConfig("TEL.OL",   reporting_currency="NOK", full_name="Telenor ASA",
                   sector="Telecommunications"),
-    CompanyConfig("KOG.OL",   reporting_currency="NOK", full_name="Kongsberg Gruppen ASA",
-                  sector="Defence / Technology"),
-    CompanyConfig("KMAR.OL",  reporting_currency="NOK", full_name="Kongsberg Maritime ASA",
-                  sector="Maritime Technology",
-                  notes="Carved out from Kongsberg Gruppen (KOG.OL) and listed separately on 23 April 2026. All framework scores are based on limited standalone history; multi-year comparisons and year-on-year signals are not yet meaningful."),
-    CompanyConfig("BORR.OL",  reporting_currency="USD", full_name="Borr Drilling Ltd",
-                  sector="Offshore Drilling", alt_ticker="BORR"),
-    CompanyConfig("FRO.OL",   reporting_currency="USD", full_name="Frontline plc",
-                  sector="Crude Oil Tankers"),
-    CompanyConfig("HAFNI.OL", reporting_currency="USD", full_name="Hafnia Ltd",
-                  sector="Product Tankers"),
-    CompanyConfig("NORBT.OL", reporting_currency="NOK", full_name="Norbit ASA",
-                  alt_ticker="NORBT",
-                  sector="Technology / Sensing & Connectivity",
-                  notes="Develops multibeam sonar, underwater imaging, and telematics/IoT products. Operates three segments: Oceans (sonar/sensors), Connectivity (cable/telematics), and Product Innovation. Listed June 2019, headquartered in Trondheim."),
 ]
+
+# Sorted by sector, then ticker — this is the order the dashboard displays.
+COMPANIES: list[CompanyConfig] = sorted(
+    _COMPANIES_RAW, key=lambda c: (c.sector, c.ticker)
+)
 
 TICKER_MAP: dict[str, CompanyConfig] = {c.ticker: c for c in COMPANIES}
 

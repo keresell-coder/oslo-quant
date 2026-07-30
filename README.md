@@ -1,25 +1,29 @@
 # oslo-quant
 
-Oslo Børs quantitative pre-computation system — fetches financial data for 14 Oslo Stock Exchange companies and runs five analytical frameworks to produce structured JSON results.
+Oslo Børs quantitative pre-computation system — fetches financial data for 16 Oslo Stock Exchange companies and runs five analytical frameworks to produce structured JSON results.
 
 ## Companies
 
-| Ticker | Alt ticker |
-|--------|------------|
-| DOFG.OL | |
-| BRG.OL | |
-| ODL.OL | |
-| ELK.OL | |
-| NOD.OL | |
-| VEND.OL | |
-| PUBLI.OL | |
-| MOWI.OL | |
-| TEL.OL | |
-| KOG.OL | |
-| KMAR.OL | |
-| BORR.OL | BORR |
-| FRO.OL | |
-| HAFNI.OL | |
+Listed in dashboard order (sorted by sector).
+
+| Ticker | Company | Sector | Ccy | Alt ticker |
+|--------|---------|--------|-----|------------|
+| MOWI.OL | Mowi ASA | Aquaculture / Salmon Farming | EUR |  |
+| FRO.OL | Frontline plc | Crude Oil Tankers | USD |  |
+| KOG.OL | Kongsberg Gruppen ASA | Defence / Technology | NOK |  |
+| VEND.OL | Vend Marketplaces ASA | Media / Online Classifieds | NOK |  |
+| DOFG.OL | DOF Group ASA | Offshore / Marine Services | USD |  |
+| BORR.OL | Borr Drilling Ltd | Offshore Drilling | USD | BORR |
+| ODL.OL | Odfjell Drilling Ltd | Offshore Drilling | USD |  |
+| CADLR.OL | Cadeler A/S | Offshore Wind / Installation | EUR | CDLR |
+| HAFNI.OL | Hafnia Ltd | Product Tankers | USD |  |
+| PUBLI.OL | Public Property Invest ASA | Real Estate | NOK |  |
+| NOD.OL | Nordic Semiconductor ASA | Semiconductors | USD |  |
+| ELK.OL | Elkem ASA | Silicon & Specialty Chemicals | NOK |  |
+| BRG.OL | Borregaard ASA | Specialty Chemicals / Biorefinery | NOK |  |
+| KIT.OL | Kitron ASA | Technology / Electronics Manufacturing | NOK |  |
+| NORBT.OL | Norbit ASA | Technology / Sensing & Connectivity | NOK | NORBT |
+| TEL.OL | Telenor ASA | Telecommunications | NOK |  |
 
 ## Frameworks
 

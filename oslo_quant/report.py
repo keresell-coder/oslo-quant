@@ -131,16 +131,6 @@ def _latest(fw: dict) -> tuple[str, dict] | tuple[None, None]:
 # Company one-line summaries
 # ---------------------------------------------------------------------------
 
-# Sectors where the original Altman Z-Score (manufacturing) is unreliable.
-# For these companies the Z'' non-manufacturing variant is more appropriate.
-_ALTMAN_CAUTION = {
-    "DOFG.OL", "ODL.OL", "BORR.OL", "FRO.OL", "HAFNI.OL",  # shipping/offshore
-    "MOWI.OL",                                                  # aquaculture
-    "KOG.OL", "KMAR.OL",                                       # defence / maritime tech
-    "PUBLI.OL",                                                 # real estate
-}
-
-
 def _company_summary(ticker: str, fws: dict) -> str:
     positives: list[str] = []
     concerns:  list[str] = []

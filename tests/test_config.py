@@ -4,7 +4,7 @@ from oslo_quant.config import COMPANIES, TICKER_MAP, ALL_FRAMEWORKS
 
 
 def test_company_count():
-    assert len(COMPANIES) == 15
+    assert len(COMPANIES) == 16
 
 
 def test_all_tickers_in_map():
@@ -23,8 +23,21 @@ def test_all_frameworks_list():
 
 def test_expected_tickers():
     expected = {
-        "DOFG.OL", "BRG.OL", "ODL.OL", "ELK.OL", "NOD.OL", "VEND.OL",
-        "PUBLI.OL", "MOWI.OL", "TEL.OL", "KOG.OL", "KMAR.OL", "BORR.OL",
-        "FRO.OL", "HAFNI.OL", "NORBT.OL",
+        "MOWI.OL",
+        "FRO.OL",
+        "KOG.OL",
+        "VEND.OL",
+        "DOFG.OL",
+        "BORR.OL",
+        "ODL.OL",
+        "CADLR.OL",
+        "HAFNI.OL",
+        "PUBLI.OL",
+        "NOD.OL",
+        "ELK.OL",
+        "BRG.OL",
+        "KIT.OL",
+        "NORBT.OL",
+        "TEL.OL",
     }
     assert set(TICKER_MAP.keys()) == expected

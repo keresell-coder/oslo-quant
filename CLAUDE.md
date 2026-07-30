@@ -1,6 +1,6 @@
 # Oslo Quant — Developer Reference
 
-A weekly quantitative dashboard for 15 Oslo Børs companies. A GitHub Actions workflow
+A weekly quantitative dashboard for 16 Oslo Børs companies. A GitHub Actions workflow
 fetches financial data every Friday after market close, runs five valuation/distress
 frameworks, and commits an updated `index.html` back to the repository (served via
 GitHub Pages).
@@ -43,7 +43,7 @@ pyproject.toml
 ```bash
 pip install -e .                        # install with dev extras: pip install -e ".[dev]"
 
-oslo-quant                              # fetch + compute all 15 tickers, all 5 frameworks
+oslo-quant                              # fetch + compute all 16 tickers, all 5 frameworks
 oslo-quant --tickers TEL.OL MOWI.OL    # subset of tickers
 oslo-quant --frameworks dupont piotroski  # subset of frameworks
 oslo-quant --force-refresh              # ignore cached parquet, re-fetch from Yahoo
@@ -52,7 +52,7 @@ oslo-quant-report                       # regenerate index.html from data/result
 oslo-quant-check                        # assert the last run actually refreshed data
 ```
 
-`oslo-quant-check` exits 1 unless at least 80% of configured companies (12 of 15)
+`oslo-quant-check` exits 1 unless at least 80% of configured companies (12 of 16)
 were recomputed within the last 6 hours. Tune with `--min-fresh` / `--within-hours`.
 Run locally straight after `oslo-quant` and it passes; run it on a stale checkout
 and it fails — that is the intended behaviour, not a bug.
@@ -77,6 +77,19 @@ CompanyConfig(
     notes="Optional caveat shown on the dashboard card.",
 )
 ```
+
+Add the entry to `_COMPANIES_RAW`. Placement in that list does not matter — the
+exported `COMPANIES` is `sorted(_COMPANIES_RAW, key=(sector, ticker))`, and that
+order is what the dashboard renders, so sector grouping cannot drift. Reuse an
+existing `sector` string verbatim to group a company with its peers; a new string
+creates a new group.
+
+**Verify the ticker before adding it.** yfinance and FMP do not always agree, and a
+wrong symbol fails silently as an empty fetch. Norbit is `NORBT.OL` (not `NRBIT.OL`);
+Cadeler is `CADLR.OL` on Oslo and `CDLR` on NYSE. Check `reporting_currency` against
+the annual report, not the trading currency — Cadeler trades in NOK but reports in
+EUR, and prices are converted into the reporting currency before any price-based
+metric is computed.
 
 `ALL_FRAMEWORKS` in config.py lists the five framework keys.
 Price currency for all .OL tickers is always NOK (Oslo Børs).
@@ -111,7 +124,7 @@ relative/directional signal within a peer group, not as an absolute forecast.
 
 ### Altman Z-Score (`altman.py`)
 Three variants computed: original Z (manufacturing), Z' (private firms), Z'' (non-manufacturing).
-**Z'' is the primary model for all 15 companies** — none qualify as US manufacturers.
+**Z'' is the primary model for all 16 companies** — none qualify as US manufacturers.
 Z thresholds: Safe > 2.6, Grey zone 1.1–2.6, Distress ≤ 1.1.
 Original Z is retained in the dashboard as a reference row shown in gray.
 X4 uses book equity (not market cap) for all companies to ensure consistency
@@ -196,25 +209,28 @@ for supplementary data; the main pipeline uses yfinance and runs without it.
 
 ---
 
-## The 15 companies
+## The 16 companies
+
+Listed in dashboard order — `COMPANIES` is sorted by (sector, ticker).
 
 | Ticker    | Full name                  | Ccy | Sector                        | Notes |
 |-----------|----------------------------|-----|-------------------------------|-------|
-| DOFG.OL   | DOF Group ASA              | USD | Offshore / Marine Services    | |
-| BRG.OL    | Borregaard ASA             | NOK | Specialty Chemicals / Biorefinery | |
-| ODL.OL    | Odfjell Drilling Ltd       | USD | Offshore Drilling             | Harsh-environment semis & drillships (North Sea). Not jack-ups (BORR.OL is jack-ups). |
-| ELK.OL    | Elkem ASA                  | NOK | Silicon & Specialty Chemicals | |
-| NOD.OL    | Nordic Semiconductor ASA   | USD | Semiconductors                | Fabless; Bluetooth/IoT |
-| VEND.OL   | Vend Marketplaces ASA      | NOK | Media / Online Classifieds    | Schibsted carve-out, listed May 2025. Limited history. |
-| PUBLI.OL  | Public Property Invest ASA | NOK | Real Estate                   | Redomiciling to Nasdaq Stockholm from May 2026; secondary listing on Oslo Børs continues. |
-| MOWI.OL   | Mowi ASA                   | EUR | Aquaculture / Salmon Farming  | IAS 41 fair-value movements inflate EBIT; creates non-cash distress signals. |
-| TEL.OL    | Telenor ASA                | NOK | Telecommunications            | |
-| KOG.OL    | Kongsberg Gruppen ASA      | NOK | Defence / Technology          | |
-| KMAR.OL   | Kongsberg Maritime ASA     | NOK | Maritime Technology           | KOG.OL carve-out, listed April 2026. Very limited standalone history. |
-| BORR.OL   | Borr Drilling Ltd          | USD | Offshore Drilling             | Jack-up rigs, shallow water. alt_ticker="BORR" for FMP. |
-| FRO.OL    | Frontline plc              | USD | Crude Oil Tankers             | Cyprus-registered (redomiciled from Bermuda 2022). |
-| HAFNI.OL  | Hafnia Ltd                 | USD | Product Tankers               | |
-| NORBT.OL  | Norbit ASA                 | NOK | Technology / Sensing & Connectivity | Multibeam sonar, underwater sensors, telematics/IoT. alt_ticker="NORBT" for FMP. Listed June 2019. |
+| MOWI.OL | Mowi ASA | EUR | Aquaculture / Salmon Farming | IAS 41 fair-value movements inflate EBIT; creates non-cash distress signals. |
+| FRO.OL | Frontline plc | USD | Crude Oil Tankers | Cyprus-registered (redomiciled from Bermuda 2022). |
+| KOG.OL | Kongsberg Gruppen ASA | NOK | Defence / Technology |  |
+| VEND.OL | Vend Marketplaces ASA | NOK | Media / Online Classifieds | Schibsted carve-out, listed May 2025. Limited history. |
+| DOFG.OL | DOF Group ASA | USD | Offshore / Marine Services |  |
+| BORR.OL | Borr Drilling Ltd | USD | Offshore Drilling | Jack-up rigs, shallow water. alt_ticker="BORR" for FMP. |
+| ODL.OL | Odfjell Drilling Ltd | USD | Offshore Drilling | Harsh-environment semis & drillships (North Sea). Not jack-ups (BORR.OL is jack-ups). |
+| CADLR.OL | Cadeler A/S | EUR | Offshore Wind / Installation | Danish-domiciled; wind turbine installation vessels. Reports EUR, trades NOK. NYSE: CDLR. |
+| HAFNI.OL | Hafnia Ltd | USD | Product Tankers |  |
+| PUBLI.OL | Public Property Invest ASA | NOK | Real Estate | Redomiciling to Nasdaq Stockholm from May 2026; secondary listing on Oslo Børs continues. |
+| NOD.OL | Nordic Semiconductor ASA | USD | Semiconductors | Fabless; Bluetooth/IoT |
+| ELK.OL | Elkem ASA | NOK | Silicon & Specialty Chemicals |  |
+| BRG.OL | Borregaard ASA | NOK | Specialty Chemicals / Biorefinery |  |
+| KIT.OL | Kitron ASA | NOK | Technology / Electronics Manufacturing | Electronics manufacturing services (EMS) — medical, industrial, defence/aerospace. |
+| NORBT.OL | Norbit ASA | NOK | Technology / Sensing & Connectivity | Multibeam sonar, underwater sensors, telematics/IoT. alt_ticker="NORBT" for FMP. Listed June 2019. |
+| TEL.OL | Telenor ASA | NOK | Telecommunications |  |
 
 ---
 
