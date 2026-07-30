@@ -18,9 +18,12 @@ on:
         default: "false"
         type: boolean
 
-  # Automatic weekly run — every Monday at 06:00 UTC (08:00 Oslo time)
+  # Automatic weekly run — every Friday at 17:00 UTC, after Oslo Børs close.
+  # GitHub cron is fixed UTC and does not follow DST, so this lands at
+  # 19:00 CEST (summer) / 18:00 CET (winter). Oslo Børs closing auction ends
+  # ~16:25 local, so the day's closing prices are always settled by then.
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 17 * * 5"
 
 jobs:
   compute:

@@ -1,8 +1,9 @@
 # Oslo Quant — Developer Reference
 
 A weekly quantitative dashboard for 15 Oslo Børs companies. A GitHub Actions workflow
-fetches financial data every Monday, runs five valuation/distress frameworks, and
-commits an updated `index.html` back to the repository (served via GitHub Pages).
+fetches financial data every Friday after market close, runs five valuation/distress
+frameworks, and commits an updated `index.html` back to the repository (served via
+GitHub Pages).
 
 ---
 
@@ -26,7 +27,7 @@ oslo_quant/
     ohlson.py        — Ohlson O-Score (bankruptcy probability)
     altman.py        — Altman Z-Score (Z, Z', Z'')
 .github/workflows/
-  run_oslo_quant.yml — Weekly Monday 06:00 UTC; also manual dispatch
+  run_oslo_quant.yml — Weekly Friday 17:00 UTC (after close); also manual dispatch
 data/
   raw/               — Parquet cache (gitignored); recreated each workflow run
   results/           — Computed JSON per ticker per framework (committed)
@@ -41,7 +42,7 @@ pyproject.toml
 ```bash
 pip install -e .                        # install with dev extras: pip install -e ".[dev]"
 
-oslo-quant                              # fetch + compute all 14 tickers, all 5 frameworks
+oslo-quant                              # fetch + compute all 15 tickers, all 5 frameworks
 oslo-quant --tickers TEL.OL MOWI.OL    # subset of tickers
 oslo-quant --frameworks dupont piotroski  # subset of frameworks
 oslo-quant --force-refresh              # ignore cached parquet, re-fetch from Yahoo
@@ -103,7 +104,7 @@ relative/directional signal within a peer group, not as an absolute forecast.
 
 ### Altman Z-Score (`altman.py`)
 Three variants computed: original Z (manufacturing), Z' (private firms), Z'' (non-manufacturing).
-**Z'' is the primary model for all 14 companies** — none qualify as US manufacturers.
+**Z'' is the primary model for all 15 companies** — none qualify as US manufacturers.
 Z thresholds: Safe > 2.6, Grey zone 1.1–2.6, Distress ≤ 1.1.
 Original Z is retained in the dashboard as a reference row shown in gray.
 X4 uses book equity (not market cap) for all companies to ensure consistency
@@ -131,7 +132,10 @@ single-file `index.html` with:
 ## GitHub Actions workflow
 
 File: `.github/workflows/run_oslo_quant.yml`  
-Schedule: every Monday at 06:00 UTC (08:00 Oslo).  
+Schedule: every Friday at 17:00 UTC — 19:00 CEST (summer) / 18:00 CET (winter).
+GitHub cron is fixed UTC and does not follow DST, hence the one-hour seasonal drift.
+Oslo Børs continuous trading ends 16:20 local and the closing auction ~16:25, so the
+day's closing prices are always settled before the run.  
 Manual dispatch: Actions tab → "Run Oslo Quant" → optional ticker/framework subset.
 
 Key design choices:
@@ -148,7 +152,7 @@ for supplementary data; the main pipeline uses yfinance and runs without it.
 
 ---
 
-## The 14 companies
+## The 15 companies
 
 | Ticker    | Full name                  | Ccy | Sector                        | Notes |
 |-----------|----------------------------|-----|-------------------------------|-------|
@@ -170,9 +174,24 @@ for supplementary data; the main pipeline uses yfinance and runs without it.
 
 ---
 
-## Development branch
+## Branches and GitHub Pages deployment
 
-Active feature branch: `claude/build-oslo-quant-system-lzUvb`
+Active branch: `claude/build-oslo-quant-system-lzUvb` — this is where the workflow
+commits, because it pushes to `HEAD:${{ github.ref_name }}` and the schedule runs on
+this branch.
 
-All dashboard work to date has been done on this branch. Merge to `main` via PR
-to trigger the GitHub Pages deployment.
+**GitHub Pages must be pointed at that same branch** (Settings → Pages → Source →
+Deploy from a branch → `claude/build-oslo-quant-system-lzUvb` / root).
+
+This coupling has bitten once already: between 2026-05-19 and 2026-07-27 the workflow
+ran green every week and committed fresh results, but Pages was still serving `main`,
+which had been frozen at the last PR merge. The dashboard showed 10-week-old data
+while every Actions run reported success — nothing failed, the page was simply built
+from a branch nothing was writing to.
+
+If the live page's "Updated …" timestamp ever lags the newest `Update results and
+report [date]` commit, check the Pages source branch first; the pipeline is rarely the
+problem.
+
+`main` is kept as a mirror of the active branch. It is not what Pages serves, so it
+can be re-synced by fast-forward merge at any time without a PR.
