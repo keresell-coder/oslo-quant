@@ -1,5 +1,9 @@
 # oslo-quant
 
+**Live dashboard: https://keresell-coder.github.io/oslo-quant/**
+
+Updated automatically every Friday evening after Oslo Børs closes.
+
 Oslo Børs quantitative pre-computation system — fetches financial data for 17 Oslo Stock Exchange companies and runs five analytical frameworks to produce structured JSON results.
 
 ## Companies

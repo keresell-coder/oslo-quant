@@ -5,6 +5,21 @@ fetches financial data every Friday after market close, runs five valuation/dist
 frameworks, and commits an updated `index.html` back to the repository (served via
 GitHub Pages).
 
+## At a glance
+
+| | |
+|---|---|
+| **Live dashboard** | https://keresell-coder.github.io/oslo-quant/ |
+| **Repository** | https://github.com/keresell-coder/oslo-quant |
+| **Actions runs** | https://github.com/keresell-coder/oslo-quant/actions |
+| **Branch** | `main` — the only branch. Default branch, workflow push target, and Pages source all point at it. |
+| **Schedule** | Fridays, 17:17 UTC (19:17 CEST / 18:17 CET). Often runs hours late; see below. |
+| **Alerting** | A failed Actions run emails the repo owner. That is the *only* alert channel. |
+
+The repository owner is not a software engineer. Prefer plain language in
+explanations, spell out GitHub UI steps click by click, and never assume familiarity
+with git, branches, or YAML.
+
 ---
 
 ## Repository layout
@@ -27,6 +42,8 @@ oslo_quant/
     sloan.py         — Sloan Accruals (earnings quality)
     ohlson.py        — Ohlson O-Score (bankruptcy probability)
     altman.py        — Altman Z-Score (Z, Z', Z'')
+.claude/
+  commands/          — Slash commands: /add-company, /remove-company, /dashboard-status
 .github/workflows/
   run_oslo_quant.yml — Weekly Friday 17:17 UTC (after close); also manual dispatch
 data/
@@ -263,16 +280,85 @@ Diagnostic: **if the live page's "Updated …" timestamp lags the newest `Update
 and report [date]` commit, check the Pages source branch first.** The pipeline is
 rarely the problem.
 
-### Migration status
+### Current state — migration complete (2026-07-30)
 
-The repository previously ran with `claude/build-oslo-quant-system-lzUvb` as default
-branch and Pages source. `main` has been resynced to an identical tree. Two settings
-changes complete the move to single-branch, and **must be done in this order**:
+The repository previously ran with `claude/build-oslo-quant-system-lzUvb` as both
+default branch and Pages source, with `main` as a stale side branch. That is finished:
+the default branch is `main`, the old `claude/*` branches are deleted, and `main` is
+the only branch in the repository.
 
-1. Settings → General → change default branch to `main`
-2. Settings → Pages → change source to `main` / root
-3. Manually dispatch once; confirm it commits to `main` and the page updates
-4. Only then delete `claude/build-oslo-quant-system-lzUvb`
+**Do not reintroduce a second long-lived branch.** Commit directly to `main`. Feature
+branches for a single PR are fine; leaving one alive for weeks is what caused the
+incident above.
 
-Doing 4 before 1 breaks the schedule. Doing 1 before 2 leaves Pages briefly serving
-the old branch — harmless, since both trees are identical, but do not linger there.
+---
+
+## Runbook — common requests
+
+Slash commands live in `.claude/commands/`: `/add-company`, `/remove-company`,
+`/dashboard-status`. They encode the checklists below.
+
+### "Add company X" / "Remove company X"
+
+Use `/add-company` or `/remove-company`. The steps that are easy to forget:
+
+1. **Verify the ticker against a real source before writing it.** yfinance and FMP
+   disagree more often than expected, and a wrong symbol does not error — it fetches
+   empty and silently overwrites good data. Past corrections: Norbit is `NORBT.OL`
+   not `NRBIT.OL`; SalMar is `SALM.OL`; Solstad Maritime is `SOMA.OL` not `SLAM.OL`.
+2. **Check the reporting currency against the annual report, not the ticker.**
+   Cadeler trades in NOK but reports in EUR; Mowi reports in EUR; SalMar in NOK.
+   Prices are converted into the reporting currency before any price-based metric.
+3. Add to `_COMPANIES_RAW` (position irrelevant — the list is sorted).
+4. Update `tests/test_config.py` (count + expected ticker set) — it *will* fail
+   otherwise, and it has been missed before.
+5. Regenerate `README.md` and the CLAUDE.md table from config, don't hand-edit.
+6. On removal, `git rm -r data/results/<TICKER>` as well.
+7. `oslo-quant-report` to regenerate `index.html`, then commit.
+
+New companies show as missing until the next run fetches them — the header will read
+e.g. "14 of 17". That is expected, not a bug.
+
+### "Is the dashboard up to date?" / "Did this week's run work?"
+
+Use `/dashboard-status`. Manually: compare the live page's "Updated …" stamp against
+the newest `Update results and report [date]` commit on `main`. If the page lags the
+commit, suspect Pages configuration, not the pipeline.
+
+### "The page hasn't changed"
+
+In likelihood order:
+1. Browser cache — reload, or open the URL in a new tab.
+2. Pages source branch no longer `main` (Settings → Pages).
+3. The run failed — check Actions. Since the freshness check was added, a run that
+   fails to fetch real data goes red rather than green.
+4. The run succeeded but fetched nothing. The job summary shows
+   `Refreshed N of M companies`; companies listed as `empty` had a fetch return no
+   statements.
+
+### "Change the schedule"
+
+`.github/workflows/run_oslo_quant.yml`, the `cron:` line. It is UTC and ignores DST,
+so a fixed cron drifts an hour between summer and winter. Keep it off the top of the
+hour. Update the CLAUDE.md workflow section to match.
+
+### Working locally
+
+**Never run `oslo-quant` without working network access.** A blocked fetch writes
+empty results over good committed data. If it happens:
+`git checkout -- data/results/`. This has already happened once in a sandbox.
+
+---
+
+## Known open items
+
+- **Node.js 20 deprecation warning** on every run. `actions/cache@v4`,
+  `actions/checkout@v4` and `actions/setup-python@v5` target Node 20; GitHub forces
+  Node 24. Cosmetic, non-blocking; bump the action versions when convenient.
+- **Kitron, Cadeler and SalMar have no data yet** as of 2026-07-30. The first run to
+  include them is Friday 2026-07-31. If the header does not reach "17 of 17"
+  afterwards, one of those three tickers is wrong for yfinance — that is the first
+  thing to check.
+- **The freshness floor is 80%** (13 of 17). Three simultaneously-broken tickers stay
+  above the floor and would not trigger an alert, though they appear in the job
+  summary as `empty` or missing.
