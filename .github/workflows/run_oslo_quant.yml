@@ -22,8 +22,11 @@ on:
   # GitHub cron is fixed UTC and does not follow DST, so this lands at
   # 19:00 CEST (summer) / 18:00 CET (winter). Oslo Børs closing auction ends
   # ~16:25 local, so the day's closing prices are always settled by then.
+  # Deliberately not on the hour: GitHub deprioritises scheduled jobs under load
+  # and the top of the hour is the most contended slot (the previous 06:00 cron
+  # consistently fired 3-6 hours late).
   schedule:
-    - cron: "0 17 * * 5"
+    - cron: "17 17 * * 5"
 
 jobs:
   compute:
@@ -90,3 +93,12 @@ jobs:
           git add data/results/ index.html
           git diff --staged --quiet || git commit -m "Update results and report [$(date -u +%Y-%m-%d)]"
           git push origin "HEAD:${{ github.ref_name }}"
+
+      # Runs last, and deliberately after the push: whatever data we managed to
+      # get is always published first, then this fails the job if the run did not
+      # actually refresh enough companies. Without it, a run in which every ticker
+      # failed still reports success (see continue-on-error above) and the
+      # dashboard silently serves stale numbers. A failed job triggers GitHub's
+      # default failure notification — this is the only alerting channel.
+      - name: Verify results are fresh
+        run: oslo-quant-check
