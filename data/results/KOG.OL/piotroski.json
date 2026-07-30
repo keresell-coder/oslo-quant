@@ -1,7 +1,7 @@
 {
   "ticker": "KOG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-19T07:35:58.642446Z",
+  "computed_at": "2026-07-27T10:02:32.951263Z",
   "periods": {
     "2025": {
       "f_score": 7,

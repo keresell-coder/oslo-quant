@@ -2,9 +2,9 @@
   "ticker": "PUBLI.OL",
   "full_name": "Public Property Invest ASA",
   "price_currency": "NOK",
-  "financial_currency": "NOK",
+  "financial_currency": "SEK",
   "config_currency": "NOK",
-  "yfinance_currency": "NOK",
+  "yfinance_currency": "SEK",
   "detection_source": "yfinance",
-  "verification_status": "verified"
+  "verification_status": "mismatch"
 }

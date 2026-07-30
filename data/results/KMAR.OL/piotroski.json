@@ -1,7 +1,7 @@
 {
   "ticker": "KMAR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-05-19T07:35:59.717304Z",
+  "computed_at": "2026-07-27T10:02:33.729300Z",
   "periods": {
     "2025": {
       "f_score": 7,

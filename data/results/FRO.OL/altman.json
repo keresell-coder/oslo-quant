@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "altman",
-  "computed_at": "2026-05-19T07:36:02.435383Z",
+  "computed_at": "2026-07-27T10:02:35.521248Z",
   "periods": {
     "2025": {
       "z_score": 1.823,

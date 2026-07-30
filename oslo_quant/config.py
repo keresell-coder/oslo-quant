@@ -38,13 +38,15 @@ COMPANIES: list[CompanyConfig] = [
     CompanyConfig("BRG.OL",   reporting_currency="NOK", full_name="Borregaard ASA",
                   sector="Specialty Chemicals / Biorefinery"),
     CompanyConfig("ODL.OL",   reporting_currency="USD", full_name="Odfjell Drilling Ltd",
-                  sector="Offshore Drilling"),
+                  sector="Offshore Drilling",
+                  notes="Operates harsh-environment semi-submersibles and drillships in the North Sea and internationally. Not a jack-up driller (jack-ups = BORR.OL)."),
     CompanyConfig("ELK.OL",   reporting_currency="NOK", full_name="Elkem ASA",
                   sector="Silicon & Specialty Chemicals"),
     CompanyConfig("NOD.OL",   reporting_currency="USD", full_name="Nordic Semiconductor ASA",
                   sector="Semiconductors"),
     CompanyConfig("VEND.OL",  reporting_currency="NOK", full_name="Vend Marketplaces ASA",
-                  sector="Technology / Marketplaces"),
+                  sector="Media / Online Classifieds",
+                  notes="Online classifieds and marketplaces business carved out from Schibsted ASA and separately listed on Oslo Børs in May 2025. Operates major Nordic classified platforms."),
     CompanyConfig("PUBLI.OL", reporting_currency="NOK", full_name="Public Property Invest ASA",
                   sector="Real Estate",
                   notes="Redomiciling to Sweden; primary listing on Nasdaq Stockholm from May 2026, secondary listing on Oslo Børs continues."),
@@ -64,6 +66,10 @@ COMPANIES: list[CompanyConfig] = [
                   sector="Crude Oil Tankers"),
     CompanyConfig("HAFNI.OL", reporting_currency="USD", full_name="Hafnia Ltd",
                   sector="Product Tankers"),
+    CompanyConfig("NORBT.OL", reporting_currency="NOK", full_name="Norbit ASA",
+                  alt_ticker="NORBT",
+                  sector="Technology / Sensing & Connectivity",
+                  notes="Develops multibeam sonar, underwater imaging, and telematics/IoT products. Operates three segments: Oceans (sonar/sensors), Connectivity (cable/telematics), and Product Innovation. Listed June 2019, headquartered in Trondheim."),
 ]
 
 TICKER_MAP: dict[str, CompanyConfig] = {c.ticker: c for c in COMPANIES}

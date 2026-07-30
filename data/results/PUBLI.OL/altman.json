@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "altman",
-  "computed_at": "2026-05-19T07:35:54.633632Z",
+  "computed_at": "2026-07-27T10:02:29.454098Z",
   "periods": {
     "2025": {
       "z_score": 0.9134,
@@ -59,6 +59,6 @@
       "x5_revenue_to_assets": null
     }
   },
-  "financial_currency": "NOK",
+  "financial_currency": "SEK",
   "price_currency": "NOK"
 }
