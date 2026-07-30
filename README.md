@@ -1,6 +1,6 @@
 # oslo-quant
 
-Oslo Børs quantitative pre-computation system — fetches financial data for 16 Oslo Stock Exchange companies and runs five analytical frameworks to produce structured JSON results.
+Oslo Børs quantitative pre-computation system — fetches financial data for 17 Oslo Stock Exchange companies and runs five analytical frameworks to produce structured JSON results.
 
 ## Companies
 
@@ -9,6 +9,7 @@ Listed in dashboard order (sorted by sector).
 | Ticker | Company | Sector | Ccy | Alt ticker |
 |--------|---------|--------|-----|------------|
 | MOWI.OL | Mowi ASA | Aquaculture / Salmon Farming | EUR |  |
+| SALM.OL | SalMar ASA | Aquaculture / Salmon Farming | NOK |  |
 | FRO.OL | Frontline plc | Crude Oil Tankers | USD |  |
 | KOG.OL | Kongsberg Gruppen ASA | Defence / Technology | NOK |  |
 | VEND.OL | Vend Marketplaces ASA | Media / Online Classifieds | NOK |  |

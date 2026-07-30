@@ -41,6 +41,9 @@ _COMPANIES_RAW: list[CompanyConfig] = [
     CompanyConfig("MOWI.OL",  reporting_currency="EUR", full_name="Mowi ASA",
                   sector="Aquaculture / Salmon Farming",
                   notes="Biological assets carried at IAS 41 fair value — unrealised fair-value movements flow through EBIT, creating non-cash earnings volatility that inflates Altman/Ohlson distress signals."),
+    CompanyConfig("SALM.OL",  reporting_currency="NOK", full_name="SalMar ASA",
+                  sector="Aquaculture / Salmon Farming",
+                  notes="Norwegian salmon farmer; reports in NOK, unlike Mowi (EUR), so the two are not directly comparable in absolute terms. Same IAS 41 caveat: biological assets at fair value push unrealised movements through EBIT, inflating Altman/Ohlson distress signals."),
 
     # ---- Shipping / tankers ----
     CompanyConfig("FRO.OL",   reporting_currency="USD", full_name="Frontline plc",

@@ -1,6 +1,6 @@
 # Oslo Quant — Developer Reference
 
-A weekly quantitative dashboard for 16 Oslo Børs companies. A GitHub Actions workflow
+A weekly quantitative dashboard for 17 Oslo Børs companies. A GitHub Actions workflow
 fetches financial data every Friday after market close, runs five valuation/distress
 frameworks, and commits an updated `index.html` back to the repository (served via
 GitHub Pages).
@@ -43,7 +43,7 @@ pyproject.toml
 ```bash
 pip install -e .                        # install with dev extras: pip install -e ".[dev]"
 
-oslo-quant                              # fetch + compute all 16 tickers, all 5 frameworks
+oslo-quant                              # fetch + compute all 17 tickers, all 5 frameworks
 oslo-quant --tickers TEL.OL MOWI.OL    # subset of tickers
 oslo-quant --frameworks dupont piotroski  # subset of frameworks
 oslo-quant --force-refresh              # ignore cached parquet, re-fetch from Yahoo
@@ -52,7 +52,7 @@ oslo-quant-report                       # regenerate index.html from data/result
 oslo-quant-check                        # assert the last run actually refreshed data
 ```
 
-`oslo-quant-check` exits 1 unless at least 80% of configured companies (12 of 16)
+`oslo-quant-check` exits 1 unless at least 80% of configured companies (13 of 17)
 were recomputed within the last 6 hours. Tune with `--min-fresh` / `--within-hours`.
 Run locally straight after `oslo-quant` and it passes; run it on a stale checkout
 and it fails — that is the intended behaviour, not a bug.
@@ -124,7 +124,7 @@ relative/directional signal within a peer group, not as an absolute forecast.
 
 ### Altman Z-Score (`altman.py`)
 Three variants computed: original Z (manufacturing), Z' (private firms), Z'' (non-manufacturing).
-**Z'' is the primary model for all 16 companies** — none qualify as US manufacturers.
+**Z'' is the primary model for all 17 companies** — none qualify as US manufacturers.
 Z thresholds: Safe > 2.6, Grey zone 1.1–2.6, Distress ≤ 1.1.
 Original Z is retained in the dashboard as a reference row shown in gray.
 X4 uses book equity (not market cap) for all companies to ensure consistency
@@ -209,13 +209,14 @@ for supplementary data; the main pipeline uses yfinance and runs without it.
 
 ---
 
-## The 16 companies
+## The 17 companies
 
 Listed in dashboard order — `COMPANIES` is sorted by (sector, ticker).
 
 | Ticker    | Full name                  | Ccy | Sector                        | Notes |
 |-----------|----------------------------|-----|-------------------------------|-------|
 | MOWI.OL | Mowi ASA | EUR | Aquaculture / Salmon Farming | IAS 41 fair-value movements inflate EBIT; creates non-cash distress signals. |
+| SALM.OL | SalMar ASA | NOK | Aquaculture / Salmon Farming | Reports NOK (Mowi reports EUR) — not directly comparable in absolute terms. Same IAS 41 caveat. |
 | FRO.OL | Frontline plc | USD | Crude Oil Tankers | Cyprus-registered (redomiciled from Bermuda 2022). |
 | KOG.OL | Kongsberg Gruppen ASA | NOK | Defence / Technology |  |
 | VEND.OL | Vend Marketplaces ASA | NOK | Media / Online Classifieds | Schibsted carve-out, listed May 2025. Limited history. |
