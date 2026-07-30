@@ -764,16 +764,25 @@ least twice.
 | WACC constants going stale | `AS_OF` date rendered on the dashboard; refresh is a one-line config edit, documented in CLAUDE.md |
 | More metrics → more amber noise | Phase 5 quartile recalibration; lenses instead of 18 columns |
 
-**Decisions I need from you before writing any code**
+**Decisions — agreed 2026-07-30**
 
-1. **Phase 0 first, on its own?** It changes numbers that are live today. My recommendation is
-   yes, and separately, so the restatement is explainable.
-2. **Excess cash in invested capital** — subtract all cash (my recommendation, simpler and
-   defensible) or carve out an operating-cash allowance?
-3. **Small-company premium in WACC** — apply the 0/+100/+200bp tiering, or set it to zero and
-   keep WACC free of size judgement?
-4. **Scope of the first release** — all three frameworks before touching the UI, or ship Value
-   end-to-end (metric + lens + card) first so you can see the shape and react?
+1. **Phase 0 ships alone, first.** The field-map fix lands on its own and is published by one
+   weekly run with a dated restatement note on the dashboard, before any new factor is built.
+   Rationale: it moves numbers that are live today, and isolating it keeps the cause of every
+   changed figure unambiguous.
+2. **Invested capital subtracts all cash.**
+   `IC = TotalDebt + CommonStockEquity + MinorityInterest − Cash & short-term investments`
+   (equivalently `NetDebt + Equity incl. minority interest`). No operating-cash allowance, no
+   tunable carve-out. Known consequence: ROIC is slightly overstated for shippers holding
+   large cash balances as cycle working capital — to be noted in the Moat legend card.
+3. **WACC includes a tiered small-company premium**: 0bp above NOK 20bn market cap,
+   +100bp for 5–20bn, +200bp below 5bn. Held as a single config constant in
+   `market_params.py` so it can be set to zero without touching framework code. Raises the
+   hurdle rate for NORBT, KIT and CADLR.
+4. **First release after Phase 0 is Value, end-to-end**: market-data layer + `valuation.py` +
+   the Value lens + the card section + legend card, shipped complete and visible on the live
+   dashboard. Growth and Moat follow the same pattern once the shape has been reviewed in
+   production.
 
 ---
 
