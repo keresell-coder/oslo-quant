@@ -1,0 +1,79 @@
+{
+  "ticker": "CADLR.OL",
+  "framework": "dupont",
+  "computed_at": "2026-07-31T18:45:47.615093Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.4517,
+      "asset_turnover": 0.2317,
+      "equity_multiplier": 1.9556,
+      "roe_3factor": 0.2047,
+      "tax_burden": 0.9733,
+      "interest_burden": 0.687,
+      "ebit_margin": 0.6754,
+      "roe_5factor": 0.2047,
+      "net_income": 280184000.0,
+      "revenue": 620354000.0,
+      "avg_total_assets": 2676846000.0,
+      "avg_equity": 1368785000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.2616,
+      "asset_turnover": 0.156,
+      "equity_multiplier": 1.4545,
+      "roe_3factor": 0.0593,
+      "tax_burden": 0.9643,
+      "interest_burden": 0.5261,
+      "ebit_margin": 0.5156,
+      "roe_5factor": 0.0593,
+      "net_income": 65069000.0,
+      "revenue": 248738000.0,
+      "avg_total_assets": 1594788000.0,
+      "avg_equity": 1096467500.0
+    },
+    "2023": {
+      "net_profit_margin": 0.1059,
+      "asset_turnover": 0.113,
+      "equity_multiplier": 1.2821,
+      "roe_3factor": 0.0153,
+      "tax_burden": 1.0,
+      "interest_burden": 0.249,
+      "ebit_margin": 0.4251,
+      "roe_5factor": 0.0153,
+      "net_income": 11498000.0,
+      "revenue": 108622000.0,
+      "avg_total_assets": 961295000.0,
+      "avg_equity": 749804500.0
+    },
+    "2022": {
+      "net_profit_margin": 0.334,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 1.0,
+      "interest_burden": 0.5571,
+      "ebit_margin": 0.5995,
+      "roe_5factor": null,
+      "net_income": 35541000.0,
+      "revenue": 106424000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    },
+    "2021": {
+      "net_profit_margin": null,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": null,
+      "interest_burden": null,
+      "ebit_margin": null,
+      "roe_5factor": null,
+      "net_income": null,
+      "revenue": null,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
+}

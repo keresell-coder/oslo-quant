@@ -1,0 +1,79 @@
+{
+  "ticker": "SALM.OL",
+  "framework": "dupont",
+  "computed_at": "2026-07-31T18:45:45.765524Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.0404,
+      "asset_turnover": 0.4866,
+      "equity_multiplier": 3.1504,
+      "roe_3factor": 0.062,
+      "tax_burden": 0.6535,
+      "interest_burden": 0.3226,
+      "ebit_margin": 0.1917,
+      "roe_5factor": 0.062,
+      "net_income": 1105000000.0,
+      "revenue": 27343000000.0,
+      "avg_total_assets": 56189500000.0,
+      "avg_equity": 17835500000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.1128,
+      "asset_turnover": 0.4884,
+      "equity_multiplier": 2.8489,
+      "roe_3factor": 0.157,
+      "tax_burden": 0.7067,
+      "interest_burden": 0.5843,
+      "ebit_margin": 0.2732,
+      "roe_5factor": 0.157,
+      "net_income": 2969000000.0,
+      "revenue": 26318000000.0,
+      "avg_total_assets": 53882000000.0,
+      "avg_equity": 18913500000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.0906,
+      "asset_turnover": 0.4852,
+      "equity_multiplier": 2.9506,
+      "roe_3factor": 0.1297,
+      "tax_burden": 0.3498,
+      "interest_burden": 0.7101,
+      "ebit_margin": 0.3648,
+      "roe_5factor": 0.1297,
+      "net_income": 2546000000.0,
+      "revenue": 28099000000.0,
+      "avg_total_assets": 57915981500.0,
+      "avg_equity": 19628484500.0
+    },
+    "2022": {
+      "net_profit_margin": 0.1597,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 0.7024,
+      "interest_burden": 0.7964,
+      "ebit_margin": 0.2854,
+      "roe_5factor": null,
+      "net_income": 3204583000.0,
+      "revenue": 20070115000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    },
+    "2021": {
+      "net_profit_margin": null,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": null,
+      "interest_burden": null,
+      "ebit_margin": null,
+      "roe_5factor": null,
+      "net_income": null,
+      "revenue": null,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
+}

@@ -1,0 +1,64 @@
+{
+  "ticker": "KIT.OL",
+  "framework": "altman",
+  "computed_at": "2026-07-31T18:45:49.917818Z",
+  "periods": {
+    "2025": {
+      "z_score": 2.207,
+      "zone": "Grey",
+      "z_score_prime": 2.7259,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0727,
+      "x2_retained_earnings_to_assets": 0.2119,
+      "x3_ebit_to_assets": 0.1171,
+      "x4_book_equity_to_liabilities": 0.7344,
+      "x5_revenue_to_assets": 0.996
+    },
+    "2024": {
+      "z_score": 2.3155,
+      "zone": "Grey",
+      "z_score_prime": 2.6014,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0638,
+      "x2_retained_earnings_to_assets": 0.2187,
+      "x3_ebit_to_assets": 0.1317,
+      "x4_book_equity_to_liabilities": 0.557,
+      "x5_revenue_to_assets": 1.164
+    },
+    "2023": {
+      "z_score": 2.4802,
+      "zone": "Grey",
+      "z_score_prime": 2.5667,
+      "zone_prime": "Grey",
+      "x1_working_capital_to_assets": 0.058,
+      "x2_retained_earnings_to_assets": 0.1825,
+      "x3_ebit_to_assets": 0.1646,
+      "x4_book_equity_to_liabilities": 0.4619,
+      "x5_revenue_to_assets": 1.3347
+    },
+    "2022": {
+      "z_score": 1.9105,
+      "zone": "Grey",
+      "z_score_prime": 1.6605,
+      "zone_prime": "Grey",
+      "x1_working_capital_to_assets": 0.0286,
+      "x2_retained_earnings_to_assets": 0.114,
+      "x3_ebit_to_assets": 0.11,
+      "x4_book_equity_to_liabilities": 0.3447,
+      "x5_revenue_to_assets": 1.1467
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
+    }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
+}

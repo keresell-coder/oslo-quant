@@ -1,0 +1,84 @@
+{
+  "ticker": "SALM.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-07-31T18:45:45.780655Z",
+  "periods": {
+    "2025": {
+      "o_score": -2.0169,
+      "bankruptcy_probability": 0.1174,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.6523,
+        "wc_ta": 0.1822,
+        "cl_ca": 0.7306,
+        "oeneg": 0,
+        "ni_ta": 0.0191,
+        "cfo_tl": 0.0844,
+        "intwo": 0,
+        "chin": -0.4575
+      }
+    },
+    "2024": {
+      "o_score": -2.7106,
+      "bankruptcy_probability": 0.0624,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.6282,
+        "wc_ta": 0.2326,
+        "cl_ca": 0.6533,
+        "oeneg": 0,
+        "ni_ta": 0.0545,
+        "cfo_tl": 0.1574,
+        "intwo": 0,
+        "chin": 0.0767
+      }
+    },
+    "2023": {
+      "o_score": -3.2864,
+      "bankruptcy_probability": 0.036,
+      "interpretation": "Low distress risk",
+      "inputs": {
+        "tl_ta": 0.5672,
+        "wc_ta": 0.2826,
+        "cl_ca": 0.5758,
+        "oeneg": 0,
+        "ni_ta": 0.0477,
+        "cfo_tl": 0.2967,
+        "intwo": 0,
+        "chin": -0.1145
+      }
+    },
+    "2022": {
+      "o_score": -2.6665,
+      "bankruptcy_probability": 0.065,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.6135,
+        "wc_ta": 0.1937,
+        "cl_ca": 0.6392,
+        "oeneg": 0,
+        "ni_ta": 0.0513,
+        "cfo_tl": 0.1101,
+        "intwo": 0,
+        "chin": null
+      }
+    },
+    "2021": {
+      "o_score": -1.32,
+      "bankruptcy_probability": 0.2108,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": null,
+        "cl_ca": null,
+        "oeneg": 0,
+        "ni_ta": null,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
+}

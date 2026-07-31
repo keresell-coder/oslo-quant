@@ -1,0 +1,79 @@
+{
+  "ticker": "KIT.OL",
+  "framework": "dupont",
+  "computed_at": "2026-07-31T18:45:49.901562Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": 0.0593,
+      "asset_turnover": 1.1382,
+      "equity_multiplier": 2.5298,
+      "roe_3factor": 0.1708,
+      "tax_burden": 0.7949,
+      "interest_burden": 0.6348,
+      "ebit_margin": 0.1176,
+      "roe_5factor": 0.1708,
+      "net_income": 43800000.0,
+      "revenue": 738300000.0,
+      "avg_total_assets": 648650000.0,
+      "avg_equity": 256400000.0
+    },
+    "2024": {
+      "net_profit_margin": 0.0433,
+      "asset_turnover": 1.1386,
+      "equity_multiplier": 2.9728,
+      "roe_3factor": 0.1464,
+      "tax_burden": 0.7018,
+      "interest_burden": 0.5451,
+      "ebit_margin": 0.1131,
+      "roe_5factor": 0.1464,
+      "net_income": 28000000.0,
+      "revenue": 647200000.0,
+      "avg_total_assets": 568400000.0,
+      "avg_equity": 191200000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.0659,
+      "asset_turnover": 1.3602,
+      "equity_multiplier": 3.4878,
+      "roe_3factor": 0.3127,
+      "tax_burden": 0.7898,
+      "interest_burden": 0.6768,
+      "ebit_margin": 0.1233,
+      "roe_5factor": 0.3127,
+      "net_income": 51100000.0,
+      "revenue": 775200000.0,
+      "avg_total_assets": 569900000.0,
+      "avg_equity": 163400000.0
+    },
+    "2022": {
+      "net_profit_margin": 0.0441,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": 0.7332,
+      "interest_burden": 0.6276,
+      "ebit_margin": 0.0959,
+      "roe_5factor": null,
+      "net_income": 28300000.0,
+      "revenue": 641000000.0,
+      "avg_total_assets": null,
+      "avg_equity": null
+    },
+    "2021": {
+      "net_profit_margin": null,
+      "asset_turnover": null,
+      "equity_multiplier": null,
+      "roe_3factor": null,
+      "tax_burden": null,
+      "interest_burden": null,
+      "ebit_margin": null,
+      "roe_5factor": null,
+      "net_income": null,
+      "revenue": null,
+      "avg_total_assets": null,
+      "avg_equity": null
+    }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
+}

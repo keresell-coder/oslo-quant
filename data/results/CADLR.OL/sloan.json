@@ -1,0 +1,59 @@
+{
+  "ticker": "CADLR.OL",
+  "framework": "sloan",
+  "computed_at": "2026-07-31T18:45:47.626920Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -114016000.0,
+      "cfo_accrual_ratio": -0.0426,
+      "bs_accruals": -560761000.0,
+      "bs_accrual_ratio": -0.2095,
+      "earnings_quality": "Moderate",
+      "net_income": 280184000.0,
+      "operating_cash_flow": 394200000.0,
+      "avg_total_assets": 2676846000.0
+    },
+    "2024": {
+      "cfo_accruals": -28032000.0,
+      "cfo_accrual_ratio": -0.0176,
+      "bs_accruals": 45854000.0,
+      "bs_accrual_ratio": 0.0288,
+      "earnings_quality": "Moderate",
+      "net_income": 65069000.0,
+      "operating_cash_flow": 93101000.0,
+      "avg_total_assets": 1594788000.0
+    },
+    "2023": {
+      "cfo_accruals": -51885000.0,
+      "cfo_accrual_ratio": -0.054,
+      "bs_accruals": 291759000.0,
+      "bs_accrual_ratio": 0.3035,
+      "earnings_quality": "High",
+      "net_income": 11498000.0,
+      "operating_cash_flow": 63383000.0,
+      "avg_total_assets": 961295000.0
+    },
+    "2022": {
+      "cfo_accruals": 6505000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 35541000.0,
+      "operating_cash_flow": 29036000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
+}

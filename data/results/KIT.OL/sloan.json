@@ -1,0 +1,59 @@
+{
+  "ticker": "KIT.OL",
+  "framework": "sloan",
+  "computed_at": "2026-07-31T18:45:49.911676Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -49800000.0,
+      "cfo_accrual_ratio": -0.0768,
+      "bs_accruals": 118400000.0,
+      "bs_accrual_ratio": 0.1825,
+      "earnings_quality": "High",
+      "net_income": 43800000.0,
+      "operating_cash_flow": 93600000.0,
+      "avg_total_assets": 648650000.0
+    },
+    "2024": {
+      "cfo_accruals": -15700000.0,
+      "cfo_accrual_ratio": -0.0276,
+      "bs_accruals": -27600000.0,
+      "bs_accrual_ratio": -0.0486,
+      "earnings_quality": "Moderate",
+      "net_income": 28000000.0,
+      "operating_cash_flow": 43700000.0,
+      "avg_total_assets": 568400000.0
+    },
+    "2023": {
+      "cfo_accruals": -7900000.0,
+      "cfo_accrual_ratio": -0.0139,
+      "bs_accruals": 22200000.0,
+      "bs_accrual_ratio": 0.039,
+      "earnings_quality": "Moderate",
+      "net_income": 51100000.0,
+      "operating_cash_flow": 59000000.0,
+      "avg_total_assets": 569900000.0
+    },
+    "2022": {
+      "cfo_accruals": 10200000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 28300000.0,
+      "operating_cash_flow": 18100000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
+}

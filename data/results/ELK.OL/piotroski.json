@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "piotroski",
-  "computed_at": "2026-07-30T18:28:56.680530Z",
+  "computed_at": "2026-07-31T18:45:48.322940Z",
   "periods": {
     "2025": {
       "f_score": 7,

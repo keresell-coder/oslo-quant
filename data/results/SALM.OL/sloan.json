@@ -1,0 +1,59 @@
+{
+  "ticker": "SALM.OL",
+  "framework": "sloan",
+  "computed_at": "2026-07-31T18:45:45.777192Z",
+  "periods": {
+    "2025": {
+      "cfo_accruals": -2086000000.0,
+      "cfo_accrual_ratio": -0.0371,
+      "bs_accruals": -5055000000.0,
+      "bs_accrual_ratio": -0.09,
+      "earnings_quality": "Moderate",
+      "net_income": 1105000000.0,
+      "operating_cash_flow": 3191000000.0,
+      "avg_total_assets": 56189500000.0
+    },
+    "2024": {
+      "cfo_accruals": -2412000000.0,
+      "cfo_accrual_ratio": -0.0448,
+      "bs_accruals": -5024000000.0,
+      "bs_accrual_ratio": -0.0932,
+      "earnings_quality": "Moderate",
+      "net_income": 2969000000.0,
+      "operating_cash_flow": 5381000000.0,
+      "avg_total_assets": 53882000000.0
+    },
+    "2023": {
+      "cfo_accruals": -6429000000.0,
+      "cfo_accrual_ratio": -0.111,
+      "bs_accruals": -454828000.0,
+      "bs_accrual_ratio": -0.0079,
+      "earnings_quality": "High",
+      "net_income": 2546000000.0,
+      "operating_cash_flow": 8975000000.0,
+      "avg_total_assets": 57915981500.0
+    },
+    "2022": {
+      "cfo_accruals": -1017861000.0,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": 3204583000.0,
+      "operating_cash_flow": 4222444000.0,
+      "avg_total_assets": null
+    },
+    "2021": {
+      "cfo_accruals": null,
+      "cfo_accrual_ratio": null,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unknown",
+      "net_income": null,
+      "operating_cash_flow": null,
+      "avg_total_assets": null
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
+}

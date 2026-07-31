@@ -1,0 +1,84 @@
+{
+  "ticker": "KIT.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-07-31T18:45:49.914619Z",
+  "periods": {
+    "2025": {
+      "o_score": -1.2426,
+      "bankruptcy_probability": 0.224,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.5766,
+        "wc_ta": 0.0727,
+        "cl_ca": 0.6578,
+        "oeneg": 0,
+        "ni_ta": 0.0591,
+        "cfo_tl": 0.219,
+        "intwo": 0,
+        "chin": 0.2201
+      }
+    },
+    "2024": {
+      "o_score": -0.2439,
+      "bankruptcy_probability": 0.4393,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.6423,
+        "wc_ta": 0.0638,
+        "cl_ca": 0.7692,
+        "oeneg": 0,
+        "ni_ta": 0.0504,
+        "cfo_tl": 0.1224,
+        "intwo": 0,
+        "chin": -0.292
+      }
+    },
+    "2023": {
+      "o_score": -0.4392,
+      "bankruptcy_probability": 0.3919,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.6841,
+        "wc_ta": 0.058,
+        "cl_ca": 0.781,
+        "oeneg": 0,
+        "ni_ta": 0.088,
+        "cfo_tl": 0.1485,
+        "intwo": 0,
+        "chin": 0.2872
+      }
+    },
+    "2022": {
+      "o_score": 0.4161,
+      "bankruptcy_probability": 0.6026,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.7436,
+        "wc_ta": 0.0286,
+        "cl_ca": 0.8885,
+        "oeneg": 0,
+        "ni_ta": 0.0506,
+        "cfo_tl": 0.0435,
+        "intwo": 0,
+        "chin": null
+      }
+    },
+    "2021": {
+      "o_score": -1.32,
+      "bankruptcy_probability": 0.2108,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": null,
+        "wc_ta": null,
+        "cl_ca": null,
+        "oeneg": 0,
+        "ni_ta": null,
+        "cfo_tl": null,
+        "intwo": 0,
+        "chin": null
+      }
+    }
+  },
+  "financial_currency": "EUR",
+  "price_currency": "NOK"
+}

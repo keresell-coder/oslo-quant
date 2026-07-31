@@ -1,0 +1,64 @@
+{
+  "ticker": "SALM.OL",
+  "framework": "altman",
+  "computed_at": "2026-07-31T18:45:45.784445Z",
+  "periods": {
+    "2025": {
+      "z_score": 1.4158,
+      "zone": "Distress",
+      "z_score_prime": 2.634,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.1822,
+      "x2_retained_earnings_to_assets": 0.1036,
+      "x3_ebit_to_assets": 0.0904,
+      "x4_book_equity_to_liabilities": 0.4695,
+      "x5_revenue_to_assets": 0.4719
+    },
+    "2024": {
+      "z_score": 1.7216,
+      "zone": "Distress",
+      "z_score_prime": 3.4494,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.2326,
+      "x2_retained_earnings_to_assets": 0.149,
+      "x3_ebit_to_assets": 0.1321,
+      "x4_book_equity_to_liabilities": 0.5242,
+      "x5_revenue_to_assets": 0.4835
+    },
+    "2023": {
+      "z_score": 2.1536,
+      "zone": "Grey",
+      "z_score_prime": 4.4386,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.2826,
+      "x2_retained_earnings_to_assets": 0.1847,
+      "x3_ebit_to_assets": 0.1922,
+      "x4_book_equity_to_liabilities": 0.6578,
+      "x5_revenue_to_assets": 0.5269
+    },
+    "2022": {
+      "z_score": 1.3111,
+      "zone": "Distress",
+      "z_score_prime": 2.7711,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.1937,
+      "x2_retained_earnings_to_assets": 0.1087,
+      "x3_ebit_to_assets": 0.0916,
+      "x4_book_equity_to_liabilities": 0.5048,
+      "x5_revenue_to_assets": 0.3211
+    },
+    "2021": {
+      "z_score": 0.0,
+      "zone": "Distress",
+      "z_score_prime": 0.0,
+      "zone_prime": "Distress",
+      "x1_working_capital_to_assets": null,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": null,
+      "x4_book_equity_to_liabilities": null,
+      "x5_revenue_to_assets": null
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK"
+}
