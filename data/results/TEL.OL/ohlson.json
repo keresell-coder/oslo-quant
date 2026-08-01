@@ -1,79 +1,64 @@
 {
   "ticker": "TEL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-31T18:45:49.975164Z",
+  "computed_at": "2026-08-01T05:56:43.290261Z",
   "periods": {
     "2025": {
-      "o_score": -3.2795,
-      "bankruptcy_probability": 0.0363,
-      "interpretation": "Low distress risk",
+      "o_score": -2.3891,
+      "bankruptcy_probability": 0.084,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6588,
-        "wc_ta": 0.4059,
-        "cl_ca": 0.5257,
+        "wc_ta": -0.0647,
+        "cl_ca": 1.4494,
         "oeneg": 0,
-        "ni_ta": 0.0495,
+        "ni_ta": 0.0317,
         "cfo_tl": 0.2138,
         "intwo": 0,
-        "chin": -0.2431
+        "chin": -0.4455
       }
     },
     "2024": {
-      "o_score": -4.1583,
-      "bankruptcy_probability": 0.0154,
-      "interpretation": "Low distress risk",
+      "o_score": -2.8778,
+      "bankruptcy_probability": 0.0533,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6426,
-        "wc_ta": 0.4401,
-        "cl_ca": 0.4999,
+        "wc_ta": -0.0827,
+        "cl_ca": 1.6896,
         "oeneg": 0,
-        "ni_ta": 0.0787,
+        "ni_ta": 0.0801,
         "cfo_tl": 0.2141,
         "intwo": 0,
-        "chin": 1.0
+        "chin": 0.1435
       }
     },
     "2023": {
-      "o_score": -2.4834,
-      "bankruptcy_probability": 0.077,
+      "o_score": -2.3422,
+      "bankruptcy_probability": 0.0877,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6775,
-        "wc_ta": 0.3511,
-        "cl_ca": 0.5708,
+        "wc_ta": -0.0285,
+        "cl_ca": 1.1568,
         "oeneg": 0,
-        "ni_ta": -0.0224,
+        "ni_ta": 0.0629,
         "cfo_tl": 0.1968,
         "intwo": 0,
-        "chin": -1.0
+        "chin": -0.5316
       }
     },
     "2022": {
-      "o_score": -2.9291,
-      "bankruptcy_probability": 0.0507,
-      "interpretation": "Moderate distress risk",
+      "o_score": null,
+      "bankruptcy_probability": null,
+      "interpretation": "Not assessable",
       "inputs": {
         "tl_ta": 0.7309,
-        "wc_ta": 0.3593,
-        "cl_ca": 0.5848,
+        "wc_ta": -0.0903,
+        "cl_ca": 1.671,
         "oeneg": 0,
-        "ni_ta": 0.0405,
+        "ni_ta": 0.1877,
         "cfo_tl": 0.2243,
-        "intwo": 0,
-        "chin": null
-      }
-    },
-    "2021": {
-      "o_score": -1.32,
-      "bankruptcy_probability": 0.2108,
-      "interpretation": "High distress risk",
-      "inputs": {
-        "tl_ta": null,
-        "wc_ta": null,
-        "cl_ca": null,
-        "oeneg": 0,
-        "ni_ta": null,
-        "cfo_tl": null,
         "intwo": 0,
         "chin": null
       }

@@ -115,14 +115,53 @@ Price currency for all .OL tickers is always NOK (Oslo Børs).
 
 ## Framework design notes
 
+### The 2026-08-01 restatement — read this first
+
+An independent audit (July 2026) found that `BaseFramework._get()` matched
+statement rows by **substring, first match wins**, against yfinance's row order.
+In production this resolved `EBIT` → *Normalized EBITDA*, `Current Assets` →
+*Total Non Current Assets*, `Current Liabilities` → *Total Non Current
+Liabilities Net Minority Interest*, `Net Income` → *continuing-operations
+income*, and sometimes `Retained Earnings` → *Gains Losses Not Affecting
+Retained Earnings*. Every populated company was affected; 5 of 14 Altman Z″
+zones and most Piotroski scores were wrong. Three things changed:
+
+1. **Field resolution is exact-match first** (case-insensitive), across all
+   candidate names in order. Substring matching survives only as a logged
+   fallback. Regression fixtures in `tests/fixtures.py`
+   (`make_yfinance_like_statements`) reproduce the provider's real vocabulary
+   and row order with decoy rows — keep them in sync if yfinance's labels change.
+2. **Missing inputs are never scored.** No zero-substitution anywhere. A
+   framework with a material missing input reports `None` /
+   `"Not assessable"`. Empty or stub statement columns (no `Total Assets` /
+   `Total Revenue` anchor) are dropped before computation.
+3. **Net income means total operations** (yfinance's exact `Net Income` row,
+   i.e. including discontinued operations, attributable basis as provided).
+   This is a deliberate perimeter policy: one-off gains (e.g. Telenor's 2022
+   CelcomDigi gain, NOK 44.9bn total NI) now show up in ROE/accruals rather
+   than being silently excluded. Sector/perimeter judgment still applies.
+
+All `data/results/` histories were recomputed on 2026-08-01 and the dashboard
+carries a visible restatement notice. Do not compare current scores against
+pre-restatement snapshots without accounting for this.
+
 ### DuPont (`dupont.py`)
 Standard 3-factor (NPM × Asset Turnover × Equity Multiplier = ROE) and
-5-factor decomposition. No known issues.
+5-factor decomposition. The 5-factor ROE is computed as the actual product of
+its five components, so it functions as a genuine internal-consistency check
+against the 3-factor ROE (they should agree to rounding; disagreement means a
+data problem).
 
 ### Piotroski F-Score (`piotroski.py`)
 Nine binary signals (0/1). Score ≥ 8 = Strong, 5–7 = Moderate, ≤ 4 = Weak.
 Uses average assets rather than beginning-of-year assets for ROA (minor deviation
 from the original paper; immaterial in practice).
+A signal whose inputs are unavailable is `None`, not 0, and the headline
+F-score is only published when all nine signals are assessable — otherwise the
+period shows "Not assessable (n of 9 signals)" with a partial sum in the JSON.
+The oldest fetched year therefore never gets a score (no prior-year
+comparison), and DOFG has no scores at all while yfinance lacks its gross
+profit. Published as Piotroski (2000) — the paper is from 2000, not 1980.
 
 ### Sloan Accruals (`sloan.py`)
 Two methods: CFO-based (primary) and balance-sheet method (approximate).
@@ -138,6 +177,13 @@ which is a common error in implementations found online.
 Raw probabilities are structurally high for large listed Norwegian companies
 (model calibrated on 1970s US firms with ~7% annual bankruptcy rate). Use as a
 relative/directional signal within a peer group, not as an absolute forecast.
+The probability is only computed when every model input is present (incl. the
+prior-year income needed for CHIN); otherwise the period reports
+"Not assessable". **Known open limitation:** the SIZE term uses assets in each
+company's reporting currency with no common-currency conversion, so the score
+is biased upward ~+0.96 for USD reporters and ~+1.00 for EUR reporters
+relative to NOK reporters. Cross-currency ranking is not valid until that is
+fixed.
 
 ### Altman Z-Score (`altman.py`)
 Three variants computed: original Z (manufacturing), Z' (private firms), Z'' (non-manufacturing).
@@ -146,6 +192,11 @@ Z thresholds: Safe > 2.6, Grey zone 1.1–2.6, Distress ≤ 1.1.
 Original Z is retained in the dashboard as a reference row shown in gray.
 X4 uses book equity (not market cap) for all companies to ensure consistency
 across periods and avoid price-driven distortion.
+A Z-score is only computed when every component of that variant is present —
+a missing component makes the zone "Not assessable" rather than entering the
+sum as zero. Mowi is the standing example: yfinance provides no Retained
+Earnings row for it, so its Altman zones are Not assessable (previously it
+showed "Safe" with X2 silently zeroed).
 
 ---
 
@@ -352,13 +403,22 @@ empty results over good committed data. If it happens:
 
 ## Known open items
 
+- **Currency mismatches flagged on 2026-08-01 run:** yfinance reports KIT.OL
+  statements in **EUR** (config says NOK — Kitron changed presentation
+  currency to EUR in 2024, so yfinance is likely right; verify against the
+  annual report and update config) and PUBLI.OL in **SEK** (config says NOK;
+  plausible given the Nasdaq Stockholm redomiciling — verify). The pipeline
+  currently trusts yfinance on mismatch.
+- **Ohlson cross-currency bias** (see framework notes): SIZE term not
+  currency-adjusted; do not rank USD/EUR reporters against NOK reporters.
+- **DOFG has no Piotroski scores** — yfinance carries no Gross Profit row for
+  it, so F8 is unassessable and the headline score is withheld by policy.
+
 - **Node.js 20 deprecation warning** on every run. `actions/cache@v4`,
   `actions/checkout@v4` and `actions/setup-python@v5` target Node 20; GitHub forces
   Node 24. Cosmetic, non-blocking; bump the action versions when convenient.
-- **Kitron, Cadeler and SalMar have no data yet** as of 2026-07-30. The first run to
-  include them is Friday 2026-07-31. If the header does not reach "17 of 17"
-  afterwards, one of those three tickers is wrong for yfinance — that is the first
-  thing to check.
+- **Kitron, Cadeler and SalMar populated on 2026-08-01** (as part of the
+  restatement recompute) — all 17 companies now carry data.
 - **The freshness floor is 80%** (13 of 17). Three simultaneously-broken tickers stay
   above the floor and would not trigger an alert, though they appear in the job
   summary as `empty` or missing.

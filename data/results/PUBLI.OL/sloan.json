@@ -1,14 +1,16 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "sloan",
-  "computed_at": "2026-07-31T18:45:48.094138Z",
+  "computed_at": "2026-08-01T05:56:43.220684Z",
   "periods": {
     "2025": {
       "cfo_accruals": -331247561.0,
       "cfo_accrual_ratio": -0.0104,
-      "bs_accruals": -4691954156.0,
-      "bs_accrual_ratio": -0.148,
+      "bs_accruals": 18293952185.0,
+      "bs_accrual_ratio": 0.5771,
       "earnings_quality": "Moderate",
+      "methods_divergence": 0.5876,
+      "methods_diverge_materially": true,
       "net_income": 468504838.0,
       "operating_cash_flow": 799752400.0,
       "avg_total_assets": 31699529518.0
@@ -16,9 +18,11 @@
     "2024": {
       "cfo_accruals": -444741837.0,
       "cfo_accrual_ratio": -0.0445,
-      "bs_accruals": -2270705734.0,
-      "bs_accrual_ratio": -0.2272,
+      "bs_accruals": 1988442483.0,
+      "bs_accrual_ratio": 0.199,
       "earnings_quality": "Moderate",
+      "methods_divergence": 0.2435,
+      "methods_diverge_materially": true,
       "net_income": 9731769.0,
       "operating_cash_flow": 454473606.0,
       "avg_total_assets": 9992556875.0
@@ -26,32 +30,26 @@
     "2023": {
       "cfo_accruals": -1313802582.0,
       "cfo_accrual_ratio": -0.1406,
-      "bs_accruals": 2089770822.0,
-      "bs_accrual_ratio": 0.2236,
+      "bs_accruals": -1172870101.0,
+      "bs_accrual_ratio": -0.1255,
       "earnings_quality": "High",
+      "methods_divergence": 0.0151,
+      "methods_diverge_materially": false,
       "net_income": -884384685.0,
       "operating_cash_flow": 429417897.0,
       "avg_total_assets": 9344535559.0
     },
     "2022": {
       "cfo_accruals": -1005841462.0,
-      "cfo_accrual_ratio": null,
+      "cfo_accrual_ratio": -0.0975,
       "bs_accruals": null,
       "bs_accrual_ratio": null,
-      "earnings_quality": "Unknown",
+      "earnings_quality": "High",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
       "net_income": -663110297.0,
       "operating_cash_flow": 342731165.0,
-      "avg_total_assets": null
-    },
-    "2021": {
-      "cfo_accruals": null,
-      "cfo_accrual_ratio": null,
-      "bs_accruals": null,
-      "bs_accrual_ratio": null,
-      "earnings_quality": "Unknown",
-      "net_income": null,
-      "operating_cash_flow": null,
-      "avg_total_assets": null
+      "avg_total_assets": 10314930802.0
     }
   },
   "financial_currency": "SEK",

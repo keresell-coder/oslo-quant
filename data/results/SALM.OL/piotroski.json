@@ -1,17 +1,19 @@
 {
   "ticker": "SALM.OL",
   "framework": "piotroski",
-  "computed_at": "2026-07-31T18:45:45.772687Z",
+  "computed_at": "2026-08-01T05:56:42.943151Z",
   "periods": {
     "2025": {
-      "f_score": 3,
+      "f_score": 4,
+      "f_score_partial": 4,
+      "signals_assessable": 9,
       "signals": {
         "F1_positive_roa": 1,
         "F2_positive_cfo": 1,
         "F3_roa_increasing": 0,
         "F4_accruals_quality": 1,
         "F5_leverage_decreasing": 0,
-        "F6_liquidity_improving": 0,
+        "F6_liquidity_improving": 1,
         "F7_no_dilution": 0,
         "F8_gross_margin_improving": 0,
         "F9_asset_turnover_improving": 0
@@ -19,16 +21,18 @@
       "interpretation": "Weak",
       "roa": 0.0197,
       "cfo_to_assets": 0.0551,
-      "current_ratio": 1.3687,
+      "current_ratio": 2.0469,
       "gross_margin": 0.4668,
       "asset_turnover": 0.4719
     },
     "2024": {
-      "f_score": 4,
+      "f_score": 3,
+      "f_score_partial": 3,
+      "signals_assessable": 9,
       "signals": {
         "F1_positive_roa": 1,
         "F2_positive_cfo": 1,
-        "F3_roa_increasing": 1,
+        "F3_roa_increasing": 0,
         "F4_accruals_quality": 1,
         "F5_leverage_decreasing": 0,
         "F6_liquidity_improving": 0,
@@ -39,16 +43,18 @@
       "interpretation": "Weak",
       "roa": 0.0551,
       "cfo_to_assets": 0.0989,
-      "current_ratio": 1.5308,
+      "current_ratio": 1.7329,
       "gross_margin": 0.5031,
       "asset_turnover": 0.4835
     },
     "2023": {
-      "f_score": 8,
+      "f_score": 9,
+      "f_score_partial": 9,
+      "signals_assessable": 9,
       "signals": {
         "F1_positive_roa": 1,
         "F2_positive_cfo": 1,
-        "F3_roa_increasing": 0,
+        "F3_roa_increasing": 1,
         "F4_accruals_quality": 1,
         "F5_leverage_decreasing": 1,
         "F6_liquidity_improving": 1,
@@ -57,51 +63,33 @@
         "F9_asset_turnover_improving": 1
       },
       "interpretation": "Strong",
-      "roa": 0.044,
+      "roa": 0.0553,
       "cfo_to_assets": 0.1683,
-      "current_ratio": 1.7368,
+      "current_ratio": 1.8173,
       "gross_margin": 0.5901,
       "asset_turnover": 0.5269
     },
     "2022": {
-      "f_score": 1,
+      "f_score": null,
+      "f_score_partial": 4,
+      "signals_assessable": 8,
       "signals": {
-        "F1_positive_roa": 0,
+        "F1_positive_roa": 1,
         "F2_positive_cfo": 1,
-        "F3_roa_increasing": 0,
-        "F4_accruals_quality": 0,
+        "F3_roa_increasing": null,
+        "F4_accruals_quality": 1,
         "F5_leverage_decreasing": 0,
         "F6_liquidity_improving": 0,
-        "F7_no_dilution": 0,
+        "F7_no_dilution": 1,
         "F8_gross_margin_improving": 0,
         "F9_asset_turnover_improving": 0
       },
-      "interpretation": "Weak",
-      "roa": null,
+      "interpretation": "Not assessable (8 of 9 signals)",
+      "roa": 0.053,
       "cfo_to_assets": 0.0676,
-      "current_ratio": 1.5645,
+      "current_ratio": 1.713,
       "gross_margin": 0.5432,
       "asset_turnover": 0.3211
-    },
-    "2021": {
-      "f_score": 0,
-      "signals": {
-        "F1_positive_roa": 0,
-        "F2_positive_cfo": 0,
-        "F3_roa_increasing": 0,
-        "F4_accruals_quality": 0,
-        "F5_leverage_decreasing": 0,
-        "F6_liquidity_improving": 0,
-        "F7_no_dilution": 0,
-        "F8_gross_margin_improving": 0,
-        "F9_asset_turnover_improving": 0
-      },
-      "interpretation": "Weak",
-      "roa": null,
-      "cfo_to_assets": null,
-      "current_ratio": null,
-      "gross_margin": null,
-      "asset_turnover": null
     }
   },
   "financial_currency": "NOK",

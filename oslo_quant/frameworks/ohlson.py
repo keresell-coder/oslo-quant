@@ -62,11 +62,11 @@ class OhlsonFramework(BaseFramework):
         inc = stmts["income_stmt"]
         cf  = stmts["cash_flow"]
 
-        periods = self._periods(inc)
+        periods = self._periods(inc, anchor="Total Revenue")
         results: dict[str, Any] = {}
 
         for period in periods:
-            all_periods = self._periods(inc)
+            all_periods = self._periods(inc, anchor="Total Revenue")
             try:
                 prev_period = all_periods[all_periods.index(period) + 1]
             except (ValueError, IndexError):
@@ -108,8 +108,13 @@ class OhlsonFramework(BaseFramework):
         )
 
         tl_ta  = self._safe_div(total_liab, total_assets)
-        wc     = (current_assets if not math.isnan(current_assets) else 0) - \
-                 (current_liab   if not math.isnan(current_liab)   else 0)
+        # No zero-substitution — missing current assets/liabilities means
+        # working capital is unknown, not zero (2026-08 restatement).
+        wc = (
+            current_assets - current_liab
+            if not math.isnan(current_assets) and not math.isnan(current_liab)
+            else float("nan")
+        )
         wc_ta  = self._safe_div(wc, total_assets)
         cl_ca  = self._safe_div(current_liab, current_assets)
         ni_ta  = self._safe_div(net_income, total_assets)
@@ -139,19 +144,30 @@ class OhlsonFramework(BaseFramework):
             else float("nan")
         )
 
+        # Missing-input policy (2026-08 restatement): the logistic score is
+        # only computed when every continuous term is present. Substituting 0
+        # for missing terms previously produced an identical default
+        # probability (21.08%) for every company with an empty period —
+        # a model artifact presented as company information.
         c = self._COEF
-        o_score = (
-            c["intercept"]
-            + c["log_ta_gnp"] * (log_ta_gnp if not math.isnan(log_ta_gnp) else 0)
-            + c["tl_ta"]      * (tl_ta      if not math.isnan(tl_ta)      else 0)
-            + c["wc_ta"]      * (wc_ta      if not math.isnan(wc_ta)      else 0)
-            + c["cl_ca"]      * (cl_ca      if not math.isnan(cl_ca)      else 0)
-            + c["oeneg"]      * oeneg
-            + c["ni_ta"]      * (ni_ta      if not math.isnan(ni_ta)      else 0)
-            + c["cfo_tl"]     * (cfo_tl     if not math.isnan(cfo_tl)     else 0)
-            + c["intwo"]      * intwo
-            + c["chin"]       * (chin       if not math.isnan(chin)       else 0)
-        )
+        required = (log_ta_gnp, tl_ta, wc_ta, cl_ca, ni_ta, cfo_tl, chin)
+        if any(math.isnan(v) for v in required):
+            if all(math.isnan(v) for v in (tl_ta, wc_ta, cl_ca, ni_ta, cfo_tl)):
+                return None  # nothing assessable at all — drop the period
+            o_score = float("nan")
+        else:
+            o_score = (
+                c["intercept"]
+                + c["log_ta_gnp"] * log_ta_gnp
+                + c["tl_ta"]      * tl_ta
+                + c["wc_ta"]      * wc_ta
+                + c["cl_ca"]      * cl_ca
+                + c["oeneg"]      * oeneg
+                + c["ni_ta"]      * ni_ta
+                + c["cfo_tl"]     * cfo_tl
+                + c["intwo"]      * intwo
+                + c["chin"]       * chin
+            )
 
         prob = 1 / (1 + math.exp(-o_score)) if not math.isnan(o_score) else float("nan")
 
@@ -173,7 +189,7 @@ class OhlsonFramework(BaseFramework):
 
     def _interpret(self, prob: float) -> str:
         if math.isnan(prob):
-            return "Unknown"
+            return "Not assessable"
         if prob < 0.05:
             return "Low distress risk"
         if prob < 0.20:

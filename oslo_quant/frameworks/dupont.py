@@ -15,7 +15,7 @@ class DuPontFramework(BaseFramework):
     def compute(self, stmts: Statements, ticker: str) -> dict[str, Any]:
         bs = stmts["balance_sheet"]
         inc = stmts["income_stmt"]
-        periods = self._periods(inc)
+        periods = self._periods(inc, anchor="Total Revenue")
 
         results: dict[str, Any] = {}
         for period in periods:
@@ -54,7 +54,7 @@ class DuPontFramework(BaseFramework):
         )
 
         # Try previous period for average calculations
-        all_periods = self._periods(bs)
+        all_periods = self._periods(bs, anchor="Total Assets")
         try:
             idx = all_periods.index(period)
             prev_period = all_periods[idx + 1] if idx + 1 < len(all_periods) else None
@@ -90,7 +90,17 @@ class DuPontFramework(BaseFramework):
             ebit if not self._isnan(ebit) else pretax_income + abs(interest_expense or 0),
         )
         ebit_margin = self._safe_div(ebit, revenue)
-        roe_5f = self._safe_div(net_income, avg_equity)  # should equal roe_3f numerically
+        # 5-factor ROE is computed as the actual product of its five components
+        # so it can serve as a genuine internal-consistency check against the
+        # 3-factor ROE. (It was previously set directly to NI / avg equity,
+        # which made the "check" tautological — audit finding, 2026-07.)
+        five_factors = (tax_burden, interest_burden, ebit_margin,
+                        asset_turnover, equity_multiplier)
+        if any(self._isnan(f) for f in five_factors):
+            roe_5f = float("nan")
+        else:
+            roe_5f = (tax_burden * interest_burden * ebit_margin
+                      * asset_turnover * equity_multiplier)
 
         return {
             # 3-factor

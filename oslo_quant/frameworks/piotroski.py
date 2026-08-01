@@ -18,11 +18,11 @@ class PiotroskiFramework(BaseFramework):
         inc = stmts["income_stmt"]
         cf = stmts["cash_flow"]
 
-        periods = self._periods(inc)
+        periods = self._periods(inc, anchor="Total Revenue")
         results: dict[str, Any] = {}
 
         for i, period in enumerate(periods):
-            all_bs_periods = self._periods(bs)
+            all_bs_periods = self._periods(bs, anchor="Total Assets")
             try:
                 prev_idx = all_bs_periods.index(period) + 1
                 prev_period = all_bs_periods[prev_idx] if prev_idx < len(all_bs_periods) else None
@@ -62,7 +62,7 @@ class PiotroskiFramework(BaseFramework):
         roa_prev = None
         if prev_period:
             ni_prev = self._get(inc, "Net Income", col=prev_period)
-            ta_prev2_periods = self._periods(bs)
+            ta_prev2_periods = self._periods(bs, anchor="Total Assets")
             try:
                 pi = ta_prev2_periods.index(prev_period)
                 prev2 = ta_prev2_periods[pi + 1] if pi + 1 < len(ta_prev2_periods) else None
@@ -71,10 +71,15 @@ class PiotroskiFramework(BaseFramework):
             ta_prev2 = self._get(bs, "Total Assets", col=prev2) if prev2 else total_assets_prev
             roa_prev = self._safe_div(ni_prev, (total_assets_prev + ta_prev2) / 2)
 
-        f1 = int(roa > 0) if not math.isnan(roa) else 0
-        f2 = int(cfo > 0) if not math.isnan(cfo) else 0
-        f3 = int(roa > roa_prev) if (roa_prev is not None and not math.isnan(roa) and not math.isnan(roa_prev)) else 0
-        f4 = int(cfo_to_assets > roa) if (not math.isnan(cfo_to_assets) and not math.isnan(roa)) else 0
+        # Missing-input policy (2026-08 restatement): a signal whose inputs are
+        # unavailable is None ("not assessable"), never 0 ("failed"). Treating
+        # missing history as failure mechanically produced F=0 and F=1 for the
+        # two oldest periods of every single company — a pure data artifact
+        # rendered as a "weak fundamentals" trend.
+        f1 = int(roa > 0) if not math.isnan(roa) else None
+        f2 = int(cfo > 0) if not math.isnan(cfo) else None
+        f3 = int(roa > roa_prev) if (roa_prev is not None and not math.isnan(roa) and not math.isnan(roa_prev)) else None
+        f4 = int(cfo_to_assets > roa) if (not math.isnan(cfo_to_assets) and not math.isnan(roa)) else None
 
         # ---- Leverage / Liquidity signals (F5–F7) ----
         long_term_debt = self._get(
@@ -110,9 +115,9 @@ class PiotroskiFramework(BaseFramework):
         leverage = self._safe_div(long_term_debt, total_assets)
         leverage_prev = self._safe_div(ltd_prev, total_assets_prev)
 
-        f5 = int(leverage < leverage_prev) if (not math.isnan(leverage) and not math.isnan(leverage_prev)) else 0
-        f6 = int(current_ratio > current_ratio_prev) if (not math.isnan(current_ratio) and not math.isnan(current_ratio_prev)) else 0
-        f7 = int(shares <= shares_prev) if (not math.isnan(shares) and not math.isnan(shares_prev)) else 0
+        f5 = int(leverage < leverage_prev) if (not math.isnan(leverage) and not math.isnan(leverage_prev)) else None
+        f6 = int(current_ratio > current_ratio_prev) if (not math.isnan(current_ratio) and not math.isnan(current_ratio_prev)) else None
+        f7 = int(shares <= shares_prev) if (not math.isnan(shares) and not math.isnan(shares_prev)) else None
 
         # ---- Operating efficiency signals (F8–F9) ----
         gross_profit = self._get(inc, "Gross Profit", col=period)
@@ -126,13 +131,29 @@ class PiotroskiFramework(BaseFramework):
         asset_turnover = self._safe_div(revenue, total_assets)
         asset_turnover_prev = self._safe_div(revenue_prev, total_assets_prev)
 
-        f8 = int(gross_margin > gross_margin_prev) if (not math.isnan(gross_margin) and not math.isnan(gross_margin_prev)) else 0
-        f9 = int(asset_turnover > asset_turnover_prev) if (not math.isnan(asset_turnover) and not math.isnan(asset_turnover_prev)) else 0
+        f8 = int(gross_margin > gross_margin_prev) if (not math.isnan(gross_margin) and not math.isnan(gross_margin_prev)) else None
+        f9 = int(asset_turnover > asset_turnover_prev) if (not math.isnan(asset_turnover) and not math.isnan(asset_turnover_prev)) else None
 
-        f_score = f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9
+        signals = [f1, f2, f3, f4, f5, f6, f7, f8, f9]
+        assessable = [s for s in signals if s is not None]
+        if not assessable:
+            return None  # nothing computable for this period — drop it
+
+        # The headline F-score is only published when all nine signals are
+        # assessable; a total over fewer signals is not comparable to /9 and
+        # is reported separately as a partial sum.
+        partial_sum = sum(assessable)
+        if len(assessable) == 9:
+            f_score = partial_sum
+            interpretation = self._interpret(f_score)
+        else:
+            f_score = None
+            interpretation = f"Not assessable ({len(assessable)} of 9 signals)"
 
         return {
             "f_score": f_score,
+            "f_score_partial": partial_sum,
+            "signals_assessable": len(assessable),
             "signals": {
                 "F1_positive_roa": f1,
                 "F2_positive_cfo": f2,
@@ -144,7 +165,7 @@ class PiotroskiFramework(BaseFramework):
                 "F8_gross_margin_improving": f8,
                 "F9_asset_turnover_improving": f9,
             },
-            "interpretation": self._interpret(f_score),
+            "interpretation": interpretation,
             "roa": self._fmt(roa),
             "cfo_to_assets": self._fmt(cfo_to_assets),
             "current_ratio": self._fmt(current_ratio),

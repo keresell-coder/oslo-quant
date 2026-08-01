@@ -176,8 +176,8 @@ def _company_summary(ticker: str, fws: dict) -> str:
 
     _, al = _latest(fws.get("altman", {}))
     if al:
-        # Use Z'' for all companies — none of the 14 qualify as US manufacturing
-        if al.get("z_score_prime") is not None:
+        # Use Z'' for all companies — none qualify as US manufacturing
+        if "z_score_prime" in al:
             zone  = al.get("zone_prime", "Unknown")
             z     = _safe_float(al.get("z_score_prime"))
             label = "Z''="
@@ -225,9 +225,13 @@ def _summary_row(ticker: str, fws: dict) -> str:
     if "piotroski" in fws:
         _, p = _latest(fws["piotroski"])
         if p:
-            s = p.get("f_score", 0)
-            c = "green" if s >= 7 else ("yellow" if s >= 5 else "red")
-            piotroski = _f_score_bar(s, c)
+            s = p.get("f_score")
+            if s is not None:
+                c = "green" if s >= 7 else ("yellow" if s >= 5 else "red")
+                piotroski = _f_score_bar(s, c)
+            else:
+                n = p.get("signals_assessable", 0)
+                piotroski = _badge(f"Not assessable ({n}/9 signals)", "gray")
 
     sloan = "—"
     if "sloan" in fws:
@@ -251,9 +255,9 @@ def _summary_row(ticker: str, fws: dict) -> str:
     if "altman" in fws:
         _, p = _latest(fws["altman"])
         if p:
-            # Z'' (non-manufacturing) is appropriate for all 14 Norwegian companies;
+            # Z'' (non-manufacturing) is appropriate for all covered companies;
             # none qualify as US manufacturing. Show Z'' as primary throughout.
-            if p.get("z_score_prime") is not None:
+            if "z_score_prime" in p:
                 z    = _num(p.get("z_score_prime"))
                 zone = p.get("zone_prime", "Unknown")
                 label = "Z''="
@@ -871,6 +875,11 @@ footer a{{color:var(--accent);text-decoration:none}}
     </div>
 
     <div class="disclaimer">
+      <strong>ℹ Restatement — August 2026</strong>
+      All historical results were recomputed on 1 August 2026 after an independent audit found that financial-statement fields were being matched by substring against the data provider's row labels, selecting wrong rows (EBIT resolved to Normalized EBITDA; current assets/liabilities to their <em>non-current</em> counterparts; net income to continuing operations). Field resolution is now exact-match first, missing inputs are reported as “Not assessable” instead of being scored as zero, and periods with no data are dropped. Scores, zones and probabilities shown here may therefore differ materially from versions published before this date.
+    </div>
+
+    <div class="disclaimer">
       <strong>⚠ Data quality &amp; model limitations</strong>
       Financial data is sourced from Yahoo Finance. Stock prices on Oslo Børs are always in NOK; companies that report in USD or EUR have their price data converted to the reporting currency before any price-based metric is computed. All five models were originally calibrated on US companies — treat scores as relative indicators and cross-check with official annual reports before drawing conclusions. Ohlson O-Score probabilities are structurally overstated for large listed Norwegian firms and capital-intensive sectors; use as a relative signal within a peer group. Altman Z&#8243; (non-manufacturing) is shown as primary — the original Z is retained for reference only.
     </div>
@@ -927,7 +936,7 @@ footer a{{color:var(--accent);text-decoration:none}}
 
 <footer>
   Oslo Quant · Data from <a href="https://finance.yahoo.com" target="_blank">Yahoo Finance</a> via yfinance ·
-  Frameworks: DuPont · Piotroski (1980) · Sloan (1996) · Ohlson (1980) · Altman (1968) ·
+  Frameworks: DuPont · Piotroski (2000) · Sloan (1996) · Ohlson (1980) · Altman (1968) ·
   For informational purposes only — not investment advice.
 </footer>
 

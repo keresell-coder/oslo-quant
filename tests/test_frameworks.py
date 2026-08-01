@@ -60,18 +60,35 @@ class TestPiotroski:
     def test_f_score_range(self):
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
-            assert 0 <= data["f_score"] <= 9
+            if data["f_score"] is not None:
+                assert 0 <= data["f_score"] <= 9
 
-    def test_signals_are_binary(self):
+    def test_latest_period_fully_scored(self):
+        result = self.fw.compute(self.stmts, TICKER)
+        assert result["periods"]["2023"]["f_score"] is not None
+        assert result["periods"]["2023"]["signals_assessable"] == 9
+
+    def test_signals_are_binary_or_not_assessable(self):
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
             for sig, val in data["signals"].items():
-                assert val in (0, 1), f"{sig}={val} not binary"
+                assert val in (0, 1, None), f"{sig}={val} invalid"
+
+    def test_first_period_is_not_assessable_not_zero(self):
+        # 2022 has no prior year: comparison signals are unavailable, and the
+        # headline score must be withheld — not published as a low score.
+        result = self.fw.compute(self.stmts, TICKER)
+        data = result["periods"]["2022"]
+        assert data["f_score"] is None
+        assert data["interpretation"].startswith("Not assessable")
 
     def test_interpretation_present(self):
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
-            assert data["interpretation"] in ("Strong", "Moderate", "Weak")
+            assert (
+                data["interpretation"] in ("Strong", "Moderate", "Weak")
+                or data["interpretation"].startswith("Not assessable")
+            )
 
     def test_profitable_company_has_f1_f2(self):
         result = self.fw.compute(self.stmts, TICKER)
@@ -158,8 +175,8 @@ class TestAltman:
     def test_zone_values(self):
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
-            assert data["zone"] in ("Safe", "Grey", "Distress", "Unknown")
-            assert data["zone_prime"] in ("Safe", "Grey", "Distress", "Unknown")
+            assert data["zone"] in ("Safe", "Grey", "Distress", "Not assessable")
+            assert data["zone_prime"] in ("Safe", "Grey", "Distress", "Not assessable")
 
     def test_healthy_firm_safe_or_grey(self):
         result = self.fw.compute(self.stmts, TICKER)

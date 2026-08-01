@@ -27,7 +27,7 @@ class AltmanFramework(BaseFramework):
         inc    = stmts["income_stmt"]
         prices = stmts["prices"]
 
-        periods = self._periods(inc)
+        periods = self._periods(inc, anchor="Total Revenue")
         results: dict[str, Any] = {}
 
         for period in periods:
@@ -61,9 +61,15 @@ class AltmanFramework(BaseFramework):
         ebit    = self._get(inc, "EBIT", "Operating Income", col=period)
         revenue = self._get(inc, "Total Revenue", "Revenue", col=period)
 
-        # X1: Working Capital / Total Assets
-        wc = (current_assets if not math.isnan(current_assets) else 0) - \
-             (current_liab   if not math.isnan(current_liab)   else 0)
+        # X1: Working Capital / Total Assets.
+        # No zero-substitution: if either side is missing, working capital is
+        # unknown — not zero. (Zero-substitution previously manufactured
+        # Z=0.00 "Distress" rows out of empty periods.)
+        wc = (
+            current_assets - current_liab
+            if not math.isnan(current_assets) and not math.isnan(current_liab)
+            else float("nan")
+        )
         x1 = self._safe_div(wc, total_assets)
 
         # X2: Retained Earnings / Total Assets
@@ -84,18 +90,34 @@ class AltmanFramework(BaseFramework):
         # X5: Revenue / Total Assets (asset turnover) — original model only
         x5 = self._safe_div(revenue, total_assets)
 
-        def _v(x: float) -> float:
-            return x if not math.isnan(x) else 0.0
+        # Missing-input policy (2026-08 restatement): a Z-score is only
+        # computed when every component of that variant is present. A missing
+        # component previously entered the weighted sum as 0.0, which let a
+        # company with no retained-earnings row screen as "Safe" and an empty
+        # period score Z=0.00 "Distress". Missing data now yields
+        # score=None / zone="Not assessable".
 
         # ── Original Z-Score (manufacturing / public companies) ──────
-        w  = self._W
-        z  = (w["x1"]*_v(x1) + w["x2"]*_v(x2) + w["x3"]*_v(x3)
-              + w["x4"]*_v(x4) + w["x5"]*_v(x5))
+        w = self._W
+        z_components = (x1, x2, x3, x4, x5)
+        if any(math.isnan(x) for x in z_components):
+            z = float("nan")
+        else:
+            z = (w["x1"]*x1 + w["x2"]*x2 + w["x3"]*x3
+                 + w["x4"]*x4 + w["x5"]*x5)
 
         # ── Z'' Score (non-manufacturing, sector-neutral) ─────────────
         wp = self._W_PP
-        zpp = (wp["x1"]*_v(x1) + wp["x2"]*_v(x2) + wp["x3"]*_v(x3)
-               + wp["x4"]*_v(x4))
+        zpp_components = (x1, x2, x3, x4)
+        if any(math.isnan(x) for x in zpp_components):
+            zpp = float("nan")
+        else:
+            zpp = (wp["x1"]*x1 + wp["x2"]*x2 + wp["x3"]*x3
+                   + wp["x4"]*x4)
+
+        # Skip the period entirely when nothing at all was assessable.
+        if all(math.isnan(x) for x in z_components):
+            return None
 
         return {
             "z_score":                      self._fmt(z),
@@ -111,7 +133,7 @@ class AltmanFramework(BaseFramework):
 
     def _zone(self, z: float) -> str:
         if math.isnan(z):
-            return "Unknown"
+            return "Not assessable"
         if z > 2.99:
             return "Safe"
         if z > 1.81:
@@ -121,7 +143,7 @@ class AltmanFramework(BaseFramework):
     def _zone_prime(self, z: float) -> str:
         """Z'' thresholds (Altman 1995): Safe > 2.6 | Grey 1.1–2.6 | Distress ≤ 1.1"""
         if math.isnan(z):
-            return "Unknown"
+            return "Not assessable"
         if z > 2.6:
             return "Safe"
         if z > 1.1:

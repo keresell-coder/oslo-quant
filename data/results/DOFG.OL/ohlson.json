@@ -1,16 +1,16 @@
 {
   "ticker": "DOFG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-31T18:45:46.105842Z",
+  "computed_at": "2026-08-01T05:56:43.086655Z",
   "periods": {
     "2025": {
-      "o_score": -3.1092,
-      "bankruptcy_probability": 0.0427,
-      "interpretation": "Low distress risk",
+      "o_score": -2.7315,
+      "bankruptcy_probability": 0.0611,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5077,
-        "wc_ta": 0.3766,
-        "cl_ca": 0.4924,
+        "wc_ta": 0.1157,
+        "cl_ca": 0.5518,
         "oeneg": 0,
         "ni_ta": 0.1125,
         "cfo_tl": 0.2506,
@@ -19,13 +19,13 @@
       }
     },
     "2024": {
-      "o_score": -2.1869,
-      "bankruptcy_probability": 0.1009,
+      "o_score": -1.8903,
+      "bankruptcy_probability": 0.1312,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5313,
-        "wc_ta": 0.3391,
-        "cl_ca": 0.5423,
+        "wc_ta": 0.1295,
+        "cl_ca": 0.5,
         "oeneg": 0,
         "ni_ta": 0.0471,
         "cfo_tl": 0.1861,
@@ -34,13 +34,13 @@
       }
     },
     "2023": {
-      "o_score": -1.9349,
-      "bankruptcy_probability": 0.1262,
+      "o_score": -1.7379,
+      "bankruptcy_probability": 0.1496,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6143,
-        "wc_ta": 0.2656,
-        "cl_ca": 0.6496,
+        "wc_ta": 0.1201,
+        "cl_ca": 0.5039,
         "oeneg": 0,
         "ni_ta": 0.1354,
         "cfo_tl": 0.0753,
@@ -49,31 +49,16 @@
       }
     },
     "2022": {
-      "o_score": 0.0428,
-      "bankruptcy_probability": 0.5107,
-      "interpretation": "High distress risk",
+      "o_score": null,
+      "bankruptcy_probability": null,
+      "interpretation": "Not assessable",
       "inputs": {
         "tl_ta": 0.9712,
-        "wc_ta": 0.7432,
-        "cl_ca": 0.0162,
+        "wc_ta": -0.7144,
+        "cl_ca": 3.9214,
         "oeneg": 0,
         "ni_ta": 0.0385,
         "cfo_tl": 0.1048,
-        "intwo": 0,
-        "chin": null
-      }
-    },
-    "2021": {
-      "o_score": -1.32,
-      "bankruptcy_probability": 0.2108,
-      "interpretation": "High distress risk",
-      "inputs": {
-        "tl_ta": null,
-        "wc_ta": null,
-        "cl_ca": null,
-        "oeneg": 0,
-        "ni_ta": null,
-        "cfo_tl": null,
         "intwo": 0,
         "chin": null
       }

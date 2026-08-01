@@ -1,14 +1,16 @@
 {
   "ticker": "ODL.OL",
   "framework": "sloan",
-  "computed_at": "2026-07-31T18:45:46.167393Z",
+  "computed_at": "2026-08-01T05:56:43.108282Z",
   "periods": {
     "2025": {
       "cfo_accruals": -234500000.0,
       "cfo_accrual_ratio": -0.0961,
-      "bs_accruals": -371900000.0,
-      "bs_accrual_ratio": -0.1523,
+      "bs_accruals": 89800000.0,
+      "bs_accrual_ratio": 0.0368,
       "earnings_quality": "High",
+      "methods_divergence": 0.1328,
+      "methods_diverge_materially": true,
       "net_income": 167000000.0,
       "operating_cash_flow": 401500000.0,
       "avg_total_assets": 2441300000.0
@@ -16,9 +18,11 @@
     "2024": {
       "cfo_accruals": -223000000.0,
       "cfo_accrual_ratio": -0.0986,
-      "bs_accruals": 9300000.0,
-      "bs_accrual_ratio": 0.0041,
+      "bs_accruals": 8300000.0,
+      "bs_accrual_ratio": 0.0037,
       "earnings_quality": "High",
+      "methods_divergence": 0.1023,
+      "methods_diverge_materially": true,
       "net_income": 64700000.0,
       "operating_cash_flow": 287700000.0,
       "avg_total_assets": 2261850000.0
@@ -26,32 +30,26 @@
     "2023": {
       "cfo_accruals": -42600000.0,
       "cfo_accrual_ratio": -0.0188,
-      "bs_accruals": 61400000.0,
-      "bs_accrual_ratio": 0.0271,
+      "bs_accruals": 210500000.0,
+      "bs_accrual_ratio": 0.093,
       "earnings_quality": "Moderate",
+      "methods_divergence": 0.1118,
+      "methods_diverge_materially": true,
       "net_income": 222100000.0,
       "operating_cash_flow": 264700000.0,
       "avg_total_assets": 2264050000.0
     },
     "2022": {
-      "cfo_accruals": -192300000.0,
-      "cfo_accrual_ratio": null,
+      "cfo_accruals": -145600000.0,
+      "cfo_accrual_ratio": -0.0656,
       "bs_accruals": null,
       "bs_accrual_ratio": null,
-      "earnings_quality": "Unknown",
-      "net_income": 82900000.0,
+      "earnings_quality": "High",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
+      "net_income": 129600000.0,
       "operating_cash_flow": 275200000.0,
-      "avg_total_assets": null
-    },
-    "2021": {
-      "cfo_accruals": null,
-      "cfo_accrual_ratio": null,
-      "bs_accruals": null,
-      "bs_accrual_ratio": null,
-      "earnings_quality": "Unknown",
-      "net_income": null,
-      "operating_cash_flow": null,
-      "avg_total_assets": null
+      "avg_total_assets": 2219300000.0
     }
   },
   "financial_currency": "USD",

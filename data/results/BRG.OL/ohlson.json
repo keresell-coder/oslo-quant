@@ -1,16 +1,16 @@
 {
   "ticker": "BRG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-07-31T18:45:48.458958Z",
+  "computed_at": "2026-08-01T05:56:43.257221Z",
   "periods": {
     "2025": {
-      "o_score": -4.0542,
-      "bankruptcy_probability": 0.0171,
+      "o_score": -3.5967,
+      "bankruptcy_probability": 0.0267,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.3921,
-        "wc_ta": 0.4582,
-        "cl_ca": 0.3227,
+        "wc_ta": 0.1496,
+        "cl_ca": 0.5374,
         "oeneg": 0,
         "ni_ta": 0.0641,
         "cfo_tl": 0.3576,
@@ -19,13 +19,13 @@
       }
     },
     "2024": {
-      "o_score": -3.4051,
-      "bankruptcy_probability": 0.0321,
+      "o_score": -2.9728,
+      "bankruptcy_probability": 0.0487,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4689,
-        "wc_ta": 0.4109,
-        "cl_ca": 0.4,
+        "wc_ta": 0.1202,
+        "cl_ca": 0.6187,
         "oeneg": 0,
         "ni_ta": 0.0859,
         "cfo_tl": 0.2377,
@@ -34,13 +34,13 @@
       }
     },
     "2023": {
-      "o_score": -3.6671,
-      "bankruptcy_probability": 0.0249,
+      "o_score": -3.298,
+      "bankruptcy_probability": 0.0356,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.4631,
-        "wc_ta": 0.3929,
-        "cl_ca": 0.403,
+        "wc_ta": 0.144,
+        "cl_ca": 0.5788,
         "oeneg": 0,
         "ni_ta": 0.0954,
         "cfo_tl": 0.3703,
@@ -49,13 +49,13 @@
       }
     },
     "2022": {
-      "o_score": -3.4817,
-      "bankruptcy_probability": 0.0298,
-      "interpretation": "Low distress risk",
+      "o_score": null,
+      "bankruptcy_probability": null,
+      "interpretation": "Not assessable",
       "inputs": {
         "tl_ta": 0.4522,
-        "wc_ta": 0.4349,
-        "cl_ca": 0.3206,
+        "wc_ta": 0.1129,
+        "cl_ca": 0.6863,
         "oeneg": 0,
         "ni_ta": 0.1099,
         "cfo_tl": 0.2003,

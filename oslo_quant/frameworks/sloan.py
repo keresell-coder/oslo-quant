@@ -18,11 +18,11 @@ class SloanFramework(BaseFramework):
         inc = stmts["income_stmt"]
         cf = stmts["cash_flow"]
 
-        periods = self._periods(inc)
+        periods = self._periods(inc, anchor="Total Revenue")
         results: dict[str, Any] = {}
 
         for period in periods:
-            all_bs_periods = self._periods(bs)
+            all_bs_periods = self._periods(bs, anchor="Total Assets")
             try:
                 prev_idx = all_bs_periods.index(period) + 1
                 prev_period = all_bs_periods[prev_idx] if prev_idx < len(all_bs_periods) else None
@@ -80,27 +80,41 @@ class SloanFramework(BaseFramework):
             self._get(bs, "Long Term Debt", col=prev_period) if prev_period else long_term_debt
         )
 
-        oa = total_assets - (cash if not math.isnan(cash) else 0)
-        oa_prev = total_assets_prev - (cash_prev if not math.isnan(cash_prev) else 0)
+        # No zero-substitution for missing components (2026-08 restatement):
+        # NaN propagates, so a method with incomplete inputs reports None
+        # rather than a ratio silently built on absent data.
+        oa = total_assets - cash
+        oa_prev = total_assets_prev - cash_prev
 
-        ol = (
-            (current_liab if not math.isnan(current_liab) else 0)
-            + (long_term_debt if not math.isnan(long_term_debt) else 0)
-        )
-        ol_prev = (
-            (current_liab_prev if not math.isnan(current_liab_prev) else 0)
-            + (long_term_debt_prev if not math.isnan(long_term_debt_prev) else 0)
-        )
+        ol = current_liab + long_term_debt
+        ol_prev = current_liab_prev + long_term_debt_prev
 
-        bs_accruals = (oa - oa_prev) - (ol - ol_prev)
+        # The balance-sheet method is a year-over-year delta; without a prior
+        # period it would degenerate to exactly 0 (prev fallbacks equal the
+        # current values), which is a fabricated "no accruals" signal.
+        if prev_period is None:
+            bs_accruals = float("nan")
+        else:
+            bs_accruals = (oa - oa_prev) - (ol - ol_prev)
         bs_accrual_ratio = self._safe_div(bs_accruals, avg_assets)
 
-        # CFO-based accrual
-        cfo_accruals = net_income - (cfo if not math.isnan(cfo) else 0)
+        # CFO-based accrual — requires both net income and operating cash flow.
+        cfo_accruals = net_income - cfo
         cfo_accrual_ratio = self._safe_div(cfo_accruals, avg_assets)
+
+        if math.isnan(cfo_accrual_ratio) and math.isnan(bs_accrual_ratio):
+            return None  # neither method computable — drop the period
 
         # Earnings quality flag: low accruals = higher quality
         quality = self._quality_flag(cfo_accrual_ratio)
+
+        # Escalate material disagreement between the two methods instead of
+        # letting the CFO-based label stand alone (audit finding, 2026-07).
+        divergence = None
+        methods_diverge = False
+        if not math.isnan(cfo_accrual_ratio) and not math.isnan(bs_accrual_ratio):
+            divergence = bs_accrual_ratio - cfo_accrual_ratio
+            methods_diverge = abs(divergence) > 0.10
 
         return {
             "cfo_accruals": self._fmt(cfo_accruals, 0),
@@ -108,6 +122,8 @@ class SloanFramework(BaseFramework):
             "bs_accruals": self._fmt(bs_accruals, 0),
             "bs_accrual_ratio": self._fmt(bs_accrual_ratio),
             "earnings_quality": quality,
+            "methods_divergence": self._fmt(divergence) if divergence is not None else None,
+            "methods_diverge_materially": methods_diverge,
             "net_income": self._fmt(net_income, 0),
             "operating_cash_flow": self._fmt(cfo, 0),
             "avg_total_assets": self._fmt(avg_assets, 0),
