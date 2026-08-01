@@ -13,6 +13,7 @@ load_dotenv()
 ROOT = Path(__file__).parent.parent
 DATA_RAW = ROOT / "data" / "raw"
 DATA_RESULTS = ROOT / "data" / "results"
+DATA_VERIFIED = ROOT / "data" / "verified"   # report-verified fundamentals ledger
 
 DATA_RAW.mkdir(parents=True, exist_ok=True)
 DATA_RESULTS.mkdir(parents=True, exist_ok=True)

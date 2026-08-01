@@ -1,0 +1,8 @@
+{
+  "ticker": "KIT.OL",
+  "currency": "EUR",
+  "transcribed": "2026-08-01",
+  "source_document": "pending — Kitron annual report transcription not yet done",
+  "notes": "SCAFFOLD — no values transcribed yet. Kitron changed presentation currency NOK→EUR in 2024; yfinance serves the full history in EUR (magnitude-verified 2026-08: 2022 revenue 641m EUR ≈ NOK 6,585m at 2022 average rate). To close the loop, transcribe the restated FY2023 comparatives from the FY2024 EUR annual report and verify them against the yfinance 2023 column.",
+  "periods": {}
+}

@@ -1,8 +1,22 @@
 {
   "ticker": "FRO.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T05:56:43.036436Z",
+  "computed_at": "2026-08-01T07:06:29.788445Z",
   "periods": {
+    "LTM 2026-03": {
+      "net_profit_margin": 0.4019,
+      "asset_turnover": 0.3943,
+      "equity_multiplier": 2.1334,
+      "roe_3factor": 0.3381,
+      "tax_burden": 0.995,
+      "interest_burden": 0.8151,
+      "ebit_margin": 0.4956,
+      "roe_5factor": 0.3381,
+      "net_income": 904914000.0,
+      "revenue": 2251480000.0,
+      "avg_total_assets": 5709563000.0,
+      "avg_equity": 2676299000.0
+    },
     "2025": {
       "net_profit_margin": 0.1929,
       "asset_turnover": 0.3282,

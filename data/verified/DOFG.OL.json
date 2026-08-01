@@ -1,0 +1,8 @@
+{
+  "ticker": "DOFG.OL",
+  "currency": "USD",
+  "transcribed": "2026-08-01",
+  "source_document": "pending — DOF Group ASA annual report transcription not yet done",
+  "notes": "SCAFFOLD — no values transcribed yet. Known standing issue: DOF does not report a 'Gross profit' line in its income statement (operating expenses are not split into cost-of-sales), so Piotroski F8 (gross margin trend) cannot be filled from the report either; DOFG's F-score remains 'Not assessable (8 of 9 signals)' by design, not by data error. Priority items to transcribe for verification: Total Assets, Current Assets/Liabilities, Equity, Net Income, Operating Cash Flow.",
+  "periods": {}
+}

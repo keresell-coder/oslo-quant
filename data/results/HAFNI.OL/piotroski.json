@@ -1,8 +1,30 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-01T05:56:43.129219Z",
+  "computed_at": "2026-08-01T07:06:29.898665Z",
   "periods": {
+    "LTM 2026-03": {
+      "f_score": 7,
+      "f_score_partial": 7,
+      "signals_assessable": 9,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 1,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 0
+      },
+      "interpretation": "Moderate",
+      "roa": 0.1164,
+      "cfo_to_assets": 0.1472,
+      "current_ratio": 1.6023,
+      "gross_margin": 0.21,
+      "asset_turnover": 0.597
+    },
     "2025": {
       "f_score": 5,
       "f_score_partial": 5,

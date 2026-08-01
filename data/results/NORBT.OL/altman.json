@@ -1,8 +1,19 @@
 {
   "ticker": "NORBT.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:43.280028Z",
+  "computed_at": "2026-08-01T07:06:30.156099Z",
   "periods": {
+    "LTM 2026-03": {
+      "z_score": 2.9533,
+      "zone": "Grey",
+      "z_score_prime": 4.6313,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.1945,
+      "x2_retained_earnings_to_assets": 0.2458,
+      "x3_ebit_to_assets": 0.2232,
+      "x4_book_equity_to_liabilities": 1.0037,
+      "x5_revenue_to_assets": 1.037
+    },
     "2025": {
       "z_score": 2.7076,
       "zone": "Grey",

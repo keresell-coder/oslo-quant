@@ -1,8 +1,20 @@
 {
   "ticker": "NORBT.OL",
   "framework": "sloan",
-  "computed_at": "2026-08-01T05:56:43.277611Z",
+  "computed_at": "2026-08-01T07:06:30.153212Z",
   "periods": {
+    "LTM 2026-03": {
+      "cfo_accruals": -186200000.0,
+      "cfo_accrual_ratio": -0.0711,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "High",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
+      "net_income": 425700000.0,
+      "operating_cash_flow": 611900000.0,
+      "avg_total_assets": 2619550000.0
+    },
     "2025": {
       "cfo_accruals": -96300000.0,
       "cfo_accrual_ratio": -0.0401,

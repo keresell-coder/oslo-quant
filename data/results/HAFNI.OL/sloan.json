@@ -1,8 +1,20 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "sloan",
-  "computed_at": "2026-08-01T05:56:43.130862Z",
+  "computed_at": "2026-08-01T07:06:29.900808Z",
   "periods": {
+    "LTM 2026-03": {
+      "cfo_accruals": -136994000.0,
+      "cfo_accrual_ratio": -0.0349,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Moderate",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
+      "net_income": 456222000.0,
+      "operating_cash_flow": 593216000.0,
+      "avg_total_assets": 3920460500.0
+    },
     "2025": {
       "cfo_accruals": -263207000.0,
       "cfo_accrual_ratio": -0.0701,

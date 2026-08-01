@@ -1,8 +1,23 @@
 {
   "ticker": "BORR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-01T05:56:43.098238Z",
+  "computed_at": "2026-08-01T07:06:29.855938Z",
   "periods": {
+    "LTM 2026-03": {
+      "o_score": -0.6469,
+      "bankruptcy_probability": 0.3437,
+      "interpretation": "High distress risk",
+      "inputs": {
+        "tl_ta": 0.6852,
+        "wc_ta": 0.068,
+        "cl_ca": 0.6144,
+        "oeneg": 0,
+        "ni_ta": 0.0087,
+        "cfo_tl": 0.0619,
+        "intwo": 0,
+        "chin": -0.1553
+      }
+    },
     "2025": {
       "o_score": -0.8584,
       "bankruptcy_probability": 0.2977,

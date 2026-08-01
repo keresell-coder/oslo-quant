@@ -1,8 +1,30 @@
 {
   "ticker": "CADLR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-01T05:56:43.117343Z",
+  "computed_at": "2026-08-01T07:06:29.881475Z",
   "periods": {
+    "LTM 2026-03": {
+      "f_score": 6,
+      "f_score_partial": 6,
+      "signals_assessable": 9,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 0,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Moderate",
+      "roa": 0.0781,
+      "cfo_to_assets": 0.1177,
+      "current_ratio": 1.3053,
+      "gross_margin": 0.573,
+      "asset_turnover": 0.1922
+    },
     "2025": {
       "f_score": 6,
       "f_score_partial": 6,

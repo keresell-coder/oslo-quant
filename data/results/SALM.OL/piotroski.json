@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-01T05:56:42.943151Z",
+  "computed_at": "2026-08-01T07:06:29.770285Z",
   "periods": {
     "2025": {
       "f_score": 4,

@@ -1,8 +1,22 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T05:56:43.126622Z",
+  "computed_at": "2026-08-01T07:06:29.894955Z",
   "periods": {
+    "LTM 2026-03": {
+      "net_profit_margin": 0.1897,
+      "asset_turnover": 0.6135,
+      "equity_multiplier": 1.6097,
+      "roe_3factor": 0.1873,
+      "tax_burden": 0.9959,
+      "interest_burden": 0.9056,
+      "ebit_margin": 0.2103,
+      "roe_5factor": 0.1873,
+      "net_income": 456222000.0,
+      "revenue": 2405221000.0,
+      "avg_total_assets": 3920460500.0,
+      "avg_equity": 2435495500.0
+    },
     "2025": {
       "net_profit_margin": 0.1489,
       "asset_turnover": 0.6074,

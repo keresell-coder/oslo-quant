@@ -1,37 +1,48 @@
 {
   "ticker": "MOWI.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:42.931559Z",
+  "computed_at": "2026-08-01T07:06:29.674253Z",
   "periods": {
-    "2025": {
+    "LTM 2026-03": {
       "z_score": null,
       "zone": "Not assessable",
       "z_score_prime": null,
       "zone_prime": "Not assessable",
-      "x1_working_capital_to_assets": 0.2775,
+      "x1_working_capital_to_assets": 0.2835,
       "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.11,
+      "x4_book_equity_to_liabilities": 0.8009,
+      "x5_revenue_to_assets": 0.5699
+    },
+    "2025": {
+      "z_score": 1.9988,
+      "zone": "Grey",
+      "z_score_prime": 4.0458,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.2775,
+      "x2_retained_earnings_to_assets": 0.24,
       "x3_ebit_to_assets": 0.0941,
       "x4_book_equity_to_liabilities": 0.7718,
       "x5_revenue_to_assets": 0.5562
     },
     "2024": {
-      "z_score": null,
-      "zone": "Not assessable",
-      "z_score_prime": null,
-      "zone_prime": "Not assessable",
+      "z_score": 2.1685,
+      "zone": "Grey",
+      "z_score_prime": 4.3425,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3156,
-      "x2_retained_earnings_to_assets": null,
+      "x2_retained_earnings_to_assets": 0.2383,
       "x3_ebit_to_assets": 0.0906,
       "x4_book_equity_to_liabilities": 0.8439,
       "x5_revenue_to_assets": 0.6507
     },
     "2023": {
-      "z_score": null,
-      "zone": "Not assessable",
-      "z_score_prime": null,
-      "zone_prime": "Not assessable",
+      "z_score": 2.2574,
+      "zone": "Grey",
+      "z_score_prime": 4.5525,
+      "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.3295,
-      "x2_retained_earnings_to_assets": null,
+      "x2_retained_earnings_to_assets": 0.2222,
       "x3_ebit_to_assets": 0.1228,
       "x4_book_equity_to_liabilities": 0.8013,
       "x5_revenue_to_assets": 0.6649

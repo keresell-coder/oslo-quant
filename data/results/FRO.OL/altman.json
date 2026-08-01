@@ -1,8 +1,19 @@
 {
   "ticker": "FRO.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:43.047376Z",
+  "computed_at": "2026-08-01T07:06:29.799623Z",
   "periods": {
+    "LTM 2026-03": {
+      "z_score": 2.0036,
+      "zone": "Grey",
+      "z_score_prime": 3.5251,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0861,
+      "x2_retained_earnings_to_assets": 0.1782,
+      "x3_ebit_to_assets": 0.197,
+      "x4_book_equity_to_liabilities": 1.0059,
+      "x5_revenue_to_assets": 0.3974
+    },
     "2025": {
       "z_score": 1.3693,
       "zone": "Distress",

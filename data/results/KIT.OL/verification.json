@@ -1,0 +1,13 @@
+{
+  "ticker": "KIT.OL",
+  "status": "ok",
+  "ledger_currency": "EUR",
+  "statement_currency": "EUR",
+  "counts": {
+    "verified": 0,
+    "mismatch": 0,
+    "filled": 0,
+    "skipped": 0
+  },
+  "entries": []
+}

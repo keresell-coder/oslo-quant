@@ -1,0 +1,118 @@
+{
+  "ticker": "MOWI.OL",
+  "status": "ok",
+  "ledger_currency": "EUR",
+  "statement_currency": "EUR",
+  "counts": {
+    "verified": 8,
+    "mismatch": 0,
+    "filled": 3,
+    "skipped": 0
+  },
+  "entries": [
+    {
+      "period": "2025",
+      "statement": "balance_sheet",
+      "item": "Retained Earnings",
+      "ledger_value": 2455000000,
+      "source": "AR2025 p.188, Statement of changes in equity, 'Other equity' at 31.12.25 (EUR 2,455.0m)",
+      "status": "filled"
+    },
+    {
+      "period": "2025",
+      "statement": "balance_sheet",
+      "item": "Total Assets",
+      "ledger_value": 10228500000,
+      "source": "AR2025 p.186, Statement of financial position (EUR 10,228.5m)",
+      "status": "verified",
+      "yfinance_value": 10228500000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2025",
+      "statement": "balance_sheet",
+      "item": "Current Assets",
+      "ledger_value": 4309700000,
+      "source": "AR2025 p.186, Total current assets (EUR 4,309.7m)",
+      "status": "verified",
+      "yfinance_value": 4309800000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2025",
+      "statement": "balance_sheet",
+      "item": "Current Liabilities",
+      "ledger_value": 1470900000,
+      "source": "AR2025 p.187, Total current liabilities (EUR 1,470.9m)",
+      "status": "verified",
+      "yfinance_value": 1470900000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2025",
+      "statement": "balance_sheet",
+      "item": "Stockholders Equity",
+      "ledger_value": 4371100000,
+      "source": "AR2025 p.187, Share capital and reserves attributable to owners of Mowi ASA (EUR 4,371.1m)",
+      "status": "verified",
+      "yfinance_value": 4371100000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2024",
+      "statement": "balance_sheet",
+      "item": "Retained Earnings",
+      "ledger_value": 2038600000,
+      "source": "AR2025 p.188, Statement of changes in equity, 'Other equity' at 31.12.24 (EUR 2,038.6m)",
+      "status": "filled"
+    },
+    {
+      "period": "2024",
+      "statement": "balance_sheet",
+      "item": "Total Assets",
+      "ledger_value": 8554700000,
+      "source": "AR2025 p.186, Statement of financial position (EUR 8,554.7m)",
+      "status": "verified",
+      "yfinance_value": 8554700000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2024",
+      "statement": "balance_sheet",
+      "item": "Current Assets",
+      "ledger_value": 4112200000,
+      "source": "AR2025 p.186, Total current assets (EUR 4,112.2m)",
+      "status": "verified",
+      "yfinance_value": 4111800000.0,
+      "relative_diff": 0.0001
+    },
+    {
+      "period": "2024",
+      "statement": "balance_sheet",
+      "item": "Current Liabilities",
+      "ledger_value": 1411700000,
+      "source": "AR2025 p.187, Total current liabilities (EUR 1,411.7m)",
+      "status": "verified",
+      "yfinance_value": 1411700000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2024",
+      "statement": "balance_sheet",
+      "item": "Stockholders Equity",
+      "ledger_value": 3839200000,
+      "source": "AR2025 p.187, attributable to owners (EUR 3,839.2m)",
+      "status": "verified",
+      "yfinance_value": 3839200000.0,
+      "relative_diff": 0.0
+    },
+    {
+      "period": "2023",
+      "statement": "balance_sheet",
+      "item": "Retained Earnings",
+      "ledger_value": 1830700000,
+      "source": "AR2025 p.188, Statement of changes in equity, 'Other equity' at 01.01.24 = 31.12.23 (EUR 1,830.7m)",
+      "status": "filled"
+    }
+  ]
+}

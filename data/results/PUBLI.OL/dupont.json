@@ -1,8 +1,22 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T05:56:43.215155Z",
+  "computed_at": "2026-08-01T07:06:30.069233Z",
   "periods": {
+    "LTM 2026-06": {
+      "net_profit_margin": 0.1649,
+      "asset_turnover": 0.045,
+      "equity_multiplier": 2.7579,
+      "roe_3factor": 0.0205,
+      "tax_burden": 0.7644,
+      "interest_burden": 0.3361,
+      "ebit_margin": 0.6418,
+      "roe_5factor": 0.0205,
+      "net_income": 397419503.0,
+      "revenue": 2410217373.0,
+      "avg_total_assets": 53515542801.0,
+      "avg_equity": 19404580975.0
+    },
     "2025": {
       "net_profit_margin": 0.4638,
       "asset_turnover": 0.0319,

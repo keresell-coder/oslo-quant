@@ -1,0 +1,32 @@
+{
+  "ticker": "MOWI.OL",
+  "currency": "EUR",
+  "transcribed": "2026-08-01",
+  "source_document": "Mowi Annual Report 2025 (FY2025, signed Bergen 24 March 2026), https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+  "notes": "Mowi does not present a separate 'Retained earnings' line. The accumulated-profit reserve is the 'Other equity' column in the Statement of changes in equity (profit less dividends, plus minor OCI items) — used as the retained-earnings input for Altman X2 and disclosed as such. 'Stockholders Equity' is equity attributable to owners of Mowi ASA (excl. non-controlling interests), matching yfinance's semantics. FY2022 retained earnings requires the FY2023 annual report and is still pending.",
+  "periods": {
+    "2025": {
+      "balance_sheet": {
+        "Retained Earnings": {"value": 2455000000, "source": "AR2025 p.188, Statement of changes in equity, 'Other equity' at 31.12.25 (EUR 2,455.0m)"},
+        "Total Assets": {"value": 10228500000, "source": "AR2025 p.186, Statement of financial position (EUR 10,228.5m)"},
+        "Current Assets": {"value": 4309700000, "source": "AR2025 p.186, Total current assets (EUR 4,309.7m)"},
+        "Current Liabilities": {"value": 1470900000, "source": "AR2025 p.187, Total current liabilities (EUR 1,470.9m)"},
+        "Stockholders Equity": {"value": 4371100000, "source": "AR2025 p.187, Share capital and reserves attributable to owners of Mowi ASA (EUR 4,371.1m)"}
+      }
+    },
+    "2024": {
+      "balance_sheet": {
+        "Retained Earnings": {"value": 2038600000, "source": "AR2025 p.188, Statement of changes in equity, 'Other equity' at 31.12.24 (EUR 2,038.6m)"},
+        "Total Assets": {"value": 8554700000, "source": "AR2025 p.186, Statement of financial position (EUR 8,554.7m)"},
+        "Current Assets": {"value": 4112200000, "source": "AR2025 p.186, Total current assets (EUR 4,112.2m)"},
+        "Current Liabilities": {"value": 1411700000, "source": "AR2025 p.187, Total current liabilities (EUR 1,411.7m)"},
+        "Stockholders Equity": {"value": 3839200000, "source": "AR2025 p.187, attributable to owners (EUR 3,839.2m)"}
+      }
+    },
+    "2023": {
+      "balance_sheet": {
+        "Retained Earnings": {"value": 1830700000, "source": "AR2025 p.188, Statement of changes in equity, 'Other equity' at 01.01.24 = 31.12.23 (EUR 1,830.7m)"}
+      }
+    }
+  }
+}

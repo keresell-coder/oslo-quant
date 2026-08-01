@@ -1,8 +1,20 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "sloan",
-  "computed_at": "2026-08-01T05:56:43.220684Z",
+  "computed_at": "2026-08-01T07:06:30.077482Z",
   "periods": {
+    "LTM 2026-06": {
+      "cfo_accruals": -1340774393.0,
+      "cfo_accrual_ratio": -0.0251,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Moderate",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
+      "net_income": 397419503.0,
+      "operating_cash_flow": 1738193896.0,
+      "avg_total_assets": 53515542801.0
+    },
     "2025": {
       "cfo_accruals": -331247561.0,
       "cfo_accrual_ratio": -0.0104,

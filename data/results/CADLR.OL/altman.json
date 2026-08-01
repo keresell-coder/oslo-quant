@@ -1,8 +1,19 @@
 {
   "ticker": "CADLR.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:43.122071Z",
+  "computed_at": "2026-08-01T07:06:29.886676Z",
   "periods": {
+    "LTM 2026-03": {
+      "z_score": 1.2037,
+      "zone": "Distress",
+      "z_score_prime": 2.0586,
+      "zone_prime": "Grey",
+      "x1_working_capital_to_assets": 0.0282,
+      "x2_retained_earnings_to_assets": 0.0948,
+      "x3_ebit_to_assets": 0.0911,
+      "x4_book_equity_to_liabilities": 0.9073,
+      "x5_revenue_to_assets": 0.1922
+    },
     "2025": {
       "z_score": 1.1061,
       "zone": "Distress",

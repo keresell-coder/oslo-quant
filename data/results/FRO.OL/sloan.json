@@ -1,8 +1,20 @@
 {
   "ticker": "FRO.OL",
   "framework": "sloan",
-  "computed_at": "2026-08-01T05:56:43.043568Z",
+  "computed_at": "2026-08-01T07:06:29.795243Z",
   "periods": {
+    "LTM 2026-03": {
+      "cfo_accruals": -22116000.0,
+      "cfo_accrual_ratio": -0.0039,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Moderate",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
+      "net_income": 904914000.0,
+      "operating_cash_flow": 927030000.0,
+      "avg_total_assets": 5709563000.0
+    },
     "2025": {
       "cfo_accruals": -303379000.0,
       "cfo_accrual_ratio": -0.0507,

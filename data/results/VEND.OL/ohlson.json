@@ -1,11 +1,11 @@
 {
   "ticker": "VEND.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-01T05:56:43.074084Z",
+  "computed_at": "2026-08-01T07:06:29.826689Z",
   "periods": {
     "2025": {
-      "o_score": -4.3402,
-      "bankruptcy_probability": 0.0129,
+      "o_score": -3.4259,
+      "bankruptcy_probability": 0.0315,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.2055,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -5.7551,
-      "bankruptcy_probability": 0.0032,
+      "o_score": -4.8408,
+      "bankruptcy_probability": 0.0078,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.1894,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -5.4879,
-      "bankruptcy_probability": 0.0041,
+      "o_score": -4.5736,
+      "bankruptcy_probability": 0.0102,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.2456,

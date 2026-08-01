@@ -35,6 +35,8 @@ oslo_quant/
     base.py          — Statements TypedDict; shared logic
     yfinance_fetcher.py  — Primary data source (Yahoo Finance)
     fmp_fetcher.py       — Secondary / verification (Financial Modelling Prep)
+  ltm.py             — LTM "virtual current year" built from quarterly statements
+  verified.py        — report-verified fundamentals ledger (verify + gap-fill)
   frameworks/
     base.py          — BaseFramework: _get(), _safe_div(), _fmt(), _periods()
     dupont.py        — DuPont 3-factor and 5-factor ROE decomposition
@@ -48,7 +50,13 @@ oslo_quant/
   run_oslo_quant.yml — Weekly Friday 17:17 UTC (after close); also manual dispatch
 data/
   raw/               — Parquet cache (gitignored); recreated each workflow run
-  results/           — Computed JSON per ticker per framework (committed)
+  results/           — Computed JSON per ticker per framework (committed);
+                       plus per-ticker verification.json (ledger tie-out) and
+                       ltm.json (LTM build status/reason)
+  verified/          — Report-verified fundamentals ledger (committed, static):
+                       one JSON per company, per-FY values with page-level
+                       source citations. Verified against yfinance each run;
+                       fills provider gaps (e.g. MOWI retained earnings).
 index.html           — Generated dashboard (committed, served via GitHub Pages)
 pyproject.toml
 ```
@@ -145,6 +153,32 @@ All `data/results/` histories were recomputed on 2026-08-01 and the dashboard
 carries a visible restatement notice. Do not compare current scores against
 pre-restatement snapshots without accounting for this.
 
+### LTM — the virtual current year (`ltm.py`, added 2026-08-01)
+
+When quarterly data allows, an **"LTM YYYY-MM"** column is appended after the
+latest FY. Flows are the sum of the last 4 quarters (or 2 half-years); the
+balance sheet is the latest quarter as-is. Because "LTM …" sorts above year
+labels, every framework's YoY signal automatically compares **LTM vs the
+latest full FY** — overlapping windows, accepted by design as a development
+tracker (user decision 2026-08-01). Hard rules: the window must be contiguous
+and complete (a missing OR empty quarter refuses the LTM — see KIT/NOD cases
+in `tests/test_ltm_and_ledger.py`); no LTM is built when the latest interim
+does not extend beyond the FY end (the FY report is then the newest
+information); Sloan's balance-sheet method is suppressed for LTM (window
+mismatch). Build status and refusal reasons persist per ticker in
+`data/results/<TICKER>/ltm.json`.
+
+### Verified ledger (`verified.py` + `data/verified/`, added 2026-08-01)
+
+Per-company JSON of line items transcribed from annual reports with page-level
+citations. Applied after fetch: items present in both sources are compared
+(>2% deviation → logged MISMATCH, yfinance value kept — never silently
+patched); items missing from yfinance are **filled** from the report.
+Historical FY data is static — once etched, never edit, only append new years.
+Results land in `data/results/<TICKER>/verification.json`. MOWI's ledger fills
+retained earnings ("Other equity" in Mowi's statement of changes in equity),
+which is what makes its Altman score assessable at all.
+
 ### DuPont (`dupont.py`)
 Standard 3-factor (NPM × Asset Turnover × Equity Multiplier = ROE) and
 5-factor decomposition. The 5-factor ROE is computed as the actual product of
@@ -179,11 +213,13 @@ Raw probabilities are structurally high for large listed Norwegian companies
 relative/directional signal within a peer group, not as an absolute forecast.
 The probability is only computed when every model input is present (incl. the
 prior-year income needed for CHIN); otherwise the period reports
-"Not assessable". **Known open limitation:** the SIZE term uses assets in each
-company's reporting currency with no common-currency conversion, so the score
-is biased upward ~+0.96 for USD reporters and ~+1.00 for EUR reporters
-relative to NOK reporters. Cross-currency ranking is not valid until that is
-fixed.
+"Not assessable". The SIZE term is expressed in **millions of USD** — total
+assets are converted from the reporting currency at the current spot rate
+(supplied by the pipeline via ``stmts["meta"]["fx_to_usd"]``) so NOK/SEK/EUR/
+USD reporters are comparable; without an FX rate the score is Not assessable.
+Applying today's rate to historical years is a disclosed approximation (SIZE
+is log-scale and insensitive to it). Fixed 2026-08-01 — before that, native-
+currency assets understated NOK reporters' risk ~2.5× vs USD reporters.
 
 ### Altman Z-Score (`altman.py`)
 Three variants computed: original Z (manufacturing), Z' (private firms), Z'' (non-manufacturing).
@@ -409,10 +445,18 @@ empty results over good committed data. If it happens:
   PUBLI.OL now SEK (redomicile; NOK/SEK ≈ 1.00). Remaining to-do: tie one
   historical year each against the company's own restated comparatives in the
   first EUR/SEK annual report.
-- **Ohlson cross-currency bias** (see framework notes): SIZE term not
-  currency-adjusted; do not rank USD/EUR reporters against NOK reporters.
 - **DOFG has no Piotroski scores** — yfinance carries no Gross Profit row for
-  it, so F8 is unassessable and the headline score is withheld by policy.
+  it, and DOF's own income statement has no cost-of-sales split either, so F8
+  is permanently unassessable and the headline score is withheld by policy.
+- **Verified-ledger population is incremental.** MOWI is populated (FY2023–25
+  from the FY2025 annual report; FY2022 retained earnings needs the FY2023
+  report). KOG, KIT, PUBLI and DOFG are scaffolds with per-company transcription
+  priorities in their notes — populate them next.
+- **yfinance quarterly coverage is patchy.** Many tickers are missing Q3 2025
+  (TEL, KOG, BRG, KIT as a date gap; NOD as an empty column), and ELK/VEND lack
+  quarterly cash flow — those companies get no LTM until the provider data
+  completes or the ledger fills the gap. This is by design: no LTM is ever
+  built over a broken window.
 
 - **Node.js 20 deprecation warning** on every run. `actions/cache@v4`,
   `actions/checkout@v4` and `actions/setup-python@v5` target Node 20; GitHub forces

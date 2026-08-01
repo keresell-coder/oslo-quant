@@ -1,8 +1,22 @@
 {
   "ticker": "NORBT.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T05:56:43.273634Z",
+  "computed_at": "2026-08-01T07:06:30.148080Z",
   "periods": {
+    "LTM 2026-03": {
+      "net_profit_margin": 0.1569,
+      "asset_turnover": 1.0357,
+      "equity_multiplier": 2.0773,
+      "roe_3factor": 0.3376,
+      "tax_burden": 0.7708,
+      "interest_burden": 0.9457,
+      "ebit_margin": 0.2153,
+      "roe_5factor": 0.3376,
+      "net_income": 425700000.0,
+      "revenue": 2713000000.0,
+      "avg_total_assets": 2619550000.0,
+      "avg_equity": 1261050000.0
+    },
     "2025": {
       "net_profit_margin": 0.1616,
       "asset_turnover": 1.0412,

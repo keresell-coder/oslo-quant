@@ -1,8 +1,30 @@
 {
   "ticker": "FRO.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-01T05:56:43.040948Z",
+  "computed_at": "2026-08-01T07:06:29.792753Z",
   "periods": {
+    "LTM 2026-03": {
+      "f_score": 9,
+      "f_score_partial": 9,
+      "signals_assessable": 9,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 1,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": 1,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 1,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Strong",
+      "roa": 0.1585,
+      "cfo_to_assets": 0.1636,
+      "current_ratio": 2.0342,
+      "gross_margin": 0.4147,
+      "asset_turnover": 0.3974
+    },
     "2025": {
       "f_score": 7,
       "f_score_partial": 7,

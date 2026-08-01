@@ -1,8 +1,22 @@
 {
   "ticker": "BORR.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T05:56:43.092705Z",
+  "computed_at": "2026-08-01T07:06:29.848926Z",
   "periods": {
+    "LTM 2026-03": {
+      "net_profit_margin": 0.0313,
+      "asset_turnover": 0.283,
+      "equity_multiplier": 3.07,
+      "roe_3factor": 0.0272,
+      "tax_burden": 0.455,
+      "interest_burden": 0.2431,
+      "ebit_margin": 0.2829,
+      "roe_5factor": 0.0272,
+      "net_income": 32900000.0,
+      "revenue": 1051200000.0,
+      "avg_total_assets": 3714350000.0,
+      "avg_equity": 1209900000.0
+    },
     "2025": {
       "net_profit_margin": 0.0441,
       "asset_turnover": 0.2898,

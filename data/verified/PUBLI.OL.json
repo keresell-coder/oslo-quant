@@ -1,0 +1,8 @@
+{
+  "ticker": "PUBLI.OL",
+  "currency": "SEK",
+  "transcribed": "2026-08-01",
+  "source_document": "pending — Public Property Invest report transcription not yet done",
+  "notes": "SCAFFOLD — no values transcribed yet. Reporting currency changed NOK→SEK with the May 2026 Nasdaq Stockholm redomiciling (NOK/SEK ≈ 1.00, so magnitudes barely move). Total assets jumped from ~11.6bn (2024) to ~51.8bn (2025) in the fetched data — a transformational acquisition, verify against the FY2025 report when transcribing. Priority items: Total Assets, Current Assets/Liabilities, Equity, rental income vs fair-value gains split (the >100% 'EBIT margin' is fair-value accounting, relevant for sector interpretation).",
+  "periods": {}
+}

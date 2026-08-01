@@ -1,8 +1,20 @@
 {
   "ticker": "MOWI.OL",
   "framework": "sloan",
-  "computed_at": "2026-08-01T05:56:42.927293Z",
+  "computed_at": "2026-08-01T07:06:29.669438Z",
   "periods": {
+    "LTM 2026-03": {
+      "cfo_accruals": -12600000.0,
+      "cfo_accrual_ratio": -0.0012,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Moderate",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
+      "net_income": 847100000.0,
+      "operating_cash_flow": 859700000.0,
+      "avg_total_assets": 10299650000.0
+    },
     "2025": {
       "cfo_accruals": -153000000.0,
       "cfo_accrual_ratio": -0.0163,

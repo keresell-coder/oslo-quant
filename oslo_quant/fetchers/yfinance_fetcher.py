@@ -42,6 +42,50 @@ class YFinanceFetcher(BaseFetcher):
         self._save_cache(cache_dir, stmts)
         return stmts
 
+    # Quarterly statements, cached separately from the annual files.
+    # Columns keep their full period-end date ("2026-06-30") because LTM
+    # construction needs to check window contiguity, not just the year.
+    _Q_FILES = {
+        "balance_sheet": "quarterly_balance_sheet.parquet",
+        "income_stmt":   "quarterly_income_stmt.parquet",
+        "cash_flow":     "quarterly_cash_flow.parquet",
+    }
+
+    def fetch_quarterly(self, ticker: str, force_refresh: bool = False) -> dict:
+        """Return quarterly balance_sheet / income_stmt / cash_flow DataFrames."""
+        cache_dir = DATA_RAW / ticker
+        cache_dir.mkdir(parents=True, exist_ok=True)
+
+        if not force_refresh and all(
+            (cache_dir / f).exists() for f in self._Q_FILES.values()
+        ):
+            return {
+                key: pd.read_parquet(cache_dir / fname)
+                for key, fname in self._Q_FILES.items()
+            }
+
+        log.info("[%s] Fetching quarterly statements from yfinance", ticker)
+        tk = yf.Ticker(ticker)
+        out = {
+            "balance_sheet": self._q_normalize(tk.quarterly_balance_sheet),
+            "income_stmt":   self._q_normalize(tk.quarterly_income_stmt),
+            "cash_flow":     self._q_normalize(tk.quarterly_cashflow),
+        }
+        for key, fname in self._Q_FILES.items():
+            if not out[key].empty:
+                out[key].to_parquet(cache_dir / fname)
+        return out
+
+    def _q_normalize(self, df: pd.DataFrame | None) -> pd.DataFrame:
+        if df is None or df.empty:
+            return pd.DataFrame()
+        df = df.copy()
+        df.columns = [
+            c.date().isoformat() if hasattr(c, "date") else str(c)[:10]
+            for c in df.columns
+        ]
+        return df
+
     def fetch_fx_rate(self, from_ccy: str, to_ccy: str) -> float | None:
         """Return most-recent closing rate: 1 *from_ccy* = ? *to_ccy*.
 

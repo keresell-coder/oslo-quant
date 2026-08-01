@@ -66,6 +66,7 @@ def make_statements(periods: list[str] | None = None) -> Statements:
         "income_stmt": inc,
         "cash_flow": cf,
         "prices": prices,
+        "meta": {"fx_to_usd": 1.0, "reporting_currency": "USD"},
     }
 
 
@@ -153,4 +154,5 @@ def make_yfinance_like_statements(periods: list[str] | None = None) -> Statement
         "income_stmt": inc,
         "cash_flow": cf,
         "prices": prices,
+        "meta": {"fx_to_usd": 1.0, "reporting_currency": "USD"},
     }

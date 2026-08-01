@@ -62,6 +62,15 @@ class OhlsonFramework(BaseFramework):
         inc = stmts["income_stmt"]
         cf  = stmts["cash_flow"]
 
+        # FX for the SIZE term (2026-08 fix): assets must be expressed in a
+        # common currency before taking logs, otherwise USD/EUR reporters carry
+        # a structural O-score penalty (~+0.96 for USD, ~+1.00 for EUR at 2026
+        # rates) purely from currency units. The pipeline supplies the current
+        # reporting-currency→USD rate; USD is the model's original basis.
+        # Applying today's spot rate to historical years is a disclosed
+        # approximation — SIZE is a log-scale term and insensitive to it.
+        fx_to_usd = stmts.get("meta", {}).get("fx_to_usd")  # type: ignore[union-attr]
+
         periods = self._periods(inc, anchor="Total Revenue")
         results: dict[str, Any] = {}
 
@@ -72,7 +81,7 @@ class OhlsonFramework(BaseFramework):
             except (ValueError, IndexError):
                 prev_period = None
 
-            metrics = self._compute_period(bs, inc, cf, period, prev_period)
+            metrics = self._compute_period(bs, inc, cf, period, prev_period, fx_to_usd)
             if metrics:
                 results[period] = metrics
 
@@ -89,6 +98,7 @@ class OhlsonFramework(BaseFramework):
         self,
         bs: Any, inc: Any, cf: Any,
         period: str, prev_period: str | None,
+        fx_to_usd: float | None = None,
     ) -> dict[str, Any] | None:
         total_assets = self._get(bs, "Total Assets", col=period)
         total_liab   = self._get(
@@ -134,13 +144,15 @@ class OhlsonFramework(BaseFramework):
             denom = abs(net_income) + abs(net_income_prev)
             chin = self._safe_div(net_income - net_income_prev, denom) if denom != 0 else float("nan")
 
-        # SIZE = ln(Total Assets in millions).
-        # Original formula: ln(TA / GNP_deflator). With the 1970s deflator ≈ 1.0,
-        # this was effectively ln(TA in raw dollars). Expressing in millions is the
-        # standard modern approximation (Begley et al. 1996).
+        # SIZE = ln(Total Assets in millions of USD).
+        # Original formula: ln(TA / GNP_deflator) on US-dollar assets. Expressing
+        # in millions is the standard modern approximation (Begley et al. 1996);
+        # converting to USD first keeps the term comparable across NOK/SEK/EUR/USD
+        # reporters. No FX rate → SIZE unknown → score Not assessable.
         log_ta_gnp = (
-            math.log(total_assets / _GNP_DIVISOR)
-            if not math.isnan(total_assets) and total_assets > 0
+            math.log(total_assets * fx_to_usd / _GNP_DIVISOR)
+            if (fx_to_usd is not None and not math.isnan(total_assets)
+                and total_assets > 0 and fx_to_usd > 0)
             else float("nan")
         )
 

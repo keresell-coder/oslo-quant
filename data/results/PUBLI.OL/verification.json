@@ -1,0 +1,13 @@
+{
+  "ticker": "PUBLI.OL",
+  "status": "ok",
+  "ledger_currency": "SEK",
+  "statement_currency": "SEK",
+  "counts": {
+    "verified": 0,
+    "mismatch": 0,
+    "filled": 0,
+    "skipped": 0
+  },
+  "entries": []
+}

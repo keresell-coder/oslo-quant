@@ -1,8 +1,19 @@
 {
   "ticker": "BORR.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:43.099443Z",
+  "computed_at": "2026-08-01T07:06:29.857368Z",
   "periods": {
+    "LTM 2026-03": {
+      "z_score": 0.4276,
+      "zone": "Distress",
+      "z_score_prime": 0.3732,
+      "zone_prime": "Distress",
+      "x1_working_capital_to_assets": 0.068,
+      "x2_retained_earnings_to_assets": -0.3315,
+      "x3_ebit_to_assets": 0.0782,
+      "x4_book_equity_to_liabilities": 0.4594,
+      "x5_revenue_to_assets": 0.2764
+    },
     "2025": {
       "z_score": 0.5258,
       "zone": "Distress",

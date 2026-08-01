@@ -1,0 +1,8 @@
+{
+  "ticker": "KOG.OL",
+  "currency": "NOK",
+  "transcribed": "2026-08-01",
+  "source_document": "pending — KONGSBERG annual report transcription not yet done (the previously cited kongsberg.com PDF URL now returns HTML; locate the current Annual Report 2025 link)",
+  "notes": "SCAFFOLD — no values transcribed yet. Priority: KOG mixes continuing-operations income lines with full-group balance-sheet lines around the Kongsberg Maritime held-for-distribution separation (July 2026 audit finding). Transcribe FY2025 revenue, EBIT, net income, total assets, equity from the annual report to pin down the correct perimeter, and verify the yfinance rows against them.",
+  "periods": {}
+}

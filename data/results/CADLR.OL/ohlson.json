@@ -1,11 +1,26 @@
 {
   "ticker": "CADLR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-01T05:56:43.120857Z",
+  "computed_at": "2026-08-01T07:06:29.885179Z",
   "periods": {
+    "LTM 2026-03": {
+      "o_score": -2.1082,
+      "bankruptcy_probability": 0.1083,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.5243,
+        "wc_ta": 0.0282,
+        "cl_ca": 0.7661,
+        "oeneg": 0,
+        "ni_ta": 0.0767,
+        "cfo_tl": 0.2244,
+        "intwo": 0,
+        "chin": -0.016
+      }
+    },
     "2025": {
-      "o_score": -2.0995,
-      "bankruptcy_probability": 0.1091,
+      "o_score": -2.1574,
+      "bankruptcy_probability": 0.1036,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5599,
@@ -19,9 +34,9 @@
       }
     },
     "2024": {
-      "o_score": -2.8892,
-      "bankruptcy_probability": 0.0527,
-      "interpretation": "Moderate distress risk",
+      "o_score": -2.947,
+      "bankruptcy_probability": 0.0499,
+      "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.363,
         "wc_ta": 0.0298,
@@ -34,8 +49,8 @@
       }
     },
     "2023": {
-      "o_score": -3.0403,
-      "bankruptcy_probability": 0.0456,
+      "o_score": -3.0982,
+      "bankruptcy_probability": 0.0432,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.2343,

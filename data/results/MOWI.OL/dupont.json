@@ -1,8 +1,22 @@
 {
   "ticker": "MOWI.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T05:56:42.919394Z",
+  "computed_at": "2026-08-01T07:06:29.658076Z",
   "periods": {
+    "LTM 2026-03": {
+      "net_profit_margin": 0.1433,
+      "asset_turnover": 0.5738,
+      "equity_multiplier": 2.3154,
+      "roe_3factor": 0.1904,
+      "tax_burden": 0.8414,
+      "interest_burden": 0.8827,
+      "ebit_margin": 0.193,
+      "roe_5factor": 0.1904,
+      "net_income": 847100000.0,
+      "revenue": 5910400000.0,
+      "avg_total_assets": 10299650000.0,
+      "avg_equity": 4448400000.0
+    },
     "2025": {
       "net_profit_margin": 0.1262,
       "asset_turnover": 0.6057,

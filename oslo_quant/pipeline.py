@@ -17,6 +17,8 @@ from oslo_quant.config import (
 from oslo_quant.fetchers.base import Statements
 from oslo_quant.fetchers.yfinance_fetcher import YFinanceFetcher
 from oslo_quant.frameworks import FRAMEWORK_REGISTRY
+from oslo_quant.ltm import build_ltm
+from oslo_quant.verified import apply_ledger
 
 log = logging.getLogger(__name__)
 
@@ -30,7 +32,7 @@ def run(
     """Run the pre-computation pipeline.
 
     Args:
-        tickers: List of ticker strings, or None for all 14 companies.
+        tickers: List of ticker strings, or None for all configured companies.
         frameworks: List of framework names, or None for all five.
         force_refresh: Re-fetch from APIs even if cache exists.
         period: "annual", "ttm", or "both" (reserved for future TTM support).
@@ -77,6 +79,35 @@ def run(
         price_ccy = currency_info["price_currency"]
         fin_ccy   = currency_info["financial_currency"]
         stmts = _convert_prices(stmts, price_ccy, fin_ccy, yf_fetcher, _fx_cache)
+
+        # --- Report-verified ledger: verify yfinance against filings, fill gaps ---
+        stmts, verification = apply_ledger(stmts, ticker, fin_ccy)
+        if verification is not None:
+            _persist(ticker, "verification", verification)
+
+        # --- LTM "virtual current year" from quarterly statements ---
+        try:
+            quarterly = yf_fetcher.fetch_quarterly(ticker, force_refresh=force_refresh)
+            stmts, ltm_status = build_ltm(stmts, quarterly, ticker)
+        except Exception as exc:
+            log.warning("[%s] LTM construction failed (skipped): %s", ticker, exc)
+            ltm_status = {"built": False, "label": None, "detail": f"error: {exc}"}
+        _persist(ticker, "ltm", ltm_status)
+
+        # --- Common-currency (USD) rate for the Ohlson SIZE term ---
+        if fin_ccy == "USD":
+            fx_usd: float | None = 1.0
+        else:
+            fx_key = f"{fin_ccy}USD"
+            if fx_key not in _fx_cache:
+                _fx_cache[fx_key] = yf_fetcher.fetch_fx_rate(fin_ccy, "USD")
+            fx_usd = _fx_cache[fx_key]
+            if fx_usd is None:
+                log.warning(
+                    "[%s] No %s→USD rate — Ohlson SIZE not assessable this run",
+                    ticker, fin_ccy,
+                )
+        stmts["meta"] = {"fx_to_usd": fx_usd, "reporting_currency": fin_ccy}  # type: ignore[typeddict-unknown-key]
 
         # --- Compute frameworks ---
         ticker_results: dict[str, Any] = {}

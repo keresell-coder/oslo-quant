@@ -1,11 +1,26 @@
 {
   "ticker": "NORBT.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-01T05:56:43.278850Z",
+  "computed_at": "2026-08-01T07:06:30.154700Z",
   "periods": {
+    "LTM 2026-03": {
+      "o_score": -2.0897,
+      "bankruptcy_probability": 0.1101,
+      "interpretation": "Moderate distress risk",
+      "inputs": {
+        "tl_ta": 0.4991,
+        "wc_ta": 0.1945,
+        "cl_ca": 0.5828,
+        "oeneg": 0,
+        "ni_ta": 0.1627,
+        "cfo_tl": 0.4686,
+        "intwo": 0,
+        "chin": 0.0258
+      }
+    },
     "2025": {
-      "o_score": -2.6142,
-      "bankruptcy_probability": 0.0682,
+      "o_score": -1.6999,
+      "bankruptcy_probability": 0.1545,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5381,
@@ -19,9 +34,9 @@
       }
     },
     "2024": {
-      "o_score": -3.002,
-      "bankruptcy_probability": 0.0473,
-      "interpretation": "Low distress risk",
+      "o_score": -2.0877,
+      "bankruptcy_probability": 0.1103,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.4701,
         "wc_ta": 0.2254,
@@ -34,9 +49,9 @@
       }
     },
     "2023": {
-      "o_score": -3.0447,
-      "bankruptcy_probability": 0.0454,
-      "interpretation": "Low distress risk",
+      "o_score": -2.1304,
+      "bankruptcy_probability": 0.1062,
+      "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.4698,
         "wc_ta": 0.2072,

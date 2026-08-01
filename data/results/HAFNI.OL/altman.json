@@ -1,8 +1,19 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:43.133591Z",
+  "computed_at": "2026-08-01T07:06:29.904337Z",
   "periods": {
+    "LTM 2026-03": {
+      "z_score": 2.4753,
+      "zone": "Grey",
+      "z_score_prime": 4.0583,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.1059,
+      "x2_retained_earnings_to_assets": 0.2228,
+      "x3_ebit_to_assets": 0.1255,
+      "x4_book_equity_to_liabilities": 1.7084,
+      "x5_revenue_to_assets": 0.597
+    },
     "2025": {
       "z_score": 2.2773,
       "zone": "Grey",

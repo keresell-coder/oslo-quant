@@ -1,8 +1,19 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "altman",
-  "computed_at": "2026-08-01T05:56:43.223482Z",
+  "computed_at": "2026-08-01T07:06:30.081994Z",
   "periods": {
+    "LTM 2026-06": {
+      "z_score": 0.4338,
+      "zone": "Distress",
+      "z_score_prime": 0.6225,
+      "zone_prime": "Distress",
+      "x1_working_capital_to_assets": -0.0194,
+      "x2_retained_earnings_to_assets": 0.0,
+      "x3_ebit_to_assets": 0.028,
+      "x4_book_equity_to_liabilities": 0.5351,
+      "x5_revenue_to_assets": 0.0436
+    },
     "2025": {
       "z_score": 0.4244,
       "zone": "Distress",

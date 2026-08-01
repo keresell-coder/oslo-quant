@@ -860,7 +860,7 @@ footer a{{color:var(--accent);text-decoration:none}}
       </div>
       <div class="fw-card">
         <h5>Ohlson O-Score</h5>
-        <p>A logistic regression model estimating the probability of bankruptcy within one year using nine financial ratios covering size, leverage, liquidity, and profitability. <strong>Key calibration limitations:</strong> (1) calibrated on US industrial firms in the 1970s with a ~7% annual bankruptcy rate — far above the &lt;1% rate for large listed Norwegian companies, so raw probabilities are structurally overstated; (2) the leverage term (+6.03 × TL/TA) systematically inflates risk for capital-intensive sectors (shipping, offshore, aquaculture, real estate) where high debt is backed by physical assets; (3) SIZE variable is expressed in millions, consistent with Begley et al. (1996) to avoid a common implementation error that inflates O-Scores by ~2.8 points. Use probabilities as <em>relative, directional signals</em> within a peer group — not as absolute bankruptcy forecasts.</p>
+        <p>A logistic regression model estimating the probability of bankruptcy within one year using nine financial ratios covering size, leverage, liquidity, and profitability. <strong>Key calibration limitations:</strong> (1) calibrated on US industrial firms in the 1970s with a ~7% annual bankruptcy rate — far above the &lt;1% rate for large listed Norwegian companies, so raw probabilities are structurally overstated; (2) the leverage term (+6.03 × TL/TA) systematically inflates risk for capital-intensive sectors (shipping, offshore, aquaculture, real estate) where high debt is backed by physical assets; (3) SIZE variable is expressed in millions of <strong>USD</strong> — converted from the reporting currency at the current rate — consistent with Begley et al. (1996) and comparable across NOK/SEK/EUR/USD reporters (before August 2026 it used native-currency assets, which understated risk for NOK reporters relative to USD reporters by roughly 2.5× in probability terms). Use probabilities as <em>relative, directional signals</em> within a peer group — not as absolute bankruptcy forecasts.</p>
         <div class="reading">
           <strong>How to read:</strong> &lt;5% = Low risk. 5–20% = Moderate. &gt;20% = Elevated. Thresholds are set conservatively to account for the lower Norwegian base rate. Cross-check with Altman Z&#8243; and company fundamentals before drawing conclusions.
         </div>
@@ -877,6 +877,16 @@ footer a{{color:var(--accent);text-decoration:none}}
     <div class="disclaimer">
       <strong>ℹ Restatement — August 2026</strong>
       All historical results were recomputed on 1 August 2026 after an independent audit found that financial-statement fields were being matched by substring against the data provider's row labels, selecting wrong rows (EBIT resolved to Normalized EBITDA; current assets/liabilities to their <em>non-current</em> counterparts; net income to continuing operations). Field resolution is now exact-match first, missing inputs are reported as “Not assessable” instead of being scored as zero, and periods with no data are dropped. Scores, zones and probabilities shown here may therefore differ materially from versions published before this date.
+    </div>
+
+    <div class="disclaimer">
+      <strong>ℹ LTM — the virtual current year</strong>
+      Where the data allows, an <strong>LTM</strong> (last-twelve-months) column appears ahead of the latest fiscal year: income and cash flow are the sum of the last four quarterly reports (or two half-year reports), the balance sheet is the latest quarter as-is, and every year-over-year signal compares LTM against the latest full fiscal year — overlapping windows by design, as a development tracker. An LTM is only built when the quarterly history is complete and contiguous; a missing or empty quarter means no LTM rather than a silently wrong one, and no LTM is shown when the annual report is itself the newest available information.
+    </div>
+
+    <div class="disclaimer">
+      <strong>ℹ Report-verified data</strong>
+      Selected line items are verified against, or filled from, the companies' own annual reports (with page-level citations kept in the repository under <code>data/verified/</code>). Where yfinance lacks a value entirely — for example Mowi's retained earnings, which Mowi reports as "Other equity" in its statement of changes in equity — the report-sourced figure is used and recorded as a fill. Where both sources exist they are compared, and material deviations are flagged rather than silently overwritten.
     </div>
 
     <div class="disclaimer">

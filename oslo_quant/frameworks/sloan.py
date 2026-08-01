@@ -92,7 +92,10 @@ class SloanFramework(BaseFramework):
         # The balance-sheet method is a year-over-year delta; without a prior
         # period it would degenerate to exactly 0 (prev fallbacks equal the
         # current values), which is a fabricated "no accruals" signal.
-        if prev_period is None:
+        # For an LTM period the delta would span only the months since FY end
+        # while the CFO method spans twelve — mismatched windows, so the
+        # balance-sheet method is not computed for LTM columns.
+        if prev_period is None or period.startswith("LTM"):
             bs_accruals = float("nan")
         else:
             bs_accruals = (oa - oa_prev) - (ol - ol_prev)

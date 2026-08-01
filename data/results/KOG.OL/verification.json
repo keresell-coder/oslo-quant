@@ -1,0 +1,13 @@
+{
+  "ticker": "KOG.OL",
+  "status": "ok",
+  "ledger_currency": "NOK",
+  "statement_currency": "NOK",
+  "counts": {
+    "verified": 0,
+    "mismatch": 0,
+    "filled": 0,
+    "skipped": 0
+  },
+  "entries": []
+}
