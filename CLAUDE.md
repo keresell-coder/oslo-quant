@@ -293,11 +293,11 @@ Listed in dashboard order — `COMPANIES` is sorted by (sector, ticker).
 | ODL.OL | Odfjell Drilling Ltd | USD | Offshore Drilling | Harsh-environment semis & drillships (North Sea). Not jack-ups (BORR.OL is jack-ups). |
 | CADLR.OL | Cadeler A/S | EUR | Offshore Wind / Installation | Danish-domiciled; wind turbine installation vessels. Reports EUR, trades NOK. NYSE: CDLR. |
 | HAFNI.OL | Hafnia Ltd | USD | Product Tankers |  |
-| PUBLI.OL | Public Property Invest ASA | NOK | Real Estate | Redomiciling to Nasdaq Stockholm from May 2026; secondary listing on Oslo Børs continues. |
+| PUBLI.OL | Public Property Invest ASA | SEK | Real Estate | Redomiciled to Nasdaq Stockholm May 2026; Oslo secondary listing continues. Reporting currency NOK→SEK with the redomicile (NOK/SEK ≈ 1.00). |
 | NOD.OL | Nordic Semiconductor ASA | USD | Semiconductors | Fabless; Bluetooth/IoT |
 | ELK.OL | Elkem ASA | NOK | Silicon & Specialty Chemicals |  |
 | BRG.OL | Borregaard ASA | NOK | Specialty Chemicals / Biorefinery |  |
-| KIT.OL | Kitron ASA | NOK | Technology / Electronics Manufacturing | Electronics manufacturing services (EMS) — medical, industrial, defence/aerospace. |
+| KIT.OL | Kitron ASA | EUR | Technology / Electronics Manufacturing | Electronics manufacturing services (EMS) — medical, industrial, defence/aerospace. Presentation currency NOK→EUR in 2024; yfinance restates all history in EUR. |
 | NORBT.OL | Norbit ASA | NOK | Technology / Sensing & Connectivity | Multibeam sonar, underwater sensors, telematics/IoT. alt_ticker="NORBT" for FMP. Listed June 2019. |
 | TEL.OL | Telenor ASA | NOK | Telecommunications |  |
 
@@ -403,12 +403,12 @@ empty results over good committed data. If it happens:
 
 ## Known open items
 
-- **Currency mismatches flagged on 2026-08-01 run:** yfinance reports KIT.OL
-  statements in **EUR** (config says NOK — Kitron changed presentation
-  currency to EUR in 2024, so yfinance is likely right; verify against the
-  annual report and update config) and PUBLI.OL in **SEK** (config says NOK;
-  plausible given the Nasdaq Stockholm redomiciling — verify). The pipeline
-  currently trusts yfinance on mismatch.
+- **Currency changes verified and config updated (2026-08-01):** KIT.OL now
+  EUR (presentation-currency change 2024; magnitude check confirms yfinance
+  serves the whole history in EUR, so the series is internally consistent) and
+  PUBLI.OL now SEK (redomicile; NOK/SEK ≈ 1.00). Remaining to-do: tie one
+  historical year each against the company's own restated comparatives in the
+  first EUR/SEK annual report.
 - **Ohlson cross-currency bias** (see framework notes): SIZE term not
   currency-adjusted; do not rank USD/EUR reporters against NOK reporters.
 - **DOFG has no Piotroski scores** — yfinance carries no Gross Profit row for
