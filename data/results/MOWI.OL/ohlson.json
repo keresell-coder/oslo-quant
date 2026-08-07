@@ -1,11 +1,11 @@
 {
   "ticker": "MOWI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-01T07:06:29.672048Z",
+  "computed_at": "2026-08-07T18:01:50.579371Z",
   "periods": {
     "LTM 2026-03": {
-      "o_score": -2.752,
-      "bankruptcy_probability": 0.06,
+      "o_score": -2.7532,
+      "bankruptcy_probability": 0.0599,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5449,
@@ -19,8 +19,8 @@
       }
     },
     "2025": {
-      "o_score": -2.7252,
-      "bankruptcy_probability": 0.0615,
+      "o_score": -2.7265,
+      "bankruptcy_probability": 0.0614,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5537,
@@ -34,7 +34,7 @@
       }
     },
     "2024": {
-      "o_score": -2.794,
+      "o_score": -2.7953,
       "bankruptcy_probability": 0.0576,
       "interpretation": "Moderate distress risk",
       "inputs": {
@@ -49,8 +49,8 @@
       }
     },
     "2023": {
-      "o_score": -2.6019,
-      "bankruptcy_probability": 0.069,
+      "o_score": -2.6032,
+      "bankruptcy_probability": 0.0689,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5443,

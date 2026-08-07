@@ -1,11 +1,11 @@
 {
   "ticker": "SALM.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-01T07:06:29.775143Z",
+  "computed_at": "2026-08-07T18:01:51.483060Z",
   "periods": {
     "2025": {
-      "o_score": -1.097,
-      "bankruptcy_probability": 0.2503,
+      "o_score": -1.0952,
+      "bankruptcy_probability": 0.2506,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6523,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -1.6089,
-      "bankruptcy_probability": 0.1667,
+      "o_score": -1.6071,
+      "bankruptcy_probability": 0.167,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6282,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -2.2646,
-      "bankruptcy_probability": 0.0941,
+      "o_score": -2.2627,
+      "bankruptcy_probability": 0.0943,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5672,

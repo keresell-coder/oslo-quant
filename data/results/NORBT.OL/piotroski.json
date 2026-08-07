@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-01T07:06:30.151264Z",
+  "computed_at": "2026-08-07T18:02:00.499483Z",
   "periods": {
     "LTM 2026-03": {
       "f_score": 7,

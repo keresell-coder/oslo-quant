@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-01T07:06:29.836847Z",
+  "computed_at": "2026-08-07T18:01:54.997390Z",
   "periods": {
     "2025": {
       "f_score": null,

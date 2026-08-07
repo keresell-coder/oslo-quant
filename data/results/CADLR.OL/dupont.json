@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "dupont",
-  "computed_at": "2026-08-01T07:06:29.878036Z",
+  "computed_at": "2026-08-07T18:01:56.643885Z",
   "periods": {
     "LTM 2026-03": {
       "net_profit_margin": 0.3993,
