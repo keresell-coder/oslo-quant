@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "altman",
-  "computed_at": "2026-08-07T18:01:57.836985Z",
+  "computed_at": "2026-08-14T18:06:42.667829Z",
   "periods": {
     "LTM 2026-06": {
       "z_score": 0.4338,

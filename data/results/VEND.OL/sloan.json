@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "sloan",
-  "computed_at": "2026-08-07T18:01:54.490267Z",
+  "computed_at": "2026-08-14T18:06:33.498784Z",
   "periods": {
     "2025": {
       "cfo_accruals": -2000000000.0,

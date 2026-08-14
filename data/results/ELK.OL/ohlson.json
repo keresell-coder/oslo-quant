@@ -1,11 +1,11 @@
 {
   "ticker": "ELK.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-07T18:01:58.823334Z",
+  "computed_at": "2026-08-14T18:06:45.541268Z",
   "periods": {
     "2025": {
-      "o_score": -1.9824,
-      "bankruptcy_probability": 0.1211,
+      "o_score": -1.9844,
+      "bankruptcy_probability": 0.1209,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.494,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -2.9746,
-      "bankruptcy_probability": 0.0486,
+      "o_score": -2.9766,
+      "bankruptcy_probability": 0.0485,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.513,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -1.6574,
-      "bankruptcy_probability": 0.1601,
+      "o_score": -1.6594,
+      "bankruptcy_probability": 0.1598,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5157,

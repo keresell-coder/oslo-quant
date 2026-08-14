@@ -1,11 +1,11 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-07T18:01:57.833935Z",
+  "computed_at": "2026-08-14T18:06:42.662930Z",
   "periods": {
     "LTM 2026-06": {
-      "o_score": -0.8516,
-      "bankruptcy_probability": 0.2991,
+      "o_score": -0.8494,
+      "bankruptcy_probability": 0.2996,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6512,
@@ -19,8 +19,8 @@
       }
     },
     "2025": {
-      "o_score": -1.5107,
-      "bankruptcy_probability": 0.1808,
+      "o_score": -1.5084,
+      "bankruptcy_probability": 0.1812,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.622,
@@ -34,8 +34,8 @@
       }
     },
     "2024": {
-      "o_score": -1.7964,
-      "bankruptcy_probability": 0.1423,
+      "o_score": -1.7942,
+      "bankruptcy_probability": 0.1426,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.521,
@@ -49,8 +49,8 @@
       }
     },
     "2023": {
-      "o_score": 1.9163,
-      "bankruptcy_probability": 0.8717,
+      "o_score": 1.9185,
+      "bankruptcy_probability": 0.872,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6656,
