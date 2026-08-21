@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-14T18:06:33.493700Z",
+  "computed_at": "2026-08-21T17:45:27.450419Z",
   "periods": {
     "2025": {
       "f_score": 6,

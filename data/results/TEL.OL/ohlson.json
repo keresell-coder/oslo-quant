@@ -1,11 +1,11 @@
 {
   "ticker": "TEL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-14T18:06:51.437482Z",
+  "computed_at": "2026-08-21T17:45:28.367084Z",
   "periods": {
     "2025": {
-      "o_score": -1.475,
-      "bankruptcy_probability": 0.1862,
+      "o_score": -1.4819,
+      "bankruptcy_probability": 0.1851,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6588,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -1.9636,
-      "bankruptcy_probability": 0.1231,
+      "o_score": -1.9705,
+      "bankruptcy_probability": 0.1223,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6426,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -1.4281,
-      "bankruptcy_probability": 0.1934,
+      "o_score": -1.435,
+      "bankruptcy_probability": 0.1923,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6775,

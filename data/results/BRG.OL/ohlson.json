@@ -1,11 +1,11 @@
 {
   "ticker": "BRG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-14T18:06:46.984846Z",
+  "computed_at": "2026-08-21T17:45:28.240393Z",
   "periods": {
     "2025": {
-      "o_score": -2.6826,
-      "bankruptcy_probability": 0.064,
+      "o_score": -2.6895,
+      "bankruptcy_probability": 0.0636,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.3921,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -2.0587,
-      "bankruptcy_probability": 0.1132,
+      "o_score": -2.0656,
+      "bankruptcy_probability": 0.1125,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.4689,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -2.3839,
-      "bankruptcy_probability": 0.0844,
+      "o_score": -2.3908,
+      "bankruptcy_probability": 0.0839,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.4631,

@@ -1,11 +1,11 @@
 {
   "ticker": "KIT.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-14T18:06:48.499903Z",
+  "computed_at": "2026-08-21T17:45:28.278292Z",
   "periods": {
     "2025": {
-      "o_score": -1.7073,
-      "bankruptcy_probability": 0.1535,
+      "o_score": -1.7113,
+      "bankruptcy_probability": 0.153,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5766,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -0.6455,
-      "bankruptcy_probability": 0.344,
+      "o_score": -0.6495,
+      "bankruptcy_probability": 0.3431,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6423,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -0.7943,
-      "bankruptcy_probability": 0.3112,
+      "o_score": -0.7984,
+      "bankruptcy_probability": 0.3104,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6841,

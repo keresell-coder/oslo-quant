@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-14T18:06:36.545413Z",
+  "computed_at": "2026-08-21T17:45:27.535424Z",
   "periods": {
     "LTM 2026-03": {
       "f_score": 3,
