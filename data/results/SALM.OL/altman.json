@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "altman",
-  "computed_at": "2026-08-21T17:45:27.333740Z",
+  "computed_at": "2026-08-29T00:58:13.950444Z",
   "periods": {
     "2025": {
       "z_score": 1.2766,

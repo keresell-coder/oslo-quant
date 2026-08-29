@@ -1,7 +1,7 @@
 {
   "ticker": "KIT.OL",
   "framework": "altman",
-  "computed_at": "2026-08-21T17:45:28.281877Z",
+  "computed_at": "2026-08-29T00:58:32.449961Z",
   "periods": {
     "2025": {
       "z_score": 2.4574,

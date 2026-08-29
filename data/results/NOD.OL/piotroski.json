@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-21T17:45:28.135302Z",
+  "computed_at": "2026-08-29T00:58:28.175731Z",
   "periods": {
     "2025": {
       "f_score": 7,
