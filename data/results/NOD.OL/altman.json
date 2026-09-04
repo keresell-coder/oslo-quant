@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "altman",
-  "computed_at": "2026-08-29T00:58:28.189039Z",
+  "computed_at": "2026-09-04T19:35:50.804626Z",
   "periods": {
     "2025": {
       "z_score": 3.0574,

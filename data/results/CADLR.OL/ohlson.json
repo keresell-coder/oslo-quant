@@ -1,11 +1,11 @@
 {
   "ticker": "CADLR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-08-29T00:58:23.782149Z",
+  "computed_at": "2026-09-04T19:35:50.507238Z",
   "periods": {
     "LTM 2026-03": {
-      "o_score": -2.1104,
-      "bankruptcy_probability": 0.1081,
+      "o_score": -2.1114,
+      "bankruptcy_probability": 0.108,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5243,
@@ -19,8 +19,8 @@
       }
     },
     "2025": {
-      "o_score": -2.1595,
-      "bankruptcy_probability": 0.1034,
+      "o_score": -2.1606,
+      "bankruptcy_probability": 0.1033,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5599,
@@ -34,8 +34,8 @@
       }
     },
     "2024": {
-      "o_score": -2.9492,
-      "bankruptcy_probability": 0.0498,
+      "o_score": -2.9502,
+      "bankruptcy_probability": 0.0497,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.363,
@@ -49,7 +49,7 @@
       }
     },
     "2023": {
-      "o_score": -3.1003,
+      "o_score": -3.1014,
       "bankruptcy_probability": 0.0431,
       "interpretation": "Low distress risk",
       "inputs": {

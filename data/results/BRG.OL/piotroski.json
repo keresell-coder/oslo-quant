@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-08-29T00:58:30.957187Z",
+  "computed_at": "2026-09-04T19:35:50.858763Z",
   "periods": {
     "2025": {
       "f_score": 7,
