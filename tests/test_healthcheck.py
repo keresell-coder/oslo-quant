@@ -23,6 +23,7 @@ def _write_results(root, kinds: list[str]) -> None:
     """Materialise a fake data/results tree, one `kind` per configured company."""
     now = datetime.datetime.now(datetime.timezone.utc)
     old = now - datetime.timedelta(days=9)
+    (root / "run.json").write_text(json.dumps({"run_id": "test-run"}))
 
     for company, kind in zip(COMPANIES, kinds):
         if kind == "missing":
@@ -33,7 +34,12 @@ def _write_results(root, kinds: list[str]) -> None:
         ticker_dir.mkdir(parents=True)
         for framework in ALL_FRAMEWORKS:
             (ticker_dir / f"{framework}.json").write_text(
-                json.dumps({"computed_at": stamp, "periods": periods}),
+                json.dumps({"computed_at": now.isoformat(), "periods": periods,
+                            "source_metadata": {"run_id": "test-run", "snapshot_id": company.ticker,
+                                "statement_status": "available", "groups": {
+                                    group: {"source_fetched_at": stamp, "cache_used": False,
+                                            "statement_period_ends": {"income_stmt": ["2025-12-31"], "balance_sheet": ["2025-12-31"]}}
+                                    for group in ("annual", "quarterly")}}}),
                 encoding="utf-8",
             )
 

@@ -463,6 +463,9 @@ empty results over good committed data. If it happens:
   Node 24. Cosmetic, non-blocking; bump the action versions when convenient.
 - **Kitron, Cadeler and SalMar populated on 2026-08-01** (as part of the
   restatement recompute) — all 17 companies now carry data.
-- **The freshness floor is 80%** (13 of 17). Three simultaneously-broken tickers stay
-  above the floor and would not trigger an alert, though they appear in the job
-  summary as `empty` or missing.
+- **Source trust repair (2026-09-09):** the ceiling of the 80% floor is 14 of 17.
+  Source retrieval timestamps, cache hashes and all-framework run/snapshot coherence
+  replace computed-at freshness. Scheduled publication forces upstream collection;
+  bad rows are withheld, and a blocked candidate updates health only. PR/main CI
+  runs the full regression suite. Primary verification remains selected ledger
+  line items, not whole filings; missing publication dates remain unverified.

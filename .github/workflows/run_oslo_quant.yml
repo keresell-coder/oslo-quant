@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       tickers:
-        description: "Tickers to run (space-separated, e.g. TEL.OL MOWI.OL). Leave blank for all 14."
+        description: "Tickers to run (space-separated, e.g. TEL.OL MOWI.OL). Leave blank for all 17; partial runs still require 14 qualified companies to publish."
         required: false
         default: ""
       frameworks:
@@ -13,7 +13,7 @@ on:
         required: false
         default: ""
       force_refresh:
-        description: "Force re-fetch data even if cached"
+        description: "Compatibility input; publication always forces source retrieval"
         required: false
         default: "false"
         type: boolean
@@ -27,6 +27,10 @@ on:
   # consistently fired 3-6 hours late).
   schedule:
     - cron: "17 17 * * 5"
+
+concurrency:
+  group: oslo-quant-publish
+  cancel-in-progress: false
 
 jobs:
   compute:
@@ -64,41 +68,37 @@ jobs:
         run: pip install -e .
 
       - name: Run oslo-quant
+        id: publish
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-        # Continue even if some tickers fail — partial results are better than
-        # no report. The report step will use whatever data was successfully
-        # fetched plus any results already committed from the previous run.
+          RUN_TICKERS: ${{ github.event.inputs.tickers }}
+          RUN_FRAMEWORKS: ${{ github.event.inputs.frameworks }}
+        # The publisher stages outputs and preserves the last report on failed validation.
         continue-on-error: true
         run: |
-          ARGS=""
-          if [ -n "${{ github.event.inputs.tickers }}" ]; then
-            ARGS="$ARGS --tickers ${{ github.event.inputs.tickers }}"
+          ARGS=()
+          if [ -n "$RUN_TICKERS" ]; then
+            read -r -a TICKERS <<< "$RUN_TICKERS"
+            ARGS+=(--tickers "${TICKERS[@]}")
           fi
-          if [ -n "${{ github.event.inputs.frameworks }}" ]; then
-            ARGS="$ARGS --frameworks ${{ github.event.inputs.frameworks }}"
+          if [ -n "$RUN_FRAMEWORKS" ]; then
+            read -r -a FRAMEWORKS <<< "$RUN_FRAMEWORKS"
+            ARGS+=(--frameworks "${FRAMEWORKS[@]}")
           fi
-          if [ "${{ github.event.inputs.force_refresh }}" = "true" ]; then
-            ARGS="$ARGS --force-refresh"
-          fi
-          oslo-quant $ARGS
-
-      - name: Generate HTML report
-        run: oslo-quant-report
+          python -m oslo_quant.publish "${ARGS[@]}"
 
       - name: Commit results and report back to repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/results/ index.html
+          if [ "${{ steps.publish.outcome }}" = "success" ]; then
+            git add data/results/ index.html health.json
+          else
+            git add health.json
+          fi
           git diff --staged --quiet || git commit -m "Update results and report [$(date -u +%Y-%m-%d)]"
           git push origin "HEAD:${{ github.ref_name }}"
 
-      # Runs last, and deliberately after the push: whatever data we managed to
-      # get is always published first, then this fails the job if the run did not
-      # actually refresh enough companies. Without it, a run in which every ticker
-      # failed still reports success (see continue-on-error above) and the
-      # dashboard silently serves stale numbers. A failed job triggers GitHub's
-      # default failure notification — this is the only alerting channel.
-      - name: Verify results are fresh
-        run: oslo-quant-check
+      - name: Fail the run when publication was blocked
+        if: steps.publish.outcome != 'success'
+        run: exit 1
