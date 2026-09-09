@@ -1,18 +1,18 @@
 {
   "ticker": "NORBT.OL",
   "framework": "altman",
-  "computed_at": "2026-09-04T19:35:50.940838Z",
+  "computed_at": "2026-09-09T06:44:35.707901Z",
   "periods": {
-    "LTM 2026-03": {
-      "z_score": 2.9533,
+    "LTM 2026-06": {
+      "z_score": 2.6705,
       "zone": "Grey",
-      "z_score_prime": 4.6313,
+      "z_score_prime": 3.75,
       "zone_prime": "Safe",
-      "x1_working_capital_to_assets": 0.1945,
-      "x2_retained_earnings_to_assets": 0.2458,
-      "x3_ebit_to_assets": 0.2232,
-      "x4_book_equity_to_liabilities": 1.0037,
-      "x5_revenue_to_assets": 1.037
+      "x1_working_capital_to_assets": 0.1282,
+      "x2_retained_earnings_to_assets": 0.1775,
+      "x3_ebit_to_assets": 0.2278,
+      "x4_book_equity_to_liabilities": 0.7612,
+      "x5_revenue_to_assets": 1.0596
     },
     "2025": {
       "z_score": 2.7076,
@@ -60,5 +60,97 @@
     }
   },
   "financial_currency": "NOK",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "f6e46570d59b9022c378",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:35.243330+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "9e35debd25f8319dbd52a90372b1bb0e1dbfe591a18a52bc510ce9885fcc0021",
+          "income_stmt.parquet": "2c8c7c58220a3ed1eb9393af486ac8dc2c832a7d8d06cbdb4a3e032451612807",
+          "cash_flow.parquet": "b54717bba219220302c11e47954829ccf63efa7e880ee715069e6dcbc165bc64",
+          "prices.parquet": "510ac267abba85677e5dc37d76158ca173ee61f82ba8c8cb0ead27203ba19be5"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:35.683341+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "39511bbb115738f0e80057c13dd6cde0f36f5dd7cfeef519a35de2e3b3d14e7e",
+          "quarterly_income_stmt.parquet": "86735bd2abde832957050fff1d3775ae4420aa2443bf5df63dba09347e87c9a1",
+          "quarterly_cash_flow.parquet": "06fc6b5237a5a0f474278d436e00de8bb4d6391684d950bb315cf2c1d7a01a40"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

@@ -1,11 +1,11 @@
 {
   "ticker": "VEND.OL",
   "framework": "ohlson",
-  "computed_at": "2026-09-04T19:35:50.356690Z",
+  "computed_at": "2026-09-09T06:44:20.623515Z",
   "periods": {
     "2025": {
-      "o_score": -3.4326,
-      "bankruptcy_probability": 0.0313,
+      "o_score": -3.4366,
+      "bankruptcy_probability": 0.0312,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.2055,
@@ -19,7 +19,7 @@
       }
     },
     "2024": {
-      "o_score": -4.8475,
+      "o_score": -4.8515,
       "bankruptcy_probability": 0.0078,
       "interpretation": "Low distress risk",
       "inputs": {
@@ -34,7 +34,7 @@
       }
     },
     "2023": {
-      "o_score": -4.5804,
+      "o_score": -4.5843,
       "bankruptcy_probability": 0.0101,
       "interpretation": "Low distress risk",
       "inputs": {
@@ -65,5 +65,94 @@
     }
   },
   "financial_currency": "NOK",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "9502ca287f7d01a02d01",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:20.050295+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "cb9aef8f27771d5e841a47ee6f1f331f13497396d8e00dd3b4f0e92ccb79aeec",
+          "income_stmt.parquet": "232fc10160fa6f76cc6f528b8233da9f0505a0268590d8ed30e3e351236f3921",
+          "cash_flow.parquet": "22ea99b4a1840bad7b6e176be0524d844eae67b9158c90bfe62085b6d757812d",
+          "prices.parquet": "6c560ff68b5791d058b7c8e8b0bafc2b18a1ce5f9d2c8389475c542fd9e0b9b5"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:20.607701+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "1cfaabb7e2ab7cfeb35dac5dd7584f0665c7a743f3dea2e613248487dcce7977",
+          "quarterly_income_stmt.parquet": "f78ec183c217ef233fa0b6607b8fa3e2620a1a963d655862bb69bee191ae09c3",
+          "quarterly_cash_flow.parquet": "058af4210eea6769f45079dcf004a1bae1a47fba6da86dd7b372e6e6422a5b20"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

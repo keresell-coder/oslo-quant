@@ -1,18 +1,18 @@
 {
   "ticker": "BORR.OL",
   "framework": "altman",
-  "computed_at": "2026-09-04T19:35:50.435101Z",
+  "computed_at": "2026-09-09T06:44:23.929286Z",
   "periods": {
-    "LTM 2026-03": {
-      "z_score": 0.4276,
+    "LTM 2026-06": {
+      "z_score": 0.0612,
       "zone": "Distress",
-      "z_score_prime": 0.3732,
+      "z_score_prime": -0.2595,
       "zone_prime": "Distress",
-      "x1_working_capital_to_assets": 0.068,
-      "x2_retained_earnings_to_assets": -0.3315,
-      "x3_ebit_to_assets": 0.0782,
-      "x4_book_equity_to_liabilities": 0.4594,
-      "x5_revenue_to_assets": 0.2764
+      "x1_working_capital_to_assets": 0.0977,
+      "x2_retained_earnings_to_assets": -0.4064,
+      "x3_ebit_to_assets": 0.0082,
+      "x4_book_equity_to_liabilities": 0.3516,
+      "x5_revenue_to_assets": 0.2748
     },
     "2025": {
       "z_score": 0.5258,
@@ -60,5 +60,96 @@
     }
   },
   "financial_currency": "USD",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "26d300125a533827a61f",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:23.430514+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "365814478eeabb051a40ec6661cf07d3fcb2cdd23c1beb53dbd887f8d0edd366",
+          "income_stmt.parquet": "4a4832cf89b43abe10c239a2150cf1504aef9e04bac0737ede6e00e6ed845a38",
+          "cash_flow.parquet": "e0d6c15de16b750b3040592d6905d783d1a83828fffcec428732f98376e6e44b",
+          "prices.parquet": "77b0cfc4bb8941b1d8fade01bf6974bd73fa9d67b7f2882f6c9847ea4fb3fc01"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:23.904563+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "5c51fee277a159830e3031b51a38689e472b78cc8f0e49d1a8283d83f173caff",
+          "quarterly_income_stmt.parquet": "dce928ce6258e6e59ebb7b7f0f1773222f4f08e7547eb33d362f0732c50a2533",
+          "quarterly_cash_flow.parquet": "4b5b48198ffa98e3440a1fec803dbe4ed508dda35e81f87e21de1d62755ebc00"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

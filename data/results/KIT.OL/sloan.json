@@ -1,7 +1,7 @@
 {
   "ticker": "KIT.OL",
   "framework": "sloan",
-  "computed_at": "2026-09-04T19:35:50.894276Z",
+  "computed_at": "2026-09-09T06:44:34.576017Z",
   "periods": {
     "2025": {
       "cfo_accruals": -49800000.0,
@@ -53,5 +53,94 @@
     }
   },
   "financial_currency": "EUR",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "a1f633d224b502067a6d",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:34.090872+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "d42c66590f57e173ab74925379b897112204cf1eb7d438af46587ffd8150a4bb",
+          "income_stmt.parquet": "3ec02aadd0a81d55ec6848ed37f81f6dbc0c15f8a289ed77a5c86c6eae5c2154",
+          "cash_flow.parquet": "12a66471006a9e1ecdaa105135c5be6c002f1b5c015bfc34d1f27cce3d35cf6c",
+          "prices.parquet": "3344e12c6ab3a4721a9e1c112c3466471390b470832f346ac8898df034518ec6"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:34.564215+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "b1a4e316fd01b5d7cff0458e888b69b35a6586a743527774d199a04a1846042e",
+          "quarterly_income_stmt.parquet": "29f8e670d1f9fb0aec5709e6b31b58fa9fa03dfabb5cb89a828c3992e65908e3",
+          "quarterly_cash_flow.parquet": "7e516f388aa90c07e02b493b597a73b9411b4dd31b057b2644ce2136962e73f7"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

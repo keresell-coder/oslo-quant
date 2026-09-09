@@ -1,18 +1,18 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "altman",
-  "computed_at": "2026-09-04T19:35:50.556136Z",
+  "computed_at": "2026-09-09T06:44:28.177495Z",
   "periods": {
-    "LTM 2026-03": {
-      "z_score": 2.4753,
+    "LTM 2026-06": {
+      "z_score": 2.9651,
       "zone": "Grey",
-      "z_score_prime": 4.0583,
+      "z_score_prime": 4.8769,
       "zone_prime": "Safe",
-      "x1_working_capital_to_assets": 0.1059,
-      "x2_retained_earnings_to_assets": 0.2228,
-      "x3_ebit_to_assets": 0.1255,
-      "x4_book_equity_to_liabilities": 1.7084,
-      "x5_revenue_to_assets": 0.597
+      "x1_working_capital_to_assets": 0.1091,
+      "x2_retained_earnings_to_assets": 0.2603,
+      "x3_ebit_to_assets": 0.1778,
+      "x4_book_equity_to_liabilities": 2.017,
+      "x5_revenue_to_assets": 0.6728
     },
     "2025": {
       "z_score": 2.2773,
@@ -60,5 +60,97 @@
     }
   },
   "financial_currency": "USD",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "1fe32d974fa67db261b7",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:27.376800+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "1457a3740e0008011426c7277542ec3e7ea167839dda17fa2747d61706f9be1a",
+          "income_stmt.parquet": "18a7f91fb8c9685a3be3cc62bae288e47c70c89d8dba4e24ba38171df5a6ead9",
+          "cash_flow.parquet": "588ebc762249ea132e8516faf0f4ca0e2cadba2d6688e3159fc70294a978aeac",
+          "prices.parquet": "4c7868a4001f56ca95f9fb0c82acff9d3a84da07e85f1176540d32faefa90b03"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:28.150076+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "92ee0205fa0ebfc9c49f8b8636db041de048860e76fc1b55b93d3551b04a964a",
+          "quarterly_income_stmt.parquet": "21c86220d28c491039785e5d613490c449c52ef428124ed5424cd508adf95f6f",
+          "quarterly_cash_flow.parquet": "02a5f6dd7c807ccf018abf31cfe50b421ca94acbff88ee8403ff9bf515ae6c1b"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

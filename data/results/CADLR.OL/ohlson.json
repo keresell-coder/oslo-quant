@@ -1,25 +1,25 @@
 {
   "ticker": "CADLR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-09-04T19:35:50.507238Z",
+  "computed_at": "2026-09-09T06:44:26.693025Z",
   "periods": {
-    "LTM 2026-03": {
-      "o_score": -2.1114,
-      "bankruptcy_probability": 0.108,
+    "LTM 2026-06": {
+      "o_score": -2.1821,
+      "bankruptcy_probability": 0.1014,
       "interpretation": "Moderate distress risk",
       "inputs": {
-        "tl_ta": 0.5243,
-        "wc_ta": 0.0282,
-        "cl_ca": 0.7661,
+        "tl_ta": 0.4996,
+        "wc_ta": 0.0487,
+        "cl_ca": 0.6162,
         "oeneg": 0,
-        "ni_ta": 0.0767,
-        "cfo_tl": 0.2244,
+        "ni_ta": 0.0565,
+        "cfo_tl": 0.2272,
         "intwo": 0,
-        "chin": -0.016
+        "chin": -0.1661
       }
     },
     "2025": {
-      "o_score": -2.1606,
+      "o_score": -2.1614,
       "bankruptcy_probability": 0.1033,
       "interpretation": "Moderate distress risk",
       "inputs": {
@@ -34,7 +34,7 @@
       }
     },
     "2024": {
-      "o_score": -2.9502,
+      "o_score": -2.9511,
       "bankruptcy_probability": 0.0497,
       "interpretation": "Low distress risk",
       "inputs": {
@@ -49,8 +49,8 @@
       }
     },
     "2023": {
-      "o_score": -3.1014,
-      "bankruptcy_probability": 0.0431,
+      "o_score": -3.1022,
+      "bankruptcy_probability": 0.043,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.2343,
@@ -80,5 +80,96 @@
     }
   },
   "financial_currency": "EUR",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "aec6a151a95fb6327a3a",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:26.095018+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "2b1c53feda001078d0813d414db2f7d755389970543b9a671329f00c62c2871d",
+          "income_stmt.parquet": "10ce8b197712163c9a8d4c28c08dc8232104b899e59e2cf7a1e91c3ea18ba12b",
+          "cash_flow.parquet": "82ae543f6671ad8dd07a66b55af5acfcde049be2671f754b940bd836824b1dad",
+          "prices.parquet": "bc54d655633a5183812a973fdf37085c34545844e5209475e579048327090d94"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:26.670801+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "cfa6c42570e001ec52c475b90016f9b2a4c9cd9be768748bd901867361420fb5",
+          "quarterly_income_stmt.parquet": "a72876c5ef0e08f7f41d2beae0886996a8fd46e0d6de9a117ef37ada906e35de",
+          "quarterly_cash_flow.parquet": "ba60f233d31ef4c72b74dc7573edd71eac7027cdedbe9b59e553a1aaf6fab801"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

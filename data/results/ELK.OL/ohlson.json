@@ -1,11 +1,11 @@
 {
   "ticker": "ELK.OL",
   "framework": "ohlson",
-  "computed_at": "2026-09-04T19:35:50.834704Z",
+  "computed_at": "2026-09-09T06:44:31.983272Z",
   "periods": {
     "2025": {
-      "o_score": -1.991,
-      "bankruptcy_probability": 0.1202,
+      "o_score": -1.9949,
+      "bankruptcy_probability": 0.1197,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.494,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -2.9832,
-      "bankruptcy_probability": 0.0482,
+      "o_score": -2.9872,
+      "bankruptcy_probability": 0.048,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.513,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -1.666,
-      "bankruptcy_probability": 0.159,
+      "o_score": -1.67,
+      "bankruptcy_probability": 0.1584,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5157,
@@ -65,5 +65,95 @@
     }
   },
   "financial_currency": "NOK",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "1e14f1f57517e1f3212c",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:31.564531+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "6dd43f32810e7a3395056c55838186d451dd329429f6d2a9025c9d348a3530aa",
+          "income_stmt.parquet": "f5049cc2a7010f79a96cdacd1c2b3391a077f7b85ad4aeef18c04590d02eb064",
+          "cash_flow.parquet": "0005b5a41dcaafd24f91290968b7e9f26df8a424f9cf3a28ad66efc93a27f3b5",
+          "prices.parquet": "5d42592425a5da3628a110bc7443727b0f69a17252ffee2a18088b5c9cc6ebe4"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:31.967087+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "b7a5ec769245f4525d75d31ea89929d33e9238dbec532e5f49e123144b5672d9",
+          "quarterly_income_stmt.parquet": "3471c0d20192fa9251d6bfb53987d1bedc1bd3b543a28215fd090facaabd8fde",
+          "quarterly_cash_flow.parquet": "e6376deb551464392b277349047f4555042f18560dd8947b8f531ade5e103c70"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

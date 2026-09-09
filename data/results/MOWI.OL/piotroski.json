@@ -1,16 +1,16 @@
 {
   "ticker": "MOWI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-09-04T19:35:50.059623Z",
+  "computed_at": "2026-09-09T06:44:13.910727Z",
   "periods": {
-    "LTM 2026-03": {
-      "f_score": 7,
-      "f_score_partial": 7,
+    "LTM 2026-06": {
+      "f_score": 6,
+      "f_score_partial": 6,
       "signals_assessable": 9,
       "signals": {
         "F1_positive_roa": 1,
         "F2_positive_cfo": 1,
-        "F3_roa_increasing": 1,
+        "F3_roa_increasing": 0,
         "F4_accruals_quality": 1,
         "F5_leverage_decreasing": 0,
         "F6_liquidity_improving": 1,
@@ -19,11 +19,11 @@
         "F9_asset_turnover_improving": 1
       },
       "interpretation": "Moderate",
-      "roa": 0.0822,
-      "cfo_to_assets": 0.0829,
-      "current_ratio": 3.1455,
-      "gross_margin": 0.4769,
-      "asset_turnover": 0.5699
+      "roa": 0.0624,
+      "cfo_to_assets": 0.0917,
+      "current_ratio": 3.4643,
+      "gross_margin": 0.4712,
+      "asset_turnover": 0.5996
     },
     "2025": {
       "f_score": 5,
@@ -115,5 +115,97 @@
     }
   },
   "financial_currency": "EUR",
-  "price_currency": "NOK"
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+    "snapshot_id": "bea6001aa0d0b32d2dd0",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-09-09T06:44:12.974855+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "1ea7ef86a7ec58ef7ac5b7d08e91bba08c3e10212c5cc0859d22024a4cb7d89d",
+          "income_stmt.parquet": "1b82a84b77757b6e2eac1107db32f67be6bebeb443f9795d37423017a31ad0d5",
+          "cash_flow.parquet": "67c9427d301fd7355a24d55085ba89e2a62723e6da81f26d7c4866a659bae70b",
+          "prices.parquet": "8b9e697b2c0e1ba4486d6a3350eb9a48ce96b5c96d8c1b90ada18b99edc31a4e"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-09-09T06:44:13.774153+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2024-12-31",
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "0411860ad0bd8b1de58faa86821865ab5951b3c445c572f4747fb95e589229de",
+          "quarterly_income_stmt.parquet": "3b02123729a180c868dab86458a85a9003ed7482761a54be1ffe5572e38e2d07",
+          "quarterly_cash_flow.parquet": "d266067427d8bfacc3deccd226fe5b9799ae14c4e1e1e46d0453f54089c5a165"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 71,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "partial-line-items",
+      "verified_items": 8,
+      "filled_items": 3,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    }
+  }
 }

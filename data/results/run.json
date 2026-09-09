@@ -1,0 +1,30 @@
+{
+  "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
+  "generated_at": "2026-09-09T06:44:12.026154+00:00",
+  "tickers": [
+    "MOWI.OL",
+    "SALM.OL",
+    "FRO.OL",
+    "KOG.OL",
+    "VEND.OL",
+    "DOFG.OL",
+    "BORR.OL",
+    "ODL.OL",
+    "CADLR.OL",
+    "HAFNI.OL",
+    "PUBLI.OL",
+    "NOD.OL",
+    "ELK.OL",
+    "BRG.OL",
+    "KIT.OL",
+    "NORBT.OL",
+    "TEL.OL"
+  ],
+  "frameworks": [
+    "dupont",
+    "piotroski",
+    "sloan",
+    "ohlson",
+    "altman"
+  ]
+}
