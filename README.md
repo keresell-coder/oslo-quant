@@ -4,6 +4,28 @@
 
 Updated automatically every Friday evening after Oslo Børs closes.
 
+## Source trust and publication
+
+Publication now stages a real upstream refresh and validates all five framework
+files against one run and source snapshot before replacing the report. At least
+14 of 17 companies must pass; failed companies have their summary and detail
+scores withheld. Failed publication updates only [health.json](https://keresell-coder.github.io/oslo-quant/health.json),
+retains the prior report/results, and fails the workflow. The HTML reads this
+health record at view time and checks its snapshot against the displayed report.
+
+Local raw caches expire after 24 hours and require an original, timezone-aware
+retrieval time plus matching file hashes. Legacy, future-dated, or damaged caches
+refresh. `computed_at` is calculation time; `source_metadata.groups.*.source_fetched_at`
+is actual provider retrieval time. Cache reuse cannot count as a new retrieval.
+Public health distinguishes source retrieval, statement period ends, missing
+tables, and selected primary-ledger line-item coverage. Filing publication dates
+remain **unverified**; fresh Yahoo retrieval is not proof of the latest filing.
+A latest statement older than 180 days raises a disclosed age warning.
+
+Use `python -m oslo_quant.publish` for gated publication and
+`python -m pytest -q` for the regression suite (also run on PRs and main).
+Piotroski display bands match calculation: 8–9 strong, 5–7 moderate.
+
 Oslo Børs quantitative pre-computation system — fetches financial data for 17 Oslo Stock Exchange companies and runs five analytical frameworks to produce structured JSON results.
 
 ## Companies

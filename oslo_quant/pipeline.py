@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import uuid
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +20,7 @@ from oslo_quant.fetchers.yfinance_fetcher import YFinanceFetcher
 from oslo_quant.frameworks import FRAMEWORK_REGISTRY
 from oslo_quant.ltm import build_ltm
 from oslo_quant.verified import apply_ledger
+from oslo_quant.trust import provenance, stamp
 
 log = logging.getLogger(__name__)
 
@@ -42,6 +44,12 @@ def run(
     """
     target_tickers = tickers or [c.ticker for c in COMPANIES]
     target_frameworks = frameworks or ALL_FRAMEWORKS
+    run_id = uuid.uuid4().hex
+    DATA_RESULTS.mkdir(parents=True, exist_ok=True)
+    (DATA_RESULTS / "run.json").write_text(json.dumps({
+        "run_id": run_id, "generated_at": stamp(), "tickers": target_tickers,
+        "frameworks": target_frameworks,
+    }, indent=2))
 
     _validate_tickers(target_tickers)
     _validate_frameworks(target_frameworks)
@@ -93,6 +101,11 @@ def run(
             log.warning("[%s] LTM construction failed (skipped): %s", ticker, exc)
             ltm_status = {"built": False, "label": None, "detail": f"error: {exc}"}
         _persist(ticker, "ltm", ltm_status)
+        source = provenance(
+            yf_fetcher.provenance.get(ticker, {}).get("annual", {}),
+            yf_fetcher.provenance.get(ticker, {}).get("quarterly", {}),
+            verification, run_id,
+        )
 
         # --- Common-currency (USD) rate for the Ohlson SIZE term ---
         if fin_ccy == "USD":
@@ -119,6 +132,7 @@ def run(
                 # Embed currency context in every result file
                 result["financial_currency"] = currency_info["financial_currency"]
                 result["price_currency"]     = currency_info["price_currency"]
+                result["source_metadata"] = source
                 ticker_results[fw_name] = result
                 _persist(ticker, fw_name, result)
                 log.info(

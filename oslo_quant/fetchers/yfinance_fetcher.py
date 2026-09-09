@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import hashlib
 from pathlib import Path
 
 import pandas as pd
@@ -11,6 +12,7 @@ import yfinance as yf
 
 from oslo_quant.config import DATA_RAW, RAW_FILES
 from oslo_quant.fetchers.base import BaseFetcher, Statements
+from oslo_quant.trust import recent, stamp, period_ends
 
 log = logging.getLogger(__name__)
 
@@ -18,28 +20,63 @@ METADATA_FILE = "metadata.json"
 
 
 class YFinanceFetcher(BaseFetcher):
+    def __init__(self):
+        self.provenance: dict[str, dict] = {}
+
+    def _metadata(self, cache_dir, group):
+        try:
+            return json.loads((cache_dir / f"{group}_source.json").read_text())
+        except (OSError, ValueError):
+            return {}
+
+    def _record(self, ticker, cache_dir, group, frames):
+        files = RAW_FILES if group == "annual" else self._Q_FILES
+        meta = {
+            "source_fetched_at": stamp(),
+            "statement_period_ends": {k: period_ends(v) for k, v in frames.items()
+                                      if k != "prices"},
+            "cache_hashes": {name: hashlib.sha256((cache_dir / name).read_bytes()).hexdigest()
+                             for name in files.values()},
+        }
+        (cache_dir / f"{group}_source.json").write_text(json.dumps(meta, indent=2))
+        self.provenance.setdefault(ticker, {})[group] = {**meta, "cache_used": False}
+
+    def _cache_valid(self, cache_dir, group, files):
+        meta = self._metadata(cache_dir, group)
+        if not recent(meta.get("source_fetched_at")):
+            return False
+        try:
+            return all(meta.get("cache_hashes", {}).get(name) ==
+                       hashlib.sha256((cache_dir / name).read_bytes()).hexdigest()
+                       for name in files.values())
+        except OSError:
+            return False
+
     def fetch(self, ticker: str, force_refresh: bool = False) -> Statements:
         cache_dir = DATA_RAW / ticker
         cache_dir.mkdir(parents=True, exist_ok=True)
 
         if not force_refresh and self._cache_complete(cache_dir):
             log.info("[%s] Loading from cache", ticker)
+            self.provenance.setdefault(ticker, {})["annual"] = {
+                **self._metadata(cache_dir, "annual"), "cache_used": True}
             return self._load_cache(cache_dir)
 
         log.info("[%s] Fetching from yfinance", ticker)
         tk = yf.Ticker(ticker)
 
+        frames = {"balance_sheet": tk.balance_sheet,
+                  "income_stmt": tk.income_stmt, "cash_flow": tk.cashflow}
         stmts: Statements = {
-            "balance_sheet": self._annual(tk.balance_sheet),
-            "income_stmt":   self._annual(tk.income_stmt),
-            "cash_flow":     self._annual(tk.cashflow),
+            **{key: self._annual(frame) for key, frame in frames.items()},
             "prices":        self._prices(tk),
         }
 
         # Detect and cache currency metadata while we have the Ticker object
-        self._detect_and_cache_currency(tk, ticker, cache_dir, force_refresh)
+        self._detect_and_cache_currency(tk, ticker, cache_dir, True)
 
         self._save_cache(cache_dir, stmts)
+        self._record(ticker, cache_dir, "annual", frames)
         return stmts
 
     # Quarterly statements, cached separately from the annual files.
@@ -56,9 +93,9 @@ class YFinanceFetcher(BaseFetcher):
         cache_dir = DATA_RAW / ticker
         cache_dir.mkdir(parents=True, exist_ok=True)
 
-        if not force_refresh and all(
-            (cache_dir / f).exists() for f in self._Q_FILES.values()
-        ):
+        if not force_refresh and self._cache_valid(cache_dir, "quarterly", self._Q_FILES):
+            self.provenance.setdefault(ticker, {})["quarterly"] = {
+                **self._metadata(cache_dir, "quarterly"), "cache_used": True}
             return {
                 key: pd.read_parquet(cache_dir / fname)
                 for key, fname in self._Q_FILES.items()
@@ -72,8 +109,8 @@ class YFinanceFetcher(BaseFetcher):
             "cash_flow":     self._q_normalize(tk.quarterly_cashflow),
         }
         for key, fname in self._Q_FILES.items():
-            if not out[key].empty:
-                out[key].to_parquet(cache_dir / fname)
+            out[key].to_parquet(cache_dir / fname)
+        self._record(ticker, cache_dir, "quarterly", out)
         return out
 
     def _q_normalize(self, df: pd.DataFrame | None) -> pd.DataFrame:
@@ -177,7 +214,7 @@ class YFinanceFetcher(BaseFetcher):
         return hist[["Open", "High", "Low", "Close", "Volume"]]
 
     def _cache_complete(self, cache_dir: Path) -> bool:
-        return all((cache_dir / fname).exists() for fname in RAW_FILES.values())
+        return self._cache_valid(cache_dir, "annual", RAW_FILES)
 
     def _load_cache(self, cache_dir: Path) -> Statements:
         return {
@@ -188,5 +225,4 @@ class YFinanceFetcher(BaseFetcher):
     def _save_cache(self, cache_dir: Path, stmts: Statements) -> None:
         for key, fname in RAW_FILES.items():
             df: pd.DataFrame = stmts[key]  # type: ignore[assignment]
-            if not df.empty:
-                df.to_parquet(cache_dir / fname)
+            df.to_parquet(cache_dir / fname)

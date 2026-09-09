@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import datetime
+import argparse
+import html
 import json
 import math
 from pathlib import Path
@@ -26,7 +28,10 @@ def generate(output_path: Path | None = None) -> Path:
 
 
 def main() -> None:
-    path = generate()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    path = generate(args.output)
     print(f"Dashboard written to {path}")
 
 
@@ -36,6 +41,11 @@ def main() -> None:
 
 def _load_results() -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
+    try:
+        health = json.loads((DATA_RESULTS / "health.json").read_text())
+        statuses = {r["ticker"]: r for r in health.get("companies", [])}
+    except (OSError, ValueError):
+        statuses = {}
     for company in COMPANIES:
         ticker = company.ticker
         result_dir = DATA_RESULTS / ticker
@@ -47,6 +57,8 @@ def _load_results() -> dict[str, dict[str, Any]]:
                 out[ticker][fw_file.stem] = json.loads(fw_file.read_text())
             except Exception:
                 pass
+        out[ticker]["publication_health"] = {**statuses.get(ticker, {"status": "blocked"}),
+                                             "publication_snapshot_id": health.get("snapshot_id") if statuses else None}
     return out
 
 
@@ -152,7 +164,7 @@ def _company_summary(ticker: str, fws: dict) -> str:
     if pio:
         f = pio.get("f_score")
         if f is not None:
-            if f >= 7:
+            if f >= 8:
                 positives.append(f"solid fundamentals (F-Score {f}/9)")
             elif f <= 3:
                 concerns.append(f"weak fundamental signals (F-Score {f}/9)")
@@ -207,6 +219,8 @@ def _company_summary(ticker: str, fws: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _summary_row(ticker: str, fws: dict) -> str:
+    if fws.get("publication_health", {}).get("status") == "blocked":
+        return f'<tr><td>{html.escape(ticker)}</td><td colspan="7">Current scores withheld: source retrieval or coverage failed. See publication health.</td></tr>'
     period_cell = "—"
     ccy_info    = fws.get("currency", {})
     company     = TICKER_MAP.get(ticker)
@@ -227,7 +241,7 @@ def _summary_row(ticker: str, fws: dict) -> str:
         if p:
             s = p.get("f_score")
             if s is not None:
-                c = "green" if s >= 7 else ("yellow" if s >= 5 else "red")
+                c = "green" if s >= 8 else ("yellow" if s >= 5 else "red")
                 piotroski = _f_score_bar(s, c)
             else:
                 n = p.get("signals_assessable", 0)
@@ -306,6 +320,8 @@ def _f_score_bar(score: int, color: str) -> str:
 # ---------------------------------------------------------------------------
 
 def _detail_card(ticker: str, fws: dict) -> str:
+    if fws.get("publication_health", {}).get("status") == "blocked":
+        return f'<div class="card"><strong>{html.escape(ticker)}</strong>: current detail scores withheld; source retrieval or coverage failed.</div>'
     company   = TICKER_MAP.get(ticker)
     ccy_info  = fws.get("currency", {})
     fin_ccy   = ccy_info.get("financial_currency") or (company.reporting_currency if company else "?")
@@ -475,7 +491,7 @@ def _piotroski_rows(periods: dict, cols: list[str]) -> str:
     for c in cols:
         s = periods.get(c, {}).get("f_score")
         if s is not None:
-            color = "green" if s >= 7 else ("yellow" if s >= 5 else "red")
+            color = "green" if s >= 8 else ("yellow" if s >= 5 else "red")
             cells += f"<td>{_f_score_bar(s, color)}</td>"
         else:
             cells += "<td>—</td>"
@@ -649,11 +665,27 @@ def _build_html(data: dict) -> str:
     _dt   = datetime.datetime.now(tz=_oslo)
     _tzn  = "CEST" if _dt.dst() and _dt.dst().seconds > 0 else "CET"
     now   = _dt.strftime(f"%Y-%m-%d %H:%M {_tzn}")
-    n_ok = sum(1 for fws in data.values() if fws)
+    n_ok = sum(1 for fws in data.values() if fws and fws.get("publication_health", {}).get("status") != "blocked")
+    publication_ids = {fws.get("publication_health", {}).get("publication_snapshot_id") for fws in data.values()}
+    publication_id = next(iter(publication_ids)) if len(publication_ids) == 1 else None
 
     summary_rows  = "\n".join(_summary_row(t, fws) for t, fws in data.items())
     detail_cards  = "\n".join(_detail_card(t, fws) for t, fws in data.items() if fws)
     currency_html = _currency_table(data)
+    trust_rows = []
+    for ticker, fws in data.items():
+        source = fws.get("dupont", {}).get("source_metadata", {})
+        groups = source.get("groups", {})
+        annual = groups.get("annual", {}).get("source_fetched_at") or "Unknown"
+        quarterly = groups.get("quarterly", {}).get("source_fetched_at") or "Unknown"
+        ledger = source.get("primary_ledger", {})
+        cells = [ticker, annual, quarterly,
+                 source.get("latest_statement_period_end") or "Unknown",
+                 source.get("statement_status", "unverified"),
+                 ", ".join(source.get("missing_statement_tables", [])) or "None reported",
+                 f"{ledger.get('verified_items', 0)} checked / {ledger.get('filled_items', 0)} filled; filing date unverified"]
+        trust_rows.append("<tr>" + "".join(f"<td>{html.escape(str(c))}</td>" for c in cells) + "</tr>")
+    trust_html = "".join(trust_rows)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -814,11 +846,19 @@ footer a{{color:var(--accent);text-decoration:none}}
   </div>
   <div class="meta-pill">
     <strong>{n_ok} of {len(COMPANIES)} companies computed</strong><br>
-    Updated {now}
+    Report rendered {now}
   </div>
 </header>
 
 <main>
+
+<div class="disclaimer" id="source-health">
+  <strong id="live-health-status">Live publication health not yet verified.</strong>
+  A newly rendered report is not a new filing. Provider period ends do not prove filing publication dates.
+  Read the <a href="health.json">publication health record</a> before using these figures.
+  Legacy results without retrieval provenance remain unverified.
+</div>
+<div class="tscroll"><table><thead><tr><th>Company</th><th>Annual data fetched (UTC)</th><th>Interim data fetched (UTC)</th><th>Latest statement end</th><th>Statement age status</th><th>Missing tables</th><th>Primary source coverage</th></tr></thead><tbody>{trust_html}</tbody></table></div>
 
 <!-- ── Legend ─────────────────────────────────────────────── -->
 <p class="section-title">Framework Guide &amp; Legends</p>
@@ -848,7 +888,7 @@ footer a{{color:var(--accent);text-decoration:none}}
         <h5>Piotroski F-Score</h5>
         <p>A checklist of 9 binary signals across profitability, capital structure, and operating efficiency. Each signal scores 0 or 1. The progress bar shows the total out of 9.</p>
         <div class="reading">
-          <strong>How to read:</strong> 7–9 = Strong. 5–6 = Moderate. 0–4 = Weak. A rising score over multiple years is more meaningful than any single reading.
+          <strong>How to read:</strong> 8–9 = Strong. 5–7 = Moderate. 0–4 = Weak. A rising score over multiple years is more meaningful than any single reading.
         </div>
       </div>
       <div class="fw-card">
@@ -951,6 +991,20 @@ footer a{{color:var(--accent);text-decoration:none}}
 </footer>
 
 <script>
+const reportSnapshotId = {json.dumps(publication_id)};
+fetch('health.json', {{cache:'no-store'}}).then(r => {{ if (!r.ok) throw new Error(); return r.json(); }}).then(h => {{
+  const age = Date.now() - Date.parse(h.generated_at);
+  const sameSnapshot = reportSnapshotId && reportSnapshotId === h.snapshot_id;
+  const state = !Number.isFinite(age) || age < 0 || age > 8 * 86400000 ? 'unverified / stale health record' :
+    !sameSnapshot ? 'blocked / retained previous snapshot' : h.status;
+  document.getElementById('live-health-status').textContent = 'Publication health: ' + state;
+  const message = document.createElement('p');
+  message.textContent = 'Publication status: ' + state + (h.published_content_retained ? '. Previous report retained after a failed refresh.' : '') + ' — actual source retrieval: ' + (h.source_fetched_at || 'unknown');
+  document.getElementById('source-health').prepend(message);
+}}).catch(() => {{
+  document.getElementById('live-health-status').textContent = 'Publication health unavailable — source freshness unverified';
+  document.getElementById('source-health').prepend(document.createTextNode('Publication health unavailable. Treat source freshness as unverified. '));
+}});
 function togglePanel(btn) {{
   const body = btn.nextElementSibling;
   const open = body.classList.toggle('open');
@@ -968,3 +1022,7 @@ function toggleCard(ticker) {{
 
 </body>
 </html>"""
+
+
+if __name__ == "__main__":
+    main()

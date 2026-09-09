@@ -1,16 +1,4 @@
-"""Post-run health check: assert the pipeline actually produced fresh results.
-
-The dashboard commits `data/results/` to the repository, so the JSON files are
-always present even when a run fetches nothing at all. Counting files therefore
-proves nothing. This module counts companies whose results were *recomputed by
-the current run*, using the `computed_at` stamp each framework writes, and exits
-non-zero when that count falls below a floor.
-
-Rationale: `continue-on-error: true` on the fetch step means a run in which every
-ticker failed still reports success and still commits. Without this check there is
-no signal — the dashboard silently serves stale numbers while Actions stays green.
-"""
-
+"""Publication gate based on actual retrievals, coverage and coherent results."""
 from __future__ import annotations
 
 import argparse
@@ -18,184 +6,143 @@ import datetime
 import json
 import math
 import os
-import sys
+from pathlib import Path
 
 from oslo_quant.config import ALL_FRAMEWORKS, COMPANIES, DATA_RESULTS
-
-# Fraction of configured companies that must be fresh for a run to count as healthy.
-_DEFAULT_FLOOR_RATIO = 0.8
-
-# A result is "fresh" if recomputed within this window. Generously wider than a
-# normal run (minutes) so a slow fetch never trips a false alarm.
-_DEFAULT_WITHIN_HOURS = 6.0
+from oslo_quant.trust import parse_stamp, recent, stamp, utc_now
 
 
-def _parse_computed_at(raw: str) -> datetime.datetime | None:
-    """Parse the `computed_at` stamp into an aware UTC datetime."""
-    if not raw:
-        return None
-    text = raw.strip()
-    if text.endswith("Z"):          # fromisoformat() only accepts 'Z' on 3.11+
-        text = text[:-1]
+def _parse_computed_at(raw):
+    # Display-only compatibility; source times require a timezone.
+    if isinstance(raw, str) and raw and not raw.endswith("Z") and "+" not in raw[10:]:
+        raw += "+00:00"
+    return parse_stamp(raw)
+
+
+def build_health(within_hours=6, min_fresh=None, results_dir=None) -> dict:
+    root = Path(results_dir or DATA_RESULTS)
+    total = len(COMPANIES)
+    floor = min_fresh if min_fresh is not None else max(1, math.ceil(0.8 * total))
     try:
-        parsed = datetime.datetime.fromisoformat(text)
-    except ValueError:
-        return None
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=datetime.timezone.utc)
-    return parsed.astimezone(datetime.timezone.utc)
-
-
-def _scan(ticker: str) -> tuple[datetime.datetime | None, int]:
-    """Return (newest `computed_at`, max period count) across a ticker's frameworks.
-
-    The period count matters as much as the timestamp. A fetch that returns empty
-    statements still computes "successfully" with zero periods and still writes a
-    fresh `computed_at`, overwriting good data. Recency alone would wave that
-    through, so an empty result must not be allowed to count as healthy.
-    """
-    result_dir = DATA_RESULTS / ticker
-    if not result_dir.is_dir():
-        return None, 0
-
-    stamps: list[datetime.datetime] = []
-    max_periods = 0
-    for framework in ALL_FRAMEWORKS:
-        path = result_dir / f"{framework}.json"
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            continue
-        stamp = _parse_computed_at(payload.get("computed_at", ""))
-        if stamp is not None:
-            stamps.append(stamp)
-        periods = payload.get("periods")
-        if isinstance(periods, dict):
-            max_periods = max(max_periods, len(periods))
-
-    return (max(stamps) if stamps else None), max_periods
-
-
-def _classify(
-    within_hours: float,
-) -> tuple[list[str], list[tuple[str, float]], list[str], list[str]]:
-    """Split configured companies into (fresh, stale, empty, missing)."""
-    now = datetime.datetime.now(tz=datetime.timezone.utc)
-    cutoff = now - datetime.timedelta(hours=within_hours)
-
-    fresh: list[str] = []
-    stale: list[tuple[str, float]] = []
-    empty: list[str] = []
-    missing: list[str] = []
-
+        run = json.loads((root / "run.json").read_text())
+    except (OSError, ValueError):
+        run = {}
+    run_id = run.get("run_id")
+    rows = []
+    fetched_times = []
+    now = utc_now()
     for company in COMPANIES:
-        newest, periods = _scan(company.ticker)
-        if newest is None:
-            missing.append(company.ticker)
-        elif newest < cutoff:
-            age_hours = (now - newest).total_seconds() / 3600.0
-            stale.append((company.ticker, age_hours))
-        elif periods == 0:
-            empty.append(company.ticker)
-        else:
-            fresh.append(company.ticker)
+        errors = []
+        payloads = []
+        for framework in ALL_FRAMEWORKS:
+            try:
+                payload = json.loads((root / company.ticker / f"{framework}.json").read_text())
+                payloads.append(payload)
+            except (OSError, ValueError):
+                errors.append(f"missing {framework} result")
+        sources = [p.get("source_metadata", {}) for p in payloads]
+        if not run_id or any(s.get("run_id") != run_id for s in sources):
+            errors.append("missing provenance or results retained from another run")
+        if len({s.get("snapshot_id") for s in sources}) != 1:
+            errors.append("frameworks use different source snapshots")
+        if any(not p.get("periods") for p in payloads):
+            errors.append("empty framework result")
+        source = sources[0] if sources else {}
+        annual_periods = source.get("groups", {}).get("annual", {}).get("statement_period_ends", {})
+        if not all(annual_periods.get(k) for k in ("income_stmt", "balance_sheet")):
+            errors.append("missing annual income/balance-sheet period coverage")
+        for group in source.get("groups", {}).values():
+            for periods in group.get("statement_period_ends", {}).values():
+                for period in periods:
+                    try:
+                        if datetime.date.fromisoformat(period) > now.date():
+                            errors.append("future provider observation date")
+                    except (ValueError, TypeError):
+                        errors.append("invalid provider observation date")
+        source_times = []
+        for group in ("annual", "quarterly"):
+            meta = source.get("groups", {}).get(group, {})
+            if meta.get("cache_used") is not False:
+                errors.append(f"{group}: no new provider retrieval (cache or missing)")
+            fetched = meta.get("source_fetched_at")
+            if not recent(fetched, within_hours, now):
+                errors.append(f"{group}: retrieval time missing, stale or future")
+            elif fetched:
+                source_times.append(fetched)
+        if source.get("statement_status") == "invalid-future-period":
+            errors.append("future statement period")
+        row = {
+            "ticker": company.ticker, "status": "blocked" if errors else "current",
+            "withheld_reasons": errors,
+            "source_fetched_at": min(source_times) if len(source_times) == 2 else None,
+            "latest_statement_period_end": source.get("latest_statement_period_end"),
+            "statement_age_days": source.get("statement_age_days"),
+            "statement_status": source.get("statement_status", "unverified"),
+            "missing_statement_tables": source.get("missing_statement_tables", []),
+            "primary_ledger": source.get("primary_ledger", {"status": "unverified"}),
+            "filing_publication_date": None, "filing_date_status": "unverified",
+        }
+        if not errors and (row["statement_status"] in {"aged", "missing"}
+                           or row["missing_statement_tables"]
+                           or row["primary_ledger"].get("status") != "partial-line-items"
+                           or row["primary_ledger"].get("mismatches", 0)):
+            row["status"] = "degraded"
+        if not errors:
+            fetched_times.extend(source_times)
+        rows.append(row)
+    refreshed = sum(not row["withheld_reasons"] for row in rows)
+    status = "blocked" if refreshed < floor else (
+        "degraded" if any(r["status"] != "current" for r in rows) else "current")
+    periods = sorted(r["latest_statement_period_end"] for r in rows if r["latest_statement_period_end"])
+    issues = [f"{r['ticker']}: {', '.join(r['withheld_reasons'])}" for r in rows if r["withheld_reasons"]]
+    unverified = sum(r["primary_ledger"].get("status") != "partial-line-items" for r in rows)
+    if unverified:
+        issues.append(f"{unverified} companies have no primary-ledger line-item coverage; filing dates remain unverified for all companies")
+    return {
+        "schema_version": 1, "snapshot_id": run_id, "generated_at": stamp(),
+        "status": status, "source_fetched_at": min(fetched_times) if fetched_times else None,
+        "market_data_as_of": None, "expected_session": None,
+        "data_kind": "financial-statements", "source_freshness_limit_hours": within_hours,
+        "source_observation_start": periods[0] if periods else None,
+        "source_observation_end": periods[-1] if periods else None,
+        "issues": issues, "reasons": issues,
+        "coverage": {"expected": total, "refreshed": refreshed,
+                     "withheld": total - refreshed, "minimum_refreshed": floor,
+                     "primary_ledger_companies": sum(r["primary_ledger"].get("status") == "partial-line-items" for r in rows)},
+        "withheld_reasons": [f"{r['ticker']}: {', '.join(r['withheld_reasons'])}"
+                             for r in rows if r["withheld_reasons"]],
+        "companies": rows,
+        "limitations": [
+            "Provider retrieval freshness does not prove that the latest filing is available.",
+            "Statement period ends are provider observations; filing publication dates remain unverified.",
+            "Primary ledgers verify selected annual line items only; no whole-report verification is implied.",
+            "180 days is a disclosed statement-age warning, not a regulatory filing deadline.",
+        ],
+    }
 
-    return fresh, stale, empty, missing
 
-
-def _emit(line: str, summary_lines: list[str]) -> None:
-    print(line)
-    summary_lines.append(line)
-
-
-def _write_step_summary(lines: list[str]) -> None:
-    """Mirror the report into the GitHub Actions run summary, when available."""
-    path = os.environ.get("GITHUB_STEP_SUMMARY")
-    if not path:
-        return
-    try:
-        with open(path, "a", encoding="utf-8") as fh:
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--within-hours", type=float, default=6)
+    parser.add_argument("--min-fresh", type=int)
+    parser.add_argument("--json", type=Path)
+    args = parser.parse_args(argv)
+    if args.within_hours <= 0 or (args.min_fresh is not None and not 1 <= args.min_fresh <= len(COMPANIES)):
+        parser.error("Use positive hours and a minimum between 1 and the configured company count")
+    health = build_health(args.within_hours, args.min_fresh)
+    if args.json:
+        args.json.write_text(json.dumps(health, indent=2) + "\n")
+    lines = [f"Source retrieval gate: {health['status'].upper()}",
+             f"New retrievals: {health['coverage']['refreshed']}/{health['coverage']['expected']}",
+             *health["withheld_reasons"]]
+    if health["coverage"]["refreshed"] == 0:
+        lines.append("No results at all qualified as newly retrieved.")
+    print("\n".join(lines))
+    if os.getenv("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh:
             fh.write("\n".join(lines) + "\n")
-    except OSError:
-        pass
-
-
-def _build_parser() -> argparse.ArgumentParser:
-    total = len(COMPANIES)
-    default_floor = max(1, math.floor(_DEFAULT_FLOOR_RATIO * total))
-    parser = argparse.ArgumentParser(
-        prog="oslo-quant-check",
-        description="Fail if the latest run did not refresh enough companies.",
-    )
-    parser.add_argument(
-        "--min-fresh",
-        type=int,
-        default=default_floor,
-        metavar="N",
-        help=(
-            f"Minimum companies that must have been recomputed "
-            f"(default: {default_floor}, i.e. {_DEFAULT_FLOOR_RATIO:.0%} of {total})"
-        ),
-    )
-    parser.add_argument(
-        "--within-hours",
-        type=float,
-        default=_DEFAULT_WITHIN_HOURS,
-        metavar="H",
-        help=f"Treat results older than this as stale (default: {_DEFAULT_WITHIN_HOURS:g})",
-    )
-    return parser
-
-
-def main(argv: list[str] | None = None) -> int:
-    args = _build_parser().parse_args(argv)
-
-    total = len(COMPANIES)
-    fresh, stale, empty, missing = _classify(args.within_hours)
-
-    summary: list[str] = []
-    _emit("## Oslo Quant health check", summary)
-    _emit("", summary)
-    _emit(
-        f"Refreshed **{len(fresh)} of {total}** companies with usable data "
-        f"within the last {args.within_hours:g}h (floor: {args.min_fresh}).",
-        summary,
-    )
-
-    if stale:
-        _emit("", summary)
-        _emit("Stale (not recomputed by this run):", summary)
-        for ticker, age_hours in sorted(stale, key=lambda item: -item[1]):
-            _emit(f"- `{ticker}` — last computed {age_hours:.1f}h ago", summary)
-
-    if empty:
-        _emit("", summary)
-        _emit(
-            "Recomputed but **empty** (0 periods — fetch returned no statements, "
-            "good data may have been overwritten): "
-            + ", ".join(f"`{t}`" for t in empty),
-            summary,
-        )
-
-    if missing:
-        _emit("", summary)
-        _emit("No results at all: " + ", ".join(f"`{t}`" for t in missing), summary)
-
-    healthy = len(fresh) >= args.min_fresh
-    _emit("", summary)
-    _emit("Result: **PASS**" if healthy else "Result: **FAIL**", summary)
-    _write_step_summary(summary)
-
-    if not healthy:
-        # ::error:: surfaces as an annotation on the Actions run.
-        print(
-            f"::error::Only {len(fresh)} of {total} companies were refreshed "
-            f"(minimum {args.min_fresh}). The dashboard is serving stale data.",
-            file=sys.stderr,
-        )
-        return 1
-    return 0
+    return int(health["status"] == "blocked")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())
