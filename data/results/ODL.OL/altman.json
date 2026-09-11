@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "altman",
-  "computed_at": "2026-09-09T06:44:25.399200Z",
+  "computed_at": "2026-09-11T19:43:06.400366Z",
   "periods": {
     "2025": {
       "z_score": 1.7763,
@@ -52,12 +52,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "c7de57141cda79357128",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "54097f8ec137df3a2faa",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:24.773503+00:00",
+        "source_fetched_at": "2026-09-11T19:43:05.878089+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -85,12 +85,12 @@
           "balance_sheet.parquet": "2336ed6060278feee7b47d082ac7e37ec5d0921e4bf6f9f7866eda1eead59579",
           "income_stmt.parquet": "dadf4c3f2d34060115672ca68f78e1a028067b1f05f11d971c32317b1cbf7838",
           "cash_flow.parquet": "4546ad6ad6ad353e329b9e417e3e28b74b6d98fb04d94feb8676aa3d495a91cb",
-          "prices.parquet": "cf84f32d0e426483b39f0c55235f79a95ee6214c85843e41f3b65d560ef20ecf"
+          "prices.parquet": "4df2a99be05cb82d17ce570547e4b10dd9322135221d65539fef2e38d209998d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:25.381208+00:00",
+        "source_fetched_at": "2026-09-11T19:43:06.370436+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -126,7 +126,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

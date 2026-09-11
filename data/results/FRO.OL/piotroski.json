@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "piotroski",
-  "computed_at": "2026-09-09T06:44:17.830039Z",
+  "computed_at": "2026-09-11T19:42:59.022524Z",
   "periods": {
     "LTM 2026-06": {
       "f_score": 8,
@@ -118,12 +118,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "ed8445a638e366e21b56",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "83ea4a06e42a825bd0d7",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:17.348775+00:00",
+        "source_fetched_at": "2026-09-11T19:42:58.453653+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -151,12 +151,12 @@
           "balance_sheet.parquet": "789f392cab4f161977c868ad64aa423154e17ec978f5d2a288241f856d7bb117",
           "income_stmt.parquet": "ebb0324a0a32fd44ecb1c04b6312b4abd8ef3f952ce165bd0d8ca2d978230f96",
           "cash_flow.parquet": "772d9a32e78f00ae09d4c671978af0ec7b7e3ee3f1f1a56f17da0e8cee028e87",
-          "prices.parquet": "c5c7fa0533c72817815ea47f0d4aa7b1e94964bd03ea8f60898d571c079a2f09"
+          "prices.parquet": "b774fd0d372d0222788529a189fcacf05b8ac2dffa4cbc5b6d49999ff53d4e9b"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:17.815585+00:00",
+        "source_fetched_at": "2026-09-11T19:42:58.998631+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -193,7 +193,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

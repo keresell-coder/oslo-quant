@@ -1,7 +1,7 @@
 {
   "ticker": "KIT.OL",
   "framework": "altman",
-  "computed_at": "2026-09-09T06:44:34.580833Z",
+  "computed_at": "2026-09-11T19:43:16.395356Z",
   "periods": {
     "2025": {
       "z_score": 2.4574,
@@ -52,12 +52,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "a1f633d224b502067a6d",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "ea813cada3834bc40b35",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:34.090872+00:00",
+        "source_fetched_at": "2026-09-11T19:43:15.901476+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -85,12 +85,12 @@
           "balance_sheet.parquet": "d42c66590f57e173ab74925379b897112204cf1eb7d438af46587ffd8150a4bb",
           "income_stmt.parquet": "3ec02aadd0a81d55ec6848ed37f81f6dbc0c15f8a289ed77a5c86c6eae5c2154",
           "cash_flow.parquet": "12a66471006a9e1ecdaa105135c5be6c002f1b5c015bfc34d1f27cce3d35cf6c",
-          "prices.parquet": "3344e12c6ab3a4721a9e1c112c3466471390b470832f346ac8898df034518ec6"
+          "prices.parquet": "dc8e70c254e0f61c243f01aa13b7c1a02fc61b292b6cd49a889198992c8ec005"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:34.564215+00:00",
+        "source_fetched_at": "2026-09-11T19:43:16.366256+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -119,14 +119,14 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "b1a4e316fd01b5d7cff0458e888b69b35a6586a743527774d199a04a1846042e",
-          "quarterly_income_stmt.parquet": "29f8e670d1f9fb0aec5709e6b31b58fa9fa03dfabb5cb89a828c3992e65908e3",
+          "quarterly_income_stmt.parquet": "a340c577f9c282ef182025bb01f1d27e54d10cbed56ac680986565ef6dba94ba",
           "quarterly_cash_flow.parquet": "7e516f388aa90c07e02b493b597a73b9411b4dd31b057b2644ce2136962e73f7"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

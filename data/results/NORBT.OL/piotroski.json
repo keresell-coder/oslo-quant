@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "piotroski",
-  "computed_at": "2026-09-09T06:44:35.697710Z",
+  "computed_at": "2026-09-11T19:43:17.868895Z",
   "periods": {
     "LTM 2026-06": {
       "f_score": 6,
@@ -118,12 +118,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "f6e46570d59b9022c378",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "827c0fcb14d1277c9bfe",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:35.243330+00:00",
+        "source_fetched_at": "2026-09-11T19:43:17.311277+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -151,12 +151,12 @@
           "balance_sheet.parquet": "9e35debd25f8319dbd52a90372b1bb0e1dbfe591a18a52bc510ce9885fcc0021",
           "income_stmt.parquet": "2c8c7c58220a3ed1eb9393af486ac8dc2c832a7d8d06cbdb4a3e032451612807",
           "cash_flow.parquet": "b54717bba219220302c11e47954829ccf63efa7e880ee715069e6dcbc165bc64",
-          "prices.parquet": "510ac267abba85677e5dc37d76158ca173ee61f82ba8c8cb0ead27203ba19be5"
+          "prices.parquet": "79a3cc04b04166eceb15b8a0550158991c38bf95496895bc52646c66c9ff988e"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:35.683341+00:00",
+        "source_fetched_at": "2026-09-11T19:43:17.844527+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -195,7 +195,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

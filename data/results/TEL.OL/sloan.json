@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "sloan",
-  "computed_at": "2026-09-09T06:44:36.925158Z",
+  "computed_at": "2026-09-11T19:43:19.351477Z",
   "periods": {
     "2025": {
       "cfo_accruals": -24188000000.0,
@@ -56,12 +56,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "409f496052d5de93ef8d",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "a95f4da509e2aa4dbe73",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:36.549918+00:00",
+        "source_fetched_at": "2026-09-11T19:43:18.818142+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -89,12 +89,12 @@
           "balance_sheet.parquet": "3f41ba2e31e4a9687647fe78c89c206a7af7b8093d15ff6411dc475d3e14650c",
           "income_stmt.parquet": "cb69222a8ece8980fc38bbf0800ac3340bfe5c09a2f6a35b775c0caccba12823",
           "cash_flow.parquet": "03c47a7649a6e84cdde13994c00bfdd26cfc5cf328fab6fc1183fadc9d08f5a0",
-          "prices.parquet": "b51255513501d8e1ac7f88d3e428c8d8382a2b85bf1bf937912be2f63913171c"
+          "prices.parquet": "536c59bcb445e9725b7e37f8fc345070de412c7f23aaf1b374cf23bf969dee10"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:36.912171+00:00",
+        "source_fetched_at": "2026-09-11T19:43:19.330021+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -124,14 +124,14 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "6b8f95de4bc2b94af5ba92412acce4d838893153479121c98c99b53d96d9655d",
-          "quarterly_income_stmt.parquet": "9d6102fd02bf7a62bbe6397ff1f0320c4c2c186735d8b3fdd89ab8b996825afb",
+          "quarterly_income_stmt.parquet": "f5e611ffbe03301a59363eea1d7ad7908632c59bea407458d2114c964d636f4c",
           "quarterly_cash_flow.parquet": "4ff42d91f048308c712faa5dd0fe873dd7f673138b87c610313ab1eaea838802"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

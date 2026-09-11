@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "dupont",
-  "computed_at": "2026-09-09T06:44:29.553946Z",
+  "computed_at": "2026-09-11T19:43:10.671560Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.1649,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "53071a8f4ea3835337b8",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "3217997964f55d7f8004",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:28.934840+00:00",
+        "source_fetched_at": "2026-09-11T19:43:10.030691+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "f2c9b2577cc67a608e7c3d50c45735473198e028d0e21c004a5feb957fc29305",
           "income_stmt.parquet": "5e49adc16c57577f7d92f2ba78fed933a95c9d9e1f8ad7a1d34c9185bdc3e974",
           "cash_flow.parquet": "b6b6ea353ef52c6526f3b556196cd2d0cd05b7c0a62bdc3d3402035a13df4516",
-          "prices.parquet": "6baccc4604cd22384f22cf2b39c045f173de0487d38bb3793f12be76864308c9"
+          "prices.parquet": "1d0c435f2ad6f3a9b353ed573d0a2d08493aa9b3cd3f1fe3ba45e593dda04649"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:29.447876+00:00",
+        "source_fetched_at": "2026-09-11T19:43:10.561826+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -154,7 +154,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

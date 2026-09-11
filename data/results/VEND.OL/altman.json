@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "altman",
-  "computed_at": "2026-09-09T06:44:20.626129Z",
+  "computed_at": "2026-09-11T19:43:02.104825Z",
   "periods": {
     "2025": {
       "z_score": 3.1187,
@@ -52,12 +52,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "2b06edcef95043a7a0ffb20f9ca2be26",
-    "snapshot_id": "9502ca287f7d01a02d01",
+    "run_id": "96d5b8ced24640beb5f3170c1ff5551b",
+    "snapshot_id": "42b76c1eed2a2071a7c1",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-09T06:44:20.050295+00:00",
+        "source_fetched_at": "2026-09-11T19:43:01.468529+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -84,12 +84,12 @@
           "balance_sheet.parquet": "cb9aef8f27771d5e841a47ee6f1f331f13497396d8e00dd3b4f0e92ccb79aeec",
           "income_stmt.parquet": "232fc10160fa6f76cc6f528b8233da9f0505a0268590d8ed30e3e351236f3921",
           "cash_flow.parquet": "22ea99b4a1840bad7b6e176be0524d844eae67b9158c90bfe62085b6d757812d",
-          "prices.parquet": "6c560ff68b5791d058b7c8e8b0bafc2b18a1ce5f9d2c8389475c542fd9e0b9b5"
+          "prices.parquet": "5012929fcefeef8e2c48b9654276fe25b11be8bfa0fbfc34f49108750b5a1668"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-09T06:44:20.607701+00:00",
+        "source_fetched_at": "2026-09-11T19:43:02.074553+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -126,7 +126,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 71,
+    "statement_age_days": 73,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
