@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "dupont",
-  "computed_at": "2026-09-18T19:36:34.996732Z",
+  "computed_at": "2026-09-25T20:29:48.525372Z",
   "periods": {
     "2025": {
       "net_profit_margin": -0.0291,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "02e614d4b5cc45dc984aa4cd18c5f9fd",
-    "snapshot_id": "362e5cb5a5cf7bf58d21",
+    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
+    "snapshot_id": "7f1d9b76491761d4cffc",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-18T19:36:34.254665+00:00",
+        "source_fetched_at": "2026-09-25T20:29:47.889127+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -96,12 +96,12 @@
           "balance_sheet.parquet": "80f20a665bcea05430b4f90a5fc35540bda7042641ae120a5d0ea75538a04f5d",
           "income_stmt.parquet": "b8b126a5b01cc598f356a53a0c2a57156f4055c86e41aafea702d7b29490dd68",
           "cash_flow.parquet": "472972616673d10e44399160b9fccfc740285ee702c313bfc0985d8cdc0b1d7b",
-          "prices.parquet": "3abf85732ba6f5526c879b269d929922b9f7a0278da0e6c29d290aa3bff4c646"
+          "prices.parquet": "7bade878bae13263758f281aa28601ee3e263074d4b6b19b8e901bf1cf503027"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-18T19:36:34.989517+00:00",
+        "source_fetched_at": "2026-09-25T20:29:48.519395+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -138,7 +138,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 80,
+    "statement_age_days": 87,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

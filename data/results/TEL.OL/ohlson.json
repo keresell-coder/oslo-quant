@@ -1,11 +1,11 @@
 {
   "ticker": "TEL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-09-18T19:36:53.988609Z",
+  "computed_at": "2026-09-25T20:30:05.106062Z",
   "periods": {
     "2025": {
-      "o_score": -1.4769,
-      "bankruptcy_probability": 0.1859,
+      "o_score": -1.4727,
+      "bankruptcy_probability": 0.1865,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6588,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -1.9656,
-      "bankruptcy_probability": 0.1229,
+      "o_score": -1.9614,
+      "bankruptcy_probability": 0.1233,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6426,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -1.4301,
-      "bankruptcy_probability": 0.1931,
+      "o_score": -1.4259,
+      "bankruptcy_probability": 0.1937,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.6775,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "02e614d4b5cc45dc984aa4cd18c5f9fd",
-    "snapshot_id": "50d04d1fc27d4a3dd02b",
+    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
+    "snapshot_id": "1c106547ba6589d149b0",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-18T19:36:53.371285+00:00",
+        "source_fetched_at": "2026-09-25T20:30:04.664034+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "dd11123a749802ab34b33f1cf12c457b0ded60d6668e153e92641280ad2d9d20",
           "income_stmt.parquet": "1b3e7153016b2d47008923e9620012947d49652913c755d82b84734222243e18",
           "cash_flow.parquet": "cb7e52f7542dbfc1b0a34e6777b2d72957866ff46a9880f192d5d62c817cd677",
-          "prices.parquet": "7f0c5577d2227dc4ac57c0b66940af0d9f54045fb2a4e134df7f78251a1e27d2"
+          "prices.parquet": "61f05e140524863494ab3860ada94a19aeef08f2f33f6adf8e7ba89917ecf579"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-18T19:36:53.962961+00:00",
+        "source_fetched_at": "2026-09-25T20:30:05.085697+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -143,7 +143,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 80,
+    "statement_age_days": 87,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "dupont",
-  "computed_at": "2026-09-18T19:36:28.622227Z",
+  "computed_at": "2026-09-25T20:29:42.884058Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.1042,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "02e614d4b5cc45dc984aa4cd18c5f9fd",
-    "snapshot_id": "8ab269137318f2aed191",
+    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
+    "snapshot_id": "7787a52033f03121be6b",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-18T19:36:27.753962+00:00",
+        "source_fetched_at": "2026-09-25T20:29:42.101159+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "8140f463488d7ee413001cbcdcacb4144657f3b7f6f690792aa01c53aa9318c6",
           "income_stmt.parquet": "a5de77b772cb854453e492fb5e864ea784727dcb9e04dca3920ea51bdfbc995b",
           "cash_flow.parquet": "05307edc06e29413d1b31020ef955771d0390b51f6dfb55f0fa71869c6104a98",
-          "prices.parquet": "d60b5672619e406e788e575a93e0999054d44fe30eff65a01d6b7ba5bf4c9663"
+          "prices.parquet": "c6b2331ed480fe14812f476c7fad3826efc4bac813f3cb28a720aaed11302bec"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-18T19:36:28.521843+00:00",
+        "source_fetched_at": "2026-09-25T20:29:42.796337+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -155,7 +155,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 80,
+    "statement_age_days": 87,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

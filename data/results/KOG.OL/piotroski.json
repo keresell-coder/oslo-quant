@@ -1,7 +1,7 @@
 {
   "ticker": "KOG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-09-18T19:36:33.327219Z",
+  "computed_at": "2026-09-25T20:29:47.053152Z",
   "periods": {
     "2025": {
       "f_score": 7,
@@ -96,12 +96,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "02e614d4b5cc45dc984aa4cd18c5f9fd",
-    "snapshot_id": "5f8f87c964c7ccfb70c5",
+    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
+    "snapshot_id": "72996887f414ab52ed87",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-18T19:36:32.847544+00:00",
+        "source_fetched_at": "2026-09-25T20:29:46.522724+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -129,12 +129,12 @@
           "balance_sheet.parquet": "f5dba5499c31c56945cf8c67c66d44043478f924bac922ad6a7b5dd9629624f4",
           "income_stmt.parquet": "bd82f0efa562dc0ba4074c45795013eeb383737b02e072cefee5e1e74be4e575",
           "cash_flow.parquet": "d02027b50b7d46264b7ce507e1037e590dec8305dd9446c94ed17f032f2731f1",
-          "prices.parquet": "fc2b5cc92f87bc1e2d3bda56fcc3480971c4831902e4b46ffb7f421b3b914450"
+          "prices.parquet": "45d6c451fc4c622ed099a3e5b49cbb934db34ef6c5fc2dbc4e65c72d0c5f141d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-18T19:36:33.312268+00:00",
+        "source_fetched_at": "2026-09-25T20:29:47.041381+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -170,7 +170,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 80,
+    "statement_age_days": 87,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

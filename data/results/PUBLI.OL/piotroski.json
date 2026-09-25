@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-09-18T19:36:44.635462Z",
+  "computed_at": "2026-09-25T20:29:57.003389Z",
   "periods": {
     "LTM 2026-06": {
       "f_score": 6,
@@ -118,12 +118,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "02e614d4b5cc45dc984aa4cd18c5f9fd",
-    "snapshot_id": "caab64c990d5063866c0",
+    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
+    "snapshot_id": "a5db9fad031511107741",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-18T19:36:43.857365+00:00",
+        "source_fetched_at": "2026-09-25T20:29:56.329081+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -151,12 +151,12 @@
           "balance_sheet.parquet": "933982807b75cfe98dcbf96041ff6b46191b7bd400413c20145ac11b39490eba",
           "income_stmt.parquet": "f84c72be03653de3fd960e6154a95e9884e3677ddb5e7790ce57e64bbc7773ae",
           "cash_flow.parquet": "1f55f2426683f10d3d4a37467c1864663b25aba672753536688969de5022b4cb",
-          "prices.parquet": "1952cbdf8de6bebd1da658be17f5cca6187139809fd613707d2624a6380904ef"
+          "prices.parquet": "487484eb74a7401d8938d8da3153dad83aa5fba1aa4503f64f58f801212500a1"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-18T19:36:44.455252+00:00",
+        "source_fetched_at": "2026-09-25T20:29:56.909454+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -194,7 +194,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 80,
+    "statement_age_days": 87,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

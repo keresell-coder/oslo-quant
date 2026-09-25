@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "sloan",
-  "computed_at": "2026-09-18T19:36:30.243301Z",
+  "computed_at": "2026-09-25T20:29:44.359060Z",
   "periods": {
     "2025": {
       "cfo_accruals": -2086000000.0,
@@ -56,12 +56,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "02e614d4b5cc45dc984aa4cd18c5f9fd",
-    "snapshot_id": "2b7e1d3992f01648675b",
+    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
+    "snapshot_id": "082ca4a8c8285877cda2",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-18T19:36:29.523652+00:00",
+        "source_fetched_at": "2026-09-25T20:29:43.797749+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -89,12 +89,12 @@
           "balance_sheet.parquet": "ba6c850570888f415148446e65b3996c8136453fd0279ee07d6ff3428f4ed8cb",
           "income_stmt.parquet": "9c1d03efb5edfe465eae667855be322f85bc5177b993b84b0355cc12b02ba291",
           "cash_flow.parquet": "5cd935a98aaad322b5b5488cc7b705361d151241dd44c114f4d20f7752f3c0da",
-          "prices.parquet": "b308b871ea1e83c946472538324dad897d1ddf4514ba3a1b6de94a8744212371"
+          "prices.parquet": "1d54c6cbb272eeda7917e0b74cb82ce3e500fe7818903b38981bad8cf422b51d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-18T19:36:30.092555+00:00",
+        "source_fetched_at": "2026-09-25T20:29:44.267844+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2024-12-31",
@@ -130,7 +130,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 80,
+    "statement_age_days": 87,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
