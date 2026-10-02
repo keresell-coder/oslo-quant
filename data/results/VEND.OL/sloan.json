@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "sloan",
-  "computed_at": "2026-09-25T20:29:48.536541Z",
+  "computed_at": "2026-10-02T21:20:05.713615Z",
   "periods": {
     "2025": {
       "cfo_accruals": -2000000000.0,
@@ -56,12 +56,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
-    "snapshot_id": "7f1d9b76491761d4cffc",
+    "run_id": "f77507d7173548a18b93f37c9735e1e8",
+    "snapshot_id": "164d9d29449a5785b0b9",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-25T20:29:47.889127+00:00",
+        "source_fetched_at": "2026-10-02T21:20:04.924691+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -88,15 +88,14 @@
           "balance_sheet.parquet": "80f20a665bcea05430b4f90a5fc35540bda7042641ae120a5d0ea75538a04f5d",
           "income_stmt.parquet": "b8b126a5b01cc598f356a53a0c2a57156f4055c86e41aafea702d7b29490dd68",
           "cash_flow.parquet": "472972616673d10e44399160b9fccfc740285ee702c313bfc0985d8cdc0b1d7b",
-          "prices.parquet": "7bade878bae13263758f281aa28601ee3e263074d4b6b19b8e901bf1cf503027"
+          "prices.parquet": "1dd14af95d8dc21a126c832e6a1016ddff19a0edf1f033ccd9c9a73ff64da40d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-25T20:29:48.519395+00:00",
+        "source_fetched_at": "2026-10-02T21:20:05.697214+00:00",
         "statement_period_ends": {
           "balance_sheet": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-12-31",
@@ -104,7 +103,6 @@
             "2026-06-30"
           ],
           "income_stmt": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-09-30",
@@ -113,7 +111,6 @@
             "2026-06-30"
           ],
           "cash_flow": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-12-31",
@@ -122,15 +119,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "292ff2f5ed8d1c594e85c800f6bdf72aa658415b165247849876c9532c40b122",
-          "quarterly_income_stmt.parquet": "29800fe294eafe860c7ce5cbbe9947f10437a862b84bf853f20b58b838b49759",
-          "quarterly_cash_flow.parquet": "08f59c556909cc46b55d25d4e8bfb2f15eabf196011d3fc0010eac9021fc2810"
+          "quarterly_balance_sheet.parquet": "7fb47fd48711b7d13d1e530f8179471b28a4e6a12ad9e02026356d0e1973818c",
+          "quarterly_income_stmt.parquet": "2f520682bf6f082f9ce44bba61c2b830ad9fe4f9b9d2a0837770496c028102b4",
+          "quarterly_cash_flow.parquet": "edd7aec9fa0c3e0af56f0089bff173eae879dc3cd15382cde35d70dff0569d3b"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 87,
+    "statement_age_days": 94,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

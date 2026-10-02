@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "sloan",
-  "computed_at": "2026-09-25T20:29:54.001663Z",
+  "computed_at": "2026-10-02T21:20:13.063329Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": -201846000.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
-    "snapshot_id": "533ff5c1c69ebe4e3ef1",
+    "run_id": "f77507d7173548a18b93f37c9735e1e8",
+    "snapshot_id": "63b018c0350456dfa09e",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-25T20:29:53.395116+00:00",
+        "source_fetched_at": "2026-10-02T21:20:12.378560+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,15 +101,14 @@
           "balance_sheet.parquet": "b6768ea50ab83a662cc419af5c03a9d697d3fbe9b1d36eb35b3f56b98ed6e217",
           "income_stmt.parquet": "ea0c23296faf899de31462b6ac2237e1ec128cd05534525ecb3799c9c79adca3",
           "cash_flow.parquet": "efbfa51bd50d285dcb705a440113a5b77a5f12e09583587e018a89a5797c7bb5",
-          "prices.parquet": "622a25c0f07ada33b47d958a1bdf5e125fa3238b629e497387e85d7348223a7c"
+          "prices.parquet": "74f1f91d035ac2962868968335d12e8aaea748bfc614b058a63774d7ffd35c9f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-25T20:29:53.976836+00:00",
+        "source_fetched_at": "2026-10-02T21:20:13.038452+00:00",
         "statement_period_ends": {
           "balance_sheet": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-09-30",
@@ -126,7 +125,6 @@
             "2026-06-30"
           ],
           "cash_flow": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-09-30",
@@ -136,15 +134,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "c7c505a62e124df92621809a1c4981ea72b972d7e5a8d742ca8fe453e6798a77",
+          "quarterly_balance_sheet.parquet": "8b0c525ed47008a517e24723fa5e0d86aa59030a41fca19bac4b2a47c9c50138",
           "quarterly_income_stmt.parquet": "6e640967c10a4be9720fa3b6654e3b3a909f58b459780048333f590be21beeac",
-          "quarterly_cash_flow.parquet": "f4d7fbb3a5bcc5d3c188bb4abd5f3b218c8e44f8909e1fdc3969410a6ba16892"
+          "quarterly_cash_flow.parquet": "80760cec82c49b6d4af8b4eda7a3f78a3a3c4756f6528cd07c1541bcf1b88f69"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 87,
+    "statement_age_days": 94,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

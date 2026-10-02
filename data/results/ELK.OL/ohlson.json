@@ -1,11 +1,11 @@
 {
   "ticker": "ELK.OL",
   "framework": "ohlson",
-  "computed_at": "2026-09-25T20:29:59.574346Z",
+  "computed_at": "2026-10-02T21:20:20.564410Z",
   "periods": {
     "2025": {
-      "o_score": -1.9822,
-      "bankruptcy_probability": 0.1211,
+      "o_score": -1.9776,
+      "bankruptcy_probability": 0.1216,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.494,
@@ -19,8 +19,8 @@
       }
     },
     "2024": {
-      "o_score": -2.9744,
-      "bankruptcy_probability": 0.0486,
+      "o_score": -2.9699,
+      "bankruptcy_probability": 0.0488,
       "interpretation": "Low distress risk",
       "inputs": {
         "tl_ta": 0.513,
@@ -34,8 +34,8 @@
       }
     },
     "2023": {
-      "o_score": -1.6572,
-      "bankruptcy_probability": 0.1601,
+      "o_score": -1.6527,
+      "bankruptcy_probability": 0.1607,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.5157,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "0ca42de588d14ba0a23ddcdcdf7ec691",
-    "snapshot_id": "f0ef0d0406ec29ef465c",
+    "run_id": "f77507d7173548a18b93f37c9735e1e8",
+    "snapshot_id": "52f9fc4b2afdea5c9f4f",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-09-25T20:29:59.103650+00:00",
+        "source_fetched_at": "2026-10-02T21:20:19.942388+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -100,15 +100,14 @@
           "balance_sheet.parquet": "2fbd069cf8dbe047b747b88d848abc29c3115750cf62486698bd2d722aa62c8f",
           "income_stmt.parquet": "7e63f29ad4873e0d236160710b8a57c62c70623d0c2635d8b69a90d684e92203",
           "cash_flow.parquet": "2fd7083812d416f37dfac2df0839bed54dea3086d504d50fc67edc8ca8038258",
-          "prices.parquet": "6a545d73d95964e81c253d28c70d5bb9b75ee72afa1c92fa17bb1c8cf4931d14"
+          "prices.parquet": "563acd8d5426e206a9c930154a6a47514f8900d80b0e56852439e919696a5995"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-09-25T20:29:59.553748+00:00",
+        "source_fetched_at": "2026-10-02T21:20:20.544030+00:00",
         "statement_period_ends": {
           "balance_sheet": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-09-30",
@@ -117,7 +116,6 @@
             "2026-06-30"
           ],
           "income_stmt": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-09-30",
@@ -126,7 +124,6 @@
             "2026-06-30"
           ],
           "cash_flow": [
-            "2024-12-31",
             "2025-03-31",
             "2025-06-30",
             "2025-12-31",
@@ -135,15 +132,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "0265667c2761ddc1cf3d9e8887c86dcff72ea8425ed952db19375b11cf986f89",
-          "quarterly_income_stmt.parquet": "cc4681274e09c9456831852403baa802e099751f1cd26fc6c6df9e7d3ea3aa0b",
-          "quarterly_cash_flow.parquet": "4d923f6084009c1882d6efa41199a472ab05340acf5e63b6adfeeaf08fb1ce3b"
+          "quarterly_balance_sheet.parquet": "858c73f665603e8e725cc39b89aeaf29770df84a8fddb00d3172b623f6c68c2d",
+          "quarterly_income_stmt.parquet": "96ca158d6c896c9b1f2953bb428458248dd96759e2d747f1c01a70134c300cd8",
+          "quarterly_cash_flow.parquet": "a6675625b9c55ba3020fe4142fd580575bc43428914fdca3393d4a14f266e278"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 87,
+    "statement_age_days": 94,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
