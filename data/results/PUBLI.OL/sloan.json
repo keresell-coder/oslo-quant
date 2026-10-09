@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-02T21:20:16.806548Z",
+  "computed_at": "2026-10-09T21:41:20.017305Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": -1340774393.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f77507d7173548a18b93f37c9735e1e8",
-    "snapshot_id": "3b7220c9b1e09a083b8c",
+    "run_id": "1803fbe4176749c6807db71c63eea5fa",
+    "snapshot_id": "b7b455d4fc2ac7c37d89",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-02T21:20:15.931384+00:00",
+        "source_fetched_at": "2026-10-09T21:41:19.239067+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -98,15 +98,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "933982807b75cfe98dcbf96041ff6b46191b7bd400413c20145ac11b39490eba",
-          "income_stmt.parquet": "f84c72be03653de3fd960e6154a95e9884e3677ddb5e7790ce57e64bbc7773ae",
-          "cash_flow.parquet": "1f55f2426683f10d3d4a37467c1864663b25aba672753536688969de5022b4cb",
-          "prices.parquet": "dbe37a580ef03957dead17fd4a98563e13da6741c934e2616371483f4a0e08b9"
+          "balance_sheet.parquet": "689c2dffc5175f3fd47b6710a6df471a034136be768587569176dee9291af4a6",
+          "income_stmt.parquet": "a6c896359889f1dc72bd9df9dee10d83ffd63b3aebf8526b728b09567478b6f6",
+          "cash_flow.parquet": "74e1842ff86415b783ac038c7a5e6877e4c82bbce4ec00897b43e307b424bf0a",
+          "prices.parquet": "d26faf396a1f324b2a3995bdd399701cdd0412ad926e8daf77b970b67278974a"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-02T21:20:16.662511+00:00",
+        "source_fetched_at": "2026-10-09T21:41:19.886168+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -133,15 +133,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "05c1d7f2cf0ae99b452921a96d7ea1a5db2f40c3b15f7b805c5290ddfe790ced",
-          "quarterly_income_stmt.parquet": "282da767b4ab55ef98542be8d426ecade248d694d38ae15b48eeec1ce8b34f45",
-          "quarterly_cash_flow.parquet": "6d02cff5bd53da6ccf1483bae1b89302009a82810e2b575152f6fe612ca2b5fc"
+          "quarterly_balance_sheet.parquet": "27645241325ee6c6df8008ad254e61dc3df4e9a80ed04f879e727e454f1f9704",
+          "quarterly_income_stmt.parquet": "9e3f2fe8c9978928fd9b67a591f48dc28fe645ef0a9e69fdd06eae298b9e0f5e",
+          "quarterly_cash_flow.parquet": "4d08f2ba285aa9a7995b928cdda5a4336b3bc38307cb47c5c8df3b397d929b4f"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 94,
+    "statement_age_days": 101,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
