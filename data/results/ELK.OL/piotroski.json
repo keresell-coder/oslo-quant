@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-09T21:41:23.105409Z",
+  "computed_at": "2026-10-16T19:58:15.599766Z",
   "periods": {
     "2025": {
       "f_score": 5,
@@ -96,12 +96,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "81324d1d65809b90d9ed",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "6082dfb993b190096b11",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:22.504741+00:00",
+        "source_fetched_at": "2026-10-16T19:58:14.679517+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -128,12 +128,12 @@
           "balance_sheet.parquet": "d4246865851f76a26358c44d2575832a8eb79888fdf1f0a4f2f8b85b83cce3c9",
           "income_stmt.parquet": "3984a0436a7e5d30c571572cab0b93ff8b55623e2859d773347c8912cff407b3",
           "cash_flow.parquet": "a9fa68e1edc294b76a318cc89e818644b18a8d7b8c71cc3a65c038c1bf17029d",
-          "prices.parquet": "5790344a78e40f2af86b6d7983592ba8e19854c4db0b1a0b3ec3fc813415d199"
+          "prices.parquet": "17e93e29a5bcfc07a46e89b03f3217a854262c0f3597eefb64795176cbb04fb1"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:23.088819+00:00",
+        "source_fetched_at": "2026-10-16T19:58:15.583161+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,7 +168,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-09T21:41:12.082450Z",
+  "computed_at": "2026-10-16T19:57:59.942818Z",
   "periods": {
     "2025": {
       "o_score": -2.7315,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "c4bdcd285c1e28507707",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "bd61cdb255993eae5fdd",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:11.432449+00:00",
+        "source_fetched_at": "2026-10-16T19:57:59.187053+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "189080870604f5078039d664c7964c805e4756e4dcbde375c31d63eaf1e3e09b",
           "income_stmt.parquet": "6828fe2cb93515da508ce73f59f55e370518b3e3ad1e006a92ebd772f51bc9d0",
           "cash_flow.parquet": "67976aa23f67ec8d313739facc2f4e507fb12b3978eefb5209de966dd27fe0be",
-          "prices.parquet": "1b8af55cc8414234dd1a829cd40ec2ca310d1977561e0f82653e1cec7de890a4"
+          "prices.parquet": "93a3ad5a8f5a3809b6dd75eca595168217fc68f02f6f328dbfab35c450c6059d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:12.057548+00:00",
+        "source_fetched_at": "2026-10-16T19:57:59.917769+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -139,7 +139,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-09T21:41:13.704223Z",
+  "computed_at": "2026-10-16T19:58:02.262920Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": -376800000.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "d0dbc13df4398efa9ce5",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "4f1c1321617952ede140",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:13.078566+00:00",
+        "source_fetched_at": "2026-10-16T19:58:01.544622+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "ff7a577c87ffeddfd6726bf1cefb9bb16ad2db6b0d8ef48e8b0e8206b33e7019",
           "income_stmt.parquet": "1f88cfd48ba8def3c069e1e47b63e0fc576aa38d4e66e721117adae80b31227a",
           "cash_flow.parquet": "db70c33d6e767a994f865166ba1df968ee3f4241984636559f738d74417552ec",
-          "prices.parquet": "63d841b7b8c6c0e9c1e49101ecb13a3908aa1067ae09d0a49b17ea5e1803405a"
+          "prices.parquet": "704b5e551e3077bf7887dc9c8f9153bf08e9dbec024f1bbe8b27f46dc924c546"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:13.673943+00:00",
+        "source_fetched_at": "2026-10-16T19:58:02.232263+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -142,7 +142,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

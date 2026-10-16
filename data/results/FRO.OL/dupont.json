@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-09T21:41:07.327240Z",
+  "computed_at": "2026-10-16T19:57:53.601793Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.5476,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "42e51c177e5cae5ea98f",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "f25357c200f0f1e2bc51",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:06.787802+00:00",
+        "source_fetched_at": "2026-10-16T19:57:52.958274+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "c9e4ca70b05dd81a5bdca1c64e4a9591ca23ee4457f5afbaf576da152ce9418c",
           "income_stmt.parquet": "3d3cb26de0dd26d93a2f1697de13b04fcc30aaeed3ba660cd98cd24ae259d02d",
           "cash_flow.parquet": "586c88515209b97c0ceeac1965065726d2ca5400d7dccd637f29e4e72ce586ef",
-          "prices.parquet": "e52f3b3c9ff0f2d51c854fcd3c135f1b7485b9d7ecb87dfe67ecacd86c52cc96"
+          "prices.parquet": "d4390a3275c1f963eb75e14e1eb57386714a974e2d950fe3248a2c2ac147fe3b"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:07.315117+00:00",
+        "source_fetched_at": "2026-10-16T19:57:53.590071+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -150,7 +150,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

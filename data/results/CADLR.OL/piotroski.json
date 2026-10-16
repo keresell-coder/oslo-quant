@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-09T21:41:16.781448Z",
+  "computed_at": "2026-10-16T19:58:06.743867Z",
   "periods": {
     "LTM 2026-06": {
       "f_score": 6,
@@ -118,12 +118,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "bc9ca6a71c79f4f70333",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "0c4e71ba32b83f1c8356",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:16.243375+00:00",
+        "source_fetched_at": "2026-10-16T19:58:05.844932+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -151,12 +151,12 @@
           "balance_sheet.parquet": "c936ec3859bf3ea9b132e7472e42ee2aaff3900ad2bbe7ac3d1d48a8eafa2a67",
           "income_stmt.parquet": "24d0d1d8ade955c0b05551d39149e56a1d14db83a76ac404f5ffe94796e4be16",
           "cash_flow.parquet": "e5e353cb1a9deeb53352fc23efd87c89bd13de5f27d82e47ed04cb4da08d9038",
-          "prices.parquet": "41c992a2f0dc17df0cf1866835ab47adfec0d4826409a1a348a53463b83d653c"
+          "prices.parquet": "1f785b3640a2e6a36468e89bd3f05c02e9cd8a333d8ff05ec67e8888362ae20d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:16.757425+00:00",
+        "source_fetched_at": "2026-10-16T19:58:06.719745+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -192,7 +192,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

@@ -1,11 +1,11 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-09T21:41:20.022806Z",
+  "computed_at": "2026-10-16T19:58:11.261344Z",
   "periods": {
     "LTM 2026-06": {
-      "o_score": -0.8298,
-      "bankruptcy_probability": 0.3037,
+      "o_score": -0.8331,
+      "bankruptcy_probability": 0.303,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6512,
@@ -19,8 +19,8 @@
       }
     },
     "2025": {
-      "o_score": -1.4889,
-      "bankruptcy_probability": 0.1841,
+      "o_score": -1.4921,
+      "bankruptcy_probability": 0.1836,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.622,
@@ -34,8 +34,8 @@
       }
     },
     "2024": {
-      "o_score": -1.7746,
-      "bankruptcy_probability": 0.145,
+      "o_score": -1.7779,
+      "bankruptcy_probability": 0.1446,
       "interpretation": "Moderate distress risk",
       "inputs": {
         "tl_ta": 0.521,
@@ -49,8 +49,8 @@
       }
     },
     "2023": {
-      "o_score": 1.9381,
-      "bankruptcy_probability": 0.8741,
+      "o_score": 1.9348,
+      "bankruptcy_probability": 0.8738,
       "interpretation": "High distress risk",
       "inputs": {
         "tl_ta": 0.6656,
@@ -83,12 +83,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "b7b455d4fc2ac7c37d89",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "a8d7e523e413307b1934",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:19.239067+00:00",
+        "source_fetched_at": "2026-10-16T19:58:10.145325+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -116,12 +116,12 @@
           "balance_sheet.parquet": "689c2dffc5175f3fd47b6710a6df471a034136be768587569176dee9291af4a6",
           "income_stmt.parquet": "a6c896359889f1dc72bd9df9dee10d83ffd63b3aebf8526b728b09567478b6f6",
           "cash_flow.parquet": "74e1842ff86415b783ac038c7a5e6877e4c82bbce4ec00897b43e307b424bf0a",
-          "prices.parquet": "d26faf396a1f324b2a3995bdd399701cdd0412ad926e8daf77b970b67278974a"
+          "prices.parquet": "d2a590d69c6037ab38b3ed62877e26c38548d8a32dbe3e18440bc01a42d929b3"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:19.886168+00:00",
+        "source_fetched_at": "2026-10-16T19:58:11.023354+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -156,7 +156,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

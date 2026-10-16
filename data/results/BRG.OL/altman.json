@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "altman",
-  "computed_at": "2026-10-09T21:41:27.562722Z",
+  "computed_at": "2026-10-16T19:58:17.867413Z",
   "periods": {
     "2025": {
       "z_score": 2.6885,
@@ -52,12 +52,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "1a5c3e5b25bc2c54bbb6",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "051dd7b08389f1aa2dd4",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:23.843546+00:00",
+        "source_fetched_at": "2026-10-16T19:58:16.987961+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -84,12 +84,12 @@
           "balance_sheet.parquet": "86d507fbda510de19af72f1ed41ae4285c8b6bd3247787fed682d7dd657718cf",
           "income_stmt.parquet": "12dddd9a61e57e00a22beaf8b118479482675e6abb1883724c169ad6c85372c0",
           "cash_flow.parquet": "4f47e75d42518c028ca4d3663076f31c807cece231503cb12fa65a61579735a7",
-          "prices.parquet": "690f771ae01b57ba248f6652f44cb609224eb689e44b78b2569ae05b68788682"
+          "prices.parquet": "83b9918e58a937eca7debf7357599059ee6c073f4460558a0d6292455759c058"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:27.534071+00:00",
+        "source_fetched_at": "2026-10-16T19:58:17.836986+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -123,7 +123,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,

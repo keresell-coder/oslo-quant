@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-09T21:41:21.434825Z",
+  "computed_at": "2026-10-16T19:58:13.295841Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.0245,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "1803fbe4176749c6807db71c63eea5fa",
-    "snapshot_id": "b9134f6f5dc9e2f1726c",
+    "run_id": "8ceb119306114edc8870807d97ab09a1",
+    "snapshot_id": "4295b1792196fe5bffb9",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-09T21:41:20.850259+00:00",
+        "source_fetched_at": "2026-10-16T19:58:12.568602+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "fa5391a3e23a6c7bf8689821e8980eecd7189c8b28d71afcfc0a5e27c63f3763",
           "income_stmt.parquet": "40cac0c8224beb7cc9cdba0a20e2824f5bc805e4a8b9f2aaa97e8f5615aaa9b6",
           "cash_flow.parquet": "e491ad3a0bffb5b23bf844bc840228e2a9c39da9e67223c4393ec6f6dc2decc0",
-          "prices.parquet": "4f41022d2e8b4f15738d935abec9ddec2560b6d7ed070cf42393f13bb72abf0c"
+          "prices.parquet": "41a96a8257406bf91357f4aa768fc178e8d73d2da22d6cb75f39255f06aad766"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-09T21:41:21.425805+00:00",
+        "source_fetched_at": "2026-10-16T19:58:13.286856+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -138,7 +138,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 101,
+    "statement_age_days": 108,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
