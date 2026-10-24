@@ -9,3 +9,6 @@ build/
 data/raw/
 *.parquet
 # data/results/ is intentionally tracked — JSON outputs belong in the repo
+
+# Immutable report downloads are cached locally, never committed
+data/primary/cache/

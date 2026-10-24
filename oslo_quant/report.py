@@ -604,6 +604,29 @@ def _altman_rows(periods: dict, cols: list[str]) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Selected primary financial inputs (separate from provider periods)
+# ---------------------------------------------------------------------------
+
+def _primary_inputs(data: dict) -> str:
+    cards = []
+    for ticker, fws in data.items():
+        primary = fws.get("primary") or fws.get("dupont", {}).get("source_metadata", {}).get("primary_inputs") or {}
+        if primary.get("status") == "not-configured" or not primary:
+            continue
+        selection = primary.get("selection") or {}
+        facts = primary.get("records") or []
+        source = facts[0].get("source", {}) if facts else {}
+        rows = "".join("<tr>"+"".join("<td>"+html.escape(str(v))+"</td>" for v in
+            (r["row"], r["value_units"], r["currency"], r["period_end"], r["scope"]))+"</tr>" for r in [*[r for r in facts if r.get("period_end") == primary.get("current_period_end") and r.get("scope") in {"quarter", "instant"}], *primary.get("derived", [])])
+        cards.append('<details class="card"><summary>'+html.escape(ticker)+' selected primary inputs: '+html.escape(primary.get("status", "unknown"))+'</summary>'
+            +'<p>Input selection: '+html.escape(selection.get("status", "not-applied"))+'. Provider period coverage remains separate.</p>'
+            +'<p>Issuer publication '+html.escape(source.get("published_on", "unknown"))+'; primary artifact received '+html.escape(source.get("retrieved_at", "unknown"))+'.</p>'
+            +'<p>Source SHA-256 '+html.escape(source.get("sha256", "unknown"))+'; page/table/row evidence in primary.json.</p>'
+            +'<table><tr><th>Primary definition</th><th>Currency units</th><th>Currency</th><th>Period end</th><th>Scope</th></tr>'+rows+'</table>'
+            +'<p>'+html.escape(" ".join(primary.get("issues", [])))+'</p></details>')
+    return "".join(cards)
+
+
 # Currency provider/config agreement table
 # ---------------------------------------------------------------------------
 
@@ -673,6 +696,7 @@ def _build_html(data: dict) -> str:
     summary_rows  = "\n".join(_summary_row(t, fws) for t, fws in data.items())
     detail_cards  = "\n".join(_detail_card(t, fws) for t, fws in data.items() if fws)
     currency_html = _currency_table(data)
+    primary_html = _primary_inputs(data)
     trust_rows = []
     for ticker, fws in data.items():
         source = fws.get("dupont", {}).get("source_metadata", {})
@@ -680,11 +704,14 @@ def _build_html(data: dict) -> str:
         annual = groups.get("annual", {}).get("source_fetched_at") or "Unknown"
         quarterly = groups.get("quarterly", {}).get("source_fetched_at") or "Unknown"
         ledger = source.get("primary_ledger", {})
-        cells = [ticker, annual, quarterly,
+        primary = source.get("primary_inputs") or {}
+        selection = primary.get("selection") or {}
+        selected_note = "Selected primary " + str(selection.get("period_end")) if selection.get("status") == "applied-selected-primary" else "Provider only"
+        cells = [ticker, annual, quarterly, selected_note,
                  source.get("latest_statement_period_end") or "Unknown",
                  source.get("statement_status", "unverified"),
                  ", ".join(source.get("missing_statement_tables", [])) or "None reported",
-                 f"{ledger.get('verified_items', 0)} checked / {ledger.get('filled_items', 0)} filled; filing date unverified"]
+                 f"{ledger.get('verified_items', 0)} annual ledger checked / {ledger.get('filled_items', 0)} filled; {len(primary.get('records', []))} separate mapped primary facts; no whole-report verification"]
         trust_rows.append("<tr>" + "".join(f"<td>{html.escape(str(c))}</td>" for c in cells) + "</tr>")
     trust_html = "".join(trust_rows)
 
@@ -859,7 +886,7 @@ footer a{{color:var(--accent);text-decoration:none}}
   Read the <a href="health.json">publication health record</a> before using these figures.
   Legacy results without retrieval provenance remain unverified.
 </div>
-<div class="tscroll"><table><thead><tr><th>Company</th><th>Annual data fetched (UTC)</th><th>Interim data fetched (UTC)</th><th>Latest statement end</th><th>Statement age status</th><th>Missing tables</th><th>Primary source coverage</th></tr></thead><tbody>{trust_html}</tbody></table></div>
+<div class="tscroll"><table><thead><tr><th>Company</th><th>Annual data fetched (UTC)</th><th>Interim data fetched (UTC)</th><th>Selected current inputs</th><th>Provider statement end</th><th>Provider statement age status</th><th>Missing tables</th><th>Primary source coverage</th></tr></thead><tbody>{trust_html}</tbody></table></div>
 
 <!-- ── Legend ─────────────────────────────────────────────── -->
 <p class="section-title">Framework Guide &amp; Legends</p>
@@ -979,7 +1006,8 @@ footer a{{color:var(--accent);text-decoration:none}}
     <p style="font-size:0.76rem;color:var(--slate);padding:14px 0 12px">
       Oslo Børs prices are always quoted in <strong>NOK</strong>. For companies reporting in USD or EUR, prices are converted using a live FX rate before any price-based metric is computed. The table shows the detected reporting currency and its verification status.
     </p>
-    {currency_html}
+    {primary_html}
+{currency_html}
   </div>
 </div>
 
