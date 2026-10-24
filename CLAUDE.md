@@ -1,5 +1,8 @@
 # Oslo Quant — Developer Reference
 
+Current method contract: [2026-10-24 methodology correction](docs/METHODOLOGY_2026-10-24.md). This supersedes older formula/interpretation descriptions below. Ohlson is an uncalibrated experimental index; original SIZE authentication remains open. Sloan signs do not certify quality. Piotroski uses explicit annual conventions/proxies; LTM is an adaptation.
+
+
 A weekly quantitative dashboard for 17 Oslo Børs companies. A GitHub Actions workflow
 fetches financial data every Friday after market close, runs five valuation/distress
 frameworks, and commits an updated `index.html` back to the repository (served via
@@ -41,9 +44,9 @@ oslo_quant/
     base.py          — BaseFramework: _get(), _safe_div(), _fmt(), _periods()
     dupont.py        — DuPont 3-factor and 5-factor ROE decomposition
     piotroski.py     — Piotroski F-Score (9 binary signals)
-    sloan.py         — Sloan Accruals (earnings quality)
-    ohlson.py        — Ohlson O-Score (bankruptcy probability)
-    altman.py        — Altman Z-Score (Z, Z', Z'')
+    sloan.py         — Cash/accrual diagnostics (exact Sloan BS identity if supported)
+    ohlson.py        — Experimental adapted index (no calibrated probability)
+    altman.py        — Active Z-double-prime; original market-equity reference withheld
 .claude/
   commands/          — Slash commands: /add-company, /remove-company, /dashboard-status
 .github/workflows/

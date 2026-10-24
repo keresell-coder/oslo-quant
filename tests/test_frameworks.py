@@ -63,10 +63,11 @@ class TestPiotroski:
             if data["f_score"] is not None:
                 assert 0 <= data["f_score"] <= 9
 
-    def test_latest_period_fully_scored(self):
+    def test_latest_period_with_incomplete_history_not_fully_scored(self):
         result = self.fw.compute(self.stmts, TICKER)
-        assert result["periods"]["2023"]["f_score"] is not None
-        assert result["periods"]["2023"]["signals_assessable"] == 9
+        assert result["periods"]["2023"]["f_score"] is None
+        assert result["periods"]["2023"]["signals"]["F3_roa_increasing"] is None
+        assert result["periods"]["2023"]["signals_assessable"] < 9
 
     def test_signals_are_binary_or_not_assessable(self):
         result = self.fw.compute(self.stmts, TICKER)
@@ -115,13 +116,14 @@ class TestSloan:
     def test_earnings_quality_label(self):
         result = self.fw.compute(self.stmts, TICKER)
         for period, data in result["periods"].items():
-            assert data["earnings_quality"] in ("High", "Moderate", "Low", "Unknown")
+            assert data["earnings_quality"] == "Unrated diagnostic"
 
-    def test_cfo_above_net_income_implies_good_quality(self):
+    def test_cfo_above_net_income_is_descriptive_not_quality_rating(self):
         # CFO (480k) > Net Income (320k) → negative accrual ratio → High or Moderate quality
         result = self.fw.compute(self.stmts, TICKER)
         quality = result["periods"]["2023"]["earnings_quality"]
-        assert quality in ("High", "Moderate"), f"Expected High or Moderate, got {quality}"
+        assert quality == "Unrated diagnostic"
+        assert "exceeds net income" in result["periods"]["2023"]["cash_conversion_description"]
         # Confirm accrual ratio is negative (cash earnings exceed reported income)
         ratio = result["periods"]["2023"]["cfo_accrual_ratio"]
         assert ratio is not None and ratio < 0
@@ -148,7 +150,9 @@ class TestOhlson:
         prob = result["periods"]["2023"]["bankruptcy_probability"]
         # Ohlson model is sensitive to company size (log_ta_gnp term) and leverage;
         # just verify it returns a valid probability in [0, 1]
-        assert prob is not None and 0.0 <= prob <= 1.0
+        assert prob is None
+        assert result["periods"]["2023"]["o_score"] is not None
+        assert "Experimental" in result["periods"]["2023"]["interpretation"]
 
     def test_inputs_present(self):
         result = self.fw.compute(self.stmts, TICKER)
@@ -180,7 +184,7 @@ class TestAltman:
 
     def test_healthy_firm_safe_or_grey(self):
         result = self.fw.compute(self.stmts, TICKER)
-        zone = result["periods"]["2023"]["zone"]
+        zone = result["periods"]["2023"]["zone_prime"]
         assert zone in ("Safe", "Grey"), f"Expected Safe/Grey, got {zone}"
 
     def test_zprime_present(self):

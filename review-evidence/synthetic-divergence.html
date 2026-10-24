@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oslo Quant — Financial Dashboard</title>
+<style>
+/* ── Reset & base ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f172a; --navy2:#1e293b; --navy3:#334155;
+  --slate:#64748b; --muted:#94a3b8; --border:#e2e8f0;
+  --bg:#f1f5f9; --white:#ffffff;
+  --accent:#2563eb; --accent2:#4f46e5;
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  background:var(--bg);color:var(--navy2);font-size:14px;line-height:1.6}
+
+/* ── Header ───────────────────────────────────────────────── */
+header{
+  background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);
+  border-bottom:3px solid var(--accent);
+  padding:20px 32px;
+  display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px
+}
+.logo{display:flex;align-items:baseline;gap:12px}
+.logo h1{font-size:1.6rem;font-weight:900;color:#f8fafc;letter-spacing:-0.5px}
+.logo h1 span{color:#60a5fa}
+.logo .tagline{font-size:0.78rem;color:var(--muted);font-style:italic}
+.meta-pill{
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:8px;
+  padding:6px 16px;font-size:0.75rem;color:var(--muted);text-align:right;line-height:1.9
+}
+.meta-pill strong{color:#f8fafc;font-size:0.85rem}
+
+/* ── Layout ───────────────────────────────────────────────── */
+main{max-width:1480px;margin:0 auto;padding:28px 20px 60px}
+
+/* ── Section headings ─────────────────────────────────────── */
+.section-title{
+  font-size:0.68rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:var(--slate);margin:32px 0 12px;
+  display:flex;align-items:center;gap:10px
+}
+.section-title::after{content:"";flex:1;height:1px;background:var(--border)}
+
+/* ── Collapsible panels (legend + currency) ───────────────── */
+.panel{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  margin-bottom:20px;overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,.05)
+}
+.panel-toggle{
+  width:100%;border:none;background:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;font-weight:700;font-size:0.88rem;color:var(--navy2);
+  text-align:left;transition:background .15s
+}
+.panel-toggle:hover{background:#f8fafc}
+.panel-toggle .arrow{transition:transform .25s;font-size:0.75rem;color:var(--slate)}
+.panel-toggle[aria-expanded="true"] .arrow{transform:rotate(180deg)}
+.panel-body{display:none;padding:0 20px 20px;border-top:1px solid var(--border)}
+.panel-body.open{display:block}
+
+.color-guide{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px;align-items:center}
+.cg-item{display:flex;align-items:center;gap:6px;font-size:0.78rem}
+
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:4px}
+.fw-card{
+  background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px
+}
+.fw-card h5{font-size:0.78rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.8px;color:var(--accent);margin-bottom:6px}
+.fw-card p{font-size:0.79rem;color:var(--navy3);line-height:1.6;margin-bottom:6px}
+.fw-card .reading{font-size:0.75rem;color:var(--slate);border-top:1px solid var(--border);
+  padding-top:6px;margin-top:6px}
+
+.disclaimer{
+  margin-top:16px;padding:12px 16px;border-radius:8px;
+  background:#fef3c7;border-left:4px solid #d97706;
+  font-size:0.76rem;color:#78350f;line-height:1.7
+}
+.disclaimer strong{display:block;margin-bottom:4px;font-size:0.8rem}
+
+/* ── Summary table ────────────────────────────────────────── */
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;
+  border:1px solid var(--border);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+table{border-collapse:collapse;width:100%;min-width:820px}
+thead th{
+  background:var(--navy2);color:#e2e8f0;padding:11px 14px;text-align:left;
+  font-size:0.67rem;text-transform:uppercase;letter-spacing:.9px;
+  position:sticky;top:0;white-space:nowrap
+}
+thead th:first-child{min-width:140px}
+tbody tr{background:var(--white);transition:background .12s}
+tbody tr:nth-child(even){background:#f8fafc}
+tbody tr:hover{background:#eff6ff;cursor:pointer}
+td{padding:9px 14px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+td.tk{white-space:nowrap}
+td.tk > div:first-child{font-weight:800;font-size:0.88rem;color:var(--navy)}
+.co-name{font-size:0.7rem;font-weight:400;color:var(--slate);margin-top:1px}
+.period-lbl{font-size:0.65rem;color:var(--muted)}
+
+/* ── Detail cards ─────────────────────────────────────────── */
+#detail-area{margin-top:20px}
+.detail-card{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  margin-bottom:16px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.08)
+}
+.card-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;background:linear-gradient(135deg,#1e293b 0%,#1e3a8a 100%);
+}
+.card-ticker{font-weight:900;font-size:1.1rem;color:#f8fafc;letter-spacing:-.3px}
+.card-company{font-size:0.82rem;font-weight:400;color:#94a3b8}
+.card-close{
+  border:none;background:rgba(255,255,255,0.1);color:#94a3b8;font-size:1rem;
+  cursor:pointer;padding:4px 10px;border-radius:6px;transition:all .15s
+}
+.card-close:hover{background:rgba(239,68,68,0.2);color:#fca5a5}
+.card-summary{
+  padding:12px 20px;background:#f0f9ff;border-bottom:1px solid #bae6fd;
+  font-size:0.8rem;color:#075985;line-height:1.6
+}
+.card-body{padding:20px}
+
+/* ── Framework blocks inside cards ────────────────────────── */
+.fw-block{margin-bottom:24px}
+.fw-block:last-child{margin-bottom:0}
+.fw-title{
+  font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;
+  color:var(--accent);margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid #dbeafe
+}
+.fw-table{min-width:480px;font-size:0.8rem}
+.fw-table thead th{background:var(--navy3);font-size:0.67rem;padding:7px 10px}
+.fw-table td{padding:6px 10px;border-bottom:1px solid #f1f5f9}
+.fw-table td:first-child{color:var(--navy3);min-width:200px}
+.fw-table td.indent{padding-left:22px;color:var(--slate);font-size:0.75rem}
+.fw-table tbody tr:hover td{background:#f0f9ff}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer{
+  text-align:center;padding:28px;color:var(--muted);font-size:0.72rem;
+  border-top:1px solid var(--border);margin-top:40px
+}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body><p>SYNTHETIC CONTROL ONLY — not Nordic financial results or a valuation.</p>
+
+<header>
+  <div class="logo">
+    <h1>Oslo <span>Quant</span></h1>
+    <span class="tagline">Pre-computation financial analysis · Oslo Børs</span>
+  </div>
+  <div class="meta-pill">
+    <strong>1 of 17 companies computed</strong><br>
+    Report rendered 2026-10-25 00:59 CEST
+  </div>
+</header>
+
+<main>
+
+<div class="disclaimer" id="source-health">
+  <strong id="live-health-status">Live publication health not yet verified.</strong>
+  A newly rendered report is not a new filing. Provider period ends do not prove filing publication dates.
+  Read the <a href="health.json">publication health record</a> before using these figures.
+  Legacy results without retrieval provenance remain unverified.
+</div>
+<div class="tscroll"><table><thead><tr><th>Company</th><th>Annual data fetched (UTC)</th><th>Interim data fetched (UTC)</th><th>Selected current inputs</th><th>Provider statement end</th><th>Provider statement age status</th><th>Missing tables</th><th>Primary source coverage</th></tr></thead><tbody><tr><td>NOD.OL</td><td>Unknown</td><td>Unknown</td><td>Provider only</td><td>Unknown</td><td>unverified</td><td>None reported</td><td>0 annual ledger checked / 0 filled; 0 separate mapped primary facts; no whole-report verification</td></tr></tbody></table></div>
+
+<!-- ── Legend ─────────────────────────────────────────────── -->
+<p class="section-title">Framework Guide &amp; Legends</p>
+<div class="panel">
+  <button class="panel-toggle" aria-expanded="false" onclick="togglePanel(this)">
+    What do these frameworks measure? &nbsp;<span style="font-weight:400;color:var(--slate)">Click to expand</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="panel-body">
+
+    <div class="color-guide">
+      <strong style="font-size:.78rem;color:var(--navy3)">Colour key:</strong>
+      <span class="cg-item"><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#16a34a;letter-spacing:0.01em;white-space:nowrap">Green · Favourable</span> Healthy / strong</span>
+      <span class="cg-item"><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#d97706;letter-spacing:0.01em;white-space:nowrap">Amber · Watch</span> Neutral / watch zone</span>
+      <span class="cg-item"><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#dc2626;letter-spacing:0.01em;white-space:nowrap">Red · Concern</span> Weak or elevated risk</span>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card">
+        <h5>DuPont Decomposition</h5>
+        <p>Breaks Return on Equity (ROE) into three drivers: profit margin, asset efficiency, and financial leverage. The 5-factor version further splits profitability into tax and interest burden components. Cells are colour-coded: <strong>green</strong> = strong, <strong>red</strong> = weak. The <em>Primary ROE driver</em> row identifies whether ROE is earned through margins, asset turnover, or leverage.</p>
+        <div class="reading">
+          <strong>How to read:</strong> ROE &gt;15% is strong. Equity multiplier above 5× signals very high debt usage. Leverage-driven ROE is less sustainable than margin-driven ROE.
+        </div>
+      </div>
+      <div class="fw-card">
+        <h5>Piotroski F-Score</h5>
+        <p>A checklist of 9 binary signals across profitability, capital structure, and operating efficiency. Each signal scores 0 or 1. The progress bar shows the total out of 9.</p>
+        <div class="reading">
+          <strong>How to read:</strong> 8–9 = Strong. 5–7 = Moderate. 0–4 = Weak. Bands summarize positive signals, not an Oslo trading edge. Annual ROA/CFO use common opening assets; leverage uses average assets and the current portion of long-term debt. Turnover uses the paper Table1 average-assets convention while its prose uses opening assets. NI proxies are disclosed; missing prior data stay unknown. Interim comparisons overlap and are an adaptation.
+        </div>
+      </div>
+      <div class="fw-card">
+        <h5>Sloan Accruals</h5>
+        <p>Cash/accrual diagnostics: CFO uses (Net Income - operating cash flow) / average assets. The original BS identity uses current assets, cash, current liabilities, current debt, income taxes payable and D&amp;A; missing exact components withhold it. Material divergence above the existing10 percentage-point flag is shown. Negative accruals alone do not prove durable quality; acquisitions and discontinued operations can distort deltas.</p>
+      </div>
+      <div class="fw-card">
+        <h5>Experimental adapted Ohlson index</h5>
+        <p>Experimental adapted index, not a bankruptcy forecast or calibrated risk band. The original SIZE/GNP convention is unauthenticated. Existing USD-millions/current-FX arithmetic and coefficients are retained without claiming an original-formula correction. No target population, event, horizon or predictive calibration has been established.</p>
+      </div>
+      <div class="fw-card">
+        <h5>Altman Z-Score</h5>
+        <p>Z-double-prime retains its existing coefficients and historical bands as a qualified distress reference. The1968 original requires dated market equity; the old book-equity hybrid is withheld. Sector eligibility, accounting basis and refinancing risks matter. A historical safe band does not mean a safe or attractive stock.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>ℹ Restatement — August 2026</strong>
+      All historical results were recomputed on 1 August 2026 after an independent audit found that financial-statement fields were being matched by substring against the data provider's row labels, selecting wrong rows (EBIT resolved to Normalized EBITDA; current assets/liabilities to their <em>non-current</em> counterparts; net income to continuing operations). Field resolution is now exact-match first, missing inputs are reported as “Not assessable” instead of being scored as zero, and periods with no data are dropped. Historical saved outputs remain in version control. The 2026-10-24 methodology version retires probability/risk-band claims, fixes named identities and records explicit conventions; older outputs are not silently relabelled as corrected calculations.
+    </div>
+
+    <div class="disclaimer">
+      <strong>ℹ LTM — the virtual current year</strong>
+      Where the data allows, an <strong>LTM</strong> (last-twelve-months) column appears ahead of the latest fiscal year: income and cash flow are the sum of the last four quarterly reports (or two half-year reports), the balance sheet is the latest quarter as-is, and every year-over-year signal compares LTM against the latest full fiscal year — overlapping windows by design, as a development tracker. An LTM is only built when the quarterly history is complete and contiguous; a missing or empty quarter means no LTM rather than a silently wrong one, and no LTM is shown when the annual report is itself the newest available information.
+    </div>
+
+    <div class="disclaimer">
+      <strong>ℹ Report-verified data</strong>
+      Selected line items are verified against, or filled from, the companies' own annual reports (with page-level citations kept in the repository under <code>data/verified/</code>). Where yfinance lacks a value entirely — for example Mowi's retained earnings, which Mowi reports as "Other equity" in its statement of changes in equity — the report-sourced figure is used and recorded as a fill. Where both sources exist they are compared, and material deviations are flagged rather than silently overwritten.
+    </div>
+
+    <div class="disclaimer">
+      <strong>⚠ Methodology 2026-10-24-methodology-v2 — data quality &amp; model limitations</strong>
+      Financial data is sourced from providers and separately mapped primary reports. Currency, source and missing-input gates remain essential. DuPont is an accounting explanation, not a trading model. Piotroski uses explicit annual conventions/proxies; LTM is an overlapping adaptation. Cash/accrual diagnostics do not certify durable quality. The adapted Ohlson index is experimental, not a calibrated default probability. Active Altman Z-double-prime is unchanged; the 1968 market-equity reference is withheld without a compatible input contract. Historical bands are not stock-safety guarantees.
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Summary ─────────────────────────────────────────────── -->
+<p class="section-title">Summary — Latest Available Period (annual or adapted interim)</p>
+<p style="font-size:0.76rem;color:var(--slate);margin-bottom:12px">
+  Click any row to open the full historical detail card below.
+</p>
+<div class="tscroll">
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Stmts&nbsp;Ccy</th>
+      <th>ROE</th>
+      <th>Net&nbsp;Margin</th>
+      <th>Piotroski F-Score</th>
+      <th>Cash/accrual diagnostic</th>
+      <th>Experimental Ohlson index</th>
+      <th>Altman Z-Score</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr onclick="toggleCard('NOD.OL')" style="cursor:pointer"><td class="tk">  <div>NOD.OL</div>  <div class="co-name">Nordic Semiconductor ASA</div>  <div class="period-lbl">—</div></td><td style="white-space:nowrap"><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td>—</td><td>—</td><td><div style="display:flex;align-items:center;gap:8px"><div style="width:72px;height:7px;background:#e5e7eb;border-radius:4px;overflow:hidden;flex-shrink:0"><div style="width:100%;height:100%;background:#16a34a;border-radius:4px"></div></div><span style="font-weight:700;font-size:0.8rem;color:#16a34a">9/9</span></div></td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">CFO diagnostic -2.0%</span><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#dc2626;letter-spacing:0.01em;white-space:nowrap">Methods diverge >10pp</span></td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">Experimental index 4.29</span></td><td><span title="Z'' non-manufacturing model — preferred for all non-US companies"><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#16a34a;letter-spacing:0.01em;white-space:nowrap">Z''=4.13 Safe</span></span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ── Detail cards ─────────────────────────────────────────── -->
+<div id="detail-area">
+<div id="card-NOD.OL" class="detail-card" style="display:none"><div class="card-header">  <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">    <span class="card-ticker">NOD.OL</span>    <span class="card-company">Nordic Semiconductor ASA</span>    <span style="font-size:0.72rem;background:rgba(255,255,255,0.12);color:#cbd5e1;padding:2px 8px;border-radius:6px">Semiconductors</span>    <span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span>  </div>  <button class="card-close" onclick="toggleCard('NOD.OL')" aria-label="Close">✕</button></div><div class="card-summary">Screens positively on positive accounting-signal count (F-Score 9/9), Altman Z''=4.13 in historical safe band (not stock safety); flagged for cash/accrual methods diverge >10pp; definitions and acquisition effects need review.</div><div class="card-body"><div class="fw-block"><h4 class="fw-title">Piotroski F-Score</h4><div class="tscroll"><table class="fw-table"><thead><tr><th>Metric</th><th>2024</th><th>2023</th></tr></thead><tbody><tr><td><strong>F-Score (0–9)</strong></td><td><div style="display:flex;align-items:center;gap:8px"><div style="width:72px;height:7px;background:#e5e7eb;border-radius:4px;overflow:hidden;flex-shrink:0"><div style="width:100%;height:100%;background:#16a34a;border-radius:4px"></div></div><span style="font-weight:700;font-size:0.8rem;color:#16a34a">9/9</span></div></td><td>—</td></tr><tr><td class="indent">F1 · Positive ROA</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td></tr><tr><td class="indent">F2 · Positive operating cash flow</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td></tr><tr><td class="indent">F3 · ROA improving YoY</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td>—</td></tr><tr><td class="indent">F4 · Cash flow exceeds net income</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td></tr><tr><td class="indent">F5 · Long-term debt ratio falling</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td>—</td></tr><tr><td class="indent">F6 · Current ratio improving</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td>—</td></tr><tr><td class="indent">F7 · No gross reported equity proceeds (proxy)</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td></tr><tr><td class="indent">F8 · Gross margin improving</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td>—</td></tr><tr><td class="indent">F9 · Asset turnover improving</td><td style="color:#16a34a;font-weight:700;font-size:1rem">✓</td><td>—</td></tr><tr><td>Current Ratio</td><td style="color:#15803d;font-weight:600">2.00</td><td style="color:#15803d;font-weight:600">1.67</td></tr><tr><td>Gross Margin</td><td style="color:#15803d;font-weight:600">50.0%</td><td style="color:#15803d;font-weight:600">40.0%</td></tr><tr><td>Asset Turnover</td><td>1.28</td><td>1.11</td></tr><tr><td>Period contract</td><td>annual signals; source proxies and turnover convention disclosed</td><td>annual signals; source proxies and turnover convention disclosed</td></tr><tr><td>Turnover convention</td><td>average total assets (Table1); paper prose uses opening assets, not uniquely settled</td><td>average total assets (Table1); paper prose uses opening assets, not uniquely settled</td></tr><tr><td>Input proxies</td><td>[&#x27;Net Income proxy for pre-extraordinary income&#x27;, &#x27;Gross reported equity cash proceeds proxy; noncash issuance is not established by this row&#x27;]</td><td>[&#x27;Net Income proxy for pre-extraordinary income&#x27;, &#x27;Gross reported equity cash proceeds proxy; noncash issuance is not established by this row&#x27;]</td></tr></tbody></table></div></div><div class="fw-block"><h4 class="fw-title">Cash/accrual diagnostics</h4><div class="tscroll"><table class="fw-table"><thead><tr><th>Metric</th><th>2024</th><th>2023</th></tr></thead><tbody><tr><td>CFO diagnostic (NI - CFO) / average assets</td><td>-2.0%</td><td>-3.3%</td></tr><tr><td>Original-identity BS ratio (exact components only)</td><td>15.0%</td><td>—</td></tr><tr><td>Method disagreement</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#dc2626;letter-spacing:0.01em;white-space:nowrap">Methods diverge >10pp</span></td><td>Comparison unavailable</td></tr><tr><td>BS minus CFO ratio</td><td>17.0%</td><td>—</td></tr><tr><td>BS coverage / definition</td><td>available exact-component identity</td><td>withheld: prior_current_assets, prior_cash, prior_current_liabilities, prior_current_debt, prior_income_taxes_payable</td></tr><tr><td colspan="3">BS: [(delta CA - delta cash) - (delta CL - delta current debt - delta income taxes payable) - D&amp;A] / average assets. CFO: (NI - operating cash flow) / average assets. Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas.</td></tr><tr><td>Operating Cash Flow</td><td>15&thinsp;<span style="font-size:0.65rem;color:var(--slate)">USD</span></td><td>10&thinsp;<span style="font-size:0.65rem;color:var(--slate)">USD</span></td></tr><tr><td>Net Income</td><td>12&thinsp;<span style="font-size:0.65rem;color:var(--slate)">USD</span></td><td>7&thinsp;<span style="font-size:0.65rem;color:var(--slate)">USD</span></td></tr></tbody></table></div></div><div class="fw-block"><h4 class="fw-title">Experimental adapted Ohlson index</h4><div class="tscroll"><table class="fw-table"><thead><tr><th>Metric</th><th>2024</th><th>2023</th></tr></thead><tbody><tr><td>O-Score</td><td>4.29</td><td>—</td></tr><tr><td colspan="3">Experimental adapted index only. No calibrated failure probability or risk bands. Original SIZE/GNP convention remains unauthenticated; current USD-millions/current-FX arithmetic retained, not asserted as an original-formula correction.</td></tr><tr><td>Total Liabilities / Total Assets</td><td style="color:#15803d;font-weight:600">0.50</td><td style="color:#15803d;font-weight:600">0.40</td></tr><tr><td>Working Capital / Total Assets</td><td>0.23</td><td>0.20</td></tr><tr><td>Net Income / Total Assets (ROA)</td><td style="color:#15803d;font-weight:600">8.0%</td><td style="color:#15803d;font-weight:600">7.0%</td></tr><tr><td>CFO / Total Liabilities</td><td>0.20</td><td>0.25</td></tr></tbody></table></div></div><div class="fw-block"><h4 class="fw-title">Altman Z-Score</h4><div class="tscroll"><table class="fw-table"><thead><tr><th>Metric</th><th>2024</th><th>2023</th></tr></thead><tbody><tr><td>1968 market-equity reference</td><td>Withheld: dated market equity/currency contract unavailable; book-equity hybrid is not original Z</td><td>Withheld: dated market equity/currency contract unavailable; book-equity hybrid is not original Z</td></tr><tr><td><strong>Z&#8243;-Score</strong><span style="font-size:0.72rem;color:var(--slate);margin-left:6px">non-manufacturing · primary model</span></td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#16a34a;letter-spacing:0.01em;white-space:nowrap">Z''=4.13 · Safe</span></td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#16a34a;letter-spacing:0.01em;white-space:nowrap">Z''=4.35 · Safe</span></td></tr><tr><td>X1  Working Capital / Assets</td><td>0.23</td><td>0.20</td></tr><tr><td>X2  Retained Earnings / Assets</td><td>0.20</td><td>0.20</td></tr><tr><td>X3  EBIT / Assets</td><td style="color:#15803d;font-weight:600">13.3%</td><td style="color:#15803d;font-weight:600">12.0%</td></tr><tr><td>X4  Book Equity / Liabilities</td><td>1.00</td><td>1.50</td></tr><tr><td>X5  Revenue / Assets (Z only)</td><td>1.07</td><td>1.00</td></tr></tbody></table></div></div></div></div>
+</div>
+
+<!-- ── Currency Verification ──────────────────────────────── -->
+<p class="section-title" style="margin-top:48px">Currency Verification</p>
+<div class="panel">
+  <button class="panel-toggle" aria-expanded="false" onclick="togglePanel(this)">
+    Currency detection results per company &nbsp;<span style="font-weight:400;color:var(--slate)">Click to expand</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="panel-body">
+    <p style="font-size:0.76rem;color:var(--slate);padding:14px 0 12px">
+      Oslo Børs prices are always quoted in <strong>NOK</strong>. For companies reporting in USD or EUR, prices are converted using a live FX rate before any price-based metric is computed. The table shows the detected reporting currency and its verification status.
+    </p>
+
+<p class="muted">Currency labels compare provider metadata with configuration only; they do not verify primary statements, FX or accounting definitions.</p><div class="tscroll"><table><thead><tr><th>Ticker</th><th>Company</th><th>Price&nbsp;Currency</th><th>Stmt&nbsp;Currency&nbsp;(used)</th><th>Config&nbsp;(hardcoded)</th><th>yfinance&nbsp;detected</th><th>Verification</th></tr></thead><tbody><tr><td class="tk">MOWI.OL</td><td>Mowi ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#7c3aed;letter-spacing:0.01em;white-space:nowrap">EUR</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#7c3aed;letter-spacing:0.01em;white-space:nowrap">EUR</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">SALM.OL</td><td>SalMar ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">FRO.OL</td><td>Frontline plc</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">KOG.OL</td><td>Kongsberg Gruppen ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">VEND.OL</td><td>Vend Marketplaces ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">DOFG.OL</td><td>DOF Group ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">BORR.OL</td><td>Borr Drilling Ltd</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">ODL.OL</td><td>Odfjell Drilling Ltd</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">CADLR.OL</td><td>Cadeler A/S</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#7c3aed;letter-spacing:0.01em;white-space:nowrap">EUR</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#7c3aed;letter-spacing:0.01em;white-space:nowrap">EUR</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">HAFNI.OL</td><td>Hafnia Ltd</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">PUBLI.OL</td><td>Public Property Invest ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">SEK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">SEK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">NOD.OL</td><td>Nordic Semiconductor ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#c2410c;letter-spacing:0.01em;white-space:nowrap">USD</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">ELK.OL</td><td>Elkem ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">BRG.OL</td><td>Borregaard ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">KIT.OL</td><td>Kitron ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#7c3aed;letter-spacing:0.01em;white-space:nowrap">EUR</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#7c3aed;letter-spacing:0.01em;white-space:nowrap">EUR</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">NORBT.OL</td><td>Norbit ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr><tr><td class="tk">TEL.OL</td><td>Telenor ASA</td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#ffffff;background:#0891b2;letter-spacing:0.01em;white-space:nowrap">NOK</span></td><td style='white-space:nowrap'>—</td><td><span style="display:inline-block;padding:2px 10px;border-radius:99px;font-size:0.73rem;font-weight:700;color:#374151;background:#e5e7eb;letter-spacing:0.01em;white-space:nowrap">— Pending</span></td></tr></tbody></table></div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  Oslo Quant · Data from <a href="https://finance.yahoo.com" target="_blank">Yahoo Finance</a> via yfinance ·
+  Frameworks: DuPont · Piotroski (2000) · Sloan (1996) · Ohlson (1980) · Altman (1968) ·
+  For informational purposes only — not investment advice.
+</footer>
+
+<script>
+const reportSnapshotId = null;
+fetch('health.json', {cache:'no-store'}).then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(h => {
+  const age = Date.now() - Date.parse(h.generated_at);
+  const sameSnapshot = reportSnapshotId && reportSnapshotId === h.snapshot_id;
+  const state = !Number.isFinite(age) || age < 0 || age > 8 * 86400000 ? 'unverified / stale health record' :
+    !sameSnapshot ? 'blocked / retained previous snapshot' : h.status;
+  document.getElementById('live-health-status').textContent = 'Publication health: ' + state;
+  const message = document.createElement('p');
+  message.textContent = 'Publication status: ' + state + (h.published_content_retained ? '. Previous report retained after a failed refresh.' : '') + ' — actual source retrieval: ' + (h.source_fetched_at || 'unknown');
+  document.getElementById('source-health').prepend(message);
+}).catch(() => {
+  document.getElementById('live-health-status').textContent = 'Publication health unavailable — source freshness unverified';
+  document.getElementById('source-health').prepend(document.createTextNode('Publication health unavailable. Treat source freshness as unverified. '));
+});
+function togglePanel(btn) {
+  const body = btn.nextElementSibling;
+  const open = body.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+
+function toggleCard(ticker) {
+  const card = document.getElementById('card-' + ticker);
+  if (!card) return;
+  const visible = card.style.display !== 'none';
+  card.style.display = visible ? 'none' : 'block';
+  if (!visible) card.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+</script>
+
+</body>
+</html>

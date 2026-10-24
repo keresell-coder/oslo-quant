@@ -149,12 +149,13 @@ class TestMissingInputPolicy:
         assert p["signals_assessable"] < 9
         assert p["signals"]["F3_roa_increasing"] is None  # unavailable ≠ failed
 
-    def test_piotroski_full_history_scores_all_nine(self):
+    def test_piotroski_missing_second_opening_balance_and_issuance_stays_partial(self):
         stmts = make_yfinance_like_statements()
         p = PiotroskiFramework().compute(stmts, TICKER)["periods"]["2023"]
-        assert p["signals_assessable"] == 9
-        assert p["f_score"] is not None
-        assert 0 <= p["f_score"] <= 9
+        assert p["signals_assessable"] < 9
+        assert p["f_score"] is None
+        assert p["signals"]["F3_roa_increasing"] is None
+        assert p["signals"]["F7_no_dilution"] is None
 
     def test_sloan_missing_cfo_is_unknown_not_scored(self):
         stmts = make_yfinance_like_statements()
@@ -162,6 +163,5 @@ class TestMissingInputPolicy:
             index=["Operating Cash Flow", "Cash Flow From Continuing Operating Activities"]
         )
         stmts = dict(stmts, cash_flow=cf)
-        p = SloanFramework().compute(stmts, TICKER)["periods"]["2023"]
-        assert p["cfo_accrual_ratio"] is None
-        assert p["earnings_quality"] == "Unknown"
+        periods = SloanFramework().compute(stmts, TICKER)["periods"]
+        assert "2023" not in periods  # neither CFO nor exact original BS identity is assessable

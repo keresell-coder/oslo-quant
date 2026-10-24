@@ -1,0 +1,452 @@
+{
+  "baseline_revision": "c9b4eaa2041f8bff4923e5821b96cda0edce037e",
+  "fixture": "Synthetic independent arithmetic control from tests/test_methodology_contracts.py; not an issuer valuation",
+  "before": {
+    "piotroski": {
+      "ticker": "CONTROL",
+      "framework": "piotroski",
+      "periods": {
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 8,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": 1,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 1,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.096,
+          "cfo_to_assets": 0.1,
+          "current_ratio": 2.0,
+          "gross_margin": 0.5,
+          "asset_turnover": 1.0667
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 3,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (3 of 9 signals)",
+          "roa": 0.0778,
+          "cfo_to_assets": 0.1,
+          "current_ratio": 1.6667,
+          "gross_margin": 0.4,
+          "asset_turnover": 1.0
+        }
+      }
+    },
+    "sloan": {
+      "ticker": "CONTROL",
+      "framework": "sloan",
+      "periods": {
+        "2024": {
+          "cfo_accruals": -3.0,
+          "cfo_accrual_ratio": -0.024,
+          "bs_accruals": 45.0,
+          "bs_accrual_ratio": 0.36,
+          "earnings_quality": "Moderate",
+          "methods_divergence": 0.384,
+          "methods_diverge_materially": true,
+          "net_income": 12.0,
+          "operating_cash_flow": 15.0,
+          "avg_total_assets": 125.0
+        },
+        "2023": {
+          "cfo_accruals": -3.0,
+          "cfo_accrual_ratio": -0.0333,
+          "bs_accruals": null,
+          "bs_accrual_ratio": null,
+          "earnings_quality": "Moderate",
+          "methods_divergence": null,
+          "methods_diverge_materially": false,
+          "net_income": 7.0,
+          "operating_cash_flow": 10.0,
+          "avg_total_assets": 90.0
+        }
+      }
+    },
+    "ohlson": {
+      "ticker": "CONTROL",
+      "framework": "ohlson",
+      "periods": {
+        "2024": {
+          "o_score": 4.2901,
+          "bankruptcy_probability": 0.9865,
+          "interpretation": "High distress risk",
+          "inputs": {
+            "tl_ta": 0.5,
+            "wc_ta": 0.2333,
+            "cl_ca": 0.5,
+            "oeneg": 0,
+            "ni_ta": 0.08,
+            "cfo_tl": 0.2,
+            "intwo": 0,
+            "chin": 0.2632
+          }
+        },
+        "2023": {
+          "o_score": null,
+          "bankruptcy_probability": null,
+          "interpretation": "Not assessable",
+          "inputs": {
+            "tl_ta": 0.4,
+            "wc_ta": 0.2,
+            "cl_ca": 0.6,
+            "oeneg": 0,
+            "ni_ta": 0.07,
+            "cfo_tl": 0.25,
+            "intwo": 0,
+            "chin": null
+          }
+        }
+      }
+    },
+    "altman": {
+      "ticker": "CONTROL",
+      "framework": "altman",
+      "periods": {
+        "2024": {
+          "z_score": 2.6667,
+          "zone": "Grey",
+          "z_score_prime": 4.1287,
+          "zone_prime": "Safe",
+          "x1_working_capital_to_assets": 0.2333,
+          "x2_retained_earnings_to_assets": 0.2,
+          "x3_ebit_to_assets": 0.1333,
+          "x4_book_equity_to_liabilities": 1.0,
+          "x5_revenue_to_assets": 1.0667
+        },
+        "2023": {
+          "z_score": 2.816,
+          "zone": "Grey",
+          "z_score_prime": 4.3454,
+          "zone_prime": "Safe",
+          "x1_working_capital_to_assets": 0.2,
+          "x2_retained_earnings_to_assets": 0.2,
+          "x3_ebit_to_assets": 0.12,
+          "x4_book_equity_to_liabilities": 1.5,
+          "x5_revenue_to_assets": 1.0
+        }
+      }
+    }
+  },
+  "after": {
+    "piotroski": {
+      "ticker": "CONTROL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2024": {
+          "f_score": 9,
+          "f_score_partial": 9,
+          "signals_assessable": 9,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": 1,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 1,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Strong",
+          "roa": 0.12,
+          "cfo_to_assets": 0.15,
+          "current_ratio": 2.0,
+          "gross_margin": 0.5,
+          "asset_turnover": 1.28,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 100.0,
+            "prior_opening_assets": 80.0,
+            "average_assets": 125.0,
+            "prior_average_assets": 90.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": "Current Portion Of Long Term Debt",
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": "Current Portion Of Long Term Debt",
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          }
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 4,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (4 of 9 signals)",
+          "roa": 0.0875,
+          "cfo_to_assets": 0.125,
+          "current_ratio": 1.6667,
+          "gross_margin": 0.4,
+          "asset_turnover": 1.1111,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 80.0,
+            "prior_opening_assets": null,
+            "average_assets": 90.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": "Current Portion Of Long Term Debt",
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          }
+        }
+      }
+    },
+    "sloan": {
+      "ticker": "CONTROL",
+      "framework": "sloan",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2024": {
+          "cfo_accruals": -3.0,
+          "cfo_accrual_ratio": -0.024,
+          "bs_accruals": 4.0,
+          "bs_accrual_ratio": 0.032,
+          "earnings_quality": "Unrated diagnostic",
+          "cash_conversion_description": "Operating cash flow exceeds net income",
+          "methods_divergence": 0.056,
+          "methods_diverge_materially": false,
+          "net_income": 12.0,
+          "operating_cash_flow": 15.0,
+          "avg_total_assets": 125.0,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "bs_status": "available exact-component identity",
+          "definitions": {
+            "cfo": "(Net Income - Operating Cash Flow) / average total assets; diagnostic, not original Sloan earnings definition",
+            "bs": "[(delta current assets - delta cash) - (delta current liabilities - delta current debt - delta income taxes payable) - depreciation/amortization] / average total assets"
+          },
+          "warning": "Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas. Neither method establishes a trading edge.",
+          "source_rows": {
+            "net_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "current_assets": "Current Assets",
+            "prior_current_assets": "Current Assets",
+            "cash": "Cash And Cash Equivalents",
+            "prior_cash": "Cash And Cash Equivalents",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_liabilities": "Current Liabilities",
+            "current_debt": "Current Debt",
+            "prior_current_debt": "Current Debt",
+            "income_taxes_payable": "Income Tax Payable",
+            "prior_income_taxes_payable": "Income Tax Payable",
+            "depreciation_amortization": "Depreciation And Amortization"
+          },
+          "bs_components": {
+            "current_assets": 70.0,
+            "prior_current_assets": 50.0,
+            "cash": 15.0,
+            "prior_cash": 10.0,
+            "current_liabilities": 35.0,
+            "prior_current_liabilities": 30.0,
+            "current_debt": 5.0,
+            "prior_current_debt": 8.0,
+            "income_taxes_payable": 3.0,
+            "prior_income_taxes_payable": 2.0
+          }
+        },
+        "2023": {
+          "cfo_accruals": -3.0,
+          "cfo_accrual_ratio": -0.0333,
+          "bs_accruals": null,
+          "bs_accrual_ratio": null,
+          "earnings_quality": "Unrated diagnostic",
+          "cash_conversion_description": "Operating cash flow exceeds net income",
+          "methods_divergence": null,
+          "methods_diverge_materially": false,
+          "net_income": 7.0,
+          "operating_cash_flow": 10.0,
+          "avg_total_assets": 90.0,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "bs_status": "withheld: prior_current_assets, prior_cash, prior_current_liabilities, prior_current_debt, prior_income_taxes_payable",
+          "definitions": {
+            "cfo": "(Net Income - Operating Cash Flow) / average total assets; diagnostic, not original Sloan earnings definition",
+            "bs": "[(delta current assets - delta cash) - (delta current liabilities - delta current debt - delta income taxes payable) - depreciation/amortization] / average total assets"
+          },
+          "warning": "Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas. Neither method establishes a trading edge.",
+          "source_rows": {
+            "net_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "current_assets": "Current Assets",
+            "prior_current_assets": null,
+            "cash": "Cash And Cash Equivalents",
+            "prior_cash": null,
+            "current_liabilities": "Current Liabilities",
+            "prior_current_liabilities": null,
+            "current_debt": "Current Debt",
+            "prior_current_debt": null,
+            "income_taxes_payable": "Income Tax Payable",
+            "prior_income_taxes_payable": null,
+            "depreciation_amortization": "Depreciation And Amortization"
+          },
+          "bs_components": {
+            "current_assets": 50.0,
+            "prior_current_assets": null,
+            "cash": 10.0,
+            "prior_cash": null,
+            "current_liabilities": 30.0,
+            "prior_current_liabilities": null,
+            "current_debt": 8.0,
+            "prior_current_debt": null,
+            "income_taxes_payable": 2.0,
+            "prior_income_taxes_payable": null
+          }
+        }
+      }
+    },
+    "ohlson": {
+      "ticker": "CONTROL",
+      "framework": "ohlson",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2024": {
+          "o_score": 4.2901,
+          "bankruptcy_probability": null,
+          "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+          "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+          "interpretation": "Experimental adapted index; no probability or risk band",
+          "inputs": {
+            "tl_ta": 0.5,
+            "wc_ta": 0.2333,
+            "cl_ca": 0.5,
+            "oeneg": 0,
+            "ni_ta": 0.08,
+            "cfo_tl": 0.2,
+            "intwo": 0,
+            "chin": 0.2632
+          }
+        },
+        "2023": {
+          "o_score": null,
+          "bankruptcy_probability": null,
+          "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+          "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+          "interpretation": "Not assessable",
+          "inputs": {
+            "tl_ta": 0.4,
+            "wc_ta": 0.2,
+            "cl_ca": 0.6,
+            "oeneg": 0,
+            "ni_ta": 0.07,
+            "cfo_tl": 0.25,
+            "intwo": null,
+            "chin": null
+          }
+        }
+      }
+    },
+    "altman": {
+      "ticker": "CONTROL",
+      "framework": "altman",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2024": {
+          "z_score": null,
+          "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+          "zone": "Not assessable",
+          "z_score_prime": 4.1287,
+          "zone_prime": "Safe",
+          "x1_working_capital_to_assets": 0.2333,
+          "x2_retained_earnings_to_assets": 0.2,
+          "x3_ebit_to_assets": 0.1333,
+          "x4_book_equity_to_liabilities": 1.0,
+          "x5_revenue_to_assets": 1.0667
+        },
+        "2023": {
+          "z_score": null,
+          "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+          "zone": "Not assessable",
+          "z_score_prime": 4.3454,
+          "zone_prime": "Safe",
+          "x1_working_capital_to_assets": 0.2,
+          "x2_retained_earnings_to_assets": 0.2,
+          "x3_ebit_to_assets": 0.12,
+          "x4_book_equity_to_liabilities": 1.5,
+          "x5_revenue_to_assets": 1.0
+        }
+      }
+    }
+  }
+}

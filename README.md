@@ -58,9 +58,9 @@ Listed in dashboard order (sorted by sector).
 |------|-------------|
 | `dupont` | 3-factor and 5-factor DuPont decomposition of ROE |
 | `piotroski` | Piotroski F-Score (9 binary signals, 0–9) |
-| `sloan` | Sloan accruals — earnings quality via balance-sheet and CFO-based accrual ratios |
-| `ohlson` | Ohlson O-Score — logistic bankruptcy probability model (1980) |
-| `altman` | Altman Z-Score — financial distress classification (1968) |
+| `sloan` | Cash/accrual diagnostics — exact-component Sloan BS identity when available; NI−CFO diagnostic |
+| `ohlson` | Experimental adapted Ohlson index — no calibrated probability; original SIZE authentication open |
+| `altman` | Altman Z-double-prime — unchanged; 1968 market-equity reference withheld |
 
 ## Data sources
 
@@ -153,3 +153,5 @@ Known-release coverage and currency contracts now withhold unreliable inputs;
 this change does not refresh or reconcile primary financial values.
 
 Primary-input ingestion review batch (2026-10-24): [selected issuer facts, provenance and remaining gates](docs/primary-financial-ingestion.md). This branch is prepared for review; production data is unchanged.
+
+Bounded methodology version: [definitions, explicit proxies and unresolved conventions](docs/METHODOLOGY_2026-10-24.md). Saved results are retained until approved recalculation; no predictive calibration is claimed.

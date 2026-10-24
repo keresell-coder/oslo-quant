@@ -104,8 +104,11 @@ class TestReportGeneration:
             out = generate(output_path=tmp_path / "index.html")
         html = out.read_text()
         assert "F7" in html       # piotroski score badge
-        assert "Grey" in html     # altman zone
-        assert "High" in html     # sloan quality
+        assert "Withheld: dated market equity" in html
+        assert "CFO diagnostic" in html
+        assert "Experimental index" in html
+        from oslo_quant.report import _ohlson_rows
+        assert "11.0%" not in _ohlson_rows(fake["TEL.OL"]["ohlson"]["periods"],["2023"])
 
     def test_empty_results_no_crash(self, tmp_path):
         with patch("oslo_quant.report._load_results", return_value={}):

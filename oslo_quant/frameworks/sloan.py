@@ -1,142 +1,136 @@
-"""Sloan Accruals — earnings quality via balance-sheet accrual ratio."""
+"""Cash/accrual diagnostics; original Sloan BS identity requires exact components."""
 
 from __future__ import annotations
-
 import datetime
 import math
-from typing import Any
-
-from oslo_quant.fetchers.base import Statements
 from oslo_quant.frameworks.base import BaseFramework
+from oslo_quant.frameworks.methodology import VERSION, exact, prior, basis, ratio
 
 
 class SloanFramework(BaseFramework):
     name = "sloan"
 
-    def compute(self, stmts: Statements, ticker: str) -> dict[str, Any]:
-        bs = stmts["balance_sheet"]
-        inc = stmts["income_stmt"]
-        cf = stmts["cash_flow"]
-
-        periods = self._periods(inc, anchor="Total Revenue")
-        results: dict[str, Any] = {}
-
-        for period in periods:
-            all_bs_periods = self._periods(bs, anchor="Total Assets")
-            try:
-                prev_idx = all_bs_periods.index(period) + 1
-                prev_period = all_bs_periods[prev_idx] if prev_idx < len(all_bs_periods) else None
-            except ValueError:
-                prev_period = None
-
-            metrics = self._compute_period(bs, inc, cf, period, prev_period)
-            if metrics:
-                results[period] = metrics
-
+    def compute(self, stmts, ticker):
+        bs, inc, cf = (stmts[k] for k in ("balance_sheet", "income_stmt", "cash_flow"))
+        results = {}
+        for period in self._periods(inc, anchor="Total Revenue"):
+            value = self._compute_period(bs, inc, cf, period, prior(period, bs.columns))
+            if value:
+                results[period] = value
         return {
             "ticker": ticker,
             "framework": self.name,
-            "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+            "computed_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "methodology_version": VERSION,
             "periods": results,
         }
 
-    # ------------------------------------------------------------------
+    def _compute_period(self, bs, inc, cf, period, prev_period):
+        prev_period = prev_period if prev_period == prior(period, bs.columns) else None
+        sources = {}
 
-    def _compute_period(
-        self, bs: Any, inc: Any, cf: Any, period: str, prev_period: str | None
-    ) -> dict[str, Any] | None:
-        net_income = self._get(inc, "Net Income", col=period)
+        def get(frame, labels, col, key):
+            value, row = exact(frame, labels, col)
+            sources[key] = row
+            return value
 
-        # Cash-flow method: Accruals = Net Income - Cash from Operations
-        cfo = self._get(
-            cf, "Operating Cash Flow", "Total Cash From Operating Activities",
-            "Cash Flow From Continuing Operating Activities", col=period
+        ni = get(inc, ["Net Income"], period, "net_income")
+        cfo = get(
+            cf,
+            [
+                "Operating Cash Flow",
+                "Total Cash From Operating Activities",
+                "Cash Flow From Continuing Operating Activities",
+            ],
+            period,
+            "cfo",
         )
-
-        total_assets = self._get(bs, "Total Assets", col=period)
-        total_assets_prev = (
-            self._get(bs, "Total Assets", col=prev_period) if prev_period else total_assets
+        assets = get(bs, ["Total Assets"], period, "assets")
+        opening = get(bs, ["Total Assets"], prev_period, "opening_assets")
+        avg = (assets + opening) / 2
+        parts = {}
+        labels = {
+            "current_assets": ["Current Assets", "Total Current Assets"],
+            "cash": ["Cash And Cash Equivalents", "Cash Equivalents"],
+            "current_liabilities": ["Current Liabilities", "Total Current Liabilities"],
+            "current_debt": ["Current Debt"],
+            "income_taxes_payable": ["Income Tax Payable", "Income Taxes Payable"],
+        }
+        for key, rows in labels.items():
+            parts[key] = get(bs, rows, period, key)
+            parts["prior_" + key] = get(bs, rows, prev_period, "prior_" + key)
+        depreciation = get(
+            cf, ["Depreciation And Amortization"], period, "depreciation_amortization"
         )
-        avg_assets = (total_assets + total_assets_prev) / 2
-
-        # Balance-sheet method (Sloan 1996): ΔOperating Assets - ΔOperating Liabilities
-        # Operating Assets = Total Assets - Cash - Short-term Investments
-        cash = self._get(bs, "Cash And Cash Equivalents", "Cash Equivalents", col=period)
-        cash_prev = (
-            self._get(bs, "Cash And Cash Equivalents", "Cash Equivalents", col=prev_period)
-            if prev_period else cash
-        )
-        current_liab = self._get(
-            bs, "Current Liabilities", "Total Current Liabilities", col=period
-        )
-        current_liab_prev = (
-            self._get(
-                bs, "Current Liabilities", "Total Current Liabilities", col=prev_period
-            )
-            if prev_period else current_liab
-        )
-        long_term_debt = self._get(bs, "Long Term Debt", col=period)
-        long_term_debt_prev = (
-            self._get(bs, "Long Term Debt", col=prev_period) if prev_period else long_term_debt
-        )
-
-        # No zero-substitution for missing components (2026-08 restatement):
-        # NaN propagates, so a method with incomplete inputs reports None
-        # rather than a ratio silently built on absent data.
-        oa = total_assets - cash
-        oa_prev = total_assets_prev - cash_prev
-
-        ol = current_liab + long_term_debt
-        ol_prev = current_liab_prev + long_term_debt_prev
-
-        # The balance-sheet method is a year-over-year delta; without a prior
-        # period it would degenerate to exactly 0 (prev fallbacks equal the
-        # current values), which is a fabricated "no accruals" signal.
-        # For an LTM period the delta would span only the months since FY end
-        # while the CFO method spans twelve — mismatched windows, so the
-        # balance-sheet method is not computed for LTM columns.
-        if prev_period is None or period.startswith("LTM"):
+        missing = [key for key, value in parts.items() if not math.isfinite(value)]
+        if not math.isfinite(depreciation) or depreciation < 0:
+            missing.append("nonnegative depreciation/amortization expense")
+        if not prev_period:
+            missing.append("adjacent prior annual period")
+        if str(period).startswith("LTM "):
+            missing.append("BS delta window does not match overlapping LTM flows")
+        if missing:
             bs_accruals = float("nan")
         else:
-            bs_accruals = (oa - oa_prev) - (ol - ol_prev)
-        bs_accrual_ratio = self._safe_div(bs_accruals, avg_assets)
-
-        # CFO-based accrual — requires both net income and operating cash flow.
-        cfo_accruals = net_income - cfo
-        cfo_accrual_ratio = self._safe_div(cfo_accruals, avg_assets)
-
-        if math.isnan(cfo_accrual_ratio) and math.isnan(bs_accrual_ratio):
-            return None  # neither method computable — drop the period
-
-        # Earnings quality flag: low accruals = higher quality
-        quality = self._quality_flag(cfo_accrual_ratio)
-
-        # Escalate material disagreement between the two methods instead of
-        # letting the CFO-based label stand alone (audit finding, 2026-07).
-        divergence = None
-        methods_diverge = False
-        if not math.isnan(cfo_accrual_ratio) and not math.isnan(bs_accrual_ratio):
-            divergence = bs_accrual_ratio - cfo_accrual_ratio
-            methods_diverge = abs(divergence) > 0.10
-
+            delta = lambda key: parts[key] - parts["prior_" + key]
+            bs_accruals = (
+                (delta("current_assets") - delta("cash"))
+                - (
+                    delta("current_liabilities")
+                    - delta("current_debt")
+                    - delta("income_taxes_payable")
+                )
+                - depreciation
+            )
+        bs_ratio = ratio(bs_accruals, avg)
+        cfo_accruals = ni - cfo
+        cfo_ratio = ratio(cfo_accruals, avg)
+        if not math.isfinite(cfo_ratio) and not math.isfinite(bs_ratio):
+            return None
+        divergence = (
+            bs_ratio - cfo_ratio
+            if math.isfinite(bs_ratio) and math.isfinite(cfo_ratio)
+            else None
+        )
         return {
             "cfo_accruals": self._fmt(cfo_accruals, 0),
-            "cfo_accrual_ratio": self._fmt(cfo_accrual_ratio),
+            "cfo_accrual_ratio": self._fmt(cfo_ratio),
             "bs_accruals": self._fmt(bs_accruals, 0),
-            "bs_accrual_ratio": self._fmt(bs_accrual_ratio),
-            "earnings_quality": quality,
-            "methods_divergence": self._fmt(divergence) if divergence is not None else None,
-            "methods_diverge_materially": methods_diverge,
-            "net_income": self._fmt(net_income, 0),
+            "bs_accrual_ratio": self._fmt(bs_ratio),
+            "earnings_quality": "Unrated diagnostic",
+            "cash_conversion_description": self._quality_flag(cfo_ratio),
+            "methods_divergence": (
+                self._fmt(divergence) if divergence is not None else None
+            ),
+            "methods_diverge_materially": divergence is not None
+            and abs(divergence) > 0.10,
+            "net_income": self._fmt(ni, 0),
             "operating_cash_flow": self._fmt(cfo, 0),
-            "avg_total_assets": self._fmt(avg_assets, 0),
+            "avg_total_assets": self._fmt(avg, 0),
+            "period_basis": basis(period),
+            "bs_status": (
+                "available exact-component identity"
+                if math.isfinite(bs_ratio)
+                else "withheld: " + ", ".join(missing)
+            ),
+            "definitions": {
+                "cfo": "(Net Income - Operating Cash Flow) / average total assets; diagnostic, not original Sloan earnings definition",
+                "bs": "[(delta current assets - delta cash) - (delta current liabilities - delta current debt - delta income taxes payable) - depreciation/amortization] / average total assets",
+            },
+            "warning": "Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas. Neither method establishes a trading edge.",
+            "source_rows": sources,
+            "bs_components": {key: self._fmt(value, 0) for key, value in parts.items()},
         }
 
-    def _quality_flag(self, ratio: float) -> str:
-        if math.isnan(ratio):
-            return "Unknown"
-        if ratio < -0.05:
-            return "High"       # cash earnings well above reported income
-        if ratio < 0.05:
-            return "Moderate"
-        return "Low"            # earnings heavily accrual-based
+    def _quality_flag(self, value):
+        if not math.isfinite(value):
+            return "Unavailable cash-conversion diagnostic"
+        return (
+            "Operating cash flow exceeds net income"
+            if value < 0
+            else (
+                "Net income exceeds operating cash flow"
+                if value > 0
+                else "Net income equals operating cash flow"
+            )
+        )

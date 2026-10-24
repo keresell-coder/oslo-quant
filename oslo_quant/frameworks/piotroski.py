@@ -1,181 +1,203 @@
-"""Piotroski F-Score — 9 binary signals."""
+"""Piotroski-inspired annual signals with explicit proxies; interim is an adaptation."""
 
 from __future__ import annotations
-
 import datetime
 import math
-from typing import Any
-
-from oslo_quant.fetchers.base import Statements
 from oslo_quant.frameworks.base import BaseFramework
+from oslo_quant.frameworks.methodology import VERSION, exact, prior, basis, ratio
 
 
 class PiotroskiFramework(BaseFramework):
     name = "piotroski"
 
-    def compute(self, stmts: Statements, ticker: str) -> dict[str, Any]:
-        bs = stmts["balance_sheet"]
-        inc = stmts["income_stmt"]
-        cf = stmts["cash_flow"]
-
-        periods = self._periods(inc, anchor="Total Revenue")
-        results: dict[str, Any] = {}
-
-        for i, period in enumerate(periods):
-            all_bs_periods = self._periods(bs, anchor="Total Assets")
-            try:
-                prev_idx = all_bs_periods.index(period) + 1
-                prev_period = all_bs_periods[prev_idx] if prev_idx < len(all_bs_periods) else None
-            except ValueError:
-                prev_period = None
-
-            metrics = self._compute_period(bs, inc, cf, period, prev_period)
-            if metrics:
-                results[period] = metrics
-
+    def compute(self, stmts, ticker):
+        bs, inc, cf = (stmts[k] for k in ("balance_sheet", "income_stmt", "cash_flow"))
+        results = {}
+        for period in self._periods(inc, anchor="Total Revenue"):
+            value = self._compute_period(bs, inc, cf, period, prior(period, bs.columns))
+            if value:
+                results[period] = value
         return {
             "ticker": ticker,
             "framework": self.name,
-            "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+            "computed_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "methodology_version": VERSION,
             "periods": results,
         }
 
-    # ------------------------------------------------------------------
+    def _compute_period(self, bs, inc, cf, period, prev_period):
+        # Annual comparisons require the actual adjacent FY; no current=prior fallback.
+        previous = prior(period, bs.columns)
+        prev_period = prev_period if prev_period == previous else None
+        prev2 = prior(prev_period, bs.columns) if prev_period else None
+        sources = {}
 
-    def _compute_period(
-        self, bs: Any, inc: Any, cf: Any, period: str, prev_period: str | None
-    ) -> dict[str, Any] | None:
-        # ---- Profitability signals (F1–F4) ----
-        net_income = self._get(inc, "Net Income", col=period)
-        total_assets = self._get(bs, "Total Assets", col=period)
-        total_assets_prev = (
-            self._get(bs, "Total Assets", col=prev_period) if prev_period else total_assets
+        def get(frame, labels, col, key):
+            value, row = exact(frame, labels, col)
+            sources[key] = row
+            return value
+
+        def assets(col, key):
+            return get(bs, ["Total Assets"], col, key)
+
+        def income(col, key):
+            return get(
+                inc,
+                [
+                    "Net Income Before Extraordinary Items",
+                    "Net Income Before Extraordinary",
+                    "Net Income",
+                ],
+                col,
+                key,
+            )
+
+        ta = assets(period, "assets")
+        opening = assets(prev_period, "opening_assets")
+        prior_opening = assets(prev2, "prior_opening_assets")
+        avg = (ta + opening) / 2
+        prior_avg = (opening + prior_opening) / 2
+        ni = income(period, "income")
+        ni_prev = income(prev_period, "prior_income")
+        cfo = get(
+            cf,
+            [
+                "Operating Cash Flow",
+                "Total Cash From Operating Activities",
+                "Cash Flow From Continuing Operating Activities",
+            ],
+            period,
+            "cfo",
         )
+        roa = ratio(ni, opening)
+        roa_prev = ratio(ni_prev, prior_opening)
+        cfo_ratio = ratio(cfo, opening)
 
-        roa = self._safe_div(net_income, (total_assets + total_assets_prev) / 2)
-        cfo = self._get(
-            cf, "Operating Cash Flow", "Total Cash From Operating Activities",
-            "Cash Flow From Continuing Operating Activities", col=period
+        def positive(value):
+            return int(value > 0) if math.isfinite(value) else None
+
+        def compare(a, b):
+            return int(a > b) if math.isfinite(a) and math.isfinite(b) else None
+
+        f1 = positive(roa)
+        f2 = positive(cfo_ratio)
+        f3 = compare(roa, roa_prev)
+        f4 = compare(cfo_ratio, roa)
+
+        # Original leverage includes the current portion of long-term debt. Unknown != zero.
+        def debt(col, prefix):
+            long = get(bs, ["Long Term Debt"], col, prefix + "long_debt")
+            current = get(
+                bs,
+                [
+                    "Current Portion Of Long Term Debt",
+                    "Current Portion Of Long-Term Debt",
+                ],
+                col,
+                prefix + "current_portion",
+            )
+            return long + current
+
+        leverage = ratio(debt(period, ""), avg)
+        leverage_prev = ratio(debt(prev_period, "prior_"), prior_avg)
+        f5 = compare(leverage_prev, leverage)
+        ca = get(
+            bs, ["Current Assets", "Total Current Assets"], period, "current_assets"
         )
-        cfo_to_assets = self._safe_div(cfo, total_assets)
-
-        roa_prev = None
-        if prev_period:
-            ni_prev = self._get(inc, "Net Income", col=prev_period)
-            ta_prev2_periods = self._periods(bs, anchor="Total Assets")
-            try:
-                pi = ta_prev2_periods.index(prev_period)
-                prev2 = ta_prev2_periods[pi + 1] if pi + 1 < len(ta_prev2_periods) else None
-            except ValueError:
-                prev2 = None
-            ta_prev2 = self._get(bs, "Total Assets", col=prev2) if prev2 else total_assets_prev
-            roa_prev = self._safe_div(ni_prev, (total_assets_prev + ta_prev2) / 2)
-
-        # Missing-input policy (2026-08 restatement): a signal whose inputs are
-        # unavailable is None ("not assessable"), never 0 ("failed"). Treating
-        # missing history as failure mechanically produced F=0 and F=1 for the
-        # two oldest periods of every single company — a pure data artifact
-        # rendered as a "weak fundamentals" trend.
-        f1 = int(roa > 0) if not math.isnan(roa) else None
-        f2 = int(cfo > 0) if not math.isnan(cfo) else None
-        f3 = int(roa > roa_prev) if (roa_prev is not None and not math.isnan(roa) and not math.isnan(roa_prev)) else None
-        f4 = int(cfo_to_assets > roa) if (not math.isnan(cfo_to_assets) and not math.isnan(roa)) else None
-
-        # ---- Leverage / Liquidity signals (F5–F7) ----
-        long_term_debt = self._get(
-            bs, "Long Term Debt", "Long-Term Debt And Capital Lease Obligation", col=period
+        cl = get(
+            bs,
+            ["Current Liabilities", "Total Current Liabilities"],
+            period,
+            "current_liabilities",
         )
-        ltd_prev = self._get(
-            bs, "Long Term Debt", "Long-Term Debt And Capital Lease Obligation", col=prev_period
-        ) if prev_period else long_term_debt
-
-        current_assets = self._get(bs, "Current Assets", "Total Current Assets", col=period)
-        current_liabilities = self._get(
-            bs, "Current Liabilities", "Total Current Liabilities", col=period
+        ca_prev = get(
+            bs,
+            ["Current Assets", "Total Current Assets"],
+            prev_period,
+            "prior_current_assets",
         )
-        current_assets_prev = self._get(
-            bs, "Current Assets", "Total Current Assets", col=prev_period
-        ) if prev_period else current_assets
-        current_liabilities_prev = self._get(
-            bs, "Current Liabilities", "Total Current Liabilities", col=prev_period
-        ) if prev_period else current_liabilities
-
-        current_ratio = self._safe_div(current_assets, current_liabilities)
-        current_ratio_prev = self._safe_div(current_assets_prev, current_liabilities_prev)
-
-        shares = self._get(
-            bs, "Ordinary Shares Number", "Share Issued", "Common Stock Shares Outstanding",
-            col=period
+        cl_prev = get(
+            bs,
+            ["Current Liabilities", "Total Current Liabilities"],
+            prev_period,
+            "prior_current_liabilities",
         )
-        shares_prev = self._get(
-            bs, "Ordinary Shares Number", "Share Issued", "Common Stock Shares Outstanding",
-            col=prev_period
-        ) if prev_period else shares
-
-        leverage = self._safe_div(long_term_debt, total_assets)
-        leverage_prev = self._safe_div(ltd_prev, total_assets_prev)
-
-        f5 = int(leverage < leverage_prev) if (not math.isnan(leverage) and not math.isnan(leverage_prev)) else None
-        f6 = int(current_ratio > current_ratio_prev) if (not math.isnan(current_ratio) and not math.isnan(current_ratio_prev)) else None
-        f7 = int(shares <= shares_prev) if (not math.isnan(shares) and not math.isnan(shares_prev)) else None
-
-        # ---- Operating efficiency signals (F8–F9) ----
-        gross_profit = self._get(inc, "Gross Profit", col=period)
-        gross_profit_prev = self._get(inc, "Gross Profit", col=prev_period) if prev_period else gross_profit
-        revenue = self._get(inc, "Total Revenue", "Revenue", col=period)
-        revenue_prev = self._get(inc, "Total Revenue", "Revenue", col=prev_period) if prev_period else revenue
-
-        gross_margin = self._safe_div(gross_profit, revenue)
-        gross_margin_prev = self._safe_div(gross_profit_prev, revenue_prev)
-
-        asset_turnover = self._safe_div(revenue, total_assets)
-        asset_turnover_prev = self._safe_div(revenue_prev, total_assets_prev)
-
-        f8 = int(gross_margin > gross_margin_prev) if (not math.isnan(gross_margin) and not math.isnan(gross_margin_prev)) else None
-        f9 = int(asset_turnover > asset_turnover_prev) if (not math.isnan(asset_turnover) and not math.isnan(asset_turnover_prev)) else None
-
-        signals = [f1, f2, f3, f4, f5, f6, f7, f8, f9]
-        assessable = [s for s in signals if s is not None]
-        if not assessable:
-            return None  # nothing computable for this period — drop it
-
-        # The headline F-score is only published when all nine signals are
-        # assessable; a total over fewer signals is not comparable to /9 and
-        # is reported separately as a partial sum.
-        partial_sum = sum(assessable)
-        if len(assessable) == 9:
-            f_score = partial_sum
-            interpretation = self._interpret(f_score)
-        else:
-            f_score = None
-            interpretation = f"Not assessable ({len(assessable)} of 9 signals)"
-
+        liquidity = ratio(ca, cl)
+        f6 = compare(liquidity, ratio(ca_prev, cl_prev))
+        issued = get(
+            cf,
+            ["Issuance Of Capital Stock", "Common Stock Issuance"],
+            period,
+            "gross_equity_issuance",
+        )
+        f7 = int(issued == 0) if math.isfinite(issued) and issued >= 0 else None
+        gp = get(inc, ["Gross Profit"], period, "gross_profit")
+        gp_prev = get(inc, ["Gross Profit"], prev_period, "prior_gross_profit")
+        revenue = get(inc, ["Total Revenue", "Revenue"], period, "revenue")
+        revenue_prev = get(
+            inc, ["Total Revenue", "Revenue"], prev_period, "prior_revenue"
+        )
+        margin = ratio(gp, revenue)
+        f8 = compare(margin, ratio(gp_prev, revenue_prev))
+        # Paper prose says opening assets; Table1 says average. Choose Table1 explicitly.
+        turnover = ratio(revenue, avg)
+        f9 = compare(turnover, ratio(revenue_prev, prior_avg))
+        signals = dict(
+            zip(
+                [
+                    "F1_positive_roa",
+                    "F2_positive_cfo",
+                    "F3_roa_increasing",
+                    "F4_accruals_quality",
+                    "F5_leverage_decreasing",
+                    "F6_liquidity_improving",
+                    "F7_no_dilution",
+                    "F8_gross_margin_improving",
+                    "F9_asset_turnover_improving",
+                ],
+                [f1, f2, f3, f4, f5, f6, f7, f8, f9],
+            )
+        )
+        known = [v for v in signals.values() if v is not None]
+        if not known and not any(math.isfinite(v) for v in (ni, ta, cfo)):
+            return None
+        score = sum(known) if len(known) == 9 else None
         return {
-            "f_score": f_score,
-            "f_score_partial": partial_sum,
-            "signals_assessable": len(assessable),
-            "signals": {
-                "F1_positive_roa": f1,
-                "F2_positive_cfo": f2,
-                "F3_roa_increasing": f3,
-                "F4_accruals_quality": f4,
-                "F5_leverage_decreasing": f5,
-                "F6_liquidity_improving": f6,
-                "F7_no_dilution": f7,
-                "F8_gross_margin_improving": f8,
-                "F9_asset_turnover_improving": f9,
-            },
-            "interpretation": interpretation,
+            "f_score": score,
+            "f_score_partial": sum(known),
+            "signals_assessable": len(known),
+            "signals": signals,
+            "interpretation": (
+                self._interpret(score)
+                if score is not None
+                else f"Not assessable ({len(known)} of 9 signals)"
+            ),
             "roa": self._fmt(roa),
-            "cfo_to_assets": self._fmt(cfo_to_assets),
-            "current_ratio": self._fmt(current_ratio),
-            "gross_margin": self._fmt(gross_margin),
-            "asset_turnover": self._fmt(asset_turnover),
+            "cfo_to_assets": self._fmt(cfo_ratio),
+            "current_ratio": self._fmt(liquidity),
+            "gross_margin": self._fmt(margin),
+            "asset_turnover": self._fmt(turnover),
+            "period_basis": basis(period),
+            "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+            "input_proxies": (
+                ["Net Income proxy for pre-extraordinary income"]
+                if sources["income"] == "Net Income"
+                else []
+            )
+            + [
+                "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+            ],
+            "signal_definitions": {
+                "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+            },
+            "denominators": {
+                "opening_assets": self._fmt(opening, 0),
+                "prior_opening_assets": self._fmt(prior_opening, 0),
+                "average_assets": self._fmt(avg, 0),
+                "prior_average_assets": self._fmt(prior_avg, 0),
+            },
+            "source_rows": sources,
         }
 
-    def _interpret(self, score: int) -> str:
-        if score >= 8:
-            return "Strong"
-        if score >= 5:
-            return "Moderate"
-        return "Weak"
+    def _interpret(self, score):
+        return "Strong" if score >= 8 else "Moderate" if score >= 5 else "Weak"
