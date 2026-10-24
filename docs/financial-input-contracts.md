@@ -23,7 +23,7 @@ It is not a fresh download: it shows June coverage withheld, and retained legacy
 currency metadata unqualified. Tests independently simulate a fresh successful
 retrieval with June periods so download recency cannot bypass the filing guard.
 
-Verified locally: 105 Python tests pass (56 existing datetime deprecation warnings)
+Verified locally: 106 Python tests pass (56 existing datetime deprecation warnings)
 and git diff whitespace check. No primary financial refresh was performed.
 After independent review: merge, dispatch `run_oslo_quant.yml` on main, inspect
 staged health/qualification and generated commit, then verify Pages snapshot,
@@ -31,3 +31,6 @@ NOD health and both summary/detail withholding on the actual deployed revision.
 The existing 14/17 floor remains unchanged. A blocked attempt retains the old
 report and updates health only; distinguish guard deployment from refreshed or
 fully reconciled financial inputs. Unknown EBITDA definitions are not reconciled.
+
+The currency table labels legacy `verification_status=verified` as
+“Provider/config agree”; this is explicitly not primary-statement verification.

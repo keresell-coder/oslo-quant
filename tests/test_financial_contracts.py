@@ -48,3 +48,11 @@ def test_valid_conversion_and_same_currency():
     fetcher = SimpleNamespace(fetch_fx_rate=lambda *a: .1)
     assert _convert_prices({"prices": frame}, "NOK", "USD", fetcher, {})["prices"].iloc[0, 0] == 10
     assert _convert_prices({"prices": frame}, "NOK", "NOK", fetcher, {})["prices"].iloc[0, 0] == 100
+
+
+def test_currency_agreement_does_not_claim_primary_verification():
+    table = report._currency_table({"MOWI.OL": {"currency": {
+        "verification_status": "verified", "financial_currency": "EUR"}}})
+    assert "Provider/config agree" in table
+    assert "✓ Verified" not in table
+    assert "do not verify primary statements" in table

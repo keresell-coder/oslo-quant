@@ -169,7 +169,7 @@ def run(
 # ---------------------------------------------------------------------------
 
 def _resolve_currency(yf_fetcher: YFinanceFetcher, ticker: str, company, force_refresh: bool) -> dict:
-    """Fetch currency from yfinance, cross-check with config, return verified dict."""
+    """Fetch currency from yfinance and compare with config; no primary verification."""
     config_ccy = company.reporting_currency  # researched value in config.py
 
     try:
