@@ -100,4 +100,3 @@ def test_nonadditive_bridge_rejected(row,aggregation):
     for r in doc['records']:r.update(row=row,aggregation=aggregation)
     _,records=validate(doc,NOW)
     with pytest.raises(PrimaryInputError):derive_ttm(records,doc['ttm_recipes'][0])
-
