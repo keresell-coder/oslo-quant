@@ -51,7 +51,7 @@ class SloanFramework(BaseFramework):
         parts = {}
         labels = {
             "current_assets": ["Current Assets", "Total Current Assets"],
-            "cash": ["Cash And Cash Equivalents", "Cash Equivalents"],
+            "cash": ["Cash And Cash Equivalents"],
             "current_liabilities": ["Current Liabilities", "Total Current Liabilities"],
             "current_debt": ["Current Debt"],
             "income_taxes_payable": ["Income Tax Payable", "Income Taxes Payable"],

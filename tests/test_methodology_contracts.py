@@ -144,6 +144,26 @@ def test_original_sloan_bs_identity_and_exact_missing_components():
     assert p["bs_accrual_ratio"] is None and "income_taxes_payable" in p["bs_status"]
 
 
+def test_equivalents_only_cannot_establish_total_cash_for_sloan_bs():
+    s = statements()
+    # Cash equivalents can exclude cash itself, so this is not a total-cash alias.
+    s["balance_sheet"] = s["balance_sheet"].rename(
+        index={"Cash And Cash Equivalents": "Cash Equivalents"}
+    )
+    p = SloanFramework().compute(s, "CONTROL")["periods"]["2024"]
+    assert p["bs_accruals"] is None
+    assert p["bs_accrual_ratio"] is None
+    assert p["bs_status"].startswith("withheld:")
+    assert "cash" in p["bs_status"] and "prior_cash" in p["bs_status"]
+    assert p["source_rows"]["cash"] is None
+    assert p["source_rows"]["prior_cash"] is None
+    # The independent NI-minus-CFO diagnostic remains usable.
+    assert p["cfo_accruals"] == -3
+    assert p["cfo_accrual_ratio"] == -.024
+    assert p["methods_divergence"] is None
+    assert p["methods_diverge_materially"] is False
+
+
 def test_sloan_warning_in_summary_detail_and_guide_even_legacy_data():
     p = {
         "2024": {
