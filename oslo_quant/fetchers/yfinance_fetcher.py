@@ -182,8 +182,8 @@ class YFinanceFetcher(BaseFetcher):
         }
         try:
             info = tk.info or {}
-            price_ccy = info.get("currency") or "NOK"
-            fin_ccy   = info.get("financialCurrency") or info.get("currency") or "Unknown"
+            price_ccy = info.get("currency") or "Unknown"
+            fin_ccy   = info.get("financialCurrency") or "Unknown"
             result = {
                 "price_currency":     price_ccy,
                 "financial_currency": fin_ccy,

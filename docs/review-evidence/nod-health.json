@@ -1,0 +1,76 @@
+{
+  "filing_coverage": {
+    "status": "behind-known-release",
+    "latest_period_end": "2026-06-30",
+    "issuer_release": {
+      "period_end": "2026-09-30",
+      "published_on": "2026-10-22",
+      "observed_at": "2026-10-24T20:54:00+00:00",
+      "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+      "scope": "Issuer release availability only; values and accounting definitions unverified"
+    },
+    "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+    "tables": {
+      "income_stmt": {
+        "status": "behind-known-release",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": {
+          "period_end": "2026-09-30",
+          "published_on": "2026-10-22",
+          "observed_at": "2026-10-24T20:54:00+00:00",
+          "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+          "scope": "Issuer release availability only; values and accounting definitions unverified"
+        },
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+      },
+      "balance_sheet": {
+        "status": "behind-known-release",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": {
+          "period_end": "2026-09-30",
+          "published_on": "2026-10-22",
+          "observed_at": "2026-10-24T20:54:00+00:00",
+          "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+          "scope": "Issuer release availability only; values and accounting definitions unverified"
+        },
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+      },
+      "cash_flow": {
+        "status": "behind-known-release",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": {
+          "period_end": "2026-09-30",
+          "published_on": "2026-10-22",
+          "observed_at": "2026-10-24T20:54:00+00:00",
+          "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+          "scope": "Issuer release availability only; values and accounting definitions unverified"
+        },
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+      }
+    }
+  },
+  "currency_contract": {},
+  "ticker": "NOD.OL",
+  "status": "blocked",
+  "withheld_reasons": [
+    "annual: retrieval time missing, stale or future",
+    "quarterly: retrieval time missing, stale or future",
+    "filing coverage: behind-known-release",
+    "quarterly table coverage behind known release or invalid",
+    "currency contract missing or unverified"
+  ],
+  "source_fetched_at": null,
+  "latest_statement_period_end": "2026-06-30",
+  "statement_age_days": 115,
+  "statement_status": "available",
+  "missing_statement_tables": [],
+  "primary_ledger": {
+    "status": "unverified",
+    "verified_items": 0,
+    "filled_items": 0,
+    "mismatches": 0,
+    "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+  },
+  "filing_publication_date": null,
+  "filing_date_status": "unverified"
+}

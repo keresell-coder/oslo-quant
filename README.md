@@ -147,3 +147,7 @@ oslo_quant/
     ├── ohlson.py
     └── altman.py
 ```
+
+Financial-input repair (2026-10-24): see [contracts and review evidence](docs/financial-input-contracts.md).
+Known-release coverage and currency contracts now withhold unreliable inputs;
+this change does not refresh or reconcile primary financial values.

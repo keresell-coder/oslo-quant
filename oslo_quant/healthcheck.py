@@ -10,6 +10,7 @@ from pathlib import Path
 
 from oslo_quant.config import ALL_FRAMEWORKS, COMPANIES, DATA_RESULTS
 from oslo_quant.trust import parse_stamp, recent, stamp, utc_now
+from oslo_quant.financial_contracts import filing_coverage
 
 
 def _parse_computed_at(raw):
@@ -71,7 +72,20 @@ def build_health(within_hours=6, min_fresh=None, results_dir=None) -> dict:
                 source_times.append(fetched)
         if source.get("statement_status") == "invalid-future-period":
             errors.append("future statement period")
+        quarterly = source.get("groups", {}).get("quarterly", {}).get("statement_period_ends", {})
+        coverage = filing_coverage(company.ticker, [p for values in quarterly.values() for p in values], now)
+        if coverage["status"] in {"behind-known-release", "invalid-period"}:
+            errors.append("filing coverage: " + coverage["status"])
+        per_table = {name: filing_coverage(company.ticker, quarterly.get(name, []), now)
+                     for name in ("income_stmt", "balance_sheet", "cash_flow")}
+        coverage["tables"] = per_table
+        if any(c["status"] in {"behind-known-release", "invalid-period"} for c in per_table.values()):
+            errors.append("quarterly table coverage behind known release or invalid")
+        currency = source.get("currency_contract") or {}
+        if currency.get("status") != "screening-currency-consistent":
+            errors.append("currency contract missing or unverified")
         row = {
+            "filing_coverage": coverage, "currency_contract": currency,
             "ticker": company.ticker, "status": "blocked" if errors else "current",
             "withheld_reasons": errors,
             "source_fetched_at": min(source_times) if len(source_times) == 2 else None,

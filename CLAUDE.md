@@ -469,3 +469,7 @@ empty results over good committed data. If it happens:
   bad rows are withheld, and a blocked candidate updates health only. PR/main CI
   runs the full regression suite. Primary verification remains selected ledger
   line items, not whole filings; missing publication dates remain unverified.
+
+Financial-input repair (2026-10-24): [current contract and deployment notes](docs/financial-input-contracts.md).
+Known issuer release coverage and explicit currency qualification extend the
+source-trust publication gate. No formula or primary financial value changes.
