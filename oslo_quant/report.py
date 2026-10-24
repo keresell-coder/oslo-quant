@@ -604,7 +604,7 @@ def _altman_rows(periods: dict, cols: list[str]) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Currency verification table
+# Currency provider/config agreement table
 # ---------------------------------------------------------------------------
 
 def _currency_table(data: dict) -> str:
@@ -620,7 +620,7 @@ def _currency_table(data: dict) -> str:
         status     = ccy_info.get("verification_status", "pending")
 
         status_badge = {
-            "verified":   _badge("✓ Verified",   "green"),
+            "verified":   _badge("Provider/config agree", "green"),
             "mismatch":   _badge("⚠ Mismatch",   "red"),
             "unverified": _badge("? Unverified",  "yellow"),
             "pending":    _badge("— Pending",     "gray"),
@@ -641,6 +641,7 @@ def _currency_table(data: dict) -> str:
         )
 
     return (
+        f'<p class="muted">Currency labels compare provider metadata with configuration only; they do not verify primary statements, FX or accounting definitions.</p>'
         f'<div class="tscroll">'
         f"<table>"
         f"<thead><tr>"

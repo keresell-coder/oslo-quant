@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 import uuid
 from pathlib import Path
 from typing import Any
@@ -21,6 +22,7 @@ from oslo_quant.frameworks import FRAMEWORK_REGISTRY
 from oslo_quant.ltm import build_ltm
 from oslo_quant.verified import apply_ledger
 from oslo_quant.trust import provenance, stamp
+from oslo_quant.financial_contracts import filing_coverage
 
 log = logging.getLogger(__name__)
 
@@ -87,6 +89,12 @@ def run(
         price_ccy = currency_info["price_currency"]
         fin_ccy   = currency_info["financial_currency"]
         stmts = _convert_prices(stmts, price_ccy, fin_ccy, yf_fetcher, _fx_cache)
+        currency_info["price_conversion"] = {"from": price_ccy, "to": fin_ccy,
+            "rate": 1.0 if price_ccy == fin_ccy else _fx_cache.get(f"{price_ccy}{fin_ccy}"),
+            "observed_at": stamp(), "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"}
+        rate = currency_info["price_conversion"]["rate"]
+        if rate is None or not math.isfinite(rate) or rate <= 0:
+            currency_info["status"] = "gated-missing-fx-rate"
 
         # --- Report-verified ledger: verify yfinance against filings, fill gaps ---
         stmts, verification = apply_ledger(stmts, ticker, fin_ccy)
@@ -106,6 +114,10 @@ def run(
             yf_fetcher.provenance.get(ticker, {}).get("quarterly", {}),
             verification, run_id,
         )
+
+        quarterly_periods = source.get("groups", {}).get("quarterly", {}).get("statement_period_ends", {})
+        source["filing_coverage"] = filing_coverage(ticker, [p for values in quarterly_periods.values() for p in values])
+        source["currency_contract"] = currency_info
 
         # --- Common-currency (USD) rate for the Ohlson SIZE term ---
         if fin_ccy == "USD":
@@ -157,18 +169,18 @@ def run(
 # ---------------------------------------------------------------------------
 
 def _resolve_currency(yf_fetcher: YFinanceFetcher, ticker: str, company, force_refresh: bool) -> dict:
-    """Fetch currency from yfinance, cross-check with config, return verified dict."""
+    """Fetch currency from yfinance and compare with config; no primary verification."""
     config_ccy = company.reporting_currency  # researched value in config.py
 
     try:
         detected = yf_fetcher.fetch_currency_info(ticker, force_refresh=force_refresh)
         yf_ccy    = detected.get("financial_currency", "Unknown")
-        price_ccy = detected.get("price_currency", "NOK")
+        price_ccy = detected.get("price_currency", "Unknown")
         source    = detected.get("source", "fallback")
     except Exception as exc:
         log.warning("[%s] Currency fetch failed: %s", ticker, exc)
         yf_ccy = "Unknown"
-        price_ccy = "NOK"
+        price_ccy = "Unknown"
         source = "fallback"
 
     # Determine final currency: prefer yfinance if available, else config
@@ -194,11 +206,13 @@ def _resolve_currency(yf_fetcher: YFinanceFetcher, ticker: str, company, force_r
         "yfinance_currency":   yf_ccy,
         "detection_source":    source,
         "verification_status": match_status,
+        "status": "screening-currency-consistent" if match_status == "verified" and price_ccy not in (None, "", "Unknown") else "gated-unverified-currency",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
     }
 
 
 def _match_status(yf_ccy: str, config_ccy: str) -> str:
-    if yf_ccy in ("Unknown", ""):
+    if not yf_ccy or yf_ccy in ("Unknown", ""):
         return "unverified"
     if yf_ccy == config_ccy:
         return "verified"
@@ -278,12 +292,14 @@ def _convert_prices(
         fx_cache[fx_key] = yf_fetcher.fetch_fx_rate(price_ccy, reporting_ccy)
 
     rate = fx_cache[fx_key]
-    if rate is None:
+    if rate is None or not math.isfinite(rate) or rate <= 0:
         log.warning(
             "FX rate %s→%s unavailable; prices remain in %s",
             price_ccy, reporting_ccy, price_ccy,
         )
-        return stmts
+        withheld = dict(stmts)
+        withheld["prices"] = prices.iloc[0:0].copy()
+        return withheld
 
     converted = prices.copy()
     for col in ("Open", "High", "Low", "Close"):

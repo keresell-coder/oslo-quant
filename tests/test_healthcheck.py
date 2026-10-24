@@ -36,9 +36,9 @@ def _write_results(root, kinds: list[str]) -> None:
             (ticker_dir / f"{framework}.json").write_text(
                 json.dumps({"computed_at": now.isoformat(), "periods": periods,
                             "source_metadata": {"run_id": "test-run", "snapshot_id": company.ticker,
-                                "statement_status": "available", "groups": {
+                                "statement_status": "available", "currency_contract": {"status": "screening-currency-consistent"}, "groups": {
                                     group: {"source_fetched_at": stamp, "cache_used": False,
-                                            "statement_period_ends": {"income_stmt": ["2025-12-31"], "balance_sheet": ["2025-12-31"]}}
+                                            "statement_period_ends": {"income_stmt": ["2026-09-30"], "balance_sheet": ["2026-09-30"], "cash_flow": ["2026-09-30"]}}
                                     for group in ("annual", "quarterly")}}}),
                 encoding="utf-8",
             )
