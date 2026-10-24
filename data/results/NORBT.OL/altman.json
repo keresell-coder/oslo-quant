@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "altman",
-  "computed_at": "2026-10-23T20:27:22.149616Z",
+  "computed_at": "2026-10-24T21:08:08.992586Z",
   "periods": {
     "LTM 2026-06": {
       "z_score": 2.6705,
@@ -63,12 +63,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "6783d2c2f4ee8e9f0098",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "f847746f2d285859b452",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:21.519687+00:00",
+        "source_fetched_at": "2026-10-24T21:08:08.480626+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -96,12 +96,12 @@
           "balance_sheet.parquet": "ed10c3be8101f76431cdce47447f2e17314ff2685e404d478d8d0eb48a8dec62",
           "income_stmt.parquet": "d43bea9331aeccb445e3bc2bb14fecab430ebe63e346894f8e88999b3ee7dfa8",
           "cash_flow.parquet": "0cbcd82c4cec52956b86a9804c929ccf8391c36ee6df3ad2d58b643bdfc3f96c",
-          "prices.parquet": "e02564af33c705f421950c5fcad3f4ba73eb7b45b107a6fcbd8aa0acb2b27b23"
+          "prices.parquet": "a82fd82a8161856c66a45f7ce4de4e65aa69578796e7465d05aa4a723fc8df35"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:22.126126+00:00",
+        "source_fetched_at": "2026-10-24T21:08:08.974319+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -137,7 +137,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -148,6 +148,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "NORBT.OL",
+      "full_name": "Norbit ASA",
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-24T21:08:08.508845+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

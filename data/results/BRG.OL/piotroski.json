@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-23T20:27:18.969575Z",
+  "computed_at": "2026-10-24T21:08:06.403595Z",
   "periods": {
     "2025": {
       "f_score": 7,
@@ -96,12 +96,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "6b5a2078ce9b7c6c6a83",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "fbfcc8092f6e1441bfd2",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:18.471189+00:00",
+        "source_fetched_at": "2026-10-24T21:08:05.969250+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -128,12 +128,12 @@
           "balance_sheet.parquet": "e88b809b1abca0eee95899efa3181f753ec4aa897c931d4b094c170d82f121b0",
           "income_stmt.parquet": "ddda2b701a88c9f2431c372dcf07ffc92c10c7c85c00df2e5bc6d468a4c21f05",
           "cash_flow.parquet": "cc9ddeaa22c5501f1cb8e5a388b7fdfd6d065f7fa1f21cbb5b7076e883064450",
-          "prices.parquet": "e60f0cc6227bb0c2c694397ca63acaab06a11491ae46cd18997019d9cc3c5d93"
+          "prices.parquet": "9d3f5134b2b9fa2aff6debb19a837bc85f70f4e6f54760e9e19e3c327b39c628"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:18.960864+00:00",
+        "source_fetched_at": "2026-10-24T21:08:06.396761+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -167,7 +167,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -178,6 +178,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "BRG.OL",
+      "full_name": "Borregaard ASA",
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-24T21:08:05.995902+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

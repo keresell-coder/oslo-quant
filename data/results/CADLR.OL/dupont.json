@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-23T20:27:10.467080Z",
+  "computed_at": "2026-10-24T21:07:59.401762Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.2747,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "c8a999bcfed3ec9397ff",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "dc5be27f16077dc92ff1",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:09.667242+00:00",
+        "source_fetched_at": "2026-10-24T21:07:58.818354+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "13bec8864badc00a74c1b3aae02c38a41c6497e13ded4e43f5d4c42e0cad1883",
           "income_stmt.parquet": "02b2e995e9e532a59377232ef9dbc0c895637bf97197c98c655ab2d63de71657",
           "cash_flow.parquet": "5c776c3819b82cda0eade08859bb98ddd537cbbd99b58350b22eeaab5b5ea81a",
-          "prices.parquet": "373e365192c315ef6e0afa1c36f792ca61301892e9720d76e084894156ae9587"
+          "prices.parquet": "86720a8cf9f89d2e9ee428e915682d4a599fb2af98a47bbddedd28cba7f0e622"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:10.460245+00:00",
+        "source_fetched_at": "2026-10-24T21:07:59.396342+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -152,7 +152,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -163,6 +163,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "CADLR.OL",
+      "full_name": "Cadeler A/S",
+      "price_currency": "NOK",
+      "financial_currency": "EUR",
+      "config_currency": "EUR",
+      "yfinance_currency": "EUR",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "EUR",
+        "rate": 0.09568999707698822,
+        "observed_at": "2026-10-24T21:07:58.846668+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

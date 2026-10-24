@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-23T20:27:15.773053Z",
+  "computed_at": "2026-10-24T21:08:04.027177Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.0245,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "7447dc261d6248900762",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "dea9f4e9c15a7dfe6416",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:15.283578+00:00",
+        "source_fetched_at": "2026-10-24T21:08:03.402171+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "b4e38ec967d21f88c0e98b82c99d41fc36f33719fb8990c40c8496abccc13308",
           "income_stmt.parquet": "4c7d0e53e9bb95f7a74d93422c4c6dbc8b5e90665697707857f5a1d2d12b7cdf",
           "cash_flow.parquet": "37b39bb4898423104d65e360b6d70195d031737b905052e2da7dcfe0bedd216e",
-          "prices.parquet": "caf1a0c1449dfba11163c06f3e7c6d7a328e53261263fd19037216b0a9ac9c62"
+          "prices.parquet": "559f3348dfdc9678d2091d4b980497aced23bda6a1b2b742c558239e1b956e7f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:15.767927+00:00",
+        "source_fetched_at": "2026-10-24T21:08:04.023136+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -138,7 +138,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -149,6 +149,37 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "behind-known-release",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": {
+        "period_end": "2026-09-30",
+        "published_on": "2026-10-22",
+        "observed_at": "2026-10-24T20:54:00+00:00",
+        "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+        "scope": "Issuer release availability only; values and accounting definitions unverified"
+      },
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "NOD.OL",
+      "full_name": "Nordic Semiconductor ASA",
+      "price_currency": "NOK",
+      "financial_currency": "USD",
+      "config_currency": "USD",
+      "yfinance_currency": "USD",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "USD",
+        "rate": 0.10733989626169205,
+        "observed_at": "2026-10-24T21:08:03.430454+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

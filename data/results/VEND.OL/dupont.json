@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-23T20:27:03.706553Z",
+  "computed_at": "2026-10-24T21:07:53.923549Z",
   "periods": {
     "2025": {
       "net_profit_margin": -0.0291,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "f1022f2ce8d2a93a33dc",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "29faca421acfe7496a02",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:03.053101+00:00",
+        "source_fetched_at": "2026-10-24T21:07:53.467905+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -96,12 +96,12 @@
           "balance_sheet.parquet": "133c12ee31287776a8350e43e5610e5db26c0bb30f04a6916b39eac937d2ae8f",
           "income_stmt.parquet": "5098e646905e0844da7a9bbf29404c3e59ab74db2b0a8575c9fdeb47150ce681",
           "cash_flow.parquet": "6850870aa977a6f6edb8c95da4f4b77ad2a4e799c6d0a191928420e4abb8d67f",
-          "prices.parquet": "e1d727bbeb08da826a53ce702a5bfd860360614691766f58710f8829d7baf64a"
+          "prices.parquet": "6d23cbc0776f259883bdbfaf71294281b4eb2b2f047f1df1f5d63f82e959fae6"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:03.702329+00:00",
+        "source_fetched_at": "2026-10-24T21:07:53.920141+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -135,7 +135,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -146,6 +146,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "VEND.OL",
+      "full_name": "Vend Marketplaces ASA",
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-24T21:07:53.494850+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

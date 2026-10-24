@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "altman",
-  "computed_at": "2026-10-23T20:27:17.447064Z",
+  "computed_at": "2026-10-24T21:08:05.245363Z",
   "periods": {
     "2025": {
       "z_score": 2.1954,
@@ -52,12 +52,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "5bc9f04a8aedae2fb353",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "630f49a1a9dbedcb4b11",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:16.739665+00:00",
+        "source_fetched_at": "2026-10-24T21:08:04.858440+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -84,12 +84,12 @@
           "balance_sheet.parquet": "087d6f14d0a539fb3c75cc8a450fa2df16f4035c82470a282e273fab9c01d79e",
           "income_stmt.parquet": "b835bbaeb38e962328faa7dd46e073522e3b302968021e1f8f3363be51dd77f6",
           "cash_flow.parquet": "48f1b74eab4282274a61f9a7b0adeaaf0cab5455f4276a35950024104639d279",
-          "prices.parquet": "9514217a48de79a02692ed510986428182cdd35b8ac7ca6aff8f2f631ae23ec8"
+          "prices.parquet": "43a77268c14954da1f17c8b9b203cf5a1a27f06dfb4e8fd6aba45115aaed2971"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:17.428789+00:00",
+        "source_fetched_at": "2026-10-24T21:08:05.231080+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -117,14 +117,14 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "83863658f468c0edecf7df360f36a283c2112bca6714dacfe8abb937cdbe13e3",
-          "quarterly_income_stmt.parquet": "f0ad3f61f27355c904ef000187d9d48f282aa584f3da6a41d99b18dc874a40a1",
+          "quarterly_income_stmt.parquet": "8b1a272cab8699a44a5e0c8e41f83ee0f8a7b2df434db8fa266ab65ae0716493",
           "quarterly_cash_flow.parquet": "bf05f22054aeaf3ae1afc07e33c3b88afe22374025fcc525de311724573d6111"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -135,6 +135,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "ELK.OL",
+      "full_name": "Elkem ASA",
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-24T21:08:04.885636+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

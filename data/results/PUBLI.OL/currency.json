@@ -6,5 +6,14 @@
   "config_currency": "SEK",
   "yfinance_currency": "SEK",
   "detection_source": "yfinance",
-  "verification_status": "verified"
+  "verification_status": "verified",
+  "status": "screening-currency-consistent",
+  "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+  "price_conversion": {
+    "from": "NOK",
+    "to": "SEK",
+    "rate": 1.063599944114685,
+    "observed_at": "2026-10-24T21:08:01.843618+00:00",
+    "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+  }
 }

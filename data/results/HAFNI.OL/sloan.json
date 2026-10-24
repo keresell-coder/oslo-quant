@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-23T20:27:12.210797Z",
+  "computed_at": "2026-10-24T21:08:00.673308Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": -44916000.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "4dcd9a0e720277ed3453",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "f9dc4cfd2b5b7d7fc2da",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:11.530402+00:00",
+        "source_fetched_at": "2026-10-24T21:08:00.150124+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "3e24a61aa114da81c250f97104c92a25a2e8d1a6b9df696ee50de42ef7b5fc98",
           "income_stmt.parquet": "cd187b7641a9d2b4a4e2be3da332dd8f7bcd697bf6693ffc7ae3fa6811646e88",
           "cash_flow.parquet": "b15f97add0c6f936ba19099deee76e6737424c2304160b9ce7f6669780b7e414",
-          "prices.parquet": "b52d16f67b1b0272097163cfb37512ed809e02756a93e58bc363953ca5876897"
+          "prices.parquet": "041085dfa9c94fb5c9d6f10b96ee48e9f8ca99cb4c66491221ee90dd47a37cc1"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:12.191971+00:00",
+        "source_fetched_at": "2026-10-24T21:08:00.659160+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -142,7 +142,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -153,6 +153,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "HAFNI.OL",
+      "full_name": "Hafnia Ltd",
+      "price_currency": "NOK",
+      "financial_currency": "USD",
+      "config_currency": "USD",
+      "yfinance_currency": "USD",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "USD",
+        "rate": 0.10733989626169205,
+        "observed_at": "2026-10-24T21:08:00.223900+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

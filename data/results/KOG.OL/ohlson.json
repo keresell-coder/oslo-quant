@@ -1,7 +1,7 @@
 {
   "ticker": "KOG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-23T20:27:02.002164Z",
+  "computed_at": "2026-10-24T21:07:52.493422Z",
   "periods": {
     "2025": {
       "o_score": null,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "f4141022cd243f711128",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "e5ff837c7f7a5a014802",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:01.386811+00:00",
+        "source_fetched_at": "2026-10-24T21:07:51.904657+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "ef5450fdfb150697f481c3edae73ad9333af5101d8211d96f4ef70117135a369",
           "income_stmt.parquet": "9b14ff33a9eedbf76ad14bda246b9a263e616918c4df10f717f671dc5006b4ad",
           "cash_flow.parquet": "039dd7b3e7ddb9eec812d4daff4a6d92080830b841a798edba8869a8b5fcca16",
-          "prices.parquet": "73b081edd868f1eb53305002b61144b684444447e1d46ce593d68332cd4aa840"
+          "prices.parquet": "69f2bc884bf99b77eb88b86b24cb7f734e03b9f743c0e5755d0462853d97aac9"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:01.987413+00:00",
+        "source_fetched_at": "2026-10-24T21:07:52.482266+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -139,7 +139,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -150,6 +150,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "KOG.OL",
+      "full_name": "Kongsberg Gruppen ASA",
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-24T21:07:51.934226+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

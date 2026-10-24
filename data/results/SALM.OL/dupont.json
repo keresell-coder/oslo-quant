@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-23T20:26:58.236903Z",
+  "computed_at": "2026-10-24T21:07:49.693685Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.0404,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "023cb69208c86788c8ec",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "af240f371ff542bb9bc6",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:26:57.497788+00:00",
+        "source_fetched_at": "2026-10-24T21:07:49.254275+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "5751e16fd176d0415f0c6e34c342b9c5562da28e52c31f931e9555505eccb34e",
           "income_stmt.parquet": "1a5c48a25e3246f046d9b7fd961436aaac8e9098e4f798834a6909d10e95b70f",
           "cash_flow.parquet": "9bc1acefeff062e785e5df82586fe7f341ade2575cd827229551dac747f07425",
-          "prices.parquet": "527e2fbb655bbfcc6a8f9486228091969977381e38f4d5d43f856c84c0b82338"
+          "prices.parquet": "64b174b6f72bfbf63e24945b537c578cbf4d3cdab764799de98cee0390a13556"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:26:58.073057+00:00",
+        "source_fetched_at": "2026-10-24T21:07:49.567228+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -135,7 +135,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -146,6 +146,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "SALM.OL",
+      "full_name": "SalMar ASA",
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-24T21:07:49.283364+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }

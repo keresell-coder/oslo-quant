@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "snapshot_id": "adb919d872c240baab720e1117698af8",
-  "generated_at": "2026-10-23T20:27:23.950673+00:00",
+  "snapshot_id": "4dca96c23ec94dfb957322e0c1a820a9",
+  "generated_at": "2026-10-24T21:08:10.391837+00:00",
   "status": "degraded",
-  "source_fetched_at": "2026-10-23T20:26:55.501232+00:00",
+  "source_fetched_at": "2026-10-24T21:07:47.847778+00:00",
   "market_data_as_of": null,
   "expected_session": null,
   "data_kind": "financial-statements",
@@ -11,27 +11,76 @@
   "source_observation_start": "2026-06-30",
   "source_observation_end": "2026-06-30",
   "issues": [
+    "NOD.OL: filing coverage: behind-known-release, quarterly table coverage behind known release or invalid",
     "16 companies have no primary-ledger line-item coverage; filing dates remain unverified for all companies"
   ],
   "reasons": [
+    "NOD.OL: filing coverage: behind-known-release, quarterly table coverage behind known release or invalid",
     "16 companies have no primary-ledger line-item coverage; filing dates remain unverified for all companies"
   ],
   "coverage": {
     "expected": 17,
-    "refreshed": 17,
-    "withheld": 0,
+    "refreshed": 16,
+    "withheld": 1,
     "minimum_refreshed": 14,
     "primary_ledger_companies": 1
   },
-  "withheld_reasons": [],
+  "withheld_reasons": [
+    "NOD.OL: filing coverage: behind-known-release, quarterly table coverage behind known release or invalid"
+  ],
   "companies": [
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "MOWI.OL",
+        "full_name": "Mowi ASA",
+        "price_currency": "NOK",
+        "financial_currency": "EUR",
+        "config_currency": "EUR",
+        "yfinance_currency": "EUR",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "EUR",
+          "rate": 0.09568999707698822,
+          "observed_at": "2026-10-24T21:07:47.990059+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "MOWI.OL",
       "status": "current",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:26:55.501232+00:00",
+      "source_fetched_at": "2026-10-24T21:07:47.847778+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -45,12 +94,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "SALM.OL",
+        "full_name": "SalMar ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:07:49.283364+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "SALM.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:26:57.497788+00:00",
+      "source_fetched_at": "2026-10-24T21:07:49.254275+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -64,12 +158,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "FRO.OL",
+        "full_name": "Frontline plc",
+        "price_currency": "NOK",
+        "financial_currency": "USD",
+        "config_currency": "USD",
+        "yfinance_currency": "USD",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "USD",
+          "rate": 0.10733989626169205,
+          "observed_at": "2026-10-24T21:07:50.474401+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "FRO.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:26:59.469966+00:00",
+      "source_fetched_at": "2026-10-24T21:07:50.446057+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -83,12 +222,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "KOG.OL",
+        "full_name": "Kongsberg Gruppen ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:07:51.934226+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "KOG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:01.386811+00:00",
+      "source_fetched_at": "2026-10-24T21:07:51.904657+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -102,12 +286,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "VEND.OL",
+        "full_name": "Vend Marketplaces ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:07:53.494850+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "VEND.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:03.053101+00:00",
+      "source_fetched_at": "2026-10-24T21:07:53.467905+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -121,12 +350,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "DOFG.OL",
+        "full_name": "DOF Group ASA",
+        "price_currency": "NOK",
+        "financial_currency": "USD",
+        "config_currency": "USD",
+        "yfinance_currency": "USD",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "USD",
+          "rate": 0.10733989626169205,
+          "observed_at": "2026-10-24T21:07:54.768020+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "DOFG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:04.740792+00:00",
+      "source_fetched_at": "2026-10-24T21:07:54.737513+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -140,12 +414,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "BORR.OL",
+        "full_name": "Borr Drilling Ltd",
+        "price_currency": "NOK",
+        "financial_currency": "USD",
+        "config_currency": "USD",
+        "yfinance_currency": "USD",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "USD",
+          "rate": 0.10733989626169205,
+          "observed_at": "2026-10-24T21:07:56.143675+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "BORR.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:06.438320+00:00",
+      "source_fetched_at": "2026-10-24T21:07:56.108839+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -159,12 +478,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "ODL.OL",
+        "full_name": "Odfjell Drilling Ltd",
+        "price_currency": "NOK",
+        "financial_currency": "USD",
+        "config_currency": "USD",
+        "yfinance_currency": "USD",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "USD",
+          "rate": 0.10733989626169205,
+          "observed_at": "2026-10-24T21:07:57.598035+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "ODL.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:07.979369+00:00",
+      "source_fetched_at": "2026-10-24T21:07:57.569005+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -178,12 +542,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "CADLR.OL",
+        "full_name": "Cadeler A/S",
+        "price_currency": "NOK",
+        "financial_currency": "EUR",
+        "config_currency": "EUR",
+        "yfinance_currency": "EUR",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "EUR",
+          "rate": 0.09568999707698822,
+          "observed_at": "2026-10-24T21:07:58.846668+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "CADLR.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:09.667242+00:00",
+      "source_fetched_at": "2026-10-24T21:07:58.818354+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -197,12 +606,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "HAFNI.OL",
+        "full_name": "Hafnia Ltd",
+        "price_currency": "NOK",
+        "financial_currency": "USD",
+        "config_currency": "USD",
+        "yfinance_currency": "USD",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "USD",
+          "rate": 0.10733989626169205,
+          "observed_at": "2026-10-24T21:08:00.223900+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "HAFNI.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:11.530402+00:00",
+      "source_fetched_at": "2026-10-24T21:08:00.150124+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -216,12 +670,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "PUBLI.OL",
+        "full_name": "Public Property Invest ASA",
+        "price_currency": "NOK",
+        "financial_currency": "SEK",
+        "config_currency": "SEK",
+        "yfinance_currency": "SEK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "SEK",
+          "rate": 1.063599944114685,
+          "observed_at": "2026-10-24T21:08:01.843618+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "PUBLI.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:13.184744+00:00",
+      "source_fetched_at": "2026-10-24T21:08:01.547362+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -235,12 +734,84 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "behind-known-release",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": {
+          "period_end": "2026-09-30",
+          "published_on": "2026-10-22",
+          "observed_at": "2026-10-24T20:54:00+00:00",
+          "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+          "scope": "Issuer release availability only; values and accounting definitions unverified"
+        },
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "behind-known-release",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": {
+              "period_end": "2026-09-30",
+              "published_on": "2026-10-22",
+              "observed_at": "2026-10-24T20:54:00+00:00",
+              "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+              "scope": "Issuer release availability only; values and accounting definitions unverified"
+            },
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "behind-known-release",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": {
+              "period_end": "2026-09-30",
+              "published_on": "2026-10-22",
+              "observed_at": "2026-10-24T20:54:00+00:00",
+              "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+              "scope": "Issuer release availability only; values and accounting definitions unverified"
+            },
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "behind-known-release",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": {
+              "period_end": "2026-09-30",
+              "published_on": "2026-10-22",
+              "observed_at": "2026-10-24T20:54:00+00:00",
+              "source_url": "https://www.nordicsemi.com/Investor-Relations/Reports/Quarterly",
+              "scope": "Issuer release availability only; values and accounting definitions unverified"
+            },
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "NOD.OL",
+        "full_name": "Nordic Semiconductor ASA",
+        "price_currency": "NOK",
+        "financial_currency": "USD",
+        "config_currency": "USD",
+        "yfinance_currency": "USD",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "USD",
+          "rate": 0.10733989626169205,
+          "observed_at": "2026-10-24T21:08:03.430454+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "NOD.OL",
-      "status": "degraded",
-      "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:15.283578+00:00",
+      "status": "blocked",
+      "withheld_reasons": [
+        "filing coverage: behind-known-release",
+        "quarterly table coverage behind known release or invalid"
+      ],
+      "source_fetched_at": "2026-10-24T21:08:03.402171+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -254,12 +825,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "ELK.OL",
+        "full_name": "Elkem ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:08:04.885636+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "ELK.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:16.739665+00:00",
+      "source_fetched_at": "2026-10-24T21:08:04.858440+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -273,12 +889,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "BRG.OL",
+        "full_name": "Borregaard ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:08:05.995902+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "BRG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:18.471189+00:00",
+      "source_fetched_at": "2026-10-24T21:08:05.969250+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -292,12 +953,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "KIT.OL",
+        "full_name": "Kitron ASA",
+        "price_currency": "NOK",
+        "financial_currency": "EUR",
+        "config_currency": "EUR",
+        "yfinance_currency": "EUR",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "EUR",
+          "rate": 0.09568999707698822,
+          "observed_at": "2026-10-24T21:08:07.318926+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "KIT.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:19.937507+00:00",
+      "source_fetched_at": "2026-10-24T21:08:07.245537+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -311,12 +1017,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "NORBT.OL",
+        "full_name": "Norbit ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:08:08.508845+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "NORBT.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:21.519687+00:00",
+      "source_fetched_at": "2026-10-24T21:08:08.480626+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -330,12 +1081,57 @@
       "filing_date_status": "unverified"
     },
     {
+      "filing_coverage": {
+        "status": "unverified",
+        "latest_period_end": "2026-06-30",
+        "issuer_release": null,
+        "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
+        "tables": {
+          "income_stmt": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "balance_sheet": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          },
+          "cash_flow": {
+            "status": "unverified",
+            "latest_period_end": "2026-06-30",
+            "issuer_release": null,
+            "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+          }
+        }
+      },
+      "currency_contract": {
+        "ticker": "TEL.OL",
+        "full_name": "Telenor ASA",
+        "price_currency": "NOK",
+        "financial_currency": "NOK",
+        "config_currency": "NOK",
+        "yfinance_currency": "NOK",
+        "detection_source": "yfinance",
+        "verification_status": "verified",
+        "status": "screening-currency-consistent",
+        "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+        "price_conversion": {
+          "from": "NOK",
+          "to": "NOK",
+          "rate": 1.0,
+          "observed_at": "2026-10-24T21:08:09.884650+00:00",
+          "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+        }
+      },
       "ticker": "TEL.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-23T20:27:23.160356+00:00",
+      "source_fetched_at": "2026-10-24T21:08:09.857531+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 115,
+      "statement_age_days": 116,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {

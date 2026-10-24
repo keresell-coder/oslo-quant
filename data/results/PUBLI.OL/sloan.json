@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-23T20:27:14.165717Z",
+  "computed_at": "2026-10-24T21:08:02.509344Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": -1340774393.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "adb919d872c240baab720e1117698af8",
-    "snapshot_id": "8787343ac5e72c212881",
+    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
+    "snapshot_id": "2eb6bb59d204797bc84b",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-23T20:27:13.184744+00:00",
+        "source_fetched_at": "2026-10-24T21:08:01.547362+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "92f8d6a295fbf312f0d3e73e5420a935d37f86edf2d088cdc7bad9a2c8c29ebb",
           "income_stmt.parquet": "9fb917b4156c05e8e574b4656f3a062a309b7508d47c047a37b63cc2a75037bc",
           "cash_flow.parquet": "592c5dc6c486893bb5c71d929b23b37bf49f8c65564fe1fce910def962b3bcad",
-          "prices.parquet": "521292388d96e480f09ecd5d43c400f857c7585f76afeff22e260960e23062be"
+          "prices.parquet": "c3f949ff4246ef80b5db2c5066bac9c00fff82eeba6f6089b2cc182dc276ec03"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-23T20:27:13.985918+00:00",
+        "source_fetched_at": "2026-10-24T21:08:02.327535+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -141,7 +141,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 115,
+    "statement_age_days": 116,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -152,6 +152,31 @@
       "filled_items": 0,
       "mismatches": 0,
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "PUBLI.OL",
+      "full_name": "Public Property Invest ASA",
+      "price_currency": "NOK",
+      "financial_currency": "SEK",
+      "config_currency": "SEK",
+      "yfinance_currency": "SEK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "SEK",
+        "rate": 1.063599944114685,
+        "observed_at": "2026-10-24T21:08:01.843618+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
     }
   }
 }
