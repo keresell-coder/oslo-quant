@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-24T21:07:55.224789Z",
+  "computed_at": "2026-10-24T21:39:22.728374Z",
   "periods": {
     "2025": {
       "cfo_accruals": -61000000.0,
@@ -56,12 +56,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "3d69d1db6186f8caace7",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "c98821d13cf66efcf37c",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:54.737513+00:00",
+        "source_fetched_at": "2026-10-24T21:39:22.338175+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -89,12 +89,12 @@
           "balance_sheet.parquet": "c5621c1c3efc489cfb3f01f0d722a10c32e814fd537083ae7defb23244bf650e",
           "income_stmt.parquet": "cc0cc1daa7079a1c2d0fb0713a45585da4b82ab280af8f68ffdda6250b5c508a",
           "cash_flow.parquet": "449f190f929a73d3f7aab5b13074c999497cff01b530a386a583f1245e4e4078",
-          "prices.parquet": "49f4f922bfaa1d80336cc7844d18cfe47846d17b0b3b385083acd9b403758b1e"
+          "prices.parquet": "7153ad09742506951174092ce672f40649a24c0533cc12930d6f2ddad28d8e7a"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:55.215492+00:00",
+        "source_fetched_at": "2026-10-24T21:39:22.707853+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -160,8 +160,128 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:07:54.768020+00:00",
+        "observed_at": "2026-10-24T21:39:22.371382+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "DOFG.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      },
+      "reconciliation": {
+        "issuer": "DOFG.OL",
+        "period_end": "2026-06-30",
+        "published_at": "2026-08-19",
+        "currency": "USD",
+        "source_unit": "million",
+        "multiply_to_base": 1000000,
+        "source": {
+          "url": "https://cdn.prod.website-files.com/629f1b36bee3b058907852a0/6a8539185e737d65fdcdfe70_DOF%20Group%20ASA%20Financial%20Report%20Q2%202026.pdf",
+          "file": "DOF_Q2_2026.pdf",
+          "sha256": "24ec6ca43f6d5cf68cff7cb826e496cbd06b32ad97bf0e779908fe2a54b3b4e7",
+          "printed_page": [
+            9,
+            17,
+            19
+          ]
+        },
+        "definitions": {
+          "ifrs_ebitda": {
+            "quarter": 332,
+            "YTD2026": 485,
+            "YTD2025": 329,
+            "FY2025": 718,
+            "TTM": 874,
+            "TTM_expression": "718+485-329",
+            "scope": "IFRS consolidated: JV equity-accounted",
+            "definition": "Operating EBIT + depreciation + impairment (reverse signs of expenses)",
+            "quarter_components": {
+              "operating_EBIT": 220,
+              "depreciation": 70,
+              "impairment": 42
+            }
+          },
+          "provider_ebitda_reconstruction": {
+            "reported_provider_value": 347,
+            "expression": "netprofit146+tax58+grossfinancialcost31+depreciation70+impairment42",
+            "result": 347,
+            "provider_ebit": 235,
+            "provider_ebit_expression": "PBT204+grossfinancialcost31",
+            "issuer_ebit": 220,
+            "delta_vs_issuer": 15,
+            "delta_expression": "grossfinancialcost31-netfinancialcost16",
+            "status": "numeric_reconstruction_exact_not_provider_methodology_confirmation",
+            "source_page": 9,
+            "limitation": "Do not overwrite issuer/standardized definitions under same unlabeled field. Provider TTM923 remains unreconciled; do not replace with874 silently."
+          },
+          "management_ebitda": {
+            "quarter": 358,
+            "scope": "Management reporting: JV consolidated gross, not IFRS consolidated",
+            "source_page": 19,
+            "status": "separate_series_required"
+          },
+          "debt_balance_sheet": {
+            "bond_noncurrent": 148,
+            "credit_institutions_noncurrent": 1280,
+            "credit_institutions_current_including_accrued_interest": 128,
+            "leases_noncurrent": 105,
+            "leases_current": 57,
+            "total_including_leases_and_accrued_interest": 1718,
+            "source_page": 9
+          },
+          "cash": {
+            "unrestricted": 343,
+            "restricted": 6,
+            "reported_total": 350,
+            "source_page": 9,
+            "rounding_note": "Displayed rounded components343+6 do not exactly sum printed350; preserve reported total, no plug."
+          },
+          "net_interest_bearing_debt_issuer_APM": {
+            "reported": 1217,
+            "debt_excluding_accrued_interest": 1714,
+            "receivable_sublease": 52,
+            "other_interest_bearing_receivables": 96,
+            "cash_including_restricted": 350,
+            "source_page": 17,
+            "rounding_note": "Rounded components imply1216; printed1217 retained. Difference not repaired by arbitrary balancing."
+          },
+          "EV_bridge": {
+            "status": "unresolved_do_not_publish_verified_multiple",
+            "marketcap_currency": "NOK",
+            "marketcap_frozen": 31646808064,
+            "enterprise_value_provider_frozen": 33021806592,
+            "provider_difference_NOK": 1374998528,
+            "USD_debt_minus_unrestricted_cash": 1375000000,
+            "frozen_FX_USDNOK": 9.316200256347656,
+            "translated_debt_minus_unrestricted_cash_NOK": 12809775352.478027,
+            "diagnostic_EV_NOK": 44456583416.47803,
+            "final_verified_EV": null,
+            "final_verified_EV_EBITDA": null,
+            "missing": [
+              "Same-date market cap/FX and statement measurement date policy",
+              "Noncontrolling interests and preferred capital treatment",
+              "JV/non-operating asset and interest-bearing receivable treatment",
+              "Lease inclusion consistency with EBITDA denominator",
+              "Provider EV computation provenance"
+            ],
+            "safe_output": "unavailable: enterprise value currency/component reconciliation pending"
+          }
+        },
+        "ingestion_policy": "Store issuer and provider numbers separately with source labels. No formula changes or canonical mutation.",
+        "application_policy": "audit-only: no provider or effective financial value replacement"
       }
     }
   }

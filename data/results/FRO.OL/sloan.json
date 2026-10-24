@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-24T21:07:51.082526Z",
+  "computed_at": "2026-10-24T21:39:19.417347Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": 133573000.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "5797991c88760dcdc675",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "7febb9baade6e4b2ee96",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:50.446057+00:00",
+        "source_fetched_at": "2026-10-24T21:39:18.903521+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "7233373002cba55f9dbb70c2292eede6ba269bb3d90cee9ca78adaa0d37d99ac",
           "income_stmt.parquet": "2ad29fb0bd0e5393a0d2adfdd83e114079b1abc370303fa176eb919cdf901bb2",
           "cash_flow.parquet": "73af606ce59dcfab161256a307907cd80c69ee9e84bf86bbc6a59b7d9d47a0b9",
-          "prices.parquet": "87252c69421203c584a9a84eb9de8b36edc091b35f6b6c44f9bafad0aea5a404"
+          "prices.parquet": "9e53a5aac65b608c2719cc5ef1f9ca9dae0ac7d5665ed449e9819a17b28d68c1"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:51.069084+00:00",
+        "source_fetched_at": "2026-10-24T21:39:19.383606+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -173,8 +173,26 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:07:50.474401+00:00",
+        "observed_at": "2026-10-24T21:39:18.929980+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "FRO.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-24T21:08:06.405999Z",
+  "computed_at": "2026-10-24T21:39:31.353011Z",
   "periods": {
     "2025": {
       "cfo_accruals": -736000000.0,
@@ -56,12 +56,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "fbfcc8092f6e1441bfd2",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "39652756f7575c75261d",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:08:05.969250+00:00",
+        "source_fetched_at": "2026-10-24T21:39:30.873427+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -88,12 +88,12 @@
           "balance_sheet.parquet": "e88b809b1abca0eee95899efa3181f753ec4aa897c931d4b094c170d82f121b0",
           "income_stmt.parquet": "ddda2b701a88c9f2431c372dcf07ffc92c10c7c85c00df2e5bc6d468a4c21f05",
           "cash_flow.parquet": "cc9ddeaa22c5501f1cb8e5a388b7fdfd6d065f7fa1f21cbb5b7076e883064450",
-          "prices.parquet": "9d3f5134b2b9fa2aff6debb19a837bc85f70f4e6f54760e9e19e3c327b39c628"
+          "prices.parquet": "711266f8e89955064356340ea082a2f8bc6f1f9e71e2f3021c46493d5b87234d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:08:06.396761+00:00",
+        "source_fetched_at": "2026-10-24T21:39:31.333034+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -160,8 +160,26 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:08:05.995902+00:00",
+        "observed_at": "2026-10-24T21:39:30.898210+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "BRG.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

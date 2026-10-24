@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-24T21:07:49.693685Z",
+  "computed_at": "2026-10-24T21:39:18.068362Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.0404,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "af240f371ff542bb9bc6",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "8f8dfb0b431e293b9335",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:49.254275+00:00",
+        "source_fetched_at": "2026-10-24T21:39:17.637986+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "5751e16fd176d0415f0c6e34c342b9c5562da28e52c31f931e9555505eccb34e",
           "income_stmt.parquet": "1a5c48a25e3246f046d9b7fd961436aaac8e9098e4f798834a6909d10e95b70f",
           "cash_flow.parquet": "9bc1acefeff062e785e5df82586fe7f341ade2575cd827229551dac747f07425",
-          "prices.parquet": "64b174b6f72bfbf63e24945b537c578cbf4d3cdab764799de98cee0390a13556"
+          "prices.parquet": "fc85aebab3155df5becc89a1cdf81372777b8a145aa355009ca0891aa5861110"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:49.567228+00:00",
+        "source_fetched_at": "2026-10-24T21:39:17.982942+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,8 +168,26 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:07:49.283364+00:00",
+        "observed_at": "2026-10-24T21:39:17.663422+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "SALM.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

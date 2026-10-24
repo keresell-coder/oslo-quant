@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-24T21:08:08.990222Z",
+  "computed_at": "2026-10-24T21:39:33.737782Z",
   "periods": {
     "LTM 2026-06": {
       "o_score": -1.5939,
@@ -83,12 +83,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "f847746f2d285859b452",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "80564a9d09392a506c95",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:08:08.480626+00:00",
+        "source_fetched_at": "2026-10-24T21:39:33.105889+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -116,12 +116,12 @@
           "balance_sheet.parquet": "ed10c3be8101f76431cdce47447f2e17314ff2685e404d478d8d0eb48a8dec62",
           "income_stmt.parquet": "d43bea9331aeccb445e3bc2bb14fecab430ebe63e346894f8e88999b3ee7dfa8",
           "cash_flow.parquet": "0cbcd82c4cec52956b86a9804c929ccf8391c36ee6df3ad2d58b643bdfc3f96c",
-          "prices.parquet": "a82fd82a8161856c66a45f7ce4de4e65aa69578796e7465d05aa4a723fc8df35"
+          "prices.parquet": "02a1009fbb2b532676a92b52999315c28d9b9a5130063ca10ae2a2a81eb1f46d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:08:08.974319+00:00",
+        "source_fetched_at": "2026-10-24T21:39:33.702990+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -190,8 +190,26 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:08:08.508845+00:00",
+        "observed_at": "2026-10-24T21:39:33.167827+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "NORBT.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

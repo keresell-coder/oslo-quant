@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "altman",
-  "computed_at": "2026-10-24T21:08:00.678440Z",
+  "computed_at": "2026-10-24T21:39:26.806069Z",
   "periods": {
     "LTM 2026-06": {
       "z_score": 2.9651,
@@ -63,12 +63,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "f9dc4cfd2b5b7d7fc2da",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "93cf67786285e220d041",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:08:00.150124+00:00",
+        "source_fetched_at": "2026-10-24T21:39:26.449878+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -96,12 +96,12 @@
           "balance_sheet.parquet": "3e24a61aa114da81c250f97104c92a25a2e8d1a6b9df696ee50de42ef7b5fc98",
           "income_stmt.parquet": "cd187b7641a9d2b4a4e2be3da332dd8f7bcd697bf6693ffc7ae3fa6811646e88",
           "cash_flow.parquet": "b15f97add0c6f936ba19099deee76e6737424c2304160b9ce7f6669780b7e414",
-          "prices.parquet": "041085dfa9c94fb5c9d6f10b96ee48e9f8ca99cb4c66491221ee90dd47a37cc1"
+          "prices.parquet": "f4f0b417e715c9b679333ad0bf9f93704ecbd8373f59432a8b35e47ce8ae7ab7"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:08:00.659160+00:00",
+        "source_fetched_at": "2026-10-24T21:39:26.764206+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -170,8 +170,26 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:08:00.223900+00:00",
+        "observed_at": "2026-10-24T21:39:26.477308+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "HAFNI.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

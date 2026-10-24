@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-24T21:07:53.923549Z",
+  "computed_at": "2026-10-24T21:39:21.661369Z",
   "periods": {
     "2025": {
       "net_profit_margin": -0.0291,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "29faca421acfe7496a02",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "44b0af37c376223bae78",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:53.467905+00:00",
+        "source_fetched_at": "2026-10-24T21:39:21.227812+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -96,12 +96,12 @@
           "balance_sheet.parquet": "133c12ee31287776a8350e43e5610e5db26c0bb30f04a6916b39eac937d2ae8f",
           "income_stmt.parquet": "5098e646905e0844da7a9bbf29404c3e59ab74db2b0a8575c9fdeb47150ce681",
           "cash_flow.parquet": "6850870aa977a6f6edb8c95da4f4b77ad2a4e799c6d0a191928420e4abb8d67f",
-          "prices.parquet": "6d23cbc0776f259883bdbfaf71294281b4eb2b2f047f1df1f5d63f82e959fae6"
+          "prices.parquet": "15516469bcc1965c3f2ce62ca139f6bf9b17f5359ef736cecf20c844b395457c"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:53.920141+00:00",
+        "source_fetched_at": "2026-10-24T21:39:21.654202+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,8 +168,26 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:07:53.494850+00:00",
+        "observed_at": "2026-10-24T21:39:21.253407+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "VEND.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

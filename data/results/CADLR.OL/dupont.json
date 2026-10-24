@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-24T21:07:59.401762Z",
+  "computed_at": "2026-10-24T21:39:25.836545Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.2747,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "dc5be27f16077dc92ff1",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "447bba5ba2728a6a36b4",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:58.818354+00:00",
+        "source_fetched_at": "2026-10-24T21:39:25.376377+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -116,7 +116,7 @@
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:59.396342+00:00",
+        "source_fetched_at": "2026-10-24T21:39:25.825059+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -185,8 +185,26 @@
         "from": "NOK",
         "to": "EUR",
         "rate": 0.09568999707698822,
-        "observed_at": "2026-10-24T21:07:58.846668+00:00",
+        "observed_at": "2026-10-24T21:39:25.403833+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "CADLR.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

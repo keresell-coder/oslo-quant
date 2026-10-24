@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-24T21:07:48.468047Z",
+  "computed_at": "2026-10-24T21:39:17.012294Z",
   "periods": {
     "LTM 2026-06": {
       "cfo_accruals": -298200000.0,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "c8cc4704054aacf27993",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "22b608c8382f144730d2",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:47.847778+00:00",
+        "source_fetched_at": "2026-10-24T21:39:16.328742+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "f566bb9bfdda5ee1245f6ca748cb9962e48869c6bd9396e78594c5d0b7ccde87",
           "income_stmt.parquet": "80802f212cb8e52236076011ab78327487b259dc6b3c1049170d242e1d8c0cb1",
           "cash_flow.parquet": "9bb1f3ea765c4ec26795fd0f1dbceec460cdb0abe5ec7eb1998dc790caab46a8",
-          "prices.parquet": "ab695a16dfcc108cefc2c95a1d4cf9fe359f6e338728d36f3954d11a1fb853e0"
+          "prices.parquet": "bf2652aa30bfe58ece0edb32f00e76adc6c106440021d52d537b8234c4b3d609"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:48.321877+00:00",
+        "source_fetched_at": "2026-10-24T21:39:16.903443+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -175,8 +175,26 @@
         "from": "NOK",
         "to": "EUR",
         "rate": 0.09568999707698822,
-        "observed_at": "2026-10-24T21:07:47.990059+00:00",
+        "observed_at": "2026-10-24T21:39:16.439449+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "MOWI.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

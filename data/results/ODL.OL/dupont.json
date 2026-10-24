@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-24T21:07:58.142259Z",
+  "computed_at": "2026-10-24T21:39:24.696348Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.325,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "700e7d0268714a0c06f6",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "db09b62d077a859952f8",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:07:57.569005+00:00",
+        "source_fetched_at": "2026-10-24T21:39:24.421375+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "119ebaec35a47934b8acd02ceefa77e3bfa9bd01c317179039fecccd3a7f519a",
           "income_stmt.parquet": "2eb43ac2a05037f528821bf51074f0308c9f92278dd6b8d02bfbf37c45f78c6b",
           "cash_flow.parquet": "879877f46a0246733e842f7152fd9fa9b26f88c82246520f70088907778f7a5e",
-          "prices.parquet": "d339877833561cde082e19c07cb117ed1348bc83989911f4798aade271ead9a6"
+          "prices.parquet": "9f94f01568c95056fb2a395296cb773eb5959302fec84e9bafe6af55f16bde21"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:07:58.138819+00:00",
+        "source_fetched_at": "2026-10-24T21:39:24.689216+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,8 +168,26 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:07:57.598035+00:00",
+        "observed_at": "2026-10-24T21:39:24.447986+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "ODL.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }

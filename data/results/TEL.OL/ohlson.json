@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-24T21:08:10.281509Z",
+  "computed_at": "2026-10-24T21:39:34.966783Z",
   "periods": {
     "2025": {
       "o_score": -1.4808,
@@ -68,12 +68,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "4dca96c23ec94dfb957322e0c1a820a9",
-    "snapshot_id": "65fe3b2ac8a0085da281",
+    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
+    "snapshot_id": "ab72381e6633c3cf5e1b",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:08:09.857531+00:00",
+        "source_fetched_at": "2026-10-24T21:39:34.520108+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,12 +101,12 @@
           "balance_sheet.parquet": "753d3e3a9072465ac42fede850f60c9460b20e8db83f6ebc427a2ef2202b12af",
           "income_stmt.parquet": "a504fd0b7aa878e8d3cdb64da648a5f51e4e610f5e010ee0b4344a4334a131a2",
           "cash_flow.parquet": "e45cd4cc353cfdf16943102c83718fd97af4a83b11c63e9c7042524cb194f3ee",
-          "prices.parquet": "1bab6d3e47f4d816e5cfe7b9465eef06cc9d0e07357ca1cb7033e44875e9a77c"
+          "prices.parquet": "e26bc5e178d65957fb9977bde27bc5ce0abf04f942bee9e6f808b9e14e19240a"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:08:10.269418+00:00",
+        "source_fetched_at": "2026-10-24T21:39:34.940654+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -133,7 +133,7 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "ccc89c17b56604da8c43d39abc30f461812771cf942f36341814bdc568886c08",
-          "quarterly_income_stmt.parquet": "2b4747f74e8fe389ac8561823441e743607d2355af61ad72f75f6101c3964e70",
+          "quarterly_income_stmt.parquet": "a5928b02bceb38b4828c6f6300493997628a43e5f297e6487c37f30fa4a3787b",
           "quarterly_cash_flow.parquet": "ee9fca5aabae229a0afe7ea860dad1e55962de6dc0f64c62a9e2c98bf1f13712"
         },
         "cache_used": false
@@ -173,8 +173,26 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:08:09.884650+00:00",
+        "observed_at": "2026-10-24T21:39:34.545981+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "TEL.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
       }
     }
   }
