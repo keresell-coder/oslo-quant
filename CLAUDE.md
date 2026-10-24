@@ -473,3 +473,5 @@ empty results over good committed data. If it happens:
 Financial-input repair (2026-10-24): [current contract and deployment notes](docs/financial-input-contracts.md).
 Known issuer release coverage and explicit currency qualification extend the
 source-trust publication gate. No formula or primary financial value changes.
+
+Primary ingestion review batch: see [selected inputs and remaining gates](docs/primary-financial-ingestion.md). Source facts, provider observations and input selection are separate; formulas and annual controls are unchanged.

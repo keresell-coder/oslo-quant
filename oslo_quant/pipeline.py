@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import math
+import hashlib
 import uuid
 from pathlib import Path
 from typing import Any
@@ -15,6 +16,7 @@ from oslo_quant.config import (
     DATA_RESULTS,
     FMP_API_KEY,
     COMPANIES,
+    ROOT,
 )
 from oslo_quant.fetchers.base import Statements
 from oslo_quant.fetchers.yfinance_fetcher import YFinanceFetcher
@@ -23,6 +25,8 @@ from oslo_quant.ltm import build_ltm
 from oslo_quant.verified import apply_ledger
 from oslo_quant.trust import provenance, stamp
 from oslo_quant.financial_contracts import filing_coverage
+from oslo_quant.primary_financials import load_primary
+from oslo_quant.primary_adapter import apply_primary_current
 
 log = logging.getLogger(__name__)
 
@@ -108,6 +112,14 @@ def run(
         except Exception as exc:
             log.warning("[%s] LTM construction failed (skipped): %s", ticker, exc)
             ltm_status = {"built": False, "label": None, "detail": f"error: {exc}"}
+        primary = load_primary(ticker, ROOT / "data" / "primary")
+        stmts, primary_selection = apply_primary_current(stmts, primary, fin_ccy,
+            yf_fetcher.provenance.get(ticker, {}).get("quarterly", {}).get("statement_period_ends", {}))
+        primary["selection"] = primary_selection
+        reconciliation_path = ROOT / "data" / "reconciliation" / f"{ticker.split('.')[0]}_definition_component_mapping.json"
+        if reconciliation_path.exists():
+            primary["reconciliation"] = json.loads(reconciliation_path.read_text())
+        _persist(ticker, "primary", primary)
         _persist(ticker, "ltm", ltm_status)
         source = provenance(
             yf_fetcher.provenance.get(ticker, {}).get("annual", {}),
@@ -118,6 +130,8 @@ def run(
         quarterly_periods = source.get("groups", {}).get("quarterly", {}).get("statement_period_ends", {})
         source["filing_coverage"] = filing_coverage(ticker, [p for values in quarterly_periods.values() for p in values])
         source["currency_contract"] = currency_info
+        source["primary_inputs"] = primary
+        source["snapshot_id"] = hashlib.sha256((source["snapshot_id"] + json.dumps(primary, sort_keys=True)).encode()).hexdigest()[:20]
 
         # --- Common-currency (USD) rate for the Ohlson SIZE term ---
         if fin_ccy == "USD":

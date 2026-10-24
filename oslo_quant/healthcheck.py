@@ -73,7 +73,16 @@ def build_health(within_hours=6, min_fresh=None, results_dir=None) -> dict:
         if source.get("statement_status") == "invalid-future-period":
             errors.append("future statement period")
         quarterly = source.get("groups", {}).get("quarterly", {}).get("statement_period_ends", {})
+        provider_quarterly = quarterly
+        primary = source.get("primary_inputs") or {}
+        selection = primary.get("selection") or {}
+        if primary.get("status") == "blocked":
+            errors.append("configured primary input validation failed")
+        if primary.get("status") == "reviewed-line-items" and selection.get("status") == "applied-selected-primary":
+            quarterly = selection.get("coverage") or quarterly
         coverage = filing_coverage(company.ticker, [p for values in quarterly.values() for p in values], now)
+        coverage["input_source"] = "selected-primary" if quarterly is not provider_quarterly else "provider"
+        coverage["provider_tables"] = {name: filing_coverage(company.ticker, provider_quarterly.get(name, []), now) for name in ("income_stmt", "balance_sheet", "cash_flow")}
         if coverage["status"] in {"behind-known-release", "invalid-period"}:
             errors.append("filing coverage: " + coverage["status"])
         per_table = {name: filing_coverage(company.ticker, quarterly.get(name, []), now)
@@ -86,6 +95,8 @@ def build_health(within_hours=6, min_fresh=None, results_dir=None) -> dict:
             errors.append("currency contract missing or unverified")
         row = {
             "filing_coverage": coverage, "currency_contract": currency,
+            "primary_input_status": primary.get("status", "not-configured"), "primary_selection": selection,
+            "effective_statement_period_end": selection.get("period_end") if selection.get("status") == "applied-selected-primary" else source.get("latest_statement_period_end"),
             "ticker": company.ticker, "status": "blocked" if errors else "current",
             "withheld_reasons": errors,
             "source_fetched_at": min(source_times) if len(source_times) == 2 else None,

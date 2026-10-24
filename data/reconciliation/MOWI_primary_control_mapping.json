@@ -1,0 +1,111 @@
+{
+  "issuer": "MOWI.OL",
+  "period": "FY2025",
+  "status": "valid_selected_field_control_only",
+  "rows": [
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "revenue_ex_other_income",
+      "pipeline_million": "5688.7",
+      "issuer_million": "5688.7",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "185",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "owners_net_income",
+      "pipeline_million": "717.9",
+      "issuer_million": "717.9",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "185",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "CFO",
+      "pipeline_million": "870.9",
+      "issuer_million": "870.9",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "189",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "assets",
+      "pipeline_million": "10228.5",
+      "issuer_million": "10228.5",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "186",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "current_assets",
+      "pipeline_million": "4309.7",
+      "issuer_million": "4309.7",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "186",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "current_liabilities",
+      "pipeline_million": "1470.9",
+      "issuer_million": "1470.9",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "187",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "owners_equity",
+      "pipeline_million": "4371.1",
+      "issuer_million": "4371.1",
+      "difference_million": "0.0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "187",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    },
+    {
+      "case": "MOWI",
+      "period": "FY2025",
+      "currency": "EUR",
+      "field": "retained_earnings_proxy_other_equity",
+      "pipeline_million": "2455",
+      "issuer_million": "2455",
+      "difference_million": "0",
+      "source": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+      "page": "188",
+      "note": "Group; owners profit/equity excludes NCI; other equity is proxy, not universally identical retained earnings."
+    }
+  ],
+  "PDF_sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+  "rules": [
+    "Revenue5688.7 excludes otherincome31.4; do not silently interchange with total5720.2.",
+    "Use ownersNI717.9 with owners equity4371.1; groupNI706.6 includesNCI.",
+    "Other equity2455 is disclosed proxy, not universal retained earnings definition.",
+    "Do not imply Q2 EBITDA/EV verified because annual selected controls match."
+  ],
+  "application_policy": "audit-only: no provider or effective financial value replacement"
+}
