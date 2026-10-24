@@ -29,4 +29,3 @@ def filing_coverage(symbol, periods, now=None):
         status = "provider-covers-known-release" if latest and latest >= active["period_end"] else "behind-known-release"
     return {"status": status, "latest_period_end": latest, "issuer_release": active,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."}
-
