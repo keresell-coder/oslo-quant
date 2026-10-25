@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "altman",
-  "computed_at": "2026-10-25T07:39:28.265577Z",
+  "computed_at": "2026-10-25T10:11:11.938386Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "30a69ff1c9a73330e0f6",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "ac32a3e0ae15e74be9b5",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:27.827468+00:00",
+        "source_fetched_at": "2026-10-25T10:11:11.244705+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -102,12 +102,12 @@
           "balance_sheet.parquet": "3e24a61aa114da81c250f97104c92a25a2e8d1a6b9df696ee50de42ef7b5fc98",
           "income_stmt.parquet": "cd187b7641a9d2b4a4e2be3da332dd8f7bcd697bf6693ffc7ae3fa6811646e88",
           "cash_flow.parquet": "b15f97add0c6f936ba19099deee76e6737424c2304160b9ce7f6669780b7e414",
-          "prices.parquet": "957a908ad2e63f6e0519c09d4069f959d5abcda5ac0f29654a3e56204337b2ff"
+          "prices.parquet": "69d0f6e7dfe17f1537814de8e89d1534be007d452495560b581ed317be4342a7"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:28.237034+00:00",
+        "source_fetched_at": "2026-10-25T10:11:11.891368+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -176,7 +176,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T07:39:27.866819+00:00",
+        "observed_at": "2026-10-25T10:11:11.258426+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -196,6 +196,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:11.898197+00:00",
+      "ticker": "HAFNI.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "HAFNI.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

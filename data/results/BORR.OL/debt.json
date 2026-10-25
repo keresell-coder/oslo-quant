@@ -1,0 +1,19 @@
+{
+  "status": "not-configured",
+  "contract_version": "2026-10-25-debt-v1",
+  "evaluation_as_of": "2026-10-25T10:11:07.876888+00:00",
+  "ticker": "BORR.OL",
+  "currency": "USD",
+  "unit": "currency units",
+  "periods": {},
+  "records": [],
+  "provider_frames_preserved": true,
+  "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+  "primary_evidence": {
+    "status": "not-configured",
+    "ticker": "BORR.OL",
+    "records": [],
+    "derived": [],
+    "issues": []
+  }
+}

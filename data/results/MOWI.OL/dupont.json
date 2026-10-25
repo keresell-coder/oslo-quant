@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T07:39:13.756226Z",
+  "computed_at": "2026-10-25T10:10:59.671275Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.1042,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "d46072acd4017fed380a",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "b62684bb356bea855f8c",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:12.482684+00:00",
+        "source_fetched_at": "2026-10-25T10:10:58.824617+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "f566bb9bfdda5ee1245f6ca748cb9962e48869c6bd9396e78594c5d0b7ccde87",
           "income_stmt.parquet": "80802f212cb8e52236076011ab78327487b259dc6b3c1049170d242e1d8c0cb1",
           "cash_flow.parquet": "9bb1f3ea765c4ec26795fd0f1dbceec460cdb0abe5ec7eb1998dc790caab46a8",
-          "prices.parquet": "ed3ca6d35a7d38a412f974cc63622adee98c140d77a5786947f9d71151e3f344"
+          "prices.parquet": "8c82b354a778bac52d18450f2b136fd7e45d1172c84f91391bcb1c7352ebb216"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:13.278579+00:00",
+        "source_fetched_at": "2026-10-25T10:10:59.506675+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -185,7 +185,7 @@
         "from": "NOK",
         "to": "EUR",
         "rate": 0.09568999707698822,
-        "observed_at": "2026-10-25T07:39:12.765390+00:00",
+        "observed_at": "2026-10-25T10:10:58.988244+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -205,6 +205,575 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "qualified-selected-debt",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:10:59.523815+00:00",
+      "ticker": "MOWI.OL",
+      "currency": "EUR",
+      "unit": "currency units",
+      "periods": {
+        "2025": {
+          "noncurrent_long_term": 2790100000.0,
+          "current_maturities": 149900000.0,
+          "source_records": [
+            "MOWI.OL-2025-current_maturities",
+            "MOWI.OL-2025-noncurrent_long_term"
+          ],
+          "instrument_scope": "bank-and-bond-excluding-leases",
+          "measurement_basis": "carrying-amount-excluding-accrued-interest",
+          "period_end": "2025-12-31",
+          "currency": "EUR",
+          "provider_asset_control": {
+            "record_id": "MOWI.OL-2025-assets-control",
+            "provider_assets": 10228500000.0,
+            "primary_assets": 10228500000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 186
+          },
+          "opening_provider_asset_control": {
+            "record_id": "MOWI.OL-2024-assets-control",
+            "provider_assets": 8554700000.0,
+            "primary_assets": 8554700000.000001,
+            "difference": -9.5367431640625e-07,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 186
+          },
+          "available_on": "2026-03-25"
+        },
+        "2024": {
+          "noncurrent_long_term": 1957300000.0,
+          "current_maturities": 200000000.0,
+          "source_records": [
+            "MOWI.OL-2024-current_maturities",
+            "MOWI.OL-2024-noncurrent_long_term"
+          ],
+          "instrument_scope": "bank-and-bond-excluding-leases",
+          "measurement_basis": "carrying-amount-excluding-accrued-interest",
+          "period_end": "2024-12-31",
+          "currency": "EUR",
+          "provider_asset_control": {
+            "record_id": "MOWI.OL-2024-assets-control",
+            "provider_assets": 8554700000.0,
+            "primary_assets": 8554700000.000001,
+            "difference": -9.5367431640625e-07,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 186
+          },
+          "opening_provider_asset_control": {
+            "record_id": "MOWI.OL-2023-assets-control",
+            "provider_assets": 8239000000.0,
+            "primary_assets": 8239000000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 14
+          },
+          "available_on": "2026-03-25"
+        }
+      },
+      "records": [
+        {
+          "record_id": "MOWI.OL-2025-noncurrent_long_term",
+          "role": "noncurrent_long_term",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Total non-current interest-bearing debt",
+          "period_end": "2025-12-31",
+          "primary_value": 2790100000.0,
+          "classification_evidence": "Current149.9 is carryingamount Schuldschein loan (principal150) dueMay2026. Group currenttotalp205 matches parent Schuldschein identificationp238. Facility maturities narrativep205; IFRS16leases separate.",
+          "zero_disclosure_context": null,
+          "selected_value": 2790100000.0,
+          "provider_row": "Long Term Debt",
+          "provider_value": 2790100000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "MOWI.OL-2025-current_maturities",
+          "role": "current_maturities",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Current interest-bearing debt; note14 parent instrument identification p238",
+          "period_end": "2025-12-31",
+          "primary_value": 149900000.0,
+          "classification_evidence": "Current149.9 is carryingamount Schuldschein loan (principal150) dueMay2026. Group currenttotalp205 matches parent Schuldschein identificationp238. Facility maturities narrativep205; IFRS16leases separate.",
+          "zero_disclosure_context": null,
+          "selected_value": 149900000.0,
+          "provider_row": "Current Debt",
+          "provider_value": 149900000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "MOWI.OL-2024-noncurrent_long_term",
+          "role": "noncurrent_long_term",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Total non-current interest-bearing debt",
+          "period_end": "2024-12-31",
+          "primary_value": 1957300000.0,
+          "classification_evidence": "Current200 is greenbond identifiedparentp238 and matchesgroupcurrenttotalp205; not undifferentiated workingcapitalborrowings.",
+          "zero_disclosure_context": null,
+          "selected_value": 1957300000.0,
+          "provider_row": "Long Term Debt",
+          "provider_value": 1957300000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "MOWI.OL-2024-current_maturities",
+          "role": "current_maturities",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Current interest-bearing debt; note14 parent instrument identification p238",
+          "period_end": "2024-12-31",
+          "primary_value": 200000000.0,
+          "classification_evidence": "Current200 is greenbond identifiedparentp238 and matchesgroupcurrenttotalp205; not undifferentiated workingcapitalborrowings.",
+          "zero_disclosure_context": null,
+          "selected_value": 200000000.0,
+          "provider_row": "Current Debt",
+          "provider_value": 200000000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        }
+      ],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "provider_debt_observations": {
+        "2025": {
+          "Long Term Debt": 2790100000.0,
+          "Current Debt": 149900000.0,
+          "Long Term Debt And Capital Lease Obligation": 3133700000.0,
+          "Current Debt And Capital Lease Obligation": 329000000.0,
+          "Long Term Capital Lease Obligation": 343600000.0,
+          "Current Capital Lease Obligation": 179100000.0,
+          "Total Debt": 3462700000.0
+        },
+        "2024": {
+          "Long Term Debt": 1957300000.0,
+          "Current Debt": 200000000.0,
+          "Long Term Debt And Capital Lease Obligation": 2295700000.0,
+          "Current Debt And Capital Lease Obligation": 379400000.0,
+          "Long Term Capital Lease Obligation": 338400000.0,
+          "Current Capital Lease Obligation": 179400000.0,
+          "Total Debt": 2675100000.0
+        },
+        "2023": {
+          "Long Term Debt": 2093000000.0,
+          "Current Debt": 100000.0,
+          "Long Term Debt And Capital Lease Obligation": 2392300000.0,
+          "Current Debt And Capital Lease Obligation": 174600000.0,
+          "Long Term Capital Lease Obligation": 299300000.0,
+          "Current Capital Lease Obligation": 174500000.0,
+          "Total Debt": 2566900000.0
+        },
+        "2022": {
+          "Long Term Debt": 1725800000.0,
+          "Current Debt": 211600000.0,
+          "Long Term Debt And Capital Lease Obligation": 2015200000.0,
+          "Current Debt And Capital Lease Obligation": 385100000.0,
+          "Long Term Capital Lease Obligation": 289400000.0,
+          "Current Capital Lease Obligation": 173500000.0,
+          "Total Debt": 2400300000.0
+        },
+        "2021": {
+          "Long Term Debt": null,
+          "Current Debt": null,
+          "Long Term Debt And Capital Lease Obligation": null,
+          "Current Debt And Capital Lease Obligation": null,
+          "Long Term Capital Lease Obligation": null,
+          "Current Capital Lease Obligation": null,
+          "Total Debt": null
+        },
+        "LTM 2026-06": {
+          "Long Term Debt": 3090600000.0,
+          "Current Debt": 0.0,
+          "Long Term Debt And Capital Lease Obligation": 3455100000.0,
+          "Current Debt And Capital Lease Obligation": 194700000.0,
+          "Long Term Capital Lease Obligation": 364500000.0,
+          "Current Capital Lease Obligation": 194700000.0,
+          "Total Debt": 3649800000.0
+        }
+      },
+      "provider_annual_balance_period_ends": [
+        "2021-12-31",
+        "2022-12-31",
+        "2023-12-31",
+        "2024-12-31",
+        "2025-12-31"
+      ],
+      "primary_evidence": {
+        "status": "reviewed-line-items",
+        "ticker": "MOWI.OL",
+        "currency": "EUR",
+        "input_policy": "selected-debt-components",
+        "current_period_end": null,
+        "ledger_sha256": "e4f3ecbf0246de1b7e2d37f53bd2fb15d77306cfe916e0441ee4a15a62968467",
+        "records": [
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2025-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2025-noncurrent_long_term",
+            "row": "Long Term Debt",
+            "page": 205,
+            "table": "Group balance sheet and debt maturity notes",
+            "source_label": "Total non-current interest-bearing debt",
+            "value": 2790.1,
+            "debt_role": "noncurrent_long_term",
+            "debt_instrument_scope": "bank-and-bond-excluding-leases",
+            "debt_measurement_basis": "carrying-amount-excluding-accrued-interest",
+            "mutually_exclusive_classification": true,
+            "classification_evidence": "Current149.9 is carryingamount Schuldschein loan (principal150) dueMay2026. Group currenttotalp205 matches parent Schuldschein identificationp238. Facility maturities narrativep205; IFRS16leases separate.",
+            "selection_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained",
+            "provider_row": "Long Term Debt",
+            "value_units": 2790100000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          },
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2025-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2025-current_maturities",
+            "row": "Current Portion Of Long Term Debt",
+            "page": 205,
+            "table": "Group balance sheet and debt maturity notes",
+            "source_label": "Current interest-bearing debt; note14 parent instrument identification p238",
+            "value": 149.9,
+            "debt_role": "current_maturities",
+            "debt_instrument_scope": "bank-and-bond-excluding-leases",
+            "debt_measurement_basis": "carrying-amount-excluding-accrued-interest",
+            "mutually_exclusive_classification": true,
+            "classification_evidence": "Current149.9 is carryingamount Schuldschein loan (principal150) dueMay2026. Group currenttotalp205 matches parent Schuldschein identificationp238. Facility maturities narrativep205; IFRS16leases separate.",
+            "selection_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained",
+            "provider_row": "Current Debt",
+            "value_units": 149900000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          },
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2025-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2025-assets-control",
+            "row": "Total Assets",
+            "page": 186,
+            "table": "Group statement of financial position",
+            "source_label": "Total assets / total equity and liabilities",
+            "value": 10228.5,
+            "rounding_increment": 0.1,
+            "value_units": 10228500000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          },
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2024-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2024-noncurrent_long_term",
+            "row": "Long Term Debt",
+            "page": 205,
+            "table": "Group balance sheet and debt maturity notes",
+            "source_label": "Total non-current interest-bearing debt",
+            "value": 1957.3,
+            "debt_role": "noncurrent_long_term",
+            "debt_instrument_scope": "bank-and-bond-excluding-leases",
+            "debt_measurement_basis": "carrying-amount-excluding-accrued-interest",
+            "mutually_exclusive_classification": true,
+            "classification_evidence": "Current200 is greenbond identifiedparentp238 and matchesgroupcurrenttotalp205; not undifferentiated workingcapitalborrowings.",
+            "selection_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained",
+            "provider_row": "Long Term Debt",
+            "value_units": 1957300000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          },
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2024-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2024-current_maturities",
+            "row": "Current Portion Of Long Term Debt",
+            "page": 205,
+            "table": "Group balance sheet and debt maturity notes",
+            "source_label": "Current interest-bearing debt; note14 parent instrument identification p238",
+            "value": 200.0,
+            "debt_role": "current_maturities",
+            "debt_instrument_scope": "bank-and-bond-excluding-leases",
+            "debt_measurement_basis": "carrying-amount-excluding-accrued-interest",
+            "mutually_exclusive_classification": true,
+            "classification_evidence": "Current200 is greenbond identifiedparentp238 and matchesgroupcurrenttotalp205; not undifferentiated workingcapitalborrowings.",
+            "selection_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained",
+            "provider_row": "Current Debt",
+            "value_units": 200000000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          },
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2024-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2024-assets-control",
+            "row": "Total Assets",
+            "page": 186,
+            "table": "Group statement of financial position",
+            "source_label": "Total assets / total equity and liabilities",
+            "value": 8554.7,
+            "rounding_increment": 0.1,
+            "value_units": 8554700000.000001,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          },
+          {
+            "source_id": "MOWI",
+            "statement": "balance_sheet",
+            "period_start": null,
+            "period_end": "2023-12-31",
+            "scope": "instant",
+            "aggregation": "stock",
+            "currency": "EUR",
+            "scale": "millions",
+            "accounting_basis": "IFRS-consolidated",
+            "consolidation_basis": "group",
+            "review_status": "reviewed-transcription",
+            "id": "MOWI.OL-2023-assets-control",
+            "row": "Total Assets",
+            "page": 14,
+            "table": "Group statement of financial position",
+            "source_label": "Total assets; comparative / key figures",
+            "value": 8239.0,
+            "rounding_increment": 0.1,
+            "value_units": 8239000000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            }
+          }
+        ],
+        "derived": [],
+        "artifacts": [
+          {
+            "source_id": "MOWI",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_cache_used": true,
+            "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "hash_checked_at": "2026-10-25T10:10:59.523550+00:00"
+          }
+        ],
+        "issues": [
+          "Selected FY2025/FY2024 debt fields only; other years/interim debt remain unqualified.",
+          "Resolving F5 is not full-score verification; other unknown signals remain unknown.",
+          "Provider debt semantics are not globally authenticated; no generic Current Debt alias is enabled."
+        ],
+        "limitation": "Reviewed transcriptions and explicit bridges only; no whole-report or accounting-definition verification implied."
       }
     }
   }

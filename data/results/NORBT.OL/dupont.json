@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T07:39:37.865528Z",
+  "computed_at": "2026-10-25T10:11:20.418287Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.1578,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "1ca44e3ec4912f1ec013",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "b3f02b422ccc4c78ba38",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:37.203197+00:00",
+        "source_fetched_at": "2026-10-25T10:11:19.958351+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "ed10c3be8101f76431cdce47447f2e17314ff2685e404d478d8d0eb48a8dec62",
           "income_stmt.parquet": "d43bea9331aeccb445e3bc2bb14fecab430ebe63e346894f8e88999b3ee7dfa8",
           "cash_flow.parquet": "0cbcd82c4cec52956b86a9804c929ccf8391c36ee6df3ad2d58b643bdfc3f96c",
-          "prices.parquet": "ecfe1c71273f9acd9f306e93e02d922905d573b48399d00c9ce9248de3bf6958"
+          "prices.parquet": "c6b908657190849ee73390f0f05fd16c98109f901ea194b10249abdabd151836"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:37.859379+00:00",
+        "source_fetched_at": "2026-10-25T10:11:20.406332+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -185,7 +185,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T07:39:37.365983+00:00",
+        "observed_at": "2026-10-25T10:11:19.974979+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -205,6 +205,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:20.412325+00:00",
+      "ticker": "NORBT.OL",
+      "currency": "NOK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "NORBT.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

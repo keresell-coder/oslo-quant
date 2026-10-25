@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "altman",
-  "computed_at": "2026-10-25T07:39:26.973148Z",
+  "computed_at": "2026-10-25T10:11:10.406864Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "d7c3dacad4d7111c1be6",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "da0ae77b4189ec6c7a94",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:26.378628+00:00",
+        "source_fetched_at": "2026-10-25T10:11:09.992841+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -107,7 +107,7 @@
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:26.950648+00:00",
+        "source_fetched_at": "2026-10-25T10:11:10.362070+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -176,7 +176,7 @@
         "from": "NOK",
         "to": "EUR",
         "rate": 0.09568999707698822,
-        "observed_at": "2026-10-25T07:39:26.418918+00:00",
+        "observed_at": "2026-10-25T10:11:10.006522+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -196,6 +196,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:10.368448+00:00",
+      "ticker": "CADLR.OL",
+      "currency": "EUR",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "CADLR.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

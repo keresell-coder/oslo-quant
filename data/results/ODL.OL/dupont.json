@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T07:39:25.490795Z",
+  "computed_at": "2026-10-25T10:11:09.246210Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.325,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "b653b15ff9ae2fb53a4f",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "20e76d9cbfcf687c238a",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:24.954981+00:00",
+        "source_fetched_at": "2026-10-25T10:11:08.730211+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "119ebaec35a47934b8acd02ceefa77e3bfa9bd01c317179039fecccd3a7f519a",
           "income_stmt.parquet": "2eb43ac2a05037f528821bf51074f0308c9f92278dd6b8d02bfbf37c45f78c6b",
           "cash_flow.parquet": "879877f46a0246733e842f7152fd9fa9b26f88c82246520f70088907778f7a5e",
-          "prices.parquet": "bee99faae8dc2b286cfac41a30ab4cf57f6be60e0aa37827df2f7a4a4c42c87b"
+          "prices.parquet": "5af6228157334098d4b96951a6a87189df17214efafd7432e8296904cf548dc7"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:25.486788+00:00",
+        "source_fetched_at": "2026-10-25T10:11:09.238332+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,7 +168,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T07:39:24.996512+00:00",
+        "observed_at": "2026-10-25T10:11:08.743498+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -188,6 +188,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:09.241471+00:00",
+      "ticker": "ODL.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "ODL.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

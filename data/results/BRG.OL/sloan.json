@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-25T07:39:34.491072+00:00",
+  "computed_at": "2026-10-25T10:11:17.726919+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -156,12 +156,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "dac87c62bb9e36322fca",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "ac5feb70619da876fb0a",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:33.883225+00:00",
+        "source_fetched_at": "2026-10-25T10:11:17.051373+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -186,14 +186,14 @@
         },
         "cache_hashes": {
           "balance_sheet.parquet": "e88b809b1abca0eee95899efa3181f753ec4aa897c931d4b094c170d82f121b0",
-          "income_stmt.parquet": "ddda2b701a88c9f2431c372dcf07ffc92c10c7c85c00df2e5bc6d468a4c21f05",
+          "income_stmt.parquet": "4ac3828527067a6b217ef5bdda4c24801c7a2caacb158318a99d5ddcabb99c24",
           "cash_flow.parquet": "cc9ddeaa22c5501f1cb8e5a388b7fdfd6d065f7fa1f21cbb5b7076e883064450",
-          "prices.parquet": "8f96951ce13511d8da396b96dcbb8ac0af4eddcfaaf8f2b8da36567c1468d662"
+          "prices.parquet": "b660ebf33ad761fb524d61dd9230b1f30f978a58853cec7178b07f4b312cf381"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:34.479213+00:00",
+        "source_fetched_at": "2026-10-25T10:11:17.705351+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -220,7 +220,7 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "87d2533009979f0d9f4ff961feae23b0a37806b52f3a7591fed7650ad7efc9f9",
-          "quarterly_income_stmt.parquet": "2e74e18d06bafa27bf9d1f05fc3a683bbfb640cebcbe29915e4369c34dcb2617",
+          "quarterly_income_stmt.parquet": "e099cb9b4d2c6b0190af093a4b40d14a786fb7b1847eacc10c0c66e4c54d8595",
           "quarterly_cash_flow.parquet": "a7e3a616176ba8f2ef2a7da15cfd069b0226cec55b3cbd9dd85f04e6750e726f"
         },
         "cache_used": false
@@ -260,7 +260,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T07:39:33.923181+00:00",
+        "observed_at": "2026-10-25T10:11:17.063657+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -280,6 +280,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:17.708321+00:00",
+      "ticker": "BRG.OL",
+      "currency": "NOK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "BRG.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

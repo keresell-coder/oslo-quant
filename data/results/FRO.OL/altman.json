@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "altman",
-  "computed_at": "2026-10-25T07:39:17.643798Z",
+  "computed_at": "2026-10-25T10:11:02.696006Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "040ca45e556704e3c1a4",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "1bbb6b89b14490685160",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:17.062149+00:00",
+        "source_fetched_at": "2026-10-25T10:11:02.077003+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -102,12 +102,12 @@
           "balance_sheet.parquet": "7233373002cba55f9dbb70c2292eede6ba269bb3d90cee9ca78adaa0d37d99ac",
           "income_stmt.parquet": "2ad29fb0bd0e5393a0d2adfdd83e114079b1abc370303fa176eb919cdf901bb2",
           "cash_flow.parquet": "73af606ce59dcfab161256a307907cd80c69ee9e84bf86bbc6a59b7d9d47a0b9",
-          "prices.parquet": "e0a47ce08b64eec675474949a7ee5c95c75a1fb76da6d953012eb4d720d954a3"
+          "prices.parquet": "6b8a6e2b7f054f81883cb4c6a7019d634bd13d3dd6a10232ef8c9158ab68d1de"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:17.623016+00:00",
+        "source_fetched_at": "2026-10-25T10:11:02.653928+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -174,7 +174,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T07:39:17.104166+00:00",
+        "observed_at": "2026-10-25T10:11:02.138365+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -194,6 +194,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:02.659376+00:00",
+      "ticker": "FRO.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "FRO.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

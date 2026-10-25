@@ -1,7 +1,7 @@
 {
   "ticker": "KOG.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T07:39:19.187909Z",
+  "computed_at": "2026-10-25T10:11:03.867369Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.252,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "c1c695c52e53d594b51e",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "a67357ffa0e872099881",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:18.613773+00:00",
+        "source_fetched_at": "2026-10-25T10:11:03.476621+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "ef5450fdfb150697f481c3edae73ad9333af5101d8211d96f4ef70117135a369",
           "income_stmt.parquet": "9b14ff33a9eedbf76ad14bda246b9a263e616918c4df10f717f671dc5006b4ad",
           "cash_flow.parquet": "039dd7b3e7ddb9eec812d4daff4a6d92080830b841a798edba8869a8b5fcca16",
-          "prices.parquet": "d5b30de443271ea0765ba39b156dc77f77c04041b2c4c9f976113841cd128ad5"
+          "prices.parquet": "4f20022df44fef11d623c3802a7086361f0bf6f9211e8561f37ec5d6021965a2"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:19.184304+00:00",
+        "source_fetched_at": "2026-10-25T10:11:03.860327+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,7 +168,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T07:39:18.653726+00:00",
+        "observed_at": "2026-10-25T10:11:03.489045+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -188,6 +188,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:03.862991+00:00",
+      "ticker": "KOG.OL",
+      "currency": "NOK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "KOG.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }

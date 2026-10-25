@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T07:39:23.890670Z",
+  "computed_at": "2026-10-25T10:11:07.882879Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": -0.2398,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
-    "snapshot_id": "d46511032cc16e2bc49a",
+    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
+    "snapshot_id": "4818d1d53da10f7abc72",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T07:39:23.346748+00:00",
+        "source_fetched_at": "2026-10-25T10:11:07.407563+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "ccd2ef4f28033bb7365477a6c1e69bf2b3c328f50d2bbc26163129816bbdda05",
           "income_stmt.parquet": "f583d510f1a2088b863625382b0b91c2f879eaa142cd65aad5615fb493082584",
           "cash_flow.parquet": "a444f422be697fed6329d0f094e3ba87e53c0302c696289c74e6cf29ead2deee",
-          "prices.parquet": "94d91f616c25c873a9fd1e40ec4ca72a5dd343c15f2c8205b3cb6262c97e3a0c"
+          "prices.parquet": "ca2d66827c094233d4122afddbd683124bc97c3926b416b3638d994411f3fdd8"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T07:39:23.884657+00:00",
+        "source_fetched_at": "2026-10-25T10:11:07.871008+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -185,7 +185,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T07:39:23.389792+00:00",
+        "observed_at": "2026-10-25T10:11:07.420508+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -205,6 +205,25 @@
           "TTM EPS",
           "generic free cash flow"
         ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T10:11:07.876888+00:00",
+      "ticker": "BORR.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "BORR.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
       }
     }
   }
