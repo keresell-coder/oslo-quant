@@ -1,11 +1,13 @@
 {
   "ticker": "ELK.OL",
   "framework": "altman",
-  "computed_at": "2026-10-24T21:39:30.286044Z",
+  "computed_at": "2026-10-25T07:39:33.101519Z",
+  "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
-      "z_score": 2.1954,
-      "zone": "Grey",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 5.6768,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4652,
@@ -15,8 +17,9 @@
       "x5_revenue_to_assets": 0.3483
     },
     "2024": {
-      "z_score": 2.2305,
-      "zone": "Grey",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 5.9329,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.5005,
@@ -26,8 +29,9 @@
       "x5_revenue_to_assets": 0.3333
     },
     "2023": {
-      "z_score": 2.0463,
-      "zone": "Grey",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 4.2098,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.2154,
@@ -37,8 +41,9 @@
       "x5_revenue_to_assets": 0.4185
     },
     "2022": {
-      "z_score": 3.2842,
-      "zone": "Safe",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 6.075,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.2807,
@@ -52,12 +57,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "d870e51d4319f473c579",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "44a7c891d071b658535f",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:29.854433+00:00",
+        "source_fetched_at": "2026-10-25T07:39:32.410156+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -84,12 +89,12 @@
           "balance_sheet.parquet": "087d6f14d0a539fb3c75cc8a450fa2df16f4035c82470a282e273fab9c01d79e",
           "income_stmt.parquet": "b835bbaeb38e962328faa7dd46e073522e3b302968021e1f8f3363be51dd77f6",
           "cash_flow.parquet": "48f1b74eab4282274a61f9a7b0adeaaf0cab5455f4276a35950024104639d279",
-          "prices.parquet": "f83c91a799a3eff0fd88de4924032832930dfee180e861fb0271e3aa177ff4fe"
+          "prices.parquet": "9514217a48de79a02692ed510986428182cdd35b8ac7ca6aff8f2f631ae23ec8"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:30.254938+00:00",
+        "source_fetched_at": "2026-10-25T07:39:33.082394+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -124,7 +129,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -157,7 +162,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:39:29.879306+00:00",
+        "observed_at": "2026-10-25T07:39:32.449418+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },

@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-24T21:39:22.714968Z",
+  "computed_at": "2026-10-25T07:39:22.439879Z",
   "periods": {
     "2025": {
       "net_profit_margin": 0.2496,
@@ -64,12 +64,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "c98821d13cf66efcf37c",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "79c992ae11ef77e73e20",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:22.338175+00:00",
+        "source_fetched_at": "2026-10-25T07:39:21.953276+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -97,12 +97,12 @@
           "balance_sheet.parquet": "c5621c1c3efc489cfb3f01f0d722a10c32e814fd537083ae7defb23244bf650e",
           "income_stmt.parquet": "cc0cc1daa7079a1c2d0fb0713a45585da4b82ab280af8f68ffdda6250b5c508a",
           "cash_flow.parquet": "449f190f929a73d3f7aab5b13074c999497cff01b530a386a583f1245e4e4078",
-          "prices.parquet": "7153ad09742506951174092ce672f40649a24c0533cc12930d6f2ddad28d8e7a"
+          "prices.parquet": "5b432cc6179d2686de756750f5bd88005e1948dc6923adb98e4da6f73c8414c6"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:22.707853+00:00",
+        "source_fetched_at": "2026-10-25T07:39:22.435811+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -135,7 +135,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -168,7 +168,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:39:22.371382+00:00",
+        "observed_at": "2026-10-25T07:39:22.015244+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },

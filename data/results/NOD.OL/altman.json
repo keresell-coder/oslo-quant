@@ -1,10 +1,12 @@
 {
   "ticker": "NOD.OL",
   "framework": "altman",
-  "computed_at": "2026-10-24T21:39:29.069151Z",
+  "computed_at": "2026-10-25T07:39:31.385353Z",
+  "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
       "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
       "zone": "Not assessable",
       "z_score_prime": null,
       "zone_prime": "Not assessable",
@@ -15,8 +17,9 @@
       "x5_revenue_to_assets": 0.7501
     },
     "2025": {
-      "z_score": 3.0574,
-      "zone": "Safe",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 6.413,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.4448,
@@ -26,8 +29,9 @@
       "x5_revenue_to_assets": 0.6789
     },
     "2024": {
-      "z_score": 3.15,
-      "zone": "Safe",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 7.1643,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.558,
@@ -37,8 +41,9 @@
       "x5_revenue_to_assets": 0.634
     },
     "2023": {
-      "z_score": 3.3329,
-      "zone": "Safe",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 7.6375,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.5742,
@@ -48,8 +53,9 @@
       "x5_revenue_to_assets": 0.6296
     },
     "2022": {
-      "z_score": 4.9192,
-      "zone": "Safe",
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
       "z_score_prime": 10.2759,
       "zone_prime": "Safe",
       "x1_working_capital_to_assets": 0.6402,
@@ -63,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "9719b816d3d55e396111",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "edb71c2aa57997cedd07",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:28.633678+00:00",
+        "source_fetched_at": "2026-10-25T07:39:30.807435+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -101,7 +107,7 @@
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:29.008375+00:00",
+        "source_fetched_at": "2026-10-25T07:39:31.350586+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -137,7 +143,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -176,7 +182,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:39:28.664233+00:00",
+        "observed_at": "2026-10-25T07:39:30.848755+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -2609,7 +2615,7 @@
           "sha256": "57699634177d8dfcaccc270f183eb724b01b8684b99f1c5743d80f6ee29038b2",
           "artifact_cache_used": true,
           "source_retrieved_at": "2026-10-24T21:23:05.063296+00:00",
-          "hash_checked_at": "2026-10-24T21:39:29.016124+00:00"
+          "hash_checked_at": "2026-10-25T07:39:31.355510+00:00"
         }
       ],
       "issues": [

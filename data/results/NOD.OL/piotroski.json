@@ -1,7 +1,8 @@
 {
   "ticker": "NOD.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-24T21:39:29.043940Z",
+  "computed_at": "2026-10-25T07:39:31.370341+00:00",
+  "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
       "f_score": null,
@@ -19,111 +20,291 @@
         "F9_asset_turnover_improving": 1
       },
       "interpretation": "Not assessable (7 of 9 signals)",
-      "roa": 0.0562,
-      "cfo_to_assets": 0.0367,
+      "roa": 0.0592,
+      "cfo_to_assets": 0.0406,
       "current_ratio": 3.3311,
       "gross_margin": 0.5317,
-      "asset_turnover": 0.7501
+      "asset_turnover": 0.7879,
+      "period_basis": "overlapping interim adaptation: LTM versus latest FY",
+      "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+      "input_proxies": [
+        "Net Income proxy for pre-extraordinary income",
+        "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+      ],
+      "signal_definitions": {
+        "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+      },
+      "denominators": {
+        "opening_assets": 983361000.0,
+        "prior_opening_assets": 806706000.0,
+        "average_assets": 1035599500.0,
+        "prior_average_assets": 895033500.0
+      },
+      "source_rows": {
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "prior_opening_assets": "Total Assets",
+        "income": "Net Income",
+        "prior_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "long_debt": null,
+        "current_portion": null,
+        "prior_long_debt": "Long Term Debt",
+        "prior_current_portion": null,
+        "current_assets": "Current Assets",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_assets": "Current Assets",
+        "prior_current_liabilities": "Current Liabilities",
+        "gross_equity_issuance": null,
+        "gross_profit": "Gross Profit",
+        "prior_gross_profit": "Gross Profit",
+        "revenue": "Total Revenue",
+        "prior_revenue": "Total Revenue"
+      }
     },
     "2025": {
-      "f_score": 7,
-      "f_score_partial": 7,
-      "signals_assessable": 9,
+      "f_score": null,
+      "f_score_partial": 6,
+      "signals_assessable": 8,
       "signals": {
         "F1_positive_roa": 1,
         "F2_positive_cfo": 1,
         "F3_roa_increasing": 1,
         "F4_accruals_quality": 1,
-        "F5_leverage_decreasing": 1,
+        "F5_leverage_decreasing": null,
         "F6_liquidity_improving": 0,
         "F7_no_dilution": 0,
         "F8_gross_margin_improving": 1,
         "F9_asset_turnover_improving": 1
       },
-      "interpretation": "Moderate",
-      "roa": 0.0183,
-      "cfo_to_assets": 0.1177,
+      "interpretation": "Not assessable (8 of 9 signals)",
+      "roa": 0.0203,
+      "cfo_to_assets": 0.1434,
       "current_ratio": 4.008,
       "gross_margin": 0.5183,
-      "asset_turnover": 0.6789
+      "asset_turnover": 0.7459,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+      "input_proxies": [
+        "Net Income proxy for pre-extraordinary income",
+        "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+      ],
+      "signal_definitions": {
+        "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+      },
+      "denominators": {
+        "opening_assets": 806706000.0,
+        "prior_opening_assets": 862245000.0,
+        "average_assets": 895033500.0,
+        "prior_average_assets": 834475500.0
+      },
+      "source_rows": {
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "prior_opening_assets": "Total Assets",
+        "income": "Net Income",
+        "prior_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "long_debt": "Long Term Debt",
+        "current_portion": null,
+        "prior_long_debt": "Long Term Debt",
+        "prior_current_portion": null,
+        "current_assets": "Current Assets",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_assets": "Current Assets",
+        "prior_current_liabilities": "Current Liabilities",
+        "gross_equity_issuance": "Issuance Of Capital Stock",
+        "gross_profit": "Gross Profit",
+        "prior_gross_profit": "Gross Profit",
+        "revenue": "Total Revenue",
+        "prior_revenue": "Total Revenue"
+      }
     },
     "2024": {
-      "f_score": 6,
-      "f_score_partial": 6,
-      "signals_assessable": 9,
+      "f_score": null,
+      "f_score_partial": 4,
+      "signals_assessable": 8,
       "signals": {
         "F1_positive_roa": 0,
         "F2_positive_cfo": 1,
         "F3_roa_increasing": 0,
         "F4_accruals_quality": 1,
-        "F5_leverage_decreasing": 1,
+        "F5_leverage_decreasing": null,
         "F6_liquidity_improving": 1,
-        "F7_no_dilution": 1,
-        "F8_gross_margin_improving": 0,
-        "F9_asset_turnover_improving": 1
-      },
-      "interpretation": "Moderate",
-      "roa": -0.0461,
-      "cfo_to_assets": 0.0748,
-      "current_ratio": 5.3669,
-      "gross_margin": 0.4731,
-      "asset_turnover": 0.634
-    },
-    "2023": {
-      "f_score": 2,
-      "f_score_partial": 2,
-      "signals_assessable": 9,
-      "signals": {
-        "F1_positive_roa": 1,
-        "F2_positive_cfo": 0,
-        "F3_roa_increasing": 0,
-        "F4_accruals_quality": 0,
-        "F5_leverage_decreasing": 0,
-        "F6_liquidity_improving": 1,
-        "F7_no_dilution": 0,
-        "F8_gross_margin_improving": 0,
-        "F9_asset_turnover_improving": 0
-      },
-      "interpretation": "Weak",
-      "roa": 0.0093,
-      "cfo_to_assets": -0.138,
-      "current_ratio": 5.3371,
-      "gross_margin": 0.5226,
-      "asset_turnover": 0.6296
-    },
-    "2022": {
-      "f_score": null,
-      "f_score_partial": 4,
-      "signals_assessable": 8,
-      "signals": {
-        "F1_positive_roa": 1,
-        "F2_positive_cfo": 1,
-        "F3_roa_increasing": null,
-        "F4_accruals_quality": 1,
-        "F5_leverage_decreasing": 0,
-        "F6_liquidity_improving": 0,
         "F7_no_dilution": 1,
         "F8_gross_margin_improving": 0,
         "F9_asset_turnover_improving": 0
       },
       "interpretation": "Not assessable (8 of 9 signals)",
-      "roa": 0.1576,
-      "cfo_to_assets": 0.1838,
+      "roa": -0.0447,
+      "cfo_to_assets": 0.07,
+      "current_ratio": 5.3669,
+      "gross_margin": 0.4731,
+      "asset_turnover": 0.6129,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+      "input_proxies": [
+        "Net Income proxy for pre-extraordinary income",
+        "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+      ],
+      "signal_definitions": {
+        "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+      },
+      "denominators": {
+        "opening_assets": 862245000.0,
+        "prior_opening_assets": 776241000.0,
+        "average_assets": 834475500.0,
+        "prior_average_assets": 819243000.0
+      },
+      "source_rows": {
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "prior_opening_assets": "Total Assets",
+        "income": "Net Income",
+        "prior_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "long_debt": "Long Term Debt",
+        "current_portion": null,
+        "prior_long_debt": "Long Term Debt",
+        "prior_current_portion": null,
+        "current_assets": "Current Assets",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_assets": "Current Assets",
+        "prior_current_liabilities": "Current Liabilities",
+        "gross_equity_issuance": "Issuance Of Capital Stock",
+        "gross_profit": "Gross Profit",
+        "prior_gross_profit": "Gross Profit",
+        "revenue": "Total Revenue",
+        "prior_revenue": "Total Revenue"
+      }
+    },
+    "2023": {
+      "f_score": null,
+      "f_score_partial": 3,
+      "signals_assessable": 6,
+      "signals": {
+        "F1_positive_roa": 1,
+        "F2_positive_cfo": 0,
+        "F3_roa_increasing": null,
+        "F4_accruals_quality": 0,
+        "F5_leverage_decreasing": null,
+        "F6_liquidity_improving": 1,
+        "F7_no_dilution": 1,
+        "F8_gross_margin_improving": 0,
+        "F9_asset_turnover_improving": null
+      },
+      "interpretation": "Not assessable (6 of 9 signals)",
+      "roa": 0.0099,
+      "cfo_to_assets": -0.1533,
+      "current_ratio": 5.3371,
+      "gross_margin": 0.5226,
+      "asset_turnover": 0.6626,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+      "input_proxies": [
+        "Net Income proxy for pre-extraordinary income",
+        "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+      ],
+      "signal_definitions": {
+        "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+      },
+      "denominators": {
+        "opening_assets": 776241000.0,
+        "prior_opening_assets": null,
+        "average_assets": 819243000.0,
+        "prior_average_assets": null
+      },
+      "source_rows": {
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "prior_opening_assets": null,
+        "income": "Net Income",
+        "prior_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "long_debt": "Long Term Debt",
+        "current_portion": null,
+        "prior_long_debt": "Long Term Debt",
+        "prior_current_portion": null,
+        "current_assets": "Current Assets",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_assets": "Current Assets",
+        "prior_current_liabilities": "Current Liabilities",
+        "gross_equity_issuance": "Issuance Of Capital Stock",
+        "gross_profit": "Gross Profit",
+        "prior_gross_profit": "Gross Profit",
+        "revenue": "Total Revenue",
+        "prior_revenue": "Total Revenue"
+      }
+    },
+    "2022": {
+      "f_score": null,
+      "f_score_partial": 0,
+      "signals_assessable": 0,
+      "signals": {
+        "F1_positive_roa": null,
+        "F2_positive_cfo": null,
+        "F3_roa_increasing": null,
+        "F4_accruals_quality": null,
+        "F5_leverage_decreasing": null,
+        "F6_liquidity_improving": null,
+        "F7_no_dilution": null,
+        "F8_gross_margin_improving": null,
+        "F9_asset_turnover_improving": null
+      },
+      "interpretation": "Not assessable (0 of 9 signals)",
+      "roa": null,
+      "cfo_to_assets": null,
       "current_ratio": 3.8052,
       "gross_margin": 0.5623,
-      "asset_turnover": 1.0006
+      "asset_turnover": null,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+      "input_proxies": [
+        "Net Income proxy for pre-extraordinary income",
+        "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+      ],
+      "signal_definitions": {
+        "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+      },
+      "denominators": {
+        "opening_assets": null,
+        "prior_opening_assets": null,
+        "average_assets": null,
+        "prior_average_assets": null
+      },
+      "source_rows": {
+        "assets": "Total Assets",
+        "opening_assets": null,
+        "prior_opening_assets": null,
+        "income": "Net Income",
+        "prior_income": null,
+        "cfo": "Operating Cash Flow",
+        "long_debt": "Long Term Debt",
+        "current_portion": null,
+        "prior_long_debt": null,
+        "prior_current_portion": null,
+        "current_assets": "Current Assets",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_assets": null,
+        "prior_current_liabilities": null,
+        "gross_equity_issuance": "Issuance Of Capital Stock",
+        "gross_profit": "Gross Profit",
+        "prior_gross_profit": null,
+        "revenue": "Total Revenue",
+        "prior_revenue": null
+      }
     }
   },
   "financial_currency": "USD",
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "9719b816d3d55e396111",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "edb71c2aa57997cedd07",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:28.633678+00:00",
+        "source_fetched_at": "2026-10-25T07:39:30.807435+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -156,7 +337,7 @@
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:29.008375+00:00",
+        "source_fetched_at": "2026-10-25T07:39:31.350586+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -192,7 +373,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -231,7 +412,7 @@
         "from": "NOK",
         "to": "USD",
         "rate": 0.10733989626169205,
-        "observed_at": "2026-10-24T21:39:28.664233+00:00",
+        "observed_at": "2026-10-25T07:39:30.848755+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -2664,7 +2845,7 @@
           "sha256": "57699634177d8dfcaccc270f183eb724b01b8684b99f1c5743d80f6ee29038b2",
           "artifact_cache_used": true,
           "source_retrieved_at": "2026-10-24T21:23:05.063296+00:00",
-          "hash_checked_at": "2026-10-24T21:39:29.016124+00:00"
+          "hash_checked_at": "2026-10-25T07:39:31.355510+00:00"
         }
       ],
       "issues": [

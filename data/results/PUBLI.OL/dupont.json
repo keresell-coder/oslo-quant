@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-24T21:39:27.997227Z",
+  "computed_at": "2026-10-25T07:39:29.830925Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.1649,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "a1754107d46cd004e023",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "63cf57b77fe54d10eada",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:27.472657+00:00",
+        "source_fetched_at": "2026-10-25T07:39:29.087502+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "92f8d6a295fbf312f0d3e73e5420a935d37f86edf2d088cdc7bad9a2c8c29ebb",
           "income_stmt.parquet": "9fb917b4156c05e8e574b4656f3a062a309b7508d47c047a37b63cc2a75037bc",
           "cash_flow.parquet": "592c5dc6c486893bb5c71d929b23b37bf49f8c65564fe1fce910def962b3bcad",
-          "prices.parquet": "578dbeafe7c991e81da4ff5b11e4e5aa607606380b13ed55be87b101be99dceb"
+          "prices.parquet": "a3083b4c0b00c53cb029185158b77400d096f15dbc578cce5464fdb7ddd29e4d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:27.904671+00:00",
+        "source_fetched_at": "2026-10-25T07:39:29.669030+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -151,7 +151,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -184,7 +184,7 @@
         "from": "NOK",
         "to": "SEK",
         "rate": 1.063599944114685,
-        "observed_at": "2026-10-24T21:39:27.575796+00:00",
+        "observed_at": "2026-10-25T07:39:29.333171+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },

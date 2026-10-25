@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "snapshot_id": "27de3688e4b64f61aaad5617f30fa91a",
-  "generated_at": "2026-10-24T21:39:35.135633+00:00",
+  "snapshot_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+  "generated_at": "2026-10-25T07:39:39.422273+00:00",
   "status": "degraded",
-  "source_fetched_at": "2026-10-24T21:39:16.328742+00:00",
+  "source_fetched_at": "2026-10-25T07:39:12.482684+00:00",
   "market_data_as_of": null,
   "expected_session": null,
   "data_kind": "financial-statements",
@@ -88,7 +88,7 @@
           "from": "NOK",
           "to": "EUR",
           "rate": 0.09568999707698822,
-          "observed_at": "2026-10-24T21:39:16.439449+00:00",
+          "observed_at": "2026-10-25T07:39:12.765390+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -108,9 +108,9 @@
       "ticker": "MOWI.OL",
       "status": "current",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:16.328742+00:00",
+      "source_fetched_at": "2026-10-25T07:39:12.482684+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -186,7 +186,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:17.663422+00:00",
+          "observed_at": "2026-10-25T07:39:15.257230+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -206,9 +206,9 @@
       "ticker": "SALM.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:17.637986+00:00",
+      "source_fetched_at": "2026-10-25T07:39:15.217921+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -284,7 +284,7 @@
           "from": "NOK",
           "to": "USD",
           "rate": 0.10733989626169205,
-          "observed_at": "2026-10-24T21:39:18.929980+00:00",
+          "observed_at": "2026-10-25T07:39:17.104166+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -304,9 +304,9 @@
       "ticker": "FRO.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:18.903521+00:00",
+      "source_fetched_at": "2026-10-25T07:39:17.062149+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -382,7 +382,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:20.170225+00:00",
+          "observed_at": "2026-10-25T07:39:18.653726+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -402,9 +402,9 @@
       "ticker": "KOG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:20.144888+00:00",
+      "source_fetched_at": "2026-10-25T07:39:18.613773+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -480,7 +480,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:21.253407+00:00",
+          "observed_at": "2026-10-25T07:39:20.358510+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -500,9 +500,9 @@
       "ticker": "VEND.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:21.227812+00:00",
+      "source_fetched_at": "2026-10-25T07:39:20.319560+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -578,7 +578,7 @@
           "from": "NOK",
           "to": "USD",
           "rate": 0.10733989626169205,
-          "observed_at": "2026-10-24T21:39:22.371382+00:00",
+          "observed_at": "2026-10-25T07:39:22.015244+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -598,9 +598,9 @@
       "ticker": "DOFG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:22.338175+00:00",
+      "source_fetched_at": "2026-10-25T07:39:21.953276+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -676,7 +676,7 @@
           "from": "NOK",
           "to": "USD",
           "rate": 0.10733989626169205,
-          "observed_at": "2026-10-24T21:39:23.325669+00:00",
+          "observed_at": "2026-10-25T07:39:23.389792+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -696,9 +696,9 @@
       "ticker": "BORR.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:23.299207+00:00",
+      "source_fetched_at": "2026-10-25T07:39:23.346748+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -774,7 +774,7 @@
           "from": "NOK",
           "to": "USD",
           "rate": 0.10733989626169205,
-          "observed_at": "2026-10-24T21:39:24.447986+00:00",
+          "observed_at": "2026-10-25T07:39:24.996512+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -794,9 +794,9 @@
       "ticker": "ODL.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:24.421375+00:00",
+      "source_fetched_at": "2026-10-25T07:39:24.954981+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -872,7 +872,7 @@
           "from": "NOK",
           "to": "EUR",
           "rate": 0.09568999707698822,
-          "observed_at": "2026-10-24T21:39:25.403833+00:00",
+          "observed_at": "2026-10-25T07:39:26.418918+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -892,9 +892,9 @@
       "ticker": "CADLR.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:25.376377+00:00",
+      "source_fetched_at": "2026-10-25T07:39:26.378628+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -970,7 +970,7 @@
           "from": "NOK",
           "to": "USD",
           "rate": 0.10733989626169205,
-          "observed_at": "2026-10-24T21:39:26.477308+00:00",
+          "observed_at": "2026-10-25T07:39:27.866819+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -990,9 +990,9 @@
       "ticker": "HAFNI.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:26.449878+00:00",
+      "source_fetched_at": "2026-10-25T07:39:27.827468+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1068,7 +1068,7 @@
           "from": "NOK",
           "to": "SEK",
           "rate": 1.063599944114685,
-          "observed_at": "2026-10-24T21:39:27.575796+00:00",
+          "observed_at": "2026-10-25T07:39:29.333171+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1088,9 +1088,9 @@
       "ticker": "PUBLI.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:27.472657+00:00",
+      "source_fetched_at": "2026-10-25T07:39:29.087502+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1208,7 +1208,7 @@
           "from": "NOK",
           "to": "USD",
           "rate": 0.10733989626169205,
-          "observed_at": "2026-10-24T21:39:28.664233+00:00",
+          "observed_at": "2026-10-25T07:39:30.848755+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1571,9 +1571,9 @@
       "ticker": "NOD.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:28.633678+00:00",
+      "source_fetched_at": "2026-10-25T07:39:30.807435+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1649,7 +1649,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:29.879306+00:00",
+          "observed_at": "2026-10-25T07:39:32.449418+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1669,9 +1669,9 @@
       "ticker": "ELK.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:29.854433+00:00",
+      "source_fetched_at": "2026-10-25T07:39:32.410156+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1747,7 +1747,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:30.898210+00:00",
+          "observed_at": "2026-10-25T07:39:33.923181+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1767,9 +1767,9 @@
       "ticker": "BRG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:30.873427+00:00",
+      "source_fetched_at": "2026-10-25T07:39:33.883225+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1845,7 +1845,7 @@
           "from": "NOK",
           "to": "EUR",
           "rate": 0.09568999707698822,
-          "observed_at": "2026-10-24T21:39:32.110556+00:00",
+          "observed_at": "2026-10-25T07:39:35.589277+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1865,9 +1865,9 @@
       "ticker": "KIT.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:32.084478+00:00",
+      "source_fetched_at": "2026-10-25T07:39:35.548983+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1943,7 +1943,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:33.167827+00:00",
+          "observed_at": "2026-10-25T07:39:37.365983+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1963,9 +1963,9 @@
       "ticker": "NORBT.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:33.105889+00:00",
+      "source_fetched_at": "2026-10-25T07:39:37.203197+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2041,7 +2041,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-24T21:39:34.545981+00:00",
+          "observed_at": "2026-10-25T07:39:38.865051+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2061,9 +2061,9 @@
       "ticker": "TEL.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-24T21:39:34.520108+00:00",
+      "source_fetched_at": "2026-10-25T07:39:38.824526+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 116,
+      "statement_age_days": 117,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2083,6 +2083,6 @@
     "Primary ledgers verify selected annual line items only; no whole-report verification is implied.",
     "180 days is a disclosed statement-age warning, not a regulatory filing deadline."
   ],
-  "last_good_snapshot_id": "27de3688e4b64f61aaad5617f30fa91a",
+  "last_good_snapshot_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
   "published_content_retained": false
 }

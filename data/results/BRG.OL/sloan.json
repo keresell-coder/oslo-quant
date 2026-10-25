@@ -1,67 +1,167 @@
 {
   "ticker": "BRG.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-24T21:39:31.353011Z",
+  "computed_at": "2026-10-25T07:39:34.491072+00:00",
+  "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
       "cfo_accruals": -736000000.0,
       "cfo_accrual_ratio": -0.0765,
-      "bs_accruals": 583000000.0,
-      "bs_accrual_ratio": 0.0606,
-      "earnings_quality": "High",
-      "methods_divergence": 0.137,
-      "methods_diverge_materially": true,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unrated diagnostic",
+      "cash_conversion_description": "Operating cash flow exceeds net income",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
       "net_income": 620000000.0,
       "operating_cash_flow": 1356000000.0,
-      "avg_total_assets": 9627000000.0
+      "avg_total_assets": 9627000000.0,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "bs_status": "withheld: income_taxes_payable, prior_income_taxes_payable",
+      "definitions": {
+        "cfo": "(Net Income - Operating Cash Flow) / average total assets; diagnostic, not original Sloan earnings definition",
+        "bs": "[(delta current assets - delta cash) - (delta current liabilities - delta current debt - delta income taxes payable) - depreciation/amortization] / average total assets"
+      },
+      "warning": "Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas. Neither method establishes a trading edge.",
+      "source_rows": {
+        "net_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "current_assets": "Current Assets",
+        "prior_current_assets": "Current Assets",
+        "cash": "Cash And Cash Equivalents",
+        "prior_cash": "Cash And Cash Equivalents",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_liabilities": "Current Liabilities",
+        "current_debt": "Current Debt",
+        "prior_current_debt": "Current Debt",
+        "income_taxes_payable": null,
+        "prior_income_taxes_payable": null,
+        "depreciation_amortization": "Depreciation And Amortization"
+      },
+      "bs_components": {
+        "current_assets": 3128000000.0,
+        "prior_current_assets": 3021000000.0,
+        "cash": 90000000.0,
+        "prior_cash": 82000000.0,
+        "current_liabilities": 1681000000.0,
+        "prior_current_liabilities": 1869000000.0,
+        "current_debt": 463000000.0,
+        "prior_current_debt": 288000000.0,
+        "income_taxes_payable": null,
+        "prior_income_taxes_payable": null
+      }
     },
     "2024": {
       "cfo_accruals": -245000000.0,
       "cfo_accrual_ratio": -0.0262,
-      "bs_accruals": 772000000.0,
-      "bs_accrual_ratio": 0.0826,
-      "earnings_quality": "Moderate",
-      "methods_divergence": 0.1088,
-      "methods_diverge_materially": true,
+      "bs_accruals": null,
+      "bs_accrual_ratio": null,
+      "earnings_quality": "Unrated diagnostic",
+      "cash_conversion_description": "Operating cash flow exceeds net income",
+      "methods_divergence": null,
+      "methods_diverge_materially": false,
       "net_income": 823000000.0,
       "operating_cash_flow": 1068000000.0,
-      "avg_total_assets": 9349500000.0
+      "avg_total_assets": 9349500000.0,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "bs_status": "withheld: income_taxes_payable, prior_income_taxes_payable",
+      "definitions": {
+        "cfo": "(Net Income - Operating Cash Flow) / average total assets; diagnostic, not original Sloan earnings definition",
+        "bs": "[(delta current assets - delta cash) - (delta current liabilities - delta current debt - delta income taxes payable) - depreciation/amortization] / average total assets"
+      },
+      "warning": "Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas. Neither method establishes a trading edge.",
+      "source_rows": {
+        "net_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "current_assets": "Current Assets",
+        "prior_current_assets": "Current Assets",
+        "cash": "Cash And Cash Equivalents",
+        "prior_cash": "Cash And Cash Equivalents",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_liabilities": "Current Liabilities",
+        "current_debt": "Current Debt",
+        "prior_current_debt": "Current Debt",
+        "income_taxes_payable": null,
+        "prior_income_taxes_payable": null,
+        "depreciation_amortization": "Depreciation And Amortization"
+      },
+      "bs_components": {
+        "current_assets": 3021000000.0,
+        "prior_current_assets": 3117000000.0,
+        "cash": 82000000.0,
+        "prior_cash": 469000000.0,
+        "current_liabilities": 1869000000.0,
+        "prior_current_liabilities": 1804000000.0,
+        "current_debt": 288000000.0,
+        "prior_current_debt": 246000000.0,
+        "income_taxes_payable": null,
+        "prior_income_taxes_payable": null
+      }
     },
     "2023": {
       "cfo_accruals": -693000000.0,
       "cfo_accrual_ratio": -0.0804,
-      "bs_accruals": 320000000.0,
-      "bs_accrual_ratio": 0.0371,
-      "earnings_quality": "High",
-      "methods_divergence": 0.1176,
-      "methods_diverge_materially": true,
-      "net_income": 870000000.0,
-      "operating_cash_flow": 1563000000.0,
-      "avg_total_assets": 8614500000.0
-    },
-    "2022": {
-      "cfo_accruals": 157000000.0,
-      "cfo_accrual_ratio": 0.0193,
       "bs_accruals": null,
       "bs_accrual_ratio": null,
-      "earnings_quality": "Moderate",
+      "earnings_quality": "Unrated diagnostic",
+      "cash_conversion_description": "Operating cash flow exceeds net income",
       "methods_divergence": null,
       "methods_diverge_materially": false,
-      "net_income": 892000000.0,
-      "operating_cash_flow": 735000000.0,
-      "avg_total_assets": 8114000000.0
+      "net_income": 870000000.0,
+      "operating_cash_flow": 1563000000.0,
+      "avg_total_assets": 8614500000.0,
+      "period_basis": "annual signals; source proxies and turnover convention disclosed",
+      "bs_status": "withheld: income_taxes_payable, prior_income_taxes_payable",
+      "definitions": {
+        "cfo": "(Net Income - Operating Cash Flow) / average total assets; diagnostic, not original Sloan earnings definition",
+        "bs": "[(delta current assets - delta cash) - (delta current liabilities - delta current debt - delta income taxes payable) - depreciation/amortization] / average total assets"
+      },
+      "warning": "Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas. Neither method establishes a trading edge.",
+      "source_rows": {
+        "net_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "current_assets": "Current Assets",
+        "prior_current_assets": "Current Assets",
+        "cash": "Cash And Cash Equivalents",
+        "prior_cash": "Cash And Cash Equivalents",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_liabilities": "Current Liabilities",
+        "current_debt": "Current Debt",
+        "prior_current_debt": "Current Debt",
+        "income_taxes_payable": null,
+        "prior_income_taxes_payable": null,
+        "depreciation_amortization": "Depreciation And Amortization"
+      },
+      "bs_components": {
+        "current_assets": 3117000000.0,
+        "prior_current_assets": 2920000000.0,
+        "cash": 469000000.0,
+        "prior_cash": 234000000.0,
+        "current_liabilities": 1804000000.0,
+        "prior_current_liabilities": 2004000000.0,
+        "current_debt": 246000000.0,
+        "prior_current_debt": 702000000.0,
+        "income_taxes_payable": null,
+        "prior_income_taxes_payable": null
+      }
     }
   },
   "financial_currency": "NOK",
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "39652756f7575c75261d",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "dac87c62bb9e36322fca",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:30.873427+00:00",
+        "source_fetched_at": "2026-10-25T07:39:33.883225+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -88,12 +188,12 @@
           "balance_sheet.parquet": "e88b809b1abca0eee95899efa3181f753ec4aa897c931d4b094c170d82f121b0",
           "income_stmt.parquet": "ddda2b701a88c9f2431c372dcf07ffc92c10c7c85c00df2e5bc6d468a4c21f05",
           "cash_flow.parquet": "cc9ddeaa22c5501f1cb8e5a388b7fdfd6d065f7fa1f21cbb5b7076e883064450",
-          "prices.parquet": "711266f8e89955064356340ea082a2f8bc6f1f9e71e2f3021c46493d5b87234d"
+          "prices.parquet": "8f96951ce13511d8da396b96dcbb8ac0af4eddcfaaf8f2b8da36567c1468d662"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:31.333034+00:00",
+        "source_fetched_at": "2026-10-25T07:39:34.479213+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -127,7 +227,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -160,7 +260,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:39:30.898210+00:00",
+        "observed_at": "2026-10-25T07:39:33.923181+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },

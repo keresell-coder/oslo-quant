@@ -1,12 +1,15 @@
 {
   "ticker": "BRG.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-24T21:39:31.357139Z",
+  "computed_at": "2026-10-25T07:39:34.493402Z",
+  "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
       "o_score": -2.6884,
-      "bankruptcy_probability": 0.0637,
-      "interpretation": "Moderate distress risk",
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
       "inputs": {
         "tl_ta": 0.3921,
         "wc_ta": 0.1496,
@@ -20,8 +23,10 @@
     },
     "2024": {
       "o_score": -2.0645,
-      "bankruptcy_probability": 0.1126,
-      "interpretation": "Moderate distress risk",
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
       "inputs": {
         "tl_ta": 0.4689,
         "wc_ta": 0.1202,
@@ -35,8 +40,10 @@
     },
     "2023": {
       "o_score": -2.3897,
-      "bankruptcy_probability": 0.084,
-      "interpretation": "Moderate distress risk",
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
       "inputs": {
         "tl_ta": 0.4631,
         "wc_ta": 0.144,
@@ -51,6 +58,8 @@
     "2022": {
       "o_score": null,
       "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
       "interpretation": "Not assessable",
       "inputs": {
         "tl_ta": 0.4522,
@@ -59,7 +68,7 @@
         "oeneg": 0,
         "ni_ta": 0.1099,
         "cfo_tl": 0.2003,
-        "intwo": 0,
+        "intwo": null,
         "chin": null
       }
     }
@@ -68,12 +77,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "27de3688e4b64f61aaad5617f30fa91a",
-    "snapshot_id": "39652756f7575c75261d",
+    "run_id": "b5aaf3bb0d714bfa88d8a4348ea363f0",
+    "snapshot_id": "dac87c62bb9e36322fca",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-24T21:39:30.873427+00:00",
+        "source_fetched_at": "2026-10-25T07:39:33.883225+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -100,12 +109,12 @@
           "balance_sheet.parquet": "e88b809b1abca0eee95899efa3181f753ec4aa897c931d4b094c170d82f121b0",
           "income_stmt.parquet": "ddda2b701a88c9f2431c372dcf07ffc92c10c7c85c00df2e5bc6d468a4c21f05",
           "cash_flow.parquet": "cc9ddeaa22c5501f1cb8e5a388b7fdfd6d065f7fa1f21cbb5b7076e883064450",
-          "prices.parquet": "711266f8e89955064356340ea082a2f8bc6f1f9e71e2f3021c46493d5b87234d"
+          "prices.parquet": "8f96951ce13511d8da396b96dcbb8ac0af4eddcfaaf8f2b8da36567c1468d662"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-24T21:39:31.333034+00:00",
+        "source_fetched_at": "2026-10-25T07:39:34.479213+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -139,7 +148,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 116,
+    "statement_age_days": 117,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -172,7 +181,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-24T21:39:30.898210+00:00",
+        "observed_at": "2026-10-25T07:39:33.923181+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
