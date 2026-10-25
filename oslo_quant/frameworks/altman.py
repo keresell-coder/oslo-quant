@@ -8,6 +8,7 @@ from typing import Any
 
 from oslo_quant.fetchers.base import Statements
 from oslo_quant.frameworks.base import BaseFramework
+from oslo_quant.frameworks.methodology import VERSION
 
 
 class AltmanFramework(BaseFramework):
@@ -39,6 +40,7 @@ class AltmanFramework(BaseFramework):
             "ticker":      ticker,
             "framework":   self.name,
             "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+            "methodology_version": VERSION,
             "periods":     results,
         }
 
@@ -97,16 +99,11 @@ class AltmanFramework(BaseFramework):
         # period score Z=0.00 "Distress". Missing data now yields
         # score=None / zone="Not assessable".
 
-        # ── Original Z-Score (manufacturing / public companies) ──────
-        w = self._W
+        # Original reference withheld: no dated market-equity/currency contract.
+        # Do not calculate the old book-equity hybrid under the original name.
         z_components = (x1, x2, x3, x4, x5)
-        if any(math.isnan(x) for x in z_components):
-            z = float("nan")
-        else:
-            z = (w["x1"]*x1 + w["x2"]*x2 + w["x3"]*x3
-                 + w["x4"]*x4 + w["x5"]*x5)
 
-        # ── Z'' Score (non-manufacturing, sector-neutral) ─────────────
+        # ── Z'' Score (non-manufacturing reference, eligibility requires review) ─────────────
         wp = self._W_PP
         zpp_components = (x1, x2, x3, x4)
         if any(math.isnan(x) for x in zpp_components):
@@ -120,8 +117,9 @@ class AltmanFramework(BaseFramework):
             return None
 
         return {
-            "z_score":                      self._fmt(z),
-            "zone":                         self._zone(z),
+            "z_score": None,
+            "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+            "zone": "Not assessable",
             "z_score_prime":                self._fmt(zpp),
             "zone_prime":                   self._zone_prime(zpp),
             "x1_working_capital_to_assets": self._fmt(x1),

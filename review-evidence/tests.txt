@@ -1,0 +1,31 @@
+........................................................................ [ 51%]
+.....................................................................    [100%]
+=============================== warnings summary ===============================
+tests/test_field_resolution.py::TestFrameworksOnRealVocabulary::test_dupont_ebit_margin_uses_exact_ebit
+tests/test_field_resolution.py::TestFrameworksOnRealVocabulary::test_dupont_5factor_is_consistency_check
+tests/test_field_resolution.py::TestMissingInputPolicy::test_empty_period_produces_no_distress_row
+tests/test_frameworks.py::TestDuPont::test_returns_both_periods
+tests/test_frameworks.py::TestDuPont::test_roe_3factor_positive
+tests/test_frameworks.py::TestDuPont::test_npm_between_0_and_1
+tests/test_frameworks.py::TestDuPont::test_5factor_roe_close_to_3factor
+tests/test_frameworks.py::TestEdgeCases::test_empty_statements_no_crash
+tests/test_frameworks.py::TestEdgeCases::test_single_period_no_crash
+  /Users/ke/Documents/Codex/2026-10-24/task-3/quant/oslo_quant/frameworks/dupont.py:29: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+
+tests/test_field_resolution.py: 5 warnings
+tests/test_frameworks.py: 7 warnings
+tests/test_ltm_and_ledger.py: 2 warnings
+tests/test_methodology_contracts.py: 1 warning
+  /Users/ke/Documents/Codex/2026-10-24/task-3/quant/oslo_quant/frameworks/altman.py:42: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+
+tests/test_field_resolution.py: 3 warnings
+tests/test_frameworks.py: 5 warnings
+tests/test_ltm_and_ledger.py: 3 warnings
+tests/test_methodology_contracts.py: 1 warning
+  /Users/ke/Documents/Codex/2026-10-24/task-3/quant/oslo_quant/frameworks/ohlson.py:70: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+141 passed, 36 warnings in 1.22s

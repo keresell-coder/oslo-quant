@@ -165,30 +165,17 @@ def _company_summary(ticker: str, fws: dict) -> str:
         f = pio.get("f_score")
         if f is not None:
             if f >= 8:
-                positives.append(f"solid fundamentals (F-Score {f}/9)")
+                positives.append(f"positive accounting-signal count (F-Score {f}/9)")
             elif f <= 3:
                 concerns.append(f"weak fundamental signals (F-Score {f}/9)")
 
     _, sl = _latest(fws.get("sloan", {}))
-    if sl:
-        q = sl.get("earnings_quality", "Unknown")
-        if q == "High":
-            positives.append("cash-backed earnings")
-        elif q == "Low":
-            concerns.append("accrual-heavy earnings (low cash conversion)")
-
-    _, oh = _latest(fws.get("ohlson", {}))
-    if oh:
-        prob = _safe_float(oh.get("bankruptcy_probability"))
-        if prob is not None:
-            if prob < 0.05:
-                positives.append("very low distress risk (Ohlson)")
-            elif prob > 0.20:
-                concerns.append(f"elevated distress signal ({_pct(prob)}, Ohlson)")
+    if sl and sl.get("methods_diverge_materially"):
+        concerns.append("cash/accrual methods diverge >10pp; definitions and acquisition effects need review")
 
     _, al = _latest(fws.get("altman", {}))
     if al:
-        # Use Z'' for all companies — none qualify as US manufacturing
+        # Active Z-double-prime retained; sector eligibility is not asserted.
         if "z_score_prime" in al:
             zone  = al.get("zone_prime", "Unknown")
             z     = _safe_float(al.get("z_score_prime"))
@@ -198,7 +185,7 @@ def _company_summary(ticker: str, fws: dict) -> str:
             z     = _safe_float(al.get("z_score"))
             label = "Z="
         if zone == "Safe":
-            positives.append(f"Altman {label}{_num(z)} in safe zone")
+            positives.append(f"Altman {label}{_num(z)} in historical safe band (not stock safety)")
         elif zone == "Distress":
             concerns.append(f"Altman flags distress ({label}{_num(z)})")
 
@@ -210,7 +197,7 @@ def _company_summary(ticker: str, fws: dict) -> str:
             f"flagged for {', '.join(concerns[:2])}."
         )
     if positives:
-        return f"Strong across frameworks: {', '.join(positives[:3])}."
+        return f"Positive accounting observations: {', '.join(positives[:3])}."
     return f"Concerns flagged: {', '.join(concerns[:3])}."
 
 
@@ -240,7 +227,9 @@ def _summary_row(ticker: str, fws: dict) -> str:
         _, p = _latest(fws["piotroski"])
         if p:
             s = p.get("f_score")
-            if s is not None:
+            if "period_basis" not in p:
+                piotroski = _badge("Legacy calculation; refresh required", "gray")
+            elif s is not None:
                 c = "green" if s >= 8 else ("yellow" if s >= 5 else "red")
                 piotroski = _f_score_bar(s, c)
             else:
@@ -251,26 +240,21 @@ def _summary_row(ticker: str, fws: dict) -> str:
     if "sloan" in fws:
         _, p = _latest(fws["sloan"])
         if p:
-            q = p.get("earnings_quality", "Unknown")
-            c = "green" if q == "High" else ("yellow" if q == "Moderate" else ("red" if q == "Low" else "gray"))
-            sloan = _badge(f"{q} ({_pct(p.get('cfo_accrual_ratio'))})", c)
+            sloan = _badge(f"CFO diagnostic {_pct(p.get('cfo_accrual_ratio'))}", "gray")
+            if p.get("methods_diverge_materially"):
+                sloan += _badge("Methods diverge >10pp", "red")
 
     ohlson = "—"
     if "ohlson" in fws:
         _, p = _latest(fws["ohlson"])
         if p:
-            prob = _safe_float(p.get("bankruptcy_probability"))
-            if prob is not None:
-                c = "green" if prob < 0.05 else ("yellow" if prob < 0.20 else "red")
-                label = p.get("interpretation", "").replace(" distress risk", "")
-                ohlson = _badge(f"{_pct(prob)} {label}", c)
+            ohlson = _badge(f"Experimental index {_num(p.get('o_score'))}", "gray")
 
     altman = "—"
     if "altman" in fws:
         _, p = _latest(fws["altman"])
         if p:
-            # Z'' (non-manufacturing) is appropriate for all covered companies;
-            # none qualify as US manufacturing. Show Z'' as primary throughout.
+            # Retain the active Z-double-prime identity; applicability still needs review.
             if "z_score_prime" in p:
                 z    = _num(p.get("z_score_prime"))
                 zone = p.get("zone_prime", "Unknown")
@@ -376,8 +360,8 @@ def _fw_section(name: str, fw: dict, ccy: str = "") -> str:
     titles = {
         "dupont":    "DuPont Decomposition",
         "piotroski": "Piotroski F-Score",
-        "sloan":     "Sloan Accruals",
-        "ohlson":    "Ohlson O-Score",
+        "sloan":     "Cash/accrual diagnostics",
+        "ohlson":    "Experimental adapted Ohlson index",
         "altman":    "Altman Z-Score",
     }
     periods = fw.get("periods", {})
@@ -504,7 +488,7 @@ def _piotroski_rows(periods: dict, cols: list[str]) -> str:
         ("F4_accruals_quality",         "F4 · Cash flow exceeds net income"),
         ("F5_leverage_decreasing",      "F5 · Long-term debt ratio falling"),
         ("F6_liquidity_improving",      "F6 · Current ratio improving"),
-        ("F7_no_dilution",              "F7 · No share issuance"),
+        ("F7_no_dilution",              "F7 · No gross reported equity proceeds (proxy)"),
         ("F8_gross_margin_improving",   "F8 · Gross margin improving"),
         ("F9_asset_turnover_improving", "F9 · Asset turnover improving"),
     ]
@@ -525,36 +509,31 @@ def _piotroski_rows(periods: dict, cols: list[str]) -> str:
     r += _colored_row("Gross Margin", cols, periods, "gross_margin", _pct,
                        green_ge=0.30, red_le=0.10)
     r += _row("Asset Turnover", cols, periods, "asset_turnover")
+    for key,label in [("period_basis","Period contract"),("turnover_convention","Turnover convention"),("input_proxies","Input proxies")]:
+        cells = "".join("<td>"+html.escape(str(periods.get(c,{}).get(key,"Legacy method; refresh required")))+"</td>" for c in cols)
+        r += "<tr><td>"+label+"</td>"+cells+"</tr>"
     return r
 
 
 def _sloan_rows(periods: dict, cols: list[str], ccy: str = "") -> str:
-    cells = ""
-    for c in cols:
-        q     = periods.get(c, {}).get("earnings_quality", "Unknown")
-        color = "green" if q == "High" else ("yellow" if q == "Moderate" else ("red" if q == "Low" else "gray"))
-        cells += f"<td>{_badge(q, color)}</td>"
-    r  = f"<tr><td><strong>Earnings Quality</strong></td>{cells}</tr>"
-    r += _colored_row("CFO Accrual Ratio", cols, periods, "cfo_accrual_ratio", _pct,
-                       green_le=-0.05, red_ge=0.05)
-    r += _row("BS Accrual Ratio", cols, periods, "bs_accrual_ratio", _pct)
+    r = _row("CFO diagnostic (NI - CFO) / average assets", cols, periods, "cfo_accrual_ratio", _pct)
+    exact_bs={c:{**p,"bs_accrual_ratio":p.get("bs_accrual_ratio") if p.get("bs_status", "").startswith("available exact") else None} for c,p in periods.items()}
+    r += _row("Original-identity BS ratio (exact components only)", cols, exact_bs, "bs_accrual_ratio", _pct)
+    cells = "".join("<td>"+(_badge("Methods diverge >10pp", "red") if periods.get(c,{}).get("methods_diverge_materially") else "No material divergence observed" if periods.get(c,{}).get("methods_divergence") is not None else "Comparison unavailable")+"</td>" for c in cols)
+    r += "<tr><td>Method disagreement</td>"+cells+"</tr>"
+    r += _row("BS minus CFO ratio", cols, periods, "methods_divergence", _pct)
+    cells = "".join("<td>"+html.escape(str(periods.get(c,{}).get("bs_status","Legacy adapted BS measure; not original identity")))+"</td>" for c in cols)
+    r += "<tr><td>BS coverage / definition</td>"+cells+"</tr>"
+    r += '<tr><td colspan="'+str(len(cols)+1)+'">BS: [(delta CA - delta cash) - (delta CL - delta current debt - delta income taxes payable) - D&amp;A] / average assets. CFO: (NI - operating cash flow) / average assets. Sign alone is not durable earnings quality; acquisitions/discontinued operations can distort BS deltas.</td></tr>'
     fmt_abs = _large_ccy(ccy) if ccy else _large
     r += _row("Operating Cash Flow", cols, periods, "operating_cash_flow", fmt_abs)
-    r += _row("Net Income",          cols, periods, "net_income",          fmt_abs)
+    r += _row("Net Income", cols, periods, "net_income", fmt_abs)
     return r
 
 
 def _ohlson_rows(periods: dict, cols: list[str]) -> str:
     r     = _row("O-Score", cols, periods, "o_score")
-    cells = ""
-    for c in cols:
-        prob = _safe_float(periods.get(c, {}).get("bankruptcy_probability"))
-        if prob is not None:
-            color = "green" if prob < 0.05 else ("yellow" if prob < 0.20 else "red")
-            cells += f"<td>{_badge(_pct(prob), color)}</td>"
-        else:
-            cells += "<td>—</td>"
-    r += f"<tr><td><strong>Bankruptcy Probability</strong></td>{cells}</tr>"
+    r += '<tr><td colspan="'+str(len(cols)+1)+'">Experimental adapted index only. No calibrated failure probability or risk bands. Original SIZE/GNP convention remains unauthenticated; current USD-millions/current-FX arithmetic retained, not asserted as an original-formula correction.</td></tr>'
     inp  = {c: periods.get(c, {}).get("inputs", {}) for c in cols}
     r += _colored_row("Total Liabilities / Total Assets", cols, inp, "tl_ta",
                        green_le=0.50, red_ge=0.80)
@@ -566,18 +545,7 @@ def _ohlson_rows(periods: dict, cols: list[str]) -> str:
 
 
 def _altman_rows(periods: dict, cols: list[str]) -> str:
-    # Original Z-Score row — shown in gray because it is not the active model
-    # for any of the 14 companies (none qualify as US manufacturing).
-    cells = ""
-    for c in cols:
-        z    = _safe_float(periods.get(c, {}).get("z_score"))
-        zone = periods.get(c, {}).get("zone", "Unknown")
-        cells += f"<td>{_badge(f'Z={_num(z)} · {zone}', 'gray')}</td>"
-    r  = (
-        f'<tr><td style="color:var(--slate);font-size:0.75rem">'
-        f'Z-Score (original manufacturing model · reference only)'
-        f'</td>{cells}</tr>'
-    )
+    r = '<tr><td>1968 market-equity reference</td>'+''.join('<td>Withheld: dated market equity/currency contract unavailable; book-equity hybrid is not original Z</td>' for _ in cols)+'</tr>'
 
     # Z'' non-manufacturing row
     cells2 = ""
@@ -916,35 +884,26 @@ footer a{{color:var(--accent);text-decoration:none}}
         <h5>Piotroski F-Score</h5>
         <p>A checklist of 9 binary signals across profitability, capital structure, and operating efficiency. Each signal scores 0 or 1. The progress bar shows the total out of 9.</p>
         <div class="reading">
-          <strong>How to read:</strong> 8–9 = Strong. 5–7 = Moderate. 0–4 = Weak. A rising score over multiple years is more meaningful than any single reading.
+          <strong>How to read:</strong> 8–9 = Strong. 5–7 = Moderate. 0–4 = Weak. Bands summarize positive signals, not an Oslo trading edge. Annual ROA/CFO use common opening assets; leverage uses average assets and the current portion of long-term debt. Turnover uses the paper Table1 average-assets convention while its prose uses opening assets. NI proxies are disclosed; missing prior data stay unknown. Interim comparisons overlap and are an adaptation.
         </div>
       </div>
       <div class="fw-card">
         <h5>Sloan Accruals</h5>
-        <p>Measures earnings quality. A negative accrual ratio means cash flow exceeds reported income — a hallmark of durable, high-quality earnings. A positive ratio suggests profit is largely non-cash accruals that may not repeat. <strong>Implementation note:</strong> the accrual ratio here is (Net Income − Operating Cash Flow) / Average Assets, which omits investing cash flows. This is a deliberate simplification: including investing cash flows would systematically flag capital-intensive companies (shipping, drilling, aquaculture) as low quality every time they acquire a vessel or farm, creating false signals.</p>
-        <div class="reading">
-          <strong>How to read:</strong> High = cash earnings exceed accounting profits (good). Low = accruals exceed cash (caution). Absolute cash flows are shown in the company's reporting currency.
-        </div>
+        <p>Cash/accrual diagnostics: CFO uses (Net Income - operating cash flow) / average assets. The original BS identity uses current assets, cash, current liabilities, current debt, income taxes payable and D&amp;A; missing exact components withhold it. Material divergence above the existing10 percentage-point flag is shown. Negative accruals alone do not prove durable quality; acquisitions and discontinued operations can distort deltas.</p>
       </div>
       <div class="fw-card">
-        <h5>Ohlson O-Score</h5>
-        <p>A logistic regression model estimating the probability of bankruptcy within one year using nine financial ratios covering size, leverage, liquidity, and profitability. <strong>Key calibration limitations:</strong> (1) calibrated on US industrial firms in the 1970s with a ~7% annual bankruptcy rate — far above the &lt;1% rate for large listed Norwegian companies, so raw probabilities are structurally overstated; (2) the leverage term (+6.03 × TL/TA) systematically inflates risk for capital-intensive sectors (shipping, offshore, aquaculture, real estate) where high debt is backed by physical assets; (3) SIZE variable is expressed in millions of <strong>USD</strong> — converted from the reporting currency at the current rate — consistent with Begley et al. (1996) and comparable across NOK/SEK/EUR/USD reporters (before August 2026 it used native-currency assets, which understated risk for NOK reporters relative to USD reporters by roughly 2.5× in probability terms). Use probabilities as <em>relative, directional signals</em> within a peer group — not as absolute bankruptcy forecasts.</p>
-        <div class="reading">
-          <strong>How to read:</strong> &lt;5% = Low risk. 5–20% = Moderate. &gt;20% = Elevated. Thresholds are set conservatively to account for the lower Norwegian base rate. Cross-check with Altman Z&#8243; and company fundamentals before drawing conclusions.
-        </div>
+        <h5>Experimental adapted Ohlson index</h5>
+        <p>Experimental adapted index, not a bankruptcy forecast or calibrated risk band. The original SIZE/GNP convention is unauthenticated. Existing USD-millions/current-FX arithmetic and coefficients are retained without claiming an original-formula correction. No target population, event, horizon or predictive calibration has been established.</p>
       </div>
       <div class="fw-card">
         <h5>Altman Z-Score</h5>
-        <p>Five balance-sheet ratios weighted to classify companies as safe, grey-zone, or distress. Two variants are shown: the original Z (1968, US manufacturing) and the Z&#8243; non-manufacturing model (1995). <strong>Z&#8243; is displayed as primary for all companies</strong> — none of the 14 covered firms qualify as US manufacturing, and Z&#8243; removes the asset-turnover term (X5) that artificially penalises capital-intensive businesses.</p>
-        <div class="reading">
-          <strong>How to read Z&#8243;:</strong> &gt;2.6 = Safe. 1.1–2.6 = Grey. &lt;1.1 = Distress. Thresholds: Safe &gt;2.6 | Grey 1.1–2.6 | Distress &lt;1.1. Original Z thresholds (Safe &gt;2.99, Grey 1.81–2.99, Distress &lt;1.81) are still shown for reference in the detail card.
-        </div>
+        <p>Z-double-prime retains its existing coefficients and historical bands as a qualified distress reference. The1968 original requires dated market equity; the old book-equity hybrid is withheld. Sector eligibility, accounting basis and refinancing risks matter. A historical safe band does not mean a safe or attractive stock.</p>
       </div>
     </div>
 
     <div class="disclaimer">
       <strong>ℹ Restatement — August 2026</strong>
-      All historical results were recomputed on 1 August 2026 after an independent audit found that financial-statement fields were being matched by substring against the data provider's row labels, selecting wrong rows (EBIT resolved to Normalized EBITDA; current assets/liabilities to their <em>non-current</em> counterparts; net income to continuing operations). Field resolution is now exact-match first, missing inputs are reported as “Not assessable” instead of being scored as zero, and periods with no data are dropped. Scores, zones and probabilities shown here may therefore differ materially from versions published before this date.
+      All historical results were recomputed on 1 August 2026 after an independent audit found that financial-statement fields were being matched by substring against the data provider's row labels, selecting wrong rows (EBIT resolved to Normalized EBITDA; current assets/liabilities to their <em>non-current</em> counterparts; net income to continuing operations). Field resolution is now exact-match first, missing inputs are reported as “Not assessable” instead of being scored as zero, and periods with no data are dropped. Historical saved outputs remain in version control. The 2026-10-24 methodology version retires probability/risk-band claims, fixes named identities and records explicit conventions; older outputs are not silently relabelled as corrected calculations.
     </div>
 
     <div class="disclaimer">
@@ -958,15 +917,16 @@ footer a{{color:var(--accent);text-decoration:none}}
     </div>
 
     <div class="disclaimer">
-      <strong>⚠ Data quality &amp; model limitations</strong>
-      Financial data is sourced from Yahoo Finance. Stock prices on Oslo Børs are always in NOK; companies that report in USD or EUR have their price data converted to the reporting currency before any price-based metric is computed. All five models were originally calibrated on US companies — treat scores as relative indicators and cross-check with official annual reports before drawing conclusions. Ohlson O-Score probabilities are structurally overstated for large listed Norwegian firms and capital-intensive sectors; use as a relative signal within a peer group. Altman Z&#8243; (non-manufacturing) is shown as primary — the original Z is retained for reference only.
+      <strong>⚠ Methodology 2026-10-24-methodology-v2 — data quality &amp; model limitations</strong>
+      Financial data is sourced from providers and separately mapped primary reports. Currency, source and missing-input gates remain essential. DuPont is an accounting explanation, not a trading model. Piotroski uses explicit annual conventions/proxies; LTM is an overlapping adaptation. Cash/accrual diagnostics do not certify durable quality. The adapted Ohlson index is experimental, not a calibrated default probability. Active Altman Z-double-prime is unchanged; the 1968 market-equity reference is withheld without a compatible input contract. Historical bands are not stock-safety guarantees.
+
     </div>
 
   </div>
 </div>
 
 <!-- ── Summary ─────────────────────────────────────────────── -->
-<p class="section-title">Summary — Most Recent Annual Period</p>
+<p class="section-title">Summary — Latest Available Period (annual or adapted interim)</p>
 <p style="font-size:0.76rem;color:var(--slate);margin-bottom:12px">
   Click any row to open the full historical detail card below.
 </p>
@@ -979,8 +939,8 @@ footer a{{color:var(--accent);text-decoration:none}}
       <th>ROE</th>
       <th>Net&nbsp;Margin</th>
       <th>Piotroski F-Score</th>
-      <th>Sloan Earnings Quality</th>
-      <th>Ohlson Bankruptcy Risk</th>
+      <th>Cash/accrual diagnostic</th>
+      <th>Experimental Ohlson index</th>
       <th>Altman Z-Score</th>
     </tr>
   </thead>

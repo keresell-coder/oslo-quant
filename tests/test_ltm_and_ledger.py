@@ -179,8 +179,8 @@ class TestOhlsonCurrency:
         p_nok = OhlsonFramework().compute(nok, TICKER)["periods"]["2023"]
 
         assert p_usd["o_score"] == pytest.approx(p_nok["o_score"], abs=1e-3)
-        assert p_usd["bankruptcy_probability"] == pytest.approx(
-            p_nok["bankruptcy_probability"], abs=1e-4)
+        assert p_usd["bankruptcy_probability"] is None
+        assert p_nok["bankruptcy_probability"] is None
 
     def test_missing_fx_means_not_assessable(self):
         stmts = make_statements()

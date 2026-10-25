@@ -1,28 +1,9 @@
-"""Ohlson O-Score — bankruptcy probability (logistic model, 1980).
+"""Experimental adapted Ohlson index, not a calibrated bankruptcy probability.
 
-Key calibration notes
----------------------
-* Calibrated on US industrial firms 1970–1976 (Compustat). Not designed for
-  Scandinavian / European companies or capital-intensive sectors.
-
-* SIZE variable fix: the original formula uses ln(Total Assets / GNP price-level
-  index), where the GNP deflator ≈ 1.0–1.5 over the sample period (base 1968).
-  Assets were expressed in raw dollars, so SIZE ≈ ln(dollars) − small constant.
-  For modern companies this is approximated as ln(Total Assets in millions),
-  i.e. dividing by 1e6.  Using 1e9 (a common implementation error) understates
-  SIZE by ln(1000) ≈ 6.9 points, inflating the O-Score by ~2.8 and driving
-  apparent bankruptcy probabilities 35–60 percentage points too high.
-  (Begley, Ming & Watts 1996; Hillegeist et al. 2004; Chava & Jarrow 2004)
-
-* Structural overestimation for capital-intensive sectors: shipping, offshore
-  drilling, real estate, and aquaculture companies carry high leverage by design
-  (secured against physical assets), so the TLTA term (+6.03) systematically
-  overstates distress risk. Treat O-Score as a relative, directional signal
-  within a peer group — not as an absolute bankruptcy probability.
-
-* Interpretation thresholds are set conservatively relative to the original model
-  to reflect the lower empirical base rate of bankruptcy for large listed
-  Norwegian companies (< 1% p.a.) vs Ohlson's training sample (~7%).
+Coefficients and current USD-millions SIZE arithmetic are retained for continuity.
+The original SIZE/GNP convention is unauthenticated; no replacement is asserted.
+Current FX applied to historical assets is an adaptation. No risk bands/calibration
+or predictive validity for this population/horizon is established.
 """
 
 from __future__ import annotations
@@ -33,11 +14,9 @@ from typing import Any
 
 from oslo_quant.fetchers.base import Statements
 from oslo_quant.frameworks.base import BaseFramework
+from oslo_quant.frameworks.methodology import VERSION
 
-# SIZE = ln(Total Assets / GNP deflator).
-# Academic replications express Total Assets in millions of dollars (÷1e6).
-# This is consistent with Begley et al. (1996) and most peer-reviewed work.
-_GNP_DIVISOR = 1_000_000  # express assets in millions
+_GNP_DIVISOR = 1_000_000  # retained adaptation; original SIZE authentication remains open
 
 
 class OhlsonFramework(BaseFramework):
@@ -68,7 +47,7 @@ class OhlsonFramework(BaseFramework):
         # rates) purely from currency units. The pipeline supplies the current
         # reporting-currency→USD rate; USD is the model's original basis.
         # Applying today's spot rate to historical years is a disclosed
-        # approximation — SIZE is a log-scale term and insensitive to it.
+        # approximation, not authenticated historical SIZE or predictive calibration.
         fx_to_usd = stmts.get("meta", {}).get("fx_to_usd")  # type: ignore[union-attr]
 
         periods = self._periods(inc, anchor="Total Revenue")
@@ -89,6 +68,7 @@ class OhlsonFramework(BaseFramework):
             "ticker":      ticker,
             "framework":   self.name,
             "computed_at": datetime.datetime.utcnow().isoformat() + "Z",
+            "methodology_version": VERSION,
             "periods":     results,
         }
 
@@ -131,10 +111,10 @@ class OhlsonFramework(BaseFramework):
         cfo_tl = self._safe_div(cfo, total_liab)
 
         # OENEG: 1 if total liabilities exceed total assets
-        oeneg = 1 if (not math.isnan(tl_ta) and tl_ta > 1) else 0
+        oeneg = int(tl_ta > 1) if math.isfinite(tl_ta) else None
 
         # INTWO: 1 if net income negative in both current and prior year
-        intwo = 0
+        intwo = None
         if not math.isnan(net_income) and not math.isnan(net_income_prev):
             intwo = 1 if (net_income < 0 and net_income_prev < 0) else 0
 
@@ -144,9 +124,9 @@ class OhlsonFramework(BaseFramework):
             denom = abs(net_income) + abs(net_income_prev)
             chin = self._safe_div(net_income - net_income_prev, denom) if denom != 0 else float("nan")
 
-        # SIZE = ln(Total Assets in millions of USD).
-        # Original formula: ln(TA / GNP_deflator) on US-dollar assets. Expressing
-        # in millions is the standard modern approximation (Begley et al. 1996);
+        # Retained experimental SIZE = ln(Total Assets in millions of USD).
+        # Original SIZE/GNP convention remains open; this arithmetic is retained
+        # solely as the existing experimental adaptation.
         # converting to USD first keeps the term comparable across NOK/SEK/EUR/USD
         # reporters. No FX rate → SIZE unknown → score Not assessable.
         log_ta_gnp = (
@@ -181,12 +161,12 @@ class OhlsonFramework(BaseFramework):
                 + c["chin"]       * chin
             )
 
-        prob = 1 / (1 + math.exp(-o_score)) if not math.isnan(o_score) else float("nan")
-
         return {
             "o_score":                self._fmt(o_score),
-            "bankruptcy_probability": self._fmt(prob),
-            "interpretation":         self._interpret(prob),
+            "bankruptcy_probability": None,
+            "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+            "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+            "interpretation": "Not assessable" if math.isnan(o_score) else "Experimental adapted index; no probability or risk band",
             "inputs": {
                 "tl_ta":  self._fmt(tl_ta),
                 "wc_ta":  self._fmt(wc_ta),
@@ -199,11 +179,5 @@ class OhlsonFramework(BaseFramework):
             },
         }
 
-    def _interpret(self, prob: float) -> str:
-        if math.isnan(prob):
-            return "Not assessable"
-        if prob < 0.05:
-            return "Low distress risk"
-        if prob < 0.20:
-            return "Moderate distress risk"
-        return "High distress risk"
+    def _interpret(self, value):
+        return "Not assessable" if math.isnan(value) else "Experimental adapted index; uncalibrated"
