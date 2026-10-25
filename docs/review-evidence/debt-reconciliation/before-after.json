@@ -1,0 +1,2937 @@
+{
+  "NOD.OL": {
+    "scope": "Actual frozen provider annual frames; primary overlay only for explicitly qualified debt pairs. Not a live publication or full-company verification.",
+    "financial_currency": "USD",
+    "before": {
+      "ticker": "NOD.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 6,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": 1,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.0203,
+          "cfo_to_assets": 0.1434,
+          "current_ratio": 4.008,
+          "gross_margin": 0.5183,
+          "asset_turnover": 0.7459,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 806706000.0,
+            "prior_opening_assets": 862245000.0,
+            "average_assets": 895033500.0,
+            "prior_average_assets": 834475500.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 0,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 0,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": -0.0447,
+          "cfo_to_assets": 0.07,
+          "current_ratio": 5.3669,
+          "gross_margin": 0.4731,
+          "asset_turnover": 0.6129,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 862245000.0,
+            "prior_opening_assets": 776241000.0,
+            "average_assets": 834475500.0,
+            "prior_average_assets": 819243000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 6,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 0,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 0,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (6 of 9 signals)",
+          "roa": 0.0099,
+          "cfo_to_assets": -0.1533,
+          "current_ratio": 5.3371,
+          "gross_margin": 0.5226,
+          "asset_turnover": 0.6626,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 776241000.0,
+            "prior_opening_assets": null,
+            "average_assets": 819243000.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 0,
+          "signals_assessable": 0,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (0 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 3.8052,
+          "gross_margin": 0.5623,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "after": {
+      "ticker": "NOD.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": 6,
+          "f_score_partial": 6,
+          "signals_assessable": 9,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": 0,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": 1,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Moderate",
+          "roa": 0.0203,
+          "cfo_to_assets": 0.1434,
+          "current_ratio": 4.008,
+          "gross_margin": 0.5183,
+          "asset_turnover": 0.7459,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 806706000.0,
+            "prior_opening_assets": 862245000.0,
+            "average_assets": 895033500.0,
+            "prior_average_assets": 834475500.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "selected-primary: NOD.OL-2025-current_maturities, NOD.OL-2025-noncurrent_long_term",
+            "current_portion": "selected-primary: NOD.OL-2025-current_maturities, NOD.OL-2025-noncurrent_long_term",
+            "debt_assets": "Total Assets",
+            "debt_opening_assets": "Total Assets",
+            "prior_long_debt": "selected-primary: NOD.OL-2024-current_maturities, NOD.OL-2024-noncurrent_long_term",
+            "prior_current_portion": "selected-primary: NOD.OL-2024-current_maturities, NOD.OL-2024-noncurrent_long_term",
+            "prior_debt_assets": "Total Assets",
+            "prior_debt_opening_assets": "Total Assets",
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {
+            "2025": {
+              "noncurrent_long_term": 98377000.0,
+              "current_maturities": 0.0,
+              "source_records": [
+                "NOD.OL-2025-current_maturities",
+                "NOD.OL-2025-noncurrent_long_term"
+              ],
+              "instrument_scope": "bank-and-bond-excluding-leases",
+              "measurement_basis": "carrying-amount-excluding-accrued-interest",
+              "period_end": "2025-12-31",
+              "currency": "USD",
+              "provider_asset_control": {
+                "record_id": "NOD.OL-2025-assets-control",
+                "provider_assets": 983361000.0,
+                "primary_assets": 983361000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 500.0,
+                "source": {
+                  "id": "NOD2025",
+                  "ticker": "NOD.OL",
+                  "title": "NOD AR2025",
+                  "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2025/Annual-Report-2025.pdf",
+                  "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
+                  "artifact_file": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b.pdf",
+                  "published_on": "2026-03-24",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 131
+              },
+              "opening_provider_asset_control": {
+                "record_id": "NOD.OL-2024-assets-control",
+                "provider_assets": 806706000.0,
+                "primary_assets": 806706000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 500.0,
+                "source": {
+                  "id": "NOD2024",
+                  "ticker": "NOD.OL",
+                  "title": "NOD AR2024",
+                  "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+                  "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+                  "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+                  "published_on": null,
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+                  "available_on": "2026-10-25",
+                  "availability_basis": "first-documented-observation",
+                  "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+                },
+                "page": 136
+              },
+              "available_on": "2026-03-24"
+            },
+            "2024": {
+              "noncurrent_long_term": 87336000.0,
+              "current_maturities": 0.0,
+              "source_records": [
+                "NOD.OL-2024-current_maturities",
+                "NOD.OL-2024-noncurrent_long_term"
+              ],
+              "instrument_scope": "bank-and-bond-excluding-leases",
+              "measurement_basis": "carrying-amount-excluding-accrued-interest",
+              "period_end": "2024-12-31",
+              "currency": "USD",
+              "provider_asset_control": {
+                "record_id": "NOD.OL-2024-assets-control",
+                "provider_assets": 806706000.0,
+                "primary_assets": 806706000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 500.0,
+                "source": {
+                  "id": "NOD2024",
+                  "ticker": "NOD.OL",
+                  "title": "NOD AR2024",
+                  "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+                  "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+                  "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+                  "published_on": null,
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+                  "available_on": "2026-10-25",
+                  "availability_basis": "first-documented-observation",
+                  "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+                },
+                "page": 136
+              },
+              "opening_provider_asset_control": {
+                "record_id": "NOD.OL-2023-assets-control",
+                "provider_assets": 862245000.0,
+                "primary_assets": 862245000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 500.0,
+                "source": {
+                  "id": "NOD2024",
+                  "ticker": "NOD.OL",
+                  "title": "NOD AR2024",
+                  "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+                  "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+                  "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+                  "published_on": null,
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+                  "available_on": "2026-10-25",
+                  "availability_basis": "first-documented-observation",
+                  "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+                },
+                "page": 136
+              },
+              "available_on": "2026-10-25"
+            }
+          },
+          "leverage_input_status": "Selected non-lease primary debt; provider average-assets controls matched; source availability recorded"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 0,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 0,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": -0.0447,
+          "cfo_to_assets": 0.07,
+          "current_ratio": 5.3669,
+          "gross_margin": 0.4731,
+          "asset_turnover": 0.6129,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 862245000.0,
+            "prior_opening_assets": 776241000.0,
+            "average_assets": 834475500.0,
+            "prior_average_assets": 819243000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "selected-primary: NOD.OL-2024-current_maturities, NOD.OL-2024-noncurrent_long_term",
+            "current_portion": "selected-primary: NOD.OL-2024-current_maturities, NOD.OL-2024-noncurrent_long_term",
+            "debt_assets": "Total Assets",
+            "debt_opening_assets": "Total Assets",
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {
+            "2024": {
+              "noncurrent_long_term": 87336000.0,
+              "current_maturities": 0.0,
+              "source_records": [
+                "NOD.OL-2024-current_maturities",
+                "NOD.OL-2024-noncurrent_long_term"
+              ],
+              "instrument_scope": "bank-and-bond-excluding-leases",
+              "measurement_basis": "carrying-amount-excluding-accrued-interest",
+              "period_end": "2024-12-31",
+              "currency": "USD",
+              "provider_asset_control": {
+                "record_id": "NOD.OL-2024-assets-control",
+                "provider_assets": 806706000.0,
+                "primary_assets": 806706000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 500.0,
+                "source": {
+                  "id": "NOD2024",
+                  "ticker": "NOD.OL",
+                  "title": "NOD AR2024",
+                  "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+                  "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+                  "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+                  "published_on": null,
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+                  "available_on": "2026-10-25",
+                  "availability_basis": "first-documented-observation",
+                  "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+                },
+                "page": 136
+              },
+              "opening_provider_asset_control": {
+                "record_id": "NOD.OL-2023-assets-control",
+                "provider_assets": 862245000.0,
+                "primary_assets": 862245000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 500.0,
+                "source": {
+                  "id": "NOD2024",
+                  "ticker": "NOD.OL",
+                  "title": "NOD AR2024",
+                  "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+                  "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+                  "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+                  "published_on": null,
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+                  "available_on": "2026-10-25",
+                  "availability_basis": "first-documented-observation",
+                  "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+                },
+                "page": 136
+              },
+              "available_on": "2026-10-25"
+            }
+          },
+          "leverage_input_status": "Withheld: selected debt needs compatible adjacent asset/debt controls"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 6,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 0,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 0,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (6 of 9 signals)",
+          "roa": 0.0099,
+          "cfo_to_assets": -0.1533,
+          "current_ratio": 5.3371,
+          "gross_margin": 0.5226,
+          "asset_turnover": 0.6626,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 776241000.0,
+            "prior_opening_assets": null,
+            "average_assets": 819243000.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 0,
+          "signals_assessable": 0,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (0 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 3.8052,
+          "gross_margin": 0.5623,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "debt_inputs": {
+      "status": "qualified-selected-debt",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T09:45:25.650331+00:00",
+      "ticker": "NOD.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {
+        "2025": {
+          "noncurrent_long_term": 98377000.0,
+          "current_maturities": 0.0,
+          "source_records": [
+            "NOD.OL-2025-current_maturities",
+            "NOD.OL-2025-noncurrent_long_term"
+          ],
+          "instrument_scope": "bank-and-bond-excluding-leases",
+          "measurement_basis": "carrying-amount-excluding-accrued-interest",
+          "period_end": "2025-12-31",
+          "currency": "USD",
+          "provider_asset_control": {
+            "record_id": "NOD.OL-2025-assets-control",
+            "provider_assets": 983361000.0,
+            "primary_assets": 983361000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 500.0,
+            "source": {
+              "id": "NOD2025",
+              "ticker": "NOD.OL",
+              "title": "NOD AR2025",
+              "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2025/Annual-Report-2025.pdf",
+              "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
+              "artifact_file": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b.pdf",
+              "published_on": "2026-03-24",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 131
+          },
+          "opening_provider_asset_control": {
+            "record_id": "NOD.OL-2024-assets-control",
+            "provider_assets": 806706000.0,
+            "primary_assets": 806706000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 500.0,
+            "source": {
+              "id": "NOD2024",
+              "ticker": "NOD.OL",
+              "title": "NOD AR2024",
+              "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+              "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+              "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+              "published_on": null,
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+              "available_on": "2026-10-25",
+              "availability_basis": "first-documented-observation",
+              "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+            },
+            "page": 136
+          },
+          "available_on": "2026-03-24"
+        },
+        "2024": {
+          "noncurrent_long_term": 87336000.0,
+          "current_maturities": 0.0,
+          "source_records": [
+            "NOD.OL-2024-current_maturities",
+            "NOD.OL-2024-noncurrent_long_term"
+          ],
+          "instrument_scope": "bank-and-bond-excluding-leases",
+          "measurement_basis": "carrying-amount-excluding-accrued-interest",
+          "period_end": "2024-12-31",
+          "currency": "USD",
+          "provider_asset_control": {
+            "record_id": "NOD.OL-2024-assets-control",
+            "provider_assets": 806706000.0,
+            "primary_assets": 806706000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 500.0,
+            "source": {
+              "id": "NOD2024",
+              "ticker": "NOD.OL",
+              "title": "NOD AR2024",
+              "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+              "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+              "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+              "published_on": null,
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+              "available_on": "2026-10-25",
+              "availability_basis": "first-documented-observation",
+              "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+            },
+            "page": 136
+          },
+          "opening_provider_asset_control": {
+            "record_id": "NOD.OL-2023-assets-control",
+            "provider_assets": 862245000.0,
+            "primary_assets": 862245000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 500.0,
+            "source": {
+              "id": "NOD2024",
+              "ticker": "NOD.OL",
+              "title": "NOD AR2024",
+              "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+              "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+              "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+              "published_on": null,
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+              "available_on": "2026-10-25",
+              "availability_basis": "first-documented-observation",
+              "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+            },
+            "page": 136
+          },
+          "available_on": "2026-10-25"
+        }
+      },
+      "records": [
+        {
+          "record_id": "NOD.OL-2025-noncurrent_long_term",
+          "role": "noncurrent_long_term",
+          "source_id": "NOD2025",
+          "source": {
+            "id": "NOD2025",
+            "ticker": "NOD.OL",
+            "title": "NOD AR2025",
+            "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2025/Annual-Report-2025.pdf",
+            "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
+            "artifact_file": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b.pdf",
+            "published_on": "2026-03-24",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 132,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Borrowings (non-current)",
+          "period_end": "2025-12-31",
+          "primary_value": 98377000.0,
+          "classification_evidence": "Borrowings=bond carrying amount; FY25RCFundrawn. Currentfinancialliabilities663k are accruedbondinterest, not principal. No lease amounts included.",
+          "zero_disclosure_context": null,
+          "selected_value": 98377000.0,
+          "provider_row": "Long Term Debt",
+          "provider_value": 98377000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "NOD.OL-2025-current_maturities",
+          "role": "current_maturities",
+          "source_id": "NOD2025",
+          "source": {
+            "id": "NOD2025",
+            "ticker": "NOD.OL",
+            "title": "NOD AR2025",
+            "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2025/Annual-Report-2025.pdf",
+            "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
+            "artifact_file": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b.pdf",
+            "published_on": "2026-03-24",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 168,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Bond - payment of principal; less than one year",
+          "period_end": "2025-12-31",
+          "primary_value": 0.0,
+          "classification_evidence": "Borrowings=bond carrying amount; FY25RCFundrawn. Currentfinancialliabilities663k are accruedbondinterest, not principal. No lease amounts included.",
+          "zero_disclosure_context": "p168 bond principal less-than-one-year column explicitly dash; p167 bond is sole nonlease borrowing and RCFundrawn; p169 bond matures2028.",
+          "selected_value": 0.0,
+          "provider_row": "Current Debt",
+          "provider_value": null,
+          "status": "eligible-field",
+          "difference_vs_provider": null,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "NOD.OL-2024-noncurrent_long_term",
+          "role": "noncurrent_long_term",
+          "source_id": "NOD2024",
+          "source": {
+            "id": "NOD2024",
+            "ticker": "NOD.OL",
+            "title": "NOD AR2024",
+            "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+            "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+            "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+            "published_on": null,
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+            "available_on": "2026-10-25",
+            "availability_basis": "first-documented-observation",
+            "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+          },
+          "page": 137,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Borrowings (non-current)",
+          "period_end": "2024-12-31",
+          "primary_value": 87336000.0,
+          "classification_evidence": "Borrowings=bond carrying amount. Currentfinancialliabilities626k are accruedbondinterest, not principal.",
+          "zero_disclosure_context": null,
+          "selected_value": 87336000.0,
+          "provider_row": "Long Term Debt",
+          "provider_value": 87336000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "NOD.OL-2024-current_maturities",
+          "role": "current_maturities",
+          "source_id": "NOD2024",
+          "source": {
+            "id": "NOD2024",
+            "ticker": "NOD.OL",
+            "title": "NOD AR2024",
+            "url": "https://www.nordicsemi.com/-/media/Investor-Relations-and-QA/Annual-Reports/2024/Annual-Report-2024.pdf",
+            "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
+            "artifact_file": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78.pdf",
+            "published_on": null,
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation",
+            "available_on": "2026-10-25",
+            "availability_basis": "first-documented-observation",
+            "publication_limitation": "Original publication date unauthenticated; eligible no earlier than this documented observation"
+          },
+          "page": 170,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Bond - payment of principal; less than one year",
+          "period_end": "2024-12-31",
+          "primary_value": 0.0,
+          "classification_evidence": "Borrowings=bond carrying amount. Currentfinancialliabilities626k are accruedbondinterest, not principal.",
+          "zero_disclosure_context": "p170 maturity table bond principal less-than-one-year explicitly dash; contractual principal88079k entirely1\u20135years; balancep137 separatesleases. p169 confirms RCF undrawn at31December2024.",
+          "selected_value": 0.0,
+          "provider_row": "Current Debt",
+          "provider_value": null,
+          "status": "eligible-field",
+          "difference_vs_provider": null,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        }
+      ],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "provider_debt_observations": {
+        "2025": {
+          "Long Term Debt": 98377000.0,
+          "Long Term Debt And Capital Lease Obligation": 149190000.0,
+          "Current Debt And Capital Lease Obligation": 12408000.0,
+          "Long Term Capital Lease Obligation": 50813000.0,
+          "Current Capital Lease Obligation": 12408000.0,
+          "Total Debt": 161598000.0
+        },
+        "2024": {
+          "Long Term Debt": 87336000.0,
+          "Long Term Debt And Capital Lease Obligation": 133088000.0,
+          "Current Debt And Capital Lease Obligation": 10360000.0,
+          "Long Term Capital Lease Obligation": 45752000.0,
+          "Current Capital Lease Obligation": 10360000.0,
+          "Total Debt": 143448000.0
+        },
+        "2023": {
+          "Long Term Debt": 97491000.0,
+          "Long Term Debt And Capital Lease Obligation": 145355000.0,
+          "Current Debt And Capital Lease Obligation": 9897000.0,
+          "Long Term Capital Lease Obligation": 47864000.0,
+          "Current Capital Lease Obligation": 9897000.0,
+          "Total Debt": 155252000.0
+        },
+        "2022": {
+          "Long Term Debt": 0.0,
+          "Long Term Debt And Capital Lease Obligation": 14861000.0,
+          "Current Debt And Capital Lease Obligation": 6280000.0,
+          "Long Term Capital Lease Obligation": 14861000.0,
+          "Current Capital Lease Obligation": 6280000.0,
+          "Total Debt": 21141000.0
+        },
+        "2021": {
+          "Long Term Debt": null,
+          "Long Term Debt And Capital Lease Obligation": null,
+          "Current Debt And Capital Lease Obligation": null,
+          "Long Term Capital Lease Obligation": null,
+          "Current Capital Lease Obligation": null,
+          "Total Debt": null
+        }
+      },
+      "provider_annual_balance_period_ends": [
+        "2021-12-31",
+        "2022-12-31",
+        "2023-12-31",
+        "2024-12-31",
+        "2025-12-31"
+      ]
+    }
+  },
+  "MOWI.OL": {
+    "scope": "Actual frozen provider annual frames; primary overlay only for explicitly qualified debt pairs. Not a live publication or full-company verification.",
+    "financial_currency": "EUR",
+    "before": {
+      "ticker": "MOWI.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 5,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.0839,
+          "cfo_to_assets": 0.1018,
+          "current_ratio": 2.93,
+          "gross_margin": 0.4868,
+          "asset_turnover": 0.6057,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 8554700000.0,
+            "prior_opening_assets": 8239000000.0,
+            "average_assets": 9391600000.0,
+            "prior_average_assets": 8396850000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 0,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.0569,
+          "cfo_to_assets": 0.1113,
+          "current_ratio": 2.9127,
+          "gross_margin": 0.4971,
+          "asset_turnover": 0.6629,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 8239000000.0,
+            "prior_opening_assets": 7531300000.0,
+            "average_assets": 8396850000.0,
+            "prior_average_assets": 7885150000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 5,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (5 of 9 signals)",
+          "roa": 0.059,
+          "cfo_to_assets": 0.1317,
+          "current_ratio": 3.1463,
+          "gross_margin": 0.4996,
+          "asset_turnover": 0.6948,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 7531300000.0,
+            "prior_opening_assets": null,
+            "average_assets": 7885150000.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 0,
+          "signals_assessable": 0,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (0 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 2.3441,
+          "gross_margin": 0.5533,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "after": {
+      "ticker": "MOWI.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 5,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": 0,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.0839,
+          "cfo_to_assets": 0.1018,
+          "current_ratio": 2.93,
+          "gross_margin": 0.4868,
+          "asset_turnover": 0.6057,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 8554700000.0,
+            "prior_opening_assets": 8239000000.0,
+            "average_assets": 9391600000.0,
+            "prior_average_assets": 8396850000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "selected-primary: MOWI.OL-2025-current_maturities, MOWI.OL-2025-noncurrent_long_term",
+            "current_portion": "selected-primary: MOWI.OL-2025-current_maturities, MOWI.OL-2025-noncurrent_long_term",
+            "debt_assets": "Total Assets",
+            "debt_opening_assets": "Total Assets",
+            "prior_long_debt": "selected-primary: MOWI.OL-2024-current_maturities, MOWI.OL-2024-noncurrent_long_term",
+            "prior_current_portion": "selected-primary: MOWI.OL-2024-current_maturities, MOWI.OL-2024-noncurrent_long_term",
+            "prior_debt_assets": "Total Assets",
+            "prior_debt_opening_assets": "Total Assets",
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {
+            "2025": {
+              "noncurrent_long_term": 2790100000.0,
+              "current_maturities": 149900000.0,
+              "source_records": [
+                "MOWI.OL-2025-current_maturities",
+                "MOWI.OL-2025-noncurrent_long_term"
+              ],
+              "instrument_scope": "bank-and-bond-excluding-leases",
+              "measurement_basis": "carrying-amount-excluding-accrued-interest",
+              "period_end": "2025-12-31",
+              "currency": "EUR",
+              "provider_asset_control": {
+                "record_id": "MOWI.OL-2025-assets-control",
+                "provider_assets": 10228500000.0,
+                "primary_assets": 10228500000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 50000.0,
+                "source": {
+                  "id": "MOWI",
+                  "ticker": "MOWI.OL",
+                  "title": "MOWI AR2025",
+                  "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+                  "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+                  "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+                  "published_on": "2026-03-25",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 186
+              },
+              "opening_provider_asset_control": {
+                "record_id": "MOWI.OL-2024-assets-control",
+                "provider_assets": 8554700000.0,
+                "primary_assets": 8554700000.000001,
+                "difference": -9.5367431640625e-07,
+                "rounding_tolerance": 50000.0,
+                "source": {
+                  "id": "MOWI",
+                  "ticker": "MOWI.OL",
+                  "title": "MOWI AR2025",
+                  "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+                  "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+                  "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+                  "published_on": "2026-03-25",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 186
+              },
+              "available_on": "2026-03-25"
+            },
+            "2024": {
+              "noncurrent_long_term": 1957300000.0,
+              "current_maturities": 200000000.0,
+              "source_records": [
+                "MOWI.OL-2024-current_maturities",
+                "MOWI.OL-2024-noncurrent_long_term"
+              ],
+              "instrument_scope": "bank-and-bond-excluding-leases",
+              "measurement_basis": "carrying-amount-excluding-accrued-interest",
+              "period_end": "2024-12-31",
+              "currency": "EUR",
+              "provider_asset_control": {
+                "record_id": "MOWI.OL-2024-assets-control",
+                "provider_assets": 8554700000.0,
+                "primary_assets": 8554700000.000001,
+                "difference": -9.5367431640625e-07,
+                "rounding_tolerance": 50000.0,
+                "source": {
+                  "id": "MOWI",
+                  "ticker": "MOWI.OL",
+                  "title": "MOWI AR2025",
+                  "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+                  "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+                  "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+                  "published_on": "2026-03-25",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 186
+              },
+              "opening_provider_asset_control": {
+                "record_id": "MOWI.OL-2023-assets-control",
+                "provider_assets": 8239000000.0,
+                "primary_assets": 8239000000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 50000.0,
+                "source": {
+                  "id": "MOWI",
+                  "ticker": "MOWI.OL",
+                  "title": "MOWI AR2025",
+                  "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+                  "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+                  "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+                  "published_on": "2026-03-25",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 14
+              },
+              "available_on": "2026-03-25"
+            }
+          },
+          "leverage_input_status": "Selected non-lease primary debt; provider average-assets controls matched; source availability recorded"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 0,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.0569,
+          "cfo_to_assets": 0.1113,
+          "current_ratio": 2.9127,
+          "gross_margin": 0.4971,
+          "asset_turnover": 0.6629,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 8239000000.0,
+            "prior_opening_assets": 7531300000.0,
+            "average_assets": 8396850000.0,
+            "prior_average_assets": 7885150000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "selected-primary: MOWI.OL-2024-current_maturities, MOWI.OL-2024-noncurrent_long_term",
+            "current_portion": "selected-primary: MOWI.OL-2024-current_maturities, MOWI.OL-2024-noncurrent_long_term",
+            "debt_assets": "Total Assets",
+            "debt_opening_assets": "Total Assets",
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {
+            "2024": {
+              "noncurrent_long_term": 1957300000.0,
+              "current_maturities": 200000000.0,
+              "source_records": [
+                "MOWI.OL-2024-current_maturities",
+                "MOWI.OL-2024-noncurrent_long_term"
+              ],
+              "instrument_scope": "bank-and-bond-excluding-leases",
+              "measurement_basis": "carrying-amount-excluding-accrued-interest",
+              "period_end": "2024-12-31",
+              "currency": "EUR",
+              "provider_asset_control": {
+                "record_id": "MOWI.OL-2024-assets-control",
+                "provider_assets": 8554700000.0,
+                "primary_assets": 8554700000.000001,
+                "difference": -9.5367431640625e-07,
+                "rounding_tolerance": 50000.0,
+                "source": {
+                  "id": "MOWI",
+                  "ticker": "MOWI.OL",
+                  "title": "MOWI AR2025",
+                  "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+                  "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+                  "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+                  "published_on": "2026-03-25",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 186
+              },
+              "opening_provider_asset_control": {
+                "record_id": "MOWI.OL-2023-assets-control",
+                "provider_assets": 8239000000.0,
+                "primary_assets": 8239000000.0,
+                "difference": 0.0,
+                "rounding_tolerance": 50000.0,
+                "source": {
+                  "id": "MOWI",
+                  "ticker": "MOWI.OL",
+                  "title": "MOWI AR2025",
+                  "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+                  "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+                  "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+                  "published_on": "2026-03-25",
+                  "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+                  "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+                },
+                "page": 14
+              },
+              "available_on": "2026-03-25"
+            }
+          },
+          "leverage_input_status": "Withheld: selected debt needs compatible adjacent asset/debt controls"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 5,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (5 of 9 signals)",
+          "roa": 0.059,
+          "cfo_to_assets": 0.1317,
+          "current_ratio": 3.1463,
+          "gross_margin": 0.4996,
+          "asset_turnover": 0.6948,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 7531300000.0,
+            "prior_opening_assets": null,
+            "average_assets": 7885150000.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 0,
+          "signals_assessable": 0,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": null,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (0 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 2.3441,
+          "gross_margin": 0.5533,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": null,
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "debt_inputs": {
+      "status": "qualified-selected-debt",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T09:45:25.650331+00:00",
+      "ticker": "MOWI.OL",
+      "currency": "EUR",
+      "unit": "currency units",
+      "periods": {
+        "2025": {
+          "noncurrent_long_term": 2790100000.0,
+          "current_maturities": 149900000.0,
+          "source_records": [
+            "MOWI.OL-2025-current_maturities",
+            "MOWI.OL-2025-noncurrent_long_term"
+          ],
+          "instrument_scope": "bank-and-bond-excluding-leases",
+          "measurement_basis": "carrying-amount-excluding-accrued-interest",
+          "period_end": "2025-12-31",
+          "currency": "EUR",
+          "provider_asset_control": {
+            "record_id": "MOWI.OL-2025-assets-control",
+            "provider_assets": 10228500000.0,
+            "primary_assets": 10228500000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 186
+          },
+          "opening_provider_asset_control": {
+            "record_id": "MOWI.OL-2024-assets-control",
+            "provider_assets": 8554700000.0,
+            "primary_assets": 8554700000.000001,
+            "difference": -9.5367431640625e-07,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 186
+          },
+          "available_on": "2026-03-25"
+        },
+        "2024": {
+          "noncurrent_long_term": 1957300000.0,
+          "current_maturities": 200000000.0,
+          "source_records": [
+            "MOWI.OL-2024-current_maturities",
+            "MOWI.OL-2024-noncurrent_long_term"
+          ],
+          "instrument_scope": "bank-and-bond-excluding-leases",
+          "measurement_basis": "carrying-amount-excluding-accrued-interest",
+          "period_end": "2024-12-31",
+          "currency": "EUR",
+          "provider_asset_control": {
+            "record_id": "MOWI.OL-2024-assets-control",
+            "provider_assets": 8554700000.0,
+            "primary_assets": 8554700000.000001,
+            "difference": -9.5367431640625e-07,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 186
+          },
+          "opening_provider_asset_control": {
+            "record_id": "MOWI.OL-2023-assets-control",
+            "provider_assets": 8239000000.0,
+            "primary_assets": 8239000000.0,
+            "difference": 0.0,
+            "rounding_tolerance": 50000.0,
+            "source": {
+              "id": "MOWI",
+              "ticker": "MOWI.OL",
+              "title": "MOWI AR2025",
+              "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+              "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+              "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+              "published_on": "2026-03-25",
+              "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+              "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+            },
+            "page": 14
+          },
+          "available_on": "2026-03-25"
+        }
+      },
+      "records": [
+        {
+          "record_id": "MOWI.OL-2025-noncurrent_long_term",
+          "role": "noncurrent_long_term",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Total non-current interest-bearing debt",
+          "period_end": "2025-12-31",
+          "primary_value": 2790100000.0,
+          "classification_evidence": "Current149.9 is carryingamount Schuldschein loan (principal150) dueMay2026. Group currenttotalp205 matches parent Schuldschein identificationp238. Facility maturities narrativep205; IFRS16leases separate.",
+          "zero_disclosure_context": null,
+          "selected_value": 2790100000.0,
+          "provider_row": "Long Term Debt",
+          "provider_value": 2790100000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "MOWI.OL-2025-current_maturities",
+          "role": "current_maturities",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Current interest-bearing debt; note14 parent instrument identification p238",
+          "period_end": "2025-12-31",
+          "primary_value": 149900000.0,
+          "classification_evidence": "Current149.9 is carryingamount Schuldschein loan (principal150) dueMay2026. Group currenttotalp205 matches parent Schuldschein identificationp238. Facility maturities narrativep205; IFRS16leases separate.",
+          "zero_disclosure_context": null,
+          "selected_value": 149900000.0,
+          "provider_row": "Current Debt",
+          "provider_value": 149900000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "MOWI.OL-2024-noncurrent_long_term",
+          "role": "noncurrent_long_term",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Total non-current interest-bearing debt",
+          "period_end": "2024-12-31",
+          "primary_value": 1957300000.0,
+          "classification_evidence": "Current200 is greenbond identifiedparentp238 and matchesgroupcurrenttotalp205; not undifferentiated workingcapitalborrowings.",
+          "zero_disclosure_context": null,
+          "selected_value": 1957300000.0,
+          "provider_row": "Long Term Debt",
+          "provider_value": 1957300000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        },
+        {
+          "record_id": "MOWI.OL-2024-current_maturities",
+          "role": "current_maturities",
+          "source_id": "MOWI",
+          "source": {
+            "id": "MOWI",
+            "ticker": "MOWI.OL",
+            "title": "MOWI AR2025",
+            "url": "https://mowi.com/wp-content/uploads/2025/05/Mowi-Annual-Report-2025.pdf",
+            "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
+            "artifact_file": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380.pdf",
+            "published_on": "2026-03-25",
+            "retrieved_at": "2026-10-25T09:45:25.650331+00:00",
+            "retrieval_note": "Local receipt/hash verification of Library libfile_5735c693e6388191bf3805caf0ca5a72; MOWI immutable original from prior libfile_44dd24587234819185dab8d54fc7589d; not an invented original HTTP observation"
+          },
+          "page": 205,
+          "table": "Group balance sheet and debt maturity notes",
+          "source_label": "Current interest-bearing debt; note14 parent instrument identification p238",
+          "period_end": "2024-12-31",
+          "primary_value": 200000000.0,
+          "classification_evidence": "Current200 is greenbond identifiedparentp238 and matchesgroupcurrenttotalp205; not undifferentiated workingcapitalborrowings.",
+          "zero_disclosure_context": null,
+          "selected_value": 200000000.0,
+          "provider_row": "Current Debt",
+          "provider_value": 200000000.0,
+          "status": "eligible-field",
+          "difference_vs_provider": 0.0,
+          "replacement_reason": "Source-qualified non-lease current/noncurrent pair for F5 only; original provider rows retained"
+        }
+      ],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "provider_debt_observations": {
+        "2025": {
+          "Long Term Debt": 2790100000.0,
+          "Current Debt": 149900000.0,
+          "Long Term Debt And Capital Lease Obligation": 3133700000.0,
+          "Current Debt And Capital Lease Obligation": 329000000.0,
+          "Long Term Capital Lease Obligation": 343600000.0,
+          "Current Capital Lease Obligation": 179100000.0,
+          "Total Debt": 3462700000.0
+        },
+        "2024": {
+          "Long Term Debt": 1957300000.0,
+          "Current Debt": 200000000.0,
+          "Long Term Debt And Capital Lease Obligation": 2295700000.0,
+          "Current Debt And Capital Lease Obligation": 379400000.0,
+          "Long Term Capital Lease Obligation": 338400000.0,
+          "Current Capital Lease Obligation": 179400000.0,
+          "Total Debt": 2675100000.0
+        },
+        "2023": {
+          "Long Term Debt": 2093000000.0,
+          "Current Debt": 100000.0,
+          "Long Term Debt And Capital Lease Obligation": 2392300000.0,
+          "Current Debt And Capital Lease Obligation": 174600000.0,
+          "Long Term Capital Lease Obligation": 299300000.0,
+          "Current Capital Lease Obligation": 174500000.0,
+          "Total Debt": 2566900000.0
+        },
+        "2022": {
+          "Long Term Debt": 1725800000.0,
+          "Current Debt": 211600000.0,
+          "Long Term Debt And Capital Lease Obligation": 2015200000.0,
+          "Current Debt And Capital Lease Obligation": 385100000.0,
+          "Long Term Capital Lease Obligation": 289400000.0,
+          "Current Capital Lease Obligation": 173500000.0,
+          "Total Debt": 2400300000.0
+        },
+        "2021": {
+          "Long Term Debt": null,
+          "Current Debt": null,
+          "Long Term Debt And Capital Lease Obligation": null,
+          "Current Debt And Capital Lease Obligation": null,
+          "Long Term Capital Lease Obligation": null,
+          "Current Capital Lease Obligation": null,
+          "Total Debt": null
+        }
+      },
+      "provider_annual_balance_period_ends": [
+        "2021-12-31",
+        "2022-12-31",
+        "2023-12-31",
+        "2024-12-31",
+        "2025-12-31"
+      ]
+    }
+  },
+  "DOFG.OL": {
+    "scope": "Actual frozen provider annual frames; primary overlay only for explicitly qualified debt pairs. Not a live publication or full-company verification.",
+    "financial_currency": "USD",
+    "before": {
+      "ticker": "DOFG.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 6,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.1234,
+          "cfo_to_assets": 0.1396,
+          "current_ratio": 1.8122,
+          "gross_margin": null,
+          "asset_turnover": 0.4717,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 3783000000.0,
+            "prior_opening_assets": 2681000000.0,
+            "average_assets": 3966500000.0,
+            "prior_average_assets": 3232000000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 0,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.0664,
+          "cfo_to_assets": 0.1395,
+          "current_ratio": 2.0,
+          "gross_margin": null,
+          "asset_turnover": 0.4285,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 2681000000.0,
+            "prior_opening_assets": 2290000000.0,
+            "average_assets": 3232000000.0,
+            "prior_average_assets": 2485500000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 5,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 0,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (5 of 9 signals)",
+          "roa": 0.1585,
+          "cfo_to_assets": 0.0541,
+          "current_ratio": 1.9847,
+          "gross_margin": null,
+          "asset_turnover": 0.4542,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 2290000000.0,
+            "prior_opening_assets": null,
+            "average_assets": 2485500000.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 1,
+          "signals_assessable": 1,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (1 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 0.255,
+          "gross_margin": null,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "after": {
+      "ticker": "DOFG.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 6,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.1234,
+          "cfo_to_assets": 0.1396,
+          "current_ratio": 1.8122,
+          "gross_margin": null,
+          "asset_turnover": 0.4717,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 3783000000.0,
+            "prior_opening_assets": 2681000000.0,
+            "average_assets": 3966500000.0,
+            "prior_average_assets": 3232000000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 7,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 0,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (7 of 9 signals)",
+          "roa": 0.0664,
+          "cfo_to_assets": 0.1395,
+          "current_ratio": 2.0,
+          "gross_margin": null,
+          "asset_turnover": 0.4285,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 2681000000.0,
+            "prior_opening_assets": 2290000000.0,
+            "average_assets": 3232000000.0,
+            "prior_average_assets": 2485500000.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 5,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 0,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (5 of 9 signals)",
+          "roa": 0.1585,
+          "cfo_to_assets": 0.0541,
+          "current_ratio": 1.9847,
+          "gross_margin": null,
+          "asset_turnover": 0.4542,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 2290000000.0,
+            "prior_opening_assets": null,
+            "average_assets": 2485500000.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 1,
+          "signals_assessable": 1,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (1 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 0.255,
+          "gross_margin": null,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": null,
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T09:33:38.374334+00:00",
+      "ticker": "DOFG.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification."
+    }
+  },
+  "PUBLI.OL": {
+    "scope": "Actual frozen provider annual frames; primary overlay only for explicitly qualified debt pairs. Not a live publication or full-company verification.",
+    "financial_currency": "SEK",
+    "before": {
+      "ticker": "PUBLI.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.0404,
+          "cfo_to_assets": 0.0689,
+          "current_ratio": 0.684,
+          "gross_margin": 0.8949,
+          "asset_turnover": 0.0319,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 11610973433.0,
+            "prior_opening_assets": 8374140317.0,
+            "average_assets": 31699529518.0,
+            "prior_average_assets": 9992556875.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 7,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": 1,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.0012,
+          "cfo_to_assets": 0.0543,
+          "current_ratio": 3.4433,
+          "gross_margin": 0.901,
+          "asset_turnover": 0.0659,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 8374140317.0,
+            "prior_opening_assets": 10314930802.0,
+            "average_assets": 9992556875.0,
+            "prior_average_assets": 9344535559.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 6,
+          "signals": {
+            "F1_positive_roa": 0,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (6 of 9 signals)",
+          "roa": -0.0857,
+          "cfo_to_assets": 0.0416,
+          "current_ratio": 0.0647,
+          "gross_margin": 0.8713,
+          "asset_turnover": 0.0605,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 10314930802.0,
+            "prior_opening_assets": null,
+            "average_assets": 9344535559.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 0,
+          "signals_assessable": 1,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (1 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 0.2468,
+          "gross_margin": 0.875,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "after": {
+      "ticker": "PUBLI.OL",
+      "framework": "piotroski",
+      "methodology_version": "2026-10-24-methodology-v2",
+      "periods": {
+        "2025": {
+          "f_score": null,
+          "f_score_partial": 4,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": 0
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.0404,
+          "cfo_to_assets": 0.0689,
+          "current_ratio": 0.684,
+          "gross_margin": 0.8949,
+          "asset_turnover": 0.0319,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 11610973433.0,
+            "prior_opening_assets": 8374140317.0,
+            "average_assets": 31699529518.0,
+            "prior_average_assets": 9992556875.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2024": {
+          "f_score": null,
+          "f_score_partial": 7,
+          "signals_assessable": 8,
+          "signals": {
+            "F1_positive_roa": 1,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": 1,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 1,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": 1,
+            "F9_asset_turnover_improving": 1
+          },
+          "interpretation": "Not assessable (8 of 9 signals)",
+          "roa": 0.0012,
+          "cfo_to_assets": 0.0543,
+          "current_ratio": 3.4433,
+          "gross_margin": 0.901,
+          "asset_turnover": 0.0659,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 8374140317.0,
+            "prior_opening_assets": 10314930802.0,
+            "average_assets": 9992556875.0,
+            "prior_average_assets": 9344535559.0
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": "Total Assets",
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2023": {
+          "f_score": null,
+          "f_score_partial": 3,
+          "signals_assessable": 6,
+          "signals": {
+            "F1_positive_roa": 0,
+            "F2_positive_cfo": 1,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": 1,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": 0,
+            "F7_no_dilution": 1,
+            "F8_gross_margin_improving": 0,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (6 of 9 signals)",
+          "roa": -0.0857,
+          "cfo_to_assets": 0.0416,
+          "current_ratio": 0.0647,
+          "gross_margin": 0.8713,
+          "asset_turnover": 0.0605,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": 10314930802.0,
+            "prior_opening_assets": null,
+            "average_assets": 9344535559.0,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": "Total Assets",
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": "Net Income",
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": "Long Term Debt",
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": "Current Assets",
+            "prior_current_liabilities": "Current Liabilities",
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": "Gross Profit",
+            "revenue": "Total Revenue",
+            "prior_revenue": "Total Revenue"
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        },
+        "2022": {
+          "f_score": null,
+          "f_score_partial": 0,
+          "signals_assessable": 1,
+          "signals": {
+            "F1_positive_roa": null,
+            "F2_positive_cfo": null,
+            "F3_roa_increasing": null,
+            "F4_accruals_quality": null,
+            "F5_leverage_decreasing": null,
+            "F6_liquidity_improving": null,
+            "F7_no_dilution": 0,
+            "F8_gross_margin_improving": null,
+            "F9_asset_turnover_improving": null
+          },
+          "interpretation": "Not assessable (1 of 9 signals)",
+          "roa": null,
+          "cfo_to_assets": null,
+          "current_ratio": 0.2468,
+          "gross_margin": 0.875,
+          "asset_turnover": null,
+          "period_basis": "annual signals; source proxies and turnover convention disclosed",
+          "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+          "input_proxies": [
+            "Net Income proxy for pre-extraordinary income",
+            "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+          ],
+          "signal_definitions": {
+            "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+          },
+          "denominators": {
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "average_assets": null,
+            "prior_average_assets": null
+          },
+          "source_rows": {
+            "assets": "Total Assets",
+            "opening_assets": null,
+            "prior_opening_assets": null,
+            "income": "Net Income",
+            "prior_income": null,
+            "cfo": "Operating Cash Flow",
+            "long_debt": "Long Term Debt",
+            "current_portion": null,
+            "prior_long_debt": null,
+            "prior_current_portion": null,
+            "current_assets": "Current Assets",
+            "current_liabilities": "Current Liabilities",
+            "prior_current_assets": null,
+            "prior_current_liabilities": null,
+            "gross_equity_issuance": "Issuance Of Capital Stock",
+            "gross_profit": "Gross Profit",
+            "prior_gross_profit": null,
+            "revenue": "Total Revenue",
+            "prior_revenue": null
+          },
+          "debt_input_audit": {},
+          "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+        }
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-25T09:33:33.709578+00:00",
+      "ticker": "PUBLI.OL",
+      "currency": "SEK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification."
+    }
+  }
+}

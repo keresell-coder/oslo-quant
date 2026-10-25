@@ -1,0 +1,7 @@
+{
+  "ticker": "DOFG.OL",
+  "financialCurrency": "USD",
+  "priceCurrency": "NOK",
+  "observed_at": "2026-10-25T09:33:38.374334+00:00",
+  "provider": "Yahoo Finance via yfinance"
+}

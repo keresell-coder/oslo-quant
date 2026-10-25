@@ -98,5 +98,180 @@
     }
   },
   "ingestion_policy": "Store issuer and provider numbers separately with source labels. No formula changes or canonical mutation.",
-  "application_policy": "audit-only: no provider or effective financial value replacement"
+  "application_policy": "audit-only: no provider or effective financial value replacement",
+  "additional_annual_debt_and_TTM_reconciliation": {
+    "issuer": "DOFG.OL",
+    "scope": "TTM to2026-06-30; USDmillions; IFRSconsolidated, notmanagementgrossJV",
+    "sources": [
+      {
+        "file": "DOF_AR2025.pdf",
+        "page": 111
+      },
+      {
+        "file": "DOF_Q2_2026.pdf",
+        "page": 9
+      },
+      {
+        "file": "DOF_Q3_2025.pdf",
+        "page": 11
+      }
+    ],
+    "issuer_reported_ebitda": {
+      "FY2025": 718,
+      "H12026": 485,
+      "H12025": 329,
+      "TTM": 874,
+      "expression": "718+485-329"
+    },
+    "standardized_interest_cost_reconstruction": {
+      "FY2025": {
+        "PBT": 507,
+        "grossfinancecost": 131,
+        "depreciation": 203,
+        "impairment_expense": -7,
+        "result": 834
+      },
+      "H12026": {
+        "PBT": 301,
+        "grossfinancecost": 59,
+        "depreciation": 129,
+        "impairment_expense": 42,
+        "result": 531
+      },
+      "H12025": {
+        "PBT": 252,
+        "grossfinancecost": 78,
+        "depreciation": 98,
+        "impairment_expense": 1,
+        "result": 429
+      },
+      "TTM": 936,
+      "expression": "834+531-429",
+      "Q22026_reconstruction": 347,
+      "Q32025": {
+        "PBT": 131,
+        "grossfinancecost": 23,
+        "depreciation": 55,
+        "impairment_expense": 0,
+        "result": 209
+      },
+      "Q42025_FY_minus9M": {
+        "PBT": 124,
+        "grossfinancecost": 30,
+        "depreciation": 50,
+        "impairment_expense": -8,
+        "result": 196
+      },
+      "caution": "A numerical reconstruction, not confirmed provider definition; source displayedroundedfigures."
+    },
+    "provider_frozen": {
+      "TTM_EBITDA": 923,
+      "Q42025_EBITDA": 203,
+      "Q12026_EBITDA": 184,
+      "Q22026_EBITDA": 347,
+      "Q32025_EBITDA": null,
+      "Q32025_implied_if_TTM_is_four_quarter_sum": 189,
+      "implied_not_observed": true
+    },
+    "residuals": {
+      "provider_TTM_minus_issuer_reported": 49,
+      "provider_TTM_minus_standardized_reconstruction": -13,
+      "providerQ4_minus_reconstructedQ4": 7
+    },
+    "verdict": "PARTIALLY RECONCILED, NOT MATCHED. Q2 standardized347 exact; adopting this definition acrossfullTTM yields936, not923. Therefore do notpresent923asissuerreported874 orapprovedstandardizedTTM. Missingproviderrawquarterandnormalizationprovenance staysopen.",
+    "EV_verified": null,
+    "application_policy": "audit-only: no standardized/IFRS substitution and no verified EV",
+    "source_provenance": {
+      "DOF": {
+        "file": "DOF_AR2025.pdf",
+        "url": "https://cdn.prod.website-files.com/629f1b36bee3b058907852a0/69d5e1a21918c738db2ba54f_DOF%20Integrated%20Report%202025%20V1.00%20Website.pdf",
+        "printed_pages": [
+          111,
+          112,
+          138,
+          165
+        ],
+        "sha256": "4c6b78e60ad994ce341bab18affaad2e8487df90b05e0f64f6233183684cd1d2",
+        "publication_date": "2026-04-08"
+      },
+      "DOFQ32025": {
+        "file": "DOF_Q3_2025.pdf",
+        "url": "https://cdn.prod.website-files.com/629f1b36bee3b058907852a0/690affbdfa9187605ca31890_DOF%20Group%20ASA%20Financial%20Report%20Q3%202025.pdf",
+        "printed_pages": [
+          11
+        ],
+        "sha256": "37602ba6c53e713b513f47108eedccc918b2a967a891c9afda62fd24d9947dca",
+        "publication_date": "2025-11-05"
+      },
+      "DOFQ22026": {
+        "file": "DOF_Q2_2026.pdf",
+        "url": "https://cdn.prod.website-files.com/629f1b36bee3b058907852a0/6a8539185e737d65fdcdfe70_DOF%20Group%20ASA%20Financial%20Report%20Q2%202026.pdf",
+        "printed_pages": [
+          9,
+          17
+        ],
+        "sha256": "24ec6ca43f6d5cf68cff7cb826e496cbd06b32ad97bf0e779908fe2a54b3b4e7",
+        "publication_date": "2026-08-19"
+      }
+    },
+    "annual_debt_selected_facts": [
+      {
+        "ticker": "DOFG.OL",
+        "fiscal_year": 2025,
+        "period_end": "2025-12-31",
+        "currency": "USD",
+        "scope": "consolidated group",
+        "source_scale": 1000000,
+        "long_term_debt_excluding_leases_noncurrent": 1423000000,
+        "current_portion_long_term_debt_excluding_leases": 160000000,
+        "long_term_debt_includes_current_portion": false,
+        "lease_noncurrent_separate": 67000000,
+        "lease_current_separate": 43000000,
+        "total_assets": 4150000000,
+        "source_id": "DOF",
+        "source_pages": [
+          112,
+          138,
+          165
+        ],
+        "classification_note": "Noncurrentbond148+credit1275. Explicitprincipalcurrentcredit160 atnote22p138. Balancecurrent165 includesaccruedinterest; p138says4 whilep165says5. Preserve160, do notderivefromroundedsubtotal. No currentbondprincipal in debtprofile.",
+        "explicit_zero_evidence": null,
+        "status": "primary_mapping_candidate_requires_independent_acceptance",
+        "provider_row_semantics_verified": false,
+        "canonical_row_candidates": {
+          "Long Term Debt": 1423000000,
+          "Current Portion Of Long Term Debt": 160000000
+        }
+      },
+      {
+        "ticker": "DOFG.OL",
+        "fiscal_year": 2024,
+        "period_end": "2024-12-31",
+        "currency": "USD",
+        "scope": "consolidated group",
+        "source_scale": 1000000,
+        "long_term_debt_excluding_leases_noncurrent": 1463000000,
+        "current_portion_long_term_debt_excluding_leases": 142000000,
+        "long_term_debt_includes_current_portion": false,
+        "lease_noncurrent_separate": 26000000,
+        "lease_current_separate": 23000000,
+        "total_assets": 3783000000,
+        "source_id": "DOF",
+        "source_pages": [
+          112,
+          138,
+          165
+        ],
+        "classification_note": "Noncurrentbond53+credit1410. Explicitcurrentprincipal142 in auditednote22p138; balancecurrent145. Roundedinterest2 doesnotbridge exactly; do notreplacewith145−2=143. Excludeslease23.",
+        "explicit_zero_evidence": null,
+        "status": "primary_mapping_candidate_requires_independent_acceptance",
+        "provider_row_semantics_verified": false,
+        "canonical_row_candidates": {
+          "Long Term Debt": 1463000000,
+          "Current Portion Of Long Term Debt": 142000000
+        }
+      }
+    ],
+    "debt_limitation": "Explicit note22 current principal160/142 retained; balance165/145 and rounded accrued-interest disclosures conflict. Missing FY2023 primary asset control prevents an accepted F5 pair here."
+  }
 }

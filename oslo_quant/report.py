@@ -351,9 +351,28 @@ def _detail_card(ticker: str, fws: dict) -> str:
         f'  <button class="card-close" onclick="toggleCard(\'{ticker}\')" aria-label="Close">✕</button>'
         f'</div>'
         f'{info_html}'
-        f'<div class="card-body">{sections}</div>'
+        f'<div class="card-body">{_debt_inputs(fws.get("debt", {}))}{sections}</div>'
         f'</div>'
     )
+
+
+def _debt_inputs(audit: dict) -> str:
+    """Show selected-field provenance; never imply whole-score verification."""
+    if audit.get("status") in (None, "not-configured"):
+        return ""
+    rows = []
+    for record in audit.get("records", []):
+        source = record.get("source") or {}
+        publication = source.get("published_on") or ("Unknown; documented availability " + str(source.get("available_on", "unknown")))
+        link = '<a href="'+html.escape(str(source.get("url", "")), quote=True)+'">'+html.escape(str(source.get("title", "source")))+'</a>'
+        explanation = record.get("zero_disclosure_context") or record.get("classification_evidence") or record.get("reason", "")
+        values = [record.get("period_end"), {"current_maturities":"Current maturities of long-term debt","noncurrent_long_term":"Noncurrent long-term debt"}.get(record.get("role"),record.get("role")), record.get("provider_value"), record.get("selected_value"), record.get("difference_vs_provider"), record.get("status"), publication]
+        cells = "".join("<td>"+html.escape("Unavailable" if value is None else str(value))+"</td>" for value in values)
+        rows.append("<tr>"+cells+"<td>"+link+", p"+html.escape(str(record.get("page", "?")))+"<br>"+html.escape(str(explanation))+"</td></tr>")
+    return ('<details class="primary-inputs"><summary>F5 debt input sources — selected fields only</summary>'
+        '<p>Amounts in '+html.escape(str(audit.get("currency","unknown")))+' currency units. Non-lease current maturities and noncurrent carrying debt are selected together; provider rows remain unchanged. No generic Current Debt alias or whole-company verification. Compatible current/opening asset controls and every other signal are still required.</p>'
+        '<div class="tscroll"><table><thead><tr><th>Period</th><th>Debt role</th><th>Original provider</th><th>Selected primary</th><th>Difference</th><th>Field status</th><th>Publication / availability</th><th>Source and classification</th></tr></thead><tbody>'
+        +"".join(rows)+'</tbody></table></div></details>')
 
 
 def _fw_section(name: str, fw: dict, ccy: str = "") -> str:
@@ -509,7 +528,7 @@ def _piotroski_rows(periods: dict, cols: list[str]) -> str:
     r += _colored_row("Gross Margin", cols, periods, "gross_margin", _pct,
                        green_ge=0.30, red_le=0.10)
     r += _row("Asset Turnover", cols, periods, "asset_turnover")
-    for key,label in [("period_basis","Period contract"),("turnover_convention","Turnover convention"),("input_proxies","Input proxies")]:
+    for key,label in [("period_basis","Period contract"),("turnover_convention","Turnover convention"),("input_proxies","Input proxies"),("leverage_input_status","F5 debt input contract")]:
         cells = "".join("<td>"+html.escape(str(periods.get(c,{}).get(key,"Legacy method; refresh required")))+"</td>" for c in cols)
         r += "<tr><td>"+label+"</td>"+cells+"</tr>"
     return r

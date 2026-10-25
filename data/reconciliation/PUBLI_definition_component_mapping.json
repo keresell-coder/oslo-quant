@@ -1,0 +1,196 @@
+{
+  "issuer": "PUBLI.OL",
+  "period": "FY2025",
+  "source_basis": "Originalannualreport NOKmillion pp96–99; officialIAS21historical SEKretranslation pp2,4,6,7",
+  "provider_financial_currency": "SEK",
+  "inferred_uniform_conversion_SEK_per_NOK": 0.9150485125858123,
+  "provider_method_confirmed": false,
+  "reconstructed_fields": [
+    {
+      "field": "ownersNI",
+      "original_NOK": 512000000,
+      "provider_SEK": 468504838,
+      "predicted_using_factor": 468504838.44393593
+    },
+    {
+      "field": "CFO",
+      "original_NOK": 874000000,
+      "provider_SEK": 799752400,
+      "predicted_using_factor": 799752400.0
+    },
+    {
+      "field": "assets",
+      "original_NOK": 56596000000,
+      "provider_SEK_reconstructed_not_raw": 51788085602,
+      "predicted_using_factor": 51788085618.30663
+    },
+    {
+      "field": "revenue",
+      "original_NOK_components": {
+        "rental_income": 1089000000,
+        "reimbursed_property_management_fee": 15000000
+      },
+      "sum_NOK": 1104000000,
+      "provider_SEK": 1010213558,
+      "predicted_using_factor": 1010213557.8947368
+    }
+  ],
+  "issuer_official_SEK_restatement": {
+    "rental_income_m": 1024,
+    "other_income_m": 5,
+    "operating_income_m": 1029,
+    "reimbursed_property_management_fee_m": 14,
+    "owners_profit_m": 483,
+    "CFO_m": 825,
+    "total_assets_m": 51714
+  },
+  "verdict": "Strong numerical explanation: uniform conversion plus revenue row reclassification. Not a verified IAS21restatement. Revenueprovider combines rentalandmanagementfee instead of issueroperatingincomerental+other. ProvideroldNOKfigures converted byuniformfactor differfromissuerhistoricalaverage/closing/acquisitionFX. Do notsilentlylabeluniformconversionasreportedSEKaccounts.",
+  "unresolved": [
+    "ProviderFXdateanddefinition",
+    "Laterrestatementandcomparabilityprovenance"
+  ],
+  "safe_action": "SeparateprimaryofficialrestatedSEKseries; preserveprovider-normalizedserieswithexplicitlinebasis. No hybridratios.",
+  "application_policy": "audit-only: no provider/primary hybrid ratios or corrective FX factor",
+  "sources": {
+    "PUBLINOK": {
+      "file": "PUBLI_AR2025.pdf",
+      "url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments_oslo/2026/04/16/670744_ppi-annual-report-2025.pdf",
+      "printed_pages": [
+        96,
+        97,
+        138,
+        139
+      ],
+      "sha256": "cf654fac4dff521fdd2aefab01010eb7c8a9d18840b4b20f64683c0562036bd1",
+      "publication_date": "2026-04-16"
+    },
+    "PUBLISEK": {
+      "file": "PUBLI_SEK_retranslation.pdf",
+      "url": "https://www.publicproperty.se/en/wp-content/uploads/sites/2/2026/06/Historical-financial-figures-in-SEK-Q1-24-to-Q1-26-1.pdf",
+      "printed_pages": [
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sha256": "6643e28a4a69e62250e2b9973a0ffc86bf5bcf620f3102bf7c2deb09875ada22",
+      "publication_date": "2026-06-23"
+    }
+  },
+  "annual_debt_selected_facts": [
+    {
+      "ticker": "PUBLI.OL",
+      "fiscal_year": 2025,
+      "period_end": "2025-12-31",
+      "currency": "SEK",
+      "scope": "consolidated group",
+      "source_scale": 1000000,
+      "long_term_debt_excluding_leases_noncurrent": 25727000000,
+      "current_portion_long_term_debt_excluding_leases": 206000000,
+      "long_term_debt_includes_current_portion": false,
+      "lease_noncurrent_separate": 268000000,
+      "lease_current_separate": 0,
+      "total_assets": 51714000000,
+      "source_id": "PUBLISEK",
+      "source_pages": [
+        6
+      ],
+      "classification_note": "Official IAS21SEKrestated amounts. Link originalNOKp138 currentbond226, currentbanknil to SEKcurrent206; not spotconverted. Currentleases line is dash in officialSEK table. Longtermamountincludesreported bridge facility classifiednoncurrent; do not reclassify by own assumption.",
+      "explicit_zero_evidence": null,
+      "status": "primary_mapping_candidate_requires_independent_acceptance",
+      "provider_row_semantics_verified": false,
+      "canonical_row_candidates": {
+        "Long Term Debt": 25727000000,
+        "Current Portion Of Long Term Debt": 206000000
+      }
+    },
+    {
+      "ticker": "PUBLI.OL",
+      "fiscal_year": 2024,
+      "period_end": "2024-12-31",
+      "currency": "SEK",
+      "scope": "consolidated group",
+      "source_scale": 1000000,
+      "long_term_debt_excluding_leases_noncurrent": 5588000000,
+      "current_portion_long_term_debt_excluding_leases": 205000000,
+      "long_term_debt_includes_current_portion": false,
+      "lease_noncurrent_separate": 34000000,
+      "lease_current_separate": null,
+      "total_assets": 11592000000,
+      "source_id": "PUBLISEK",
+      "source_pages": [
+        5
+      ],
+      "classification_note": "Official SEK current205 corresponds originalNOK currentbond211; originalNOKp138 has no currentbank debt atyearend. Lease current not separate monetaryrow in2024 officialtable; zero in separate lease auxiliary field must not be used to certify absentleasecomponent.",
+      "explicit_zero_evidence": null,
+      "status": "primary_mapping_candidate_requires_independent_acceptance",
+      "provider_row_semantics_verified": false,
+      "lease_current_status": "not_explicitly_reported; excluded from nonlease mapping",
+      "canonical_row_candidates": {
+        "Long Term Debt": 5588000000,
+        "Current Portion Of Long Term Debt": 205000000
+      }
+    }
+  ],
+  "raw_provider_observations": {
+    "TotalAssets": {
+      "value": 51788085602.826515,
+      "raw_provider_row": "TotalAssets",
+      "period_end": "2025-12-31",
+      "observed_at": "2026-10-25T09:33:29.346750+00:00",
+      "currency": "SEK",
+      "source": "Yahoo Finance via yfinance; provider definition not independently authenticated"
+    },
+    "LongTermDebt": {
+      "value": 25765020961.177223,
+      "raw_provider_row": "LongTermDebt",
+      "period_end": "2025-12-31",
+      "observed_at": "2026-10-25T09:33:29.346750+00:00",
+      "currency": "SEK",
+      "source": "Yahoo Finance via yfinance; provider definition not independently authenticated"
+    },
+    "CurrentDebt": {
+      "value": 206800963.782578,
+      "raw_provider_row": "CurrentDebt",
+      "period_end": "2025-12-31",
+      "observed_at": "2026-10-25T09:33:29.346750+00:00",
+      "currency": "SEK",
+      "source": "Yahoo Finance via yfinance; provider definition not independently authenticated"
+    },
+    "NetIncome": {
+      "value": 468504838.303894,
+      "raw_provider_row": "NetIncome",
+      "period_end": "2025-12-31",
+      "observed_at": "2026-10-25T09:33:29.994145+00:00",
+      "currency": "SEK",
+      "source": "Yahoo Finance via yfinance; provider definition not independently authenticated"
+    },
+    "TotalRevenue": {
+      "value": 1010213557.592771,
+      "raw_provider_row": "TotalRevenue",
+      "period_end": "2025-12-31",
+      "observed_at": "2026-10-25T09:33:29.994145+00:00",
+      "currency": "SEK",
+      "source": "Yahoo Finance via yfinance; provider definition not independently authenticated"
+    },
+    "OperatingCashFlow": {
+      "value": 799752399.760944,
+      "raw_provider_row": "OperatingCashFlow",
+      "period_end": "2025-12-31",
+      "observed_at": "2026-10-25T09:33:30.598538+00:00",
+      "currency": "SEK",
+      "source": "Yahoo Finance via yfinance; provider definition not independently authenticated"
+    }
+  },
+  "disclosure_scope_conflicts": [
+    "Original annual report pp108–109 contractual maturity table shows bank principal Year1 NOK4m/1m despite current-bank rollforward/balance nil; preserve scope discrepancy, do not claim all near-term principal is bonds or reclassify automatically.",
+    "FY2023 compatible SEK opening assets not established; provider and official IAS21 series remain separate."
+  ],
+  "research_package_unresolved": [
+    "ProviderFXdateanddefinition",
+    "Rawassetsdirectsource",
+    "Laterrestatementandcomparabilityprovenance"
+  ],
+  "raw_assets_observation_note": "Actual raw provider TotalAssets FY2025 captured separately with observation timestamp; this closes missing raw observation only, not provider translation methodology or issuer reconciliation."
+}

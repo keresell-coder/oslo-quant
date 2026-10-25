@@ -1,0 +1,7 @@
+{
+  "ticker": "MOWI.OL",
+  "financialCurrency": "EUR",
+  "priceCurrency": "NOK",
+  "observed_at": "2026-10-25T09:33:28.901347+00:00",
+  "provider": "Yahoo Finance via yfinance"
+}

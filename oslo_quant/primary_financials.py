@@ -17,7 +17,7 @@ import urllib.request
 STATEMENTS = {"income_stmt", "balance_sheet", "cash_flow"}
 SCALES = {"units": 1, "thousands": 1000, "millions": 1000000}
 SCOPES = {"quarter", "year_to_date", "annual", "instant"}
-ISSUER_HOSTS = {"www.nordicsemi.com", "nordicsemi.com", "www.dof.com", "dof.com"}
+ISSUER_HOSTS = {"www.nordicsemi.com", "nordicsemi.com", "www.dof.com", "dof.com", "mowi.com", "www.mowi.com"}
 
 
 class PrimaryInputError(ValueError):
@@ -39,6 +39,15 @@ def timestamp(value):
         raise PrimaryInputError("invalid retrieval timestamp") from exc
 
 
+def source_available_on(source):
+    """Known publication date, or explicitly observed availability; never invent one."""
+    if source.get("published_on") is not None:
+        return date.fromisoformat(source["published_on"])
+    require(source.get("availability_basis") == "first-documented-observation",
+            "unknown publication needs explicit observed availability")
+    return date.fromisoformat(source["available_on"])
+
+
 def validate(document, now=None):
     now = now or datetime.now(timezone.utc)
     require(document.get("schema_version") == 1, "unsupported primary schema")
@@ -53,12 +62,12 @@ def validate(document, now=None):
         require(url.scheme == "https" and url.hostname in ISSUER_HOSTS and not url.username and not url.password, "source must be an allowlisted issuer HTTPS URL")
         digest = source.get("sha256", "")
         require(len(digest) == 64 and all(c in "0123456789abcdef" for c in digest), "invalid source SHA-256")
-        published = date.fromisoformat(source["published_on"])
+        published = source_available_on(source)
         retrieved = timestamp(source.get("retrieved_at"))
         require(published <= retrieved.date() <= now.date() and retrieved <= now, "invalid publication/retrieval chronology")
         require(bool(source.get("title")), "missing report title")
         require(source.get("ticker") == document["ticker"], "source issuer mismatch")
-        expected_host = "nordicsemi.com" if document["ticker"] == "NOD.OL" else "dof.com" if document["ticker"] == "DOFG.OL" else None
+        expected_host = "nordicsemi.com" if document["ticker"] == "NOD.OL" else "dof.com" if document["ticker"] == "DOFG.OL" else "mowi.com" if document["ticker"] == "MOWI.OL" else None
         require(expected_host is not None and url.hostname.removeprefix("www.") == expected_host, "issuer/source host mismatch")
         sources[key] = source
     records = {}
@@ -82,7 +91,7 @@ def validate(document, now=None):
         value = record.get("value")
         require(isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value), "nonfinite or missing primary value")
         end = date.fromisoformat(record["period_end"])
-        require(end <= date.fromisoformat(sources[record["source_id"]]["published_on"]), "statement end after publication")
+        require(end <= source_available_on(sources[record["source_id"]]), "statement end after publication")
         if record["scope"] == "instant":
             require(record.get("aggregation") == "stock" and record.get("period_start") is None and record["statement"] == "balance_sheet", "instant must be balance-sheet point in time")
         else:
