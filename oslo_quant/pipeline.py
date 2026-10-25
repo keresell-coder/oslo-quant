@@ -27,6 +27,7 @@ from oslo_quant.trust import provenance, stamp
 from oslo_quant.financial_contracts import filing_coverage
 from oslo_quant.primary_financials import load_primary
 from oslo_quant.primary_adapter import apply_primary_current
+from oslo_quant.debt_components import qualify_debt
 
 log = logging.getLogger(__name__)
 
@@ -131,7 +132,12 @@ def run(
         source["filing_coverage"] = filing_coverage(ticker, [p for values in quarterly_periods.values() for p in values])
         source["currency_contract"] = currency_info
         source["primary_inputs"] = primary
-        source["snapshot_id"] = hashlib.sha256((source["snapshot_id"] + json.dumps(primary, sort_keys=True)).encode()).hexdigest()[:20]
+        debt_primary = load_primary(ticker, ROOT / "data" / "debt")
+        debt_inputs = qualify_debt(debt_primary, stmts, ticker, fin_ccy, provider_period_ends=source.get("groups", {}).get("annual", {}).get("statement_period_ends", {}).get("balance_sheet", []))
+        debt_inputs["primary_evidence"] = debt_primary
+        _persist(ticker, "debt", debt_inputs)
+        source["debt_inputs"] = debt_inputs
+        source["snapshot_id"] = hashlib.sha256((source["snapshot_id"] + json.dumps({"primary":primary,"debt":debt_inputs}, sort_keys=True)).encode()).hexdigest()[:20]
 
         # --- Common-currency (USD) rate for the Ohlson SIZE term ---
         if fin_ccy == "USD":
@@ -146,7 +152,7 @@ def run(
                     "[%s] No %s→USD rate — Ohlson SIZE not assessable this run",
                     ticker, fin_ccy,
                 )
-        stmts["meta"] = {"fx_to_usd": fx_usd, "reporting_currency": fin_ccy}  # type: ignore[typeddict-unknown-key]
+        stmts["meta"] = {"fx_to_usd": fx_usd, "reporting_currency": fin_ccy, "debt_inputs":debt_inputs}  # type: ignore[typeddict-unknown-key]
 
         # --- Compute frameworks ---
         ticker_results: dict[str, Any] = {}

@@ -1,0 +1,7 @@
+{
+  "ticker": "PUBLI.OL",
+  "financialCurrency": "SEK",
+  "priceCurrency": "NOK",
+  "observed_at": "2026-10-25T09:33:33.709578+00:00",
+  "provider": "Yahoo Finance via yfinance"
+}

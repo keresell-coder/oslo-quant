@@ -14,7 +14,14 @@ class PiotroskiFramework(BaseFramework):
         bs, inc, cf = (stmts[k] for k in ("balance_sheet", "income_stmt", "cash_flow"))
         results = {}
         for period in self._periods(inc, anchor="Total Revenue"):
-            value = self._compute_period(bs, inc, cf, period, prior(period, bs.columns))
+            value = self._compute_period(
+                bs,
+                inc,
+                cf,
+                period,
+                prior(period, bs.columns),
+                stmts.get("meta", {}).get("debt_inputs"),
+            )
             if value:
                 results[period] = value
         return {
@@ -25,7 +32,7 @@ class PiotroskiFramework(BaseFramework):
             "periods": results,
         }
 
-    def _compute_period(self, bs, inc, cf, period, prev_period):
+    def _compute_period(self, bs, inc, cf, period, prev_period, debt_inputs=None):
         # Annual comparisons require the actual adjacent FY; no current=prior fallback.
         previous = prior(period, bs.columns)
         prev_period = prev_period if prev_period == previous else None
@@ -85,7 +92,44 @@ class PiotroskiFramework(BaseFramework):
         f4 = compare(cfo_ratio, roa)
 
         # Original leverage includes the current portion of long-term debt. Unknown != zero.
+        debt_audit = {}
+
         def debt(col, prefix):
+            sources[prefix + "long_debt"] = None
+            sources[prefix + "current_portion"] = None
+            selected = (
+                (debt_inputs or {}).get("periods", {}).get(col)
+                if (debt_inputs or {}).get("status") == "qualified-selected-debt"
+                else None
+            )
+            if selected is not None:
+                debt_audit[str(col)] = selected
+                controls = (
+                    selected.get("provider_asset_control"),
+                    selected.get("opening_provider_asset_control"),
+                )
+                if not all(controls):
+                    debt_audit[str(col)] = {
+                        **selected,
+                        "ratio_status": "withheld: provider asset basis not tied to primary controls",
+                    }
+                    return float("nan")
+                expected = (
+                    assets(col, prefix + "debt_assets"),
+                    assets(prior(col, bs.columns), prefix + "debt_opening_assets"),
+                )
+                if (
+                    tuple(control["provider_assets"] for control in controls)
+                    != expected
+                ):
+                    return float("nan")
+                sources[prefix + "long_debt"] = "selected-primary: " + ", ".join(
+                    selected["source_records"]
+                )
+                sources[prefix + "current_portion"] = "selected-primary: " + ", ".join(
+                    selected["source_records"]
+                )
+                return selected["noncurrent_long_term"] + selected["current_maturities"]
             long = get(bs, ["Long Term Debt"], col, prefix + "long_debt")
             current = get(
                 bs,
@@ -197,6 +241,18 @@ class PiotroskiFramework(BaseFramework):
                 "prior_average_assets": self._fmt(prior_avg, 0),
             },
             "source_rows": sources,
+            "debt_input_audit": debt_audit,
+            "leverage_input_status": (
+                "Selected non-lease primary debt; provider average-assets controls matched; source availability recorded"
+                if debt_audit
+                and math.isfinite(leverage)
+                and math.isfinite(leverage_prev)
+                else (
+                    "Withheld: selected debt needs compatible adjacent asset/debt controls"
+                    if debt_audit
+                    else "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+                )
+            ),
         }
 
     def _interpret(self, score):

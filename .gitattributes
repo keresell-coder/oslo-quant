@@ -1,0 +1,3 @@
+
+# Immutable issuer PDFs are binary evidence, not line-oriented source.
+data/debt/artifacts/*.pdf binary

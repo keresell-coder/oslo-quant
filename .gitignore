@@ -12,3 +12,6 @@ data/raw/
 
 # Immutable report downloads are cached locally, never committed
 data/primary/cache/
+
+# Selected debt source downloads are caches, not new evidence artifacts
+data/debt/cache/
