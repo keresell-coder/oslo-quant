@@ -1,0 +1,19 @@
+{
+  "status": "not-configured",
+  "contract_version": "2026-10-25-debt-v1",
+  "evaluation_as_of": "2026-10-26T21:49:35.189329+00:00",
+  "ticker": "COSH.OL",
+  "currency": "USD",
+  "unit": "currency units",
+  "periods": {},
+  "records": [],
+  "provider_frames_preserved": true,
+  "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+  "primary_evidence": {
+    "status": "not-configured",
+    "ticker": "COSH.OL",
+    "records": [],
+    "derived": [],
+    "issues": []
+  }
+}

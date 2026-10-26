@@ -1,0 +1,219 @@
+{
+  "ticker": "VSAT",
+  "framework": "dupont",
+  "computed_at": "2026-10-26T21:50:01.279024Z",
+  "periods": {
+    "2026": {
+      "net_profit_margin": -0.0073,
+      "asset_turnover": 0.3025,
+      "equity_multiplier": 3.3292,
+      "roe_3factor": -0.0074,
+      "tax_burden": -0.3252,
+      "interest_burden": 0.2254,
+      "ebit_margin": 0.1002,
+      "roe_5factor": -0.0074,
+      "net_income": -34086000.0,
+      "revenue": 4640280000.0,
+      "avg_total_assets": 15337690000.0,
+      "avg_equity": 4607066000.0
+    },
+    "2025": {
+      "net_profit_margin": -0.1272,
+      "asset_turnover": 0.2844,
+      "equity_multiplier": 3.3174,
+      "roe_3factor": -0.12,
+      "tax_burden": 1.0544,
+      "interest_burden": 4.4207,
+      "ebit_margin": -0.0273,
+      "roe_5factor": -0.12,
+      "net_income": -574962000.0,
+      "revenue": 4519571000.0,
+      "avg_total_assets": 15889074000.0,
+      "avg_equity": 4789630500.0
+    },
+    "2024": {
+      "net_profit_margin": -0.2495,
+      "asset_turnover": 0.3561,
+      "equity_multiplier": 2.7187,
+      "roe_3factor": -0.2416,
+      "tax_burden": 0.8953,
+      "interest_burden": 1.5046,
+      "ebit_margin": -0.1852,
+      "roe_5factor": -0.2416,
+      "net_income": -1068904000.0,
+      "revenue": 4283758000.0,
+      "avg_total_assets": 12029850500.0,
+      "avg_equity": 4424870000.0
+    },
+    "2023": {
+      "net_profit_margin": 0.4244,
+      "asset_turnover": 0.3307,
+      "equity_multiplier": 2.0214,
+      "roe_3factor": 0.2837,
+      "tax_burden": -6.6899,
+      "interest_burden": 1.1981,
+      "ebit_margin": -0.0529,
+      "roe_5factor": 0.2837,
+      "net_income": 1084806000.0,
+      "revenue": 2556158000.0,
+      "avg_total_assets": 7730337000.0,
+      "avg_equity": 3824310000.0
+    }
+  },
+  "financial_currency": "USD",
+  "price_currency": "USD",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "7614e54db07fdc0238c5",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-10-26T21:49:59.561983+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2022-03-31",
+            "2023-03-31",
+            "2024-03-31",
+            "2025-03-31",
+            "2026-03-31"
+          ],
+          "income_stmt": [
+            "2022-03-31",
+            "2023-03-31",
+            "2024-03-31",
+            "2025-03-31",
+            "2026-03-31"
+          ],
+          "cash_flow": [
+            "2022-03-31",
+            "2023-03-31",
+            "2024-03-31",
+            "2025-03-31",
+            "2026-03-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "16d528a0b08b9ec64786085867db8ea97aa0ad3b9da0a3c278f17bdd5bb9504d",
+          "income_stmt.parquet": "79aeca10e4b21a868d0bc79f93389ca396f5f040fb9a4752ba6911ebc56f745b",
+          "cash_flow.parquet": "a9a945585c726578c5e71a2478e3bbcc0d2f1f43897bc918f34ba54332593bf8",
+          "prices.parquet": "1940fa6c652275ff92fc2eeda0031a03a5e20f429d1e260a6d0782c31236514d"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-10-26T21:50:01.275967+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "6508d9b9931ece036999d9d70670eaed0fa6b6065dbfe6d465ed12eb55e27228",
+          "quarterly_income_stmt.parquet": "b63964e21541d192569f2c16621a61bf197a7cb594a444cfcfbd4fa98186bcc8",
+          "quarterly_cash_flow.parquet": "6a2c1da08803846e24aa728e6623c4cb38582fc67874836b94b47993060f5273"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 118,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "VSAT",
+      "full_name": "Viasat Inc.",
+      "exchange": "NASDAQ",
+      "expected_price_currency": "USD",
+      "price_currency_match": true,
+      "price_currency": "USD",
+      "financial_currency": "USD",
+      "config_currency": "USD",
+      "yfinance_currency": "USD",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "USD",
+        "to": "USD",
+        "rate": 1.0,
+        "observed_at": "2026-10-26T21:50:00.054106+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "VSAT",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-26T21:50:01.278030+00:00",
+      "ticker": "VSAT",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "VSAT",
+        "records": [],
+        "derived": [],
+        "issues": []
+      }
+    }
+  }
+}

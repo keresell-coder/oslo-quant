@@ -1,0 +1,210 @@
+{
+  "ticker": "COSH.OL",
+  "framework": "dupont",
+  "computed_at": "2026-10-26T21:49:35.190387Z",
+  "periods": {
+    "2025": {
+      "net_profit_margin": -0.2302,
+      "asset_turnover": 0.2224,
+      "equity_multiplier": 1.5138,
+      "roe_3factor": -0.0775,
+      "tax_burden": 1.0173,
+      "interest_burden": 1.9094,
+      "ebit_margin": -0.1185,
+      "roe_5factor": -0.0775,
+      "net_income": -137486000.0,
+      "revenue": 597176000.0,
+      "avg_total_assets": 2684633000.0,
+      "avg_equity": 1773490500.0
+    },
+    "2024": {
+      "net_profit_margin": -0.0745,
+      "asset_turnover": 0.2113,
+      "equity_multiplier": 1.5772,
+      "roe_3factor": -0.0248,
+      "tax_burden": 0.8945,
+      "interest_burden": -2.263,
+      "ebit_margin": 0.0368,
+      "roe_5factor": -0.0248,
+      "net_income": -41983000.0,
+      "revenue": 563524000.0,
+      "avg_total_assets": 2667095500.0,
+      "avg_equity": 1691069000.0
+    },
+    "2023": {
+      "net_profit_margin": -0.056,
+      "asset_turnover": 0.2047,
+      "equity_multiplier": 1.7311,
+      "roe_3factor": -0.0198,
+      "tax_burden": 1.1865,
+      "interest_burden": -0.6757,
+      "ebit_margin": 0.0699,
+      "roe_5factor": -0.0198,
+      "net_income": -30907000.0,
+      "revenue": 551824000.0,
+      "avg_total_assets": 2695668500.0,
+      "avg_equity": 1557160500.0
+    },
+    "2022": {
+      "net_profit_margin": 2.1157,
+      "asset_turnover": 0.1511,
+      "equity_multiplier": 1.7116,
+      "roe_3factor": 0.5473,
+      "tax_burden": 0.9975,
+      "interest_burden": 0.9097,
+      "ebit_margin": 2.3314,
+      "roe_5factor": 0.5473,
+      "net_income": 859285000.0,
+      "revenue": 406145000.0,
+      "avg_total_assets": 2687186000.0,
+      "avg_equity": 1570010000.0
+    }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "a5b30410379cb1e98201",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-10-26T21:49:34.080567+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "d0b120a50f897e095fce27f6fe251a75580a8ee7506681fc4d0226da641b2fe5",
+          "income_stmt.parquet": "5ca8d5a1815147cd37d25696cd0c9fea95f10271725b22b45b7d7675223a5466",
+          "cash_flow.parquet": "98c716750c96fd199f33f5cb48ceab745e02d6b85f946a388a6365679dd89131",
+          "prices.parquet": "66a2715ea9dbb1917dbf29e842510ea1ffbc55054d117f5f480afa581c45841b"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-10-26T21:49:35.186979+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2025-03-31",
+            "2025-06-30",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "17aa4f6a0ac91b49f96eaa9cbd41957061544bfb9e053e3b439529b1096c4092",
+          "quarterly_income_stmt.parquet": "1b207197b3d61077017713e77e15b6460ff878a0e428250499b9f119ed52e5fd",
+          "quarterly_cash_flow.parquet": "c9513adee44940dce39f2c11b171b9ebcac23a48b7f6b31189dae7c7c6a91a25"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 118,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "COSH.OL",
+      "full_name": "Constellation Oil Services Holding",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
+      "price_currency": "NOK",
+      "financial_currency": "USD",
+      "config_currency": "USD",
+      "yfinance_currency": "USD",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "USD",
+        "rate": 0.10740607976913452,
+        "observed_at": "2026-10-26T21:49:34.573772+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "COSH.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-26T21:49:35.189329+00:00",
+      "ticker": "COSH.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "COSH.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
+      }
+    }
+  }
+}

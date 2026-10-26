@@ -1,0 +1,223 @@
+{
+  "ticker": "ORK.OL",
+  "framework": "altman",
+  "computed_at": "2026-10-26T21:49:09.186374Z",
+  "methodology_version": "2026-10-24-methodology-v2",
+  "periods": {
+    "LTM 2026-06": {
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
+      "z_score_prime": 3.4703,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0293,
+      "x2_retained_earnings_to_assets": 0.4617,
+      "x3_ebit_to_assets": 0.105,
+      "x4_book_equity_to_liabilities": 1.0163,
+      "x5_revenue_to_assets": 0.8092
+    },
+    "2025": {
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
+      "z_score_prime": 4.3265,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.077,
+      "x2_retained_earnings_to_assets": 0.5266,
+      "x3_ebit_to_assets": 0.1052,
+      "x4_book_equity_to_liabilities": 1.3314,
+      "x5_revenue_to_assets": 0.8066
+    },
+    "2024": {
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
+      "z_score_prime": 4.0782,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0711,
+      "x2_retained_earnings_to_assets": 0.5121,
+      "x3_ebit_to_assets": 0.0945,
+      "x4_book_equity_to_liabilities": 1.2449,
+      "x5_revenue_to_assets": 0.7698
+    },
+    "2023": {
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
+      "z_score_prime": 3.7939,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0525,
+      "x2_retained_earnings_to_assets": 0.5,
+      "x3_ebit_to_assets": 0.0932,
+      "x4_book_equity_to_liabilities": 1.1361,
+      "x5_revenue_to_assets": 0.7829
+    },
+    "2022": {
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
+      "z_score_prime": 3.6886,
+      "zone_prime": "Safe",
+      "x1_working_capital_to_assets": 0.0411,
+      "x2_retained_earnings_to_assets": 0.4923,
+      "x3_ebit_to_assets": 0.0964,
+      "x4_book_equity_to_liabilities": 1.1112,
+      "x5_revenue_to_assets": 0.7238
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "8f4ebdfa932dcda651a3",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-10-26T21:49:07.565018+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "51c637d4bc535843930df0c4692d29fbcc6af911381f208456af5599c75f56fa",
+          "income_stmt.parquet": "d565fa84718c878c591a4716dc601dda8a7ed3a2fbbaa7c158d77a43a166990a",
+          "cash_flow.parquet": "610d7bdc5b344bfd92d93af0366895603befa1cee181648255bdb2b232552482",
+          "prices.parquet": "fb7c94041088596f8e044dfed5d9d70f149eb9b8eee87c1445b8f764e056b37b"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-10-26T21:49:09.174557+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "18da635a5802d6c0056f52da3e345e52612973157a967030f5407af9ff9c582e",
+          "quarterly_income_stmt.parquet": "a89b0e5db6a4fc7669f214cc7a3fd709952c1986800eb08a2955e4ba70dd3420",
+          "quarterly_cash_flow.parquet": "bd24e1febfa58408fb74fbb7da5d2652e991781461d3b6ee2e969ace555b60ef"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 118,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "ORK.OL",
+      "full_name": "Orkla ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-26T21:49:07.940342+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "ORK.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-26T21:49:09.178231+00:00",
+      "ticker": "ORK.OL",
+      "currency": "NOK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "ORK.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-25T10:11:11.916003+00:00",
+  "computed_at": "2026-10-26T21:49:47.955303+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "ac32a3e0ae15e74be9b5",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "7dcb0b24911115c91396",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:11.244705+00:00",
+        "source_fetched_at": "2026-10-26T21:49:46.777372+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -339,15 +339,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "3e24a61aa114da81c250f97104c92a25a2e8d1a6b9df696ee50de42ef7b5fc98",
-          "income_stmt.parquet": "cd187b7641a9d2b4a4e2be3da332dd8f7bcd697bf6693ffc7ae3fa6811646e88",
-          "cash_flow.parquet": "b15f97add0c6f936ba19099deee76e6737424c2304160b9ce7f6669780b7e414",
-          "prices.parquet": "69d0f6e7dfe17f1537814de8e89d1534be007d452495560b581ed317be4342a7"
+          "balance_sheet.parquet": "6355ef336f831d1fd267871abacbc62614cddeb313ce1808c0e95dbe76583634",
+          "income_stmt.parquet": "6ba41b19214ba0e2be478c26206531b2835dcff9dbe242aed54c4d83b2e68ed0",
+          "cash_flow.parquet": "5750246a3539b51e692903d2719388f06353fdd443702dd17fe9b6cce4c6e68f",
+          "prices.parquet": "e9da75d9664ffdd9d18cb5688f62180d988cd8b05e32f63a2773a0809f9de1ba"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:11.891368+00:00",
+        "source_fetched_at": "2026-10-26T21:49:47.949176+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -375,15 +375,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "1868bf74d3930c3fcc0f503b04aa18aaed8a0b0769554a15c7490923b400969a",
-          "quarterly_income_stmt.parquet": "6cd86163ec7eedbd777762a26c5f9669abf4e4e04a0401eb0dbc32c48d0f7445",
-          "quarterly_cash_flow.parquet": "8a75b11677b138ceb9acf84ab4cb5bb212145814049976bb0a59cd26bd2b1d21"
+          "quarterly_balance_sheet.parquet": "26fc37df8b7c88794d78ff4b1a7261153fb4a9cb42e81652dbdc227fa703a113",
+          "quarterly_income_stmt.parquet": "6df99feb42e2900b76f862589dde1ddab9782a598e57ab91cf374dcb4c2d4a43",
+          "quarterly_cash_flow.parquet": "a0cb6f5212b03bc90f7edcd19059e3288904a28229284bbf31f47c148dfedba4"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -404,6 +404,9 @@
     "currency_contract": {
       "ticker": "HAFNI.OL",
       "full_name": "Hafnia Ltd",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "USD",
       "config_currency": "USD",
@@ -415,8 +418,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T10:11:11.258426+00:00",
+        "rate": 0.10740607976913452,
+        "observed_at": "2026-10-26T21:49:47.275090+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -441,7 +444,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:11.898197+00:00",
+      "evaluation_as_of": "2026-10-26T21:49:47.952226+00:00",
       "ticker": "HAFNI.OL",
       "currency": "USD",
       "unit": "currency units",

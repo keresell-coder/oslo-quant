@@ -1,6 +1,9 @@
 {
   "ticker": "HAFNI.OL",
   "full_name": "Hafnia Ltd",
+  "exchange": "Euronext Oslo",
+  "expected_price_currency": "NOK",
+  "price_currency_match": true,
   "price_currency": "NOK",
   "financial_currency": "USD",
   "config_currency": "USD",
@@ -12,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "USD",
-    "rate": 0.10733989626169205,
-    "observed_at": "2026-10-25T10:11:11.258426+00:00",
+    "rate": 0.10740607976913452,
+    "observed_at": "2026-10-26T21:49:47.275090+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

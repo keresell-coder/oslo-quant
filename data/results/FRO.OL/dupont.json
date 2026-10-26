@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T10:11:02.665450Z",
+  "computed_at": "2026-10-26T21:49:13.569185Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.5476,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "1bbb6b89b14490685160",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "5ebf6b05de9602b48cd6",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:02.077003+00:00",
+        "source_fetched_at": "2026-10-26T21:49:11.979315+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -108,15 +108,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "7233373002cba55f9dbb70c2292eede6ba269bb3d90cee9ca78adaa0d37d99ac",
-          "income_stmt.parquet": "2ad29fb0bd0e5393a0d2adfdd83e114079b1abc370303fa176eb919cdf901bb2",
-          "cash_flow.parquet": "73af606ce59dcfab161256a307907cd80c69ee9e84bf86bbc6a59b7d9d47a0b9",
-          "prices.parquet": "6b8a6e2b7f054f81883cb4c6a7019d634bd13d3dd6a10232ef8c9158ab68d1de"
+          "balance_sheet.parquet": "41b9e26b0ac921db882b6c54a076d3deee37bb9450d111ffc5bb4b50dc96976b",
+          "income_stmt.parquet": "6c49e83ba4af7f5a175d091c414a9a92f84a959cb3801abc55312ccd40a0d33d",
+          "cash_flow.parquet": "d94ca7d52881c41e68b7f0c36d38a3a6665a4f8b9024696b7f21d516d19a87d7",
+          "prices.parquet": "28e67f4557c8005af098ad872c0fab20567a62902f59872f1cff8e659af7e571"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:02.653928+00:00",
+        "source_fetched_at": "2026-10-26T21:49:13.562272+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -142,15 +142,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "91fe9e58b2cc86cb2963ed9c93ce8f0920adc13b23e7dbedabd8a7049bfc622b",
-          "quarterly_income_stmt.parquet": "d5fd777b0f22c4bed26d3f13055788272ee98394cb6a2150b49b7f56a277f986",
-          "quarterly_cash_flow.parquet": "bd978c4ba10eb8a236a68b5e0b45e0395af1964ebc78942b2fd7a3de92fdfc05"
+          "quarterly_balance_sheet.parquet": "a99dba9e27509905c1b03bcc8dbebc77edacf9d1cce39ebfa998fcb0ab50ac39",
+          "quarterly_income_stmt.parquet": "e868f7a96168791ef2fea7c9cd146a5073e9b1a984c179afc9d98e89f4ca32b1",
+          "quarterly_cash_flow.parquet": "200a80bdef022c889163b5e50ddbe246707107512f3ef1bbaf0a6916b1caba02"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -171,6 +171,9 @@
     "currency_contract": {
       "ticker": "FRO.OL",
       "full_name": "Frontline plc",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "USD",
       "config_currency": "USD",
@@ -182,8 +185,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T10:11:02.138365+00:00",
+        "rate": 0.10740607976913452,
+        "observed_at": "2026-10-26T21:49:12.360890+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -208,7 +211,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:02.659376+00:00",
+      "evaluation_as_of": "2026-10-26T21:49:13.567549+00:00",
       "ticker": "FRO.OL",
       "currency": "USD",
       "unit": "currency units",

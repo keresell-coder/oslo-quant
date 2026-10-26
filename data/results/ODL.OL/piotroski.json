@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-25T10:11:09.254731+00:00",
+  "computed_at": "2026-10-26T21:49:39.794522+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -249,12 +249,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "20e76d9cbfcf687c238a",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "1f01f4969a4ac68dd9ca",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:08.730211+00:00",
+        "source_fetched_at": "2026-10-26T21:49:37.936848+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -279,15 +279,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "119ebaec35a47934b8acd02ceefa77e3bfa9bd01c317179039fecccd3a7f519a",
-          "income_stmt.parquet": "2eb43ac2a05037f528821bf51074f0308c9f92278dd6b8d02bfbf37c45f78c6b",
-          "cash_flow.parquet": "879877f46a0246733e842f7152fd9fa9b26f88c82246520f70088907778f7a5e",
-          "prices.parquet": "5af6228157334098d4b96951a6a87189df17214efafd7432e8296904cf548dc7"
+          "balance_sheet.parquet": "96c390358d579bc62279aabc88e3f4b736f3dc693a268717c2bc13de1600ff21",
+          "income_stmt.parquet": "970a3cc4d38543204ef21d786281aa7c39bd505829977dbc6356e89887685bf7",
+          "cash_flow.parquet": "d343720e7fa7330f2c40e4f958e214c52214eb937c0cfccffbbf455cd98b8f24",
+          "prices.parquet": "a29cdbe9f956e411a8b32358951a6d2b9a2eb9ea4ad5fd35c36ef8591fdc6715"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:09.238332+00:00",
+        "source_fetched_at": "2026-10-26T21:49:39.789508+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -312,15 +312,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "3caeedfb91bc2c64777ba2a54b9314ea38f03ab9c20ace7d6d95080644ef0e05",
-          "quarterly_income_stmt.parquet": "4c3b32d7eca9d4ef8f31ac8d0b07b9b8d5252ef0e01268ef8a01c76970c02b0c",
-          "quarterly_cash_flow.parquet": "56b3e5c4e4c62e0f609377e62ca9ef5cfaf067b8280e5d8de8d83b1bf4dde497"
+          "quarterly_balance_sheet.parquet": "2106cc55520c606e4e3c5287461f5d70a2e63286bcc40776a7dbb588e1c32af4",
+          "quarterly_income_stmt.parquet": "ea2662322bca63d842d94ab54559b7d2fd5dc52e7c1331c94acdc99a46d933b4",
+          "quarterly_cash_flow.parquet": "8ef4b4a348a6aa17dc8f5e02903ea838a2de6d5c64fccf05d4c5e051dcc75c34"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -341,6 +341,9 @@
     "currency_contract": {
       "ticker": "ODL.OL",
       "full_name": "Odfjell Drilling Ltd",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "USD",
       "config_currency": "USD",
@@ -352,8 +355,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T10:11:08.743498+00:00",
+        "rate": 0.10740607976913452,
+        "observed_at": "2026-10-26T21:49:38.436865+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -378,7 +381,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:09.241471+00:00",
+      "evaluation_as_of": "2026-10-26T21:49:39.791415+00:00",
       "ticker": "ODL.OL",
       "currency": "USD",
       "unit": "currency units",

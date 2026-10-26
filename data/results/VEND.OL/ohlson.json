@@ -1,11 +1,11 @@
 {
   "ticker": "VEND.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-25T10:11:05.221923Z",
+  "computed_at": "2026-10-26T21:49:23.066685Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
-      "o_score": -3.4319,
+      "o_score": -3.4321,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -22,7 +22,7 @@
       }
     },
     "2024": {
-      "o_score": -4.8468,
+      "o_score": -4.847,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -39,7 +39,7 @@
       }
     },
     "2023": {
-      "o_score": -4.5796,
+      "o_score": -4.5799,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -77,12 +77,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "98e6ce7e8bb33a78687f",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "300ada3aef9ff18907a4",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:04.584737+00:00",
+        "source_fetched_at": "2026-10-26T21:49:21.345973+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -106,15 +106,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "133c12ee31287776a8350e43e5610e5db26c0bb30f04a6916b39eac937d2ae8f",
-          "income_stmt.parquet": "5098e646905e0844da7a9bbf29404c3e59ab74db2b0a8575c9fdeb47150ce681",
-          "cash_flow.parquet": "6850870aa977a6f6edb8c95da4f4b77ad2a4e799c6d0a191928420e4abb8d67f",
-          "prices.parquet": "e91ce57b656af273e2f4e0ab008996067ff8643f812c49a6764965eb03f9ae2d"
+          "balance_sheet.parquet": "b0ea45d78085594240e3bbcfbc1b7dd7c4fa3eb0073becfbe5718cf8a1e0e411",
+          "income_stmt.parquet": "e088ab4dbce93139b316c5f7dbcc19b7fd15f712e85ad8b52e297a7bf6a73445",
+          "cash_flow.parquet": "c6c8adda9d43c6186182e8b9b344266394260b5a9baf9a71916b9780bf71d292",
+          "prices.parquet": "e5b1f9680f6fb285c8d395fb0421def74d8b1f846f3a37b1e47cb6ede8cd9f5f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:05.194493+00:00",
+        "source_fetched_at": "2026-10-26T21:49:23.062718+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -140,15 +140,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "64381f5127ec82462d45e8b5fa71325583bb75a49c27fb1f32fe36127abf777f",
-          "quarterly_income_stmt.parquet": "537071c17d69b3f9eb401c51a11ade024f0ca39081b9856c3640f70d022f5f58",
-          "quarterly_cash_flow.parquet": "02d172369fef366989c4ba235bdfa869fb419e94f3f2c4c6c2af4eca88171024"
+          "quarterly_balance_sheet.parquet": "5d346050040981b2f5c9000bd702a09b0b40c57ec28428026271155a25790c55",
+          "quarterly_income_stmt.parquet": "f841297842b4a6a02f19ecce69eb60d92f5be01c764e485e099efcae549eb260",
+          "quarterly_cash_flow.parquet": "d1afe925f81523f01afe7814f1ab57fdbe1abe903b7c355470ccc01750a0f1d4"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -169,6 +169,9 @@
     "currency_contract": {
       "ticker": "VEND.OL",
       "full_name": "Vend Marketplaces ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "NOK",
       "config_currency": "NOK",
@@ -181,7 +184,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T10:11:04.596863+00:00",
+        "observed_at": "2026-10-26T21:49:21.714920+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -206,7 +209,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:05.197557+00:00",
+      "evaluation_as_of": "2026-10-26T21:49:23.063586+00:00",
       "ticker": "VEND.OL",
       "currency": "NOK",
       "unit": "currency units",

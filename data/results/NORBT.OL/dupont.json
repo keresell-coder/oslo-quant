@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-25T10:11:20.418287Z",
+  "computed_at": "2026-10-26T21:50:27.221327Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.1578,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "b3f02b422ccc4c78ba38",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "bbc5674e95846fe2ebf4",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:19.958351+00:00",
+        "source_fetched_at": "2026-10-26T21:50:26.087683+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -108,15 +108,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "ed10c3be8101f76431cdce47447f2e17314ff2685e404d478d8d0eb48a8dec62",
-          "income_stmt.parquet": "d43bea9331aeccb445e3bc2bb14fecab430ebe63e346894f8e88999b3ee7dfa8",
-          "cash_flow.parquet": "0cbcd82c4cec52956b86a9804c929ccf8391c36ee6df3ad2d58b643bdfc3f96c",
-          "prices.parquet": "c6b908657190849ee73390f0f05fd16c98109f901ea194b10249abdabd151836"
+          "balance_sheet.parquet": "106f12347753766a1f3591e11cc15d2bffbff54a0fd8c33207acaef2cb8de68f",
+          "income_stmt.parquet": "0d45a6660312c1f954b9723b1292a812d1c586ab17774b12cac088a194ea1a46",
+          "cash_flow.parquet": "40312dab43bb0466a8305b1157d2f7cc321bb380e87e20e44bbf81696dec3186",
+          "prices.parquet": "58b45e70b0082a6fea4b923c35e63d1704074866c9b7ced956e3681d4b993cf0"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:20.406332+00:00",
+        "source_fetched_at": "2026-10-26T21:50:27.217992+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -144,15 +144,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "e5f38ded20eed96806b5cda9526e8d67301d52fc8f0903cbd552e713cac8d7ba",
-          "quarterly_income_stmt.parquet": "02a73f39f94389b7f2059d95a887096e625391f439ac60b0ff13cdb551bca2e9",
-          "quarterly_cash_flow.parquet": "2ba86a102928ff1d2fbad412cd8d47fea4f723cab7eb6b6ded98030d27703395"
+          "quarterly_balance_sheet.parquet": "8e5b28d4c02d470a2a94e1825da1ff14a317f4ee0779bdd4494ac28baeae8189",
+          "quarterly_income_stmt.parquet": "b8a9567526807ae6f57b1d8942692c176ab7b59f7685e87f8ca46d60d62fd09c",
+          "quarterly_cash_flow.parquet": "f58d21b155296474ee23118f72f75fc0d98fe189521c3fa31502ab828f8c83db"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -173,6 +173,9 @@
     "currency_contract": {
       "ticker": "NORBT.OL",
       "full_name": "Norbit ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "NOK",
       "config_currency": "NOK",
@@ -185,7 +188,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T10:11:19.974979+00:00",
+        "observed_at": "2026-10-26T21:50:26.587166+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -210,7 +213,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:20.412325+00:00",
+      "evaluation_as_of": "2026-10-26T21:50:27.220569+00:00",
       "ticker": "NORBT.OL",
       "currency": "NOK",
       "unit": "currency units",

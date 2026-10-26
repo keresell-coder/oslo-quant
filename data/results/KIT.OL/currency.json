@@ -1,6 +1,9 @@
 {
   "ticker": "KIT.OL",
   "full_name": "Kitron ASA",
+  "exchange": "Euronext Oslo",
+  "expected_price_currency": "NOK",
+  "price_currency_match": true,
   "price_currency": "NOK",
   "financial_currency": "EUR",
   "config_currency": "EUR",
@@ -12,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "EUR",
-    "rate": 0.09568999707698822,
-    "observed_at": "2026-10-25T10:11:18.656015+00:00",
+    "rate": 0.09594999998807907,
+    "observed_at": "2026-10-26T21:50:22.294675+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

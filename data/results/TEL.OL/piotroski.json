@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-25T10:11:21.984132+00:00",
+  "computed_at": "2026-10-26T21:50:31.192134+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -249,12 +249,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "41a4e2ef39a02519e9d7",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "b99cc9c4c3f48d046148",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:21.359169+00:00",
+        "source_fetched_at": "2026-10-26T21:50:29.912726+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -279,15 +279,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "753d3e3a9072465ac42fede850f60c9460b20e8db83f6ebc427a2ef2202b12af",
-          "income_stmt.parquet": "a504fd0b7aa878e8d3cdb64da648a5f51e4e610f5e010ee0b4344a4334a131a2",
-          "cash_flow.parquet": "e45cd4cc353cfdf16943102c83718fd97af4a83b11c63e9c7042524cb194f3ee",
-          "prices.parquet": "9d2ccba011a4a2974a91d216c7c86fb08e83ea94f2779d74ec4f51708f1b65e3"
+          "balance_sheet.parquet": "b1b54da4a51a9407cb310e4388af8eeaeacd4bc54ef2aeb125fb076039cf2b17",
+          "income_stmt.parquet": "000daaa7f22ccf6966b43558035c397489d4efd6b3ca25e2a8ac06163d29346a",
+          "cash_flow.parquet": "fb30df60acb3e2501c7e1483777d03eb520dfb53ebb9495085aa32ea7ae402ae",
+          "prices.parquet": "bafc31d4341f0ef9688f2ec19b6af5abaf8880500f178fcb4333d7b02045f714"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:21.967679+00:00",
+        "source_fetched_at": "2026-10-26T21:50:31.186550+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -313,15 +313,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "ccc89c17b56604da8c43d39abc30f461812771cf942f36341814bdc568886c08",
-          "quarterly_income_stmt.parquet": "2b4747f74e8fe389ac8561823441e743607d2355af61ad72f75f6101c3964e70",
-          "quarterly_cash_flow.parquet": "ee9fca5aabae229a0afe7ea860dad1e55962de6dc0f64c62a9e2c98bf1f13712"
+          "quarterly_balance_sheet.parquet": "1cb6df04593e35042266816e149b9d35f46ed6121f8c8f4ee7a50f2b7145eadc",
+          "quarterly_income_stmt.parquet": "30e970b5824a9b9f2dc65c5e0feecd518f891c5b83c266a517337452d8aaf690",
+          "quarterly_cash_flow.parquet": "b545de90e7fd67c8026d4e9e1ab15d13ab81a9f720a60fd8559106d424265697"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -342,6 +342,9 @@
     "currency_contract": {
       "ticker": "TEL.OL",
       "full_name": "Telenor ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "NOK",
       "config_currency": "NOK",
@@ -354,7 +357,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T10:11:21.375809+00:00",
+        "observed_at": "2026-10-26T21:50:30.552677+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -379,7 +382,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:21.970566+00:00",
+      "evaluation_as_of": "2026-10-26T21:50:31.189132+00:00",
       "ticker": "TEL.OL",
       "currency": "NOK",
       "unit": "currency units",

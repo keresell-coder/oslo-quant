@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-25T10:11:01.093330+00:00",
+  "computed_at": "2026-10-26T21:49:04.800551+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -156,12 +156,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "f3cf344ef6d4d8be11b7",
+    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
+    "snapshot_id": "94a7a5a7346582975992",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:00.526797+00:00",
+        "source_fetched_at": "2026-10-26T21:49:02.833524+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -186,15 +186,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "5751e16fd176d0415f0c6e34c342b9c5562da28e52c31f931e9555505eccb34e",
-          "income_stmt.parquet": "1a5c48a25e3246f046d9b7fd961436aaac8e9098e4f798834a6909d10e95b70f",
-          "cash_flow.parquet": "9bc1acefeff062e785e5df82586fe7f341ade2575cd827229551dac747f07425",
-          "prices.parquet": "64b174b6f72bfbf63e24945b537c578cbf4d3cdab764799de98cee0390a13556"
+          "balance_sheet.parquet": "d9b48d1a6cfa25e32474c0ac8a639ce759e82c3cb4618cbda5786adb87d6c268",
+          "income_stmt.parquet": "9c3d3c4d936530357d5639f497c60e90cfd19e2794624981b11546a152986f89",
+          "cash_flow.parquet": "29cfebbf36f548a087127c52e9a504e61a71656eaead2410127bf3e472769978",
+          "prices.parquet": "3eaf1b4e20df6c5111ce5ad3ddd4c1f7692b6c3f1faaa3e933338921e52c07e5"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:00.930630+00:00",
+        "source_fetched_at": "2026-10-26T21:49:04.472220+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -219,15 +219,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "11865ad72d360f6394a2830a5617fa7336b8fbe8fb7679f28f635a4d3a40fb55",
-          "quarterly_income_stmt.parquet": "a32ce3e6e56ef772db5a1bd55d06218f0d59eb88786aa66b09632bdac9ed5438",
-          "quarterly_cash_flow.parquet": "8997a6ee1e6c1e190a2dd364139f4facba200076f279b27e16c665b3049dc056"
+          "quarterly_balance_sheet.parquet": "940aa92a1b5822e9b63c36cfa3953f284314eeca3148403f4695a62f956cc1fa",
+          "quarterly_income_stmt.parquet": "48cc34860b7b34b345fd2cc2e29f62a823e42c1796b0c409f9a0ed6c3a362b2e",
+          "quarterly_cash_flow.parquet": "af7d88e8f7944dba09628886945612ced6f45c246da02c2b92db92cdfe052f6e"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 118,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -248,6 +248,9 @@
     "currency_contract": {
       "ticker": "SALM.OL",
       "full_name": "SalMar ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "NOK",
       "config_currency": "NOK",
@@ -260,7 +263,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-25T10:11:00.543310+00:00",
+        "observed_at": "2026-10-26T21:49:03.319724+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -285,7 +288,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:00.933305+00:00",
+      "evaluation_as_of": "2026-10-26T21:49:04.473855+00:00",
       "ticker": "SALM.OL",
       "currency": "NOK",
       "unit": "currency units",
