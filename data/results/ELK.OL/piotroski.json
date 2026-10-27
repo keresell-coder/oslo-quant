@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-26T21:50:14.065976+00:00",
+  "computed_at": "2026-10-27T05:19:49.992390+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -249,12 +249,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "eec8d5d37c4266cb98c0",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "3303544c5dca53040a4e",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:50:12.191645+00:00",
+        "source_fetched_at": "2026-10-27T05:19:48.385939+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -281,12 +281,12 @@
           "balance_sheet.parquet": "d95caf7bb00962f0b21fc8bd5bffd64f557679975d83beb5e0c6c841a0839486",
           "income_stmt.parquet": "b23284fbd2617156fe78b257e3972f381c799aba079b596e6d1d1894e5dfe9b1",
           "cash_flow.parquet": "cc4de1df8836d8a554f4cb281785f0c0c86bd4a1999ca2fb25f7b867d6fbadc4",
-          "prices.parquet": "69eaec946503d7898dc541e18bb15c9da4cb464f691f28918980ee3952f6b74b"
+          "prices.parquet": "8585f4a87d8342f9db822413dd89635fce9a826ee918f1c344347a141cbceb72"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:50:14.060498+00:00",
+        "source_fetched_at": "2026-10-27T05:19:49.986218+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -321,7 +321,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 118,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -357,7 +357,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-26T21:50:12.566217+00:00",
+        "observed_at": "2026-10-27T05:19:48.757808+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -382,7 +382,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:50:14.062851+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:49.988948+00:00",
       "ticker": "ELK.OL",
       "currency": "NOK",
       "unit": "currency units",

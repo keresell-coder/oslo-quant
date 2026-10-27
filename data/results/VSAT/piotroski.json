@@ -1,7 +1,7 @@
 {
   "ticker": "VSAT",
   "framework": "piotroski",
-  "computed_at": "2026-10-26T21:50:01.280892+00:00",
+  "computed_at": "2026-10-27T05:19:37.022239+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2026": {
@@ -249,12 +249,12 @@
   "price_currency": "USD",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "7614e54db07fdc0238c5",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "80cc2afc1f3e03870288",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:49:59.561983+00:00",
+        "source_fetched_at": "2026-10-27T05:19:35.277010+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2022-03-31",
@@ -282,12 +282,12 @@
           "balance_sheet.parquet": "16d528a0b08b9ec64786085867db8ea97aa0ad3b9da0a3c278f17bdd5bb9504d",
           "income_stmt.parquet": "79aeca10e4b21a868d0bc79f93389ca396f5f040fb9a4752ba6911ebc56f745b",
           "cash_flow.parquet": "a9a945585c726578c5e71a2478e3bbcc0d2f1f43897bc918f34ba54332593bf8",
-          "prices.parquet": "1940fa6c652275ff92fc2eeda0031a03a5e20f429d1e260a6d0782c31236514d"
+          "prices.parquet": "9c7e60155241c1f107b42d8ac14561e332f0b912e3f90e100493ef6d47c0607f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:50:01.275967+00:00",
+        "source_fetched_at": "2026-10-27T05:19:37.016701+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -323,7 +323,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 118,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -359,7 +359,7 @@
         "from": "USD",
         "to": "USD",
         "rate": 1.0,
-        "observed_at": "2026-10-26T21:50:00.054106+00:00",
+        "observed_at": "2026-10-27T05:19:35.647216+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -384,7 +384,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:50:01.278030+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:37.019152+00:00",
       "ticker": "VSAT",
       "currency": "USD",
       "unit": "currency units",

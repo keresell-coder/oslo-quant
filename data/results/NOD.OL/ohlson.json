@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-26T21:50:05.157380Z",
+  "computed_at": "2026-10-27T05:19:41.167240Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "e80593eeae1b2ae694bf",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "9b608be25c4f3041f252",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:50:04.011040+00:00",
+        "source_fetched_at": "2026-10-27T05:19:39.426010+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "36864bce2cf4328b53489cd1824e46229322400bc56731fe21f85f00d39f0412",
           "income_stmt.parquet": "f63db4fb800558d4affe601c4d8efd2d49120d1377f524bae2ffad966282c176",
           "cash_flow.parquet": "c5220f00687083d03c9f19700fd73af5de820da47e91d672354a91a35ff055a1",
-          "prices.parquet": "3885e3b44500a8be841d87d3bf0208c295499e0051fdd092ef3be0d92c57cde3"
+          "prices.parquet": "3cde8f01350f49ba3d583bf06d86e9c8708f7fb4ec7325c150de0abc9a76a273"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:50:05.114223+00:00",
+        "source_fetched_at": "2026-10-27T05:19:41.113048+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -169,7 +169,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 26,
+    "statement_age_days": 27,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -210,8 +210,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10740607976913452,
-        "observed_at": "2026-10-26T21:50:04.495854+00:00",
+        "rate": 0.10734877735376358,
+        "observed_at": "2026-10-27T05:19:39.906497+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -2644,7 +2644,7 @@
           "sha256": "57699634177d8dfcaccc270f183eb724b01b8684b99f1c5743d80f6ee29038b2",
           "artifact_cache_used": true,
           "source_retrieved_at": "2026-10-24T21:23:05.063296+00:00",
-          "hash_checked_at": "2026-10-26T21:50:05.120142+00:00"
+          "hash_checked_at": "2026-10-27T05:19:41.121370+00:00"
         }
       ],
       "issues": [
@@ -3192,7 +3192,7 @@
     "debt_inputs": {
       "status": "qualified-selected-debt",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:50:05.144863+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:41.151356+00:00",
       "ticker": "NOD.OL",
       "currency": "USD",
       "unit": "currency units",
@@ -3772,14 +3772,14 @@
             "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-26T21:50:05.135388+00:00"
+            "hash_checked_at": "2026-10-27T05:19:41.141218+00:00"
           },
           {
             "source_id": "NOD2025",
             "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-26T21:50:05.144741+00:00"
+            "hash_checked_at": "2026-10-27T05:19:41.151147+00:00"
           }
         ],
         "issues": [

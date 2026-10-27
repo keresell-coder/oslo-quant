@@ -1,7 +1,7 @@
 {
   "ticker": "KIT.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-26T21:50:23.486897+00:00",
+  "computed_at": "2026-10-27T05:19:58.073700+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "ce95a7f753f970947f71",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "989ef451ff81dad67e12",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:50:21.806545+00:00",
+        "source_fetched_at": "2026-10-27T05:19:56.604836+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -342,12 +342,12 @@
           "balance_sheet.parquet": "1d8cf6ae5ebefbb953bddb2b2756aaa584d746bed06bd96029a15feda97a4d67",
           "income_stmt.parquet": "ecf424340bc4958102031db268ba61fcdab2dc4be02d0382601ae6d1c486c724",
           "cash_flow.parquet": "6aec97eaa94522d34875948042ff23c87994778f96feafecda54aa20ec7b318e",
-          "prices.parquet": "f512c023c0fee6a1284f410f0d343fd33fc9ecf821b89fad3843b8a18b40849f"
+          "prices.parquet": "a69177a81fa7e851c111028a440b36d3c3bdcb82b9b4f7f69e7172ff6fc21761"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:50:23.482896+00:00",
+        "source_fetched_at": "2026-10-27T05:19:58.065144+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -383,7 +383,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 26,
+    "statement_age_days": 27,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -418,8 +418,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09594999998807907,
-        "observed_at": "2026-10-26T21:50:22.294675+00:00",
+        "rate": 0.09606999903917313,
+        "observed_at": "2026-10-27T05:19:56.978935+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -444,7 +444,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:50:23.484680+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:58.069953+00:00",
       "ticker": "KIT.OL",
       "currency": "EUR",
       "unit": "currency units",

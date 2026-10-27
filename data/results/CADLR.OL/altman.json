@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "altman",
-  "computed_at": "2026-10-26T21:49:44.228309Z",
+  "computed_at": "2026-10-27T05:19:19.083836Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "3ab72957927bbd3a3115",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "329b403243004de538f4",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:49:42.482787+00:00",
+        "source_fetched_at": "2026-10-27T05:19:17.421063+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -102,12 +102,12 @@
           "balance_sheet.parquet": "be487f71983ab3694e8f5b40e61a3b0626a35f1c4381649826bae8e39d465e82",
           "income_stmt.parquet": "6f0caed70ec9568ad478ff580b0720aa86d3fb911ec4b9d1301d4cc1d9fec05f",
           "cash_flow.parquet": "6b427450b86f755a47d395718aabc0e3a1b22acbf4f51b5fd88e15f167f70a9f",
-          "prices.parquet": "c113e5594f429806335f982373c24144c55c1597df2f4048b19c755c7be542f1"
+          "prices.parquet": "8e02bbe486cfdf7801a9ffe6e4aecad09522f2923eef36b3c542bd62cdee31b6"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:49:44.219614+00:00",
+        "source_fetched_at": "2026-10-27T05:19:19.071715+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -143,7 +143,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 118,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -178,8 +178,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09594999998807907,
-        "observed_at": "2026-10-26T21:49:42.971753+00:00",
+        "rate": 0.09606999903917313,
+        "observed_at": "2026-10-27T05:19:17.905501+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -204,7 +204,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:49:44.222588+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:19.076139+00:00",
       "ticker": "CADLR.OL",
       "currency": "EUR",
       "unit": "currency units",

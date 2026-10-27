@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "altman",
-  "computed_at": "2026-10-26T21:48:59.963436Z",
+  "computed_at": "2026-10-27T05:18:36.003489Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "daa15995f5f315419c94",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "22e1d4f6109b771a505c",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:48:57.243577+00:00",
+        "source_fetched_at": "2026-10-27T05:18:33.529062+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -102,12 +102,12 @@
           "balance_sheet.parquet": "61e8cec03eedf20bcd3346583f03fe0b13ebf6ed5a37e7d4926a04408167fefb",
           "income_stmt.parquet": "9201768d2ffffa9b579a97f0cc14a16049aa5b355c80dd6efcacb45586c16c5e",
           "cash_flow.parquet": "3d5a020bc4c5e7d6427c53bc988bc0ec8842b214150afa7f7dc6e274bc254e20",
-          "prices.parquet": "910fc9b7cb34f5599ce6a8fbce84003a6c60b1026afb31b160c1aac6733890a2"
+          "prices.parquet": "9d62ed1ad4d794359175a7323cc6bb6878c5622b7def6e893f9cafefc53308de"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:48:59.473917+00:00",
+        "source_fetched_at": "2026-10-27T05:18:35.663037+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -143,7 +143,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 118,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -178,8 +178,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09594999998807907,
-        "observed_at": "2026-10-26T21:48:58.123695+00:00",
+        "rate": 0.09606999903917313,
+        "observed_at": "2026-10-27T05:18:34.320202+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -204,7 +204,7 @@
     "debt_inputs": {
       "status": "qualified-selected-debt",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:48:59.487103+00:00",
+      "evaluation_as_of": "2026-10-27T05:18:35.680862+00:00",
       "ticker": "MOWI.OL",
       "currency": "EUR",
       "unit": "currency units",
@@ -759,7 +759,7 @@
             "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-26T21:48:59.486844+00:00"
+            "hash_checked_at": "2026-10-27T05:18:35.680543+00:00"
           }
         ],
         "issues": [

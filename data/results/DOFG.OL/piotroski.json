@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-26T21:49:27.010921+00:00",
+  "computed_at": "2026-10-27T05:19:02.155793+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -249,12 +249,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "f84e2ea194384051b6b8e4d353f126e8",
-    "snapshot_id": "6c50cc4995d6019307d4",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "62847b1b47c0f12327a0",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-26T21:49:25.745175+00:00",
+        "source_fetched_at": "2026-10-27T05:19:00.472962+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -282,12 +282,12 @@
           "balance_sheet.parquet": "207d668dc6483cd5ba103e7ffb2ac9a3e3d8d7f95ed0cc7706d8e6beaf433cc3",
           "income_stmt.parquet": "d604622fd1ad911d37837b84ac648b02c867adefdcd312b80e98e38d9e94be60",
           "cash_flow.parquet": "f9cfb7e776acbb5ee1ed3992da393986c3ef82beccfa1b9257cd8fa7c7a7e4ad",
-          "prices.parquet": "405c9aa85b24b37069ee8065c890867ccba768e643aed8c16ce9f69242e8c3a0"
+          "prices.parquet": "51afdce7332a22ee535154a9aa077dfc41fb8bbd84dc72263f9de256e88cd50c"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-26T21:49:27.007346+00:00",
+        "source_fetched_at": "2026-10-27T05:19:02.148513+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -320,7 +320,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 118,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -355,8 +355,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10740607976913452,
-        "observed_at": "2026-10-26T21:49:26.395911+00:00",
+        "rate": 0.10734877735376358,
+        "observed_at": "2026-10-27T05:19:00.955317+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -658,7 +658,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-26T21:49:27.008874+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:02.151939+00:00",
       "ticker": "DOFG.OL",
       "currency": "USD",
       "unit": "currency units",

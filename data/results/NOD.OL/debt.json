@@ -1,7 +1,7 @@
 {
   "status": "qualified-selected-debt",
   "contract_version": "2026-10-25-debt-v1",
-  "evaluation_as_of": "2026-10-26T21:50:05.144863+00:00",
+  "evaluation_as_of": "2026-10-27T05:19:41.151356+00:00",
   "ticker": "NOD.OL",
   "currency": "USD",
   "unit": "currency units",
@@ -581,14 +581,14 @@
         "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
         "artifact_cache_used": true,
         "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-        "hash_checked_at": "2026-10-26T21:50:05.135388+00:00"
+        "hash_checked_at": "2026-10-27T05:19:41.141218+00:00"
       },
       {
         "source_id": "NOD2025",
         "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
         "artifact_cache_used": true,
         "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-        "hash_checked_at": "2026-10-26T21:50:05.144741+00:00"
+        "hash_checked_at": "2026-10-27T05:19:41.151147+00:00"
       }
     ],
     "issues": [
