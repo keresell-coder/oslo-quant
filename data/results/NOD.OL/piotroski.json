@@ -1,7 +1,7 @@
 {
   "ticker": "NOD.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-25T10:11:14.896014+00:00",
+  "computed_at": "2026-10-27T05:19:41.160467+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -542,12 +542,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "582a37bf8907d8073fcf",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "9b608be25c4f3041f252",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:14.371525+00:00",
+        "source_fetched_at": "2026-10-27T05:19:39.426010+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -572,15 +572,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "b4e38ec967d21f88c0e98b82c99d41fc36f33719fb8990c40c8496abccc13308",
-          "income_stmt.parquet": "4c7d0e53e9bb95f7a74d93422c4c6dbc8b5e90665697707857f5a1d2d12b7cdf",
-          "cash_flow.parquet": "37b39bb4898423104d65e360b6d70195d031737b905052e2da7dcfe0bedd216e",
-          "prices.parquet": "559f3348dfdc9678d2091d4b980497aced23bda6a1b2b742c558239e1b956e7f"
+          "balance_sheet.parquet": "36864bce2cf4328b53489cd1824e46229322400bc56731fe21f85f00d39f0412",
+          "income_stmt.parquet": "f63db4fb800558d4affe601c4d8efd2d49120d1377f524bae2ffad966282c176",
+          "cash_flow.parquet": "c5220f00687083d03c9f19700fd73af5de820da47e91d672354a91a35ff055a1",
+          "prices.parquet": "3cde8f01350f49ba3d583bf06d86e9c8708f7fb4ec7325c150de0abc9a76a273"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:14.828999+00:00",
+        "source_fetched_at": "2026-10-27T05:19:41.113048+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -588,35 +588,36 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
-            "2025-03-31",
             "2025-06-30",
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
-            "2025-03-31",
             "2025-06-30",
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "51e411ab97433b99209ceaa9145ca2acf43f3bc9463f3958c7d81fac4e8691ab",
-          "quarterly_income_stmt.parquet": "2d889f3ea1336a5ff6640ae24aef37d3b67f2965deb3d2e7301a3b14ee1f04f0",
-          "quarterly_cash_flow.parquet": "e1f6bb5783a8706d4c9928f7553c82b55394b0e203639744a636efc5dba0806d"
+          "quarterly_balance_sheet.parquet": "792187c80b19f2d22c6b8908e01e4c3ece9cdbdad1a7c739e31e6e9fb151b89d",
+          "quarterly_income_stmt.parquet": "76ae4006a9b39670dff22301fe0b770a980f2658f455114a27bc401da700b336",
+          "quarterly_cash_flow.parquet": "be1c091f1f743e458ca67e3b678b5eb99e409ab600a68432fb23ba0c8103ff88"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 27,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -629,8 +630,8 @@
       "scope": "Selected annual line items only; interim periods and whole reports are not verified."
     },
     "filing_coverage": {
-      "status": "behind-known-release",
-      "latest_period_end": "2026-06-30",
+      "status": "provider-covers-known-release",
+      "latest_period_end": "2026-09-30",
       "issuer_release": {
         "period_end": "2026-09-30",
         "published_on": "2026-10-22",
@@ -643,6 +644,9 @@
     "currency_contract": {
       "ticker": "NOD.OL",
       "full_name": "Nordic Semiconductor ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "USD",
       "config_currency": "USD",
@@ -654,8 +658,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T10:11:14.386476+00:00",
+        "rate": 0.10734877735376358,
+        "observed_at": "2026-10-27T05:19:39.906497+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -3088,7 +3092,7 @@
           "sha256": "57699634177d8dfcaccc270f183eb724b01b8684b99f1c5743d80f6ee29038b2",
           "artifact_cache_used": true,
           "source_retrieved_at": "2026-10-24T21:23:05.063296+00:00",
-          "hash_checked_at": "2026-10-25T10:11:14.837947+00:00"
+          "hash_checked_at": "2026-10-27T05:19:41.121370+00:00"
         }
       ],
       "issues": [
@@ -3290,26 +3294,204 @@
           "generic free cash flow"
         ],
         "provider_virtual_current": {
-          "income_stmt": {},
-          "balance_sheet": {},
-          "cash_flow": {}
+          "income_stmt": {
+            "LTM 2026-09": {
+              "Tax Effect Of Unusual Items": -440660.0,
+              "Tax Rate For Calcs": 0.9009809999999999,
+              "Normalized EBITDA": 107539000.0,
+              "Total Unusual Items": -2003000.0,
+              "Total Unusual Items Excluding Goodwill": -2003000.0,
+              "Net Income From Continuing Operation Net Minority Interest": 58175000.0,
+              "Reconciled Depreciation": 45195000.0,
+              "Reconciled Cost Of Revenue": 382098000.0,
+              "EBITDA": 105536000.0,
+              "EBIT": 60341000.0,
+              "Net Interest Income": -4150000.0,
+              "Interest Expense": 4150000.0,
+              "Interest Income": null,
+              "Normalized Income": 59737340.0,
+              "Net Income From Continuing And Discontinued Operation": 58175000.0,
+              "Total Expenses": 752679000.0,
+              "Rent Expense Supplemental": null,
+              "Total Operating Income As Reported": 61305000.0,
+              "Diluted Average Shares": 804347000.0,
+              "Basic Average Shares": 791962000.0,
+              "Diluted EPS": 0.28900000000000003,
+              "Basic EPS": 0.29300000000000004,
+              "Diluted NI Availto Com Stockholders": 58175000.0,
+              "Net Income Common Stockholders": 58175000.0,
+              "Otherunder Preferred Stock Dividend": 0.0,
+              "Net Income": 58175000.0,
+              "Net Income Including Noncontrolling Interests": 58173000.0,
+              "Net Income Continuous Operations": 58173000.0,
+              "Tax Provision": -1982000.0,
+              "Pretax Income": 56191000.0,
+              "Special Income Charges": -2003000.0,
+              "Impairment Of Capital Assets": 2003000.0,
+              "Net Non Operating Interest Income Expense": -4150000.0,
+              "Total Other Finance Cost": null,
+              "Interest Expense Non Operating": 4150000.0,
+              "Interest Income Non Operating": null,
+              "Operating Income": 63307000.0,
+              "Operating Expense": 370581000.0,
+              "Other Operating Expenses": 99343000.0,
+              "Depreciation And Amortization In Income Statement": 45195000.0,
+              "Amortization": 20515000.0,
+              "Depreciation Income Statement": 24680000.0,
+              "Selling General And Administration": null,
+              "General And Administrative Expense": null,
+              "Rent And Landing Fees": null,
+              "Gross Profit": 433888000.0,
+              "Cost Of Revenue": 382098000.0,
+              "Total Revenue": 815985000.0,
+              "Operating Revenue": 815985000.0
+            }
+          },
+          "balance_sheet": {
+            "LTM 2026-09": {
+              "Treasury Shares Number": null,
+              "Ordinary Shares Number": 197387005.0,
+              "Share Issued": 197387005.0,
+              "Total Debt": 150173000.0,
+              "Tangible Book Value": 527400000.0,
+              "Invested Capital": 837626000.0,
+              "Working Capital": 486358000.0,
+              "Net Tangible Assets": 527400000.0,
+              "Capital Lease Obligations": 46892000.0,
+              "Common Stock Equity": 734345000.0,
+              "Total Capitalization": 837626000.0,
+              "Total Equity Gross Minority Interest": 734345000.0,
+              "Stockholders Equity": 734345000.0,
+              "Other Equity Interest": 395126000.0,
+              "Treasury Stock": 2000.0,
+              "Retained Earnings": null,
+              "Additional Paid In Capital": 338897000.0,
+              "Capital Stock": 324000.0,
+              "Common Stock": 324000.0,
+              "Total Liabilities Net Minority Interest": 353493000.0,
+              "Total Non Current Liabilities Net Minority Interest": 144856000.0,
+              "Other Non Current Liabilities": null,
+              "Non Current Pension And Other Postretirement Benefit Plans": 861000.0,
+              "Non Current Deferred Taxes Liabilities": 3863000.0,
+              "Long Term Debt And Capital Lease Obligation": 140132000.0,
+              "Long Term Capital Lease Obligation": 36851000.0,
+              "Long Term Debt": 103281000.0,
+              "Current Liabilities": 208637000.0,
+              "Other Current Liabilities": 140401000.0,
+              "Current Debt And Capital Lease Obligation": 10041000.0,
+              "Current Capital Lease Obligation": 10041000.0,
+              "Pensionand Other Post Retirement Benefit Plans Current": null,
+              "Current Provisions": null,
+              "Payables": 58195000.0,
+              "Total Tax Payable": 3343000.0,
+              "Accounts Payable": 54852000.0,
+              "Total Assets": 1087838000.0,
+              "Total Non Current Assets": 392844000.0,
+              "Other Non Current Assets": 78030000.0,
+              "Non Current Prepaid Assets": null,
+              "Non Current Deferred Taxes Assets": 23631000.0,
+              "Investmentin Financial Assets": null,
+              "Financial Assets Designatedas Fair Value Through Profitor Loss Total": null,
+              "Long Term Equity Investment": 0.0,
+              "Investmentsin Joint Venturesat Cost": 0.0,
+              "Investmentsin Subsidiariesat Cost": null,
+              "Goodwill And Other Intangible Assets": 206945000.0,
+              "Other Intangible Assets": 105647000.0,
+              "Goodwill": 101298000.0,
+              "Net PPE": 84238000.0,
+              "Accumulated Depreciation": null,
+              "Gross PPE": 84238000.0,
+              "Other Properties": 84238000.0,
+              "Machinery Furniture Equipment": null,
+              "Buildings And Improvements": null,
+              "Properties": null,
+              "Current Assets": 694995000.0,
+              "Other Current Assets": 1000.0,
+              "Restricted Cash": null,
+              "Inventory": 235639000.0,
+              "Other Inventories": null,
+              "Finished Goods": null,
+              "Work In Process": null,
+              "Raw Materials": null,
+              "Other Receivables": 28542000.0,
+              "Accounts Receivable": 164018000.0,
+              "Allowance For Doubtful Accounts Receivable": null,
+              "Gross Accounts Receivable": null,
+              "Cash Cash Equivalents And Short Term Investments": 266795000.0,
+              "Other Short Term Investments": null,
+              "Cash And Cash Equivalents": 266795000.0,
+              "Cash Equivalents": null,
+              "Cash Financial": null
+            }
+          },
+          "cash_flow": {
+            "LTM 2026-09": {
+              "Free Cash Flow": -12829000.0,
+              "Repurchase Of Capital Stock": -13743000.0,
+              "Repayment Of Debt": 0.0,
+              "Issuance Of Debt": 0.0,
+              "Issuance Of Capital Stock": 0.0,
+              "Capital Expenditure": -52766000.0,
+              "End Cash Position": 1129968000.0,
+              "Other Cash Adjustment Outside Changein Cash": null,
+              "Beginning Cash Position": 1172083000.0,
+              "Effect Of Exchange Rate Changes": 6099000.0,
+              "Changes In Cash": -48215000.0,
+              "Financing Cash Flow": -35387000.0,
+              "Net Other Financing Charges": null,
+              "Interest Paid Cff": -11447000.0,
+              "Net Common Stock Issuance": -13743000.0,
+              "Common Stock Payments": -13743000.0,
+              "Common Stock Issuance": 0.0,
+              "Net Issuance Payments Of Debt": 0.0,
+              "Net Short Term Debt Issuance": null,
+              "Short Term Debt Payments": null,
+              "Short Term Debt Issuance": null,
+              "Net Long Term Debt Issuance": 0.0,
+              "Long Term Debt Payments": 0.0,
+              "Long Term Debt Issuance": 0.0,
+              "Investing Cash Flow": -52765000.0,
+              "Net Other Investing Changes": null,
+              "Dividends Received Cfi": null,
+              "Net Business Purchase And Sale": 0.0,
+              "Purchase Of Business": 0.0,
+              "Net Intangibles Purchase And Sale": null,
+              "Purchase Of Intangibles": null,
+              "Capital Expenditure Reported": -52766000.0,
+              "Operating Cash Flow": 39937000.0,
+              "Taxes Refund Paid": -4986000.0,
+              "Interest Received Cfo": 8536000.0,
+              "Interest Paid Cfo": null,
+              "Change In Working Capital": -147963000.0,
+              "Change In Other Current Assets": null,
+              "Change In Prepaid Assets": null,
+              "Change In Inventory": -147963000.0,
+              "Other Non Cash Items": 4150000.0,
+              "Stock Based Compensation": 19447000.0,
+              "Depreciation And Amortization": 45195000.0,
+              "Amortization Cash Flow": 20515000.0,
+              "Depreciation": 24680000.0,
+              "Pension And Employee Benefit Expense": null,
+              "Net Income From Continuing Operations": 56191000.0
+            }
+          }
         },
         "provider_comparisons": [
           {
             "primary_record_id": "totalRevenue-ttm-2026-09",
             "primary_value": 815987000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 815985000.0,
+            "difference": -2000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "grossProfit-ttm-2026-09",
             "primary_value": 433889000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 433888000.0,
+            "difference": -1000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
@@ -3325,36 +3507,36 @@
           {
             "primary_record_id": "operatingIncome-ttm-2026-09",
             "primary_value": 61305000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 63307000.0,
+            "difference": 2002000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "pretaxIncome-ttm-2026-09",
             "primary_value": 56192000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 56191000.0,
+            "difference": -1000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "netIncome-ttm-2026-09",
             "primary_value": 58174000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 58175000.0,
+            "difference": 1000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "operatingCashFlow-ttm-2026-09",
             "primary_value": 39938000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 39937000.0,
+            "difference": -1000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
@@ -3379,61 +3561,61 @@
           {
             "primary_record_id": "cash-2026-09-30",
             "primary_value": 266795000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 266795000.0,
+            "difference": 0.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "currentAssets-2026-09-30",
             "primary_value": 694995000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 694995000.0,
+            "difference": 0.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "totalAssets-2026-09-30",
             "primary_value": 1087838000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 1087838000.0,
+            "difference": 0.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "commonEquity-2026-09-30",
             "primary_value": 734346000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 734345000.0,
+            "difference": -1000.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "currentLiabilities-2026-09-30",
             "primary_value": 208637000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 208637000.0,
+            "difference": 0.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "totalLiabilities-2026-09-30",
             "primary_value": 353493000,
-            "provider_period": null,
-            "provider_value": null,
-            "difference": null,
+            "provider_period": "LTM 2026-09",
+            "provider_value": 353493000.0,
+            "difference": 0.0,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
             "scope_verification": "Primary mapping reviewed; provider definition not independently confirmed"
           },
           {
             "primary_record_id": "retainedEarnings-2026-09-30",
             "primary_value": 335403000,
-            "provider_period": null,
+            "provider_period": "LTM 2026-09",
             "provider_value": null,
             "difference": null,
             "reason": "Explicit selected primary current period; not an unlabeled provider overwrite",
@@ -3458,7 +3640,7 @@
     "debt_inputs": {
       "status": "qualified-selected-debt",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:14.872151+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:41.151356+00:00",
       "ticker": "NOD.OL",
       "currency": "USD",
       "unit": "currency units",
@@ -4038,14 +4220,14 @@
             "sha256": "f14b9619bec80be1326f2fd7d0486ed818e568e945cb685386f5521d87d6cd78",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-25T10:11:14.860855+00:00"
+            "hash_checked_at": "2026-10-27T05:19:41.141218+00:00"
           },
           {
             "source_id": "NOD2025",
             "sha256": "c4218f3030eca871d98648cd4994ed7deff8bfd427509578dcdcdefc6220c65b",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-25T10:11:14.872029+00:00"
+            "hash_checked_at": "2026-10-27T05:19:41.151147+00:00"
           }
         ],
         "issues": [

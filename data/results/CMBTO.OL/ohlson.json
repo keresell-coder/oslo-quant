@@ -1,0 +1,249 @@
+{
+  "ticker": "CMBTO.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-10-27T05:19:45.763551Z",
+  "methodology_version": "2026-10-24-methodology-v2",
+  "periods": {
+    "LTM 2026-06": {
+      "o_score": -1.8997,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.6465,
+        "wc_ta": 0.0113,
+        "cl_ca": 0.8914,
+        "oeneg": 0,
+        "ni_ta": 0.0954,
+        "cfo_tl": 0.1373,
+        "intwo": 0,
+        "chin": 0.6795
+      }
+    },
+    "2025": {
+      "o_score": -0.5636,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.6879,
+        "wc_ta": -0.0176,
+        "cl_ca": 1.1625,
+        "oeneg": 0,
+        "ni_ta": 0.0191,
+        "cfo_tl": 0.0767,
+        "intwo": 0,
+        "chin": -0.6884
+      }
+    },
+    "2024": {
+      "o_score": -1.3039,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.6947,
+        "wc_ta": 0.02,
+        "cl_ca": 0.834,
+        "oeneg": 0,
+        "ni_ta": 0.223,
+        "cfo_tl": 0.1688,
+        "intwo": 0,
+        "chin": 0.0074
+      }
+    },
+    "2023": {
+      "o_score": -5.6034,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.3106,
+        "wc_ta": 0.353,
+        "cl_ca": 0.2603,
+        "oeneg": 0,
+        "ni_ta": 0.2509,
+        "cfo_tl": 0.7886,
+        "intwo": 0,
+        "chin": 0.617
+      }
+    },
+    "2022": {
+      "o_score": null,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Not assessable",
+      "inputs": {
+        "tl_ta": 0.4524,
+        "wc_ta": 0.0889,
+        "cl_ca": 0.419,
+        "oeneg": 0,
+        "ni_ta": 0.0512,
+        "cfo_tl": 0.1423,
+        "intwo": null,
+        "chin": null
+      }
+    }
+  },
+  "financial_currency": "USD",
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "3111ee8a99055d384cff",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-10-27T05:19:43.853729+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "290262379ee1947b1aeb634ebb955eca29a088e1820979e40bcdbb09d34d8534",
+          "income_stmt.parquet": "0eb23b17da8282bf3c046c0a1bc87265177e133c65d94f35dd93b72614ac0ab1",
+          "cash_flow.parquet": "80f543b06557d9baa4e817587f1a3a4d9f8923e8d2375c9b573f05de2a59cdd7",
+          "prices.parquet": "e23a87b08b109650148864c125da3848a1d85e4c0257499d8e548d4ec6a0ab1e"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-10-27T05:19:45.752585+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "e1f4fd3eb6a7bcf60839377b92ee7e7d51c47978fd9267ae663922ec2da4613f",
+          "quarterly_income_stmt.parquet": "eda74f7238a7b2b8f404ebc4d472be84e33e6a69ad85369af1cc26f1c7303ada",
+          "quarterly_cash_flow.parquet": "a0ba47d8d6983e3c5ca19d0132c1d32ddf223a46ed5a9f8bc14523fa15ffd521"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 119,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "CMBTO.OL",
+      "full_name": "CMB.TECH",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
+      "price_currency": "NOK",
+      "financial_currency": "USD",
+      "config_currency": "USD",
+      "yfinance_currency": "USD",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "USD",
+        "rate": 0.10734877735376358,
+        "observed_at": "2026-10-27T05:19:44.332023+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "CMBTO.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-27T05:19:45.756432+00:00",
+      "ticker": "CMBTO.OL",
+      "currency": "USD",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "CMBTO.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
+      }
+    }
+  }
+}

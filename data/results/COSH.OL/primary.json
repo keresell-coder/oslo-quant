@@ -1,0 +1,18 @@
+{
+  "status": "not-configured",
+  "ticker": "COSH.OL",
+  "records": [],
+  "derived": [],
+  "issues": [],
+  "selection": {
+    "status": "not-applied",
+    "reason": "No eligible selected primary current inputs",
+    "selected": [],
+    "provider_values_preserved": true,
+    "unavailable": [
+      "standardized EBIT",
+      "TTM EPS",
+      "generic free cash flow"
+    ]
+  }
+}

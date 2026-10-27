@@ -1,0 +1,19 @@
+{
+  "status": "not-configured",
+  "contract_version": "2026-10-25-debt-v1",
+  "evaluation_as_of": "2026-10-27T05:18:45.233192+00:00",
+  "ticker": "ORK.OL",
+  "currency": "NOK",
+  "unit": "currency units",
+  "periods": {},
+  "records": [],
+  "provider_frames_preserved": true,
+  "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+  "primary_evidence": {
+    "status": "not-configured",
+    "ticker": "ORK.OL",
+    "records": [],
+    "derived": [],
+    "issues": []
+  }
+}

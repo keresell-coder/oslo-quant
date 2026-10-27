@@ -1,0 +1,22 @@
+{
+  "ticker": "VSAT",
+  "full_name": "Viasat Inc.",
+  "exchange": "NASDAQ",
+  "expected_price_currency": "USD",
+  "price_currency_match": true,
+  "price_currency": "USD",
+  "financial_currency": "USD",
+  "config_currency": "USD",
+  "yfinance_currency": "USD",
+  "detection_source": "yfinance",
+  "verification_status": "verified",
+  "status": "screening-currency-consistent",
+  "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+  "price_conversion": {
+    "from": "USD",
+    "to": "USD",
+    "rate": 1.0,
+    "observed_at": "2026-10-27T05:19:35.647216+00:00",
+    "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+  }
+}

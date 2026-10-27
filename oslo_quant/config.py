@@ -29,6 +29,8 @@ class CompanyConfig:
     full_name: str = ""                  # human-readable company name
     sector: str = ""                     # sector label for context and model caveats
     notes: str = ""                      # free-text notes surfaced in the dashboard
+    exchange: str = "Euronext Oslo"
+    price_currency: str = "NOK"
 
 
 # Reporting currencies verified against official annual reports.
@@ -38,6 +40,16 @@ class CompanyConfig:
 # COMPANIES order, and that list is sorted by (sector, ticker) further down, so
 # ordering cannot drift if an entry is added in the wrong place.
 _COMPANIES_RAW: list[CompanyConfig] = [
+    CompanyConfig("VSAT", reporting_currency="USD", full_name="Viasat Inc.",
+                  sector="Satellite Communications", exchange="NASDAQ", price_currency="USD"),
+    CompanyConfig("COSH.OL", reporting_currency="USD", full_name="Constellation Oil Services Holding",
+                  sector="Offshore Drilling"),
+    CompanyConfig("SCATC.OL", reporting_currency="NOK", full_name="Scatec ASA",
+                  sector="Renewable Energy"),
+    CompanyConfig("CMBTO.OL", reporting_currency="USD", full_name="CMB.TECH",
+                  sector="Shipping"),
+    CompanyConfig("ORK.OL", reporting_currency="NOK", full_name="Orkla ASA",
+                  sector="Consumer Goods"),
     # ---- Aquaculture ----
     CompanyConfig("MOWI.OL",  reporting_currency="EUR", full_name="Mowi ASA",
                   sector="Aquaculture / Salmon Farming",

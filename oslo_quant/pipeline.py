@@ -93,9 +93,9 @@ def run(
         # --- Convert prices from NOK to the reporting currency ---
         price_ccy = currency_info["price_currency"]
         fin_ccy   = currency_info["financial_currency"]
-        stmts = _convert_prices(stmts, price_ccy, fin_ccy, yf_fetcher, _fx_cache)
+        stmts = _convert_prices(stmts, price_ccy if currency_info["price_currency_match"] else "Unknown", fin_ccy, yf_fetcher, _fx_cache)
         currency_info["price_conversion"] = {"from": price_ccy, "to": fin_ccy,
-            "rate": 1.0 if price_ccy == fin_ccy else _fx_cache.get(f"{price_ccy}{fin_ccy}"),
+            "rate": 1.0 if currency_info["price_currency_match"] and price_ccy == fin_ccy else _fx_cache.get(f"{price_ccy}{fin_ccy}"),
             "observed_at": stamp(), "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"}
         rate = currency_info["price_conversion"]["rate"]
         if rate is None or not math.isfinite(rate) or rate <= 0:
@@ -210,6 +210,8 @@ def _resolve_currency(yf_fetcher: YFinanceFetcher, ticker: str, company, force_r
         final_ccy = config_ccy
         source = "config_fallback"
 
+    expected_price_ccy = company.price_currency
+    price_match = price_ccy == expected_price_ccy
     match_status = _match_status(yf_ccy, config_ccy)
     if match_status == "mismatch":
         log.warning(
@@ -220,13 +222,16 @@ def _resolve_currency(yf_fetcher: YFinanceFetcher, ticker: str, company, force_r
     return {
         "ticker":              ticker,
         "full_name":           company.full_name,
+        "exchange":            company.exchange,
+        "expected_price_currency": expected_price_ccy,
+        "price_currency_match": price_match,
         "price_currency":      price_ccy,
         "financial_currency":  final_ccy,
         "config_currency":     config_ccy,
         "yfinance_currency":   yf_ccy,
         "detection_source":    source,
         "verification_status": match_status,
-        "status": "screening-currency-consistent" if match_status == "verified" and price_ccy not in (None, "", "Unknown") else "gated-unverified-currency",
+        "status": "screening-currency-consistent" if match_status == "verified" and price_match else "gated-unverified-currency",
         "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
     }
 

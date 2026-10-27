@@ -8,7 +8,7 @@ Updated automatically every Friday evening after Oslo Børs closes.
 
 Publication now stages a real upstream refresh and validates all five framework
 files against one run and source snapshot before replacing the report. At least
-14 of 17 companies must pass; failed companies have their summary and detail
+80% of configured companies (rounded up: 18 of 22) must pass; failed companies have their summary and detail
 scores withheld. Failed publication updates only [health.json](https://keresell-coder.github.io/oslo-quant/health.json),
 retains the prior report/results, and fails the workflow. The HTML reads this
 health record at view time and checks its snapshot against the displayed report.
@@ -155,3 +155,5 @@ this change does not refresh or reconcile primary financial values.
 Primary-input ingestion review batch (2026-10-24): [selected issuer facts, provenance and remaining gates](docs/primary-financial-ingestion.md). This branch is prepared for review; production data is unchanged.
 
 Bounded methodology version: [definitions, explicit proxies and unresolved conventions](docs/METHODOLOGY_2026-10-24.md). Saved results are retained until approved recalculation; no predictive calibration is claimed.
+
+Fixed coverage now includes 22 companies, including NASDAQ:VSAT (USD) alongside Oslo listings (NOK). Statement reporting currencies remain separate from quote currencies. Failed or incompatible price-currency detection stays gated; it never falls back to NOK for VSAT. Coverage inclusion provides no action authority.

@@ -1,0 +1,230 @@
+{
+  "ticker": "SCATC.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-10-27T05:19:32.924378Z",
+  "methodology_version": "2026-10-24-methodology-v2",
+  "periods": {
+    "2025": {
+      "o_score": -0.2623,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.7601,
+        "wc_ta": 0.0082,
+        "cl_ca": 0.9428,
+        "oeneg": 0,
+        "ni_ta": 0.0195,
+        "cfo_tl": 0.0645,
+        "intwo": 0,
+        "chin": -0.1447
+      }
+    },
+    "2024": {
+      "o_score": -0.8116,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.721,
+        "wc_ta": 0.0164,
+        "cl_ca": 0.901,
+        "oeneg": 0,
+        "ni_ta": 0.0286,
+        "cfo_tl": 0.0949,
+        "intwo": 0,
+        "chin": 0.3516
+      }
+    },
+    "2023": {
+      "o_score": -0.8099,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.7471,
+        "wc_ta": -0.018,
+        "cl_ca": 1.1538,
+        "oeneg": 0,
+        "ni_ta": 0.015,
+        "cfo_tl": 0.0705,
+        "intwo": 0,
+        "chin": 1.0
+      }
+    },
+    "2022": {
+      "o_score": null,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Not assessable",
+      "inputs": {
+        "tl_ta": 0.7603,
+        "wc_ta": 0.0673,
+        "cl_ca": 0.6202,
+        "oeneg": 0,
+        "ni_ta": -0.0363,
+        "cfo_tl": 0.0586,
+        "intwo": null,
+        "chin": null
+      }
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "29f35d7d88b6550d6a51",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-10-27T05:19:31.120176+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "99470e92448f715846c9487b73f74cf12b0b80a348ab9627929afad2c6d74db0",
+          "income_stmt.parquet": "5725ed1390e4f158761edf1290787b197c09120b84079220afeaa4ff5ef09176",
+          "cash_flow.parquet": "d6cddc50aebab7e402c2001ca9775517ee36f3a759ceb96e553488482159bec8",
+          "prices.parquet": "1ab0553f1abbaf0165874547ad1912df538f5bc872652dd8487253dd72a7c2a8"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-10-27T05:19:32.915946+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "27ba82edc05ffd8c8b4631e43406909d5856a27ec38ab087c12f59cc3a9e992c",
+          "quarterly_income_stmt.parquet": "2252f3430d41cdc901b2c182e4297525286a5bbbd9708b192173655c8b1a888f",
+          "quarterly_cash_flow.parquet": "8abf452539fe887f8353e2fc8e6556b4a74990b37d91cf39359b809918584d78"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 119,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "SCATC.OL",
+      "full_name": "Scatec ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-27T05:19:31.600183+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "SCATC.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-27T05:19:32.918214+00:00",
+      "ticker": "SCATC.OL",
+      "currency": "NOK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "SCATC.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
+      }
+    }
+  }
+}

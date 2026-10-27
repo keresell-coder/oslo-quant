@@ -1,6 +1,9 @@
 {
   "ticker": "BORR.OL",
   "full_name": "Borr Drilling Ltd",
+  "exchange": "Euronext Oslo",
+  "expected_price_currency": "NOK",
+  "price_currency_match": true,
   "price_currency": "NOK",
   "financial_currency": "USD",
   "config_currency": "USD",
@@ -12,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "USD",
-    "rate": 0.10733989626169205,
-    "observed_at": "2026-10-25T10:11:07.420508+00:00",
+    "rate": 0.10734877735376358,
+    "observed_at": "2026-10-27T05:19:05.222146+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

@@ -1,7 +1,7 @@
 {
   "status": "qualified-selected-debt",
   "contract_version": "2026-10-25-debt-v1",
-  "evaluation_as_of": "2026-10-25T10:10:59.523815+00:00",
+  "evaluation_as_of": "2026-10-27T05:18:35.680862+00:00",
   "ticker": "MOWI.OL",
   "currency": "EUR",
   "unit": "currency units",
@@ -556,7 +556,7 @@
         "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
         "artifact_cache_used": true,
         "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-        "hash_checked_at": "2026-10-25T10:10:59.523550+00:00"
+        "hash_checked_at": "2026-10-27T05:18:35.680543+00:00"
       }
     ],
     "issues": [

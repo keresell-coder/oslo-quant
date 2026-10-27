@@ -1,5 +1,5 @@
 {
-  "built": false,
-  "label": null,
-  "detail": "LTM window dates are contiguous but Total Revenue is empty in at least one quarter \u2014 refusing a partial sum"
+  "built": true,
+  "label": "LTM 2026-09",
+  "detail": "built from 4 quarters through 2026-09-30"
 }

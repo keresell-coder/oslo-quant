@@ -1,6 +1,9 @@
 {
   "ticker": "PUBLI.OL",
   "full_name": "Public Property Invest ASA",
+  "exchange": "Euronext Oslo",
+  "expected_price_currency": "NOK",
+  "price_currency_match": true,
   "price_currency": "NOK",
   "financial_currency": "SEK",
   "config_currency": "SEK",
@@ -12,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "SEK",
-    "rate": 1.063599944114685,
-    "observed_at": "2026-10-25T10:11:12.850703+00:00",
+    "rate": 1.0671800374984741,
+    "observed_at": "2026-10-27T05:19:26.913445+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

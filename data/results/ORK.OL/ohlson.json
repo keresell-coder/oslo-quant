@@ -1,0 +1,248 @@
+{
+  "ticker": "ORK.OL",
+  "framework": "ohlson",
+  "computed_at": "2026-10-27T05:18:45.240743Z",
+  "methodology_version": "2026-10-24-methodology-v2",
+  "periods": {
+    "LTM 2026-06": {
+      "o_score": -2.6109,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.4761,
+        "wc_ta": 0.0293,
+        "cl_ca": 0.8896,
+        "oeneg": 0,
+        "ni_ta": 0.0779,
+        "cfo_tl": 0.2251,
+        "intwo": 0,
+        "chin": -0.2546
+      }
+    },
+    "2025": {
+      "o_score": -3.5525,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.4121,
+        "wc_ta": 0.077,
+        "cl_ca": 0.7012,
+        "oeneg": 0,
+        "ni_ta": 0.1293,
+        "cfo_tl": 0.2536,
+        "intwo": 0,
+        "chin": 0.309
+      }
+    },
+    "2024": {
+      "o_score": -3.1722,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.429,
+        "wc_ta": 0.0711,
+        "cl_ca": 0.7149,
+        "oeneg": 0,
+        "ni_ta": 0.0673,
+        "cfo_tl": 0.25,
+        "intwo": 0,
+        "chin": 0.0765
+      }
+    },
+    "2023": {
+      "o_score": -2.7637,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.4601,
+        "wc_ta": 0.0525,
+        "cl_ca": 0.7895,
+        "oeneg": 0,
+        "ni_ta": 0.06,
+        "cfo_tl": 0.1819,
+        "intwo": 0,
+        "chin": 0.0173
+      }
+    },
+    "2022": {
+      "o_score": null,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Not assessable",
+      "inputs": {
+        "tl_ta": 0.465,
+        "wc_ta": 0.0411,
+        "cl_ca": 0.842,
+        "oeneg": 0,
+        "ni_ta": 0.0622,
+        "cfo_tl": 0.1394,
+        "intwo": null,
+        "chin": null
+      }
+    }
+  },
+  "financial_currency": "NOK",
+  "price_currency": "NOK",
+  "source_metadata": {
+    "schema_version": 1,
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "99b4773f5fc2cea88708",
+    "provider": "Yahoo Finance via yfinance",
+    "groups": {
+      "annual": {
+        "source_fetched_at": "2026-10-27T05:18:43.489665+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "income_stmt": [
+            "2021-12-31",
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ],
+          "cash_flow": [
+            "2022-12-31",
+            "2023-12-31",
+            "2024-12-31",
+            "2025-12-31"
+          ]
+        },
+        "cache_hashes": {
+          "balance_sheet.parquet": "51c637d4bc535843930df0c4692d29fbcc6af911381f208456af5599c75f56fa",
+          "income_stmt.parquet": "d565fa84718c878c591a4716dc601dda8a7ed3a2fbbaa7c158d77a43a166990a",
+          "cash_flow.parquet": "610d7bdc5b344bfd92d93af0366895603befa1cee181648255bdb2b232552482",
+          "prices.parquet": "03c63a7034aaea26fb8f6a6c90a243c6630d0533c89515497fd03eab18df744e"
+        },
+        "cache_used": false
+      },
+      "quarterly": {
+        "source_fetched_at": "2026-10-27T05:18:45.228443+00:00",
+        "statement_period_ends": {
+          "balance_sheet": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "income_stmt": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ],
+          "cash_flow": [
+            "2025-03-31",
+            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
+            "2026-03-31",
+            "2026-06-30"
+          ]
+        },
+        "cache_hashes": {
+          "quarterly_balance_sheet.parquet": "18da635a5802d6c0056f52da3e345e52612973157a967030f5407af9ff9c582e",
+          "quarterly_income_stmt.parquet": "a89b0e5db6a4fc7669f214cc7a3fd709952c1986800eb08a2955e4ba70dd3420",
+          "quarterly_cash_flow.parquet": "bd24e1febfa58408fb74fbb7da5d2652e991781461d3b6ee2e969ace555b60ef"
+        },
+        "cache_used": false
+      }
+    },
+    "latest_statement_period_end": "2026-06-30",
+    "statement_age_days": 119,
+    "statement_status": "available",
+    "missing_statement_tables": [],
+    "filing_publication_date": null,
+    "filing_date_status": "unverified: provider period ends are not filing publication dates",
+    "primary_ledger": {
+      "status": "unverified",
+      "verified_items": 0,
+      "filled_items": 0,
+      "mismatches": 0,
+      "scope": "Selected annual line items only; interim periods and whole reports are not verified."
+    },
+    "filing_coverage": {
+      "status": "unverified",
+      "latest_period_end": "2026-06-30",
+      "issuer_release": null,
+      "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
+    },
+    "currency_contract": {
+      "ticker": "ORK.OL",
+      "full_name": "Orkla ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
+      "price_currency": "NOK",
+      "financial_currency": "NOK",
+      "config_currency": "NOK",
+      "yfinance_currency": "NOK",
+      "detection_source": "yfinance",
+      "verification_status": "verified",
+      "status": "screening-currency-consistent",
+      "limitation": "Provider/config agreement only; does not verify all statement currencies or accounting definitions.",
+      "price_conversion": {
+        "from": "NOK",
+        "to": "NOK",
+        "rate": 1.0,
+        "observed_at": "2026-10-27T05:18:43.970778+00:00",
+        "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
+      }
+    },
+    "primary_inputs": {
+      "status": "not-configured",
+      "ticker": "ORK.OL",
+      "records": [],
+      "derived": [],
+      "issues": [],
+      "selection": {
+        "status": "not-applied",
+        "reason": "No eligible selected primary current inputs",
+        "selected": [],
+        "provider_values_preserved": true,
+        "unavailable": [
+          "standardized EBIT",
+          "TTM EPS",
+          "generic free cash flow"
+        ]
+      }
+    },
+    "debt_inputs": {
+      "status": "not-configured",
+      "contract_version": "2026-10-25-debt-v1",
+      "evaluation_as_of": "2026-10-27T05:18:45.233192+00:00",
+      "ticker": "ORK.OL",
+      "currency": "NOK",
+      "unit": "currency units",
+      "periods": {},
+      "records": [],
+      "provider_frames_preserved": true,
+      "limitation": "Selected debt fields only; no whole-company or full-score verification.",
+      "primary_evidence": {
+        "status": "not-configured",
+        "ticker": "ORK.OL",
+        "records": [],
+        "derived": [],
+        "issues": []
+      }
+    }
+  }
+}

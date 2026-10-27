@@ -176,7 +176,7 @@ class YFinanceFetcher(BaseFetcher):
                 pass
 
         result: dict = {
-            "price_currency":     "NOK",
+            "price_currency":     "Unknown",
             "financial_currency": "Unknown",
             "source":             "fallback",
         }

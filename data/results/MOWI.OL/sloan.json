@@ -1,7 +1,7 @@
 {
   "ticker": "MOWI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-25T10:10:59.691658+00:00",
+  "computed_at": "2026-10-27T05:18:35.998440+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -205,12 +205,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "b62684bb356bea855f8c",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "22e1d4f6109b771a505c",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:10:58.824617+00:00",
+        "source_fetched_at": "2026-10-27T05:18:33.529062+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -235,15 +235,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "f566bb9bfdda5ee1245f6ca748cb9962e48869c6bd9396e78594c5d0b7ccde87",
-          "income_stmt.parquet": "80802f212cb8e52236076011ab78327487b259dc6b3c1049170d242e1d8c0cb1",
-          "cash_flow.parquet": "9bb1f3ea765c4ec26795fd0f1dbceec460cdb0abe5ec7eb1998dc790caab46a8",
-          "prices.parquet": "8c82b354a778bac52d18450f2b136fd7e45d1172c84f91391bcb1c7352ebb216"
+          "balance_sheet.parquet": "61e8cec03eedf20bcd3346583f03fe0b13ebf6ed5a37e7d4926a04408167fefb",
+          "income_stmt.parquet": "9201768d2ffffa9b579a97f0cc14a16049aa5b355c80dd6efcacb45586c16c5e",
+          "cash_flow.parquet": "3d5a020bc4c5e7d6427c53bc988bc0ec8842b214150afa7f7dc6e274bc254e20",
+          "prices.parquet": "9d62ed1ad4d794359175a7323cc6bb6878c5622b7def6e893f9cafefc53308de"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:10:59.506675+00:00",
+        "source_fetched_at": "2026-10-27T05:18:35.663037+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -271,15 +271,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "1e5bface4340f0c049cf3417e0d9310c8478553ed20c5e32a9c583d6655a8dfd",
-          "quarterly_income_stmt.parquet": "efb87436ee2830cd528bea03619838630adce876449c745bdfee559d17545e9e",
-          "quarterly_cash_flow.parquet": "d7924866aab0f094b939e5fc50c4c03a4bdb17fc6064e5b6df955f5f7527f844"
+          "quarterly_balance_sheet.parquet": "899eb7f2e6a3cc6d94f7e518e3a6514ee25e4e2bd41ba0f8aea3f19b3a41c825",
+          "quarterly_income_stmt.parquet": "b97f472e120a97f7dafde94615360b46c47ff1905afb359cf77d16a864420567",
+          "quarterly_cash_flow.parquet": "c232665ce3469e1ef5d84fb01ee6310e842bd32346e5b7729821419f60c8a21a"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -300,6 +300,9 @@
     "currency_contract": {
       "ticker": "MOWI.OL",
       "full_name": "Mowi ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "EUR",
       "config_currency": "EUR",
@@ -311,8 +314,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09568999707698822,
-        "observed_at": "2026-10-25T10:10:58.988244+00:00",
+        "rate": 0.09606999903917313,
+        "observed_at": "2026-10-27T05:18:34.320202+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -337,7 +340,7 @@
     "debt_inputs": {
       "status": "qualified-selected-debt",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:10:59.523815+00:00",
+      "evaluation_as_of": "2026-10-27T05:18:35.680862+00:00",
       "ticker": "MOWI.OL",
       "currency": "EUR",
       "unit": "currency units",
@@ -892,7 +895,7 @@
             "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-25T10:10:59.523550+00:00"
+            "hash_checked_at": "2026-10-27T05:18:35.680543+00:00"
           }
         ],
         "issues": [

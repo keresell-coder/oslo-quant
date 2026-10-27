@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       tickers:
-        description: "Tickers to run (space-separated, e.g. TEL.OL MOWI.OL). Leave blank for all 17; partial runs still require 14 qualified companies to publish."
+        description: "Tickers to run (space-separated, e.g. TEL.OL MOWI.OL). Leave blank for all configured companies; partial runs retain the existing proportional coverage gate."
         required: false
         default: ""
       frameworks:

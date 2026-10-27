@@ -624,7 +624,7 @@ def _currency_table(data: dict) -> str:
         ccy_info = data.get(ticker, {}).get("currency", {})
 
         fin_ccy    = ccy_info.get("financial_currency") or company.reporting_currency
-        price_ccy  = ccy_info.get("price_currency", "NOK")
+        price_ccy  = ccy_info.get("price_currency", "Unknown")
         config_ccy = ccy_info.get("config_currency") or company.reporting_currency
         yf_ccy     = ccy_info.get("yfinance_currency") or "—"
         status     = ccy_info.get("verification_status", "pending")
@@ -983,7 +983,7 @@ footer a{{color:var(--accent);text-decoration:none}}
   </button>
   <div class="panel-body">
     <p style="font-size:0.76rem;color:var(--slate);padding:14px 0 12px">
-      Oslo Børs prices are always quoted in <strong>NOK</strong>. For companies reporting in USD or EUR, prices are converted using a live FX rate before any price-based metric is computed. The table shows the detected reporting currency and its verification status.
+      Oslo Børs prices are quoted in <strong>NOK</strong>; NASDAQ:VSAT is quoted in <strong>USD</strong>. For companies reporting in USD or EUR, prices are converted using a live FX rate before any price-based metric is computed. The table shows the detected reporting currency and its verification status.
     </p>
     {primary_html}
 {currency_html}

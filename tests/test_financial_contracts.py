@@ -31,7 +31,7 @@ def test_known_release_beats_fresh_download(tmp_path):
 @pytest.mark.parametrize("detected,status", [(None, "gated-unverified-currency"), ("EUR", "gated-unverified-currency"), ("USD", "screening-currency-consistent")])
 def test_currency_is_not_verified_by_config_fallback(detected, status):
     fetcher = SimpleNamespace(fetch_currency_info=lambda *a, **k: {"financial_currency": detected, "price_currency": "NOK"})
-    result = _resolve_currency(fetcher, "TEST", SimpleNamespace(reporting_currency="USD", full_name="Test"), True)
+    result = _resolve_currency(fetcher, "TEST", SimpleNamespace(reporting_currency="USD", full_name="Test", price_currency="NOK", exchange="Euronext Oslo"), True)
     assert result["status"] == status
 
 

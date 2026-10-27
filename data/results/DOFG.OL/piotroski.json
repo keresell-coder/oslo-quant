@@ -1,7 +1,7 @@
 {
   "ticker": "DOFG.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-25T10:11:06.621484+00:00",
+  "computed_at": "2026-10-27T05:19:02.155793+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -249,12 +249,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "e107d60ad59c44a4856fbf69c4fb2e29",
-    "snapshot_id": "8b7585c758c3b123f35b",
+    "run_id": "c53158d3273f4441a48cec8cfef583ab",
+    "snapshot_id": "62847b1b47c0f12327a0",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-25T10:11:06.089386+00:00",
+        "source_fetched_at": "2026-10-27T05:19:00.472962+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -279,15 +279,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "c5621c1c3efc489cfb3f01f0d722a10c32e814fd537083ae7defb23244bf650e",
-          "income_stmt.parquet": "cc0cc1daa7079a1c2d0fb0713a45585da4b82ab280af8f68ffdda6250b5c508a",
-          "cash_flow.parquet": "449f190f929a73d3f7aab5b13074c999497cff01b530a386a583f1245e4e4078",
-          "prices.parquet": "5e1987735fb3b74fb981cf8804d4ecb1ec04e07f495922fe1f1f7f57c24687f7"
+          "balance_sheet.parquet": "207d668dc6483cd5ba103e7ffb2ac9a3e3d8d7f95ed0cc7706d8e6beaf433cc3",
+          "income_stmt.parquet": "d604622fd1ad911d37837b84ac648b02c867adefdcd312b80e98e38d9e94be60",
+          "cash_flow.parquet": "f9cfb7e776acbb5ee1ed3992da393986c3ef82beccfa1b9257cd8fa7c7a7e4ad",
+          "prices.parquet": "51afdce7332a22ee535154a9aa077dfc41fb8bbd84dc72263f9de256e88cd50c"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-25T10:11:06.605631+00:00",
+        "source_fetched_at": "2026-10-27T05:19:02.148513+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -312,15 +312,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "1fda4296debd355b6c7701b853c8a6c9b1d0b08e5c8fdfb174d5f54896e38e79",
-          "quarterly_income_stmt.parquet": "13f9aff21070144a5e51e950af01b487d5c2bef509d9839dbaaccbf5b530444a",
-          "quarterly_cash_flow.parquet": "88d6766cc9b13ebef5b1b6410a4fa988c5185251009f44841c6f09101ed2b8eb"
+          "quarterly_balance_sheet.parquet": "761e033061ca57e04c409cc93dbd4611ccd752cf1af005488d521fb437a2852d",
+          "quarterly_income_stmt.parquet": "0d27e0a9f0de1aa1d79e8cadf4a664398683f9c29c1531b0beee80f9f0771615",
+          "quarterly_cash_flow.parquet": "76e76330fa476558480ca0cb7a5144fda9d616267b1e5fc8270a309756363500"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 117,
+    "statement_age_days": 119,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -341,6 +341,9 @@
     "currency_contract": {
       "ticker": "DOFG.OL",
       "full_name": "DOF Group ASA",
+      "exchange": "Euronext Oslo",
+      "expected_price_currency": "NOK",
+      "price_currency_match": true,
       "price_currency": "NOK",
       "financial_currency": "USD",
       "config_currency": "USD",
@@ -352,8 +355,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10733989626169205,
-        "observed_at": "2026-10-25T10:11:06.144876+00:00",
+        "rate": 0.10734877735376358,
+        "observed_at": "2026-10-27T05:19:00.955317+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -655,7 +658,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-25T10:11:06.608974+00:00",
+      "evaluation_as_of": "2026-10-27T05:19:02.151939+00:00",
       "ticker": "DOFG.OL",
       "currency": "USD",
       "unit": "currency units",
