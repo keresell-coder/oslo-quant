@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "snapshot_id": "c53158d3273f4441a48cec8cfef583ab",
-  "generated_at": "2026-10-27T05:20:35.493653+00:00",
+  "snapshot_id": "fd971125ce214cd3b6127384aedf4b26",
+  "generated_at": "2026-10-30T21:30:40.776986+00:00",
   "status": "degraded",
-  "source_fetched_at": "2026-10-27T05:18:33.529062+00:00",
+  "source_fetched_at": "2026-10-30T21:29:59.758760+00:00",
   "market_data_as_of": null,
   "expected_session": null,
   "data_kind": "financial-statements",
@@ -90,8 +90,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "EUR",
-          "rate": 0.09606999903917313,
-          "observed_at": "2026-10-27T05:18:34.320202+00:00",
+          "rate": 0.09731999784708023,
+          "observed_at": "2026-10-30T21:29:59.998340+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -111,9 +111,9 @@
       "ticker": "MOWI.OL",
       "status": "current",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:18:33.529062+00:00",
+      "source_fetched_at": "2026-10-30T21:29:59.758760+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -192,7 +192,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:18:39.032530+00:00",
+          "observed_at": "2026-10-30T21:30:01.960464+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -212,9 +212,9 @@
       "ticker": "SALM.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:18:38.664095+00:00",
+      "source_fetched_at": "2026-10-30T21:30:01.910329+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -293,7 +293,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:18:43.970778+00:00",
+          "observed_at": "2026-10-30T21:30:03.918195+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -313,9 +313,9 @@
       "ticker": "ORK.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:18:43.489665+00:00",
+      "source_fetched_at": "2026-10-30T21:30:03.860215+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -393,8 +393,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:18:48.213226+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:05.701920+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -414,9 +414,9 @@
       "ticker": "FRO.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:18:47.847375+00:00",
+      "source_fetched_at": "2026-10-30T21:30:05.645034+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -432,26 +432,26 @@
     {
       "filing_coverage": {
         "status": "unverified",
-        "latest_period_end": "2026-06-30",
+        "latest_period_end": "2026-09-30",
         "issuer_release": null,
         "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
         "input_source": "provider",
         "provider_tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -459,19 +459,19 @@
         "tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -495,7 +495,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:18:52.245892+00:00",
+          "observed_at": "2026-10-30T21:30:07.459724+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -511,13 +511,13 @@
           "generic free cash flow"
         ]
       },
-      "effective_statement_period_end": "2026-06-30",
+      "effective_statement_period_end": "2026-09-30",
       "ticker": "KOG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:18:51.872227+00:00",
-      "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "source_fetched_at": "2026-10-30T21:30:07.408822+00:00",
+      "latest_statement_period_end": "2026-09-30",
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -533,26 +533,26 @@
     {
       "filing_coverage": {
         "status": "unverified",
-        "latest_period_end": "2026-06-30",
+        "latest_period_end": "2026-09-30",
         "issuer_release": null,
         "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
         "input_source": "provider",
         "provider_tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -560,19 +560,19 @@
         "tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -596,7 +596,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:18:56.650792+00:00",
+          "observed_at": "2026-10-30T21:30:09.178784+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -612,13 +612,13 @@
           "generic free cash flow"
         ]
       },
-      "effective_statement_period_end": "2026-06-30",
+      "effective_statement_period_end": "2026-09-30",
       "ticker": "VEND.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:18:56.172440+00:00",
-      "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "source_fetched_at": "2026-10-30T21:30:09.126437+00:00",
+      "latest_statement_period_end": "2026-09-30",
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -696,8 +696,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:00.955317+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:11.912608+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -717,9 +717,9 @@
       "ticker": "DOFG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:00.472962+00:00",
+      "source_fetched_at": "2026-10-30T21:30:11.861566+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -797,8 +797,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:05.222146+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:13.528439+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -818,9 +818,9 @@
       "ticker": "BORR.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:04.852337+00:00",
+      "source_fetched_at": "2026-10-30T21:30:13.476887+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -898,8 +898,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:09.246089+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:15.770190+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -919,9 +919,9 @@
       "ticker": "COSH.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:08.763537+00:00",
+      "source_fetched_at": "2026-10-30T21:30:15.542933+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -999,8 +999,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:13.459802+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:17.370541+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1020,9 +1020,9 @@
       "ticker": "ODL.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:12.973761+00:00",
+      "source_fetched_at": "2026-10-30T21:30:17.318554+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1100,8 +1100,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "EUR",
-          "rate": 0.09606999903917313,
-          "observed_at": "2026-10-27T05:19:17.905501+00:00",
+          "rate": 0.09731999784708023,
+          "observed_at": "2026-10-30T21:30:19.444101+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1121,9 +1121,9 @@
       "ticker": "CADLR.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:17.421063+00:00",
+      "source_fetched_at": "2026-10-30T21:30:19.392526+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1201,8 +1201,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:21.922991+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:21.289369+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1222,9 +1222,9 @@
       "ticker": "HAFNI.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:21.550477+00:00",
+      "source_fetched_at": "2026-10-30T21:30:21.169743+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1240,26 +1240,26 @@
     {
       "filing_coverage": {
         "status": "unverified",
-        "latest_period_end": "2026-06-30",
+        "latest_period_end": "2026-09-30",
         "issuer_release": null,
         "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
         "input_source": "provider",
         "provider_tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -1267,19 +1267,19 @@
         "tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -1302,8 +1302,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "SEK",
-          "rate": 1.0671800374984741,
-          "observed_at": "2026-10-27T05:19:26.913445+00:00",
+          "rate": 1.0662000179290771,
+          "observed_at": "2026-10-30T21:30:23.230073+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1319,13 +1319,13 @@
           "generic free cash flow"
         ]
       },
-      "effective_statement_period_end": "2026-06-30",
+      "effective_statement_period_end": "2026-09-30",
       "ticker": "PUBLI.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:26.125107+00:00",
-      "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "source_fetched_at": "2026-10-30T21:30:22.952397+00:00",
+      "latest_statement_period_end": "2026-09-30",
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1404,7 +1404,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:19:31.600183+00:00",
+          "observed_at": "2026-10-30T21:30:25.346116+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1424,9 +1424,9 @@
       "ticker": "SCATC.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:31.120176+00:00",
+      "source_fetched_at": "2026-10-30T21:30:25.220072+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1505,7 +1505,7 @@
           "from": "USD",
           "to": "USD",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:19:35.647216+00:00",
+          "observed_at": "2026-10-30T21:30:27.348927+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -1525,9 +1525,9 @@
       "ticker": "VSAT",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:35.277010+00:00",
+      "source_fetched_at": "2026-10-30T21:30:27.216538+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -1647,8 +1647,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:39.906497+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:28.897225+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2189,9 +2189,9 @@
       "ticker": "NOD.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:39.426010+00:00",
+      "source_fetched_at": "2026-10-30T21:30:28.845668+00:00",
       "latest_statement_period_end": "2026-09-30",
-      "statement_age_days": 27,
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2269,8 +2269,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "USD",
-          "rate": 0.10734877735376358,
-          "observed_at": "2026-10-27T05:19:44.332023+00:00",
+          "rate": 0.10884827375411987,
+          "observed_at": "2026-10-30T21:30:30.772586+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2290,9 +2290,9 @@
       "ticker": "CMBTO.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:43.853729+00:00",
+      "source_fetched_at": "2026-10-30T21:30:30.721701+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2308,26 +2308,26 @@
     {
       "filing_coverage": {
         "status": "unverified",
-        "latest_period_end": "2026-06-30",
+        "latest_period_end": "2026-09-30",
         "issuer_release": null,
         "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
         "input_source": "provider",
         "provider_tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -2335,19 +2335,19 @@
         "tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -2371,7 +2371,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:19:48.757808+00:00",
+          "observed_at": "2026-10-30T21:30:32.557514+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2387,13 +2387,13 @@
           "generic free cash flow"
         ]
       },
-      "effective_statement_period_end": "2026-06-30",
+      "effective_statement_period_end": "2026-09-30",
       "ticker": "ELK.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:48.385939+00:00",
-      "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "source_fetched_at": "2026-10-30T21:30:32.493711+00:00",
+      "latest_statement_period_end": "2026-09-30",
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2409,26 +2409,26 @@
     {
       "filing_coverage": {
         "status": "unverified",
-        "latest_period_end": "2026-06-30",
+        "latest_period_end": "2026-09-30",
         "issuer_release": null,
         "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
         "input_source": "provider",
         "provider_tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -2436,19 +2436,19 @@
         "tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -2472,7 +2472,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:19:52.909701+00:00",
+          "observed_at": "2026-10-30T21:30:34.396967+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2488,13 +2488,13 @@
           "generic free cash flow"
         ]
       },
-      "effective_statement_period_end": "2026-06-30",
+      "effective_statement_period_end": "2026-09-30",
       "ticker": "BRG.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:52.536270+00:00",
-      "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "source_fetched_at": "2026-10-30T21:30:34.346307+00:00",
+      "latest_statement_period_end": "2026-09-30",
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2572,8 +2572,8 @@
         "price_conversion": {
           "from": "NOK",
           "to": "EUR",
-          "rate": 0.09606999903917313,
-          "observed_at": "2026-10-27T05:19:56.978935+00:00",
+          "rate": 0.09731999784708023,
+          "observed_at": "2026-10-30T21:30:36.089857+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2593,9 +2593,9 @@
       "ticker": "KIT.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:19:56.604836+00:00",
+      "source_fetched_at": "2026-10-30T21:30:36.036923+00:00",
       "latest_statement_period_end": "2026-09-30",
-      "statement_age_days": 27,
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2674,7 +2674,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:20:01.345009+00:00",
+          "observed_at": "2026-10-30T21:30:38.240085+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2694,9 +2694,9 @@
       "ticker": "NORBT.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:20:00.755640+00:00",
+      "source_fetched_at": "2026-10-30T21:30:38.121627+00:00",
       "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "statement_age_days": 122,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {
@@ -2712,26 +2712,26 @@
     {
       "filing_coverage": {
         "status": "unverified",
-        "latest_period_end": "2026-06-30",
+        "latest_period_end": "2026-09-30",
         "issuer_release": null,
         "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified.",
         "input_source": "provider",
         "provider_tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -2739,19 +2739,19 @@
         "tables": {
           "income_stmt": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "balance_sheet": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           },
           "cash_flow": {
             "status": "unverified",
-            "latest_period_end": "2026-06-30",
+            "latest_period_end": "2026-09-30",
             "issuer_release": null,
             "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
           }
@@ -2775,7 +2775,7 @@
           "from": "NOK",
           "to": "NOK",
           "rate": 1.0,
-          "observed_at": "2026-10-27T05:20:05.618715+00:00",
+          "observed_at": "2026-10-30T21:30:40.099692+00:00",
           "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
         }
       },
@@ -2791,13 +2791,13 @@
           "generic free cash flow"
         ]
       },
-      "effective_statement_period_end": "2026-06-30",
+      "effective_statement_period_end": "2026-09-30",
       "ticker": "TEL.OL",
       "status": "degraded",
       "withheld_reasons": [],
-      "source_fetched_at": "2026-10-27T05:20:05.246722+00:00",
-      "latest_statement_period_end": "2026-06-30",
-      "statement_age_days": 119,
+      "source_fetched_at": "2026-10-30T21:30:40.039051+00:00",
+      "latest_statement_period_end": "2026-09-30",
+      "statement_age_days": 30,
       "statement_status": "available",
       "missing_statement_tables": [],
       "primary_ledger": {

@@ -1,7 +1,7 @@
 {
   "ticker": "BORR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-27T05:19:06.445272Z",
+  "computed_at": "2026-10-30T21:30:14.084865Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "c53158d3273f4441a48cec8cfef583ab",
-    "snapshot_id": "2cd54246eabc4d28b6ed",
+    "run_id": "fd971125ce214cd3b6127384aedf4b26",
+    "snapshot_id": "18bf0e4a566c6acb21d3",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-27T05:19:04.852337+00:00",
+        "source_fetched_at": "2026-10-30T21:30:13.476887+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -124,15 +124,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "ffdf07add6a045212cbc159cd97ae4783f11e649dbb47e7a01e9a86791a189b1",
-          "income_stmt.parquet": "d9ad802f5345fcb1e8113dad3ae0faf947a406e525df97fedfb45557ca6153c8",
-          "cash_flow.parquet": "c4a724eb1527091822705dc62ecf41db1b23cf86c2bfad9615c32823ec4391a7",
-          "prices.parquet": "27461429b8f715b1c76301b72579552bc96f42b82b03c3dd90427d2489a5900a"
+          "balance_sheet.parquet": "ccd2ef4f28033bb7365477a6c1e69bf2b3c328f50d2bbc26163129816bbdda05",
+          "income_stmt.parquet": "f583d510f1a2088b863625382b0b91c2f879eaa142cd65aad5615fb493082584",
+          "cash_flow.parquet": "a444f422be697fed6329d0f094e3ba87e53c0302c696289c74e6cf29ead2deee",
+          "prices.parquet": "a1262fe099324d9b472508385154b192d3df8a8b8a5437f7a705209f76a47f6d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-27T05:19:06.434050+00:00",
+        "source_fetched_at": "2026-10-30T21:30:14.067795+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -160,15 +160,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "8f7e9e01a5f2db0daea32101446112e37f12c8516c1628a50586e4740f1a8dd9",
-          "quarterly_income_stmt.parquet": "e2e6a0d4aa6c496cf29d5d7a9d72bc4062d2c39347b6c52525ac9dbc97f2dffb",
-          "quarterly_cash_flow.parquet": "23a9833c2d665a287d0f1c1bb3b69fdbbfcfa73caed56f75a69030d143d610c4"
+          "quarterly_balance_sheet.parquet": "6ea39c8772332cee7b51fe5a54de0a0d14c9eb43a3c0534c66d7e47e7fe6c7dd",
+          "quarterly_income_stmt.parquet": "c655ee92cd2b1d184a9777fbfc9accd8bd5f8348462059d7f5810aa96ac14f42",
+          "quarterly_cash_flow.parquet": "1d41a9037398052239d6bbd52489895e97848499d3f20968d8167a593b143ece"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 119,
+    "statement_age_days": 122,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -203,8 +203,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10734877735376358,
-        "observed_at": "2026-10-27T05:19:05.222146+00:00",
+        "rate": 0.10884827375411987,
+        "observed_at": "2026-10-30T21:30:13.528439+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -229,7 +229,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-27T05:19:06.437899+00:00",
+      "evaluation_as_of": "2026-10-30T21:30:14.070542+00:00",
       "ticker": "BORR.OL",
       "currency": "USD",
       "unit": "currency units",

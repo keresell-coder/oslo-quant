@@ -1,21 +1,21 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-27T05:19:28.377235+00:00",
+  "computed_at": "2026-10-30T21:30:24.113297+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
-    "LTM 2026-06": {
-      "cfo_accruals": -1340774393.0,
-      "cfo_accrual_ratio": -0.0251,
+    "LTM 2026-09": {
+      "cfo_accruals": -1966526508.0,
+      "cfo_accrual_ratio": -0.0363,
       "bs_accruals": null,
       "bs_accrual_ratio": null,
       "earnings_quality": "Unrated diagnostic",
       "cash_conversion_description": "Operating cash flow exceeds net income",
       "methods_divergence": null,
       "methods_diverge_materially": false,
-      "net_income": 397419503.0,
-      "operating_cash_flow": 1738193896.0,
-      "avg_total_assets": 53515542801.0,
+      "net_income": 298150290.0,
+      "operating_cash_flow": 2264676798.0,
+      "avg_total_assets": 54102542801.0,
       "period_basis": "overlapping interim adaptation: LTM versus latest FY",
       "bs_status": "withheld: income_taxes_payable, prior_income_taxes_payable, nonnegative depreciation/amortization expense, BS delta window does not match overlapping LTM flows",
       "definitions": {
@@ -41,13 +41,13 @@
         "depreciation_amortization": null
       },
       "bs_components": {
-        "current_assets": 2732000000.0,
+        "current_assets": 2162000000.0,
         "prior_current_assets": 1360677138.0,
-        "cash": 2438000000.0,
+        "cash": 1899000000.0,
         "prior_cash": 949820356.0,
-        "current_liabilities": 3806000000.0,
+        "current_liabilities": 3705000000.0,
         "prior_current_liabilities": 1989315466.0,
-        "current_debt": 1058000000.0,
+        "current_debt": 1705000000.0,
         "prior_current_debt": 206800964.0,
         "income_taxes_payable": null,
         "prior_income_taxes_payable": null
@@ -205,12 +205,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "c53158d3273f4441a48cec8cfef583ab",
-    "snapshot_id": "edc3fdb80d50b6f9844a",
+    "run_id": "fd971125ce214cd3b6127384aedf4b26",
+    "snapshot_id": "b50282dd72fe029b1220",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-27T05:19:26.125107+00:00",
+        "source_fetched_at": "2026-10-30T21:30:22.952397+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -235,30 +235,31 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "96fc47d76cd1be395048ad196a47e2311652532512fa36f895461b810ef6a2c6",
-          "income_stmt.parquet": "2cadb4c274b9ea4bf7d34f98a76e313efe4b623e9334e25fb0a640da21119ab0",
-          "cash_flow.parquet": "4bbfe8a35a7e21c073f64f3802f6a14e93d085bb884331341b19f2ef4da2adc1",
-          "prices.parquet": "77f621359f0f4d49696f1e64a31f23690fdf82f6dc579d0df34c115cf7387352"
+          "balance_sheet.parquet": "92f8d6a295fbf312f0d3e73e5420a935d37f86edf2d088cdc7bad9a2c8c29ebb",
+          "income_stmt.parquet": "9fb917b4156c05e8e574b4656f3a062a309b7508d47c047a37b63cc2a75037bc",
+          "cash_flow.parquet": "592c5dc6c486893bb5c71d929b23b37bf49f8c65564fe1fce910def962b3bcad",
+          "prices.parquet": "f94af8d31239b254b43f9bb23f422f6c09f6a84d16723bfa9176596f4da6b882"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-27T05:19:28.062533+00:00",
+        "source_fetched_at": "2026-10-30T21:30:23.908918+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
-            "2025-03-31",
             "2025-06-30",
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
@@ -266,19 +267,20 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "52973c6f9db7fcba41718aaf4638038ea7b5414baa7cbcca3fedf4736b074255",
-          "quarterly_income_stmt.parquet": "93af224a463205c5228cd63d1eeadc8295d5a544aa44e7398861d4d4d5e7169f",
-          "quarterly_cash_flow.parquet": "4af6b22b94feb0352870ab37b4185ee36dcaa6efb71e6bed72bc8d3b67339c65"
+          "quarterly_balance_sheet.parquet": "cccdd8a24cc8c64c90d4819e49a3e125ff66eb30e1e57235c3fa90c627861505",
+          "quarterly_income_stmt.parquet": "30c0eb18c51f3fc6c61bb209954fdfb289124eb87d15d47886deb35ea027c694",
+          "quarterly_cash_flow.parquet": "90cae0ea98d416782b5d341c15fba3b5f147594b65fa6de512380eb9027b409b"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 119,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 30,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -292,7 +294,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -313,8 +315,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "SEK",
-        "rate": 1.0671800374984741,
-        "observed_at": "2026-10-27T05:19:26.913445+00:00",
+        "rate": 1.0662000179290771,
+        "observed_at": "2026-10-30T21:30:23.230073+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -535,7 +537,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-27T05:19:28.067764+00:00",
+      "evaluation_as_of": "2026-10-30T21:30:23.912163+00:00",
       "ticker": "PUBLI.OL",
       "currency": "SEK",
       "unit": "currency units",

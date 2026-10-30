@@ -1,11 +1,11 @@
 {
   "ticker": "KIT.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-27T05:19:58.077563Z",
+  "computed_at": "2026-10-30T21:30:36.915249Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
-      "o_score": -1.4084,
+      "o_score": -1.4082,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -22,7 +22,7 @@
       }
     },
     "2025": {
-      "o_score": -1.693,
+      "o_score": -1.6929,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -39,7 +39,7 @@
       }
     },
     "2024": {
-      "o_score": -0.6312,
+      "o_score": -0.631,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -56,7 +56,7 @@
       }
     },
     "2023": {
-      "o_score": -0.78,
+      "o_score": -0.7799,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "c53158d3273f4441a48cec8cfef583ab",
-    "snapshot_id": "989ef451ff81dad67e12",
+    "run_id": "fd971125ce214cd3b6127384aedf4b26",
+    "snapshot_id": "f1ec84706cca185d9ad1",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-27T05:19:56.604836+00:00",
+        "source_fetched_at": "2026-10-30T21:30:36.036923+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -124,15 +124,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "1d8cf6ae5ebefbb953bddb2b2756aaa584d746bed06bd96029a15feda97a4d67",
-          "income_stmt.parquet": "ecf424340bc4958102031db268ba61fcdab2dc4be02d0382601ae6d1c486c724",
-          "cash_flow.parquet": "6aec97eaa94522d34875948042ff23c87994778f96feafecda54aa20ec7b318e",
-          "prices.parquet": "a69177a81fa7e851c111028a440b36d3c3bdcb82b9b4f7f69e7172ff6fc21761"
+          "balance_sheet.parquet": "b27e6f246e0433ae2dbb945b8f603330e7073feca4cc23f53429f674902e16d5",
+          "income_stmt.parquet": "e6dcc9cb7d0638d889f0c88d4036a115b1686fa966aee0c3cc015097615fd3dc",
+          "cash_flow.parquet": "51dc7d047eddc2b6391c9f888d21f4b5556dd9bcfcad000660b3018368d67fb5",
+          "prices.parquet": "ac2bfba140c73a0da464a2ee416c805b8ae05830ac44ec4e986cef603900a917"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-27T05:19:58.065144+00:00",
+        "source_fetched_at": "2026-10-30T21:30:36.898979+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -160,15 +160,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "f703096fd8b0cce6fbc15851cff057666db9cfcf438d234896606ab1f3657732",
-          "quarterly_income_stmt.parquet": "86de37deebc0998306931d2374e4c5f8bc7fdfc8e55369ed82785e604fe4fcfa",
-          "quarterly_cash_flow.parquet": "c123185b1106b9037ba4d8f4ed4f2da1265f40b0d3ec5860f0f1e84dd9389219"
+          "quarterly_balance_sheet.parquet": "f96828f9a53065142330f71d406224b6a0f58969737c4099b0c7d033895dc448",
+          "quarterly_income_stmt.parquet": "a71041f04819e1893983cfcbdf53acd45b38576c48f4511e3ed83604a8edebcf",
+          "quarterly_cash_flow.parquet": "dd86ca60b512926cb3a74780c6d1c21cc329f3c4ad30d5786e6db056cc6b3a3c"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 27,
+    "statement_age_days": 30,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -203,8 +203,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09606999903917313,
-        "observed_at": "2026-10-27T05:19:56.978935+00:00",
+        "rate": 0.09731999784708023,
+        "observed_at": "2026-10-30T21:30:36.089857+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -229,7 +229,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-27T05:19:58.069953+00:00",
+      "evaluation_as_of": "2026-10-30T21:30:36.902029+00:00",
       "ticker": "KIT.OL",
       "currency": "EUR",
       "unit": "currency units",

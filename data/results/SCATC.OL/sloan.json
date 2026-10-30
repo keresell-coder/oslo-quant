@@ -1,7 +1,7 @@
 {
   "ticker": "SCATC.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-27T05:19:32.923009+00:00",
+  "computed_at": "2026-10-30T21:30:26.038942+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2025": {
@@ -156,12 +156,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "c53158d3273f4441a48cec8cfef583ab",
-    "snapshot_id": "29f35d7d88b6550d6a51",
+    "run_id": "fd971125ce214cd3b6127384aedf4b26",
+    "snapshot_id": "a48f56a6e956dc89a9f6",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-27T05:19:31.120176+00:00",
+        "source_fetched_at": "2026-10-30T21:30:25.220072+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -186,15 +186,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "99470e92448f715846c9487b73f74cf12b0b80a348ab9627929afad2c6d74db0",
-          "income_stmt.parquet": "5725ed1390e4f158761edf1290787b197c09120b84079220afeaa4ff5ef09176",
-          "cash_flow.parquet": "d6cddc50aebab7e402c2001ca9775517ee36f3a759ceb96e553488482159bec8",
-          "prices.parquet": "1ab0553f1abbaf0165874547ad1912df538f5bc872652dd8487253dd72a7c2a8"
+          "balance_sheet.parquet": "3918d1b34cbfe0b8284f4f61cf74d312cf3b1731b6e54a27cfe9ffe687fbf240",
+          "income_stmt.parquet": "5774de3d0ed7d28487b4ffe0ba99774bdf61e2ea3e0c8e7c815578e00759db1e",
+          "cash_flow.parquet": "4b30cf884f9c07b7beb2f732e6ef2794bb9e28e8bb828591bbed22d6da8b160f",
+          "prices.parquet": "5491524330d654189c1a66f94685d9b0707a91e3349adff0b591f8dc40f64fe4"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-27T05:19:32.915946+00:00",
+        "source_fetched_at": "2026-10-30T21:30:25.987068+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -220,15 +220,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "27ba82edc05ffd8c8b4631e43406909d5856a27ec38ab087c12f59cc3a9e992c",
-          "quarterly_income_stmt.parquet": "2252f3430d41cdc901b2c182e4297525286a5bbbd9708b192173655c8b1a888f",
-          "quarterly_cash_flow.parquet": "8abf452539fe887f8353e2fc8e6556b4a74990b37d91cf39359b809918584d78"
+          "quarterly_balance_sheet.parquet": "e3f8797703c660132b8bd19021788aec1c9ee57c337eefac99ddbbeb8234e925",
+          "quarterly_income_stmt.parquet": "bf6b8cf32c5556d3f3e0e17a27c3925aafb5ed2c75d1dd61f7c778fefcff7a58",
+          "quarterly_cash_flow.parquet": "0ca573af41142dc6466a071ea5c3ff73c0707a04ae6a262018b0676e21a1326a"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 119,
+    "statement_age_days": 122,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -264,7 +264,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-27T05:19:31.600183+00:00",
+        "observed_at": "2026-10-30T21:30:25.346116+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -289,7 +289,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-27T05:19:32.918214+00:00",
+      "evaluation_as_of": "2026-10-30T21:30:25.993558+00:00",
       "ticker": "SCATC.OL",
       "currency": "NOK",
       "unit": "currency units",

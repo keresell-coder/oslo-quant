@@ -1,9 +1,21 @@
 {
   "ticker": "BRG.OL",
   "framework": "altman",
-  "computed_at": "2026-10-27T05:19:54.139277Z",
+  "computed_at": "2026-10-30T21:30:34.999943Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
+    "LTM 2026-09": {
+      "z_score": null,
+      "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
+      "zone": "Not assessable",
+      "z_score_prime": null,
+      "zone_prime": "Not assessable",
+      "x1_working_capital_to_assets": 0.1719,
+      "x2_retained_earnings_to_assets": null,
+      "x3_ebit_to_assets": 0.1032,
+      "x4_book_equity_to_liabilities": 1.5539,
+      "x5_revenue_to_assets": 0.7848
+    },
     "2025": {
       "z_score": null,
       "original_reference_status": "withheld: original 1968 X4 needs dated market equity; book equity is not a substitute",
@@ -57,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "c53158d3273f4441a48cec8cfef583ab",
-    "snapshot_id": "22d0e35dc01894db961b",
+    "run_id": "fd971125ce214cd3b6127384aedf4b26",
+    "snapshot_id": "829c706ccd3f8414f2a7",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-27T05:19:52.536270+00:00",
+        "source_fetched_at": "2026-10-30T21:30:34.346307+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -86,15 +98,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "ae046b2965a7be0d9a0eb484fb13c3150f548b834dd459fa3cde1bf5874b010d",
-          "income_stmt.parquet": "ab712480f3518810341a2e89b7a903b295ba8e251dfbda7a412a7f6c13a709e2",
-          "cash_flow.parquet": "f5d69ea61953039a20106ef477e97e4954c71b144094e40fd3af5941a1fd6d25",
-          "prices.parquet": "b61a32168459035bf64c0d0a1283d9e1f9a794b9d4ff26e033c06f3c44bd9f00"
+          "balance_sheet.parquet": "e88b809b1abca0eee95899efa3181f753ec4aa897c931d4b094c170d82f121b0",
+          "income_stmt.parquet": "4ac3828527067a6b217ef5bdda4c24801c7a2caacb158318a99d5ddcabb99c24",
+          "cash_flow.parquet": "cc9ddeaa22c5501f1cb8e5a388b7fdfd6d065f7fa1f21cbb5b7076e883064450",
+          "prices.parquet": "0ca0ac4f94fe9a199776ab3c4569ebfff8a14fe245dc62bacb30b51c2e09bda0"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-27T05:19:54.129748+00:00",
+        "source_fetched_at": "2026-10-30T21:30:34.980704+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -102,33 +114,37 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
             "2025-03-31",
             "2025-06-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
             "2025-06-30",
+            "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "2278f212821a92a02a382338159e5f9441b453406cc5e1f7306ea8d02bb04754",
-          "quarterly_income_stmt.parquet": "1b5bd763c37270478d44d9798193c91afb80194d1f30af7ce7d8183503b8a585",
-          "quarterly_cash_flow.parquet": "6617f78a211ad8ccd747af74a62572ffd8c5ee68146fedb5ed5d7df604246fd0"
+          "quarterly_balance_sheet.parquet": "837bee846cd673e67d19bb2d60fbe547be1350f5878807d64b6431ec858d951c",
+          "quarterly_income_stmt.parquet": "312824e67eee5f1e17707e832e415738cd473b9c1a2eabb7a442c2a4a7d030d2",
+          "quarterly_cash_flow.parquet": "5dba59c55cb1a4ccbd413641f71430703d87881ebd5f0e93f8857b967f182c70"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 119,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 30,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -142,7 +158,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -164,7 +180,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-27T05:19:52.909701+00:00",
+        "observed_at": "2026-10-30T21:30:34.396967+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -189,7 +205,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-27T05:19:54.132071+00:00",
+      "evaluation_as_of": "2026-10-30T21:30:34.983970+00:00",
       "ticker": "BRG.OL",
       "currency": "NOK",
       "unit": "currency units",

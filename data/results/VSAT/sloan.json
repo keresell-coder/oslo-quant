@@ -1,7 +1,7 @@
 {
   "ticker": "VSAT",
   "framework": "sloan",
-  "computed_at": "2026-10-27T05:19:37.024202+00:00",
+  "computed_at": "2026-10-30T21:30:27.882753+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "2026": {
@@ -156,12 +156,12 @@
   "price_currency": "USD",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "c53158d3273f4441a48cec8cfef583ab",
-    "snapshot_id": "80cc2afc1f3e03870288",
+    "run_id": "fd971125ce214cd3b6127384aedf4b26",
+    "snapshot_id": "dc27ac66748afd771207",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-27T05:19:35.277010+00:00",
+        "source_fetched_at": "2026-10-30T21:30:27.216538+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2022-03-31",
@@ -186,15 +186,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "16d528a0b08b9ec64786085867db8ea97aa0ad3b9da0a3c278f17bdd5bb9504d",
-          "income_stmt.parquet": "79aeca10e4b21a868d0bc79f93389ca396f5f040fb9a4752ba6911ebc56f745b",
-          "cash_flow.parquet": "a9a945585c726578c5e71a2478e3bbcc0d2f1f43897bc918f34ba54332593bf8",
-          "prices.parquet": "9c7e60155241c1f107b42d8ac14561e332f0b912e3f90e100493ef6d47c0607f"
+          "balance_sheet.parquet": "1f9e6cd008cdd72ecec939035e60445fa88f117f12123cccdedf900cbd4fdd23",
+          "income_stmt.parquet": "b924159415492e6ceb13d28f646031c08b677296f851be7542f9b570591c081b",
+          "cash_flow.parquet": "f1d742fc8e2fc8dac6f238020c95fbc970b59f1f8c8a2ae9e4f7c0b75bef8d4b",
+          "prices.parquet": "7670dd3b00244461cd828c2ed12014c21a85a99b5a4bad6a42995a97095e12a1"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-27T05:19:37.016701+00:00",
+        "source_fetched_at": "2026-10-30T21:30:27.871342+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -222,15 +222,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "6508d9b9931ece036999d9d70670eaed0fa6b6065dbfe6d465ed12eb55e27228",
-          "quarterly_income_stmt.parquet": "b63964e21541d192569f2c16621a61bf197a7cb594a444cfcfbd4fa98186bcc8",
-          "quarterly_cash_flow.parquet": "6a2c1da08803846e24aa728e6623c4cb38582fc67874836b94b47993060f5273"
+          "quarterly_balance_sheet.parquet": "9fc9dc7435486ad56b4be25a206b451f3a83423b0e9fd65753bbeac42589e620",
+          "quarterly_income_stmt.parquet": "d1d20cee13a7c6ad4f9ed023c4826791055e8088d4326ef9b502aa96370ec097",
+          "quarterly_cash_flow.parquet": "4ad0b32e32af8bc12c8760788a6431a4220a5fa0dc4496090db0360bbbb9b8fd"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 119,
+    "statement_age_days": 122,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -266,7 +266,7 @@
         "from": "USD",
         "to": "USD",
         "rate": 1.0,
-        "observed_at": "2026-10-27T05:19:35.647216+00:00",
+        "observed_at": "2026-10-30T21:30:27.348927+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -291,7 +291,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-27T05:19:37.019152+00:00",
+      "evaluation_as_of": "2026-10-30T21:30:27.872720+00:00",
       "ticker": "VSAT",
       "currency": "USD",
       "unit": "currency units",

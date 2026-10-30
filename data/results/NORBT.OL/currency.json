@@ -16,7 +16,7 @@
     "from": "NOK",
     "to": "NOK",
     "rate": 1.0,
-    "observed_at": "2026-10-27T05:20:01.345009+00:00",
+    "observed_at": "2026-10-30T21:30:38.240085+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }
