@@ -1,7 +1,7 @@
 {
   "ticker": "CMBTO.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-30T21:30:31.394401Z",
+  "computed_at": "2026-11-06T22:07:47.990982Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.3715,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "ba059bf530cbaf517cdf",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "a5111b6777f828ec37d9",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:30.721701+00:00",
+        "source_fetched_at": "2026-11-06T22:07:47.368798+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -108,15 +108,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "05032ee5e461ca9a55b2a4ed9b975a9aef1f4dcb947d37aa2e331de5a14c03a9",
-          "income_stmt.parquet": "fbc54247ea8d6252800f2afbe8a9c326149fb9d85114a357bcd3ceb853abfacb",
-          "cash_flow.parquet": "0f17996ee40bfc0aa7d592fc9b02fd9142b2afd43f1e07c5285c1e060294f802",
-          "prices.parquet": "34a22770d4e8c31f4b37ff2bae42bda1a7b0d6c8d83e2e6bf75b3f5e06826e76"
+          "balance_sheet.parquet": "019bcb1a88da9537315bcef528e701d01672f68ec70aeba78ff0dbf7bb2c3bbe",
+          "income_stmt.parquet": "eb5888d3448f0ff3fcd8dc7be2cbfe6a5f5e5a7396b42f2b996aed85fc820336",
+          "cash_flow.parquet": "b9b0d94f235bffcbcd46158d0dba9c2cb319c5c40ea9a2e56dd24cd72d660503",
+          "prices.parquet": "5065027d3a4b0b08068e1b4b1b575c158741e00f540b17d83b503c5ab520c804"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:31.388602+00:00",
+        "source_fetched_at": "2026-11-06T22:07:47.979352+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -144,15 +144,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "98ed7608e65b98d826f0980cdeb46f02bca55c4eff5b6f98f1060e944a9e0d60",
-          "quarterly_income_stmt.parquet": "bdba96b18e7dda2f7f763dd7e7134df49f43231207c4ccd5bf9130740e9b5cae",
-          "quarterly_cash_flow.parquet": "6ca4384dbb88f354c1a5034ffaae189f244d8f1de75d1e6ef698248a7f9b446c"
+          "quarterly_balance_sheet.parquet": "5974f9ce09ef00c40d1cd92b4cdaefffd45e905e294aa453d60fe1450c738213",
+          "quarterly_income_stmt.parquet": "8dbc60c59f7a277b929703bf158fc666769dc81e676c636ea41bf5b8cede22a1",
+          "quarterly_cash_flow.parquet": "b5ff7fd69c41339ef031292dcac795781a0fc7a307640f4af8131c687d7cfac5"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 122,
+    "statement_age_days": 129,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -187,8 +187,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10884827375411987,
-        "observed_at": "2026-10-30T21:30:30.772586+00:00",
+        "rate": 0.10585661977529526,
+        "observed_at": "2026-11-06T22:07:47.461248+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -213,7 +213,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:31.391426+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:47.984855+00:00",
       "ticker": "CMBTO.OL",
       "currency": "USD",
       "unit": "currency units",

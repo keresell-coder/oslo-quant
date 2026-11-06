@@ -1,7 +1,7 @@
 {
   "ticker": "ELK.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-30T21:30:33.185976+00:00",
+  "computed_at": "2026-11-06T22:07:49.552518+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "185b5174908d5b123f23",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "4ac4ee253d2f46a97069",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:32.493711+00:00",
+        "source_fetched_at": "2026-11-06T22:07:48.911007+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -338,15 +338,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "087d6f14d0a539fb3c75cc8a450fa2df16f4035c82470a282e273fab9c01d79e",
-          "income_stmt.parquet": "b835bbaeb38e962328faa7dd46e073522e3b302968021e1f8f3363be51dd77f6",
-          "cash_flow.parquet": "48f1b74eab4282274a61f9a7b0adeaaf0cab5455f4276a35950024104639d279",
-          "prices.parquet": "4c71912946f3988457133244e6b29783984085c76e32433e02704d914613add3"
+          "balance_sheet.parquet": "46da71912eedf96bc31a807722788d73bd0dbe4dcff0fb9aa68cd04dd5822a25",
+          "income_stmt.parquet": "51b8454833a5cef8ce15861fff3f4c1ca402185bd30e4266989e7b3c47c06a39",
+          "cash_flow.parquet": "f230d36cbf15d3ad6f6c23b6346460e4a531fe02f750b90a465b407c2e24d074",
+          "prices.parquet": "41b466dbaab1ab64efdd3185fe15e2138af0bd89ba485d1bc8eb2cd03db23348"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:33.174490+00:00",
+        "source_fetched_at": "2026-11-06T22:07:49.530759+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -376,15 +376,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "432c69ff1e15c05a1195d6dd66b01645503e697b8447bc640c9820ba57b00779",
-          "quarterly_income_stmt.parquet": "5cace100d2c7c0e29cfa41e6789cd6facd288412b82774880233e7185699193e",
-          "quarterly_cash_flow.parquet": "406c2879b60bc72f17f0fba7895a58823fd901192647c7f695b9cb529022da9e"
+          "quarterly_balance_sheet.parquet": "04c228479c67018b49fce1495ac34f27d98f7737843863cf5004945faf8b324c",
+          "quarterly_income_stmt.parquet": "85136352a7da9564a5314fb7a62d39fffc242a7266bd4410e659c0a91cf5b361",
+          "quarterly_cash_flow.parquet": "0b21840b63a58052098fa4e0fb50e0293e322994026be5ceee58fcc8574c62eb"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 30,
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -420,7 +420,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-30T21:30:32.557514+00:00",
+        "observed_at": "2026-11-06T22:07:48.923183+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -445,7 +445,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:33.177785+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:49.536427+00:00",
       "ticker": "ELK.OL",
       "currency": "NOK",
       "unit": "currency units",

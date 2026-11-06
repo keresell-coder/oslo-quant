@@ -1,7 +1,7 @@
 {
   "ticker": "KOG.OL",
   "framework": "altman",
-  "computed_at": "2026-10-30T21:30:08.037496Z",
+  "computed_at": "2026-11-06T22:07:30.651170Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "64d0ada25556d8b30ab0",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "689b74e02e8fc072d553",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:07.408822+00:00",
+        "source_fetched_at": "2026-11-06T22:07:30.140835+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -99,15 +99,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "ef5450fdfb150697f481c3edae73ad9333af5101d8211d96f4ef70117135a369",
-          "income_stmt.parquet": "9b14ff33a9eedbf76ad14bda246b9a263e616918c4df10f717f671dc5006b4ad",
-          "cash_flow.parquet": "039dd7b3e7ddb9eec812d4daff4a6d92080830b841a798edba8869a8b5fcca16",
-          "prices.parquet": "cb7632710022559b1bdaa8685d321e65e19fa148eed5427f213e31f05a08801b"
+          "balance_sheet.parquet": "7394a3759cf38f31166aed0f2a4e1a3e283fe3c3feee91ec658ae4e38961b0e6",
+          "income_stmt.parquet": "bf17a98e392b8f75a728352c8cd1ffa226bf5d032d311855c25ac4ccc7e1f7b9",
+          "cash_flow.parquet": "ebc69b41b79ebc7d49c8356f6b3fa253704370fab4ec64f7c1204968dbfd5c85",
+          "prices.parquet": "46d9bdb98ef9146a14a65943eb6013d71d4a58be7d5e70d960f42334dbd8af15"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:08.018226+00:00",
+        "source_fetched_at": "2026-11-06T22:07:30.611683+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -136,15 +136,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "2d97e62cc5c27b84364d80f4d100c9536e88ae99dc710473276e4aab33eddc49",
-          "quarterly_income_stmt.parquet": "68532498f37fa0098c192bdad2b4c3e737292971391be55efe0aa4ab5c28aec9",
-          "quarterly_cash_flow.parquet": "719219fc269e82b76d99b0c4e8efc307fef4c968808f95d5890b503907e15a41"
+          "quarterly_balance_sheet.parquet": "24d29bc4c504fefb05f2cb92223e77983524d276bc42925a533a7fdfde9816c6",
+          "quarterly_income_stmt.parquet": "6f28cfd2bb00c364bb199dabaf209aec74e0e8b7bfcf7302cbfc942223671a7c",
+          "quarterly_cash_flow.parquet": "245a7b739a711c75040e0a5994d3f8a2d5154479c54de3a65afac3a9aa5a8e38"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 30,
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -180,7 +180,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-30T21:30:07.459724+00:00",
+        "observed_at": "2026-11-06T22:07:30.153712+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -205,7 +205,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:08.021052+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:30.617349+00:00",
       "ticker": "KOG.OL",
       "currency": "NOK",
       "unit": "currency units",

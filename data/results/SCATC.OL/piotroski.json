@@ -1,9 +1,69 @@
 {
   "ticker": "SCATC.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-30T21:30:25.999615+00:00",
+  "computed_at": "2026-11-06T22:07:43.666457+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
+    "LTM 2026-09": {
+      "f_score": null,
+      "f_score_partial": 3,
+      "signals_assessable": 6,
+      "signals": {
+        "F1_positive_roa": 0,
+        "F2_positive_cfo": 1,
+        "F3_roa_increasing": 0,
+        "F4_accruals_quality": 1,
+        "F5_leverage_decreasing": null,
+        "F6_liquidity_improving": 0,
+        "F7_no_dilution": null,
+        "F8_gross_margin_improving": null,
+        "F9_asset_turnover_improving": 1
+      },
+      "interpretation": "Not assessable (6 of 9 signals)",
+      "roa": -0.0242,
+      "cfo_to_assets": 0.0292,
+      "current_ratio": 0.9772,
+      "gross_margin": null,
+      "asset_turnover": 0.087,
+      "period_basis": "overlapping interim adaptation: LTM versus latest FY",
+      "turnover_convention": "average total assets (Table1); paper prose uses opening assets, not uniquely settled",
+      "input_proxies": [
+        "Net Income proxy for pre-extraordinary income",
+        "Gross reported equity cash proceeds proxy; noncash issuance is not established by this row"
+      ],
+      "signal_definitions": {
+        "F7_no_dilution": "Legacy key: no gross reported equity cash proceeds (proxy); noncash issuance not established; share-count/net-issuance proxies are not used"
+      },
+      "denominators": {
+        "opening_assets": 50170000000.0,
+        "prior_opening_assets": 45742000000.0,
+        "average_assets": 50058500000.0,
+        "prior_average_assets": 47956000000.0
+      },
+      "source_rows": {
+        "assets": "Total Assets",
+        "opening_assets": "Total Assets",
+        "prior_opening_assets": "Total Assets",
+        "income": "Net Income",
+        "prior_income": "Net Income",
+        "cfo": "Operating Cash Flow",
+        "long_debt": "Long Term Debt",
+        "current_portion": null,
+        "prior_long_debt": "Long Term Debt",
+        "prior_current_portion": null,
+        "current_assets": "Current Assets",
+        "current_liabilities": "Current Liabilities",
+        "prior_current_assets": "Current Assets",
+        "prior_current_liabilities": "Current Liabilities",
+        "gross_equity_issuance": null,
+        "gross_profit": null,
+        "prior_gross_profit": null,
+        "revenue": "Total Revenue",
+        "prior_revenue": "Total Revenue"
+      },
+      "debt_input_audit": {},
+      "leverage_input_status": "Exact provider maturity rows required; generic Current Debt/leases are not aliases"
+    },
     "2025": {
       "f_score": null,
       "f_score_partial": 3,
@@ -249,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "a48f56a6e956dc89a9f6",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "1e0d0b474f10bc3d25bf",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:25.220072+00:00",
+        "source_fetched_at": "2026-11-06T22:07:43.160307+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -279,15 +339,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "3918d1b34cbfe0b8284f4f61cf74d312cf3b1731b6e54a27cfe9ffe687fbf240",
-          "income_stmt.parquet": "5774de3d0ed7d28487b4ffe0ba99774bdf61e2ea3e0c8e7c815578e00759db1e",
-          "cash_flow.parquet": "4b30cf884f9c07b7beb2f732e6ef2794bb9e28e8bb828591bbed22d6da8b160f",
-          "prices.parquet": "5491524330d654189c1a66f94685d9b0707a91e3349adff0b591f8dc40f64fe4"
+          "balance_sheet.parquet": "aab77330f9dd13c399f5c2ce470150b38867e63f77e1429b59dd7d1b92e86ccf",
+          "income_stmt.parquet": "05ecff07a2a2a8b2a297b8c8f078b39ebe9a651bb2818968550a7cf58e3111e1",
+          "cash_flow.parquet": "3963cec5a3f5838b7b3a1db0645d8cb4992e1e3138fa4b29dc09c7f9d7a37c99",
+          "prices.parquet": "779b75c2866dfaee8d98556ff130332024d218ea5f1414e5ba4981c71152bc1f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:25.987068+00:00",
+        "source_fetched_at": "2026-11-06T22:07:43.646211+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -295,33 +355,38 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
             "2025-03-31",
             "2025-06-30",
+            "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
             "2025-06-30",
+            "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "e3f8797703c660132b8bd19021788aec1c9ee57c337eefac99ddbbeb8234e925",
-          "quarterly_income_stmt.parquet": "bf6b8cf32c5556d3f3e0e17a27c3925aafb5ed2c75d1dd61f7c778fefcff7a58",
-          "quarterly_cash_flow.parquet": "0ca573af41142dc6466a071ea5c3ff73c0707a04ae6a262018b0676e21a1326a"
+          "quarterly_balance_sheet.parquet": "4128a1d5708df55b36af167975bb1fa89bf54202c4e1dd7f0aa7f5a6ef672352",
+          "quarterly_income_stmt.parquet": "c096ae186fb0e99976590fc54c2403fc8e7d07be605446f48b454d5c28036e97",
+          "quarterly_cash_flow.parquet": "8eb3cfa3c81960e85e1c28461a5ad677f8686a7e39a92387bb34da63786b0273"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 122,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -335,7 +400,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -357,7 +422,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-30T21:30:25.346116+00:00",
+        "observed_at": "2026-11-06T22:07:43.217608+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -382,7 +447,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:25.993558+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:43.651837+00:00",
       "ticker": "SCATC.OL",
       "currency": "NOK",
       "unit": "currency units",

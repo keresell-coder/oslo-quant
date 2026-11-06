@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-30T21:30:24.103771Z",
+  "computed_at": "2026-11-06T22:07:42.360253Z",
   "periods": {
     "LTM 2026-09": {
       "net_profit_margin": 0.0974,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "b50282dd72fe029b1220",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "501d340c647bb213d2de",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:22.952397+00:00",
+        "source_fetched_at": "2026-11-06T22:07:41.530490+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -108,15 +108,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "92f8d6a295fbf312f0d3e73e5420a935d37f86edf2d088cdc7bad9a2c8c29ebb",
-          "income_stmt.parquet": "9fb917b4156c05e8e574b4656f3a062a309b7508d47c047a37b63cc2a75037bc",
-          "cash_flow.parquet": "592c5dc6c486893bb5c71d929b23b37bf49f8c65564fe1fce910def962b3bcad",
-          "prices.parquet": "f94af8d31239b254b43f9bb23f422f6c09f6a84d16723bfa9176596f4da6b882"
+          "balance_sheet.parquet": "224c7d945b98b85d16c3ee2deb2e268139cf1ef6b74c42cbf932fb4ccf536ed5",
+          "income_stmt.parquet": "8bb2d252b6fedfdd5230ebcbb7046f015002735ed863caa5c735391256e9de13",
+          "cash_flow.parquet": "37f7d6dbac275dd44774cc10457f745ca288c6333d89cadddd4913f8b6ca9aa1",
+          "prices.parquet": "6060e3f4b85493ec68c4375e6fcd21f1c3236964cfdb39ba3a55a53003bfc49c"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:23.908918+00:00",
+        "source_fetched_at": "2026-11-06T22:07:42.228369+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -145,15 +145,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "cccdd8a24cc8c64c90d4819e49a3e125ff66eb30e1e57235c3fa90c627861505",
-          "quarterly_income_stmt.parquet": "30c0eb18c51f3fc6c61bb209954fdfb289124eb87d15d47886deb35ea027c694",
-          "quarterly_cash_flow.parquet": "90cae0ea98d416782b5d341c15fba3b5f147594b65fa6de512380eb9027b409b"
+          "quarterly_balance_sheet.parquet": "67ddedef399689b13ba81b9eaacaf60b64ba489f404819914861ba4002e967b4",
+          "quarterly_income_stmt.parquet": "5c7ab087b8a507281f2de1d3e33fa1744370ccdb6a31ba5bf1958542ec295c46",
+          "quarterly_cash_flow.parquet": "2da775e1fbc52ba799ade66f6a0ace97d433c1919e37b52debc327284b189b81"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 30,
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -188,8 +188,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "SEK",
-        "rate": 1.0662000179290771,
-        "observed_at": "2026-10-30T21:30:23.230073+00:00",
+        "rate": 1.0443999767303467,
+        "observed_at": "2026-11-06T22:07:41.663000+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -410,7 +410,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:23.912163+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:42.234589+00:00",
       "ticker": "PUBLI.OL",
       "currency": "SEK",
       "unit": "currency units",

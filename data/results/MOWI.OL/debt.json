@@ -1,7 +1,7 @@
 {
   "status": "qualified-selected-debt",
   "contract_version": "2026-10-25-debt-v1",
-  "evaluation_as_of": "2026-10-30T21:30:00.542139+00:00",
+  "evaluation_as_of": "2026-11-06T22:07:24.284481+00:00",
   "ticker": "MOWI.OL",
   "currency": "EUR",
   "unit": "currency units",
@@ -275,14 +275,14 @@
       "Current Capital Lease Obligation": null,
       "Total Debt": null
     },
-    "LTM 2026-06": {
-      "Long Term Debt": 3090600000.0,
+    "LTM 2026-09": {
+      "Long Term Debt": 3105800000.0,
       "Current Debt": 0.0,
-      "Long Term Debt And Capital Lease Obligation": 3455100000.0,
-      "Current Debt And Capital Lease Obligation": 194700000.0,
-      "Long Term Capital Lease Obligation": 364500000.0,
-      "Current Capital Lease Obligation": 194700000.0,
-      "Total Debt": 3649800000.0
+      "Long Term Debt And Capital Lease Obligation": 3527200000.0,
+      "Current Debt And Capital Lease Obligation": 207600000.0,
+      "Long Term Capital Lease Obligation": 421400000.0,
+      "Current Capital Lease Obligation": 207600000.0,
+      "Total Debt": 3734800000.0
     }
   },
   "provider_annual_balance_period_ends": [
@@ -556,7 +556,7 @@
         "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
         "artifact_cache_used": true,
         "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-        "hash_checked_at": "2026-10-30T21:30:00.541262+00:00"
+        "hash_checked_at": "2026-11-06T22:07:24.283463+00:00"
       }
     ],
     "issues": [

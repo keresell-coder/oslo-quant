@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "dupont",
-  "computed_at": "2026-10-30T21:30:20.159214Z",
+  "computed_at": "2026-11-06T22:07:39.149266Z",
   "periods": {
     "LTM 2026-06": {
       "net_profit_margin": 0.2747,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "17e8b65826a76b9cdff2",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "4b3fb99b5362472fc090",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:19.392526+00:00",
+        "source_fetched_at": "2026-11-06T22:07:38.516253+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -108,15 +108,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "13bec8864badc00a74c1b3aae02c38a41c6497e13ded4e43f5d4c42e0cad1883",
-          "income_stmt.parquet": "02b2e995e9e532a59377232ef9dbc0c895637bf97197c98c655ab2d63de71657",
-          "cash_flow.parquet": "5c776c3819b82cda0eade08859bb98ddd537cbbd99b58350b22eeaab5b5ea81a",
-          "prices.parquet": "8b1b89e6632e7b06e04b2f69d5eab89eefa4f5d716086cea58f8f2be0362bd38"
+          "balance_sheet.parquet": "e52f5490209acf84a97336382ed30a3baa247e5f16f93fd0b6c5ff8cac3c627b",
+          "income_stmt.parquet": "fae1e7568370edac8cbcf359cfeeedae0695b730fb3893d0f8ffb682c22d2242",
+          "cash_flow.parquet": "0fb492815ead2d237f9fd74a96bebe7d5e515324dc6725590ed322486e5f6978",
+          "prices.parquet": "7243515d83921f23c467f622226a33ad5e02bc078ea02aed5d4ac5f8cc19246e"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:20.153597+00:00",
+        "source_fetched_at": "2026-11-06T22:07:39.138390+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -144,15 +144,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "2ed08b5654a207bb40a014866dc0e4dcd19540e0611e1386fffb38ea8592ef36",
-          "quarterly_income_stmt.parquet": "d36bf44eb1d6eeb7dc634186ca676e5eeeb7aecdcd0da9a4bf0a94e76b18ff49",
-          "quarterly_cash_flow.parquet": "d2acb3694abb8b1ddc5ab1eddfc89201434b52f9f1dd50a599f4285fb9b2e583"
+          "quarterly_balance_sheet.parquet": "888926b827d8243ecc263450fbc96b77dac4a5b53cfa5a0a107e05c723eaa37c",
+          "quarterly_income_stmt.parquet": "fefb184ba226609119de71a696239079245a73efcf1244db3008c567854b859f",
+          "quarterly_cash_flow.parquet": "00e16cd7231f5377d6206b96d52f0e8c028584af7696aba241cbb9447230f1b1"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 122,
+    "statement_age_days": 129,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -187,8 +187,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09731999784708023,
-        "observed_at": "2026-10-30T21:30:19.444101+00:00",
+        "rate": 0.09481000155210495,
+        "observed_at": "2026-11-06T22:07:38.528569+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -213,7 +213,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:20.156452+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:39.143578+00:00",
       "ticker": "CADLR.OL",
       "currency": "EUR",
       "unit": "currency units",

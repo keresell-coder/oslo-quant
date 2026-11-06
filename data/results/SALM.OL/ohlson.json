@@ -1,11 +1,28 @@
 {
   "ticker": "SALM.OL",
   "framework": "ohlson",
-  "computed_at": "2026-10-30T21:30:02.717143Z",
+  "computed_at": "2026-11-06T22:07:26.208509Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
+    "LTM 2026-09": {
+      "o_score": -1.8881,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.6395,
+        "wc_ta": 0.0885,
+        "cl_ca": 0.7206,
+        "oeneg": 0,
+        "ni_ta": 0.0566,
+        "cfo_tl": 0.2242,
+        "intwo": 0,
+        "chin": 0.4959
+      }
+    },
     "2025": {
-      "o_score": -1.1087,
+      "o_score": -1.0973,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -22,7 +39,7 @@
       }
     },
     "2024": {
-      "o_score": -1.6206,
+      "o_score": -1.6093,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -39,7 +56,7 @@
       }
     },
     "2023": {
-      "o_score": -2.2762,
+      "o_score": -2.2649,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -77,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "6fd74df16bebd452bfb3",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "477b3a684aa68f9f6c69",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:01.910329+00:00",
+        "source_fetched_at": "2026-11-06T22:07:25.411912+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -107,48 +124,52 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "5751e16fd176d0415f0c6e34c342b9c5562da28e52c31f931e9555505eccb34e",
-          "income_stmt.parquet": "1a5c48a25e3246f046d9b7fd961436aaac8e9098e4f798834a6909d10e95b70f",
-          "cash_flow.parquet": "9bc1acefeff062e785e5df82586fe7f341ade2575cd827229551dac747f07425",
-          "prices.parquet": "acc1f8f564b70d0f7b015d8bf7a9699ed2a6469b3c3d5ad94c55717b08fdc8cb"
+          "balance_sheet.parquet": "f6c852b5cdd7caea0932dce91028bff19b32f01626fe01c5ca69740d75790fcd",
+          "income_stmt.parquet": "79ecfa5757781ee190f3d91136ab04d34fcb388cbff8e92d910183d8bc7f8df3",
+          "cash_flow.parquet": "f0f73bfbbea36ae0cbcddc54cfbf0150533b7066389942f74e6bf418130ce6f7",
+          "prices.parquet": "fd739bf788de48cd674b504435b23f6983ed27668b5a47760c9ab83e80c92d80"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:02.522540+00:00",
+        "source_fetched_at": "2026-11-06T22:07:26.028955+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
             "2025-06-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
-            "2025-03-31",
             "2025-06-30",
+            "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
             "2025-06-30",
+            "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "11865ad72d360f6394a2830a5617fa7336b8fbe8fb7679f28f635a4d3a40fb55",
-          "quarterly_income_stmt.parquet": "a32ce3e6e56ef772db5a1bd55d06218f0d59eb88786aa66b09632bdac9ed5438",
-          "quarterly_cash_flow.parquet": "8997a6ee1e6c1e190a2dd364139f4facba200076f279b27e16c665b3049dc056"
+          "quarterly_balance_sheet.parquet": "e0f03bb535c91d4fb2d03c91e1aefbcfcc8dc6f049f7e064ca2cecb58a2da6d5",
+          "quarterly_income_stmt.parquet": "a49dcff5e8a50de2aaa92fb6a02a9f5b5e520c0bc692fb0f939bfe770c7e44e6",
+          "quarterly_cash_flow.parquet": "3dbe2c671ec0bc59bd7041d23ab94e26111de5216b852d5b3371b895d239d080"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 122,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -162,7 +183,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -184,7 +205,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-30T21:30:01.960464+00:00",
+        "observed_at": "2026-11-06T22:07:25.427820+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -209,7 +230,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:02.523858+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:26.034281+00:00",
       "ticker": "SALM.OL",
       "currency": "NOK",
       "unit": "currency units",

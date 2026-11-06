@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-10-30T21:30:21.964711+00:00",
+  "computed_at": "2026-11-06T22:07:40.507600+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "f4d47472f6cc80fb3e9f",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "1d4cea6ab5856b801655",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:21.169743+00:00",
+        "source_fetched_at": "2026-11-06T22:07:39.992872+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -339,15 +339,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "3e24a61aa114da81c250f97104c92a25a2e8d1a6b9df696ee50de42ef7b5fc98",
-          "income_stmt.parquet": "cd187b7641a9d2b4a4e2be3da332dd8f7bcd697bf6693ffc7ae3fa6811646e88",
-          "cash_flow.parquet": "b15f97add0c6f936ba19099deee76e6737424c2304160b9ce7f6669780b7e414",
-          "prices.parquet": "205848fe9066c2b09006a30a80b56540cd541906ec0b6d62b864fdc05057ca27"
+          "balance_sheet.parquet": "1dbb73cee19aeff2a0ecc76302760530990c594584d55bbaab7c0ca7d6c28ca7",
+          "income_stmt.parquet": "8abbf86da44d6cb264f83321e6af9d01ef9193d1ff4363758bb1a838c5af8ea7",
+          "cash_flow.parquet": "59c3d9ab3a9d0554e598a6ca3aa5aff1246bccc262f043ebbfad9e689979541c",
+          "prices.parquet": "dfcefb9593b3f7006f2850c1ca23afc332e4644aec8f2cb5c0b1d12bfee11b3e"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:21.953670+00:00",
+        "source_fetched_at": "2026-11-06T22:07:40.485793+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -375,15 +375,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "1868bf74d3930c3fcc0f503b04aa18aaed8a0b0769554a15c7490923b400969a",
-          "quarterly_income_stmt.parquet": "6cd86163ec7eedbd777762a26c5f9669abf4e4e04a0401eb0dbc32c48d0f7445",
-          "quarterly_cash_flow.parquet": "8a75b11677b138ceb9acf84ab4cb5bb212145814049976bb0a59cd26bd2b1d21"
+          "quarterly_balance_sheet.parquet": "f025ee310e3b836e901e3c77694f4f5175e916f1b6ed6a2aa9f950ee2e4ea015",
+          "quarterly_income_stmt.parquet": "197f01651d919bf2072e38d5b482ffb5a6a2c67c21d563ad8af1044d46a25498",
+          "quarterly_cash_flow.parquet": "9981567ce5a02c1007f5ed5f1942a4f100f721b9e58d55f15d8435462c4bc66c"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 122,
+    "statement_age_days": 129,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -418,8 +418,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10884827375411987,
-        "observed_at": "2026-10-30T21:30:21.289369+00:00",
+        "rate": 0.10585661977529526,
+        "observed_at": "2026-11-06T22:07:40.005748+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -444,7 +444,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:21.956720+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:40.491290+00:00",
       "ticker": "HAFNI.OL",
       "currency": "USD",
       "unit": "currency units",

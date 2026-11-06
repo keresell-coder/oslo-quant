@@ -1,21 +1,21 @@
 {
   "ticker": "MOWI.OL",
   "framework": "sloan",
-  "computed_at": "2026-10-30T21:30:00.798092+00:00",
+  "computed_at": "2026-11-06T22:07:24.450485+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
-    "LTM 2026-06": {
-      "cfo_accruals": -298200000.0,
-      "cfo_accrual_ratio": -0.0292,
+    "LTM 2026-09": {
+      "cfo_accruals": -123400000.0,
+      "cfo_accrual_ratio": -0.0118,
       "bs_accruals": null,
       "bs_accrual_ratio": null,
       "earnings_quality": "Unrated diagnostic",
       "cash_conversion_description": "Operating cash flow exceeds net income",
       "methods_divergence": null,
       "methods_diverge_materially": false,
-      "net_income": 637100000.0,
-      "operating_cash_flow": 935300000.0,
-      "avg_total_assets": 10214300000.0,
+      "net_income": 716700000.0,
+      "operating_cash_flow": 840100000.0,
+      "avg_total_assets": 10432750000.0,
       "period_basis": "overlapping interim adaptation: LTM versus latest FY",
       "bs_status": "withheld: income_taxes_payable, prior_income_taxes_payable, nonnegative depreciation/amortization expense, BS delta window does not match overlapping LTM flows",
       "definitions": {
@@ -41,11 +41,11 @@
         "depreciation_amortization": null
       },
       "bs_components": {
-        "current_assets": 4350100000.0,
+        "current_assets": 4628500000.0,
         "prior_current_assets": 4309800000.0,
-        "cash": 264200000.0,
+        "cash": 162200000.0,
         "prior_cash": 278000000.0,
-        "current_liabilities": 1255700000.0,
+        "current_liabilities": 1447500000.0,
         "prior_current_liabilities": 1470900000.0,
         "current_debt": 0.0,
         "prior_current_debt": 149900000.0,
@@ -205,12 +205,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "e8be0b111e99b9fcc6d6",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "b5f037c474973d096a9a",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:29:59.758760+00:00",
+        "source_fetched_at": "2026-11-06T22:07:23.590237+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -235,15 +235,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "f566bb9bfdda5ee1245f6ca748cb9962e48869c6bd9396e78594c5d0b7ccde87",
-          "income_stmt.parquet": "80802f212cb8e52236076011ab78327487b259dc6b3c1049170d242e1d8c0cb1",
-          "cash_flow.parquet": "9bb1f3ea765c4ec26795fd0f1dbceec460cdb0abe5ec7eb1998dc790caab46a8",
-          "prices.parquet": "42aa9486a327847a348558cde8dc3747b4994382ecd3e9373485543ee275fa08"
+          "balance_sheet.parquet": "46c23bf8df98dfe238aa7c35a56f53df00578ef9d86a53c59ac0ccaecc6332c8",
+          "income_stmt.parquet": "0505a8f132c42343ee8b4cfcfc2d6c832025cc8f0a680c79131cd02f6f369cd0",
+          "cash_flow.parquet": "23295fc5e2baee66d26f4a4045954969970a3fbcdfb3f255bd38244a963701a2",
+          "prices.parquet": "c0d6a004b15bc5312a6ae01da3ee418b9ffbd006cc42f76b56a8435dfe1773c5"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:00.527058+00:00",
+        "source_fetched_at": "2026-11-06T22:07:24.261636+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -251,7 +251,8 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
             "2025-03-31",
@@ -259,7 +260,8 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
@@ -267,19 +269,20 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "1e5bface4340f0c049cf3417e0d9310c8478553ed20c5e32a9c583d6655a8dfd",
-          "quarterly_income_stmt.parquet": "efb87436ee2830cd528bea03619838630adce876449c745bdfee559d17545e9e",
-          "quarterly_cash_flow.parquet": "d7924866aab0f094b939e5fc50c4c03a4bdb17fc6064e5b6df955f5f7527f844"
+          "quarterly_balance_sheet.parquet": "c39b67b055f27674e68afc67f02fb74df2eff57968e4055e278692ab4d7ec94f",
+          "quarterly_income_stmt.parquet": "6a042897be4bee34db2e69fef2567615170e9c52600c9ec21106cfe7399c489b",
+          "quarterly_cash_flow.parquet": "10a07218b7bc687d2a4fabab76581151711853687baa85abdc18976ed9517009"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 122,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -293,7 +296,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -314,8 +317,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09731999784708023,
-        "observed_at": "2026-10-30T21:29:59.998340+00:00",
+        "rate": 0.09481000155210495,
+        "observed_at": "2026-11-06T22:07:23.733603+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -340,7 +343,7 @@
     "debt_inputs": {
       "status": "qualified-selected-debt",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:00.542139+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:24.284481+00:00",
       "ticker": "MOWI.OL",
       "currency": "EUR",
       "unit": "currency units",
@@ -614,14 +617,14 @@
           "Current Capital Lease Obligation": null,
           "Total Debt": null
         },
-        "LTM 2026-06": {
-          "Long Term Debt": 3090600000.0,
+        "LTM 2026-09": {
+          "Long Term Debt": 3105800000.0,
           "Current Debt": 0.0,
-          "Long Term Debt And Capital Lease Obligation": 3455100000.0,
-          "Current Debt And Capital Lease Obligation": 194700000.0,
-          "Long Term Capital Lease Obligation": 364500000.0,
-          "Current Capital Lease Obligation": 194700000.0,
-          "Total Debt": 3649800000.0
+          "Long Term Debt And Capital Lease Obligation": 3527200000.0,
+          "Current Debt And Capital Lease Obligation": 207600000.0,
+          "Long Term Capital Lease Obligation": 421400000.0,
+          "Current Capital Lease Obligation": 207600000.0,
+          "Total Debt": 3734800000.0
         }
       },
       "provider_annual_balance_period_ends": [
@@ -895,7 +898,7 @@
             "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
             "artifact_cache_used": true,
             "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-            "hash_checked_at": "2026-10-30T21:30:00.541262+00:00"
+            "hash_checked_at": "2026-11-06T22:07:24.283463+00:00"
           }
         ],
         "issues": [

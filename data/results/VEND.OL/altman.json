@@ -1,7 +1,7 @@
 {
   "ticker": "VEND.OL",
   "framework": "altman",
-  "computed_at": "2026-10-30T21:30:09.895694Z",
+  "computed_at": "2026-11-06T22:07:32.241277Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "fd971125ce214cd3b6127384aedf4b26",
-    "snapshot_id": "eba16a392c40d99084ea",
+    "run_id": "d1be731ae449424f8359034813e36f1b",
+    "snapshot_id": "c24c8b0f151df36c8f6e",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-10-30T21:30:09.126437+00:00",
+        "source_fetched_at": "2026-11-06T22:07:31.686549+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -98,15 +98,15 @@
           ]
         },
         "cache_hashes": {
-          "balance_sheet.parquet": "133c12ee31287776a8350e43e5610e5db26c0bb30f04a6916b39eac937d2ae8f",
-          "income_stmt.parquet": "5098e646905e0844da7a9bbf29404c3e59ab74db2b0a8575c9fdeb47150ce681",
-          "cash_flow.parquet": "6850870aa977a6f6edb8c95da4f4b77ad2a4e799c6d0a191928420e4abb8d67f",
-          "prices.parquet": "17ab274addf5ad4101ea125053cea709a9ac29602af0ea38d1ebd2bb12dc7dcf"
+          "balance_sheet.parquet": "893bb300f202635ab0f24c42ef0d76a30aba16fd5f5fcad0fcca87a9b68c3981",
+          "income_stmt.parquet": "2e19f1abf5a586c9bee328ec6a2349e13bfb695224338e7323b026d458a72026",
+          "cash_flow.parquet": "2bd0c70f1a7f83574d9ccdea2f05c66d4500c7f8865adf7aa4870eea959d2936",
+          "prices.parquet": "454ee21821fb19baaf0dbd03922e58f67e5f1c34f54c7c956d01d04d2df29f4f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-10-30T21:30:09.875675+00:00",
+        "source_fetched_at": "2026-11-06T22:07:32.202120+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -136,15 +136,15 @@
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "4809228b4b20e183e1bc10c7e1386ef60c8a1d1892591526923f68e8fc758927",
-          "quarterly_income_stmt.parquet": "33f96a883e892fdefaaee58b8e9b2e490f621d86d1fd23b01362387d4ee00967",
-          "quarterly_cash_flow.parquet": "3eedd3c0daa325d99817decc440e6c25a448ecbeeac6f0f69ba95c779e2af2df"
+          "quarterly_balance_sheet.parquet": "9616a117f971e8e0c2a21f56c2aee12161cf73b5b03b8af06783b457453226b8",
+          "quarterly_income_stmt.parquet": "f102757de25c3bcc2eb1026cdb8e41b0a8e9d309db60355258c23769b8bfdd36",
+          "quarterly_cash_flow.parquet": "2e793dee81057d9c0bf5fdd8d8a30241f62bd246cb5a0e93a304a82b26859910"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 30,
+    "statement_age_days": 37,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -180,7 +180,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-10-30T21:30:09.178784+00:00",
+        "observed_at": "2026-11-06T22:07:31.698384+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -205,7 +205,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-10-30T21:30:09.878669+00:00",
+      "evaluation_as_of": "2026-11-06T22:07:32.207779+00:00",
       "ticker": "VEND.OL",
       "currency": "NOK",
       "unit": "currency units",
