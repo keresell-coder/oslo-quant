@@ -1,28 +1,28 @@
 {
   "ticker": "NORBT.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-06T22:07:54.038049Z",
+  "computed_at": "2026-11-13T22:38:29.169231Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
-    "LTM 2026-06": {
-      "o_score": -1.5882,
+    "LTM 2026-09": {
+      "o_score": -1.3024,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
       "interpretation": "Experimental adapted index; no probability or risk band",
       "inputs": {
-        "tl_ta": 0.5678,
-        "wc_ta": 0.1282,
-        "cl_ca": 0.7253,
+        "tl_ta": 0.6105,
+        "wc_ta": 0.137,
+        "cl_ca": 0.6853,
         "oeneg": 0,
-        "ni_ta": 0.1672,
-        "cfo_tl": 0.4574,
+        "ni_ta": 0.1498,
+        "cfo_tl": 0.4184,
         "intwo": 0,
-        "chin": 0.055
+        "chin": 0.0766
       }
     },
     "2025": {
-      "o_score": -1.7002,
+      "o_score": -1.6954,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -39,7 +39,7 @@
       }
     },
     "2024": {
-      "o_score": -2.088,
+      "o_score": -2.0832,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -56,7 +56,7 @@
       }
     },
     "2023": {
-      "o_score": -2.1307,
+      "o_score": -2.1259,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "d1be731ae449424f8359034813e36f1b",
-    "snapshot_id": "e7f8d16e3c843ebede22",
+    "run_id": "a32ef05532654eca8f1b568feebf791d",
+    "snapshot_id": "fc39a851564c33cb8972",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-06T22:07:53.453062+00:00",
+        "source_fetched_at": "2026-11-13T22:38:28.285551+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "503d154269f888760a633c39ab9ce87ef66763f5dc3c363969cd4c72e69418c9",
           "income_stmt.parquet": "2dc9cc88b90363835a18e6f0c32c73d5b17c9456973e1ba680355ec1d11e3c1e",
           "cash_flow.parquet": "9972341c0dff905da9d35ab6f801e6c5898ed5b10f3fbe4acd8ef2aa7255df0a",
-          "prices.parquet": "3694d7ec177282422cf651a828b8f2fe919156b2b07f15b24dd81c81092e4605"
+          "prices.parquet": "2def5594cbabb0533351beaf77e2ea467b901ac2d366a3f653d9e36b1bdd23e8"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-06T22:07:54.003795+00:00",
+        "source_fetched_at": "2026-11-13T22:38:29.150188+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -140,7 +140,8 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
             "2025-03-31",
@@ -148,7 +149,8 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
@@ -156,19 +158,20 @@
             "2025-09-30",
             "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "f49e93ceae1f4e9abb8f9fb17391927064935bfb694b1838db9ef9e9652b3106",
-          "quarterly_income_stmt.parquet": "08cbfced03620f1c7d18ea827d71e12f37c8d3de7db2d77fc74a8c93958c093c",
-          "quarterly_cash_flow.parquet": "5276ce618032f84541c1b6fcdc11152643ca94c95fd854ad0d65134da001d97e"
+          "quarterly_balance_sheet.parquet": "4e1be6073065ce93badd893d2687b6665eb7ee878b386baf86ead05fa82bff87",
+          "quarterly_income_stmt.parquet": "338c7bbe2e3d8f810f29799fce279cb395bac38f3ede120b7fde136962cdc659",
+          "quarterly_cash_flow.parquet": "8c7b61a7b5615c1ba513e10b263414613864062d37b829110d1c53c161feb96e"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 129,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 44,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -182,7 +185,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -204,7 +207,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-06T22:07:53.464266+00:00",
+        "observed_at": "2026-11-13T22:38:28.488027+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -229,7 +232,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-06T22:07:54.009543+00:00",
+      "evaluation_as_of": "2026-11-13T22:38:29.153559+00:00",
       "ticker": "NORBT.OL",
       "currency": "NOK",
       "unit": "currency units",

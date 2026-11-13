@@ -1,7 +1,7 @@
 {
   "ticker": "CMBTO.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-06T22:07:48.016328Z",
+  "computed_at": "2026-11-13T22:38:21.478910Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "d1be731ae449424f8359034813e36f1b",
-    "snapshot_id": "a5111b6777f828ec37d9",
+    "run_id": "a32ef05532654eca8f1b568feebf791d",
+    "snapshot_id": "10206ee6762aaa165e97",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-06T22:07:47.368798+00:00",
+        "source_fetched_at": "2026-11-13T22:38:20.770768+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "019bcb1a88da9537315bcef528e701d01672f68ec70aeba78ff0dbf7bb2c3bbe",
           "income_stmt.parquet": "eb5888d3448f0ff3fcd8dc7be2cbfe6a5f5e5a7396b42f2b996aed85fc820336",
           "cash_flow.parquet": "b9b0d94f235bffcbcd46158d0dba9c2cb319c5c40ea9a2e56dd24cd72d660503",
-          "prices.parquet": "5065027d3a4b0b08068e1b4b1b575c158741e00f540b17d83b503c5ab520c804"
+          "prices.parquet": "c19ee1e2253dd82b758dafbfa512423492f95fb7e2d9cca039cc16545b457d47"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-06T22:07:47.979352+00:00",
+        "source_fetched_at": "2026-11-13T22:38:21.453750+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,7 +168,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 129,
+    "statement_age_days": 136,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -203,8 +203,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10585661977529526,
-        "observed_at": "2026-11-06T22:07:47.461248+00:00",
+        "rate": 0.10460546612739563,
+        "observed_at": "2026-11-13T22:38:20.833991+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -229,7 +229,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-06T22:07:47.984855+00:00",
+      "evaluation_as_of": "2026-11-13T22:38:21.457001+00:00",
       "ticker": "CMBTO.OL",
       "currency": "USD",
       "unit": "currency units",

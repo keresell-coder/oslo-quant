@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "altman",
-  "computed_at": "2026-11-06T22:07:55.347150Z",
+  "computed_at": "2026-11-13T22:38:31.260865Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -69,12 +69,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "d1be731ae449424f8359034813e36f1b",
-    "snapshot_id": "d816e51215e7b96daafa",
+    "run_id": "a32ef05532654eca8f1b568feebf791d",
+    "snapshot_id": "6c4b400f2ecbe40a3e05",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-06T22:07:54.831993+00:00",
+        "source_fetched_at": "2026-11-13T22:38:30.454965+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -102,12 +102,12 @@
           "balance_sheet.parquet": "0a1a7efe44f707c75ba92a18625af3ab840e1da31b6b069cd09af324be9afa09",
           "income_stmt.parquet": "469d7f0edc78b993026b6237dc5201e717300d08b56a04e7d8555e52628657ff",
           "cash_flow.parquet": "f70139cf66231ea09309e80c25e96294473a1e8798ecd440ef7f2aa56e0754d6",
-          "prices.parquet": "f2761f98406b8582611cf9cf216897b2ed72bab92017d96b3f64f2b1491b84ce"
+          "prices.parquet": "e59a8adc111fadadfee148d5f4c0514cc2c1e0ae1af9c26c2a7fc1c31b0959de"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-06T22:07:55.306474+00:00",
+        "source_fetched_at": "2026-11-13T22:38:31.239067+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -144,7 +144,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 37,
+    "statement_age_days": 44,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -180,7 +180,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-06T22:07:54.843397+00:00",
+        "observed_at": "2026-11-13T22:38:30.518833+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -205,7 +205,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-06T22:07:55.312129+00:00",
+      "evaluation_as_of": "2026-11-13T22:38:31.242249+00:00",
       "ticker": "TEL.OL",
       "currency": "NOK",
       "unit": "currency units",

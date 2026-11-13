@@ -1,7 +1,7 @@
 {
   "ticker": "ODL.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-06T22:07:37.689918Z",
+  "computed_at": "2026-11-13T22:38:06.602937Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "d1be731ae449424f8359034813e36f1b",
-    "snapshot_id": "7e8e587417efa9d5e0cb",
+    "run_id": "a32ef05532654eca8f1b568feebf791d",
+    "snapshot_id": "a5f255b94f5eaf184399",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-06T22:07:37.107890+00:00",
+        "source_fetched_at": "2026-11-13T22:38:05.782973+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "d2867c434feac9ffdf7640f769fa06ee536527ce6386f0ae8f75944fe4ce53bf",
           "income_stmt.parquet": "3f5a6b29b35d3496b4c5f461062227b79d4b6bcc4409f90c78c976986a1895ab",
           "cash_flow.parquet": "7d67ac1757631a5fb023c102efaad8ce3ed337af2dac4addefac1eb15398b335",
-          "prices.parquet": "3b6295fa24456d9342ddab2a0e4003430455efe2d9fec9e7c783121e8b41d1c0"
+          "prices.parquet": "8014febdc380dfaab05d21c4dfa028ddd875dfaae73e90e52749c98ab348ba84"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-06T22:07:37.653388+00:00",
+        "source_fetched_at": "2026-11-13T22:38:06.585019+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -170,7 +170,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 37,
+    "statement_age_days": 44,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -205,8 +205,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10585661977529526,
-        "observed_at": "2026-11-06T22:07:37.123903+00:00",
+        "rate": 0.10460546612739563,
+        "observed_at": "2026-11-13T22:38:05.849894+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -231,7 +231,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-06T22:07:37.659614+00:00",
+      "evaluation_as_of": "2026-11-13T22:38:06.587928+00:00",
       "ticker": "ODL.OL",
       "currency": "USD",
       "unit": "currency units",

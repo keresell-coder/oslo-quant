@@ -1,7 +1,7 @@
 {
   "ticker": "SCATC.OL",
   "framework": "piotroski",
-  "computed_at": "2026-11-06T22:07:43.666457+00:00",
+  "computed_at": "2026-11-13T22:38:14.991252+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "d1be731ae449424f8359034813e36f1b",
-    "snapshot_id": "1e0d0b474f10bc3d25bf",
+    "run_id": "a32ef05532654eca8f1b568feebf791d",
+    "snapshot_id": "57fb0fa2a792239095f4",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-06T22:07:43.160307+00:00",
+        "source_fetched_at": "2026-11-13T22:38:14.333067+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -342,12 +342,12 @@
           "balance_sheet.parquet": "aab77330f9dd13c399f5c2ce470150b38867e63f77e1429b59dd7d1b92e86ccf",
           "income_stmt.parquet": "05ecff07a2a2a8b2a297b8c8f078b39ebe9a651bb2818968550a7cf58e3111e1",
           "cash_flow.parquet": "3963cec5a3f5838b7b3a1db0645d8cb4992e1e3138fa4b29dc09c7f9d7a37c99",
-          "prices.parquet": "779b75c2866dfaee8d98556ff130332024d218ea5f1414e5ba4981c71152bc1f"
+          "prices.parquet": "bccaa89e964a39d951c186b47f4ef350f7f140d7464313b178f7c1c428745650"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-06T22:07:43.646211+00:00",
+        "source_fetched_at": "2026-11-13T22:38:14.980279+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -386,7 +386,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 37,
+    "statement_age_days": 44,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -422,7 +422,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-06T22:07:43.217608+00:00",
+        "observed_at": "2026-11-13T22:38:14.397149+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -447,7 +447,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-06T22:07:43.651837+00:00",
+      "evaluation_as_of": "2026-11-13T22:38:14.983464+00:00",
       "ticker": "SCATC.OL",
       "currency": "NOK",
       "unit": "currency units",

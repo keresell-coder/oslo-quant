@@ -15,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "SEK",
-    "rate": 1.0443999767303467,
-    "observed_at": "2026-11-06T22:07:41.663000+00:00",
+    "rate": 1.0511000156402588,
+    "observed_at": "2026-11-13T22:38:12.254657+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }
