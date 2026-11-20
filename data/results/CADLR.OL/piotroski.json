@@ -1,7 +1,7 @@
 {
   "ticker": "CADLR.OL",
   "framework": "piotroski",
-  "computed_at": "2026-11-13T22:38:08.520055+00:00",
+  "computed_at": "2026-11-20T23:05:20.970334+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "a32ef05532654eca8f1b568feebf791d",
-    "snapshot_id": "5dc697a15f177907c44c",
+    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
+    "snapshot_id": "4b22364b0352d125d13c",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-13T22:38:07.897116+00:00",
+        "source_fetched_at": "2026-11-20T23:05:20.471683+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -347,7 +347,7 @@
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-13T22:38:08.508863+00:00",
+        "source_fetched_at": "2026-11-20T23:05:20.949575+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -383,7 +383,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 136,
+    "statement_age_days": 143,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -418,8 +418,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09472999721765518,
-        "observed_at": "2026-11-13T22:38:07.961730+00:00",
+        "rate": 0.09328000247478485,
+        "observed_at": "2026-11-20T23:05:20.490269+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -444,7 +444,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-13T22:38:08.511756+00:00",
+      "evaluation_as_of": "2026-11-20T23:05:20.954749+00:00",
       "ticker": "CADLR.OL",
       "currency": "EUR",
       "unit": "currency units",

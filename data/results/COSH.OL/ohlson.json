@@ -1,9 +1,26 @@
 {
   "ticker": "COSH.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-13T22:38:04.487018Z",
+  "computed_at": "2026-11-20T23:05:18.849416Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
+    "LTM 2026-09": {
+      "o_score": -2.6387,
+      "bankruptcy_probability": null,
+      "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
+      "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
+      "interpretation": "Experimental adapted index; no probability or risk band",
+      "inputs": {
+        "tl_ta": 0.3688,
+        "wc_ta": 0.074,
+        "cl_ca": 0.6059,
+        "oeneg": 0,
+        "ni_ta": -0.0432,
+        "cfo_tl": 0.3358,
+        "intwo": 1,
+        "chin": 0.0906
+      }
+    },
     "2025": {
       "o_score": -2.1142,
       "bankruptcy_probability": null,
@@ -77,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "a32ef05532654eca8f1b568feebf791d",
-    "snapshot_id": "6034bfb18b9a3fca69e9",
+    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
+    "snapshot_id": "57e2d186f85ede329c02",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-13T22:38:03.761592+00:00",
+        "source_fetched_at": "2026-11-20T23:05:18.392239+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -109,40 +126,46 @@
           "balance_sheet.parquet": "147eb6b24548f7fe2d7a52b67bd964913cd8fbd0a4eca5d6aac3531c41198a5e",
           "income_stmt.parquet": "9a0b3afd3ad520fd96b16ea0504aed14161ee97078ea80e38ef1de3363682df9",
           "cash_flow.parquet": "b7799d55423fb3a25c96a45a4ca172db5170cbfb7e0e0174fb820101c60bed16",
-          "prices.parquet": "430b12a1b1429bf3cd082611922a75e4928c370751ebcb8e09ba2dca1aaed1d2"
+          "prices.parquet": "9a95755492bae8852abb3be487b652c1b607fbb2810a176c3b548a7b2ae0da94"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-13T22:38:04.475055+00:00",
+        "source_fetched_at": "2026-11-20T23:05:18.817641+00:00",
         "statement_period_ends": {
           "balance_sheet": [
+            "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "income_stmt": [
-            "2025-03-31",
             "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ],
           "cash_flow": [
             "2025-03-31",
-            "2025-06-30",
+            "2025-09-30",
+            "2025-12-31",
             "2026-03-31",
-            "2026-06-30"
+            "2026-06-30",
+            "2026-09-30"
           ]
         },
         "cache_hashes": {
-          "quarterly_balance_sheet.parquet": "96015c3a83409cbe0e315ccb75d1dda1fda0f10b1275d361c087b3c754652c39",
-          "quarterly_income_stmt.parquet": "7631f5a8b28c1b4e2c50b7288d96a697d1c4334145f73a3952782932b3c0ffd2",
-          "quarterly_cash_flow.parquet": "e2a42defb22ce89f959cdad2d2ddf43bf644cbfadc0b5102636da8148a45f007"
+          "quarterly_balance_sheet.parquet": "da6d1233a1f88b7572382f24f57bd3e6811afcf77eb70bb1fac57e706d573031",
+          "quarterly_income_stmt.parquet": "b421abed218f491ac8168479dd9917f0043f7b0044a7b95567a02db7c93bf9f2",
+          "quarterly_cash_flow.parquet": "086d7c4c2225c6c386e839b1f8fa41b0ae4af5056a200aa17bd545f3b3dfece4"
         },
         "cache_used": false
       }
     },
-    "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 136,
+    "latest_statement_period_end": "2026-09-30",
+    "statement_age_days": 51,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -156,7 +179,7 @@
     },
     "filing_coverage": {
       "status": "unverified",
-      "latest_period_end": "2026-06-30",
+      "latest_period_end": "2026-09-30",
       "issuer_release": null,
       "limitation": "Retrieval time is separate from filing coverage. Coverage does not verify values or definitions; unknown issuer dates remain unverified."
     },
@@ -177,8 +200,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10460546612739563,
-        "observed_at": "2026-11-13T22:38:03.824412+00:00",
+        "rate": 0.10249262303113937,
+        "observed_at": "2026-11-20T23:05:18.412673+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -203,7 +226,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-13T22:38:04.476283+00:00",
+      "evaluation_as_of": "2026-11-20T23:05:18.822788+00:00",
       "ticker": "COSH.OL",
       "currency": "USD",
       "unit": "currency units",

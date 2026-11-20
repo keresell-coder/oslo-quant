@@ -1,11 +1,11 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-13T22:38:13.054647Z",
+  "computed_at": "2026-11-20T23:05:23.432740Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
-      "o_score": -0.7564,
+      "o_score": -0.7504,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -22,7 +22,7 @@
       }
     },
     "2025": {
-      "o_score": -1.4857,
+      "o_score": -1.4796,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -39,7 +39,7 @@
       }
     },
     "2024": {
-      "o_score": -1.7714,
+      "o_score": -1.7653,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -56,7 +56,7 @@
       }
     },
     "2023": {
-      "o_score": 1.9413,
+      "o_score": 1.9473,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "a32ef05532654eca8f1b568feebf791d",
-    "snapshot_id": "766217921285bd451c1c",
+    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
+    "snapshot_id": "eff28a25cb74bb5f30f7",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-13T22:38:11.977139+00:00",
+        "source_fetched_at": "2026-11-20T23:05:22.695183+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "224c7d945b98b85d16c3ee2deb2e268139cf1ef6b74c42cbf932fb4ccf536ed5",
           "income_stmt.parquet": "8bb2d252b6fedfdd5230ebcbb7046f015002735ed863caa5c735391256e9de13",
           "cash_flow.parquet": "37f7d6dbac275dd44774cc10457f745ca288c6333d89cadddd4913f8b6ca9aa1",
-          "prices.parquet": "5e36511db7b6be9b88a59f87218e6a486ac2fc1b847dd1dbccc7c36584825d1b"
+          "prices.parquet": "24f9bba846d5f106b64ae005ae610802a138fdc555e5e67b3d07337d8c4ce4f6"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-13T22:38:12.741747+00:00",
+        "source_fetched_at": "2026-11-20T23:05:23.308773+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -169,7 +169,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 44,
+    "statement_age_days": 51,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -204,8 +204,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "SEK",
-        "rate": 1.0511000156402588,
-        "observed_at": "2026-11-13T22:38:12.254657+00:00",
+        "rate": 1.0454000234603882,
+        "observed_at": "2026-11-20T23:05:22.827951+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -426,7 +426,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-13T22:38:12.745099+00:00",
+      "evaluation_as_of": "2026-11-20T23:05:23.314762+00:00",
       "ticker": "PUBLI.OL",
       "currency": "SEK",
       "unit": "currency units",

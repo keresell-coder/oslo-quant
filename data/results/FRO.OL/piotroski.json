@@ -1,7 +1,7 @@
 {
   "ticker": "FRO.OL",
   "framework": "piotroski",
-  "computed_at": "2026-11-13T22:37:54.662063+00:00",
+  "computed_at": "2026-11-20T23:05:12.636504+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "a32ef05532654eca8f1b568feebf791d",
-    "snapshot_id": "df43657e95420394e8b2",
+    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
+    "snapshot_id": "870a498d4378351d5ff0",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-13T22:37:53.938915+00:00",
+        "source_fetched_at": "2026-11-20T23:05:12.215257+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -342,12 +342,12 @@
           "balance_sheet.parquet": "ee33ef9fab3b3851425964780ed49af9f757f12d9fea83890e345bdb9b5383a8",
           "income_stmt.parquet": "ae9823ddc5731eca406654b89eac180a0386c0c337a866654f8085bf8f921761",
           "cash_flow.parquet": "d400499fd049febef68fcbf1afadf3d42719634bde788ac9ce08b2cce883e24f",
-          "prices.parquet": "03c7594ed3eb5446a11e27364fcf3b6fe616cad30a746382270e44f55c432ce4"
+          "prices.parquet": "533d0bd4b99bf1125ff4443db0b5e93e03d7d022672e7ecf1d146bd8578bac44"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-13T22:37:54.651260+00:00",
+        "source_fetched_at": "2026-11-20T23:05:12.616394+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -381,7 +381,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 136,
+    "statement_age_days": 143,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -416,8 +416,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10460546612739563,
-        "observed_at": "2026-11-13T22:37:54.078512+00:00",
+        "rate": 0.10249262303113937,
+        "observed_at": "2026-11-20T23:05:12.235702+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -442,7 +442,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-13T22:37:54.654046+00:00",
+      "evaluation_as_of": "2026-11-20T23:05:12.621261+00:00",
       "ticker": "FRO.OL",
       "currency": "USD",
       "unit": "currency units",

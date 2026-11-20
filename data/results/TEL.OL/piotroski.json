@@ -1,7 +1,7 @@
 {
   "ticker": "TEL.OL",
   "framework": "piotroski",
-  "computed_at": "2026-11-13T22:38:31.250638+00:00",
+  "computed_at": "2026-11-20T23:05:33.952897+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "a32ef05532654eca8f1b568feebf791d",
-    "snapshot_id": "6c4b400f2ecbe40a3e05",
+    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
+    "snapshot_id": "7cc64cae75dd2b90e52d",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-13T22:38:30.454965+00:00",
+        "source_fetched_at": "2026-11-20T23:05:33.435527+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -342,12 +342,12 @@
           "balance_sheet.parquet": "0a1a7efe44f707c75ba92a18625af3ab840e1da31b6b069cd09af324be9afa09",
           "income_stmt.parquet": "469d7f0edc78b993026b6237dc5201e717300d08b56a04e7d8555e52628657ff",
           "cash_flow.parquet": "f70139cf66231ea09309e80c25e96294473a1e8798ecd440ef7f2aa56e0754d6",
-          "prices.parquet": "e59a8adc111fadadfee148d5f4c0514cc2c1e0ae1af9c26c2a7fc1c31b0959de"
+          "prices.parquet": "a241c7652c8bb97e7f2fdb0e8133bce705c7d997595b47b48c35966a926b11a7"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-13T22:38:31.239067+00:00",
+        "source_fetched_at": "2026-11-20T23:05:33.931885+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -377,14 +377,14 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "716a826039e05cd9e8cf3a3c2c8ea26f5774acb9d90a064d52cd7aa54eddbdf5",
-          "quarterly_income_stmt.parquet": "9fb2215bcf8d654405aaed02bb3a26b9c1e660da7c019f829ba3abdfc0745106",
+          "quarterly_income_stmt.parquet": "5af89d1e234f784c9d4f9b8327233a883504ebc6a905445af750b184acae8244",
           "quarterly_cash_flow.parquet": "f09a9f2c91224b6f9c44ece8a8adc291e9f807fbef9dd0c7f3355a56dabf158c"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 44,
+    "statement_age_days": 51,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -420,7 +420,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-13T22:38:30.518833+00:00",
+        "observed_at": "2026-11-20T23:05:33.454249+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -445,7 +445,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-13T22:38:31.242249+00:00",
+      "evaluation_as_of": "2026-11-20T23:05:33.937303+00:00",
       "ticker": "TEL.OL",
       "currency": "NOK",
       "unit": "currency units",

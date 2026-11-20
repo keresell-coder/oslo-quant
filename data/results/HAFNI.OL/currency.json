@@ -15,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "USD",
-    "rate": 0.10460546612739563,
-    "observed_at": "2026-11-13T22:38:09.910052+00:00",
+    "rate": 0.10249262303113937,
+    "observed_at": "2026-11-20T23:05:21.663475+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

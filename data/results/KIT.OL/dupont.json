@@ -1,7 +1,7 @@
 {
   "ticker": "KIT.OL",
   "framework": "dupont",
-  "computed_at": "2026-11-13T22:38:26.999885Z",
+  "computed_at": "2026-11-20T23:05:31.574872Z",
   "periods": {
     "LTM 2026-09": {
       "net_profit_margin": 0.0711,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "a32ef05532654eca8f1b568feebf791d",
-    "snapshot_id": "cc846027efd784576981",
+    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
+    "snapshot_id": "4000a15b0c025f7b7764",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-13T22:38:26.170176+00:00",
+        "source_fetched_at": "2026-11-20T23:05:31.158007+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "46cbb9e8e3caa1efe4393a656146e46c0ec75e53b70a6488e610546d06cb43b7",
           "income_stmt.parquet": "4e255af4ebdea617facb6805b257afa89f016315a59ac1d6d60e3fd705055a95",
           "cash_flow.parquet": "4542b8a03cf9738423373927949c8206188925e47a007684119f4fc9f18b1a88",
-          "prices.parquet": "207bcacbef96ea3e8eea6c33a8addc54b2207e5c5b6d218492c19439ba677a41"
+          "prices.parquet": "b0497e047eba784a31a8e2c360e6106f80c0cdc0ddb5871d39e89a60dfc2c395"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-13T22:38:26.994161+00:00",
+        "source_fetched_at": "2026-11-20T23:05:31.564623+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -145,14 +145,14 @@
         },
         "cache_hashes": {
           "quarterly_balance_sheet.parquet": "12631cb04512f792165073914d065833ea9c46157a58c3b69cae07597d702018",
-          "quarterly_income_stmt.parquet": "da34f202014ace27b714b2b1048a835760be52b7eef6bbe5068069db70b3b1fd",
+          "quarterly_income_stmt.parquet": "1b8167ad94216f7b545aecc3e9f3085c8cc900d86529303aeb1bc72d240626af",
           "quarterly_cash_flow.parquet": "6a6424f44fb4a49fbf4719fa96d77fd23822dea99b9c91335e3d0699ff0d098d"
         },
         "cache_used": false
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 44,
+    "statement_age_days": 51,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -187,8 +187,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09472999721765518,
-        "observed_at": "2026-11-13T22:38:26.273691+00:00",
+        "rate": 0.09328000247478485,
+        "observed_at": "2026-11-20T23:05:31.186594+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -213,7 +213,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-13T22:38:26.997200+00:00",
+      "evaluation_as_of": "2026-11-20T23:05:31.569690+00:00",
       "ticker": "KIT.OL",
       "currency": "EUR",
       "unit": "currency units",
