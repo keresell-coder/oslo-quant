@@ -1,7 +1,7 @@
 {
   "ticker": "HAFNI.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-20T23:05:22.046113Z",
+  "computed_at": "2026-11-28T00:32:38.454068Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "d2e2360e935f3faad0b1",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "fc3793c67f874b6f7d20",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:21.643205+00:00",
+        "source_fetched_at": "2026-11-28T00:32:37.902788+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "1dbb73cee19aeff2a0ecc76302760530990c594584d55bbaab7c0ca7d6c28ca7",
           "income_stmt.parquet": "8abbf86da44d6cb264f83321e6af9d01ef9193d1ff4363758bb1a838c5af8ea7",
           "cash_flow.parquet": "59c3d9ab3a9d0554e598a6ca3aa5aff1246bccc262f043ebbfad9e689979541c",
-          "prices.parquet": "40ebf1c30b47600d7230f644181bbde6928ddce49db48a162bdf8f55e2801582"
+          "prices.parquet": "b6875600558a5b6955d42572e264afaf6c00ed79129509fac89a32b75a300cd6"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:22.008886+00:00",
+        "source_fetched_at": "2026-11-28T00:32:38.413985+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -171,7 +171,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -206,8 +206,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10249262303113937,
-        "observed_at": "2026-11-20T23:05:21.663475+00:00",
+        "rate": 0.10194718837738037,
+        "observed_at": "2026-11-28T00:32:37.914866+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -232,7 +232,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:22.014705+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:38.420662+00:00",
       "ticker": "HAFNI.OL",
       "currency": "USD",
       "unit": "currency units",

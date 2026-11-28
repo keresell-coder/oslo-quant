@@ -15,8 +15,8 @@
   "price_conversion": {
     "from": "NOK",
     "to": "EUR",
-    "rate": 0.09328000247478485,
-    "observed_at": "2026-11-20T23:05:31.186594+00:00",
+    "rate": 0.09334799647331238,
+    "observed_at": "2026-11-28T00:32:49.441512+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

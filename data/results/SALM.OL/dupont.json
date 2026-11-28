@@ -1,7 +1,7 @@
 {
   "ticker": "SALM.OL",
   "framework": "dupont",
-  "computed_at": "2026-11-20T23:05:10.129078Z",
+  "computed_at": "2026-11-28T00:32:24.545006Z",
   "periods": {
     "LTM 2026-09": {
       "net_profit_margin": 0.106,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "e436f9b2237891a92e7b",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "dc7bd78faa7e6e919125",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:09.620319+00:00",
+        "source_fetched_at": "2026-11-28T00:32:23.874722+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -111,12 +111,12 @@
           "balance_sheet.parquet": "f6c852b5cdd7caea0932dce91028bff19b32f01626fe01c5ca69740d75790fcd",
           "income_stmt.parquet": "79ecfa5757781ee190f3d91136ab04d34fcb388cbff8e92d910183d8bc7f8df3",
           "cash_flow.parquet": "f0f73bfbbea36ae0cbcddc54cfbf0150533b7066389942f74e6bf418130ce6f7",
-          "prices.parquet": "1495aab0823e7637efe9bb64059ea3e0d3f0b9fa81edc09768137bd98be7736d"
+          "prices.parquet": "6617d691ae540f71a4ff1ed1170707d38544802df2911936e429fe4e75b0cd54"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:10.031770+00:00",
+        "source_fetched_at": "2026-11-28T00:32:24.370066+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -153,7 +153,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -189,7 +189,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-20T23:05:09.638513+00:00",
+        "observed_at": "2026-11-28T00:32:23.886180+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -214,7 +214,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:10.037093+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:24.375247+00:00",
       "ticker": "SALM.OL",
       "currency": "NOK",
       "unit": "currency units",

@@ -1,7 +1,7 @@
 {
   "ticker": "NORBT.OL",
   "framework": "piotroski",
-  "computed_at": "2026-11-20T23:05:32.753619+00:00",
+  "computed_at": "2026-11-28T00:32:51.382254+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "ba3f861ac97c634a8b75",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "1450a98c8646cd7d0198",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:32.307707+00:00",
+        "source_fetched_at": "2026-11-28T00:32:50.783773+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -342,12 +342,12 @@
           "balance_sheet.parquet": "503d154269f888760a633c39ab9ce87ef66763f5dc3c363969cd4c72e69418c9",
           "income_stmt.parquet": "2dc9cc88b90363835a18e6f0c32c73d5b17c9456973e1ba680355ec1d11e3c1e",
           "cash_flow.parquet": "9972341c0dff905da9d35ab6f801e6c5898ed5b10f3fbe4acd8ef2aa7255df0a",
-          "prices.parquet": "29eaf27e5ab978b34ba2b18f84867290f6d28054b7937249ed743ab466c68a27"
+          "prices.parquet": "0a0c5df2d49fe4a0b6f59cf37d81be50c72ddbcdaaac30325b2a761d18904623"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:32.731957+00:00",
+        "source_fetched_at": "2026-11-28T00:32:51.359263+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -386,7 +386,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -422,7 +422,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-20T23:05:32.326423+00:00",
+        "observed_at": "2026-11-28T00:32:50.794756+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -447,7 +447,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:32.738094+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:51.365745+00:00",
       "ticker": "NORBT.OL",
       "currency": "NOK",
       "unit": "currency units",

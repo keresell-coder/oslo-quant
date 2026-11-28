@@ -1,7 +1,7 @@
 {
   "ticker": "COSH.OL",
   "framework": "dupont",
-  "computed_at": "2026-11-20T23:05:18.828351Z",
+  "computed_at": "2026-11-28T00:32:34.265243Z",
   "periods": {
     "LTM 2026-09": {
       "net_profit_margin": -0.1314,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "57e2d186f85ede329c02",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "cbdd24241adfbb3f1587",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:18.392239+00:00",
+        "source_fetched_at": "2026-11-28T00:32:33.746072+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -110,12 +110,12 @@
           "balance_sheet.parquet": "147eb6b24548f7fe2d7a52b67bd964913cd8fbd0a4eca5d6aac3531c41198a5e",
           "income_stmt.parquet": "9a0b3afd3ad520fd96b16ea0504aed14161ee97078ea80e38ef1de3363682df9",
           "cash_flow.parquet": "b7799d55423fb3a25c96a45a4ca172db5170cbfb7e0e0174fb820101c60bed16",
-          "prices.parquet": "9a95755492bae8852abb3be487b652c1b607fbb2810a176c3b548a7b2ae0da94"
+          "prices.parquet": "b8aab07a9f7769d8a3271751f27f0aea8131da3f0c6ea3f93e9c834b0d8f717b"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:18.817641+00:00",
+        "source_fetched_at": "2026-11-28T00:32:34.254075+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-12-31",
@@ -149,7 +149,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -184,8 +184,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "USD",
-        "rate": 0.10249262303113937,
-        "observed_at": "2026-11-20T23:05:18.412673+00:00",
+        "rate": 0.10194718837738037,
+        "observed_at": "2026-11-28T00:32:33.758013+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -210,7 +210,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:18.822788+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:34.259538+00:00",
       "ticker": "COSH.OL",
       "currency": "USD",
       "unit": "currency units",

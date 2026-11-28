@@ -1,7 +1,7 @@
 {
   "ticker": "BRG.OL",
   "framework": "dupont",
-  "computed_at": "2026-11-20T23:05:30.401222Z",
+  "computed_at": "2026-11-28T00:32:48.593142Z",
   "periods": {
     "LTM 2026-09": {
       "net_profit_margin": 0.0343,
@@ -78,12 +78,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "f5b5e814facdadb073ae",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "07490702a11c4111d4b3",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:29.954587+00:00",
+        "source_fetched_at": "2026-11-28T00:32:48.048780+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -110,12 +110,12 @@
           "balance_sheet.parquet": "1e146c691666816b70f2300abf3aa69a5ba25aeeb189e34336c57c5062dd87e4",
           "income_stmt.parquet": "dd9ba06444a8d88714299483923ca419fab79f54098f4b862e532ebc39964927",
           "cash_flow.parquet": "94c13ceab19eb33c2a9063ccd26057f9eb25bb93a1ad17d33a04b7c332f5cb03",
-          "prices.parquet": "b87587f5aa25e9b45626bbba0976a6f9a978df3ce0931f1c9408a74549a01d55"
+          "prices.parquet": "ed51495e402361e72baf6d9b34c26a7ce3a3c85933c3655e42b1c5fb5a61b07f"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:30.390332+00:00",
+        "source_fetched_at": "2026-11-28T00:32:48.581326+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -153,7 +153,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -189,7 +189,7 @@
         "from": "NOK",
         "to": "NOK",
         "rate": 1.0,
-        "observed_at": "2026-11-20T23:05:29.978184+00:00",
+        "observed_at": "2026-11-28T00:32:48.063361+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -214,7 +214,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:30.395793+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:48.587308+00:00",
       "ticker": "BRG.OL",
       "currency": "NOK",
       "unit": "currency units",

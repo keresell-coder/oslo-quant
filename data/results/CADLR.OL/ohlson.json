@@ -1,11 +1,11 @@
 {
   "ticker": "CADLR.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-20T23:05:20.984230Z",
+  "computed_at": "2026-11-28T00:32:37.025542Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-06": {
-      "o_score": -2.1581,
+      "o_score": -2.158,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -22,7 +22,7 @@
       }
     },
     "2025": {
-      "o_score": -2.1374,
+      "o_score": -2.1373,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "4b22364b0352d125d13c",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "736b974c2284c4032e10",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:20.471683+00:00",
+        "source_fetched_at": "2026-11-28T00:32:36.471230+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -132,7 +132,7 @@
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:20.949575+00:00",
+        "source_fetched_at": "2026-11-28T00:32:36.987410+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,7 +168,7 @@
       }
     },
     "latest_statement_period_end": "2026-06-30",
-    "statement_age_days": 143,
+    "statement_age_days": 151,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -203,8 +203,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09328000247478485,
-        "observed_at": "2026-11-20T23:05:20.490269+00:00",
+        "rate": 0.09334799647331238,
+        "observed_at": "2026-11-28T00:32:36.483094+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -229,7 +229,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:20.954749+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:36.993199+00:00",
       "ticker": "CADLR.OL",
       "currency": "EUR",
       "unit": "currency units",

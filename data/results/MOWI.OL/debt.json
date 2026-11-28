@@ -1,14 +1,14 @@
 {
   "status": "qualified-selected-debt",
   "contract_version": "2026-10-25-debt-v1",
-  "evaluation_as_of": "2026-11-20T23:05:08.601510+00:00",
+  "evaluation_as_of": "2026-11-28T00:32:22.847501+00:00",
   "ticker": "MOWI.OL",
   "currency": "EUR",
   "unit": "currency units",
   "periods": {
     "2025": {
-      "noncurrent_long_term": 2790100000.0,
       "current_maturities": 149900000.0,
+      "noncurrent_long_term": 2790100000.0,
       "source_records": [
         "MOWI.OL-2025-current_maturities",
         "MOWI.OL-2025-noncurrent_long_term"
@@ -58,8 +58,8 @@
       "available_on": "2026-03-25"
     },
     "2024": {
-      "noncurrent_long_term": 1957300000.0,
       "current_maturities": 200000000.0,
+      "noncurrent_long_term": 1957300000.0,
       "source_records": [
         "MOWI.OL-2024-current_maturities",
         "MOWI.OL-2024-noncurrent_long_term"
@@ -556,7 +556,7 @@
         "sha256": "44c6bfb26801443e435e61446c022590ccaa86b1aa9517f3da86b78071757380",
         "artifact_cache_used": true,
         "source_retrieved_at": "2026-10-25T09:45:25.650331+00:00",
-        "hash_checked_at": "2026-11-20T23:05:08.600507+00:00"
+        "hash_checked_at": "2026-11-28T00:32:22.846422+00:00"
       }
     ],
     "issues": [

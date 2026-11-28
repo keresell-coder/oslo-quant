@@ -1,7 +1,7 @@
 {
   "ticker": "PUBLI.OL",
   "framework": "piotroski",
-  "computed_at": "2026-11-20T23:05:23.418719+00:00",
+  "computed_at": "2026-11-28T00:32:40.243525+00:00",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
@@ -309,12 +309,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "eff28a25cb74bb5f30f7",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "7a27c541584e14841667",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:22.695183+00:00",
+        "source_fetched_at": "2026-11-28T00:32:39.364739+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -342,12 +342,12 @@
           "balance_sheet.parquet": "224c7d945b98b85d16c3ee2deb2e268139cf1ef6b74c42cbf932fb4ccf536ed5",
           "income_stmt.parquet": "8bb2d252b6fedfdd5230ebcbb7046f015002735ed863caa5c735391256e9de13",
           "cash_flow.parquet": "37f7d6dbac275dd44774cc10457f745ca288c6333d89cadddd4913f8b6ca9aa1",
-          "prices.parquet": "24f9bba846d5f106b64ae005ae610802a138fdc555e5e67b3d07337d8c4ce4f6"
+          "prices.parquet": "22a152ac12416d75f1f6d6b0e23342e4adbac38c5f0923cd33adbabf795d8c5d"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:23.308773+00:00",
+        "source_fetched_at": "2026-11-28T00:32:40.096564+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-06-30",
@@ -384,7 +384,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -419,8 +419,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "SEK",
-        "rate": 1.0454000234603882,
-        "observed_at": "2026-11-20T23:05:22.827951+00:00",
+        "rate": 1.044800043106079,
+        "observed_at": "2026-11-28T00:32:39.570872+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -641,7 +641,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:23.314762+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:40.103516+00:00",
       "ticker": "PUBLI.OL",
       "currency": "SEK",
       "unit": "currency units",

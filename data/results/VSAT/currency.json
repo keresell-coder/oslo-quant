@@ -16,7 +16,7 @@
     "from": "USD",
     "to": "USD",
     "rate": 1.0,
-    "observed_at": "2026-11-20T23:05:25.289434+00:00",
+    "observed_at": "2026-11-28T00:32:42.443696+00:00",
     "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
   }
 }

@@ -1,11 +1,11 @@
 {
   "ticker": "KIT.OL",
   "framework": "ohlson",
-  "computed_at": "2026-11-20T23:05:31.595600Z",
+  "computed_at": "2026-11-28T00:32:49.970280Z",
   "methodology_version": "2026-10-24-methodology-v2",
   "periods": {
     "LTM 2026-09": {
-      "o_score": -1.4012,
+      "o_score": -1.4011,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -22,7 +22,7 @@
       }
     },
     "2025": {
-      "o_score": -1.6859,
+      "o_score": -1.6858,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -39,7 +39,7 @@
       }
     },
     "2024": {
-      "o_score": -0.624,
+      "o_score": -0.6239,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -56,7 +56,7 @@
       }
     },
     "2023": {
-      "o_score": -0.7729,
+      "o_score": -0.7728,
       "bankruptcy_probability": null,
       "probability_status": "withheld: uncalibrated adaptation; no population/event/horizon validation",
       "size_authentication": "open: retained USD-millions/current-FX convention is not authenticated as original SIZE",
@@ -94,12 +94,12 @@
   "price_currency": "NOK",
   "source_metadata": {
     "schema_version": 1,
-    "run_id": "6b243a42c0594125b7e66c05f6ee431f",
-    "snapshot_id": "4000a15b0c025f7b7764",
+    "run_id": "380b93d9aa7142fd9b9daadbf386b188",
+    "snapshot_id": "1b03768078af3bc7a3b6",
     "provider": "Yahoo Finance via yfinance",
     "groups": {
       "annual": {
-        "source_fetched_at": "2026-11-20T23:05:31.158007+00:00",
+        "source_fetched_at": "2026-11-28T00:32:49.428549+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2021-12-31",
@@ -127,12 +127,12 @@
           "balance_sheet.parquet": "46cbb9e8e3caa1efe4393a656146e46c0ec75e53b70a6488e610546d06cb43b7",
           "income_stmt.parquet": "4e255af4ebdea617facb6805b257afa89f016315a59ac1d6d60e3fd705055a95",
           "cash_flow.parquet": "4542b8a03cf9738423373927949c8206188925e47a007684119f4fc9f18b1a88",
-          "prices.parquet": "b0497e047eba784a31a8e2c360e6106f80c0cdc0ddb5871d39e89a60dfc2c395"
+          "prices.parquet": "b63ea1a06f97fdf1b1184b777900c77335b6057e7492dedb8a6737b1f621b685"
         },
         "cache_used": false
       },
       "quarterly": {
-        "source_fetched_at": "2026-11-20T23:05:31.564623+00:00",
+        "source_fetched_at": "2026-11-28T00:32:49.936588+00:00",
         "statement_period_ends": {
           "balance_sheet": [
             "2025-03-31",
@@ -168,7 +168,7 @@
       }
     },
     "latest_statement_period_end": "2026-09-30",
-    "statement_age_days": 51,
+    "statement_age_days": 59,
     "statement_status": "available",
     "missing_statement_tables": [],
     "filing_publication_date": null,
@@ -203,8 +203,8 @@
       "price_conversion": {
         "from": "NOK",
         "to": "EUR",
-        "rate": 0.09328000247478485,
-        "observed_at": "2026-11-20T23:05:31.186594+00:00",
+        "rate": 0.09334799647331238,
+        "observed_at": "2026-11-28T00:32:49.441512+00:00",
         "source": "Yahoo Finance via yfinance FX; current conversion, not historical-period FX"
       }
     },
@@ -229,7 +229,7 @@
     "debt_inputs": {
       "status": "not-configured",
       "contract_version": "2026-10-25-debt-v1",
-      "evaluation_as_of": "2026-11-20T23:05:31.569690+00:00",
+      "evaluation_as_of": "2026-11-28T00:32:49.942055+00:00",
       "ticker": "KIT.OL",
       "currency": "EUR",
       "unit": "currency units",
